@@ -1,0 +1,12 @@
+// Ignore build artifacts
+/build/
+/dist/
+// Ignore dependency directories
+/node_modules/
+
+// Ignore temporary files
+.tmp/
+.DS_Store  
+scraps/*
+*.log  
+scraps

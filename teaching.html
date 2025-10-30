@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Teaching • Avijit Roy</title>
+
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -18,51 +19,76 @@
         <a href="projects.html">Projects</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle"><span id="themeIcon"></span></button>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span id="themeIcon"></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- MAIN -->
   <main class="container section">
-    <!-- COURSES -->
     <h1>Teaching</h1>
-    <details>
-      <summary>CSCI 271 — Introduction to Programming</summary>
-      <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
-      <p>Focuses on problem-solving, control structures, and arrays.</p>
-      <div class="cta">
-        <a class="button small" href="#">Syllabus (PDF)</a>
-        <a class="button small" href="#">Course Details</a>
-      </div>
-    </details>
 
-    <details>
-      <summary>CSCI 272 — Object-Oriented Programming in C++</summary>
-      <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
-      <p>Classes, inheritance, and file handling using modern C++.</p>
-      <div class="cta">
-        <a class="button small" href="#">Syllabus (PDF)</a>
-        <a class="button small" href="#">Course Details</a>
-      </div>
-    </details>
+    <!-- COURSES -->
+    <section class="block">
+      <h2>Courses I Teach</h2>
+
+      <details>
+        <summary>
+          <span>CSCI 271 — Introduction to Programming</span>
+        </summary>
+        <div class="details-body">
+          <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
+          <p class="muted">Problem-solving, control structures, functions, arrays.</p>
+          <div class="cta">
+            <a class="button small" href="#" aria-disabled="true">Syllabus (PDF)</a>
+            <a class="button small" href="#" aria-disabled="true">Course Details</a>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span>CSCI 272 — Object-Oriented Programming in C++</span>
+        </summary>
+        <div class="details-body">
+          <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
+          <p class="muted">Classes, vectors, inheritance, file I/O, exceptions.</p>
+          <div class="cta">
+            <a class="button small" href="#" aria-disabled="true">Syllabus (PDF)</a>
+            <a class="button small" href="#" aria-disabled="true">Course Details</a>
+          </div>
+        </div>
+      </details>
+    </section>
 
     <!-- MENTORING -->
-    <section class="section-block">
+    <section class="block">
       <h2>Mentoring</h2>
-      <p>I mentor applied projects that blend AI, forensics, and software design.</p>
-      <h3>Recent Mentoring Projects</h3>
-      <article class="card">
-        <h3>AI Writing Evaluator</h3>
-        <p>Developed rubric-based writing assessment models for students.</p>
-        <a class="button small" href="https://github.com/heyavijitroy">GitHub</a>
-      </article>
-      <article class="card">
-        <h3>BlitzTips</h3>
-        <p>Realtime mapping dashboard for investigative tip management.</p>
-        <a class="button small" href="https://github.com/heyavijitroy">GitHub</a>
-      </article>
+      <p class="muted">I mentor pragmatic projects with clear outcomes and real users.</p>
+
+      <h3>Recent mentoring projects</h3>
+      <div class="card-list">
+        <article class="card">
+          <h3>AI Writing Evaluator</h3>
+          <p class="muted">Rubric-aligned writing classification for language courses.</p>
+          <a class="button small" href="projects.html#ai-writing">View</a>
+        </article>
+        <article class="card">
+          <h3>BlitzTips</h3>
+          <p class="muted">Admin workflows, real-time map, delayed read marking.</p>
+          <a class="button small" href="projects.html#hti-platform">View</a>
+        </article>
+        <article class="card">
+          <h3>HashNow</h3>
+          <p class="muted">Client-side hashing tool for quick field verification.</p>
+          <a class="button small" href="projects.html#hashnow">View</a>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -70,6 +96,11 @@
   <footer class="site-footer">
     <div class="container foot-flex">
       <p>© 2025 Avijit Roy</p>
+      <div class="socials">
+        <a href="https://github.com/heyavijitroy" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://x.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
     </div>
   </footer>
 </body>

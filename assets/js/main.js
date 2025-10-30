@@ -1,63 +1,69 @@
 /* =====================================================
    Avijit Roy — Main JS
-   Handles: Mobile Nav, Filters, Dark/Light Mode Toggle
+   - Mobile Nav
+   - Dark/Light Mode Toggle
+   - Project Search + Tag Filters (manual projects only)
    ===================================================== */
 
 (function () {
-  // ---------- MOBILE NAV ----------
+  // Mobile nav
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("navLinks");
   hamburger?.addEventListener("click", () => nav?.classList.toggle("show"));
 
-  // ---------- THEME TOGGLE ----------
+  // Theme toggle
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("theme");
-  const prefersDark =
-    window.matchMedia &&
+  const prefersDark = window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = savedTheme || (prefersDark ? "dark" : "light");
+  root.setAttribute("data-theme", theme);
+  updateThemeIcon(theme);
 
-  const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-  root.setAttribute("data-theme", currentTheme);
-  updateThemeIcon(currentTheme);
-
-  const toggleBtn = document.getElementById("themeToggle");
-  toggleBtn?.addEventListener("click", () => {
-    const newTheme =
-      root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateThemeIcon(newTheme);
+  document.getElementById("themeToggle")?.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    updateThemeIcon(next);
   });
 
-  function updateThemeIcon(theme) {
+  function updateThemeIcon(mode) {
     const icon = document.getElementById("themeIcon");
-    if (!icon) return;
-    icon.innerHTML =
-      theme === "dark"
-        ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>`
-        : `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.95 19.07l1.41 1.41 1.8-1.79-1.41-1.41zM13 1h-2v3h2z"/></svg>`;
+    const toggle = document.getElementById("themeToggle");
+    if (!icon || !toggle) return;
+    // read brand color from CSS vars so icon looks good on light background
+    const styles = getComputedStyle(document.documentElement);
+    const brandColor = styles.getPropertyValue('--brand') || '#0a66c2';
+    // Moon for dark, sun for light — use clearer sun path for light mode
+    if (mode === "dark") {
+      icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><title>Dark mode</title><path d="M21.64 13a8.5 8.5 0 11-9.64-9.64 7 7 0 109.64 9.64z"/></svg>`;
+      toggle.setAttribute("aria-pressed", "true");
+      toggle.style.color = '';
+    } else {
+      icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><title>Light mode</title><path d="M6.995 12c0-2.761 2.246-5.005 5.005-5.005S17.005 9.239 17.005 12 14.759 17.005 12 17.005 6.995 14.761 6.995 12zm13.005-.5h2a1 1 0 110 2h-2a1 1 0 110-2zM2 11.5h2a1 1 0 110 2H2a1 1 0 110-2zm16.95-6.364l1.414 1.414a1 1 0 11-1.414 1.414L17.536 6.55a1 1 0 011.414-1.414zM6.05 17.95l1.414 1.414a1 1 0 11-1.414 1.414L4.636 19.364a1 1 0 011.414-1.414zM12 2.5a1 1 0 011 1V6a1 1 0 11-2 0V3.5a1 1 0 011-1zM12 17a1 1 0 011 1v2.5a1 1 0 11-2 0V18a1 1 0 011-1z"/></svg>`;
+      toggle.setAttribute("aria-pressed", "false");
+      // make sun icon use brand color so it is visible on light background
+      toggle.style.color = brandColor.trim();
+    }
   }
 
-  // ---------- PROJECT FILTER ----------
+  // Project filters (manual cards only)
   const search = document.getElementById("projectSearch");
   const clearBtn = document.getElementById("clearSearch");
   const chips = document.querySelectorAll(".chip");
-  const projects = () =>
-    Array.from(
-      document.querySelectorAll("#projectGrid .card, #repoGrid .card")
-    );
+  const cards = () => Array.from(document.querySelectorAll("#projectGrid .card"));
 
   function applyFilter() {
-    const q = (search?.value || "").toLowerCase();
+    const q = (search?.value || "").toLowerCase().trim();
     const activeChip = document.querySelector(".chip.active");
-    const tag = activeChip ? activeChip.getAttribute("data-tag") : "all";
+    const tag = activeChip ? activeChip.getAttribute("data-tag").toLowerCase() : "all";
 
-    projects().forEach((p) => {
-      const name = (p.querySelector("h3")?.textContent || "").toLowerCase();
-      const tags = (p.getAttribute("data-tags") || "").toLowerCase();
-      const matchesTag = tag === "all" || tags.includes(tag);
-      const matchesText = !q || name.includes(q) || tags.includes(q);
-      p.style.display = matchesTag && matchesText ? "block" : "none";
+    cards().forEach((el) => {
+      const name = (el.querySelector("h3")?.textContent || "").toLowerCase();
+      const tags = (el.getAttribute("data-tags") || "").toLowerCase();
+      const tagOk = tag === "all" || tags.includes(tag);
+      const textOk = !q || name.includes(q) || tags.includes(q);
+      el.style.display = tagOk && textOk ? "block" : "none";
     });
   }
 
@@ -75,38 +81,32 @@
     })
   );
 
-  // ---------- LOAD GITHUB REPOS ----------
-  const repoGrid = document.getElementById("repoGrid");
-  if (repoGrid) {
-    repoGrid.innerHTML = "<p class='muted'>Loading repositories…</p>";
-    fetch(
-      "https://api.github.com/users/heyavijitroy/repos?per_page=100&sort=updated"
-    )
-      .then((r) => r.json())
-      .then((repos) => {
-        if (!Array.isArray(repos))
-          throw new Error("GitHub API limit or error reached");
-        const curated = repos
-          .filter((r) => !r.fork && !r.archived)
-          .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-          .slice(0, 20);
-        repoGrid.innerHTML = curated
-          .map(
-            (r) => `
-          <article class="card" data-tags="opensource ${r.language || ""}">
-            <h3><a href="${r.html_url}" target="_blank">${r.name}</a></h3>
-            <p class="muted">${r.description || "No description"}</p>
-            <a class="button small icon" href="${r.html_url}" target="_blank">
-              <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8...Z"></path></svg>
-            </a>
-          </article>`
-          )
-          .join("");
+  // make project inline tags clickable — they carry data-tag attributes
+  function wireInlineTags() {
+    const inline = document.querySelectorAll(".tags li.clickable");
+    inline.forEach((t) => {
+      t.setAttribute("tabindex", "0");
+      t.addEventListener("click", () => {
+        const tag = t.getAttribute("data-tag");
+        if (!tag) return;
+        chips.forEach((x) => x.classList.remove("active"));
+        const match = Array.from(chips).find((x) => x.getAttribute("data-tag").toLowerCase() === tag.toLowerCase());
+        if (match) match.classList.add("active");
+        else {
+          // create temporary selection if tag not in chip list
+          const allChip = document.querySelector('.chip[data-tag="all"]');
+          allChip && allChip.classList.add('active');
+        }
+        // clear search and apply
+        if (search) search.value = "";
         applyFilter();
-      })
-      .catch(() => {
-        repoGrid.innerHTML =
-          "<p class='muted'>Could not load repositories.</p>";
       });
+      t.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); }
+      });
+    });
   }
+
+  // initial wire
+  wireInlineTags();
 })();

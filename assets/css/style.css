@@ -1,7 +1,5 @@
 /* =====================================================
-   Avijit Roy — Site Styles (Light/Dark + Tight Rhythm)
-   Fixes: section spacing, button/chip layout, details padding,
-          projects search/filter spacing, mobile polish
+   Avijit Roy — Site Styles (Light/Dark + Consistent Rhythm)
    ===================================================== */
 
 /* ---------- Theme Vars ---------- */
@@ -18,7 +16,6 @@
   --nav-bg: rgba(255, 255, 255, .9);
   --shadow: 0 6px 16px rgba(2, 12, 27, .06);
 
-  /* Vertical rhythm scale */
   --space-1: 6px;
   --space-2: 10px;
   --space-3: 14px;
@@ -26,6 +23,7 @@
   --space-5: 24px;
   --space-6: 32px;
   --space-7: 42px;
+
   --radius-1: 6px;
   --radius-2: 8px;
   --radius-3: 12px;
@@ -84,7 +82,6 @@ a {
   padding: 0 var(--space-5);
 }
 
-/* ---------- Section rhythm ---------- */
 .section {
   padding: var(--space-6) 0 var(--space-7);
 }
@@ -135,6 +132,20 @@ p {
   color: var(--brand);
 }
 
+/* small github icon next to brand */
+.brand-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px;
+  border: 1px solid transparent;
+}
+.brand-github i { font-size: 14px }
+.brand-github:hover { background: var(--chip-hover); }
+
 .nav-links {
   display: flex;
   gap: var(--space-3);
@@ -173,7 +184,6 @@ p {
   border-radius: 2px;
 }
 
-/* Theme toggle (icon only) */
 .theme-toggle {
   border: 1px solid var(--border);
   background: transparent;
@@ -225,12 +235,23 @@ p {
 .button.small {
   padding: 7px 10px;
   border-radius: var(--radius-1);
+  /* border: #0a66c2; */
   font-size: .92rem;
+}
+
+.button.icon {
+  padding: 8px 10px;
+}
+
+.button.icon i {
+  font-size: 16px;
+  line-height: 1;
+  display: block;
 }
 
 .cta {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-1);
   flex-wrap: wrap;
   margin-top: var(--space-2);
 }
@@ -238,13 +259,13 @@ p {
 /* ---------- Hero ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 220px;
+  grid-template-columns: 1fr 180px;
   gap: var(--space-5);
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   margin-bottom: var(--space-2);
 }
 
@@ -255,8 +276,8 @@ p {
 }
 
 .avatar {
-  width: 190px;
-  height: 190px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 3px solid var(--border);
   overflow: hidden;
@@ -270,7 +291,7 @@ p {
   object-position: center;
 }
 
-/* ---------- Cards & Blocks ---------- */
+/* ---------- Cards / Blocks ---------- */
 .card-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -292,7 +313,7 @@ p {
   margin-top: var(--space-4);
 }
 
-/* ---------- Projects page ---------- */
+/* ---------- Projects ---------- */
 .page-head {
   margin-bottom: var(--space-3);
 }
@@ -366,14 +387,59 @@ p {
   border-color: var(--brand);
 }
 
-#projectGrid,
-#repoGrid {
+#projectGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-3);
 }
 
-/* ---------- Teaching page ---------- */
+/* Inline tag chips under each project */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  background: var(--chip);
+  border-radius: 999px;
+  font-size: .9rem;
+  cursor: default;
+}
+
+/* Make inline tags look clickable and consistent */
+.tags li.clickable { cursor: pointer; }
+.tags li.clickable:hover { box-shadow: var(--shadow); background: var(--chip-hover); }
+
+/* project title + repo link */
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.repo-link {
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: var(--radius-2);
+  border: 1px solid transparent;
+}
+.repo-link i { font-size: 16px }
+.repo-link:hover { background: var(--chip-hover); }
+
+/* ---------- Teaching ---------- */
 details {
   border: 1px solid var(--border);
   border-radius: var(--radius-3);
@@ -415,6 +481,26 @@ details[open]>summary {
   flex-wrap: wrap;
 }
 
+/* Social icons in footer */
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.socials a { color: var(--text); padding: 6px; border-radius: 6px; display:inline-flex }
+.socials a i { font-size: 16px }
+
+/* Mobile: center footer content and put copyright and socials in two rows */
+@media (max-width:480px) {
+  .foot-flex {
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .foot-flex > p { width: 100%; order: 1 }
+  .socials { width: 100%; justify-content: center; order: 2 }
+}
+
 /* ---------- Mobile Nav ---------- */
 @media (max-width:900px) {
   .nav-links {
@@ -439,7 +525,7 @@ details[open]>summary {
   }
 }
 
-/* ---------- Responsive hero ---------- */
+/* ---------- Responsive Hero ---------- */
 @media (max-width:800px) {
   .hero {
     grid-template-columns: 1fr;
@@ -457,10 +543,70 @@ details[open]>summary {
   }
 }
 
-/* ---------- Tablet polish ---------- */
+/* ---------- Tablet ---------- */
 @media (min-width:768px) and (max-width:1024px) {
   .avatar {
     width: 220px;
     height: 220px;
   }
+}
+
+/* Mobile nav: make each link a full block for easier tapping and a consistent hover area */
+@media (max-width:900px) {
+  .nav-links {
+    right: 12px;
+    min-width: 160px;
+    padding: 8px;
+  }
+  .nav-links a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--text);
+  }
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: var(--chip-hover);
+  }
+}
+
+/* Small-screen container padding so site doesn't feel edge-to-edge on phones */
+@media (max-width:480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  /* reduce footer height on phones */
+  .site-footer {
+    padding: 12px 0;
+  }
+
+  .foot-flex {
+    gap: 8px;
+  }
+}
+
+/* Make the recent highlights / card-list responsive to two columns on larger screens */
+@media (min-width:700px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+/* improve focus for mobile nav links */
+.nav-links a:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--brand) 60%, transparent);
+  outline-offset: 3px;
+}
+
+/* details/summary improvements for Teaching page */
+details>summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+details>summary:hover {
+  background: var(--chip-hover);
 }

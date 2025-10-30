@@ -4,11 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home • Avijit Roy</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Font Awesome (icons for socials if needed) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- ===========================
+       HEADER
+       =========================== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">Avijit <span>Roy</span></a>
@@ -18,31 +29,39 @@
         <a href="projects.html">Projects</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle"><span id="themeIcon"></span></button>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span id="themeIcon"></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- ===========================
+       MAIN
+       =========================== -->
   <main class="container section">
     <!-- HERO -->
     <section class="hero">
       <div>
-        <h1>Avijit <span style="color:var(--brand)">Roy</span></h1>
-        <p class="lead">Educator, engineer, and researcher exploring cybersecurity, AI, and digital forensics.</p>
+        <h1>Avijit <span>Roy</span></h1>
+        <p class="lead">Educator, engineer, and researcher exploring cybersecurity, AI, and digital forensics. I build pragmatic tools and teach with a focus on real users and measurable outcomes.</p>
         <div class="cta">
           <a class="button primary" href="projects.html">See Projects</a>
           <a class="button" href="assets/AvijitRoy_CV.pdf">Download CV</a>
         </div>
       </div>
-      <div class="avatar"><img src="assets/img/avatar.png" alt="Avijit Roy portrait"></div>
+      <div class="avatar">
+        <img src="assets/img/avatar.png" alt="Avijit Roy portrait" />
+      </div>
     </section>
 
     <!-- ABOUT -->
     <section class="section-block">
       <h2>About Me</h2>
-      <p>I’m a software engineer, educator, and researcher based in New York. My work spans security, AI, and mapping—focused on building useful, secure, and human-centered tools.</p>
+      <p>I’m a software engineer, educator, and researcher based in New York. My work spans security, AI, and mapping—focused on building useful, secure, and human-centered tools. I like small iterations, real users, and shipping fast.</p>
     </section>
 
     <!-- FOCUS AREAS -->
@@ -62,15 +81,30 @@
       <div class="card-list">
         <article class="card">
           <h3>AI Writing Proficiency Evaluator</h3>
-          <p class="muted">Automatically classifies student writing by ACTFL proficiency levels.</p>
-          <a class="button small" href="projects.html#oss">See Details</a>
+          <p class="muted">Automatically classifies student writing by rubric-aligned levels.</p>
+          <a class="button small" href="projects.html#ai-writing">View</a>
         </article>
         <article class="card">
           <h3>Human Trafficking Intelligence Platform</h3>
-          <p class="muted">Realtime admin map and delayed read-marking system using Hangfire.</p>
-          <a class="button small" href="projects.html">Learn More</a>
+          <p class="muted">Realtime admin map, viewport-aware drawer, delayed read marking (Hangfire).</p>
+          <a class="button small" href="projects.html#hti-platform">View</a>
+        </article>
+        <article class="card">
+          <h3>HashNow</h3>
+          <p class="muted">Client-side hashing for quick verification—no uploads.</p>
+          <a class="button small" href="projects.html#hashnow">View</a>
         </article>
       </div>
+    </section>
+
+    <!-- EDUCATION (brought back) -->
+    <section class="section-block">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>MS</strong>, Digital Forensics & Cybersecurity — John Jay College (CUNY)</li>
+        <li><strong>BS</strong>, Computer Science & Information Security — John Jay College (CUNY)</li>
+        <li><strong>AAS</strong>, Computer Programming & IT — ASA College</li>
+      </ul>
     </section>
 
     <!-- CONTACT -->
@@ -78,9 +112,9 @@
       <h2>Contact Me</h2>
       <p><strong>Email:</strong> email [at] domain &lt;dot&gt; edu</p>
       <p>
-        <a class="icon-link" href="https://github.com/heyavijitroy">GitHub</a> ·
-        <a class="icon-link" href="https://www.linkedin.com/in/HeyAvijitRoy/">LinkedIn</a> ·
-        <a class="icon-link" href="https://x.com/HeyAvijitRoy">X</a>
+        <a class="icon-link" href="https://github.com/heyavijitroy" target="_blank" rel="noopener">GitHub</a> ·
+        <a class="icon-link" href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a class="icon-link" href="https://x.com/HeyAvijitRoy" target="_blank" rel="noopener">X</a>
       </p>
     </section>
   </main>
@@ -89,6 +123,11 @@
   <footer class="site-footer">
     <div class="container foot-flex">
       <p>© 2025 Avijit Roy</p>
+      <div class="socials">
+        <a href="https://github.com/heyavijitroy" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://x.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
     </div>
   </footer>
 </body>

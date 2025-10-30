@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects • Avijit Roy</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Font Awesome (GitHub icon buttons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="site-header">
@@ -18,8 +28,12 @@
         <a href="projects.html" class="active">Projects</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle"><span id="themeIcon"></span></button>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span id="themeIcon"></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -30,11 +44,14 @@
       <h1>Projects</h1>
     </div>
 
+    <!-- Search -->
     <div class="search-wrap">
-      <input id="projectSearch" class="search" type="text" placeholder="Search projects…" />
-      <button id="clearSearch" class="clear-btn">×</button>
+      <input id="projectSearch" class="search" type="text" placeholder="Search by name, tag, or stack…"
+        aria-label="Search projects" />
+      <button id="clearSearch" class="clear-btn" aria-label="Clear search">×</button>
     </div>
 
+    <!-- Filter chips -->
     <div class="filter-bar chips">
       <button class="chip active" data-tag="all">All</button>
       <button class="chip" data-tag="ai">AI</button>
@@ -45,33 +62,103 @@
       <button class="chip" data-tag="opensource">Open Source</button>
     </div>
 
+    <!-- Curated projects (manual) -->
     <div id="projectGrid">
-      <article class="card" data-tags="security mapping realtime">
-        <h3>Human Trafficking Intelligence Platform</h3>
-        <p class="muted">Realtime map drawer, photo viewer, and admin dashboard using SignalR + Hangfire.</p>
-        <a class="button small icon" href="https://github.com/heyavijitroy/BlitzTips" target="_blank">
-          <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0...Z"/></svg>
-        </a>
+      <!-- HTI Platform -->
+      <article class="card" id="hti-platform"
+        data-tags="security realtime mapping opensource dotnet c# sql azure signalr hangfire">
+        <h3>Human Trafficking Intelligence Platform
+          <a class="repo-link" href="https://github.com/heyavijitroy/BlitzTips" target="_blank" rel="noopener"
+            aria-label="Open project on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </h3>
+        <p class="muted">Viewport-aware admin map, photo modal, and delayed read-marking using Hangfire. Privacy-minded
+          media handling.</p>
+        <div class="cta">
+          <ul class="tags">
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="realtime">Realtime</li>
+            <li class="clickable" data-tag="mapping">Mapping</li>
+            <li class="clickable" data-tag="dotnet">.NET</li>
+            <li class="clickable" data-tag="azure">Azure</li>
+          </ul>
+        </div>
       </article>
 
-      <article class="card" data-tags="ai">
-        <h3>AI Writing Proficiency Evaluator</h3>
-        <p class="muted">Local model for ACTFL rubric alignment. Supports language instructors.</p>
-        <a class="button small icon" href="https://github.com/heyavijitroy">GitHub</a>
+      <!-- AI Writing -->
+      <article class="card" id="ai-writing" data-tags="ai education nlp python opensource rubric classification">
+        <h3>AI Writing Proficiency Evaluator
+          <a class="repo-link" href="https://github.com/heyavijitroy" target="_blank" rel="noopener"
+            aria-label="Open project on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </h3>
+        <p class="muted">Local-first pipeline for rubric-aligned writing classification and scoring; built for
+          language-learning workflows.</p>
+        <div class="cta">
+          <ul class="tags">
+            <li class="clickable" data-tag="ai">AI</li>
+            <li class="clickable" data-tag="nlp">NLP</li>
+            <li class="clickable" data-tag="education">Education</li>
+            <li class="clickable" data-tag="python">Python</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- HashNow -->
+      <article class="card" id="hashnow" data-tags="tools security javascript web opensource">
+        <h3>HashNow
+          <a class="repo-link" href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener"
+            aria-label="Open project on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </h3>
+        <p class="muted">Client-side MD5/SHA hashing for quick verification. No uploads; runs entirely in the browser.
+        </p>
+        <div class="cta">
+          <ul class="tags">
+            <li class="clickable" data-tag="tools">Tools</li>
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JomiMap -->
+      <article class="card" id="jomimap" data-tags="mapping tools web gis">
+        <h3>JomiMapo
+          <a class="repo-link" href="https://github.com/heyavijitroy" target="_blank" rel="noopener"
+            aria-label="Open project on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </h3>
+        <p class="muted">Simple land-parcel exploration and annotation tool prototype (Bangladesh + US focus).</p>
+        <div class="cta">
+          <ul class="tags">
+            <li class="clickable" data-tag="mapping">Mapping</li>
+            <li class="clickable" data-tag="gis">GIS</li>
+            <li class="clickable" data-tag="tools">Tools</li>
+          </ul>
+        </div>
       </article>
     </div>
-
-    <section class="section-block" id="oss">
-      <h2>Open Source</h2>
-      <div id="repoGrid"></div>
-    </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot-flex">
       <p>© 2025 Avijit Roy</p>
+      <div class="socials">
+        <a href="https://github.com/heyavijitroy" target="_blank" rel="noopener" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://x.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="X"><i
+            class="fa-brands fa-x-twitter"></i></a>
+      </div>
     </div>
   </footer>
 </body>
+
 </html>

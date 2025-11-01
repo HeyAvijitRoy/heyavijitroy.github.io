@@ -513,6 +513,8 @@ details {
   background: var(--card);
   margin: var(--space-3) 0;
   padding: var(--space-3);
+  overflow: hidden;
+  transition: background .2s ease, border-color .2s ease;
 }
 
 details>summary {
@@ -520,10 +522,16 @@ details>summary {
   font-weight: 700;
   margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-3)) 0;
   padding: var(--space-3);
+  border-radius: var(--radius-3);
+  /* rounded corners when closed */
+  transition: background .12s ease;
+  /* smoother hover */
 }
 
 details[open]>summary {
   border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-3) var(--radius-3) 0 0;
+  /* top corners rounded when open */
 }
 
 .inst {
@@ -694,8 +702,9 @@ details>summary {
   justify-content: space-between;
   gap: var(--space-2);
 }
-details>summary:hover {
-  background: var(--chip-hover);
+details>summary:hover,
+details>summary:focus-visible {
+  background: color-mix(in oklab, var(--chip-hover) 90%, #fff);
 }
 
 /* Reduce motion preference */

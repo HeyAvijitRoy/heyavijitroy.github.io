@@ -70,7 +70,7 @@
     const styles = getComputedStyle(document.documentElement);
     const brandColor = styles.getPropertyValue('--brand') || '#0a66c2';
     // Moon for dark, sun for light — use clearer sun path for light mode
-    if (mode === "dark") {
+    if (mode === "light") {
       icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><title>Dark mode</title><path d="M21.64 13a8.5 8.5 0 11-9.64-9.64 7 7 0 109.64 9.64z"/></svg>`;
       toggle.setAttribute("aria-pressed", "true");
       toggle.style.color = '';

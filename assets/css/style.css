@@ -730,19 +730,7 @@ details>summary:focus-visible {
 } */
 
 
-#assessments {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-}
-
-#weekly-plan{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-}
-
-#tools{
+#assessments, #policies, #weekly-plan, #tools, #github, #books {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-3);
@@ -753,4 +741,14 @@ details>summary:focus-visible {
   flex-direction: column;
   gap: var(--space-3);
   margin-top: var(--space-3);
+}
+
+/* CSCI-272 page refinements */
+.section-block .card ul { margin-top: .25rem; }
+.section-block .card ul li + li { margin-top: .25rem; }
+
+hr{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-4) 0;
 }

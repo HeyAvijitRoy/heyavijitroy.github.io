@@ -772,6 +772,7 @@ details>summary:focus-visible {
     width: 250px;
     height: 250px;
   }
+
 }
 
 /* Tablet (768–1024px) */
@@ -783,6 +784,10 @@ details>summary:focus-visible {
   .avatar {
     width: 220px;
     height: 220px;
+  }
+
+  body{
+    margin: 0px 10px 0px 10px;
   }
 }
 
@@ -801,7 +806,7 @@ details>summary:focus-visible {
   }
 
   body{
-    margin: 10px
+    margin: 0px 10px 0px 10px;
   }
 }
 

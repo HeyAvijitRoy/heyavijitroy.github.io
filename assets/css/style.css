@@ -408,12 +408,12 @@ html[data-theme="dark"] .muted {
   position: absolute;
   right: 6px;
   top: 50%;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%);
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--text);
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: var(--radius-1);
   line-height: 24px;
   text-align: center;

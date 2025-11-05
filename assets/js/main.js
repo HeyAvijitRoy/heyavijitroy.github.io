@@ -120,12 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilter();
   });
   chips.forEach((c) =>
-    c.addEventListener("click", () => {
-      chips.forEach((x) => x.classList.remove("active"));
-      c.classList.add("active");
-      applyFilter();
-    })
-  );
+        c.addEventListener("click", () => {
+          chips.forEach((x) => x.classList.remove("active"));
+          c.classList.add("active");
+          applyFilter();
+        })
+      );
 
   // make project inline tags clickable — they carry data-tag attributes
   function wireInlineTags() {
@@ -156,5 +156,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // initial wire
   wireInlineTags();
 })();
-
-

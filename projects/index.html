@@ -66,6 +66,7 @@
         <a href="../">Home</a>
         <a href="../teaching/">Teaching</a>
         <a href="../projects/" class="active" aria-current="page">Projects</a>
+        <a href="../experience/">Experience</a>
       </nav>
       <div class="nav-actions">
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
@@ -118,6 +119,51 @@
     <!-- Projects -->
     <section class="section-block">
       <div id="projectGrid">
+        <!-- BlitzTips (Graduate Research Assistant) -->
+
+        <article class="card" id="blitztips"
+          data-tags="security dotnet c# api mapping realtime signalr azure hangfire googlemaps rbac audit data">
+          <h3>BlitzTips — Real-Time Trafficking Tip Platform
+            <a class="repo-link" href="#" title="Open project on GitHub" target="_blank" rel="noopener"
+              aria-label="Open project on GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </h3>
+          <p class="muted">
+            A secure, real-time investigation platform built at John Jay College to collect, triage, and visualize
+            human-trafficking tips.
+            The system pairs a .NET Core/API backend with a React-style admin UI to deliver live maps, investigator
+            dashboards,
+            and exportable intelligence feeds — purpose-built for handling sensitive PII and operational data.
+          </p>
+          <p class="muted">
+            Integrates Google Maps API for geospatial insight, SignalR for push updates, and Hangfire for background
+            jobs at scale.
+            Security is enforced end-to-end with OAuth2 (Azure AD), TLS in transit, field-level encryption at rest, and
+            role-based access controls,
+            backed by comprehensive audit trails and anomaly-detection routines. Modular Razor/Bootstrap views enable
+            fast filtering,
+            drill-downs, and data exports across demographics, vehicles, and observations — empowering stakeholders with
+            actionable, trend-level insight.
+          </p>
+          <div class="cta">
+            <ul class="tags">
+              <li class="clickable" data-tag="security">Security</li>
+              <li class="clickable" data-tag="dotnet">.NET</li>
+              <li class="clickable" data-tag="c#">C#</li>
+              <li class="clickable" data-tag="api">API</li>
+              <li class="clickable" data-tag="realtime">Real-time</li>
+              <li class="clickable" data-tag="signalr">SignalR</li>
+              <li class="clickable" data-tag="googlemaps">Google Maps</li>
+              <li class="clickable" data-tag="hangfire">Hangfire</li>
+              <li class="clickable" data-tag="azure">Azure</li>
+              <li class="clickable" data-tag="rbac">RBAC</li>
+              <li class="clickable" data-tag="audit-logs">Audit Logs</li>
+              <li class="clickable" data-tag="data-analysis">Data Analysis</li>
+            </ul>
+          </div>
+        </article>
+
         <!-- Django Secure Single-Session Auth -->
         <article class="card" id="django-secure" data-tags="security django authentication python opensource">
           <h3>Django Secure Single-Session Auth System
@@ -176,13 +222,13 @@
         <article class="card" id="exam-timer" data-tags="education tools timer javascript productivity opensource">
           <h3>
             Exam Timer
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank"
-              rel="noopener" aria-label="Open project on GitHub" title="Exam Timer GitHub repository">
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank" rel="noopener"
+              aria-label="Open project on GitHub" title="Exam Timer GitHub repository">
               <i class="fa-brands fa-github"></i>
             </a>
           </h3>
           <p class="muted">
-            A simple, dark-mode exam countdown timer you can customize without editing source files. 
+            A simple, dark-mode exam countdown timer you can customize without editing source files.
             Designed for projecting during exams — editable title, duration and rules are saved in localStorage.
           </p>
           <div class="cta">

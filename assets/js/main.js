@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = savedTheme || (prefersDark ? "dark" : "light");
+  // const theme = savedTheme || (prefersDark ? "dark" : "light");
+  const theme = savedTheme || "dark"; // default to dark
   root.setAttribute("data-theme", theme);
   updateThemeIcon(theme);
 

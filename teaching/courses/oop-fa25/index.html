@@ -1,8 +1,5 @@
 <!-- =====================================================
-   CSCI 272 Course Page (Student Portal)
-   - Single-column, brand-consistent
-   - Overview buttons link to section IDs below
-   - Dev-C++ + GitHub + VS Code + Policies + Websites + Books
+   CSCI 272 Course Page
    ===================================================== -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +8,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Object-Oriented Programming (C++) • CSCI 272 - John Jay College | Avijit Roy</title>
+  <title>CSCI 272 • OOP in C++ - Syllabus - Fall 2025 | John Jay College | Avijit Roy</title>
 
   <!-- Canonical & robots -->
   <link rel="canonical" href="https://www.avijitroy.com/teaching/courses/oop-fa25/" />
@@ -27,7 +24,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Object-Oriented Programming (C++) • CSCI 272 - John Jay College" />
+  <meta property="og:title" content="Object-Oriented Programming (C++) • CSCI 272 (Fall 2025) - John Jay College" />
   <meta property="og:description"
     content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++ at John Jay College. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
   <meta property="og:url" content="https://www.avijitroy.com/teaching/courses/oop-fa25/" />
@@ -38,7 +35,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
-  <meta name="twitter:title" content="Object-Oriented Programming (C++) • CSCI 272 - John Jay College" />
+  <meta name="twitter:title" content="Object-Oriented Programming (C++) • CSCI 272 (Fall 2025) - John Jay College" />
   <meta name="twitter:description"
     content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++ at John Jay College. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
   <meta name="twitter:image" content="https://www.avijitroy.com/assets/img/og-image.jpg" />
@@ -57,6 +54,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="../../../assets/js/main.js" defer></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4VM6347X4"></script>
   <script>
@@ -92,8 +90,9 @@
 
   <!-- MAIN -->
   <main class="container section">
-    <h1 class="page-title">Object-Oriented Programming (C++) • CSCI 272 | Fall 2025</h1>
+    <h1 class="page-title">CSCI 272 • Object-Oriented Programming (C++) | Fall 2025</h1>
     <p class="muted">Course portal for students: weekly plan, assessments, expectations, tools, and quick links.</p>
+    <p class="muted"><strong>Note:</strong> This page contains the full course syllabus for CSCI 272.</p>
 
     <!-- Overview -->
     <div class="cta" style="margin-top:.75rem;">
@@ -127,9 +126,6 @@
             </a>
           </div>
         </div>
-        <div class="cta syllabus">
-          <a class="button primary" href="Syllabus-OOP-FA25.pdf" rel="noopener" aria-disabled="false">Syllabus (PDF)</a>
-        </div>
       </article>
     </section>
 
@@ -148,7 +144,8 @@
             functions, data members, constructors, and destructors.</li>
           <li>Separate <strong>class interface and implementation</strong> across header and source files, and apply
             composition, the dot/arrow operators, the <code>this</code> pointer, <em>friend</em> functions, and
-            <em>static</em> members where appropriate.</li>
+            <em>static</em> members where appropriate.
+          </li>
           <li>Use <strong>streams</strong> for formatted and unformatted input/output, recover from bad input states,
             and employ <strong>stringstreams</strong> for parsing and building text.</li>
           <li>Read from and write to <strong>sequential text files and CSV files</strong> using robust, error-aware file
@@ -156,7 +153,8 @@
           <li>Overload <strong>unary and binary operators</strong> for custom class behavior, including cases that
             involve dynamic memory management.</li>
           <li>Implement <strong>inheritance</strong> with base and derived classes, including use of the
-            <code>protected</code> access specifier.</li>
+            <code>protected</code> access specifier.
+          </li>
           <li>Apply <strong>polymorphism</strong> using virtual functions, pure virtual functions, and abstract classes
             to enable runtime method selection.</li>
           <li>Compare and reason about <strong>linear vs. binary search</strong> and different <strong>sorting
@@ -169,129 +167,156 @@
 
     <!-- Weekly Plan -->
     <section id="weekly-plan" class="section-block">
-      <h2>Weekly Plan (Snapshot)</h2>
       <article class="card">
+        <h2>Weekly Plan (Snapshot)</h2>
         <p class="muted">
-          This is the detailed, week-by-week plan from the official syllabus. Minor adjustments may occur; any changes
-          will
-          be announced in class and on Brightspace.
+          This is the detailed, week-by-week plan from the official syllabus.
+          Minor adjustments may occur; any changes will be announced in class and on Brightspace.
         </p>
-        <div class="table-wrapper">
-          <table class="nice-table">
-            <thead>
-              <tr>
-                <th>Lecture</th>
-                <th>Topics</th>
-                <th>Chapters / Sections</th>
-                <th>Assignments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Review &mdash; Functions, Arrays, Pointers</td>
-                <td>6.4, 6.5, 6.10, 6.11, 6.13–6.16; 7.1–7.2; 8.1–8.9</td>
-                <td>Assignment 1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Function Templates, Vectors (as an alternative to arrays; declare, initialize, access, get size, add
-                  values)</td>
-                <td>6.6, 6.17, 7.10</td>
-                <td>&mdash;</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Strings (create, compare, concatenate, length, modify, convert between types)</td>
-                <td>21.1–21.10, 21.13</td>
-                <td>Assignment 2</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Introduction to Classes (definitions, instantiation, public/private, member functions, data members)
-                </td>
-                <td>3.1–3.7</td>
-                <td>Quiz 1</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Streams &mdash; Input/Output (formatted/unformatted, recovering from bad input and failed states)
-                </td>
-                <td>13.1–13.8</td>
-                <td>Assignment 3</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Streams &mdash; Stringstreams (input and output manipulation)</td>
-                <td>21.12</td>
-                <td>&mdash;</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Midterm Exam &mdash; Written exam on theories + take-home project (Lectures 1–6 scope)</td>
-                <td>Lectures 1–6</td>
-                <td>Midterm Exam &amp; Project</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Streams &mdash; Files (sequential text and CSV files)</td>
-                <td>14.1–14.4</td>
-                <td>Assignment 4</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>More on Classes (interface/implementation split, constructors, destructors, composition, dot/arrow,
-                  this, friend, static)</td>
-                <td>9.1–9.15</td>
-                <td>&mdash;</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Operator Overloading (unary and binary operators, dynamically allocated memory)</td>
-                <td>10.1–10.11</td>
-                <td>Assignment 5</td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>Inheritance (base/derived classes, protected access)</td>
-                <td>11.1–11.6</td>
-                <td>Quiz 2</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>Polymorphism (virtual functions, pure virtual functions, abstract classes)</td>
-                <td>12.1–12.7</td>
-                <td>Assignment 6</td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td>Class Templates &mdash; Reusable Generic Classes</td>
-                <td>20.1–20.3</td>
-                <td>&mdash;</td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td>Exception Handling (try/catch/throw, custom exceptions)</td>
-                <td>17.1–17.5</td>
-                <td>Assignment 7</td>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td>Final Exam &mdash; Written exam + team-based capstone project (submission &amp; presentation)</td>
-                <td>Comprehensive</td>
-                <td>Capstone Project</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+        <ul class="weekly-nested">
+
+          <li>
+            <strong>Lecture 1</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 6.4, 6.5, 6.10, 6.11, 6.13–6.16; 7.1–7.2; 8.1–8.9</li>
+              <li><strong>Topics:</strong> Review — Functions, Arrays, Pointers</li>
+              <li><strong>Assignment 1</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 2</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 6.6, 6.17, 7.10</li>
+              <li><strong>Topics:</strong> Function Templates, Vectors</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 3</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 21.1–21.10, 21.13</li>
+              <li><strong>Topics:</strong> Strings (create, compare, concatenate, modify, conversions)</li>
+              <li><strong>Assignment 2</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 4</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 3.1–3.7</li>
+              <li><strong>Topics:</strong> Introduction to Classes</li>
+              <li><strong>Quiz 1</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 5</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 13.1–13.8</li>
+              <li><strong>Topics:</strong> Streams — Input/Output</li>
+              <li><strong>Assignment 3</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 6</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 21.12</li>
+              <li><strong>Topics:</strong> Stringstreams</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 7</strong>
+            <ul>
+              <li><strong>Chapters:</strong> Lectures 1–6</li>
+              <li><strong>Topics:</strong> Midterm Exam — Written + Take-Home Project</li>
+              <li><strong>Midterm Exam & Project</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 8</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 14.1–14.4</li>
+              <li><strong>Topics:</strong> Files — Sequential Text & CSV</li>
+              <li><strong>Assignment 4</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 9</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 9.1–9.15</li>
+              <li><strong>Topics:</strong> More on Classes</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 10</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 10.1–10.11</li>
+              <li><strong>Topics:</strong> Operator Overloading</li>
+              <li><strong>Assignment 5</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 11</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 11.1–11.6</li>
+              <li><strong>Topics:</strong> Inheritance</li>
+              <li><strong>Quiz 2</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 12</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 12.1–12.7</li>
+              <li><strong>Topics:</strong> Polymorphism</li>
+              <li><strong>Assignment 6</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 13</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 20.1–20.3</li>
+              <li><strong>Topics:</strong> Class Templates</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 14</strong>
+            <ul>
+              <li><strong>Chapters:</strong> 17.1–17.5</li>
+              <li><strong>Topics:</strong> Exception Handling</li>
+              <li><strong>Assignment 7</strong></li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Lecture 15</strong>
+            <ul>
+              <li><strong>Chapters:</strong> Comprehensive</li>
+              <li><strong>Topics:</strong> Final Exam + Capstone Project</li>
+              <li><strong>Capstone Project</strong></li>
+            </ul>
+          </li>
+
+        </ul>
+
       </article>
     </section>
 
     <!-- Assessments -->
     <section id="assessments" class="section-block">
-      <h2>Assessments</h2>
-
       <article class="card">
+        <h2>Assessments</h2>
+        <hr>
         <h3>Participation & Quizzes</h3>
         <p class="muted">Short checks to reinforce weekly topics; start on time. No make-ups for late arrival unless
           documented emergencies.</p>
@@ -385,9 +410,9 @@
 
     <!-- Policies (Responsibilities & Policies) -->
     <section id="policies" class="section-block">
-      <h2>Responsibilities &amp; Policies</h2>
-
       <article class="card">
+        <h2>Responsibilities &amp; Policies</h2>
+        <hr>
         <h3>Student Responsibilities</h3>
         <ul>
           <li>Attend class lectures regularly and arrive on time.</li>
@@ -469,9 +494,9 @@
 
     <!-- Tools -->
     <section id="tools" class="section-block">
-      <h2>Tools</h2>
-
       <article class="card">
+        <h2>Tools &amp; Setup</h2>
+        <hr>
         <h3>Primary IDE</h3>
         <ul>
           <li>
@@ -486,7 +511,8 @@
               Visual Studio Code
             </a>
             — optional editor (requires a working C++ toolchain).
-            <ul style="margin-top: 0.35rem;">
+            <p class="muted" style="margin-top:.35rem;">VS Code setup guides:</p>
+            <ul>
               <li><a href="../../../docs/cpp-vscode-win.html" target="_blank" rel="noopener">How to enable C++ in VS
                   Code on Windows</a></li>
               <li><a href="../../../docs/cpp-vscode-mac.html" target="_blank" rel="noopener">How to enable C++ in VS
@@ -530,17 +556,21 @@
 
     <!-- GitHub -->
     <section id="github" class="section-block">
-      <h2>GitHub Usage</h2>
-      <p>
-        GitHub will be our shared workspace and code archive. It helps you track every change,
-        back up projects safely, and practice professional version control workflows.
-        You’ll also use it to build your coding portfolio — and later, submit assignments
-        when instructed. Practice and share only your learning repos (like
-        <strong>CSCI-272-&lt;semester&gt;</strong>), not graded assignments, to avoid revealing
-        answers to others.
-      </p>
-
       <article class="card">
+        <h2>Using GitHub for Version Control &amp; Submissions</h2>
+        <p>
+          GitHub will be our shared workspace and code archive. It helps you track every change,
+          back up projects safely, and practice professional version control workflows.
+          You’ll also use it to build your coding portfolio — and later, submit assignments
+          when instructed. Practice and share only your learning repos (like
+          <strong>CSCI-272-&lt;semester&gt;</strong>), not graded assignments, to avoid revealing
+          answers to others.
+        </p>
+        <p class="muted">
+          Note: Not all assignments will be submitted via GitHub. Follow the submission method listed on Brightspace for
+          each assignment.
+        </p>
+
         <h3>Get Started</h3>
         <ul>
           <li>Create an account on <a href="https://github.com/" target="_blank" rel="noopener">github.com</a>.</li>
@@ -562,10 +592,9 @@
           <li><strong>Do not</strong> post full assignment solutions before grading is completed; you may be asked to
             submit privately.</li>
         </ul>
-        <!-- </article> -->
+
         <hr>
 
-        <!-- <article class="card"> -->
         <h3>Assignments & Submission</h3>
         <ul>
           <li>When instructed, submit via GitHub (private repo) by sharing access to the instructor; otherwise submit on
@@ -574,10 +603,9 @@
           <li>Commit regularly with meaningful messages (e.g., “add input validation for withdrawals”).</li>
           <li>Do not commit binaries or IDE build folders.</li>
         </ul>
-        <!-- </article> -->
+
         <hr>
 
-        <!-- <article class="card"> -->
         <h3>README Expectations</h3>
         <ul>
           <li>Short problem summary and how to build/run.</li>
@@ -589,17 +617,16 @@
 
     <!-- Books -->
     <section id="books" class="section-block">
-      <h2>Books &amp; References</h2>
-
       <article class="card">
+        <h2>Books &amp; References</h2>
+        <hr>
         <h3>Required / Main Text</h3>
         <ul>
           <li><em>C++ How to Program</em> (10th Edition), Deitel &amp; Deitel — ISBN-13: 978-0134448237</li>
         </ul>
-        <!-- </article> -->
+
         <hr>
 
-        <!-- <article class="card"> -->
         <h3>Optional References</h3>
         <ul>
           <li><em>Programming: Principles and Practice Using C++</em> (2nd Ed.), Bjarne Stroustrup — ISBN-13:
@@ -613,9 +640,8 @@
 
     <!-- Important Websites -->
     <section id="websites" class="section-block">
-      <h2>Important Websites</h2>
-
       <article class="card">
+        <h2>Important Websites</h2>
         <ul>
           <li><a href="https://brightspace.cuny.edu/" target="_blank" rel="noopener">Brightspace</a> — course
             announcements, submissions, grades.</li>
@@ -633,43 +659,51 @@
 
     <!-- FAQs -->
     <section id="faqs" class="section-block">
-      <h2>Quick FAQs</h2>
+      <article class="card">
+        <h2>Quick FAQs</h2>
 
-      <details>
-        <summary><span>How do I submit assignments?</span></summary>
-        <div class="details-body">
-          <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private and
-            share access for grading.</p>
-        </div>
-      </details>
+        <details>
+          <summary><span>How do I submit assignments?</span></summary>
+          <div class="details-body">
+            <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private
+              and
+              share access for grading.</p>
+          </div>
+        </details>
 
-      <details>
-        <summary><span>What happens if my code compiles but fails some tests?</span></summary>
-        <div class="details-body">
-          <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic is
-            incorrect or unexplained.</p>
-        </div>
-      </details>
+        <details>
+          <summary><span>What happens if my code compiles but fails some tests?</span></summary>
+          <div class="details-body">
+            <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic
+              is
+              incorrect or unexplained.</p>
+          </div>
+        </details>
 
-      <details>
-        <summary><span>Can I use AI tools?</span></summary>
-        <div class="details-body">
-          <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to
-            explain your code.</p>
-        </div>
-      </details>
+        <details>
+          <summary><span>Can I use AI tools?</span></summary>
+          <div class="details-body">
+            <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to
+              explain your code.</p>
+          </div>
+        </details>
+      </article>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section-block">
       <article class="card">
-        <h2>Contact &amp; Office Hours</h2>
+        <h2>Contact & Office Hours</h2>
         <p>You can reach me at <strong>ARoy [AT] jjay [DOT] cuny [DOT] edu</strong></p>
-        <p>Office: NB 6.63.29 • Office hours by appointment.</p>
+        <p><strong>Office:</strong> NB 6.63.29 • Office hours by appointment.</p>
         <p class="muted">Scheduling is flexible — email to coordinate a time.</p>
       </article>
     </section>
+    <p class="muted" style="text-align:center; margin-top:2rem;">
+      Last updated: November 2025
+    </p>
   </main>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">

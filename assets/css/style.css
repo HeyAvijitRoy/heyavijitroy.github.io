@@ -928,14 +928,6 @@ hr {
 }
 
 /* Beautiful table styling */
-/* Apply to: <table class="nice-table"> */
-
-.table-wrapper {
-  max-width: 100%;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-
 /* Base table */
 .nice-table {
   --table-header-bg: linear-gradient(135deg,
@@ -968,7 +960,7 @@ hr {
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   border-bottom: 1px solid color-mix(in oklab, #000 35%, var(--brand) 65%);
 }
 
@@ -1021,3 +1013,24 @@ html[data-theme="dark"] .nice-table {
     padding: 0.6rem 0.75rem;
   }
 }
+
+/* Week Plan */
+.weekly-nested {
+  padding-left: 0;
+  list-style: none;
+}
+
+.weekly-nested > li {
+  margin-bottom: 1rem;
+}
+
+.weekly-nested > li > ul {
+  margin-top: 0.35rem;
+  margin-left: 1rem;
+}
+
+.weekly-nested li p,
+.weekly-nested li strong {
+  margin: 0.15rem 0;
+}
+

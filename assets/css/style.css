@@ -926,3 +926,98 @@ hr {
     /* Smaller height for mobile */
   }
 }
+
+/* Beautiful table styling */
+/* Apply to: <table class="nice-table"> */
+
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* Base table */
+.nice-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 70%, var(--card) 30%),
+      color-mix(in oklab, var(--brand-700) 70%, var(--card) 30%));
+  --table-border: color-mix(in oklab, var(--border) 94%, transparent);
+  --table-stripe: color-mix(in oklab, var(--card) 94%, var(--text) 6%);
+  --table-hover: color-mix(in oklab, var(--card) 88%, var(--brand) 12%);
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  border: 1px solid var(--table-border);
+  overflow: hidden;
+}
+
+/* Header */
+.nice-table thead {
+  background: var(--table-header-bg);
+  color: #ffffff;
+}
+
+.nice-table thead tr th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  border-bottom: 1px solid color-mix(in oklab, #000 35%, var(--brand) 65%);
+}
+
+/* Body cells */
+.nice-table tbody tr td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--table-border);
+  vertical-align: middle;
+}
+
+/* Zebra striping */
+.nice-table tbody tr:nth-child(even) {
+  background-color: var(--table-stripe);
+}
+
+/* Hover effect */
+.nice-table tbody tr:hover {
+  background-color: var(--table-hover);
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Dark theme tweaks so header isn't too bright */
+html[data-theme="dark"] .nice-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 42%, var(--card) 58%),
+      color-mix(in oklab, var(--brand-700) 42%, var(--card) 58%));
+  --table-stripe: color-mix(in oklab, var(--card) 86%, var(--text) 14%);
+  --table-hover: color-mix(in oklab, var(--card) 80%, var(--brand) 20%);
+}
+
+/* First & last column tweaks (optional) */
+.nice-table tbody tr td:first-child,
+.nice-table thead tr th:first-child {
+  padding-left: 1.25rem;
+}
+
+.nice-table tbody tr td:last-child,
+.nice-table thead tr th:last-child {
+  padding-right: 1.25rem;
+}
+
+/* Compact style on very small screens */
+@media (max-width: 640px) {
+  .nice-table {
+    font-size: 0.85rem;
+  }
+
+  .nice-table thead tr th,
+  .nice-table tbody tr td {
+    padding: 0.6rem 0.75rem;
+  }
+}

@@ -11,7 +11,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Object-Oriented Programming (C++) • CSCI 272 | Avijit Roy</title>
+  <title>Object-Oriented Programming (C++) • CSCI 272 - John Jay College | Avijit Roy</title>
 
   <!-- Canonical & robots -->
   <link rel="canonical" href="https://www.avijitroy.com/teaching/courses/oop-fa25/" />
@@ -20,16 +20,16 @@
 
   <!-- Primary SEO -->
   <meta name="description"
-    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
+    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++ at John Jay College. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
   <meta name="keywords"
-    content="CSCI 272, C++, object-oriented programming, classes, inheritance, polymorphism, operator overloading, file I/O" />
+    content="CSCI 272, John Jay College, CUNY, C++, object-oriented programming, classes, inheritance, polymorphism, operator overloading, file I/O" />
   <meta name="author" content="Avijit Roy" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Object-Oriented Programming (C++) • CSCI 272" />
+  <meta property="og:title" content="Object-Oriented Programming (C++) • CSCI 272 - John Jay College" />
   <meta property="og:description"
-    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
+    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++ at John Jay College. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
   <meta property="og:url" content="https://www.avijitroy.com/teaching/courses/oop-fa25/" />
   <meta property="og:image" content="https://www.avijitroy.com/assets/img/og-image.jpg" />
   <meta property="og:site_name" content="Avijit Roy" />
@@ -38,9 +38,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
-  <meta name="twitter:title" content="Object-Oriented Programming (C++) • CSCI 272" />
+  <meta name="twitter:title" content="Object-Oriented Programming (C++) • CSCI 272 - John Jay College" />
   <meta name="twitter:description"
-    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
+    content="Explore the course portal for CSCI 272: Object-Oriented Programming in C++ at John Jay College. Access the weekly plan, syllabus, and resources for mastering classes, inheritance, and file I/O." />
   <meta name="twitter:image" content="https://www.avijitroy.com/assets/img/og-image.jpg" />
 
   <!-- Favicons -->
@@ -92,7 +92,7 @@
 
   <!-- MAIN -->
   <main class="container section">
-    <h1 class="page-title">Object-Oriented Programming (C++) • CSCI 272</h1>
+    <h1 class="page-title">Object-Oriented Programming (C++) • CSCI 272 | Fall 2025</h1>
     <p class="muted">Course portal for students: weekly plan, assessments, expectations, tools, and quick links.</p>
 
     <!-- Overview -->
@@ -138,11 +138,18 @@
       <article class="card">
         <h2>Learning Outcomes</h2>
         <ul>
-          <li>Design and implement classes with clean interfaces.</li>
-          <li>Use vectors, strings, templates, and exceptions appropriately.</li>
-          <li>Work confidently with streams, stringstreams, and file I/O.</li>
-          <li>Apply inheritance and polymorphism to real problems.</li>
-          <li>Explain and defend design decisions and code behavior.</li>
+          <li>Work confidently with <strong>functions, arrays, pointers, and vectors</strong> — including declaration, initialization, indexing, and memory-focused reasoning.</li>
+          <li>Use <strong>function templates</strong> and generic techniques to write code that adapts to multiple data types.</li>
+          <li>Create and manipulate <strong>strings</strong> (build, compare, concatenate, measure length, and convert between strings and other types).</li>
+          <li>Design, implement, and use <strong>classes and objects</strong> with proper public/private access, member functions, data members, constructors, and destructors.</li>
+          <li>Separate <strong>class interface and implementation</strong> across header and source files, and apply composition, the dot/arrow operators, the <code>this</code> pointer, <em>friend</em> functions, and <em>static</em> members where appropriate.</li>
+          <li>Use <strong>streams</strong> for formatted and unformatted input/output, recover from bad input states, and employ <strong>stringstreams</strong> for parsing and building text.</li>
+          <li>Read from and write to <strong>sequential text files and CSV files</strong> using robust, error-aware file I/O patterns.</li>
+          <li>Overload <strong>unary and binary operators</strong> for custom class behavior, including cases that involve dynamic memory management.</li>
+          <li>Implement <strong>inheritance</strong> with base and derived classes, including use of the <code>protected</code> access specifier.</li>
+          <li>Apply <strong>polymorphism</strong> using virtual functions, pure virtual functions, and abstract classes to enable runtime method selection.</li>
+          <li>Compare and reason about <strong>linear vs. binary search</strong> and different <strong>sorting algorithms</strong> for efficient data retrieval and ordering.</li>
+          <li>Handle errors using <strong>exception handling</strong> (try/catch/throw), and design <strong>custom exception types</strong> for specific error scenarios.</li>
         </ul>
       </article>
     </section>
@@ -150,67 +157,116 @@
     <!-- Weekly Plan -->
     <section id="weekly-plan" class="section-block">
       <h2>Weekly Plan (Snapshot)</h2>
-      <p class="muted">A condensed roadmap. Exact pacing may adjust slightly — check in class for updates.</p>
-
-      <div class="timeline">
-        <article class="card">
-          <h3>Weeks 1–3 • Foundations</h3>
-          <ul>
-            <li>Review: functions, arrays, pointers → add vectors & templates.</li>
-            <li>Strings: build, compare, concatenate, convert; practical parsing tasks.</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Weeks 4–6 • Classes & Streams</h3>
-          <ul>
-            <li>Intro to classes: public/private, member functions, header/implementation split.</li>
-            <li>Streams & recovery from bad input; stringstreams for parsing/building text.</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Week 7 • Midterm</h3>
-          <ul>
-            <li>Written exam + individual/group OOP project (Weeks 1–6 scope).</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Weeks 8–10 • Files & Operator Overloading</h3>
-          <ul>
-            <li>Text/CSV file I/O; modular design with headers/implementations.</li>
-            <li>Overload operators (unary/binary) with correct semantics.</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Weeks 11–12 • Inheritance & Polymorphism</h3>
-          <ul>
-            <li>Base/derived classes; protected; virtual functions & abstract classes.</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Weeks 13–14 • Templates & Exceptions</h3>
-          <ul>
-            <li>Class templates for reusable designs; try/catch/throw and custom exceptions.</li>
-          </ul>
-          <!-- </article> -->
-          <hr>
-
-          <!-- <article class="card"> -->
-          <h3>Week 15 • Final</h3>
-          <ul>
-            <li>Written exam + Team capstone: plan, implement, present a complete OOP C++ application.</li>
-          </ul>
-        </article>
-      </div>
+      <article class="card">
+        <p class="muted">
+          This is the detailed, week-by-week plan from the official syllabus. Minor adjustments may occur; any changes will
+          be announced in class and on Brightspace.
+        </p>
+        <div class="table-wrapper">
+          <table class="nice-table">
+            <thead>
+              <tr>
+                <th>Lecture</th>
+                <th>Topics</th>
+                <th>Chapters / Sections</th>
+                <th>Assignments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Review &mdash; Functions, Arrays, Pointers</td>
+                <td>6.4, 6.5, 6.10, 6.11, 6.13–6.16; 7.1–7.2; 8.1–8.9</td>
+                <td>Assignment 1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Function Templates, Vectors (as an alternative to arrays; declare, initialize, access, get size, add values)</td>
+                <td>6.6, 6.17, 7.10</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Strings (create, compare, concatenate, length, modify, convert between types)</td>
+                <td>21.1–21.10, 21.13</td>
+                <td>Assignment 2</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Introduction to Classes (definitions, instantiation, public/private, member functions, data members)</td>
+                <td>3.1–3.7</td>
+                <td>Quiz 1</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Streams &mdash; Input/Output (formatted/unformatted, recovering from bad input and failed states)</td>
+                <td>13.1–13.8</td>
+                <td>Assignment 3</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Streams &mdash; Stringstreams (input and output manipulation)</td>
+                <td>21.12</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Midterm Exam &mdash; Written exam on theories + take-home project (Lectures 1–6 scope)</td>
+                <td>Lectures 1–6</td>
+                <td>Midterm Exam &amp; Project</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Streams &mdash; Files (sequential text and CSV files)</td>
+                <td>14.1–14.4</td>
+                <td>Assignment 4</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>More on Classes (interface/implementation split, constructors, destructors, composition, dot/arrow, this, friend, static)</td>
+                <td>9.1–9.15</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Operator Overloading (unary and binary operators, dynamically allocated memory)</td>
+                <td>10.1–10.11</td>
+                <td>Assignment 5</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Inheritance (base/derived classes, protected access)</td>
+                <td>11.1–11.6</td>
+                <td>Quiz 2</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Polymorphism (virtual functions, pure virtual functions, abstract classes)</td>
+                <td>12.1–12.7</td>
+                <td>Assignment 6</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Class Templates &mdash; Reusable Generic Classes</td>
+                <td>20.1–20.3</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Exception Handling (try/catch/throw, custom exceptions)</td>
+                <td>17.1–17.5</td>
+                <td>Assignment 7</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Final Exam &mdash; Written exam + team-based capstone project (submission &amp; presentation)</td>
+                <td>Comprehensive</td>
+                <td>Capstone Project</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
     </section>
 
     <!-- Assessments -->
@@ -233,7 +289,10 @@
         <h3>Assignments</h3>
         <p class="muted">Frequent, focused practice. Expect clean headers, comments, and testable examples. Submit on
           time.</p>
-        <!-- </article> -->
+        <ul>
+          <li>4–5 individual assignments (see syllabus) covering key topics.</li>
+          <li>2 Group assignments</li>
+        </ul>
         <hr>
 
         <!-- <article class="card"> -->
@@ -251,7 +310,56 @@
           <li>Written exam on concepts & code analysis.</li>
           <li>Plan (UML encouraged), implement, and present a complete OOP app.</li>
           <li>Clear division of work; everyone explains their code.</li>
-        </ul>
+        </ul>    
+        <hr>
+    <!-- Grading Breakdown -->
+      <h3>Grading Breakdown</h3>
+        <p class="muted">Letter grades follow standard <a href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/grades" target="_blank">CUNY grading scale</a>.</p>
+        <table class="nice-table">
+          <thead>
+            <tr>
+              <th>Assessment</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Discussion & Class Participation</td>
+              <td>15%</td>
+            </tr>
+            <tr>
+              <td>Quizzes (2 Announced, 2 Pop Quizzes)</td>
+              <td>15%</td>
+            </tr>
+            <tr>
+              <td>Assignments</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>Mid Term (Written Exam + Project)</td>
+              <td>25%</td>
+            </tr>
+            <tr>
+              <td>Final (Written Exam + Capstone)</td>
+              <td>25%</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="muted" style="margin-top:0.75rem;">
+          Grading of assignments and exams can be reviewed in person to confirm that the submitted work is your own
+          and to clarify any questions about how your solutions work.
+        </p>
+
+        <hr>
+
+        <h3>Programming Projects</h3>
+        <p>
+          Throughout the semester you will complete a series of programming projects that apply the course concepts:
+          object-oriented design, class and object implementation, inheritance, polymorphism, operator overloading,
+          exception handling, and file I/O. These projects are designed to mirror real-world problem solving and to
+          strengthen your ability to design and build complete C++ applications.
+        </p>
+
       </article>
     </section>
 
@@ -262,44 +370,75 @@
       <article class="card">
         <h3>Student Responsibilities</h3>
         <ul>
-          <li>Arrive on time; participate in discussions and code walk-throughs.</li>
-          <li>Bring code that compiles and runs; be ready to explain your design choices.</li>
+          <li>Attend class lectures regularly and arrive on time.</li>
+          <li>Take quizzes, exams, and in-class activities at the scheduled times.</li>
+          <li>Complete assigned readings, exercises, and programming projects on time.</li>
+          <li>Bring code that compiles and runs, and be ready to explain your design choices.</li>
           <li>Back up your work and verify submissions (build, run, and test locally).</li>
         </ul>
-        <!-- </article> -->
+
         <hr>
-        <!-- <article class="card"> -->
+        
+        <h3>Attendance</h3>
+        <p>
+          Regular attendance is crucial. More than 4 unexcused absences may lower your final grade by <strong>two</strong> letter
+          grade.
+        </p>
+        <ul>
+          <li>Notify in advance for planned absences.</li>
+          <li>Document emergencies as soon as possible.</li>
+          <li>Missed quizzes/participation cannot be made up without valid medical emergencies.</li>
+          <li>If you are late 20 minutes, you will be counted as absent.</li>
+        </ul>
+        
+        <hr>
+        
         <h3>Academic Integrity</h3>
-        <p>All submitted work must be your own. Sharing solutions, copying code without attribution, or submitting
-          generated work as your own violates course and college policy and may result in a zero and further action.</p>
+        <p>
+          All submitted work must be your own. Sharing solutions, copying code without attribution, or submitting
+          generated work as your own violates course and college policy and may result in a zero and further action.
+        </p>
         <ul>
           <li>Credit any external help (peers, forums, snippets) in your README.</li>
           <li>Be prepared to orally explain any code you submit.</li>
         </ul>
         <p class="muted">Please review the college's <a
             href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/academic-integrity/"
-            target="_blank" rel="noopener">policies</a> on Plagiarism and Cheating</p>
-        <!-- </article> -->
+            target="_blank" rel="noopener">policies</a> on Plagiarism and Cheating
+        </p>
+        
         <hr>
-        <!-- <article class="card"> -->
-        <h3>Accessibility Services</h3>
-        <p>If you have a documented accommodation, please contact the instructor early so we can implement approved
-          adjustments promptly.</p>
-        <p class="muted">Students seeking accommodations should coordinate through the John Jay <a
-            href="https://jjay.smartcatalogiq.com/en/2024-2025/undergraduate-bulletin/copy-of-student-affairs/accessibility-services/"
-            target="_blank" rel="noopener">Office of Accessibility Services (OAS)</a>.</p>
-        <!-- </article> -->
-        <hr>
-        <!-- <article class="card"> -->
+        
         <h3>Use of AI Tools (ChatGPT, Copilot, etc.)</h3>
         <ul>
-          <li>Use AI to learn and explore ideas — not to replace your work.</li>
-          <li><strong>Disclose</strong> any AI assistance in your README or submitted codes (what you asked, what you
-            used, what you learned).</li>
-          <li>You must fully understand and be able to defend any code you submit.</li>
-          <li>Uncredited or misrepresented AI-generated work may receive a zero.</li>
+          <li>Use AI tools to learn and explore ideas &mdash; not as a substitute for your own work.</li>
+          <li><strong>Cite all use:</strong> if AI helps you solve a problem or write code, clearly note which tool you used and what you asked.</li>
+          <li><strong>No copy-paste code without citation:</strong> submitting AI-generated code as your own work is considered plagiarism.</li>
+          <li>You must be able to explain your code in person if asked. Inability to do so may result in loss of credit.</li>
+          <li>AI is here to support your learning, not replace it.</li>
         </ul>
-        <!-- </article> -->
+        <p class="muted">
+          Example citation: <em>“Used ChatGPT on March 12, 2025, to understand operator overloading syntax. Prompt:
+          ‘How to overload + operator in C++?’”</em>
+        </p>
+
+        <hr>
+        
+        <h3>Accessibility Services</h3>
+        <p>
+          If you are a student with a disability (temporary or permanent), please reach out to the Office of Accessibility
+          Services (OAS) at <a href="mailto:accessibilityservices@jjay.cuny.edu">accessibilityservices@jjay.cuny.edu</a>.
+          OAS works in partnership with the entire John Jay community to ensure access to all areas of campus life and
+          to arrange appropriate academic adjustments, programs, and services.
+        </p>
+        <p class="muted">
+          Students seeking accommodations should coordinate through the John Jay
+          <a href="https://jjay.smartcatalogiq.com/en/2024-2025/undergraduate-bulletin/copy-of-student-affairs/accessibility-services/"
+             target="_blank" rel="noopener">Office of Accessibility Services (OAS)</a> and contact the instructor early
+          in the semester so approved adjustments can be implemented promptly.
+        </p>
+      
+      </article>
     </section>
 
     <!-- Tools -->
@@ -309,25 +448,56 @@
       <article class="card">
         <h3>Primary IDE</h3>
         <ul>
-          <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener">Dev-C++
-              (Windows)</a> — use the latest stable build.</li>
-          <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a> — optional
-            editor (set up a C++ toolchain).</li>
+          <li>
+            <a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener">
+              Embarcadero Dev-C++ (Windows)
+            </a>
+            — this is the primary IDE used in class. All demos, screenshots, and walkthroughs will use Dev-C++.
+          </li>
+
+          <li>
+            <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">
+              Visual Studio Code
+            </a>
+            — optional editor (requires a working C++ toolchain).  
+            <ul style="margin-top: 0.35rem;">
+              <li><a href="#" target="_blank" rel="noopener">How to enable C++ in VS Code on Windows</a> (coming soon)</li>
+              <li><a href="../cpp-vscode-mac.md" target="_blank" rel="noopener">How to enable C++ in VS Code on macOS</a> (coming soon)</li>
+            </ul>
+          </li>
         </ul>
-        <p class="muted">If you already have a different C++ toolchain configured, you may continue using it — but
-          demos/screenshots in class assume Dev-C++ on Windows.</p>
-        <!-- </article> -->
+
+        <p class="muted">
+          You may use a different C++ toolchain if you already have one configured, but make sure you can compile, run, and
+          debug your programs reliably. Dev-C++ is the recommended and supported setup for this course.
+        </p>
+
+        <p class="muted" style="margin-top: 0.75rem;">
+          <strong>Note for students using online compilers:</strong> You may face issues when we begin working with
+          <strong>files, file streams, input/output redirection, and stringstreams</strong>.  
+          Online C++ compilers often block or sandbox file I/O, which will cause some assignments to fail.  
+          A local IDE (Dev-C++ or VS Code with C++ enabled) is strongly recommended.
+        </p>
+
         <hr>
 
-        <!-- <article class="card"> -->
         <h3>Quick References</h3>
         <ul>
-          <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">cppreference.com</a>
-            (language/library lookups)</li>
-          <li><a href="https://isocpp.org/faq" target="_blank" rel="noopener">ISO C++ FAQ</a></li>
+          <li>
+            <a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">
+              cppreference.com
+            </a>
+            (language/library lookups)
+          </li>
+          <li>
+            <a href="https://isocpp.org/faq" target="_blank" rel="noopener">
+              ISO C++ FAQ
+            </a>
+          </li>
         </ul>
       </article>
     </section>
+
 
     <!-- GitHub -->
     <section id="github" class="section-block">

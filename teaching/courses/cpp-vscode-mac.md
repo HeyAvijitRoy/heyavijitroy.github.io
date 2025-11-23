@@ -1,3 +1,8 @@
+---
+layout: default
+title: Enable C++ in VS Code on macOS
+---
+
 # Enable C++ compiling in VS Code on macOS
 
 This guide walks you through a clean, step-by-step setup to compile and debug C++ in Visual Studio Code on macOS using Clang and LLDB.

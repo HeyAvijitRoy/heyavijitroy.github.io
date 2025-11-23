@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Enable C++ Development in VS Code on macOS (Clang + LLDB)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Step-by-step guide to compile and debug C++ in Visual Studio Code on macOS using Clang, LLDB, and VS Code tasks and launch configurations." />
+  <meta name="author" content="Avijit Roy" />
+
+  <!-- Canonical URL  -->
+  <link rel="canonical" href="https://www.avijitroy.com/docs/cpp-vscode-mac.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Enable C++ Development in VS Code on macOS (Clang + LLDB)" />
+  <meta property="og:description"
+    content="A clean, step-by-step setup guide for enabling C++ development and debugging in Visual Studio Code on macOS using Clang and LLDB." />
+  <meta property="og:url" content="https://www.avijitroy.com/docs/cpp-vscode-mac.html" />
+  <meta property="og:site_name" content="Avijit Roy" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Enable C++ Development in VS Code on macOS (Clang + LLDB)" />
+  <meta name="twitter:description"
+    content="Step-by-step instructions to configure C++ compiling and debugging in VS Code on macOS using Clang and LLDB." />
+
+  <!-- JSON-LD: TechArticle schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Enable C++ Development in VS Code on macOS (Clang + LLDB)",
+    "description": "A detailed guide to setting up C++ compilation and debugging in Visual Studio Code on macOS using Clang, LLDB, and VS Code configuration files.",
+    "author": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://www.avijitroy.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://www.avijitroy.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.avijitroy.com/docs/cpp-vscode-mac.html"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background-color: #0b0c10;
+      color: #e6edf3;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.3;
+      color: #f0f3ff;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0.4rem 0 0.8rem;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.4rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    li+li {
+      margin-top: 0.25rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+      background: rgba(148, 163, 184, 0.18);
+      padding: 0.15em 0.35em;
+      border-radius: 0.25rem;
+    }
+
+    pre {
+      background: #020617;
+      border-radius: 0.5rem;
+      padding: 0.9rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      margin: 0.7rem 0 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+      margin: 1.5rem 0;
+    }
+
+    .muted {
+      color: #9ca3af;
+    }
+
+    .badge-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.4rem 0 1rem;
+    }
+
+    .badge {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.9);
+      white-space: nowrap;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .author-block {
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    @media (min-width: 900px) {
+      main {
+        padding: 3rem 0 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Enable C++ Development in VS Code on macOS (Clang + LLDB)</h1>
+      <p class="muted">
+        This guide walks you through a clean, step-by-step setup to compile and debug C++ in Visual Studio Code on macOS
+        using Clang and LLDB.
+      </p>
+      <p><strong>This guide works on:</strong></p>
+      <ul>
+        <li>macOS Ventura</li>
+        <li>macOS Sonoma</li>
+        <li>macOS Monterey</li>
+        <li>Apple Silicon (M1/M2/M3)</li>
+        <li>Intel Macs</li>
+      </ul>
+      <p class="muted">
+        Note: Visual Studio Code does <strong>not</strong> include a compiler. Clang is provided via the Xcode Command
+        Line Tools.
+      </p>
+      <hr>
+    </header>
+
+    <section>
+      <h2>Prerequisites</h2>
+      <ul>
+        <li><strong>VS Code installed:</strong> Download from the official site and install the app.</li>
+        <li><strong>Basic terminal access:</strong> You’ll use the macOS Terminal for a few commands.</li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 1: Install the C/C++ extension</h2>
+      <ol>
+        <li><strong>Open VS Code.</strong></li>
+        <li><strong>Go to Extensions:</strong> Press <code>Shift+Cmd+X</code>.</li>
+        <li><strong>Search and install:</strong> Find <em>C/C++</em> by Microsoft and click <em>Install</em>.</li>
+        <li><strong>Restart VS Code:</strong> Optional but helps the extension initialize cleanly.</li>
+      </ol>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 2: Install the C++ compiler and tools (Clang/LLVM via Xcode CLT)</h2>
+      <ol>
+        <li><strong>Open Terminal</strong> (Applications → Utilities → Terminal).</li>
+        <li><strong>Install Xcode Command Line Tools:</strong></li>
+      </ol>
+      <pre><code class="language-bash">xcode-select --install</code></pre>
+      <ol start="3">
+        <li><strong>Accept prompts</strong> and wait for installation to finish.</li>
+        <li><strong>Verify Clang is available:</strong></li>
+      </ol>
+      <pre><code class="language-bash">clang++ --version</code></pre>
+      <p>You should see a version output including <code>Apple clang version</code>.</p>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 3: Create a test C++ project</h2>
+      <ol>
+        <li><strong>Create a project folder:</strong></li>
+      </ol>
+      <pre><code class="language-bash">mkdir ~/cpp-hello &amp;&amp; cd ~/cpp-hello</code></pre>
+
+      <h3>⚠️ If the <code>code</code> command is not found</h3>
+      <p>Some macOS systems don’t have the VS Code command-line launcher enabled by default.</p>
+      <p>Enable it in two quick steps:</p>
+      <ol>
+        <li>Open VS Code.</li>
+        <li>Press <code>Cmd+Shift+P</code> → type <em>shell command</em> → select
+          <strong>Shell Command: Install ‘code’ command in PATH</strong>.
+        </li>
+      </ol>
+      <p>After that, the command below will work.</p>
+
+      <ol start="2">
+        <li><strong>Open the folder in VS Code:</strong></li>
+      </ol>
+      <pre><code class="language-bash">code .</code></pre>
+
+      <ol start="3">
+        <li><strong>Create a source file:</strong> In VS Code, add a new file named <code>main.cpp</code>.</li>
+        <li><strong>Add sample code:</strong></li>
+      </ol>
+      <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, C++ from macOS!" &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 4: Configure build tasks (<code>tasks.json</code>)</h2>
+      <ol>
+        <li><strong>Create a .vscode folder:</strong> In your project, create <code>.vscode/</code>.</li>
+        <li><strong>Add <code>tasks.json</code>:</strong> Create <code>.vscode/tasks.json</code> with:</li>
+      </ol>
+      <pre><code class="language-json">{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C++: Build with clang++",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "main.cpp",
+        "-o",
+        "build/main"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}</code></pre>
+      <ol start="3">
+        <li><strong>Create build directory:</strong> Optional but clean.</li>
+      </ol>
+      <pre><code class="language-bash">mkdir -p build</code></pre>
+
+      <p><strong>Notes:</strong></p>
+      <ul>
+        <li><code>-std=c++17</code>: Adjust to your preferred standard (<code>c++20</code>, etc.).</li>
+        <li><code>-g</code>: Includes debug symbols for LLDB.</li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 5: Configure debugging (<code>launch.json</code>)</h2>
+      <ol>
+        <li><strong>Add <code>launch.json</code>:</strong> Create <code>.vscode/launch.json</code> with:</li>
+      </ol>
+      <pre><code class="language-json">{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++: Debug build/main (LLDB)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "C++: Build with clang++",
+      "stopOnEntry": false,
+      "environment": [],
+      "console": "integratedTerminal"
+    }
+  ]
+}</code></pre>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 6: Configure IntelliSense (optional but recommended)</h2>
+      <ol>
+        <li><strong>Add <code>c_cpp_properties.json</code>:</strong> Create <code>.vscode/c_cpp_properties.json</code>:
+        </li>
+      </ol>
+      <pre><code class="language-json">{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "macOS",
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-clang-arm64"
+    }
+  ]
+}</code></pre>
+      <ol start="2">
+        <li><strong>Apple Silicon vs. Intel:</strong></li>
+      </ol>
+      <ul>
+        <li>Apple Silicon: <code>macos-clang-arm64</code></li>
+        <li>Intel: <code>macos-clang-x64</code></li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 7: Build and run</h2>
+      <ol>
+        <li><strong>Build:</strong> Press <code>Cmd+Shift+B</code> (or Terminal → Run Build Task). You should see
+          <code>build/main</code> created.
+        </li>
+        <li><strong>Run in terminal:</strong></li>
+      </ol>
+      <pre><code class="language-bash">./build/main</code></pre>
+      <p>Output should be:</p>
+      <pre><code>Hello, C++ from macOS!</code></pre>
+      <ol start="3">
+        <li><strong>Debug in VS Code:</strong></li>
+      </ol>
+      <ul>
+        <li>Go to Run and Debug (<code>Cmd+Shift+D</code>).</li>
+        <li>Select <em>C++: Debug build/main (LLDB)</em>.</li>
+        <li>Click Start. Set breakpoints in <code>main.cpp</code> and step through.</li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 8: Add multiple files (optional)</h2>
+      <p>If you add more <code>.cpp</code> files, either list them in <code>args</code> or use a wildcard with a simple
+        build script:</p>
+      <p><strong>Update <code>tasks.json</code> args:</strong></p>
+      <pre><code class="language-json">"args": ["-std=c++17", "-g", "*.cpp", "-o", "build/main"]</code></pre>
+      <p>For larger projects, consider a <strong>Makefile</strong> or <strong>CMake</strong>.</p>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 9: Common issues and fixes</h2>
+      <ul>
+        <li><strong>Clang not found:</strong>
+          <ul>
+            <li>Run the installer again:</li>
+          </ul>
+          <pre><code class="language-bash">xcode-select --install</code></pre>
+          <ul>
+            <li>Check path:</li>
+          </ul>
+          <pre><code class="language-bash">which clang++</code></pre>
+        </li>
+        <li><strong>Permission denied running <code>build/main</code>:</strong>
+          <ul>
+            <li>Ensure executable bit is set (usually automatic). If not:</li>
+          </ul>
+          <pre><code class="language-bash">chmod +x build/main</code></pre>
+        </li>
+        <li><strong>IntelliSense errors not matching compiler:</strong>
+          <ul>
+            <li>Ensure <code>compilerPath</code> points to <code>/usr/bin/clang++</code>.</li>
+            <li>Align <code>cppStandard</code> with your flags (<code>c++17</code>, <code>c++20</code>).</li>
+          </ul>
+        </li>
+        <li><strong>Debugging doesn’t start or skips breakpoints:</strong>
+          <ul>
+            <li>Confirm <code>-g</code> is in build flags.</li>
+            <li>Make sure <code>program</code> path in <code>launch.json</code> matches the output binary.</li>
+          </ul>
+        </li>
+        <li><strong>Apple Silicon architecture mismatches:</strong>
+          <ul>
+            <li>Keep <code>intelliSenseMode</code> as <code>macos-clang-arm64</code>.</li>
+            <li>Avoid mixing Homebrew Intel toolchains with Apple Silicon builds.</li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Step 10: Optional enhancements</h2>
+      <ul>
+        <li><strong>Format code automatically:</strong> Install “Clang-Format” and set
+          <code>"C_Cpp.clang_format_style": "file"</code> with a <code>.clang-format</code> file.
+        </li>
+        <li><strong>Use CMake Tools:</strong> For larger projects, install “CMake Tools” and initialize a CMake project
+          for robust multi-file builds.</li>
+        <li><strong>Unit testing:</strong> Add frameworks like Catch2 or GoogleTest and include them in your build.</li>
+      </ul>
+      <hr>
+    </section>
+
+    <section>
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Build:</strong> <code>Cmd+Shift+B</code></li>
+        <li><strong>Run debug:</strong> <code>Cmd+Shift+D</code> → Start</li>
+        <li><strong>Compiler:</strong> <code>/usr/bin/clang++</code></li>
+        <li><strong>Debugger:</strong> LLDB (built into macOS)</li>
+      </ul>
+    </section>
+
+    <footer class="author-block">
+      <p><strong>Author:</strong> Avijit Roy<br>
+        <strong>Institution:</strong> John Jay College of Criminal Justice (CUNY)<br>
+        <strong>Website:</strong> <a href="https://www.avijitroy.com" target="_blank"
+          rel="noopener">https://www.avijitroy.com</a><br>
+        <strong>GitHub:</strong> <a href="https://github.com/HeyAvijitRoy" target="_blank"
+          rel="noopener">https://github.com/HeyAvijitRoy</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank"
+          rel="noopener">https://www.linkedin.com/in/HeyAvijitRoy/</a>
+      </p>
+    </footer>
+  </main>
+</body>
+
+</html>

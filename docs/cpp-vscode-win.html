@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Enable C++ Development in VS Code on Windows (MinGW-w64 + GCC + GDB)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Step-by-step guide to compile and debug C++ in Visual Studio Code on Windows using MinGW-w64, GCC, GDB, and VS Code configuration files." />
+    <meta name="author" content="Avijit Roy" />
+
+    <!-- Canonical URL (update after upload) -->
+    <link rel="canonical" href="https://www.avijitroy.com/docs/cpp-vscode-win.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Enable C++ Development in VS Code on Windows (MinGW-w64 + GCC + GDB)" />
+    <meta property="og:description"
+        content="A complete setup guide for enabling C++ compilation and debugging in VS Code on Windows using MinGW-w64." />
+    <meta property="og:url" content="https://www.avijitroy.com/docs/cpp-vscode-win.html" />
+    <meta property="og:site_name" content="Avijit Roy" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Enable C++ Development in VS Code on Windows (GCC + GDB)" />
+    <meta name="twitter:description"
+        content="Step-by-step instructions to configure C++ compiling and debugging in VS Code on Windows using MinGW-w64." />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Enable C++ Development in VS Code on Windows (MinGW-w64 + GCC + GDB)",
+    "description": "A detailed guide to setting up C++ compilation and debugging in Visual Studio Code on Windows using MinGW-w64, GCC, and GDB.",
+    "author": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://www.avijitroy.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://www.avijitroy.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.avijitroy.com/docs/cpp-vscode-win.html"
+    }
+  }
+  </script>
+
+    <!-- Minimal Styling -->
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            background: #0b0c10;
+            color: #e6edf3;
+            line-height: 1.65;
+        }
+
+        main {
+            max-width: 860px;
+            margin: auto;
+            padding: 2rem 1.25rem 4rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #f0f3ff;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            margin-bottom: .35rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            margin-top: 1.3rem;
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin: .5rem 0 .9rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.4rem;
+            margin: .2rem 0 1rem;
+        }
+
+        code {
+            background: rgba(148, 163, 184, .25);
+            padding: .2em .45em;
+            border-radius: 6px;
+            font-size: .92em;
+        }
+
+        pre {
+            background: #020617;
+            border: 1px solid rgba(148, 163, 184, .4);
+            padding: .9rem 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: .7rem 0 1.1rem;
+            font-size: .9rem;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(148, 163, 184, .4);
+            margin: 1.6rem 0;
+        }
+
+        .badge-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .45rem;
+        }
+
+        .badge {
+            padding: .18rem .55rem;
+            border: 1px solid rgba(148, 163, 184, .4);
+            border-radius: 999px;
+            font-size: .8rem;
+            background: rgba(15, 23, 42, .8);
+        }
+
+        .author-block {
+            margin-top: 2rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(148, 163, 184, .4);
+            font-size: .95rem;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Enable C++ Development in VS Code on Windows (MinGW-w64 + GCC + GDB)</h1>
+            <p class="muted">
+                Step-by-step guide to configure C++ compiling and debugging in Visual Studio Code on Windows using
+                MinGW-w64.
+            </p>
+            <hr>
+        </header>
+
+        <section>
+            <h2>Prerequisites</h2>
+            <ul>
+                <li>Windows 10/11 system</li>
+                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+                <li><a href="https://www.mingw-w64.org/">MinGW-w64 (GCC + GDB)</a>, via MSYS2 or standalone</li>
+            </ul>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 1: Install the C/C++ extension</h2>
+            <ol>
+                <li>Open VS Code.</li>
+                <li>Press <code>Ctrl+Shift+X</code> to open Extensions.</li>
+                <li>Search for <strong>C/C++</strong> by Microsoft.</li>
+                <li>Click <strong>Install</strong>.</li>
+                <li>Restart VS Code.</li>
+            </ol>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 2: Install MinGW-w64 (compiler + debugger)</h2>
+
+            <h3>Option A (recommended): Install via MSYS2</h3>
+            <ol>
+                <li>Download MSYS2 from <a href="https://www.msys2.org/">msys2.org</a>.</li>
+                <li>Open MSYS2 terminal and update packages:</li>
+            </ol>
+            <pre><code>pacman -Syu</code></pre>
+
+            <ol start="3">
+                <li>Install GCC and GDB:</li>
+            </ol>
+            <pre><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb</code></pre>
+
+            <ol start="4">
+                <li>Add <code>C:\msys64\mingw64\bin</code> to your system PATH.</li>
+            </ol>
+
+            <h3>Option B: Standalone MinGW-w64</h3>
+            <ul>
+                <li>Download from <a href="https://www.mingw-w64.org/">mingw-w64.org</a>.</li>
+                <li>Install, then add the <code>bin</code> folder to PATH.</li>
+            </ul>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 3: Verify installation</h2>
+            <p>Open <strong>PowerShell</strong> or <strong>Command Prompt</strong>:</p>
+
+            <pre><code>g++ --version
+gdb --version</code></pre>
+
+            <p>You should see GCC/GDB version info.</p>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 4: Create a test project</h2>
+            <ol>
+                <li>Create a folder:</li>
+            </ol>
+            <pre><code>mkdir C:\cpp-hello
+cd C:\cpp-hello</code></pre>
+
+            <ol start="2">
+                <li>Open in VS Code:</li>
+            </ol>
+            <pre><code>code .</code></pre>
+
+            <ol start="3">
+                <li>Create <code>main.cpp</code>:</li>
+            </ol>
+
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, C++ from Windows with MinGW!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 5: Configure build tasks (<code>tasks.json</code>)</h2>
+            <p>Create <code>.vscode/tasks.json</code>:</p>
+
+            <pre><code>{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C++: Build with g++",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "main.cpp",
+        "-o",
+        "build\\main.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}</code></pre>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 6: Configure debugging (<code>launch.json</code>)</h2>
+            <p>Create <code>.vscode/launch.json</code>:</p>
+
+            <pre><code>{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++: Debug build/main.exe (GDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\main.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "C++: Build with g++",
+      "stopAtEntry": false,
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
+    }
+  ]
+}</code></pre>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 7: Configure IntelliSense (<code>c_cpp_properties.json</code>)</h2>
+            <p>Create <code>.vscode/c_cpp_properties.json</code>:</p>
+
+            <pre><code>{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ]
+}</code></pre>
+
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 8: Build and run</h2>
+            <ol>
+                <li><strong>Build:</strong> Press <code>Ctrl+Shift+B</code>. → Output: <code>build\main.exe</code></li>
+                <li><strong>Run:</strong></li>
+            </ol>
+
+            <pre><code>.\build\main.exe</code></pre>
+
+            <p>Output:</p>
+            <pre><code>Hello, C++ from Windows with MinGW!</code></pre>
+
+            <ol start="3">
+                <li><strong>Debug:</strong></li>
+            </ol>
+            <ul>
+                <li>Go to Run and Debug (<code>Ctrl+Shift+D</code>)</li>
+                <li>Select <em>C++: Debug build/main.exe (GDB)</em></li>
+                <li>Start debugging, set breakpoints, step through code</li>
+            </ul>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Step 9: Common issues</h2>
+            <ul>
+                <li><strong><code>g++</code> not found:</strong> Ensure MinGW-w64 <code>bin</code> folder is in PATH.
+                </li>
+                <li><strong>Debugger errors:</strong> Confirm <code>miDebuggerPath</code> points to
+                    <code>gdb.exe</code>.</li>
+                <li><strong>IntelliSense mismatch:</strong> Update <code>compilerPath</code>.</li>
+                <li><strong>Spaces in PATH:</strong> Wrap paths in quotes inside tasks.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Quick reference</h2>
+            <ul>
+                <li><strong>Build:</strong> <code>Ctrl+Shift+B</code></li>
+                <li><strong>Debug:</strong> <code>Ctrl+Shift+D</code> → Start</li>
+                <li><strong>Compiler:</strong> MinGW-w64 <code>g++</code></li>
+                <li><strong>Debugger:</strong> <code>gdb</code></li>
+            </ul>
+        </section>
+
+        <footer class="author-block">
+            <p><strong>Author:</strong> Avijit Roy<br>
+                <strong>Institution:</strong> John Jay College of Criminal Justice (CUNY)<br>
+                <strong>Website:</strong> <a href="https://www.avijitroy.com">avijitroy.com</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/HeyAvijitRoy">github.com/HeyAvijitRoy</a><br>
+                <strong>LinkedIn:</strong> <a
+                    href="https://www.linkedin.com/in/HeyAvijitRoy/">linkedin.com/in/HeyAvijitRoy</a>
+            </p>
+        </footer>
+
+    </main>
+</body>
+
+</html>

@@ -241,8 +241,9 @@
                 title: "Software Development / DevOps",
                 description: "These tools are essential for coding, debugging, version control automation, and container management.",
                 tools: [
+                    { name: "Google Antigravity", benefit: "Free access (Public Preview) to the <strong>Agent-First AI IDE</strong> built on Gemini 3 Pro for autonomous coding, testing, and debugging.", verification: "Free download for individuals (Mac/Win/Linux).", link: "https://antigravity.google/", cost: "Free" },
                     { name: "Visual Studio Community", benefit: "<strong>Free, full-featured IDE</strong> for developing desktop, mobile, and web applications.", verification: "Free for students, open-source contributors, and individual developers.", link: "https://visualstudio.microsoft.com/free-developer-offers/", cost: "Free" },
-                    { name: "GitKraken Student Pack", benefit: "Free access to **GitKraken Pro** for streamlined Git workflow management and visualization.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.gitkraken.com/github-student-developer-pack", cost: "Free" },
+                    { name: "GitKraken Student Pack", benefit: "Free access to <strong>GitKraken Pro</strong> for streamlined Git workflow management and visualization.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.gitkraken.com/github-student-developer-pack", cost: "Free" },
                     { name: "GitHub Actions", benefit: "<strong>Free CI/CD</strong> with <strong>3,000 minutes/month</strong> of private repository time (via GitHub Pro).", verification: "Included with <strong>GitHub Education Pack</strong> (which grants GitHub Pro).", link: "https://docs.github.com/billing/managing-billing-for-github-actions/about-billing-for-github-actions", cost: "Free" },
                     { name: "Docker Hub", benefit: "<strong>Free Docker Personal</strong> subscription for individual developers, students, and educators.", verification: "Free registration.", link: "https://www.docker.com/products/personal/", cost: "Free" },
                     { name: "MongoDB Atlas", benefit: "<strong>$50 in cloud credit</strong> for their database-as-a-service.", verification: "Via the <strong>GitHub Education Pack</strong>.", link: "https://education.github.com/pack?sort=popularity&tag=Databases", cost: "Credit" },
@@ -379,13 +380,14 @@
             let currentFilter = 'All';
             renderContent(currentFilter);
 
-            // --- Navigation Setup (remains mostly the same) ---
+            // --- Navigation Setup ---
             const navLinks = [];
+            let suppressObserver = false;
 
             // NEW: Add "Introduction" link first
             const introLink = document.createElement('a');
             introLink.href = `#introduction`;
-            introLink.textContent = 'Introduction / Summary';
+            introLink.textContent = 'Introduction';
             // Removed border classes from link, adding padding back to li
             introLink.className = 'nav-link block w-full text-left px-4 py-3 rounded-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-200';
             introLink.dataset.sectionId = 'introduction';
@@ -419,8 +421,14 @@
                     const sectionId = e.target.dataset.sectionId;
                     const sectionElement = document.getElementById(sectionId);
                     if (sectionElement) {
+                        // Immediately reflect active state on click
+                        suppressObserver = true;
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        e.target.classList.add('active');
                         // Use scrollIntoView, ensuring alignment is 'start' to scroll past the fixed header/mobile header
                         sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Re-enable observer updates after animation
+                        setTimeout(() => { suppressObserver = false; }, 600);
                     }
                     if (window.innerWidth < 768) {
                         sidebar.classList.add('-translate-x-full');
@@ -430,18 +438,21 @@
 
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    // Intersection check is crucial for navigation highlight
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.dataset.sectionId === entry.target.id) {
-                                link.classList.add('active');
-                            }
-                        });
+                if (suppressObserver) return;
+                const visible = entries.filter(en => en.isIntersecting);
+                if (!visible.length) return;
+                // Choose the section closest to the top of the viewport
+                visible.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+                const topEntry = visible[0];
+                const activeId = topEntry.target.id;
+                navLinks.forEach(link => {
+                    if (link.dataset.sectionId === activeId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
                     }
                 });
-            }, { rootMargin: '-30% 0px -70% 0px', threshold: 0.1 });
+            }, { rootMargin: '-20% 0px -70% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
 
             sections.forEach(section => {
                 observer.observe(section);
@@ -460,10 +471,11 @@
                         currentFilter = newFilter;
                         renderContent(currentFilter);
                         // Re-observe sections after content change for navigation highlight
-                        document.querySelectorAll('section').forEach(section => {
-                            observer.unobserve(section);
-                            observer.observe(section);
-                        });
+                        const newSections = document.querySelectorAll('section');
+                        // Unobserve any previously observed sections
+                        sections.forEach(section => observer.unobserve(section));
+                        // Observe new/current sections
+                        newSections.forEach(section => observer.observe(section));
                         // Smooth scroll to the top of content sections (right below filter buttons) after filtering
                         document.getElementById('content-sections').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }

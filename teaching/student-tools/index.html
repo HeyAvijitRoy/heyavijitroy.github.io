@@ -199,6 +199,20 @@
             padding-left: 0.5rem;
             text-indent: -0.5rem;
         }
+        /* FIX FOR DISCLAIMER LIST (Hanging Indentation) */
+        .disclaimer-list {
+            list-style-position: outside;
+            /* Ensures bullet is outside the block */
+            padding-left: 1.5rem;
+            /* Base padding for the list container */
+        }
+        .disclaimer-list li {
+            /* Sets up the negative margin and text alignment */
+            padding-left: 0.5rem; 
+            text-indent: -0.5rem; 
+            /* This makes the text wrap to the start of the first line */
+        }
+    </style        
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -261,7 +275,7 @@
                         </p>
                         <div class="p-4 bg-red-50 rounded-md text-sm text-red-700 border border-red-200">
                             <p class="font-bold mb-1">Important Disclaimers:</p>
-                            <ul class="list-disc list-inside space-y-1">
+                            <ul class="list-disc list-outside space-y-1 pl-5">
                                 <li>I confirm that this guide contains <strong>NO referral links</strong>; all links point directly
                                     to the providers' official education or sign-up pages.</li>
                                 <li>Program details, including eligibility requirements, pricing, and specific benefits,
@@ -291,7 +305,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Start by Activating the GitHub Education Pack</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Why first: Unlocks dozens of critical tools at once.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>GitHub Pro</strong></li>
                                         <li><strong>GitHub Copilot Pro</strong></li>
                                         <li><strong>JetBrains IDEs</strong></li>
@@ -306,7 +320,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Claim Your Cloud Compute Credits</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Secure your backend resources for the year.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>Azure for Students</strong> → $100 credit, no credit card</li>
                                         <li><strong>AWS Educate</strong> → AWS sandbox + credits</li>
                                         <li><strong>Google Cloud Free Tier</strong> → Always-free compute, storage, serverless</li>
@@ -319,7 +333,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Set Up Your Development Environment (Free Pro Tools)</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Get a clean, professional-grade coding setup.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>JetBrains IDEs</strong> (PyCharm Pro, IntelliJ, CLion)</li>
                                         <li><strong>Visual Studio Community</strong></li>
                                         <li><strong>Google Antigravity</strong> (AI-first IDE)</li>
@@ -333,7 +347,8 @@
                                  <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Get Your Free GPUs (for AI/ML Projects)</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Train small/medium ML models without paying for compute.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
+                                        <li><strong>Google Gemini Pro</strong> (Advanced AI/Coding assistance)</li>
                                         <li><strong>Kaggle</strong> → Free GPU/TPU</li>
                                         <li><strong>Google Colab</strong> → Free GPU</li>
                                         <li><strong>Amazon SageMaker Studio Lab</strong> → Free GPU T4</li>
@@ -347,7 +362,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Set Up Your Database + Storage for Free</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Give your project real backend storage.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>MongoDB Atlas</strong> ($50 credit)</li>
                                         <li><strong>Oracle Autonomous DB</strong> (always free)</li>
                                         <li><strong>Azure Cosmos DB</strong> free tier</li>
@@ -361,7 +376,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Build & Deploy Your First Application (Zero Cost)</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Deploy an app publicly with HTTPS and a custom domain.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>DigitalOcean Droplet</strong> (with GitHub credit)</li>
                                         <li><strong>Heroku</strong> (GitHub Pack)</li>
                                         <li><strong>Azure App Service</strong> (free tier)</li>
@@ -375,7 +390,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Add Observability & Communication</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Add professional polish, logging, and monitoring.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>Sentry</strong> → error monitoring</li>
                                         <li><strong>Twilio</strong> → SMS/voice notifications</li>
                                         <li><strong>Tableau</strong> → visualize output</li>
@@ -389,7 +404,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Learn, Certify, and Add Resume Boosters</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Strengthen your resume with verifiable skills and certifications.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>Microsoft Free Certification</strong> exams</li>
                                         <li><strong>JetBrains Academy / Hyperskill</strong></li>
                                         <li><strong>IBM SkillsBuild</strong></li>
@@ -403,7 +418,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">For Creative / Portfolio Projects</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Create polished UI/UX, 3D models, and professional presentations.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>Adobe Creative Cloud</strong> (discount)</li>
                                         <li><strong>Canva Pro for Students</strong></li>
                                         <li><strong>Figma Professional</strong></li>
@@ -417,7 +432,7 @@
                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
                                     <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">For Cybersecurity Projects / Labs</h3>
                                     <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Run penetration testing and SIEM analysis labs at zero cost.</p>
-                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                    <ul class="step-list list-disc list-outside pl-5 text-gray-700 text-sm space-y-1">
                                         <li><strong>TryHackMe</strong> (student discount)</li>
                                         <li><strong>Hack The Box Academy</strong></li>
                                         <li><strong>Splunk for Students</strong></li>
@@ -525,6 +540,7 @@
                 title: "AI, Machine Learning & Data Science",
                 description: "These tools offer compute resources, environments for model training, and data analysis platforms.",
                 tools: [
+                    { name: "Google Gemini Pro", short_desc: "Google's most capable AI model for complex reasoning, coding, and creative tasks.", benefit: "Free access to **Gemini Pro** for students via their Google accounts (or university partnership).", verification: "Student Google account verification or institutional license.", link: "https://gemini.google.com/access", cost: "Free" },
                     { name: "Amazon SageMaker Studio Lab", short_desc: "Free, zero-setup environment for hands-on machine learning practice.", benefit: "<strong>Free CPU/GPU compute</strong> (T4) for ML/AI experimentation; no credit card or AWS account required.", verification: "Free account request.", link: "https://aws.amazon.com/sagemaker/studio-lab/", cost: "Free" },
                     { name: "Kaggle", short_desc: "Platform for data science competitions, datasets, and collaborative notebooks.", benefit: "<strong>Free GPU/TPU access</strong> for competitive programming, notebooks, and datasets.", verification: "Standard free account.", link: "https://www.kaggle.com/notebooks", cost: "Free" },
                     { name: "Google Colab", short_desc: "Jupyter-like notebooks providing free access to powerful GPU and TPU compute.", benefit: "<strong>Free GPU/TPU access</strong> in the standard tier. Discounted access to Colab Pro for students.", verification: "Standard free Google account.", link: "https://colab.research.google.com/", cost: "Free" },

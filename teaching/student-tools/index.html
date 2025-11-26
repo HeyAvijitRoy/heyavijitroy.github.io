@@ -5,27 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Dev & AI Tools for Students | Avijit Roy</title>
-    <meta name="description" content="A curated, referral-free guide to the best free and discounted developer, AI/ML, cloud, and creative tools for students — including GitHub Education, Azure for Students, JetBrains, Kaggle, Unity, and more.">
+    <meta name="description"
+        content="A curated, referral-free guide to the best free and discounted developer, AI/ML, cloud, and creative tools for students — including GitHub Education, Azure for Students, JetBrains, Kaggle, Unity, and more.">
     <link rel="canonical" href="https://www.avijitroy.com/teaching/student-tools/">
     <meta name="robots" content="index,follow">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Free Dev & AI Tools for Students">
-    <meta property="og:description" content="Interactive guide to free & discounted software for students: dev tools, cloud credits, AI/ML platforms, and creative apps.">
+    <meta property="og:description"
+        content="Interactive guide to free & discounted software for students: dev tools, cloud credits, AI/ML platforms, and creative apps.">
     <meta property="og:url" content="https://www.avijitroy.com/teaching/student-tools/">
     <meta property="og:site_name" content="Avijit Roy">
     <meta property="og:image" content="https://www.avijitroy.com/assets/img/og-default.jpg">
-    
+
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free Dev & AI Tools for Students">
-    <meta name="twitter:description" content="Referral-free list of free & discounted tools for students across dev, cloud, AI/ML, and design.">
+    <meta name="twitter:description"
+        content="Referral-free list of free & discounted tools for students across dev, cloud, AI/ML, and design.">
     <meta name="twitter:image" content="https://www.avijitroy.com/assets/img/og-default.jpg">
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563EB">
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebPage",
@@ -123,6 +126,18 @@
             color: #2563EB;
             border: 2px solid #2563EB;
         }
+
+        .filter-btn:not(.active-filter):hover {
+            background-color: #EFF6FF;
+            /* bg-blue-50 */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn.active-filter:hover {
+            background-color: #1E40AF;
+            /* bg-blue-700 */
+        }
     </style>
 </head>
 
@@ -131,7 +146,7 @@
     <div class="flex flex-col min-h-screen">
         <!-- Mobile Header -->
         <div class="md:hidden flex items-center justify-between w-full p-4 bg-white shadow-md fixed top-0 left-0 z-20">
-            <h1 class="text-lg font-bold text-blue-600">🎓 Student Tools Guide</h1>
+            <h1 class="text-lg font-bold text-blue-600">🎓 Free Dev & AI Tools for Students</h1>
             <button id="menu-toggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -158,9 +173,9 @@
                 <div class="max-w-7xl mx-auto">
                     <!-- Main Header/Title is at the top of the main content -->
                     <header class="mb-10">
-                        <h1 class="text-4xl font-bold text-gray-900 mb-2">Essential Dev & AI Tools for Students</h1>
-                        <p class="text-xl text-gray-600">An interactive guide to free & discounted software for your
-                            academic career.</p>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-2">Free Dev & AI Tools for Students</h1>
+                        <p class="text-xl text-gray-600">Leverage your student status to access the massive compute
+                            power and AI agents needed to master the new era of intelligent technologies.</p>
                     </header>
 
                     <!-- Introduction/Summary Section (Target for "Back to Top" navigation) -->
@@ -176,7 +191,7 @@
                         <div class="p-4 bg-red-50 rounded-md text-sm text-red-700 border border-red-200">
                             <p class="font-bold mb-1">Important Disclaimers:</p>
                             <ul class="list-disc list-inside space-y-1">
-                                <li>We confirm that this guide contains **NO referral links**; all links point directly
+                                <li>I confirm that this guide contains <strong>NO referral links</strong>; all links point directly
                                     to the providers' official education or sign-up pages.</li>
                                 <li>Program details, including eligibility requirements, pricing, and specific benefits,
                                     are subject to change by the respective companies without notice.</li>
@@ -190,15 +205,15 @@
                     </section>
 
                     <!-- Filter Buttons -->
-                    <div id="filter-controls" class="mb-12 flex flex-wrap gap-4">
+                    <div id="filter-controls" class="mb-12 flex flex-wrap gap-3">
                         <button data-filter="All" id="filter-all"
-                            class="filter-btn px-6 py-3 rounded-xl font-bold shadow-md transition-all duration-200">All
+                            class="filter-btn px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-200">All
                             Tools</button>
                         <button data-filter="Free" id="filter-free"
-                            class="filter-btn px-6 py-3 rounded-xl font-bold shadow-md transition-all duration-200">100%
+                            class="filter-btn px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-200">100%
                             Free</button>
                         <button data-filter="Discount" id="filter-discount"
-                            class="filter-btn px-6 py-3 rounded-xl font-bold shadow-md transition-all duration-200">Discount
+                            class="filter-btn px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-200">Discount
                             / Credit</button>
                     </div>
 
@@ -212,7 +227,8 @@
         <!-- Footer -->
         <footer class="footer-offset bg-gray-900 text-gray-400 p-6 mt-auto">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>&copy; 2025 Student Tools Guide. Information Compiled for Educational Use by <a href="https://avijitroy.com/" class="text-blue-400 hover:text-blue-300">Avijit Roy</a></p>
+                <p>&copy; 2025 Student Tools Guide. Information Compiled for Educational Use by <a
+                        href="https://avijitroy.com/" class="text-blue-400 hover:text-blue-300">Avijit Roy</a></p>
                 <div class="mt-2 md:mt-0 space-x-4">
                     <span>No Affiliate Links • No Referrals • Official Sources Only</span>
                 </div>
@@ -229,7 +245,7 @@
                     { name: "GitHub Education Pack", benefit: "Free access to <strong>GitHub Pro</strong>, <strong>GitHub Copilot Pro</strong>, and dozens of partner tools.", verification: "School Email/ID Verification (via GitHub/SheerID).", link: "https://education.github.com/students", cost: "Free" },
                     { name: "Microsoft Azure for Students", benefit: "<strong>$100 in Azure credit</strong> for 12 months, plus free access to over 25 core services.", verification: "Eligible School Email (no credit card required to start).", link: "https://azure.microsoft.com/en-us/free/students", cost: "Credit" },
                     { name: "JetBrains Student License", benefit: "Free annual subscription to <strong>all JetBrains Desktop IDEs</strong> (PyCharm Pro, IntelliJ Ultimate, etc.) and AI Assistant.", verification: "School Email, Student ID, or GitHub Education account.", link: "https://lp.jetbrains.com/pycharm-for-students/", cost: "Free" },
-                    { name: "JetBrains Space", benefit: "Free access to **Space** for hosting repositories, automated deployment (CI/CD), and team communication.", verification: "Eligible School Email or GitHub Education account.", link: "https://www.jetbrains.com/space/education/", cost: "Free" },
+                    { name: "JetBrains Space", benefit: "Free access to <strong>Space</strong> for hosting repositories, automated deployment (CI/CD), and team communication.", verification: "Eligible School Email or GitHub Education account.", link: "https://www.jetbrains.com/space/education/", cost: "Free" },
                     { name: "DigitalOcean", benefit: "<strong>$200 in platform credit</strong> for 1 year (via GitHub Education Pack).", verification: "GitHub Education Verification is the easiest route.", link: "https://www.digitalocean.com/landing/do-for-higher-education", cost: "Credit" },
                     { name: "Google Cloud for Students", benefit: "<strong>$50–$100 in credits</strong> + access to the Always Free tier.", verification: "Free tier requires a credit card; grants require school/faculty sponsorship.", link: "https://cloud.google.com/free", cost: "Credit" },
                     { name: "AWS Educate", benefit: "<strong>Cloud credits</strong> ($50–$100) and free training/curricula on AWS.", verification: "Student or Faculty registration with a valid academic email.", link: "https://aws.amazon.com/education/", cost: "Credit" },
@@ -262,7 +278,7 @@
                     { name: "Google Colab", benefit: "<strong>Free GPU/TPU access</strong> in the standard tier. Discounted access to Colab Pro for students.", verification: "Standard free Google account.", link: "https://colab.research.google.com/", cost: "Free" },
                     { name: "Weights & Biases", benefit: "Free <strong>W&B Teams Plan</strong> for unlimited projects and advanced ML experiment tracking.", verification: "Student application/program via educational email.", link: "https://wandb.ai/site/", cost: "Free" },
                     { name: "Hugging Face Academia Hub", benefit: "Advanced features and compute access via institutional subscription.", verification: "University IT team must subscribe; students use academic email.", link: "https://huggingface.co/docs/hub/academia-hub", cost: "Discount" },
-                    { name: "Tableau for Students", benefit: "Free one-year license for **Tableau Desktop** and **Tableau Prep** for advanced data visualization and analysis.", verification: "Academic email or student ID verification.", link: "https://www.tableau.com/academic/students", cost: "Free" },
+                    { name: "Tableau for Students", benefit: "Free one-year license for <strong>Tableau Desktop</strong> and <strong>Tableau Prep</strong> for advanced data visualization and analysis.", verification: "Academic email or student ID verification.", link: "https://www.tableau.com/academic/students", cost: "Free" },
                     { name: "DataCamp", benefit: "Discounted or Free access to the Premium data science curriculum.", verification: "School Email for direct discount or via GitHub Pack.", link: "https://www.datacamp.com/pricing/student", cost: "Free" },
                     { name: "Wolfram Alpha Pro", benefit: "Discounted access to the powerful computational knowledge engine.", verification: "Verification via third-party services like UNiDAYS or SheerID.", link: "https://www.wolframalpha.com/pro/pricing/students/", cost: "Discount" }
                 ]
@@ -273,7 +289,7 @@
                 tools: [
                     { name: "Unity Student", benefit: "Free <strong>Unity Pro</strong> license for professional-grade 3D/2D game development.", verification: "Student ID/Enrollment verification.", link: "https://id.unity.com/en/licenseApplied", cost: "Free" },
                     { name: "Autodesk", benefit: "Free one-year, single-user licenses for software like <strong>Maya</strong> and <strong>Revit</strong>.", verification: "Student ID/Enrollment verification.", link: "https://www.autodesk.com/solutions/cad-for-students", cost: "Free" },
-                    { name: "Autodesk Fusion Personal", benefit: "Free personal license for **Fusion 360** (separate from the educational suite) for 3D modeling, CAD, and CAM.", verification: "Free registration for hobbyists and non-commercial use.", link: "https://www.autodesk.com/products/fusion-360/personal", cost: "Free" }
+                    { name: "Autodesk Fusion Personal", benefit: "Free personal license for <strong>Fusion 360</strong> (separate from the educational suite) for 3D modeling, CAD, and CAM.", verification: "Free registration for hobbyists and non-commercial use.", link: "https://www.autodesk.com/products/fusion-360/personal", cost: "Free" }
                 ]
             },
             "productivity": {
@@ -282,8 +298,8 @@
                 tools: [
                     { name: "Adobe Creative Cloud", benefit: "<strong>Significant Discount</strong> (60%+ off) on the entire suite (Photoshop, Firefly AI, etc.).", verification: "School Email or other enrollment documentation.", link: "https://www.adobe.com/acrobat/pricing/students.html", cost: "Discount" },
                     { name: "Notion Education", benefit: "Free upgrade to the <strong>Notion Plus</strong> plan, including <strong>Notion AI</strong> features.", verification: "Eligible Higher Education Email Address.", link: "https://www.notion.com/product/notion-for-education", cost: "Free" },
-                    { name: "Canva Pro for Students", benefit: "Free access to **Canva Pro** for qualified students.", verification: "School Email or enrollment documentation.", link: "https://www.canva.com/education/", cost: "Free" },
-                    { name: "Canva for Campus (Student Org)", benefit: "Free access to **Canva for Campus** for student clubs and organizations.", verification: "Student Organization verification.", link: "https://www.canva.com/education/", cost: "Free" },
+                    { name: "Canva Pro for Students", benefit: "Free access to <strong>Canva Pro</strong> for qualified students.", verification: "School Email or enrollment documentation.", link: "https://www.canva.com/education/", cost: "Free" },
+                    { name: "Canva for Campus (Student Org)", benefit: "Free access to <strong>Canva for Campus</strong> for student clubs and organizations.", verification: "Student Organization verification.", link: "https://www.canva.com/education/", cost: "Free" },
                     { name: "Figma for Education", benefit: "Free upgrade to the <strong>Figma Professional</strong> plan (Figma Pro + FigJam).", verification: "Application/Verification with academic email.", link: "https://www.figma.com/education/apply", cost: "Free" },
                     { name: "Microsoft 365", benefit: "Free web/mobile versions of <strong>Word, Excel, PowerPoint, Teams, and OneNote</strong>.", verification: "Eligible School Email for instant verification.", link: "https://www.microsoft.com/en-us/microsoft-365/college-student-pricing", cost: "Free" }
                 ]
@@ -293,10 +309,10 @@
                 description: "Platforms offering interactive coding courses, specialized software, and free certification exams to build professional skills.",
                 tools: [
                     { name: "Microsoft Free Certifications", benefit: "Free exam vouchers for fundamentals certifications (e.g., Azure Fundamentals, Security) for verified students.", verification: "Student status verification via Microsoft Learn.", link: "https://learn.microsoft.com/en-us/training/student-hub/", cost: "Free" },
-                    { name: "JetBrains Academy / Hyperskill", benefit: "Free access to the full **Hyperskill** platform for structured, project-based coding education.", verification: "Student status verification.", link: "https://hyperskill.org/education", cost: "Free" },
+                    { name: "JetBrains Academy / Hyperskill", benefit: "Free access to the full <strong>Hyperskill</strong> platform for structured, project-based coding education.", verification: "Student status verification.", link: "https://hyperskill.org/education", cost: "Free" },
                     { name: "IBM SkillsBuild", benefit: "Free courses, job-role specific learning, and professional badges in areas like AI, cloud, and cybersecurity.", verification: "Free registration via the platform.", link: "https://skillsbuild.org/", cost: "Free" },
-                    { name: "Replit Hacker", benefit: "Discounted/Free **Hacker Plan** access for enhanced compute power, private repos, and AI coding tools.", verification: "Student status verification.", link: "https://replit.com/site/education/student", cost: "Free" },
-                    { name: "MATLAB & Simulink for Students", benefit: "Free access to **MATLAB and Simulink** software if your university maintains a campus-wide license.", verification: "Campus license enrollment (check university portal).", link: "https://www.mathworks.com/pricing-licensing/licensing/university.html", cost: "Free" }
+                    { name: "Replit Hacker", benefit: "Discounted/Free <strong>Hacker Plan</strong> access for enhanced compute power, private repos, and AI coding tools.", verification: "Student status verification.", link: "https://replit.com/site/education/student", cost: "Free" },
+                    { name: "MATLAB & Simulink for Students", benefit: "Free access to <strong>MATLAB and Simulink</strong> software if your university maintains a campus-wide license.", verification: "Campus license enrollment (check university portal).", link: "https://www.mathworks.com/pricing-licensing/licensing/university.html", cost: "Free" }
                 ]
             },
             "cybersecurity": {

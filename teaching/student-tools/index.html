@@ -152,7 +152,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1pm rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -176,6 +176,28 @@
                 bottom: 2.5rem;
                 right: 2.5rem;
             }
+        }
+
+        .step-card {
+            counter-increment: step-counter;
+        }
+
+        .step-card::before {
+            content: "Step " counter(step-counter);
+            /* Added "Step " prefix */
+            @apply absolute left-0 top-0 text-5xl font-extrabold text-blue-100 opacity-70 leading-none;
+        }
+        
+        /* Fixes hanging indentation for the Master Plan list items */
+        .step-list {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+
+        /* Adjustments for list items within the step cards */
+        .step-list li {
+            padding-left: 0.5rem;
+            text-indent: -0.5rem;
         }
     </style>
 </head>
@@ -224,7 +246,7 @@
                         <p class="mb-4 text-gray-700">
                             This guide is designed solely to empower students by consolidating information on valuable
                             software development, AI, and creative tools available at a free or heavily discounted
-                            educational rate. Our purpose is to provide a single, easy-to-navigate resource to help you
+                            educational rate. My purpose is to provide a single, easy-to-navigate resource to help you
                             access the professional software required for your studies and personal projects.
                         </p>
                         <div class="p-4 bg-red-50 rounded-md text-sm text-red-700 border border-red-200">
@@ -243,7 +265,178 @@
                         </div>
                     </section>
 
-                    <!-- Filter Buttons -->
+                    <!-- Master Plan Section (New) -->
+                    <section id="master-plan" class="mb-12">
+                        <div class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-2">How to Get the Maximum Benefit From These Tools</h2>
+                            <p class="text-lg text-gray-600">A curated zero-cost strategy to unlock professional-grade cloud, AI, and development access using only the benefits listed here.</p>
+                        </div>
+                        
+
+                        <!-- Collapsible Content -->
+                        <div id="master-plan-content" class="hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="counter-reset: step-counter;">
+                                
+                                <!-- Step 1 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Start by Activating the GitHub Education Pack</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Why first: Unlocks dozens of critical tools at once.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>GitHub Pro</strong></li>
+                                        <li><strong>GitHub Copilot Pro</strong></li>
+                                        <li><strong>JetBrains IDEs</strong></li>
+                                        <li><strong>Namecheap</strong> domain</li>
+                                        <li><strong>DigitalOcean</strong> credits</li>
+                                        <li><strong>MongoDB Atlas</strong> credit</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">This single step unlocks free IDEs, cloud credits, databases, and AI coding assistants you’ll use for every project afterward.</p>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Claim Your Cloud Compute Credits</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Secure your backend resources for the year.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>Azure for Students</strong> → $100 credit, no credit card</li>
+                                        <li><strong>AWS Educate</strong> → AWS sandbox + credits</li>
+                                        <li><strong>Google Cloud Free Tier</strong> → Always-free compute, storage, serverless</li>
+                                        <li><strong>Oracle Cloud Free Tier</strong> → Two always-free VMs + free database</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Provision cluster/VM/Notebook resources for backend APIs, ML training jobs, and app deployment.</p>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Set Up Your Development Environment (Free Pro Tools)</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Get a clean, professional-grade coding setup.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>JetBrains IDEs</strong> (PyCharm Pro, IntelliJ, CLion)</li>
+                                        <li><strong>Visual Studio Community</strong></li>
+                                        <li><strong>Google Antigravity</strong> (AI-first IDE)</li>
+                                        <li><strong>Replit Hacker</strong> (collaboration + AI tools)</li>
+                                        <li><strong>GitKraken Pro</strong> (Git workflow)</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Develop in Python, C++, JS, Go, and Machine Learning using industry-standard tools at zero cost.</p>
+                                </div>
+
+                                 <!-- Step 4 -->
+                                 <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Get Your Free GPUs (for AI/ML Projects)</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Train small/medium ML models without paying for compute.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>Kaggle</strong> → Free GPU/TPU</li>
+                                        <li><strong>Google Colab</strong> → Free GPU</li>
+                                        <li><strong>Amazon SageMaker Studio Lab</strong> → Free GPU T4</li>
+                                        <li><strong>W&B</strong> → Free experiment tracking</li>
+                                        <li><strong>HuggingFace</strong> → Model hosting + datasets</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Utilize these resources for training, fine-tuning, and sharing your models with the community.</p>
+                                </div>
+
+                                <!-- Step 5 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Set Up Your Database + Storage for Free</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Give your project real backend storage.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>MongoDB Atlas</strong> ($50 credit)</li>
+                                        <li><strong>Oracle Autonomous DB</strong> (always free)</li>
+                                        <li><strong>Azure Cosmos DB</strong> free tier</li>
+                                        <li><strong>AWS DynamoDB & S3</strong> free tier</li>
+                                        <li><strong>Google Firebase</strong> free tier</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Provision backend storage for user data, logs, images, or large ML datasets that scale with your application.</p>
+                                </div>
+
+                                <!-- Step 6 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Build & Deploy Your First Application (Zero Cost)</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Deploy an app publicly with HTTPS and a custom domain.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>DigitalOcean Droplet</strong> (with GitHub credit)</li>
+                                        <li><strong>Heroku</strong> (GitHub Pack)</li>
+                                        <li><strong>Azure App Service</strong> (free tier)</li>
+                                        <li><strong>GitHub Actions</strong> for CI/CD</li>
+                                        <li><strong>Namecheap .me</strong> domain (free)</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Use the cloud credits and free hosting services to get your work live and accessible globally.</p>
+                                </div>
+
+                                <!-- Step 7 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Add Observability & Communication</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Add professional polish, logging, and monitoring.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>Sentry</strong> → error monitoring</li>
+                                        <li><strong>Twilio</strong> → SMS/voice notifications</li>
+                                        <li><strong>Tableau</strong> → visualize output</li>
+                                        <li><strong>Microsoft 365</strong> → documentation</li>
+                                        <li><strong>Notion Education</strong> → project planning</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Integrate these tools to track errors, communicate with users, and manage project documentation efficiently.</p>
+                                </div>
+
+                                <!-- Step 8 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">Learn, Certify, and Add Resume Boosters</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Strengthen your resume with verifiable skills and certifications.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>Microsoft Free Certification</strong> exams</li>
+                                        <li><strong>JetBrains Academy / Hyperskill</strong></li>
+                                        <li><strong>IBM SkillsBuild</strong></li>
+                                        <li><strong>DataCamp</strong> (student discount)</li>
+                                        <li><strong>MATLAB & Simulink</strong> (campus license)</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Utilize the "Learning & Certification" track to finish 2–3 certifications using free vouchers.</p>
+                                </div>
+
+                                <!-- Step 9 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">For Creative / Portfolio Projects</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Create polished UI/UX, 3D models, and professional presentations.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>Adobe Creative Cloud</strong> (discount)</li>
+                                        <li><strong>Canva Pro for Students</strong></li>
+                                        <li><strong>Figma Professional</strong></li>
+                                        <li><strong>Autodesk</strong> (3D modeling)</li>
+                                        <li><strong>Unity Student</strong> (Game Engine)</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Perfect for high-impact presentations, mockups, posters, and 3D renders that make your work stand out.</p>
+                                </div>
+
+                                <!-- Step 10 -->
+                                <div class="step-card bg-white rounded-xl shadow-lg p-6 pt-12 relative overflow-hidden border-t-4 border-blue-600">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-4">For Cybersecurity Projects / Labs</h3>
+                                    <p class="text-sm font-semibold text-blue-600 mb-3">Goal: Run penetration testing and SIEM analysis labs at zero cost.</p>
+                                    <ul class="step-list list-disc text-gray-700 text-sm space-y-1">
+                                        <li><strong>TryHackMe</strong> (student discount)</li>
+                                        <li><strong>Hack The Box Academy</strong></li>
+                                        <li><strong>Splunk for Students</strong></li>
+                                        <li><strong>Palo Alto CyberAces</strong></li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600 mt-4">Use dedicated platforms to practice hands-on security skills required by the industry.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- End Collapsible Content -->
+
+                        <div class="mt-10 p-6 bg-blue-50 rounded-lg border border-blue-200 text-center">
+                            <p class="text-lg font-bold text-blue-800">🚀 In One Sentence:</p>
+                            <p class="text-gray-700 mt-2">As a student, you can activate GitHub Education → get cloud credits → develop with JetBrains/VS → train ML models on Kaggle/Colab/SageMaker → deploy using DigitalOcean/Azure/GCP → monitor with Sentry → learn with Microsoft/Hyperskill → design with Canva/Figma — <strong>without spending any money</strong>.</p>
+                            
+                            <!-- MOVED TOGGLE BUTTON HERE -->
+                            <button id="master-plan-toggle" class="w-full sm:w-auto mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-lg flex items-center justify-center mx-auto">
+                                View Steps
+                                <svg id="toggle-icon" class="w-5 h-5 ml-2 transform rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </section>
+                    <!-- End Master Plan Section -->
+
+
+                    <!-- Filter Buttons (Reused here) -->
                     <div id="filter-controls" class="mb-12 flex flex-wrap gap-3">
                         <button data-filter="All" id="filter-all"
                             class="filter-btn px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-200">All
@@ -288,87 +481,90 @@
                 title: "Development & Cloud Computing",
                 description: "These programs provide professional-grade software and infrastructure crucial for coding, app deployment, and learning cloud architecture.",
                 tools: [
-                    { name: "GitHub Education Pack", benefit: "Free access to <strong>GitHub Pro</strong>, <strong>GitHub Copilot Pro</strong>, and dozens of partner tools.", verification: "School Email/ID Verification (via GitHub/SheerID).", link: "https://education.github.com/students", cost: "Free" },
-                    { name: "Microsoft Azure for Students", benefit: "<strong>$100 in Azure credit</strong> for 12 months, plus free access to over 25 core services.", verification: "Eligible School Email (no credit card required to start).", link: "https://azure.microsoft.com/en-us/free/students", cost: "Credit" },
-                    { name: "JetBrains Student License", benefit: "Free annual subscription to <strong>all JetBrains Desktop IDEs</strong> (PyCharm Pro, IntelliJ Ultimate, etc.) and AI Assistant.", verification: "School Email, Student ID, or GitHub Education account.", link: "https://lp.jetbrains.com/pycharm-for-students/", cost: "Free" },
-                    { name: "JetBrains Space", benefit: "Free access to <strong>Space</strong> for hosting repositories, automated deployment (CI/CD), and team communication.", verification: "Eligible School Email or GitHub Education account.", link: "https://www.jetbrains.com/space/education/", cost: "Free" },
-                    { name: "DigitalOcean", benefit: "<strong>$200 in platform credit</strong> for 1 year (via GitHub Education Pack).", verification: "GitHub Education Verification is the easiest route.", link: "https://www.digitalocean.com/landing/do-for-higher-education", cost: "Credit" },
-                    { name: "Google Cloud for Students", benefit: "<strong>$50–$100 in credits</strong> + access to the Always Free tier.", verification: "Free tier requires a credit card; grants require school/faculty sponsorship.", link: "https://cloud.google.com/free", cost: "Credit" },
-                    { name: "AWS Educate", benefit: "<strong>Cloud credits</strong> ($50–$100) and free training/curricula on AWS.", verification: "Student or Faculty registration with a valid academic email.", link: "https://aws.amazon.com/education/", cost: "Credit" },
-                    { name: "Oracle Cloud", benefit: "<strong>Always Free</strong> Compute VMs, Autonomous Database, ARM servers, and storage.", verification: "Free Tier available to everyone; student program via Oracle Academy.", link: "https://academy.oracle.com/en/solutions-cloud.html", cost: "Free" },
-                    { name: "IBM Academic Initiative", benefit: "Access to <strong>IBM Cloud</strong> Lite plans, <strong>$200 credit</strong>, and tools like <strong>IBM Watson</strong> APIs.", verification: "Verification via IBM SkillsBuild Software Downloads.", link: "https://www.ibm.com/products/cloud/free", cost: "Credit" }
+                    { name: "GitHub Education Pack", short_desc: "The most comprehensive bundle of free developer tools for students.", benefit: "Free access to <strong>GitHub Pro</strong>, <strong>GitHub Copilot Pro</strong>, and dozens of partner tools.", verification: "School Email/ID Verification (via GitHub/SheerID).", link: "https://education.github.com/students", cost: "Free" },
+                    { name: "Microsoft Azure for Students", short_desc: "Cloud platform for building, deploying, and managing modern applications.", benefit: "<strong>$100 in Azure credit</strong> for 12 months, plus free access to over 25 core services.", verification: "Eligible School Email (no credit card required to start).", link: "https://azure.microsoft.com/en-us/free/students", cost: "Credit" },
+                    { name: "JetBrains Student License", short_desc: "Professional IDEs for development in Java, Python, Web, and more.", benefit: "Free annual subscription to <strong>all JetBrains Desktop IDEs</strong> (PyCharm Pro, IntelliJ Ultimate, etc.) and AI Assistant.", verification: "School Email, Student ID, or GitHub Education account.", link: "https://lp.jetbrains.com/pycharm-for-students/", cost: "Free" },
+                    { name: "JetBrains Space", short_desc: "Integrated team environment for Git hosting, CI/CD, and project management.", benefit: "Free access to <strong>Space</strong> for hosting repositories, automated deployment (CI/CD), and team communication.", verification: "Eligible School Email or GitHub Education account.", link: "https://www.jetbrains.com/space/education/", cost: "Free" },
+                    { name: "DigitalOcean", short_desc: "Simple cloud hosting for deploying web applications and Droplets.", benefit: "<strong>$200 in platform credit</strong> for 1 year (via GitHub Education Pack).", verification: "GitHub Education Verification is the easiest route.", link: "https://www.digitalocean.com/landing/do-for-higher-education", cost: "Credit" },
+                    { name: "Google Cloud for Students", short_desc: "Compute and specialized AI/ML services for large-scale projects.", benefit: "<strong>$50–$100 in credits</strong> + access to the Always Free tier.", verification: "Free tier requires a credit card; grants require school/faculty sponsorship.", link: "https://cloud.google.com/free", cost: "Credit" },
+                    { name: "AWS Educate", short_desc: "Free resources and credits to learn and practice cloud computing on AWS.", benefit: "<strong>Cloud credits</strong> ($50–$100) and free training/curricula on AWS.", verification: "Student or Faculty registration with a valid academic email.", link: "https://aws.amazon.com/education/", cost: "Credit" },
+                    { name: "Oracle Cloud", short_desc: "Enterprise-grade cloud infrastructure with Always Free resources.", benefit: "<strong>Always Free</strong> Compute VMs, Autonomous Database, ARM servers, and storage.", verification: "Free Tier available to everyone; student program via Oracle Academy.", link: "https://academy.oracle.com/en/solutions-cloud.html", cost: "Free" },
+                    { name: "IBM Academic Initiative", short_desc: "Access to IBM Cloud services and powerful AI APIs like Watson.", benefit: "Access to <strong>IBM Cloud</strong> Lite plans, <strong>$200 credit</strong>, and tools like <strong>IBM Watson</strong> APIs.", verification: "Verification via IBM SkillsBuild Software Downloads.", link: "https://www.ibm.com/products/cloud/free", cost: "Credit" }
                 ]
             },
             "dev-ops": {
                 title: "Software Development / DevOps",
                 description: "These tools are essential for coding, debugging, version control automation, and container management.",
                 tools: [
-                    { name: "Google Antigravity", benefit: "Free access (Public Preview) to the <strong>Agent-First AI IDE</strong> built on Gemini 3 Pro for autonomous coding, testing, and debugging.", verification: "Free download for individuals (Mac/Win/Linux).", link: "https://antigravity.google/", cost: "Free" },
-                    { name: "Visual Studio Community", benefit: "<strong>Free, full-featured IDE</strong> for developing desktop, mobile, and web applications.", verification: "Free for students, open-source contributors, and individual developers.", link: "https://visualstudio.microsoft.com/free-developer-offers/", cost: "Free" },
-                    { name: "GitKraken Student Pack", benefit: "Free access to <strong>GitKraken Pro</strong> for streamlined Git workflow management and visualization.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.gitkraken.com/github-student-developer-pack", cost: "Free" },
-                    { name: "GitHub Actions", benefit: "<strong>Free CI/CD</strong> with <strong>3,000 minutes/month</strong> of private repository time (via GitHub Pro).", verification: "Included with <strong>GitHub Education Pack</strong> (which grants GitHub Pro).", link: "https://docs.github.com/billing/managing-billing-for-github-actions/about-billing-for-github-actions", cost: "Free" },
-                    { name: "Docker Hub", benefit: "<strong>Free Docker Personal</strong> subscription for individual developers, students, and educators.", verification: "Free registration.", link: "https://www.docker.com/products/personal/", cost: "Free" },
-                    { name: "MongoDB Atlas", benefit: "<strong>$50 in cloud credit</strong> for their database-as-a-service.", verification: "Via the <strong>GitHub Education Pack</strong>.", link: "https://education.github.com/pack?sort=popularity&tag=Databases", cost: "Credit" },
-                    { name: "Heroku", benefit: "<strong>Free cloud dyno credits</strong> for application deployment.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.heroku.com/students/", cost: "Credit" },
-                    { name: "Sentry", benefit: "Free <strong>Developer Tier</strong> access for error tracking and performance monitoring.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://sentry.io/for/education/", cost: "Free" },
-                    { name: "Twilio", benefit: "<strong>$50 in credits</strong> for communication APIs (SMS, Voice, Video).", verification: "Free account includes trial credits; larger credit via GitHub Pack.", link: "https://www.twilio.com/try-twilio", cost: "Credit" },
-                    { name: "Namecheap", benefit: "Free <strong>.me</strong> domain name registration for one year.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://education.github.com/pack?sort=popularity&tag=Domains", cost: "Free" }
+                    { name: "Google Antigravity", short_desc: "Agent-first AI IDE that automates coding, testing, and debugging.", benefit: "Free access (Public Preview) to the <strong>Agent-First AI IDE</strong> built on Gemini 3 Pro for autonomous coding, testing, and debugging.", verification: "Free download for individuals (Mac/Win/Linux).", link: "https://antigravity.google/", cost: "Free" },
+                    { name: "Visual Studio Community", short_desc: "Microsoft's free, full-featured IDE for diverse development projects.", benefit: "<strong>Free, full-featured IDE</strong> for developing desktop, mobile, and web applications.", verification: "Free for students, open-source contributors, and individual developers.", link: "https://visualstudio.microsoft.com/free-developer-offers/", cost: "Free" },
+                    { name: "GitKraken Student Pack", short_desc: "A professional, visual Git client for managing complex code history.", benefit: "Free access to <strong>GitKraken Pro</strong> for streamlined Git workflow management and visualization.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.gitkraken.com/github-student-developer-pack", cost: "Free" },
+                    { name: "GitHub Actions", short_desc: "Automated CI/CD pipelines directly integrated into your GitHub repository.", benefit: "<strong>Free CI/CD</strong> with <strong>3,000 minutes/month</strong> of private repository time (via GitHub Pro).", verification: "Included with <strong>GitHub Education Pack</strong> (which grants GitHub Pro).", link: "https://docs.github.com/billing/managing-billing-for-github-actions/about-billing-for-github-actions", cost: "Free" },
+                    { name: "Docker Hub", short_desc: "The world’s largest container registry for sharing and deploying apps.", benefit: "<strong>Free Docker Personal</strong> subscription for individual developers, students, and educators.", verification: "Free registration.", link: "https://www.docker.com/products/personal/", cost: "Free" },
+                    { name: "MongoDB Atlas", short_desc: "A flexible, scalable NoSQL database as a service (DBaaS).", benefit: "<strong>$50 in cloud credit</strong> for their database-as-a-service.", verification: "Via the <strong>GitHub Education Pack</strong>.", link: "https://education.github.com/pack?sort=popularity&tag=Databases", cost: "Credit" },
+                    { name: "Heroku", short_desc: "Platform-as-a-Service (PaaS) for quickly deploying and scaling web apps.", benefit: "<strong>Free cloud dyno credits</strong> for application deployment.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://www.heroku.com/students/", cost: "Credit" },
+                    { name: "Sentry", short_desc: "Real-time error monitoring and performance tracking for applications.", benefit: "Free <strong>Developer Tier</strong> access for error tracking and performance monitoring.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://sentry.io/for/education/", cost: "Free" },
+                    { name: "Twilio", short_desc: "Communication APIs for SMS, voice, and video integration in apps.", benefit: "<strong>$50 in credits</strong> for communication APIs (SMS, Voice, Video).", verification: "Free account includes trial credits; larger credit via GitHub Pack.", link: "https://www.twilio.com/try-twilio", cost: "Credit" },
+                    { name: "Namecheap", short_desc: "Domain registration and web hosting services for personal projects.", benefit: "Free <strong>.me</strong> domain name registration for one year.", verification: "Via the <strong>GitHub Student Developer Pack</strong>.", link: "https://education.github.com/pack?sort=popularity&tag=Domains", cost: "Free" },
+                    // NEW ADDITIONS FROM MASTER PLAN STEPS
+                    { name: "Google Firebase", short_desc: "Serverless backend platform for mobile and web apps (database, auth, hosting).", benefit: "Generous <strong>Always Free Tier</strong> including Firestore, Authentication, and Hosting.", verification: "Standard free Google account.", link: "https://firebase.google.com/pricing", cost: "Free" },
+                    { name: "AWS Free Tier", short_desc: "Provides access to essential compute, storage, and database services for 12 months.", benefit: "Includes <strong>DynamoDB (NoSQL), S3 (Storage), EC2 (VMs)</strong>, and Lambda (Serverless).", verification: "Standard AWS account registration (may require credit card for verification).", link: "https://aws.amazon.com/free/", cost: "Free" }
                 ]
             },
             "ai-ml": {
                 title: "AI, Machine Learning & Data Science",
                 description: "These tools offer compute resources, environments for model training, and data analysis platforms.",
                 tools: [
-                    { name: "Amazon SageMaker Studio Lab", benefit: "<strong>Free CPU/GPU compute</strong> (T4) for ML/AI experimentation; no credit card or AWS account required.", verification: "Free account request.", link: "https://aws.amazon.com/sagemaker/studio-lab/", cost: "Free" },
-                    { name: "Kaggle", benefit: "<strong>Free GPU/TPU access</strong> for competitive programming, notebooks, and datasets.", verification: "Standard free account.", link: "https://www.kaggle.com/notebooks", cost: "Free" },
-                    { name: "Google Colab", benefit: "<strong>Free GPU/TPU access</strong> in the standard tier. Discounted access to Colab Pro for students.", verification: "Standard free Google account.", link: "https://colab.research.google.com/", cost: "Free" },
-                    { name: "Weights & Biases", benefit: "Free <strong>W&B Teams Plan</strong> for unlimited projects and advanced ML experiment tracking.", verification: "Student application/program via educational email.", link: "https://wandb.ai/site/", cost: "Free" },
-                    { name: "Hugging Face Academia Hub", benefit: "Advanced features and compute access via institutional subscription.", verification: "University IT team must subscribe; students use academic email.", link: "https://huggingface.co/docs/hub/academia-hub", cost: "Discount" },
-                    { name: "Tableau for Students", benefit: "Free one-year license for <strong>Tableau Desktop</strong> and <strong>Tableau Prep</strong> for advanced data visualization and analysis.", verification: "Academic email or student ID verification.", link: "https://www.tableau.com/academic/students", cost: "Free" },
-                    { name: "DataCamp", benefit: "Discounted or Free access to the Premium data science curriculum.", verification: "School Email for direct discount or via GitHub Pack.", link: "https://www.datacamp.com/pricing/student", cost: "Free" },
-                    { name: "Wolfram Alpha Pro", benefit: "Discounted access to the powerful computational knowledge engine.", verification: "Verification via third-party services like UNiDAYS or SheerID.", link: "https://www.wolframalpha.com/pro/pricing/students/", cost: "Discount" }
+                    { name: "Amazon SageMaker Studio Lab", short_desc: "Free, zero-setup environment for hands-on machine learning practice.", benefit: "<strong>Free CPU/GPU compute</strong> (T4) for ML/AI experimentation; no credit card or AWS account required.", verification: "Free account request.", link: "https://aws.amazon.com/sagemaker/studio-lab/", cost: "Free" },
+                    { name: "Kaggle", short_desc: "Platform for data science competitions, datasets, and collaborative notebooks.", benefit: "<strong>Free GPU/TPU access</strong> for competitive programming, notebooks, and datasets.", verification: "Standard free account.", link: "https://www.kaggle.com/notebooks", cost: "Free" },
+                    { name: "Google Colab", short_desc: "Jupyter-like notebooks providing free access to powerful GPU and TPU compute.", benefit: "<strong>Free GPU/TPU access</strong> in the standard tier. Discounted access to Colab Pro for students.", verification: "Standard free Google account.", link: "https://colab.research.google.com/", cost: "Free" },
+                    { name: "Weights & Biases", short_desc: "ML experiment tracking, visualization, and hyperparameter optimization.", benefit: "Free <strong>W&B Teams Plan</strong> for unlimited projects and advanced ML experiment tracking.", verification: "Student application/program via educational email.", link: "https://wandb.ai/site/", cost: "Free" },
+                    { name: "Hugging Face Academia Hub", short_desc: "Central hub for large language models, datasets, and advanced NLP research.", benefit: "Advanced features and compute access via institutional subscription.", verification: "University IT team must subscribe; students use academic email.", link: "https://huggingface.co/docs/hub/academia-hub", cost: "Discount" },
+                    { name: "Tableau for Students", short_desc: "Industry-leading software for interactive data visualization and business intelligence.", benefit: "Free one-year license for <strong>Tableau Desktop</strong> and <strong>Tableau Prep</strong> for advanced data visualization and analysis.", verification: "Academic email or student ID verification.", link: "https://www.tableau.com/academic/students", cost: "Free" },
+                    { name: "DataCamp", short_desc: "Interactive courses and learning paths for coding in R, Python, and SQL.", benefit: "Discounted or Free access to the Premium data science curriculum.", verification: "School Email for direct discount or via GitHub Pack.", link: "https://www.datacamp.com/pricing/student", cost: "Free" },
+                    { name: "Wolfram Alpha Pro", short_desc: "Computational knowledge engine providing step-by-step solutions for STEM.", benefit: "Discounted access to the powerful computational knowledge engine.", verification: "Verification via third-party services like UNiDAYS or SheerID.", link: "https://www.wolframalpha.com/pro/pricing/students/", cost: "Discount" }
                 ]
             },
             "game-dev": {
                 title: "Game Development",
                 description: "Professional-grade engines and modeling software for creating 2D and 3D interactive experiences.",
                 tools: [
-                    { name: "Unity Student", benefit: "Free <strong>Unity Pro</strong> license for professional-grade 3D/2D game development.", verification: "Student ID/Enrollment verification.", link: "https://id.unity.com/en/licenseApplied", cost: "Free" },
-                    { name: "Autodesk", benefit: "Free one-year, single-user licenses for software like <strong>Maya</strong> and <strong>Revit</strong>.", verification: "Student ID/Enrollment verification.", link: "https://www.autodesk.com/solutions/cad-for-students", cost: "Free" },
-                    { name: "Autodesk Fusion Personal", benefit: "Free personal license for <strong>Fusion 360</strong> (separate from the educational suite) for 3D modeling, CAD, and CAM.", verification: "Free registration for hobbyists and non-commercial use.", link: "https://www.autodesk.com/products/fusion-360/personal", cost: "Free" }
+                    { name: "Unity Student", short_desc: "Professional 3D/2D game engine used across multiple industries.", benefit: "Free <strong>Unity Pro</strong> license for professional-grade 3D/2D game development.", verification: "Student ID/Enrollment verification.", link: "https://id.unity.com/en/licenseApplied", cost: "Free" },
+                    { name: "Autodesk", short_desc: "Industry-standard modeling and simulation software (CAD/CAM/BIM).", benefit: "Free one-year, single-user licenses for software like <strong>Maya</strong> and <strong>Revit</strong>.", verification: "Student ID/Enrollment verification.", link: "https://www.autodesk.com/solutions/cad-for-students", cost: "Free" },
+                    { name: "Autodesk Fusion Personal", short_desc: "Cloud-based CAD/CAM tool for product design and engineering.", benefit: "Free personal license for <strong>Fusion 360</strong> (separate from the educational suite) for 3D modeling, CAD, and CAM.", verification: "Free registration for hobbyists and non-commercial use.", link: "https://www.autodesk.com/products/fusion-360/personal", cost: "Free" }
                 ]
             },
             "productivity": {
                 title: "Productivity, Design & Creative Tools",
                 description: "Software for design, documentation, and collaboration to help with coursework and creative projects.",
                 tools: [
-                    { name: "Adobe Creative Cloud", benefit: "<strong>Significant Discount</strong> (60%+ off) on the entire suite (Photoshop, Firefly AI, etc.).", verification: "School Email or other enrollment documentation.", link: "https://www.adobe.com/acrobat/pricing/students.html", cost: "Discount" },
-                    { name: "Notion Education", benefit: "Free upgrade to the <strong>Notion Plus</strong> plan, including <strong>Notion AI</strong> features.", verification: "Eligible Higher Education Email Address.", link: "https://www.notion.com/product/notion-for-education", cost: "Free" },
-                    { name: "Canva Pro for Students", benefit: "Free access to <strong>Canva Pro</strong> for qualified students.", verification: "School Email or enrollment documentation.", link: "https://www.canva.com/education/", cost: "Free" },
-                    { name: "Canva for Campus (Student Org)", benefit: "Free access to <strong>Canva for Campus</strong> for student clubs and organizations.", verification: "Student Organization verification.", link: "https://www.canva.com/education/", cost: "Free" },
-                    { name: "Figma for Education", benefit: "Free upgrade to the <strong>Figma Professional</strong> plan (Figma Pro + FigJam).", verification: "Application/Verification with academic email.", link: "https://www.figma.com/education/apply", cost: "Free" },
-                    { name: "Microsoft 365", benefit: "Free web/mobile versions of <strong>Word, Excel, PowerPoint, Teams, and OneNote</strong>.", verification: "Eligible School Email for instant verification.", link: "https://www.microsoft.com/en-us/microsoft-365/college-student-pricing", cost: "Free" }
+                    { name: "Adobe Creative Cloud", short_desc: "The complete suite of industry-standard creative and design software.", benefit: "<strong>Significant Discount</strong> (60%+ off) on the entire suite (Photoshop, Firefly AI, etc.).", verification: "School Email or other enrollment documentation.", link: "https://www.adobe.com/acrobat/pricing/students.html", cost: "Discount" },
+                    { name: "Notion Education", short_desc: "All-in-one workspace for notes, project management, and collaborative docs.", benefit: "Free upgrade to the <strong>Notion Plus</strong> plan, including <strong>Notion AI</strong> features.", verification: "Eligible Higher Education Email Address.", link: "https://www.notion.com/product/notion-for-education", cost: "Free" },
+                    { name: "Canva Pro for Students", short_desc: "Easy-to-use graphic design and presentation software with premium features.", benefit: "Free access to <strong>Canva Pro</strong> for qualified students.", verification: "School Email or enrollment documentation.", link: "https://www.canva.com/education/", cost: "Free" },
+                    { name: "Canva for Campus (Student Org)", short_desc: "Design and collaboration tool tailored for student clubs and group projects.", benefit: "Free access to <strong>Canva for Campus</strong> for student clubs and organizations.", verification: "Student Organization verification.", link: "https://www.canva.com/education/", cost: "Free" },
+                    { name: "Figma for Education", short_desc: "Industry-leading UI/UX design and prototyping tool (with FigJam for whiteboarding).", benefit: "Free upgrade to the <strong>Figma Professional</strong> plan (Figma Pro + FigJam).", verification: "Application/Verification with academic email.", link: "https://www.figma.com/education/apply", cost: "Free" },
+                    { name: "Microsoft 365", short_desc: "Essential productivity software (Word, Excel, PowerPoint) for academic work.", benefit: "Free web/mobile versions of <strong>Word, Excel, PowerPoint, Teams, and OneNote</strong>.", verification: "Eligible School Email for instant verification.", link: "https://www.microsoft.com/en-us/microsoft-365/college-student-pricing", cost: "Free" }
                 ]
             },
             "learning-cert": {
                 title: "Learning & Certification",
                 description: "Platforms offering interactive coding courses, specialized software, and free certification exams to build professional skills.",
                 tools: [
-                    { name: "Microsoft Free Certifications", benefit: "Free exam vouchers for fundamentals certifications (e.g., Azure Fundamentals, Security) for verified students.", verification: "Student status verification via Microsoft Learn.", link: "https://learn.microsoft.com/en-us/training/student-hub/", cost: "Free" },
-                    { name: "JetBrains Academy / Hyperskill", benefit: "Free access to the full <strong>Hyperskill</strong> platform for structured, project-based coding education.", verification: "Student status verification.", link: "https://hyperskill.org/education", cost: "Free" },
-                    { name: "IBM SkillsBuild", benefit: "Free courses, job-role specific learning, and professional badges in areas like AI, cloud, and cybersecurity.", verification: "Free registration via the platform.", link: "https://skillsbuild.org/", cost: "Free" },
-                    { name: "Replit Hacker", benefit: "Discounted/Free <strong>Hacker Plan</strong> access for enhanced compute power, private repos, and AI coding tools.", verification: "Student status verification.", link: "https://replit.com/site/education/student", cost: "Free" },
-                    { name: "MATLAB & Simulink for Students", benefit: "Free access to <strong>MATLAB and Simulink</strong> software if your university maintains a campus-wide license.", verification: "Campus license enrollment (check university portal).", link: "https://www.mathworks.com/pricing-licensing/licensing/university.html", cost: "Free" }
+                    { name: "Microsoft Free Certifications", short_desc: "Vouchers to prove foundational knowledge in cloud and security technologies.", benefit: "Free exam vouchers for fundamentals certifications (e.g., Azure Fundamentals, Security) for verified students.", verification: "Student status verification via Microsoft Learn.", link: "https://learn.microsoft.com/en-us/training/student-hub/", cost: "Free" },
+                    { name: "JetBrains Academy / Hyperskill", short_desc: "Project-based, interactive learning platform for programming skills.", benefit: "Free access to the full <strong>Hyperskill</strong> platform for structured, project-based coding education.", verification: "Student status verification.", link: "https://hyperskill.org/education", cost: "Free" },
+                    { name: "IBM SkillsBuild", short_desc: "Free digital courses, professional portfolios, and skills badges.", benefit: "Free courses, job-role specific learning, and professional badges in areas like AI, cloud, and cybersecurity.", verification: "Free registration via the platform.", link: "https://skillsbuild.org/", cost: "Free" },
+                    { name: "Replit Hacker", short_desc: "Online collaborative IDE with enhanced compute and AI features for coding.", benefit: "Discounted/Free <strong>Hacker Plan</strong> access for enhanced compute power, private repos, and AI coding tools.", verification: "Student status verification.", link: "https://replit.com/site/education/student", cost: "Free" },
+                    { name: "MATLAB & Simulink for Students", short_desc: "Numerical computing platform essential for engineering and scientific fields.", benefit: "Free access to <strong>MATLAB and Simulink</strong> software if your university maintains a campus-wide license.", verification: "Campus license enrollment (check university portal).", link: "https://www.mathworks.com/pricing-licensing/licensing/university.html", cost: "Free" }
                 ]
             },
             "cybersecurity": {
                 title: "Cybersecurity & Cloud Security",
                 description: "Platforms for hands-on cybersecurity training, lab simulations, and learning security fundamentals.",
                 tools: [
-                    { name: "TryHackMe", benefit: "<strong>20% Off</strong> annual subscriptions for hands-on cybersecurity training rooms.", verification: "Update occupation details in account settings.", link: "https://help.tryhackme.com/en/articles/6494960-student-discount", cost: "Discount" },
-                    { name: "Hack The Box Academy", benefit: "Discounted <strong>Student Subscription</strong> for guided training modules.", verification: "Academic Email or manual proof of enrollment.", link: "https://help.hackthebox.com/en/articles/7973133-getting-the-student-subscription", cost: "Discount" },
-                    { name: "Palo Alto Networks CyberAces", benefit: "<strong>Free</strong> courses on the fundamentals of cybersecurity and network/cloud security.", verification: "Create a free Beacon account.", link: "https://login.paloaltonetworks.com/lms/PreRegister?UserType=CUST", cost: "Free" },
-                    { name: "Splunk for Students", benefit: "Free access to <strong>Splunk Enterprise</strong> for log aggregation and SIEM labs (limited-time trials may apply).", verification: "Free trials and downloads are generally available.", link: "https://www.splunk.com/en_us/download.html", cost: "Free" }
+                    { name: "TryHackMe", short_desc: "Guided, hands-on labs and rooms for learning penetration testing and cyber defense.", benefit: "<strong>20% Off</strong> annual subscriptions for hands-on cybersecurity training rooms.", verification: "Update occupation details in account settings.", link: "https://help.tryhackme.com/en/articles/6494960-student-discount", cost: "Discount" },
+                    { name: "Hack The Box Academy", short_desc: "Structured cybersecurity training modules and certifications.", benefit: "Discounted <strong>Student Subscription</strong> for guided training modules.", verification: "Academic Email or manual proof of enrollment.", link: "https://help.hackthebox.com/en/articles/7973133-getting-the-student-subscription", cost: "Discount" },
+                    { name: "Palo Alto Networks CyberAces", short_desc: "Free online courses covering network, cloud, and general cybersecurity fundamentals.", benefit: "<strong>Free</strong> courses on the fundamentals of cybersecurity and network/cloud security.", verification: "Create a free Beacon account.", link: "https://login.paloaltonetworks.com/lms/PreRegister?UserType=CUST", cost: "Free" },
+                    { name: "Splunk for Students", short_desc: "Software for searching, monitoring, and analyzing big data and security logs.", benefit: "Free access to <strong>Splunk Enterprise</strong> for log aggregation and SIEM labs (limited-time trials may apply).", verification: "Free trials and downloads are generally available.", link: "https://www.splunk.com/en_us/download.html", cost: "Free" }
                 ]
             }
         };
@@ -414,7 +610,8 @@
                                     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 relative">
                                         <span class="absolute top-0 right-0 ${badgeClass} text-white text-xs font-bold py-1 px-3 rounded-tr-lg rounded-bl-lg">${badgeText}</span>
                                         <div>
-                                            <h3 class="text-xl font-bold text-blue-600 mb-2">${tool.name}</h3>
+                                            <h3 class="text-xl font-bold text-blue-600 mb-1">${tool.name}</h3>
+                                            <p class="text-sm text-gray-500 mb-3">${tool.short_desc}</p>
                                             <p class="text-gray-700 mb-4">${tool.benefit}</p>
                                             <p class="text-sm text-gray-500 mb-6"><span class="font-semibold">Verification:</span> ${tool.verification}</p>
                                         </div>
@@ -438,6 +635,20 @@
             const menuToggle = document.getElementById('menu-toggle');
             const filterControls = document.getElementById('filter-controls');
             const scrollToTopBtn = document.getElementById('scrollToTop');
+            const masterPlanToggle = document.getElementById('master-plan-toggle');
+            const masterPlanContent = document.getElementById('master-plan-content');
+            const toggleIcon = document.getElementById('toggle-icon');
+
+            // --- Collapsible Master Plan Logic ---
+            masterPlanToggle.addEventListener('click', () => {
+                const isHidden = masterPlanContent.classList.toggle('hidden');
+                if (isHidden) {
+                    masterPlanToggle.innerHTML = 'View Steps <svg id="toggle-icon" class="w-5 h-5 ml-2 transform rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+                } else {
+                    masterPlanToggle.innerHTML = 'Hide Steps <svg id="toggle-icon" class="w-5 h-5 ml-2 transform rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+                }
+            });
+
 
             // Scroll to top button functionality
             window.addEventListener('scroll', () => {
@@ -460,11 +671,22 @@
             const navLinks = [];
             let suppressObserver = false;
 
-            // NEW: Add "Introduction" link first
+            // Add Master Plan link
+            const masterPlanLink = document.createElement('a');
+            masterPlanLink.href = `#master-plan`;
+            masterPlanLink.textContent = 'Master Plan';
+            masterPlanLink.className = 'nav-link block w-full text-left px-4 py-3 rounded-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-200';
+            masterPlanLink.dataset.sectionId = 'master-plan';
+            
+            const masterPlanItem = document.createElement('li');
+            masterPlanItem.appendChild(masterPlanLink);
+            navList.appendChild(masterPlanItem);
+            navLinks.push(masterPlanLink);
+
+            // Add Introduction link
             const introLink = document.createElement('a');
             introLink.href = `#introduction`;
             introLink.textContent = 'Introduction';
-            // Removed border classes from link, adding padding back to li
             introLink.className = 'nav-link block w-full text-left px-4 py-3 rounded-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-200';
             introLink.dataset.sectionId = 'introduction';
 
@@ -472,7 +694,6 @@
             introItem.appendChild(introLink);
             navList.appendChild(introItem);
             navLinks.push(introLink);
-
 
             for (const [key, category] of Object.entries(toolData)) {
                 const navItem = document.createElement('li');
@@ -486,6 +707,20 @@
                 navList.appendChild(navItem);
                 navLinks.push(navLink);
             }
+
+            // FIX: Correct order of Master Plan and Introduction in the navList.
+            // Move 'introduction' before 'master-plan'.
+            // Remove them and re-add them in the correct order.
+            navList.innerHTML = '';
+            navList.appendChild(introItem);
+            navList.appendChild(masterPlanItem);
+            
+            for (const link of navLinks.slice(2)) {
+                const navItem = document.createElement('li');
+                navItem.appendChild(link);
+                navList.appendChild(navItem);
+            }
+
 
             menuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('-translate-x-full');
@@ -512,15 +747,25 @@
                 }
             });
 
-            const sections = document.querySelectorAll('section');
+            // Note: document.querySelectorAll('section') must be run again after renderContent() 
+            // since the sections are dynamically replaced.
+            const observeSections = () => {
+                const sectionsToObserve = document.querySelectorAll('section');
+                sectionsToObserve.forEach(section => {
+                    observer.observe(section);
+                });
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 if (suppressObserver) return;
                 const visible = entries.filter(en => en.isIntersecting);
                 if (!visible.length) return;
-                // Choose the section closest to the top of the viewport
+                
+                // Select the section that is currently at the top of the viewport
                 visible.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
                 const topEntry = visible[0];
                 const activeId = topEntry.target.id;
+                
                 navLinks.forEach(link => {
                     if (link.dataset.sectionId === activeId) {
                         link.classList.add('active');
@@ -530,14 +775,17 @@
                 });
             }, { rootMargin: '-20% 0px -70% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            // Initial observation
+            observeSections();
 
-            // Set initial active link (the new Introduction link)
+            // Set initial active link (the Master Plan link)
             if (navLinks.length > 0) {
-                navLinks[0].classList.add('active');
+                 // De-activate all first
+                navLinks.forEach(link => link.classList.remove('active')); 
+                // Set the correct initial active link (Master Plan is a better starting point than Introduction)
+                navLinks.find(link => link.dataset.sectionId === 'introduction').classList.add('active');
             }
+
 
             // --- Filter Event Handler ---
             filterControls.addEventListener('click', (e) => {
@@ -546,12 +794,14 @@
                     if (newFilter !== currentFilter) {
                         currentFilter = newFilter;
                         renderContent(currentFilter);
+                        
+                        // Clear old observations before setting up new ones
+                        document.querySelectorAll('section').forEach(section => observer.unobserve(section));
+                        
                         // Re-observe sections after content change for navigation highlight
                         const newSections = document.querySelectorAll('section');
-                        // Unobserve any previously observed sections
-                        sections.forEach(section => observer.unobserve(section));
-                        // Observe new/current sections
                         newSections.forEach(section => observer.observe(section));
+                        
                         // Smooth scroll to the top of content sections (right below filter buttons) after filtering
                         document.getElementById('content-sections').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }

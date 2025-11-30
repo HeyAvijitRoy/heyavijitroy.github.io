@@ -498,7 +498,7 @@
     </button>
 
     <script>
-        // *** CONFIGURATION: Set the URL to your external data.json file ***
+        // Set the URL to your external data.json file
         const DATA_SOURCE_URL = 'https://raw.githubusercontent.com/HeyAvijitRoy/free-cloud-ai-resources-for-students/main/data.json'; 
 
         let toolData = {}; 
@@ -512,6 +512,12 @@
                     button.classList.remove('active-filter');
                 }
             });
+        };
+        
+        // Function to strip emojis and leading/trailing whitespace
+        const stripEmoji = (text) => {
+            // Regex to match common Unicode emojis and symbols at the start of a string
+            return text.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]|\p{Emoji_Presentation}|\p{Emoji}\s*/gu, '').trim();
         };
 
         const renderContent = (data, filter) => {
@@ -607,8 +613,11 @@
             for (const [key, category] of Object.entries(data)) {
                  const navItem = document.createElement('li');
                  const navLink = document.createElement('a');
+                 
+                 // CRITICAL FIX: Strip emoji from the navigation text content
+                 navLink.textContent = stripEmoji(category.title); 
+                 
                  navLink.href = `#${key}`;
-                 navLink.textContent = category.title;
                  navLink.className = 'nav-link block w-full text-left px-4 py-3 rounded-md text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-200';
                  navLink.dataset.sectionId = key;
                  navItem.appendChild(navLink);

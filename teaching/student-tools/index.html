@@ -514,10 +514,15 @@
             });
         };
         
-        // Function to strip emojis and leading/trailing whitespace
+        // Function to strip leading emoji(s) and any spaces after them from nav titles
         const stripEmoji = (text) => {
-            // Regex to match common Unicode emojis and symbols at the start of a string
-            return text.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]|\p{Emoji_Presentation}|\p{Emoji}\s*/gu, '').trim();
+            if (!text) return '';
+            // Remove any leading whitespace
+            let clean = text.replace(/^\s+/, '');
+            // Remove any leading non-alphanumeric symbols (emoji, punctuation, etc.)
+            clean = clean.replace(/^[^A-Za-z0-9]+/, '');
+            // Trim any remaining leading spaces
+            return clean.replace(/^\s+/, '');
         };
 
         const renderContent = (data, filter) => {

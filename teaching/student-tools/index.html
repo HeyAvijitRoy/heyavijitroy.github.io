@@ -148,8 +148,8 @@
 
         #scrollToTop {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
+            bottom: 1.7rem;
+            right: 0.5rem;
             background-color: #2563EB;
             color: white;
             width: 3rem;
@@ -172,6 +172,11 @@
             visibility: visible;
         }
 
+        #scrollToTop.near-footer {
+            bottom: 7rem;
+            right: 0.5rem;
+        }
+
         #scrollToTop:hover {
             background-color: #1E40AF;
             transform: translateY(-2px);
@@ -180,8 +185,8 @@
 
         @media (min-width: 768px) {
             #scrollToTop {
-                bottom: 2.5rem;
-                right: 2.5rem;
+                bottom: 3.0rem;
+                right: 2rem;
             }
         }
 
@@ -480,11 +485,11 @@
 
         <!-- Footer -->
         <footer class="footer-offset bg-gray-900 text-gray-400 p-6 mt-auto">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>&copy; 2025 Student Tools Guide. Information Compiled for Educational Use by <a
-                        href="https://avijitroy.com/" class="text-blue-400 hover:text-blue-300">Avijit Roy</a></p>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-center md:text-left">
+                <p>&copy; 2025 Student Tools Guide. A Community-Powered List Maintained by <a
+                        href="https://avijitroy.com/" target="_blank" class="text-blue-400 hover:text-blue-300">Avijit Roy</a></p>
                 <div class="mt-2 md:mt-0 space-x-4">
-                    <span>No Affiliate Links • No Referrals • Official Sources Only</span>
+                    <span> No Affiliate Links • No Referrals • Official Sources Only. <a href="https://github.com/HeyAvijitRoy/free-cloud-ai-resources-for-students" target="_blank" class="text-blue-400 hover:text-blue-300">Contribute on GitHub.</a></span>
                 </div>
             </div>
         </footer>
@@ -498,7 +503,7 @@
     </button>
 
     <script>
-        // Set the URL to your external data.json file
+        //  URL to data.json file
         const DATA_SOURCE_URL = 'https://raw.githubusercontent.com/HeyAvijitRoy/free-cloud-ai-resources-for-students/main/data.json'; 
 
         let toolData = {}; 
@@ -723,10 +728,19 @@
             
             // --- Scroll to Top Button Logic ---
             window.addEventListener('scroll', () => {
+                const nearBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 100;
+                
                 if (window.scrollY > 300) {
                     scrollToTopBtn.classList.add('show');
                 } else {
                     scrollToTopBtn.classList.remove('show');
+                }
+                
+                // On mobile, move button up when near footer
+                if (window.innerWidth < 768 && nearBottom) {
+                    scrollToTopBtn.classList.add('near-footer');
+                } else {
+                    scrollToTopBtn.classList.remove('near-footer');
                 }
             });
 

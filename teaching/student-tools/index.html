@@ -148,8 +148,8 @@
 
         #scrollToTop {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
+            bottom: 1.7rem;
+            right: 0.5rem;
             background-color: #2563EB;
             color: white;
             width: 3rem;
@@ -172,6 +172,11 @@
             visibility: visible;
         }
 
+        #scrollToTop.near-footer {
+            bottom: 7rem;
+            right: 0.5rem;
+        }
+
         #scrollToTop:hover {
             background-color: #1E40AF;
             transform: translateY(-2px);
@@ -180,8 +185,8 @@
 
         @media (min-width: 768px) {
             #scrollToTop {
-                bottom: 2.5rem;
-                right: 2.5rem;
+                bottom: 3.0rem;
+                right: 2rem;
             }
         }
 
@@ -723,10 +728,19 @@
             
             // --- Scroll to Top Button Logic ---
             window.addEventListener('scroll', () => {
+                const nearBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 100;
+                
                 if (window.scrollY > 300) {
                     scrollToTopBtn.classList.add('show');
                 } else {
                     scrollToTopBtn.classList.remove('show');
+                }
+                
+                // On mobile, move button up when near footer
+                if (window.innerWidth < 768 && nearBottom) {
+                    scrollToTopBtn.classList.add('near-footer');
+                } else {
+                    scrollToTopBtn.classList.remove('near-footer');
                 }
             });
 

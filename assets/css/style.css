@@ -1034,3 +1034,92 @@ html[data-theme="dark"] .nice-table {
   margin: 0.15rem 0;
 }
 
+/* Responsive Table */
+.responsive-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 70%, var(--card) 30%),
+      color-mix(in oklab, var(--brand-700) 70%, var(--card) 30%));
+  --table-stripe: color-mix(in oklab, var(--card) 94%, var(--text) 6%);
+  --table-hover: color-mix(in oklab, var(--card) 88%, var(--brand) 12%);
+  
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.responsive-table thead th {
+  background: var(--table-header-bg);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-bottom: 1px solid color-mix(in oklab, #000 35%, var(--brand) 65%);
+}
+
+.responsive-table tbody tr:nth-child(even) {
+  background-color: var(--table-stripe);
+}
+
+.responsive-table tbody tr:hover {
+  background-color: var(--table-hover);
+  transition: background-color 0.15s ease-in-out;
+}
+
+html[data-theme="dark"] .responsive-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 42%, var(--card) 58%),
+      color-mix(in oklab, var(--brand-700) 42%, var(--card) 58%));
+  --table-stripe: color-mix(in oklab, var(--card) 86%, var(--text) 14%);
+  --table-hover: color-mix(in oklab, var(--card) 80%, var(--brand) 20%);
+}
+
+html[data-theme="dark"] .responsive-table thead th {
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow);
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-right: var(--space-4);
+  }
+}

@@ -156,4 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initial wire
   wireInlineTags();
+
+  // Set current year in footer
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 })();

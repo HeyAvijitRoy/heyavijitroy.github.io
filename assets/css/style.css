@@ -1056,6 +1056,7 @@ html[data-theme="dark"] .nice-table {
   padding: var(--space-3);
   text-align: left;
   border-bottom: 1px solid var(--border);
+  width: 25%; /* Force equal widths for 4 columns */
 }
 
 .responsive-table thead th {

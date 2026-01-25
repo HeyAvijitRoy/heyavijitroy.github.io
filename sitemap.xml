@@ -35,7 +35,7 @@
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/oop-sp26/</loc>
-		<lastmod>2025-11-25</lastmod>
+		<lastmod>2026-01-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
@@ -45,12 +45,12 @@
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
-	<!-- <url>
+	<url>
 		<loc>https://avijitroy.com/teaching/courses/itp-sp26/</loc>
-		<lastmod>2025-11-25</lastmod>
+		<lastmod>2026-01-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
-	</url> -->
+	</url> 
 		<url>
 		<loc>https://avijitroy.com/docs/cpp-vscode-win.html</loc>
 		<lastmod>2025-11-25</lastmod>

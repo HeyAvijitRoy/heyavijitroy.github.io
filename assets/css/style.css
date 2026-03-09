@@ -95,7 +95,7 @@ a {
 
 .container {
   max-width: 1080px;
-  width: 92%;
+  /* width: 92%; */
   margin: var(--space-6) auto;
   padding: 0 var(--space-5);
 }

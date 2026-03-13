@@ -21,7 +21,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Research • Avijit Roy" />
+  <meta property="og:title" content="Research - Avijit Roy" />
   <meta property="og:description"
     content="Research by Avijit Roy at the intersection of cybersecurity, AI, and privacy-preserving systems: publications, patents, research projects, and honors." />
   <meta property="og:url" content="https://avijitroy.com/research/" />
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
-  <meta name="twitter:title" content="Research • Avijit Roy" />
+  <meta name="twitter:title" content="Research - Avijit Roy" />
   <meta name="twitter:description"
     content="Research by Avijit Roy at the intersection of cybersecurity, AI, and privacy-preserving systems: publications, patents, research projects, and honors." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
@@ -58,27 +58,42 @@
 
   <!-- JSON-LD (Research) -->
   <script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Research - Avijit Roy",
-    "breadcrumb": "https://avijitroy.com/research/",
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Research Projects",
-      "itemListElement": [
-        {
-          "@type": "CreativeWork",
-          "name": "Deshi-Mentor",
-          "description": "Offline-first SLM for Bengali pedagogy."
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://avijitroy.com/research/#webpage",
+        "url": "https://avijitroy.com/research/",
+        "name": "Research - Avijit Roy",
+        "description": "Research projects, publications, and scholarly work by Avijit Roy across AI, cybersecurity, digital forensics, and secure systems.",
+        "breadcrumb": {
+          "@id": "https://avijitroy.com/research/#breadcrumb"
         },
-        {
-          "@type": "CreativeWork",
-          "name": "Adversarial Attack Analysis on Neural Hash",
-          "description": "Research on neural hash vulnerabilities for FCM 791."
+        "about": {
+          "@id": "https://avijitroy.com/#person"
         }
-      ]
-    }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/research/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Research",
+            "item": "https://avijitroy.com/research/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -154,7 +169,7 @@
       <article class="card">
         <h3>Privacy-Preserving MIS Using Blockchain, Federated Learning and Zero-Trust Models</h3>
         <p class="muted">Avijit Roy, Emran Hossain, Hemayet Uddin Himel, Hasan Imam, Ruhul Amin Md Rashed, Harleen Kaur</p>
-        <p class="muted"><strong>Accepted Full Paper • Best Paper Award — ICICC 2026 (International Conference on Innovative Computing and Communication)</strong></p>
+        <p class="muted"><strong>Accepted Full Paper - Best Paper Award — ICICC 2026 (International Conference on Innovative Computing and Communication)</strong></p>
         <p class="muted">
           This research proposes a privacy-preserving Management Information System architecture that integrates
           blockchain infrastructure, federated learning, and zero-trust security models. The framework enables secure

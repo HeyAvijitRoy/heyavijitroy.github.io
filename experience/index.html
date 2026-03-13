@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Experience • Avijit Roy</title>
+  <title>Experience - Avijit Roy</title>
 
   <!-- Canonical & robots -->
   <link rel="canonical" href="https://avijitroy.com/experience/" />
@@ -62,151 +62,35 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebSite",
-        "@id": "https://avijitroy.com/#website",
-        "url": "https://avijitroy.com/",
-        "name": "Avijit Roy"
-      },
-      {
         "@type": "WebPage",
         "@id": "https://avijitroy.com/experience/#webpage",
         "url": "https://avijitroy.com/experience/",
-        "name": "Experience • Avijit Roy",
-        "isPartOf": { "@id": "https://avijitroy.com/#website" },
-        "description": "Explore the professional experience of Avijit Roy, detailing his work in data analysis, software engineering, and cybersecurity education."
+        "name": "Experience - Avijit Roy",
+        "description": "Professional experience of Avijit Roy across data analysis, teaching, software engineering, AI research, and cybersecurity-related work.",
+        "breadcrumb": {
+          "@id": "https://avijitroy.com/experience/#breadcrumb"
+        },
+        "about": {
+          "@id": "https://avijitroy.com/#person"
+        }
       },
       {
-        "@type": "Person",
-        "@id": "https://avijitroy.com/#person",
-        "name": "Avijit Roy",
-        "url": "https://avijitroy.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/HeyAvijitRoy/",
-          "https://github.com/HeyAvijitRoy",
-          "https://orcid.org/0009-0007-8036-0952",
-          "https://heyavijitroy.medium.com/",
-          "https://www.instagram.com/pirsquarek/",
-          "https://www.flickr.com/photos/kabyo/"
-        ],
-        "jobTitle": "Data Analyst, Adjunct Lecturer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "The City University of New York (CUNY)"
-        },
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "CUNY John Jay College of Criminal Justice",
-          "sameAs": "https://www.jjay.cuny.edu/"
-        },
-        "skills": "Data Analysis, Python (Programming Language), SQL, Tableau, Data Governance, Software Engineering, Cybersecurity, Artificial Intelligence (AI), Research, Teaching",
-        "hasRole": [
-          { "@id": "https://avijitroy.com/experience/#role-adjunct-lecturer" },
-          { "@id": "https://avijitroy.com/experience/#role-data-analyst" },
-          { "@id": "https://avijitroy.com/experience/#role-ai-research-assistant" },
-          { "@id": "https://avijitroy.com/experience/#role-research-mentor" },
-          { "@id": "https://avijitroy.com/experience/#role-gra" },
-          { "@id": "https://avijitroy.com/experience/#role-student-records-coordinator" },
-          { "@id": "https://avijitroy.com/experience/#role-it-specialist-data-analyst" }
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/experience/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Experience",
+            "item": "https://avijitroy.com/experience/"
+          }
         ]
-      },
-
-      /* Roles */
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-adjunct-lecturer",
-        "roleName": "Adjunct Lecturer",
-        "startDate": "2025-08-01",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "CUNY John Jay College of Criminal Justice",
-          "sameAs": "https://www.jjay.cuny.edu/"
-        },
-        "location": {
-          "@type": "Place",
-          "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY" }
-        },
-        "description": "As an Instructor for Object Oriented Programming and Introduction to Computer Programming, I design and deliver coursework that helps students move beyond syntax and into real software reasoning. I teach object-oriented problem solving through hands-on programming, guiding students in understanding memory models, abstraction, and clean program structure. My instruction emphasizes readable code, incremental debugging strategies, and the mindset required to architect maintainable systems."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-data-analyst",
-        "roleName": "Data Analyst",
-        "startDate": "2024-07-01",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "The City University of New York (CUNY)"
-        },
-        "description": "I analyze multi-campus student enrollment and immigration-related records to ensure data accuracy and regulatory compliance across the CUNY system. My work focuses on building reconciliation workflows, automating validation pipelines, and generating dashboards that support data-driven decision-making for student services and institutional planning."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-ai-research-assistant",
-        "roleName": "AI Research Assistant",
-        "startDate": "2025-06-01",
-        "endDate": "2025-08-31",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "The Research Foundation of the City University of New York (RFCUNY)"
-        },
-        "description": "As an AI Research Assistant at the Research Foundation of CUNY, I contributed to the development of a writing proficiency assessment system aligned with ACTFL standards. My work focused on preparing structured text corpora, fine-tuning transformer models, and evaluating model performance to ensure linguistic accuracy and interpretability. I supported the research pipeline end-to-end — from dataset design and labeling workflows to model experimentation, visualization, and documentation — enabling the project to move from conceptual framework to reproducible experimental system."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-research-mentor",
-        "roleName": "Research Mentor — Software Development & Applied Computing",
-        "startDate": "2025-06-01",
-        "endDate": "2025-08-31",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "CUNY John Jay College of Criminal Justice",
-          "sameAs": "https://www.jjay.cuny.edu/"
-        },
-        "location": {
-          "@type": "Place",
-          "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY" }
-        },
-        "description": "As a Research Mentor in the Department of Mathematics & Computer Science, I guided undergraduate researchers in designing secure, production-aligned web systems. I led students through full-stack workflows, emphasizing authentication, session integrity, and software reliability. The mentorship combined technical execution with research framing, preparing students to translate theory into real-world engineering practices."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-gra",
-        "roleName": "Graduate Research Assistant",
-        "startDate": "2025-01-01",
-        "endDate": "2025-05-31",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "CUNY John Jay College of Criminal Justice",
-          "sameAs": "https://www.jjay.cuny.edu/"
-        },
-        "location": {
-          "@type": "Place",
-          "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY" }
-        },
-        "description": "As a Graduate Research Assistant, I architected a secure real-time intelligence platform supporting human-trafficking investigations. I built live map dashboards and analytics workflows while integrating security controls such as OAuth2, RBAC, encryption-at-rest, and audit logging to safeguard sensitive PII. The platform enabled investigators to surface geographic trends, coordinate response efforts, and analyze behavioral indicators with confidence and data integrity."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-student-records-coordinator",
-        "roleName": "University Student Records Coordinator",
-        "startDate": "2023-06-01",
-        "endDate": "2024-05-31",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "The City University of New York (CUNY)"
-        },
-        "description": "I oversaw the management, validation, and reconciliation of university-wide student records, implementing processes that improved data reliability across multiple campus systems. I developed automated comparison tools, reduced manual verification, and ensured alignment with institutional and regulatory requirements."
-      },
-      {
-        "@type": "EmployeeRole",
-        "@id": "https://avijitroy.com/experience/#role-it-specialist-data-analyst",
-        "roleName": "IT Specialist & Data Analyst",
-        "startDate": "2019-10-01",
-        "endDate": "2023-06-30",
-        "memberOf": {
-          "@type": "Organization",
-          "name": "The City University of New York (CUNY)"
-        },
-        "description": "I managed data workflows across multiple student information systems, performed large-scale data cleansing, and developed query and visualization tooling to support enrollment analysis. My work improved reporting consistency, reduced manual processing, and informed administrative planning across academic units."
       }
     ]
   }

@@ -53,31 +53,98 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js" defer></script>
 
-  <!-- JSON-LD (Courses) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Teaching - Avijit Roy",
-    "breadcrumb": "https://avijitroy.com/teaching/",
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Courses Taught",
-      "itemListElement": [
-        {
-          "@type": "Course",
-          "name": "OOP in C++ (CSCI 272)",
-          "description": "Object-Oriented Programming at John Jay College."
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://avijitroy.com/teaching/#webpage",
+        "url": "https://avijitroy.com/teaching/",
+        "name": "Teaching - Avijit Roy",
+        "description": "Teaching portfolio of Avijit Roy, including computer science courses, instructional materials, and student resources.",
+        "breadcrumb": {
+          "@id": "https://avijitroy.com/teaching/#breadcrumb"
         },
-        {
-          "@type": "Course",
-          "name": "Intro to Computing & Programming (CSCI 271)",
-          "description": "Foundational programming course at John Jay College."
+        "mainEntity": {
+          "@id": "https://avijitroy.com/teaching/#courses"
         }
-      ]
-    }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/teaching/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Teaching",
+            "item": "https://avijitroy.com/teaching/"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://avijitroy.com/teaching/#courses",
+        "name": "Courses Taught",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://avijitroy.com/teaching/courses/oop-sp26/",
+            "item": {
+              "@type": "Course",
+              "name": "Object-Oriented Programming in C++ (CSCI 272) - Spring 2026",
+              "description": "Object-oriented programming course covering classes, objects, inheritance, polymorphism, file handling, and applied C++ problem solving.",
+              "provider": {
+                "@type": "CollegeOrUniversity",
+                "name": "John Jay College of Criminal Justice"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://avijitroy.com/teaching/courses/oop-fa25/",
+            "item": {
+              "@type": "Course",
+              "name": "Object-Oriented Programming in C++ (CSCI 272) - Fall 2025",
+              "description": "Object-oriented programming course covering C++ class design, inheritance, polymorphism, file handling, and problem-solving with modern programming practices.",
+              "provider": {
+                "@type": "CollegeOrUniversity",
+                "name": "John Jay College of Criminal Justice"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://avijitroy.com/teaching/courses/itp-sp26/",
+            "item": {
+              "@type": "Course",
+              "name": "Introduction to Computing and Programming (CSCI 271) - Spring 2026",
+              "description": "Introductory computing and programming course covering computational thinking, algorithms, core programming concepts, and problem solving in C++.",
+              "provider": {
+                "@type": "CollegeOrUniversity",
+                "name": "John Jay College of Criminal Justice"
+              }
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
+  <!-- JSON-LD (Courses) -->
+
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4VM6347X4"></script>

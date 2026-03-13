@@ -1,0 +1,201 @@
+name: Structured Data Validator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate-jsonld-and-breadcrumbs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate JSON-LD and breadcrumb URLs against sitemap
+        run: |
+          python <<'PY'
+          import json
+          import re
+          import sys
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          # -------------------------------
+          # Config
+          # -------------------------------
+          SITEMAP_PATH = Path("sitemap.xml")
+
+          # -------------------------------
+          # Helpers
+          # -------------------------------
+          def normalize_url(url: str) -> str:
+              """Normalize URLs so comparisons are consistent."""
+              url = (url or "").strip()
+
+              # Remove fragment and query string
+              url = url.split("#", 1)[0]
+              url = url.split("?", 1)[0]
+
+              # Normalize trailing slash for HTML files vs folders carefully:
+              # - Keep .html pages as-is
+              # - Keep root as-is
+              # - Ensure folder-like URLs end with /
+              if url.endswith(".html"):
+                  return url
+
+              if re.match(r"^https?://[^/]+$", url):
+                  return url + "/"
+
+              if not url.endswith("/"):
+                  url += "/"
+
+              return url
+
+
+          def load_sitemap_urls(sitemap_path: Path):
+              if not sitemap_path.exists():
+                  print(f"ERROR: {sitemap_path} not found.")
+                  sys.exit(1)
+
+              try:
+                  tree = ET.parse(sitemap_path)
+                  root = tree.getroot()
+              except Exception as e:
+                  print(f"ERROR: Failed to parse sitemap.xml: {e}")
+                  sys.exit(1)
+
+              ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+              urls = set()
+
+              for loc in root.findall(".//sm:loc", ns):
+                  if loc.text:
+                      urls.add(normalize_url(loc.text))
+
+              return urls
+
+
+          def find_jsonld_blocks(html_text: str):
+              pattern = re.compile(
+                  r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                  re.IGNORECASE | re.DOTALL
+              )
+              return pattern.findall(html_text)
+
+
+          def collect_breadcrumb_urls(node, found_urls):
+              """
+              Recursively walk decoded JSON-LD and collect URLs from BreadcrumbList ListItem.item.
+              Supports:
+              - dict
+              - list
+              """
+              if isinstance(node, dict):
+                  node_type = node.get("@type")
+
+                  if node_type == "BreadcrumbList":
+                      items = node.get("itemListElement", [])
+                      if isinstance(items, list):
+                          for item in items:
+                              if isinstance(item, dict):
+                                  breadcrumb_item = item.get("item")
+                                  if isinstance(breadcrumb_item, str):
+                                      found_urls.append(breadcrumb_item)
+                                  elif isinstance(breadcrumb_item, dict):
+                                      # Rare form: item may itself be a Thing with @id or url
+                                      if isinstance(breadcrumb_item.get("@id"), str):
+                                          found_urls.append(breadcrumb_item["@id"])
+                                      elif isinstance(breadcrumb_item.get("url"), str):
+                                          found_urls.append(breadcrumb_item["url"])
+
+                  for value in node.values():
+                      collect_breadcrumb_urls(value, found_urls)
+
+              elif isinstance(node, list):
+                  for item in node:
+                      collect_breadcrumb_urls(item, found_urls)
+
+
+          # -------------------------------
+          # Main
+          # -------------------------------
+          sitemap_urls = load_sitemap_urls(SITEMAP_PATH)
+          html_files = list(Path(".").rglob("*.html"))
+
+          if not html_files:
+              print("No HTML files found.")
+              sys.exit(0)
+
+          json_errors = []
+          breadcrumb_errors = []
+          checked_blocks = 0
+          checked_breadcrumb_urls = 0
+
+          for html_file in html_files:
+              content = html_file.read_text(encoding="utf-8", errors="ignore")
+              blocks = find_jsonld_blocks(content)
+
+              for i, block in enumerate(blocks, start=1):
+                  checked_blocks += 1
+                  raw = block.strip()
+
+                  if not raw:
+                      json_errors.append(f"{html_file} [block {i}]: Empty JSON-LD block")
+                      continue
+
+                  try:
+                      data = json.loads(raw)
+                      print(f"OK JSON: {html_file} [block {i}]")
+                  except json.JSONDecodeError as e:
+                      json_errors.append(
+                          f"{html_file} [block {i}]: JSON error at line {e.lineno}, column {e.colno} - {e.msg}"
+                      )
+                      continue
+
+                  breadcrumb_urls = []
+                  collect_breadcrumb_urls(data, breadcrumb_urls)
+
+                  for url in breadcrumb_urls:
+                      checked_breadcrumb_urls += 1
+                      normalized = normalize_url(url)
+
+                      if normalized not in sitemap_urls:
+                          breadcrumb_errors.append(
+                              f"{html_file} [block {i}]: Breadcrumb URL not found in sitemap -> {url}"
+                          )
+                      else:
+                          print(f"OK BREADCRUMB: {html_file} [block {i}] -> {url}")
+
+          print("\n-------------------------------")
+          print(f"Checked JSON-LD blocks: {checked_blocks}")
+          print(f"Checked breadcrumb URLs: {checked_breadcrumb_urls}")
+          print(f"Sitemap URL count: {len(sitemap_urls)}")
+          print("-------------------------------\n")
+
+          if json_errors or breadcrumb_errors:
+              print("Structured data validation failed.\n")
+
+              if json_errors:
+                  print("JSON-LD syntax errors:")
+                  for err in json_errors:
+                      print(f"- {err}")
+                  print()
+
+              if breadcrumb_errors:
+                  print("Breadcrumb sitemap mismatch errors:")
+                  for err in breadcrumb_errors:
+                      print(f"- {err}")
+                  print()
+
+              sys.exit(1)
+
+          print("All JSON-LD blocks are valid, and all breadcrumb URLs exist in sitemap.xml.")
+          PY

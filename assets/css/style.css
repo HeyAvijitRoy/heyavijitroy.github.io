@@ -367,11 +367,22 @@ html[data-theme="dark"] .muted {
   gap: var(--space-3);
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-3);
   padding: var(--space-4);
+}
+
+/* Keep standalone cards separated without relying on manual <br> tags */
+.section-block > .card + .card {
+  margin-top: var(--space-3);
 }
 
 .block {

@@ -14,24 +14,6 @@ backToTop.addEventListener('click', (e) => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// REVEAL ON SCROLL
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.section, .card, .bar-group, .hero-stat, .page-shell header').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
 
 // INFO POPOVER TOGGLE
 const infoTrigger = document.getElementById('infoTrigger');

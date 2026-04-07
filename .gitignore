@@ -11,3 +11,5 @@ scraps/*
 *.log  
 scraps
 *.db
+
+v2/

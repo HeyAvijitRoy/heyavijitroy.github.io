@@ -903,3 +903,40 @@ h1 .accent {
     height: 46px;
   }
 }
+
+.bibtex {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88rem;
+  color: var(--muted);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Copy button hover cursor */
+.copy-btn {
+  cursor: pointer;
+}
+
+/* Inline copy confirmation */
+.copy-status {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--muted-2);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Visible success message */
+.copy-status.show {
+  opacity: 1;
+  color: var(--green);
+}
+
+/* Optional subtle hover polish */
+.copy-btn:hover {
+  transform: translateY(-1px);
+}

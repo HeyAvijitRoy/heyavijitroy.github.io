@@ -73,6 +73,87 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
+
+    .identity-snapshot {
+      margin: 1rem 0;
+      padding: 0;
+    }
+
+    .identity-snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .identity-card {
+      position: relative;
+      min-height: 170px;
+      padding: 1.35rem;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .identity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: color-mix(in oklab, var(--brand) 35%, var(--border));
+    }
+
+    .identity-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .identity-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+      background: color-mix(in oklab, var(--brand) 14%, transparent);
+      font-size: 0.95rem;
+      flex: 0 0 auto;
+    }
+
+    .identity-card h3 {
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--brand);
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    .identity-card p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .identity-snapshot {
+        margin: 2rem 0;
+      }
+
+      .identity-snapshot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .identity-card {
+        min-height: auto;
+      }
+    }
   </style>
 
   <script src="../assets/js/main.js" defer></script>
@@ -190,30 +271,33 @@
       </div>
 
       <!-- Identity Snapshot -->
-      <div class="card-grid"
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; margin-bottom: 2.5rem;">
-        <article class="card">
-          <h3
-            style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; color: var(--brand); letter-spacing: 0.05em; margin-bottom: 8px;">
-            Research Areas</h3>
-          <p class="muted" style="font-size: 1.1rem; margin-bottom: 0;">Cybersecurity &middot; Privacy-Preserving AI
-            &middot; Digital Forensics</p>
-        </article>
-        <article class="card">
-          <h3
-            style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; color: var(--brand); letter-spacing: 0.05em; margin-bottom: 8px;">
-            Methods</h3>
-          <p class="muted" style="font-size: 1.1rem; margin-bottom: 0;">Machine Learning &middot; Secure Systems Design
-            &middot; Experimental Evaluation</p>
-        </article>
-        <article class="card">
-          <h3
-            style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; color: var(--brand); letter-spacing: 0.05em; margin-bottom: 8px;">
-            Applications</h3>
-          <p class="muted" style="font-size: 1.1rem; margin-bottom: 0;">Threat Intelligence &middot; Language Computing
-            &middot; Public-Interest Technology</p>
-        </article>
-      </div>
+      <section class="identity-snapshot" aria-label="Identity Snapshot">
+        <div class="identity-snapshot-grid">
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+              <h3>Research Areas</h3>
+            </div>
+            <p class="muted">Cybersecurity &middot; Privacy-Preserving AI &middot; Digital Forensics</p>
+          </article>
+
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></span>
+              <h3>Methods</h3>
+            </div>
+            <p class="muted">Machine Learning &middot; Secure Systems Design &middot; Experimental Evaluation</p>
+          </article>
+
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-compass-drafting"></i></span>
+              <h3>Applications</h3>
+            </div>
+            <p class="muted">Threat Intelligence &middot; Language Computing &middot; Public-Interest Technology</p>
+          </article>
+        </div>
+      </section>
 
       <!-- Overview -->
       <section id="overview" class="section-block" style="margin-top: 32px;">

@@ -1,6 +1,7 @@
 <!-- =====================================================
    CSCI 271 Course Page (Student Portal)
    ===================================================== -->
+<!-- Page: ITP Spring 2026 | Path: v2/teaching/courses/itp-sp26/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CSCI 271 - Introduction to Computing & Programming (C++) - Syllabus - Spring 2026 | John Jay College | Avijit Roy</title>
+  <title>CSCI 271 - Introduction to Computing & Programming (C++) - Syllabus - Spring 2026 | John Jay College | Avijit
+    Roy</title>
 
   <!-- Canonical & robots -->
   <link rel="canonical" href="https://avijitroy.com/teaching/courses/itp-sp26/" />
@@ -125,13 +127,231 @@
 
     gtag('config', 'G-Y4VM6347X4');
   </script>
+  <style>
+    /* Premium Course Layout Specifics */
+    .section-block {
+      margin-bottom: var(--space-6);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+      gap: var(--space-4);
+    }
+
+    .editorial-block {
+      border-left: 3px solid var(--brand);
+      padding-left: var(--space-4);
+      background: var(--card);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--brand);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .badge-accent {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626 !important;
+    }
+
+    /* Learning Outcomes */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-top: 1rem;
+    }
+
+    .outcomes-grid li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 0;
+    }
+
+    .outcomes-grid li i {
+      color: var(--brand);
+      margin-top: 4px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-hero h1 {
+        font-size: 2rem !important;
+      }
+
+      .instructor-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .timeline {
+        padding-left: 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      .timeline-item::before {
+        left: -23px;
+      }
+    }
+
+    /* Timeline Plan */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--brand);
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .course-hero {
+      padding: var(--space-5) 0 var(--space-4) 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-5);
+    }
+
+    .course-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      margin-top: 16px;
+    }
+
+    .instructor-meta {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted-text);
+      font-size: 0.95rem;
+    }
+
+    /* Assessments Cards */
+    .assessment-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .assessment-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0;
+      margin-top: 8px;
+    }
+
+    .assessment-card i {
+      font-size: 1.5rem;
+      color: var(--brand);
+    }
+
+    /* FAQs Accordion styled Details */
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    summary {
+      margin: 0;
+      padding: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '\f078';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--muted-text);
+      font-size: 0.9em;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    details[open] summary {
+      background: rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .details-body {
+      padding: 16px;
+      overflow-wrap: break-word;
+    }
+  </style>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="/">Avijit <span>Roy</span></a>
+      <a class="brand" href="../../../">Avijit <span>Roy</span></a>
       <nav class="nav-links" id="navLinks">
         <a href="../../../">Home</a>
         <a href="../../../research/">Research</a>
@@ -140,644 +360,639 @@
         <a href="../../../experience/">Experience</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          <span id="themeIcon"></span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><span id="themeIcon"></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
+  </header>
   <!-- MAIN -->
-  <main class="container section">
-    <h1 class="page-title">CSCI 271 - Introduction to Computing & Programming (C++) | Spring 2026</h1>
-    <p class="muted">Course portal for students: weekly plan, assessments, expectations, tools, and quick links.</p>
-    <p class="muted"><strong>Note:</strong> This page contains the full course syllabus for CSCI 271.</p>
+  <main class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../">Teaching</a></li>
+          <li>CSCI 271</li>
+        </ol>
+      </nav>
+      <div class="course-hero">
+        <span class="badge">Spring 2026</span> <span class="badge"
+          style="background: rgba(16,185,129,0.1); color: #10b981;">John Jay College</span>
+        <h1>CSCI 271: Introduction to Computing & Programming (C++)</h1>
+        <p class="lead" style="max-width: none; font-size: 1.15rem; line-height: 1.8;">
+          This course introduces computer problem-solving and programming in C++. Algorithmic problem-solving and basic
+          programming techniques are emphasized, using methods such as top-down design and stepwise iterative
+          refinement. Topics include basic data types, operators, control structures, functions, arrays, and pointers.
+        </p>
 
-    <!-- Overview -->
-    <div class="cta" style="margin-top:.75rem;">
-      <a class="button" href="#weekly-plan">Weekly Plan</a>
-      <a class="button" href="#assessments">Assessments</a>
-      <a class="button" href="#policies">Policies</a>
-      <a class="button" href="#tools">Tools</a>
-      <a class="button" href="#github">GitHub</a>
-      <a class="button" href="#websites">Websites</a>
-      <a class="button" href="#practice-resources">Practice C++</a>
-      <a class="button" href="#books">Books</a>
-      <a class="button" href="#faqs">FAQs</a>
-      <a class="button" href="#contact">Contact</a>
-    </div>
-    <section id="overview" class="section-block">
-      <article class="card">
-        <h2>Overview</h2>
-        <div class="overview-container">
-          <div>
-            <p>
-              This course introduces computer problem-solving and programming in C++. Algorithmic problem-solving and
-              basic
-              programming techniques are emphasized, using methods such as top-down design and stepwise iterative
-              refinement. Topics include basic data types, operators, control structures, functions, arrays, and
-              pointers.
-            </p>
-            <p class="muted instructor-info">
-              Instructor: Avijit Roy - John Jay College of Criminal Justice (CUNY) | Office: L 6.63.29<br>
-              Class Schedule: Mondays & Wednesdays, 08:00 AM – 09:15 AM
-            </p>
-          </div>
-          <div class="overview-logo">
-            <a href="https://www.jjay.cuny.edu/" target="_blank" rel="noopener">
-              <img alt="John Jay College of Criminal Justice Logo">
-            </a>
-          </div>
+        <div class="instructor-meta">
+          <div class="meta-item"><i class="fa-solid fa-user-tie"></i> <strong>Instructor:</strong> Avijit Roy</div>
+          <div class="meta-item"><i class="fa-regular fa-clock"></i> <strong>Schedule:</strong> Mon & Wed, 08:00 AM –
+            09:15 AM</div>
+          <div class="meta-item"><i class="fa-solid fa-door-open"></i> <strong>Office:</strong> NB 6.63.29</div>
         </div>
-      </article>
-    </section>
 
-    <!-- Learning Outcomes -->
-    <section id="outcomes" class="section-block">
-      <article class="card">
+        <div class="cta" style="margin-top: 32px;">
+          <a class="button" href="#weekly-plan">Weekly Plan</a>
+          <a class="button" href="#assessments">Assessments</a>
+          <a class="button" href="#policies">Policies</a>
+          <a class="button" href="#tools">Tools</a>
+          <a class="button" href="#practice-resources">Practice</a>
+          <a class="button" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <!-- Learning Outcomes -->
+      <section id="outcomes" class="section-block">
         <h2>Learning Outcomes</h2>
-        <ul>
-          <li>Apply <strong>top-down design</strong> and stepwise refinement to break problems into small, manageable steps.</li>
-          <li>Use <strong>variables, data types, operators, and expressions</strong> correctly, including simple input validation.</li>
-          <li>Write clear <strong>selection and repetition</strong> logic (if/else and loops) to control program flow.</li>
-          <li>Design and use <strong>functions</strong> (parameters, return values, and scope) to organize code and reduce duplication.</li>
-          <li>Use <strong>arrays</strong> for basic indexing and traversal, and identify common off-by-one errors.</li>
-          <li>Demonstrate an <strong>introductory understanding of pointers</strong>, including memory addresses and basic dereferencing concepts.</li>
-          <li>Use <strong>strings</strong> to store and manipulate text, including basic parsing and formatting tasks.</li>
-          <li>Read from and write to <strong>text files</strong> using simple file input/output patterns when required by assignments.</li>
-          <li>Debug programs using compiler errors and warnings, runtime tracing (print debugging), and explain program behavior.</li>
+        <ul class="outcomes-grid" style="list-style: none; padding: 0;">
+          <li><i class="fa-solid fa-sitemap"></i> <span>Apply <strong>top-down design</strong> and stepwise refinement
+              to break problems into small, manageable steps.</span></li>
+          <li><i class="fa-solid fa-square-root-variable"></i> <span>Use <strong>variables, data types, operators, and
+                expressions</strong> correctly, including simple input validation.</span></li>
+          <li><i class="fa-solid fa-code-branch"></i> <span>Write clear <strong>selection and repetition</strong> logic
+              (if/else and loops) to control program flow.</span></li>
+          <li><i class="fa-solid fa-box-archive"></i> <span>Design and use <strong>functions</strong> (parameters,
+              return values, and scope) to organize code and reduce duplication.</span></li>
+          <li><i class="fa-solid fa-server"></i> <span>Use <strong>arrays</strong> for basic indexing and traversal, and
+              identify common off-by-one errors.</span></li>
+          <li><i class="fa-solid fa-memory"></i> <span>Demonstrate an <strong>introductory understanding of
+                pointers</strong>, including memory addresses and basic dereferencing concepts.</span></li>
+          <li><i class="fa-solid fa-quote-left"></i> <span>Use <strong>strings</strong> to store and manipulate text,
+              including basic parsing and formatting tasks.</span></li>
+          <li><i class="fa-solid fa-file-code"></i> <span>Read from and write to <strong>text files</strong> using
+              simple file input/output patterns.</span></li>
+          <li><i class="fa-solid fa-bug"></i> <span>Debug programs using compiler errors, warnings, runtime tracing, and
+              explain program behavior.</span></li>
         </ul>
-      </article>
-    </section>
+      </section>
 
-    <!-- Weekly Plan -->
-    <section id="weekly-plan" class="section-block">
-      <article class="card">
+      <!-- Weekly Plan -->
+      <section id="weekly-plan" class="section-block">
         <h2>Weekly Plan (Snapshot)</h2>
         <p class="muted">
-          This is the detailed, week-by-week plan from the official syllabus.
-          Minor adjustments may occur; any changes will be announced in class and on Brightspace.
+          This is the detailed, week-by-week plan from the official syllabus. Minor adjustments may occur; any changes
+          will be announced in class and on Brightspace.
         </p>
 
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th>Week</th>
-              <th>Chapters</th>
-              <th>Topics</th>
-              <th>Assignments</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Week">Week 1 | Lesson 1</td>
-              <td data-label="Chapters">1, 2</td>
-              <td data-label="Topics">Introduction to programming, how C++ programs run, compiler vs execution, basic input/output</td>
-              <td data-label="Assignments">Assignment 1 - GitHub</td>
-            </tr>
+        <div class="timeline card" style="background: transparent; border: none; padding-top:10px;">
 
-            <tr>
-              <td data-label="Week">Week 2 | Lesson 2</td>
-              <td data-label="Chapters">2</td>
-              <td data-label="Topics">Variables, data types, arithmetic operators, input/output</td>
-              <td data-label="Assignments">&nbsp;</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 1 | Lesson 1</span> <span class="badge badge-accent">Assignment 1 -
+                GitHub</span></div>
+            <h3 class="timeline-title">Introduction to Programming</h3>
+            <p class="muted" style="margin-bottom:0;">Chapters 1, 2: How C++ programs run, compiler vs execution, basic
+              input/output.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 3 | Lesson 3</td>
-              <td data-label="Chapters">2, 4</td>
-              <td data-label="Topics">Decision making (if, if–else), relational &amp; logical operators, pseudocode, flowcharts</td>
-              <td data-label="Assignments">Assignment 2</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 2 | Lesson 2</span></div>
+            <h3 class="timeline-title">Variables & Data Types</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 2: Variables, data types, arithmetic operators,
+              input/output.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 4 | Quiz 1</td>
-              <td data-label="Chapters">&nbsp;</td>
-              <td data-label="Topics">Control flow checkpoint → Quiz 1 (logic, tracing, decision structures)</td>
-              <td data-label="Assignments">Quiz 1</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 3 | Lesson 3</span> <span class="badge badge-accent">Assignment 2</span></div>
+            <h3 class="timeline-title">Decision Making & Logic</h3>
+            <p class="muted" style="margin-bottom:0;">Chapters 2, 4: Decision making (if, if–else), relational &amp;
+              logical operators, pseudocode.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 5 | Lesson 4</td>
-              <td data-label="Chapters">4</td>
-              <td data-label="Topics">Iteration: while, for, counters, sentinel values, loop patterns</td>
-              <td data-label="Assignments">Assignment 3</td>
-            </tr>
+          <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
+            <div><span class="badge badge-accent">Quiz 1</span></div>
+            <h3 class="timeline-title">Control Flow Checkpoint</h3>
+            <p class="muted" style="margin-bottom:0;">Quiz 1 covering logic, tracing, and decision structures.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 6 | Lesson 5</td>
-              <td data-label="Chapters">7</td>
-              <td data-label="Topics">Arrays - One-dimensional arrays, indexing, array processing, common patterns</td>
-              <td data-label="Assignments">&nbsp;</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 5 | Lesson 4</span> <span class="badge badge-accent">Assignment 3</span></div>
+            <h3 class="timeline-title">Iteration & Loops</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 4: Iteration (while, for), counters, sentinel values, and
+              loop patterns.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 7 | Mid Review</td>
-              <td data-label="Chapters">Lesson 1 to 5</td>
-              <td data-label="Topics">Midterm review &amp; practice (integrated problem solving)</td>
-              <td data-label="Assignments">&nbsp;</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 6 | Lesson 5</span></div>
+            <h3 class="timeline-title">Arrays (Part 1)</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 7: One-dimensional arrays, indexing, array processing.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 8 | Mid Exam</td>
-              <td data-label="Chapters">&nbsp;</td>
-              <td data-label="Topics">Midterm Exam (Mar 16) and post-exam discussion</td>
-              <td data-label="Assignments">Midterm Exam</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 7 | Midterm Review</span></div>
+            <h3 class="timeline-title">Midterm Review</h3>
+            <p class="muted" style="margin-bottom:0;">Review of Lessons 1 to 5. Integrated problem solving practice.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 9 | Lesson 6</td>
-              <td data-label="Chapters">7</td>
-              <td data-label="Topics">Arrays, array algorithms, introduction to vectors</td>
-              <td data-label="Assignments">Assignment 4</td>
-            </tr>
+          <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
+            <div><span class="badge badge-accent">Midterm Exam</span></div>
+            <h3 class="timeline-title">Midterm Exam (Mar 16)</h3>
+            <p class="muted" style="margin-bottom:0;">In-class written exam followed by post-exam discussion.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 10 | Project Assignment</td>
-              <td data-label="Chapters">7</td>
-              <td data-label="Topics">Algorithms with data → Final Project (searching, sorting, problem framing)</td>
-              <td data-label="Assignments">Final Project Assigned(incremental, multi-week)</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 9 | Lesson 6</span> <span class="badge badge-accent">Assignment 4</span></div>
+            <h3 class="timeline-title">Algorithms & Vectors</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 7: Array algorithms and introduction to vectors.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 11 | No Classes</td>
-              <td data-label="Chapters">&nbsp;</td>
-              <td data-label="Topics">Spring Recess</td>
-              <td data-label="Assignments">No Class</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 10 | Final Project Assigned</span></div>
+            <h3 class="timeline-title">Algorithms with Data</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 7: Searching, sorting, problem framing. Final Project
+              assigned (incremental).</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 12 | Lesson 7</td>
-              <td data-label="Chapters">3</td>
-              <td data-label="Topics">Strings and text processing → Quiz 2 (Apr 15)</td>
-              <td data-label="Assignments">Quiz 2</td>
-            </tr>
+          <div class="timeline-item card" style="background: rgba(0,0,0,0.02); opacity: 0.8;">
+            <div><span class="badge" style="background: var(--border); color: var(--text);">Week 11</span></div>
+            <h3 class="timeline-title">Spring Recess</h3>
+            <p class="muted" style="margin-bottom:0;">No classes.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 13 | Lesson 8</td>
-              <td data-label="Chapters">6</td>
-              <td data-label="Topics">File input/output: reading data, writing results</td>
-              <td data-label="Assignments">&nbsp;</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 12 | Lesson 7</span> <span class="badge badge-accent">Quiz 2 (Apr 15)</span>
+            </div>
+            <h3 class="timeline-title">Strings & Text Processing</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 3: String manipulation and text parsing. Quiz 2.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 14 | Lesson 9</td>
-              <td data-label="Chapters">8</td>
-              <td data-label="Topics">Pointers (intro only), memory concepts, debugging &amp; integration</td>
-              <td data-label="Assignments">Assignment 5</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 13 | Lesson 8</span></div>
+            <h3 class="timeline-title">File Input/Output</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 6: Reading data and writing results to external files.</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 15 | Project Progress</td>
-              <td data-label="Chapters">1 to 8</td>
-              <td data-label="Topics">Project development, cumulative practice, refinement</td>
-              <td data-label="Assignments">Project Progress</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 14 | Lesson 9</span> <span class="badge badge-accent">Assignment 5</span>
+            </div>
+            <h3 class="timeline-title">Pointers (Intro)</h3>
+            <p class="muted" style="margin-bottom:0;">Chapter 8: Introduction to pointers, memory concepts, debugging.
+            </p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 16 | Final Review, Practice Coding</td>
-              <td data-label="Chapters">1 to 8</td>
-              <td data-label="Topics">Final review &amp; exam preparation</td>
-              <td data-label="Assignments">Final Review</td>
-            </tr>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 15 | Project Progress</span></div>
+            <h3 class="timeline-title">Project Progress</h3>
+            <p class="muted" style="margin-bottom:0;">Project development, cumulative practice, and code refinement
+              (Chapters 1-8).</p>
+          </div>
 
-            <tr>
-              <td data-label="Week">Week 17 | Finals</td>
-              <td data-label="Chapters">&nbsp;</td>
-              <td data-label="Topics">Project presentations (May 18) and Final Exam (May 20)</td>
-              <td data-label="Assignments">Final Exam</td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="timeline-item card">
+            <div><span class="badge">Week 16</span></div>
+            <h3 class="timeline-title">Final Review & Practice Coding</h3>
+            <p class="muted" style="margin-bottom:0;">Final review and exam preparation (Chapters 1-8).</p>
+          </div>
 
-        <p class="muted" style="margin-top:.75rem;">
-          Chapter numbers follow the main course text. If you are using a different printing/edition, use the topic column
-          as the source of truth and ask in class if you are unsure.
+          <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
+            <div><span class="badge badge-accent">Final Exams</span></div>
+            <h3 class="timeline-title">Finals Week</h3>
+            <p class="muted" style="margin-bottom:0;">Project presentations (May 18) and Final Exam (May 20).</p>
+          </div>
+        </div>
+
+        <p class="muted">
+          Chapter numbers follow the main course text. If you are using a different printing/edition, use the topic
+          column as the source of truth and ask in class if you are unsure.
+        </p>
+      </section>
+
+      <!-- Assessments -->
+      <section id="assessments" class="section-block">
+        <h2>Assessments</h2>
+
+        <div class="card-grid">
+          <article class="card assessment-card">
+            <h3><i class="fa-solid fa-comments"></i> Participation & Quizzes</h3>
+            <p class="muted">Short checks to reinforce weekly topics; start on time.</p>
+            <ul class="muted" style="margin-bottom: 0;">
+              <li>Weekly knowledge checks as class participation</li>
+              <li>In-class discussion & code walk-throughs</li>
+              <li>Two announced quizzes + brief pop quizzes</li>
+            </ul>
+          </article>
+
+          <article class="card assessment-card">
+            <h3><i class="fa-solid fa-code"></i> Assignments</h3>
+            <p class="muted">Frequent, focused practice. Expect clean headers, comments, and testable examples.</p>
+            <ul class="muted" style="margin-bottom: 0;">
+              <li>4–5 individual assignments covering key topics.</li>
+              <li>1 group assignment</li>
+            </ul>
+          </article>
+
+          <article class="card assessment-card">
+            <h3><i class="fa-solid fa-file-pen"></i> Midterm</h3>
+            <p class="muted">Midpoint evaluation of your programming foundations.</p>
+            <ul class="muted" style="margin-bottom: 0;">
+              <li>In-class written exam focused on Lessons 1–5</li>
+              <li>Concepts and code analysis</li>
+            </ul>
+          </article>
+
+          <article class="card assessment-card">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Final Exam & Project</h3>
+            <p class="muted">Culmination of the course.</p>
+            <ul class="muted" style="margin-bottom: 0;">
+              <li>Written exam on concepts & code analysis.</li>
+              <li>Present a complete project.</li>
+              <li>Clear division of work; everyone explains their code.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="card-grid" style="margin-top: var(--space-4);">
+          <article class="card editorial-block" style="border-left-color: var(--brand);">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 12px;">Grading
+              Breakdown</h3>
+            <table class="nice-table" style="margin-top: 0;">
+              <tbody>
+                <tr>
+                  <td data-label="Assessment">Discussion & Chekcs</td>
+                  <td data-label="Weight">10%</td>
+                </tr>
+                <tr>
+                  <td data-label="Assessment">Class Participation</td>
+                  <td data-label="Weight">5%</td>
+                </tr>
+                <tr>
+                  <td data-label="Assessment">Quizzes</td>
+                  <td data-label="Weight">15%</td>
+                </tr>
+                <tr>
+                  <td data-label="Assessment">Assignments</td>
+                  <td data-label="Weight">20%</td>
+                </tr>
+                <tr>
+                  <td data-label="Assessment">Mid Term Exam</td>
+                  <td data-label="Weight">25%</td>
+                </tr>
+                <tr>
+                  <td data-label="Assessment">Final Exam + Project</td>
+                  <td data-label="Weight">25%</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="muted" style="margin-top: 12px; font-size: 0.9rem; margin-bottom: 0;">
+              Letter grades follow standard <a
+                href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/grades"
+                target="_blank" rel="noopener noreferrer">CUNY grading scale</a>.
+            </p>
+          </article>
+
+          <article class="card editorial-block" style="border-left-color: #10b981;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 12px; color: #10b981;">
+              Extra Credit Policy</h3>
+            <p class="muted">You will have multiple opportunities to earn extra credit:</p>
+            <ul class="muted" style="margin-bottom: 0;">
+              <li><strong>100% Attendance:</strong> Additional <strong>5% extra credit</strong> toward final grade.</li>
+              <li><strong>Deadline Policy:</strong> Must be submitted by posted due dates. No extensions.</li>
+              <li><strong>No Retroactive Credit:</strong> Missed extra credit cannot be submitted later.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Policies (Responsibilities & Policies) -->
+      <section id="policies" class="section-block">
+        <h2>Responsibilities &amp; Policies</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Student Responsibilities</h3>
+            <ul>
+              <li>Arrive on time; participate in discussions and code walk-throughs.</li>
+              <li>Bring code that compiles and runs; be ready to explain your choices.</li>
+              <li>Back up your work and verify submissions (build, run, and test locally).</li>
+            </ul>
+          </article>
+
+          <article class="card editorial-block" style="border-left-color: var(--brand);">
+            <h3>Academic Integrity</h3>
+            <p>All submitted work must be your own. Sharing solutions, copying code without attribution, or submitting
+              generated work as your own violates course policy.</p>
+            <ul style="margin-bottom: 0;">
+              <li>Credit any external help in your README.</li>
+              <li>Be prepared to orally explain any code you submit.</li>
+            </ul>
+            <p class="muted" style="margin-top: 12px; margin-bottom: 0;">Review the college's <a
+                href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/academic-integrity/"
+                target="_blank" rel="noopener noreferrer">policies</a> on Plagiarism and Cheating.</p>
+          </article>
+
+          <article class="card">
+            <h3>Accessibility Services</h3>
+            <p>If you have a documented accommodation, please contact the instructor early so we can implement approved
+              adjustments promptly.</p>
+            <p class="muted" style="margin-bottom: 0;">Students seeking accommodations should coordinate through the <a
+                href="https://jjay.smartcatalogiq.com/en/2024-2025/undergraduate-bulletin/copy-of-student-affairs/accessibility-services/"
+                target="_blank" rel="noopener noreferrer">Office of Accessibility Services (OAS)</a>.</p>
+          </article>
+
+          <article class="card editorial-block" style="border-left-color: #8b5cf6;">
+            <h3 style="color: #8b5cf6;">Use of AI Tools</h3>
+            <ul style="margin-bottom: 0;">
+              <li>Use AI to learn and explore ideas - not to replace your work.</li>
+              <li><strong>Disclose</strong> any AI assistance in your submitted codes.</li>
+              <li>You must fully understand and be able to defend any code you submit.</li>
+              <li>Uncredited or misrepresented AI-generated work may receive a zero.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section id="tools" class="section-block">
+        <h2>Tools</h2>
+
+        <article class="card">
+          <h3>Primary IDE</h3>
+          <ul>
+            <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener noreferrer">Dev-C++
+                (Windows)</a> - use the latest stable build.</li>
+            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> -
+              optional
+              editor (set up a C++ toolchain).</li>
+          </ul>
+          <p class="muted">If you already have a different C++ toolchain configured, you may continue using it - but
+            demos/screenshots in class assume Dev-C++ on Windows.</p>
+          <!-- </article> -->
+          <hr>
+
+          <!-- <article class="card"> -->
+          <h3>Quick References</h3>
+          <ul>
+            <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference.com</a>
+              (language/library lookups)</li>
+            <li><a href="https://isocpp.org/faq" target="_blank" rel="noopener noreferrer">ISO C++ FAQ</a></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- GitHub -->
+      <section id="github" class="section-block">
+        <h2>GitHub Usage</h2>
+        <p>
+          GitHub will be our shared workspace and code archive. It helps you track every change,
+          back up projects safely, and practice professional version control workflows.
+          You’ll also use it to build your coding portfolio - and later, submit assignments
+          when instructed. Practice and share only your learning repos (like
+          <strong>CSCI-271-&lt;semester&gt;</strong>), not graded assignments, to avoid revealing
+          answers to others.
         </p>
 
-      </article>
-    </section>
+        <article class="card">
+          <h3>Get Started</h3>
+          <ul>
+            <li>Create an account on <a href="https://github.com/" target="_blank" rel="noopener noreferrer">github.com</a>.</li>
+            <li>Follow: <a
+                href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository"
+                target="_blank" rel="noopener noreferrer">Create your first repository (GitHub Docs)</a></li>
+            <li>Install Git (if needed) and configure your name/email.</li>
+          </ul>
+          <hr>
 
-<!-- Assessments -->
-    <section id="assessments" class="section-block">
-      <h2>Assessments</h2>
+          <h3>Course Repo Pattern</h3>
+          <ul>
+            <li>Create a personal practice repo named <strong>CSCI-271-&lt;semester&gt;</strong> (e.g.,
+              <em>CSCI-271-Spring-2026</em>).
+            </li>
+            <li>Use this repo to share practice code, notes, and experiments.</li>
+            <li><strong>Do not</strong> post full assignment solutions before grading is completed; you may be asked to
+              submit privately.</li>
+          </ul>
+          <hr>
 
-      <article class="card">
-        <h3>Participation & Quizzes</h3>
-        <p class="muted">Short checks to reinforce weekly topics; start on time. No make-ups for late arrival unless
-          documented emergencies.</p>
-        <ul>
-          <li>Weekly knowledge checks as class participation & attendance</li>
-          <li>In-class discussion & code walk-throughs</li>
-          <li>Two announced quizzes + brief pop quizzes</li>
-        </ul>
-        <hr>
+          <h3>Assignments & Submission</h3>
+          <ul>
+            <li>When instructed, submit via GitHub (private repo) by sharing access to the instructor; otherwise submit
+              on
+              Brightspace.</li>
+            <li>Keep <strong>.h</strong> and <strong>.cpp</strong> files separate; include clear comments.</li>
+            <li>Commit regularly with meaningful messages (e.g., “add input validation for withdrawals”).</li>
+            <li>Do not commit binaries or IDE build folders.</li>
+          </ul>
+          <hr>
 
-        <h3>Assignments</h3>
-        <p class="muted">Frequent, focused practice. Expect clean headers, comments, and testable examples. Submit on
-          time.</p>
-        <ul>
-          <li>4–5 individual assignments (see syllabus) covering key topics.</li>
-          <li>1 group assignment</li>
-        </ul>
-        <hr>
+          <h3>README Expectations</h3>
+          <ul>
+            <li>Short problem summary and how to build/run.</li>
+            <li>Reflection: what you learned, tricky parts, known issues.</li>
+            <li>Sample I/O or screenshots when helpful.</li>
+          </ul>
+        </article>
+      </section>
 
-        <h3>Midterm</h3>
-        <ul>
-          <li>In-class written exam focused on Lessons 1–5 (concepts and code analysis).</li>
-        </ul>
-        <hr>
+      <!-- Books -->
+      <section id="books" class="section-block">
+        <h2>Books &amp; References</h2>
 
-        <h3>Final - Exam + Final Project</h3>
-        <ul>
-          <li>Written exam on concepts & code analysis.</li>
-          <li>Present a complete project.</li>
-          <li>Clear division of work; everyone explains their code.</li>
-        </ul>
+        <article class="card">
+          <h3>Required / Main Text</h3>
+          <ul>
+            <li><em>C++ How to Program</em> (10th Edition), Deitel &amp; Deitel - ISBN-13: 978-0134448237</li>
+          </ul>
+          <!-- </article> -->
+          <hr>
 
-        <!-- Grading Breakdown -->
-        <h3>Grading Breakdown</h3>
-        <p class="muted">Letter grades follow standard <a
-            href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/grades"
-            target="_blank">CUNY grading scale</a>.</p>
-        <table class="nice-table">
-          <thead>
-            <tr>
-              <th>Assessment</th>
-              <th>Weight</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Assessment">Discussion & Knowledge Chekcs</td>
-              <td data-label="Weight">10%</td>
-            </tr>
-            <tr>
-              <td data-label="Assessment">Class Participation</td>
-              <td data-label="Weight">5%</td>
-            </tr>
-            <tr>
-              <td data-label="Assessment">Quizzes (2 Announced, 2 Pop Quizzes)</td>
-              <td data-label="Weight">15%</td>
-            </tr>
-            <tr>
-              <td data-label="Assessment">Assignments</td>
-              <td data-label="Weight">20%</td>
-            </tr>
-            <tr>
-              <td data-label="Assessment">Mid Term (Written Exam[80] + Coding[20])</td>
-              <td data-label="Weight">25%</td>
-            </tr>
-            <tr>
-              <td data-label="Assessment">Final | Written Exam[50] + Coding  [30] + <br> Project [10] + Presentation [5]</td>
-              <td data-label="Weight">25%</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="muted" style="margin-top:0.75rem;">
-          Grading of assignments and exams can be reviewed in person to confirm that the submitted work is your own
-          and to clarify any questions about how your solutions work.
-        </p>
-        <h3>Extra Credits</h3>
-        <p>Students will have multiple opportunities throughout the semester to earn extra credit. These may include optional assignments, short quizzes, or practice activities. Please note the following:</p>
+          <!-- <article class="card"> -->
+          <h3>Optional References</h3>
+          <ul>
+            <li><em>Programming: Principles and Practice Using C++</em> (2nd Ed.), Bjarne Stroustrup - ISBN-13:
+              978-0321992789</li>
+            <li><em>The C++ Programming Language</em> (4th Ed.), Bjarne Stroustrup - ISBN-13: 978-0321563842</li>
+            <li><em>Effective Modern C++</em>, Scott Meyers - ISBN-13: 978-1491903995</li>
+          </ul>
+          <p class="muted">Any recent printing is acceptable. Library/ebook access is fine for reading and study.</p>
+        </article>
+      </section>
 
-        <ul>
-            <li><strong>100% Attendance Bonus:</strong> Students who maintain perfect attendance for the entire semester will receive an additional <strong>5% extra credit</strong> toward their final grade.</li>
-            <li><strong>Deadline Policy:</strong> All extra credit work must be submitted by the posted due dates.</li>
-            <li><strong>No Extensions:</strong> Extra credit deadlines cannot be extended under any circumstances.</li>
-            <li><strong>No Retroactive Credit:</strong> Missed or expired extra credit opportunities cannot be completed or submitted later.</li>
-        </ul>
-      </article>
-    </section>
+      <!-- Important Websites -->
+      <section id="websites" class="section-block">
+        <h2>Important Websites</h2>
 
-    <!-- Policies (Responsibilities & Policies) -->
-    <section id="policies" class="section-block">
-      <h2>Responsibilities &amp; Policies</h2>
-
-      <article class="card">
-        <h3>Student Responsibilities</h3>
-        <ul>
-          <li>Arrive on time; participate in discussions and code walk-throughs.</li>
-          <li>Bring code that compiles and runs; be ready to explain your choices.</li>
-          <li>Back up your work and verify submissions (build, run, and test locally).</li>
-        </ul>
-        <hr>
-
-        <h3>Academic Integrity</h3>
-        <p>All submitted work must be your own. Sharing solutions, copying code without attribution, or submitting
-          generated work as your own violates course and college policy and may result in a zero and further action.</p>
-        <ul>
-          <li>Credit any external help (peers, forums, snippets) in your README.</li>
-          <li>Be prepared to orally explain any code you submit.</li>
-        </ul>
-        <p class="muted">Please review the college's <a
-            href="https://www.jjay.cuny.edu/academics/academic-resources-services/registrar/academic-standards-requirements/academic-integrity/"
-            target="_blank" rel="noopener">policies</a> on Plagiarism and Cheating</p>
-        <hr>
-        
-        <h3>Accessibility Services</h3>
-        <p>If you have a documented accommodation, please contact the instructor early so we can implement approved
-          adjustments promptly.</p>
-        <p class="muted">Students seeking accommodations should coordinate through the John Jay <a
-            href="https://jjay.smartcatalogiq.com/en/2024-2025/undergraduate-bulletin/copy-of-student-affairs/accessibility-services/"
-            target="_blank" rel="noopener">Office of Accessibility Services (OAS)</a>.</p>
-        <hr>
-        
-        <h3>Use of AI Tools (ChatGPT, Copilot, etc.)</h3>
-        <ul>
-          <li>Use AI to learn and explore ideas - not to replace your work.</li>
-          <li><strong>Disclose</strong> any AI assistance in your README or submitted codes (what you asked, what you
-            used, what you learned).</li>
-          <li>You must fully understand and be able to defend any code you submit.</li>
-          <li>Uncredited or misrepresented AI-generated work may receive a zero.</li>
-        </ul>
-    </section>
-
-    <!-- Tools -->
-    <section id="tools" class="section-block">
-      <h2>Tools</h2>
-
-      <article class="card">
-        <h3>Primary IDE</h3>
-        <ul>
-          <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener">Dev-C++
-              (Windows)</a> - use the latest stable build.</li>
-          <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a> - optional
-            editor (set up a C++ toolchain).</li>
-        </ul>
-        <p class="muted">If you already have a different C++ toolchain configured, you may continue using it - but
-          demos/screenshots in class assume Dev-C++ on Windows.</p>
-        <!-- </article> -->
-        <hr>
-
-        <!-- <article class="card"> -->
-        <h3>Quick References</h3>
-        <ul>
-          <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">cppreference.com</a>
-            (language/library lookups)</li>
-          <li><a href="https://isocpp.org/faq" target="_blank" rel="noopener">ISO C++ FAQ</a></li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- GitHub -->
-    <section id="github" class="section-block">
-      <h2>GitHub Usage</h2>
-      <p>
-        GitHub will be our shared workspace and code archive. It helps you track every change,
-        back up projects safely, and practice professional version control workflows.
-        You’ll also use it to build your coding portfolio - and later, submit assignments
-        when instructed. Practice and share only your learning repos (like
-        <strong>CSCI-271-&lt;semester&gt;</strong>), not graded assignments, to avoid revealing
-        answers to others.
-      </p>
-
-      <article class="card">
-        <h3>Get Started</h3>
-        <ul>
-          <li>Create an account on <a href="https://github.com/" target="_blank" rel="noopener">github.com</a>.</li>
-          <li>Follow: <a
-              href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository"
-              target="_blank" rel="noopener">Create your first repository (GitHub Docs)</a></li>
-          <li>Install Git (if needed) and configure your name/email.</li>
-        </ul>
-        <hr>
-
-        <h3>Course Repo Pattern</h3>
-        <ul>
-          <li>Create a personal practice repo named <strong>CSCI-271-&lt;semester&gt;</strong> (e.g.,
-            <em>CSCI-271-Spring-2026</em>).
-          </li>
-          <li>Use this repo to share practice code, notes, and experiments.</li>
-          <li><strong>Do not</strong> post full assignment solutions before grading is completed; you may be asked to
-            submit privately.</li>
-        </ul>
-        <hr>
-
-        <h3>Assignments & Submission</h3>
-        <ul>
-          <li>When instructed, submit via GitHub (private repo) by sharing access to the instructor; otherwise submit on
-            Brightspace.</li>
-          <li>Keep <strong>.h</strong> and <strong>.cpp</strong> files separate; include clear comments.</li>
-          <li>Commit regularly with meaningful messages (e.g., “add input validation for withdrawals”).</li>
-          <li>Do not commit binaries or IDE build folders.</li>
-        </ul>
-        <hr>
-
-        <h3>README Expectations</h3>
-        <ul>
-          <li>Short problem summary and how to build/run.</li>
-          <li>Reflection: what you learned, tricky parts, known issues.</li>
-          <li>Sample I/O or screenshots when helpful.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Books -->
-    <section id="books" class="section-block">
-      <h2>Books &amp; References</h2>
-
-      <article class="card">
-        <h3>Required / Main Text</h3>
-        <ul>
-          <li><em>C++ How to Program</em> (10th Edition), Deitel &amp; Deitel - ISBN-13: 978-0134448237</li>
-        </ul>
-        <!-- </article> -->
-        <hr>
-
-        <!-- <article class="card"> -->
-        <h3>Optional References</h3>
-        <ul>
-          <li><em>Programming: Principles and Practice Using C++</em> (2nd Ed.), Bjarne Stroustrup - ISBN-13:
-            978-0321992789</li>
-          <li><em>The C++ Programming Language</em> (4th Ed.), Bjarne Stroustrup - ISBN-13: 978-0321563842</li>
-          <li><em>Effective Modern C++</em>, Scott Meyers - ISBN-13: 978-1491903995</li>
-        </ul>
-        <p class="muted">Any recent printing is acceptable. Library/ebook access is fine for reading and study.</p>
-      </article>
-    </section>
-
-    <!-- Important Websites -->
-    <section id="websites" class="section-block">
-      <h2>Important Websites</h2>
-
-      <article class="card">
-        <ul>
-          <li><a href="https://brightspace.cuny.edu/" target="_blank" rel="noopener">Brightspace</a> - course
-            announcements, submissions, grades.</li>
-          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> - repositories for practice and
-            (when instructed) submissions.</li>
-          <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener">Dev-C++</a> - IDE
-            (Windows).</li>
-          <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> - optional editor.
-          </li>
-          <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">cppreference.com</a> - C++
-            language &amp; library reference.</li>
-        </ul>
-      </article>
-    </section>
-    <!-- Practice C++ Resources -->
-    <section id="practice-resources" class="section-block">
-      <article class="card">
+        <article class="card">
+          <ul>
+            <li><a href="https://brightspace.cuny.edu/" target="_blank" rel="noopener">Brightspace</a> - course
+              announcements, submissions, grades.</li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> - repositories for practice and
+              (when instructed) submissions.</li>
+            <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener">Dev-C++</a> -
+              IDE
+              (Windows).</li>
+            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> - optional editor.
+            </li>
+            <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">cppreference.com</a> - C++
+              language &amp; library reference.</li>
+          </ul>
+        </article>
+      </section>
+      <!-- Practice C++ Resources -->
+      <section id="practice-resources" class="section-block">
         <h2>Practice C++ Resources</h2>
         <p>
-          In addition to class notes, assignments, and demos, you are strongly encouraged to practice C++ regularly outside
-          class. The websites below can help you build confidence with syntax, logic, debugging, and problem solving.
+          In addition to class notes, assignments, and demos, you are strongly encouraged to practice C++ regularly
+          outside class. The websites below can help you build confidence with syntax, logic, debugging, and problem
+          solving.
         </p>
-        <p class="muted">
-          You do not need to complete everything on these sites. Use them to get extra practice on topics such as loops,
-          functions, arrays, strings, classes, and general C++ problem solving.
-        </p>
+        <article class="card">
 
-        <hr>
+          <p class="muted">
+            You do not need to complete everything on these sites. Use them to get extra practice on topics such as
+            loops, functions, arrays, strings, classes, and general C++ problem solving.
+          </p>
 
-        <h3>Practice Problems &amp; Exercises</h3>
-        <ul>
-          <li>
-            <a href="https://www.geeksforgeeks.org/cpp/cpp-exercises/" target="_blank" rel="noopener">
-              GeeksforGeeks - C++ Exercises
-            </a>
-            - structured exercises across beginner to intermediate C++ topics.
-          </li>
-          <li>
-            <a href="https://www.hackerrank.com/domains/cpp" target="_blank" rel="noopener">
-              HackerRank - C++
-            </a>
-            - coding challenges with an online compiler and test-based feedback.
-          </li>
-          <li>
-            <a href="https://www.codechef.com/practice/cpp" target="_blank" rel="noopener">
-              CodeChef - C++ Practice
-            </a>
-            - additional programming practice for logic building and problem solving.
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/cpp/cpp_exercises.asp" target="_blank" rel="noopener">
-              W3Schools - C++ Exercises
-            </a>
-            - simple beginner-friendly practice and review.
-          </li>
-          <li>
-            <a href="https://www.mygreatlearning.com/blog/cpp-exercises/" target="_blank" rel="noopener">
-              Great Learning - C++ Exercises
-            </a>
-            - extra practice prompts and examples for independent study.
-          </li>
-        </ul>
+          <hr>
 
-        <hr>
+          <h3>Practice Problems &amp; Exercises</h3>
+          <ul>
+            <li>
+              <a href="https://www.geeksforgeeks.org/cpp/cpp-exercises/" target="_blank" rel="noopener">
+                GeeksforGeeks - C++ Exercises
+              </a>
+              - structured exercises across beginner to intermediate C++ topics.
+            </li>
+            <li>
+              <a href="https://www.hackerrank.com/domains/cpp" target="_blank" rel="noopener">
+                HackerRank - C++
+              </a>
+              - coding challenges with an online compiler and test-based feedback.
+            </li>
+            <li>
+              <a href="https://www.codechef.com/practice/cpp" target="_blank" rel="noopener">
+                CodeChef - C++ Practice
+              </a>
+              - additional programming practice for logic building and problem solving.
+            </li>
+            <li>
+              <a href="https://www.w3schools.com/cpp/cpp_exercises.asp" target="_blank" rel="noopener">
+                W3Schools - C++ Exercises
+              </a>
+              - simple beginner-friendly practice and review.
+            </li>
+            <li>
+              <a href="https://www.mygreatlearning.com/blog/cpp-exercises/" target="_blank" rel="noopener">
+                Great Learning - C++ Exercises
+              </a>
+              - extra practice prompts and examples for independent study.
+            </li>
+          </ul>
 
-        <h3>Reference &amp; Reading</h3>
-        <ul>
-          <li>
-            <a href="https://cplusplus.com/doc/" target="_blank" rel="noopener">
-              cplusplus.com Documentation
-            </a>
-            - beginner-friendly documentation and tutorials for core C++ concepts.
-          </li>
-        </ul>
+          <hr>
 
-        <hr>
+          <h3>Reference &amp; Reading</h3>
+          <ul>
+            <li>
+              <a href="https://cplusplus.com/doc/" target="_blank" rel="noopener">
+                cplusplus.com Documentation
+              </a>
+              - beginner-friendly documentation and tutorials for core C++ concepts.
+            </li>
+          </ul>
 
-        <h3>Mini Project Ideas</h3>
-        <ul>
-          <li>
-            <a href="https://www.mygreatlearning.com/blog/cpp-projects/" target="_blank" rel="noopener">
-              Great Learning - C++ Project Ideas
-            </a>
-            - useful if you want extra coding practice beyond small exercises.
-          </li>
-        </ul>
+          <hr>
 
-        <hr>
+          <h3>Mini Project Ideas</h3>
+          <ul>
+            <li>
+              <a href="https://www.mygreatlearning.com/blog/cpp-projects/" target="_blank" rel="noopener">
+                Great Learning - C++ Project Ideas
+              </a>
+              - useful if you want extra coding practice beyond small exercises.
+            </li>
+          </ul>
 
-        <h3>How to Use These Resources Well</h3>
-        <ul>
-          <li>Start with beginner exercises, then move to challenge-based platforms.</li>
-          <li>Focus on topics we are currently covering in class.</li>
-          <li>Do not just read solutions - write, test, and debug your own code.</li>
-          <li>Try to practice at least 2 to 3 problems each week.</li>
-          <li>Ask questions in class if you get stuck on a pattern or concept.</li>
-        </ul>
+          <hr>
 
-        <p class="muted">
-          These are optional practice resources, but students who practice consistently usually become much more confident
-          with coding, especially when we move deeper into classes, operator overloading, inheritance, and polymorphism.
-        </p>
-      </article>
-    </section>
+          <h3>How to Use These Resources Well</h3>
+          <ul>
+            <li>Start with beginner exercises, then move to challenge-based platforms.</li>
+            <li>Focus on topics we are currently covering in class.</li>
+            <li>Do not just read solutions - write, test, and debug your own code.</li>
+            <li>Try to practice at least 2 to 3 problems each week.</li>
+            <li>Ask questions in class if you get stuck on a pattern or concept.</li>
+          </ul>
 
-    <!-- FAQs -->
-    <section id="faqs" class="section-block">
-      <h2>Quick FAQs</h2>
+          <p class="muted">
+            These are optional practice resources, but students who practice consistently usually become much more
+            confident
+            with coding, especially when we move deeper into classes, operator overloading, inheritance, and
+            polymorphism.
+          </p>
+        </article>
+      </section>
 
-      <details>
-        <summary><span>How do I submit assignments?</span></summary>
-        <div class="details-body">
-          <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private and
-            share access for grading.</p>
-        </div>
-      </details>
+      <!-- FAQs -->
+      <section id="faqs" class="section-block">
+        <h2>Quick FAQs</h2>
 
-      <details>
-        <summary><span>What happens if my code compiles but fails some tests?</span></summary>
-        <div class="details-body">
-          <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic is
-            incorrect or unexplained.</p>
-        </div>
-      </details>
+        <details>
+          <summary><span>How do I submit assignments?</span></summary>
+          <div class="details-body">
+            <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private
+              and
+              share access for grading.</p>
+          </div>
+        </details>
 
-      <details>
-        <summary><span>Can I use AI tools?</span></summary>
-        <div class="details-body">
-          <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to
-            explain your code.</p>
-        </div>
-      </details>
-    </section>
+        <details>
+          <summary><span>What happens if my code compiles but fails some tests?</span></summary>
+          <div class="details-body">
+            <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic
+              is
+              incorrect or unexplained.</p>
+          </div>
+        </details>
 
-    <!-- Updates -->
-    <section id="updates" class="section-block">
-      <article class="card">
+        <details>
+          <summary><span>Can I use AI tools?</span></summary>
+          <div class="details-body">
+            <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to
+              explain your code.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Updates -->
+      <section id="updates" class="section-block">
         <h2>Course Updates</h2>
-        <ul class="muted">
-          <li><strong>March 2026</strong> - Added C++ practice resources and mini project ideas section.</li>
-          <li><strong>January 2026</strong> - Course site published for Spring 2026.</li>
-        </ul>
-      </article>
-    </section>    
+        <article class="card">
+          <ul class="muted">
+            <li><strong>March 2026</strong> - Added C++ practice resources and mini project ideas section.</li>
+            <li><strong>January 2026</strong> - Course site published for Spring 2026.</li>
+          </ul>
+        </article>
+      </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section-block">
-      <article class="card">
+      <!-- Contact -->
+      <section id="contact" class="section-block">
         <h2>Contact &amp; Office Hours</h2>
-        <p>You can reach me at <strong>ARoy [AT] jjay [DOT] cuny [DOT] edu</strong></p>
-        <p>Office: NB 6.63.29 - Office hours by appointment.</p>
-        <p class="muted">Scheduling is flexible - email to coordinate a time.</p>
-      </article>
-    </section>
-    <p class="muted" style="text-align:center; margin-top:2rem;">
-      Last updated: <span id="lastUpdated"></span>
-    </p>
+        <article class="card">
+          <p>Email: <strong>ARoy [AT] jjay [DOT] cuny [DOT] edu</strong></p>
+          <p>Office: NB 6.63.29 - Office hours by appointment.</p>
+          <p class="muted">Scheduling is flexible - email to coordinate a time.</p>
+        </article>
+      </section>
+      <p class="muted" style="text-align:center; margin-top:2rem;">
+        Last updated: <span id="lastUpdated"></span>
+      </p>
+    </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot-flex">
-      <p>© <span id="currentYear"></span> Avijit Roy</p>
+      <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
       <div class="socials">
-        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i
+        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i
             class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
           title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener" aria-label="ORCiD"
+        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD"
           title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
-        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener" aria-label="Medium" title="Medium"><i
+        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><i
             class="fa-brands fa-medium"></i></a>
-        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener" aria-label="Instagram"
+        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
           title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener" aria-label="Flickr"
+        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr"
           title="Flickr"><i class="fa-brands fa-flickr"></i></a>
       </div>
     </div>
@@ -788,4 +1003,5 @@
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   document.getElementById("lastUpdated").textContent = lastUpdated.toLocaleDateString(undefined, options);
 </script>
+
 </html>

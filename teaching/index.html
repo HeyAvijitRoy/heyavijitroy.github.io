@@ -1,26 +1,20 @@
+<!-- Page: Teaching | Path: v2/teaching/index.html -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Teaching - Avijit Roy</title>
-
-  <!-- Canonical & robots -->
   <link rel="canonical" href="https://avijitroy.com/teaching/" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="color-scheme" content="light dark" />
-
-  <!-- Primary SEO -->
-  <meta name="description"
-    content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
-  <meta name="keywords"
-    content="Avijit Roy, teaching, education, computer science, cybersecurity, C++, applied computing, mentoring, courses" />
+  <meta name="description" content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
+  <meta name="keywords" content="Avijit Roy, teaching, education, computer science, cybersecurity, C++, applied computing, mentoring, courses" />
   <meta name="author" content="Avijit Roy" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Teaching • Avijit Roy" />
-  <meta property="og:description"
-    content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
+  <meta property="og:description" content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
   <meta property="og:url" content="https://avijitroy.com/teaching/" />
   <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
   <meta property="og:site_name" content="Avijit Roy" />
@@ -30,27 +24,32 @@
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
   <meta name="twitter:title" content="Teaching • Avijit Roy" />
-  <meta name="twitter:description"
-    content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
+  <meta name="twitter:description" content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
 
   <!-- Favicons -->
-  <link rel="icon" href="../assets/favicons/favicon.ico" sizes="any">
-  <link rel="icon" href="../assets/favicons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" href="../assets/favicons/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png">
   <link rel="manifest" href="../assets/favicons/site.webmanifest">
   <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2">
-  <meta name="theme-color" content="#0a66c2">
-
-  <!-- Styles -->
+  <meta name="theme-color" content="#0a66c2" />
+  
+  <!-- Premium Styles -->
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Font Awesome -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .course-card { display: flex; flex-direction: column; padding: var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-2); margin-bottom: var(--space-3); transition: all 0.2s;}
+    .course-card:hover { border-color: var(--brand); transform: translateX(4px); box-shadow: var(--shadow); }
+    .course-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 8px;}
+    .course-sem { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--brand); font-weight: 600; text-transform: uppercase;}
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; list-style: none; padding: 0; margin: 16px 0 0; }
+    .tags li { padding: 4px 10px; border: 1px solid var(--border); background: var(--focus-bg); border-radius: 999px; font-size: 0.85rem; transition: background 0.2s, color 0.2s;}
+    .repo-link { float: right; color: var(--muted); font-size: 1.25rem; transition: color 0.2s; }
+    .repo-link:hover { color: var(--brand); }
+  </style>
 
-  <!-- Scripts -->
   <script src="../assets/js/main.js" defer></script>
 
   <!-- JSON-LD -->
@@ -143,22 +142,9 @@
     ]
   }
   </script>
-  <!-- JSON-LD (Courses) -->
-
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4VM6347X4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y4VM6347X4');
-  </script>
 </head>
 
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../">Avijit <span>Roy</span></a>
@@ -170,161 +156,112 @@
         <a href="../experience/">Experience</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          <span id="themeIcon"></span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><span id="themeIcon"></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container section">
-    <h1>Teaching</h1>
-    <p class="muted">I teach applied computer science with a focus on clear thinking, secure systems, and building useful software. Here you’ll find current courses, mentoring initiatives, and handpicked resources that help students ship real projects — from C++ fundamentals to developer workflows, cloud, and AI/ML tooling.
+  <main class="section">
+    <div class="container">
+      <h1 style="font-size: 2.5rem; margin-bottom: 24px;">Teaching & Mentorship</h1>
+    <p class="muted" style="max-width: 950px; font-size: 1.15rem; line-height: 1.7;">
+      I teach applied computer science with a focus on clear thinking, secure systems, and building useful software. Here you’ll find current courses, mentoring initiatives, and handpicked resources that help students ship real projects — from C++ fundamentals to developer workflows, cloud, and AI/ML tooling.
     </p>
 
     <!-- COURSES -->
     <section class="section-block">
       <h2>Courses I Teach</h2>
-
-      <!-- Class -->
+      <p class="muted" style="margin-bottom: 24px;">Lectures conducted at John Jay College of Criminal Justice (CUNY).</p>
+      
       <details>
         <summary>
-          <span>CSCI 271 - Introduction to Programming <span class="sem">(Spring 2026 [1])</span></span>
+          <div>
+            CSCI 271 - Introduction to Programming 
+            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Spring 2026</span>
+          </div>
         </summary>
         <div class="details-body">
-          <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
-          <p class="muted">Problem-solving, control structures, functions, arrays.</p>
-          <div class="cta">
-            <a class="button small" href="courses/itp-sp26/" aria-disabled="false">Course Details & Syllabus</a>
-          </div>
+          <p class="muted">Fundamental problem-solving, control structures, functions, arrays using C++.</p>
+          <a href="courses/itp-sp26/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
         </div>
       </details>
 
-      <!-- Class 272 SP -->
       <details>
         <summary>
-          <span>CSCI 272 - Object-Oriented Programming in C++ <span class="sem">(Spring 2026 [1] [2])</span></span>
+          <div>
+            CSCI 272 - Object-Oriented Programming in C++
+            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Spring 2026</span>
+          </div>
         </summary>
         <div class="details-body">
-          <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
-          <p class="muted">
-            This course builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism — plus robust I/O with streams, stringstreams, and files. You’ll write clean, modular code and be able to explain your decisions.
-          </p>
-          <div class="cta"> 
-            <a class="button small" href="courses/oop-sp26/" aria-disabled="false">Course Details & Syllabus</a>
-          </div>
+          <p class="muted">Builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism.</p>
+          <a href="courses/oop-sp26/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
         </div>
       </details>
 
-      <!-- Class 272 FA -->
       <details>
         <summary>
-          <span>CSCI 272 - Object-Oriented Programming in C++ <span class="sem">(Fall 2025 [1] [2])</span></span>
+          <div>
+            CSCI 272 - Object-Oriented Programming in C++
+            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Fall 2025</span>
+          </div>
         </summary>
         <div class="details-body">
-          <span class="inst">John Jay College of Criminal Justice (CUNY)</span>
-          <p class="muted">
-            This course builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism — plus robust I/O with streams, stringstreams, and files. You’ll write clean, modular code and be able to explain your decisions.
-          </p>
-          <div class="cta">
-            <a class="button small" href="courses/oop-fa25/" aria-disabled="false">Course Details & Syllabus</a>
-          </div>
+          <p class="muted">Builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism.</p>
+          <a href="courses/oop-fa25/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
         </div>
       </details>
     </section>
 
     <!-- MENTORING -->
-    <section class="section-block">
+    <section class="section-block" style="margin-top: 48px;">
       <h2>Mentoring</h2>
-      <p class="muted">I mentor pragmatic projects with clear outcomes and real users in mind. I enjoy collaborating
-        with motivated students and teams — whether it’s a prototype, capstone, or research question. Together, we’ll
-        define a clear plan, build iteratively, and document results you’ll be proud to share. My interests span AI,
-        cybersecurity, data, and education technology. If you’re interested in working together or seeking feedback on
-        an idea, feel free to reach out.
+      <p class="muted" style="margin-bottom: 24px;">
+        I mentor pragmatic projects with clear outcomes and real users in mind. I enjoy collaborating with motivated students and teams — whether it’s a prototype, capstone, or research question. Together, we’ll define a clear plan, build iteratively, and document results you’ll be proud to share. My interests span AI, cybersecurity, data, and education technology.
       </p>
 
-      <h3>Recent mentoring projects</h3>
-      <div id="projectGrid">
-        <!-- Django Secure Single-Session Auth -->
-        <article class="card" id="django-secure" data-tags="security django authentication python opensource">
-          <h3>Django Secure Single-Session Auth System
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth"
-              title="Open project on GitHub" target="_blank" rel="noopener" aria-label="Open project on GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </h3>
-          <p class="muted">
-            A production-ready authentication system built with Django, enforcing one active session per user, tracking
-            login activity, and issuing alerts on suspicious access. Designed for academic, enterprise, or secure exam
-            environments.
-          </p>
-          <p class="muted">
-            Built with Django 5+ and Python 3.10+, it integrates GeoIP-based logging, device tracking, self-service
-            session unlocks, and administrative controls — all out of the box.
-          </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="security">Security</li>
-              <li class="clickable" data-tag="authentication">Authentication</li>
-              <li class="clickable" data-tag="django">Django</li>
-              <li class="clickable" data-tag="python">Python</li>
-              <li class="clickable" data-tag="opensource">Open Source</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+      <h3 style="margin-bottom: 16px;">Recent mentoring projects</h3>
+      <article class="card">
+        <h3>Django Secure Single-Session Auth System
+          <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        </h3>
+        <p class="muted" style="margin-top: 8px;">
+          A production-ready authentication system built with Django, enforcing one active session per user, tracking login activity, and issuing alerts on suspicious access. Designed for academic, enterprise, or secure exam environments.
+        </p>
+        <ul class="tags">
+          <li>Security</li>
+          <li>Authentication</li>
+          <li>Django</li>
+          <li>Python</li>
+        </ul>
+      </article>
     </section>
-    
+
     <!-- RESOURCES -->
-    <section class="section-block">
+    <section class="section-block" style="margin-top: 48px;">
       <h2>Free Tools for Students</h2>
-      <p class="muted">Referral‑free picks to power your studies: pro IDEs, cloud credits, AI/ML compute, and creative apps — all in one place.</p>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Developer &amp; AI Essentials
-            <a class="repo-link" href="/teaching/student-tools/" title="Open Student Tools in new tab" target="_blank" rel="noopener" aria-label="Open Student Tools">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </h3>
-          <p class="muted" style="margin-top:-0.25rem;margin-bottom:0.75rem">IDE perks • Cloud credits • AI compute • Design suites</p>
-          <p class="muted">
-            Explore a curated, up‑to‑date list of free and discounted tools across development, AI/ML, cloud, and design. Highlights include GitHub Education, Azure for Students, JetBrains IDEs, Kaggle/Colab compute, Unity, Autodesk, Notion, and Figma.
-          </p>
-          <p class="muted">
-            Why it matters: save hundreds of dollars while getting industry tools used in class and internships. Each link goes straight to the official provider — no referrals, no fluff, just the benefits.
-          </p>
-          <div class="cta">
-            <a class="button" href="/teaching/student-tools/" target="_blank" rel="noopener">Open Student Tools</a>
-          </div>
-        </article>
+      <div class="course-card">
+        <h3>Developer &amp; AI Essentials</h3>
+        <p class="muted" style="margin-top: 10px;">Explore a curated list of free and discounted tools across development, AI, and design. Highlights: GitHub Education, JetBrains, Azure for Students.</p>
+        <a class="button small" href="student-tools/" style="align-self: flex-start; margin-top: 10px;">Open Student Tools <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </section>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot-flex">
-      <p>© <span id="currentYear"></span> Avijit Roy</p>
+      <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
       <div class="socials">
-        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"
-          title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener" aria-label="ORCiD"
-          title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
-        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener" aria-label="Medium" title="Medium"><i
-            class="fa-brands fa-medium"></i></a>
-        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener" aria-label="Instagram"
-          title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener" aria-label="Flickr"
-          title="Flickr"><i class="fa-brands fa-flickr"></i></a>
+        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD" title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><i class="fa-brands fa-medium"></i></a>
+        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr" title="Flickr"><i class="fa-brands fa-flickr"></i></a>
       </div>
     </div>
   </footer>
 </body>
-
 </html>

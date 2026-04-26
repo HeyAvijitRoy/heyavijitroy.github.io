@@ -48,40 +48,6 @@ a:hover {
   color: #fff2c9;
 }
 
-/* Breadcrumbs */
-.breadcrumb {
-  margin-bottom: 24px;
-  font-size: 0.95rem;
-}
-.breadcrumb ol {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.breadcrumb li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted-2);
-}
-.breadcrumb li:not(:last-child)::after {
-  content: '\f054';
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 0.7rem;
-  opacity: 0.4;
-}
-.breadcrumb a {
-  color: var(--gold);
-  transition: color 0.2s;
-}
-.breadcrumb a:hover {
-  color: var(--gold-2);
-}
-
 img {
   max-width: 100%;
   display: block;

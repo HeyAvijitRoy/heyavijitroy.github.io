@@ -1,96 +1,90 @@
 /* =====================================================
-   Avijit Roy — Main JS
-   - Mobile Nav
-   - Dark/Light Mode Toggle
-   - Project Search + Tag Filters (manual projects only)
+   Avijit Roy — Main JS v2
    ===================================================== */
 
 (function () {
   // Mobile nav
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("navLinks");
-  hamburger?.addEventListener("click", () => {
-  const isOpen = nav?.classList.toggle("show");
-  if (isOpen) {
-    const firstLink = nav?.querySelector('a');
-    firstLink && firstLink.focus();
-    firstLink.setAttribute("tabindex", "-1");
+  
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("show");
+      if (isOpen) {
+        const firstLink = nav?.querySelector('a');
+        firstLink && firstLink.focus();
+        if (firstLink) firstLink.setAttribute("tabindex", "-1");
+      }
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      hamburger.setAttribute("aria-label", isOpen ? "Close Menu" : "Open Menu");
+    });
   }
-  hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  hamburger.setAttribute("aria-label", isOpen ? "Close Menu" : "Open Menu");
-  });
+
   // Close on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav?.classList.contains("show")) {
       nav.classList.remove("show");
-      hamburger.setAttribute("aria-expanded", "false");
-      hamburger.setAttribute("aria-label", "Open Menu");
-      hamburger.focus();
+      if (hamburger) {
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open Menu");
+        hamburger.focus();
+      }
     }
   });
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Disable links that have aria-disabled="true"
-  const disabledLinks = document.querySelectorAll('a[aria-disabled="true"]');
-  disabledLinks.forEach(link => {
-    link.removeAttribute('href');
-    link.style.cursor = 'not-allowed'; // Optional: visual cue
-    link.setAttribute('tabindex', '-1'); // Remove from tab order
-  });
-});
-
-
-  // Close after clicking a link (mobile UX)
-  nav?.addEventListener("click", (e) => {
-    const target = e.target;
-    if (target && target.closest("a")) {
-      nav.classList.remove("show");
-      hamburger.setAttribute("aria-expanded", "false");
-      hamburger.setAttribute("aria-label", "Open Menu");
-    }
-  });
-
-  // Theme toggle
+  // Theme toggle logic (OS preference aware)
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // const theme = savedTheme || (prefersDark ? "dark" : "light");
-  const theme = savedTheme || "dark"; // default to dark
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  // Choose theme: saved setting > OS preference > light default
+  const theme = savedTheme || (prefersDark ? "dark" : "light");
   root.setAttribute("data-theme", theme);
-  updateThemeIcon(theme);
+  
+  // Initial dom ready logic
+  document.addEventListener('DOMContentLoaded', () => {
+    updateThemeIcon(theme);
+    
+    // Theme Status Announcer
+    const themeStatus = document.createElement("span");
+    themeStatus.setAttribute("id", "themeStatus");
+    themeStatus.setAttribute("aria-live", "polite");
+    themeStatus.classList.add("sr-only");
+    document.body.appendChild(themeStatus);
 
-  const themeStatus = document.createElement("span");
-  themeStatus.setAttribute("id", "themeStatus");
-  themeStatus.setAttribute("aria-live", "polite");
-  themeStatus.classList.add("sr-only");
-  document.body.appendChild(themeStatus);
+    const themeToggleBtn = document.getElementById("themeToggle");
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = root.getAttribute("data-theme");
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        
+        root.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+        updateThemeIcon(nextTheme);
+        themeStatus.textContent = nextTheme === "dark" ? "Dark mode enabled" : "Light mode enabled";
+      });
+    }
 
-  document.getElementById("themeToggle")?.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    updateThemeIcon(next);
-    themeStatus.textContent = next === "dark" ? "Dark mode enabled" : "Light mode enabled";
+    // Set current year in footer
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
   });
 
   function updateThemeIcon(mode) {
     const icon = document.getElementById("themeIcon");
     const toggle = document.getElementById("themeToggle");
     if (!icon || !toggle) return;
-    // read brand color from CSS vars so icon looks good on light background
-    const styles = getComputedStyle(document.documentElement);
-    const brandColor = styles.getPropertyValue('--brand') || '#0a66c2';
-    // Moon for dark, sun for light — use clearer sun path for light mode
+    
     if (mode === "light") {
-      icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><title>Dark mode</title><path d="M21.64 13a8.5 8.5 0 11-9.64-9.64 7 7 0 109.64 9.64z"/></svg>`;
+      icon.innerHTML = `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.64 13a8.5 8.5 0 11-9.64-9.64 7 7 0 109.64 9.64z"/></svg>`;
       toggle.setAttribute("aria-pressed", "true");
-      toggle.style.color = '';
+      toggle.setAttribute("aria-label", "Switch to dark mode");
     } else {
-      icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><title>Light mode</title><path d="M6.995 12c0-2.761 2.246-5.005 5.005-5.005S17.005 9.239 17.005 12 14.759 17.005 12 17.005 6.995 14.761 6.995 12zm13.005-.5h2a1 1 0 110 2h-2a1 1 0 110-2zM2 11.5h2a1 1 0 110 2H2a1 1 0 110-2zm16.95-6.364l1.414 1.414a1 1 0 11-1.414 1.414L17.536 6.55a1 1 0 011.414-1.414zM6.05 17.95l1.414 1.414a1 1 0 11-1.414 1.414L4.636 19.364a1 1 0 011.414-1.414zM12 2.5a1 1 0 011 1V6a1 1 0 11-2 0V3.5a1 1 0 011-1zM12 17a1 1 0 011 1v2.5a1 1 0 11-2 0V18a1 1 0 011-1z"/></svg>`;
+      icon.innerHTML = `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.995 12c0-2.761 2.246-5.005 5.005-5.005S17.005 9.239 17.005 12 14.759 17.005 12 17.005 6.995 14.761 6.995 12zm13.005-.5h2a1 1 0 110 2h-2a1 1 0 110-2zM2 11.5h2a1 1 0 110 2H2a1 1 0 110-2zm16.95-6.364l1.414 1.414a1 1 0 11-1.414 1.414L17.536 6.55a1 1 0 011.414-1.414zM6.05 17.95l1.414 1.414a1 1 0 11-1.414 1.414L4.636 19.364a1 1 0 011.414-1.414zM12 2.5a1 1 0 011 1V6a1 1 0 11-2 0V3.5a1 1 0 011-1zM12 17a1 1 0 011 1v2.5a1 1 0 11-2 0V18a1 1 0 011-1z"/></svg>`;
       toggle.setAttribute("aria-pressed", "false");
-      // make sun icon use brand color so it is visible on light background
-      toggle.style.color = brandColor.trim();
+      toggle.setAttribute("aria-label", "Switch to light mode");
     }
   }
 
@@ -120,15 +114,25 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => search.focus(), 0);
     applyFilter();
   });
-  chips.forEach((c) =>
-        c.addEventListener("click", () => {
-          chips.forEach((x) => x.classList.remove("active"));
-          c.classList.add("active");
-          applyFilter();
-        })
-      );
+  
+  // Initialize ARIA states
+  chips.forEach((c) => {
+    c.setAttribute("aria-pressed", c.classList.contains("active") ? "true" : "false");
+  });
 
-  // make project inline tags clickable — they carry data-tag attributes
+  chips.forEach((c) =>
+    c.addEventListener("click", () => {
+      chips.forEach((x) => {
+        x.classList.remove("active");
+        x.setAttribute("aria-pressed", "false");
+      });
+      c.classList.add("active");
+      c.setAttribute("aria-pressed", "true");
+      applyFilter();
+    })
+  );
+
+  // make project inline tags clickable
   function wireInlineTags() {
     const inline = document.querySelectorAll(".tags li.clickable");
     inline.forEach((t) => {
@@ -136,15 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
       t.addEventListener("click", () => {
         const tag = t.getAttribute("data-tag");
         if (!tag) return;
-        chips.forEach((x) => x.classList.remove("active"));
+        chips.forEach((x) => {
+          x.classList.remove("active");
+          x.setAttribute("aria-pressed", "false");
+        });
         const match = Array.from(chips).find((x) => x.getAttribute("data-tag").toLowerCase() === tag.toLowerCase());
-        if (match) match.classList.add("active");
-        else {
-          // create temporary selection if tag not in chip list
-          const allChip = document.querySelector('.chip[data-tag="all"]');
-          allChip && allChip.classList.add('active');
+        if (match) {
+          match.classList.add("active");
+          match.setAttribute("aria-pressed", "true");
         }
-        // clear search and apply
+        else {
+          const allChip = document.querySelector('.chip[data-tag="all"]');
+          if (allChip) {
+            allChip.classList.add('active');
+            allChip.setAttribute("aria-pressed", "true");
+          }
+        }
         if (search) search.value = "";
         applyFilter();
       });
@@ -157,9 +168,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // initial wire
   wireInlineTags();
 
-  // Set current year in footer
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
 })();

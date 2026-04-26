@@ -1,29 +1,20 @@
+<!-- Page: Projects | Path: v2/projects/index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Projects - Avijit Roy</title>
-
-  <!-- Canonical & robots -->
   <link rel="canonical" href="https://avijitroy.com/projects/" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="color-scheme" content="light dark" />
-
-  <!-- Primary SEO -->
-  <meta name="description"
-    content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
-  <meta name="keywords"
-    content="Avijit Roy projects, cybersecurity, digital forensics, .NET, mapping, AI for education, Hangfire, DataTables, C#, SQL" />
+  <meta name="description" content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
+  <meta name="keywords" content="Avijit Roy projects, cybersecurity, digital forensics, .NET, mapping, AI for education, Hangfire, DataTables, C#, SQL" />
   <meta name="author" content="Avijit Roy" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Projects - Avijit Roy" />
-  <meta property="og:description"
-    content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
+  <meta property="og:description" content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
   <meta property="og:url" content="https://avijitroy.com/projects/" />
   <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
   <meta property="og:site_name" content="Avijit Roy" />
@@ -33,27 +24,34 @@
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
   <meta name="twitter:title" content="Projects - Avijit Roy" />
-  <meta name="twitter:description"
-    content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
+  <meta name="twitter:description" content="Explore projects by Avijit Roy that apply skills in cybersecurity, AI, and secure software engineering to solve real-world challenges in data systems, digital forensics, and education." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
 
   <!-- Favicons -->
   <link rel="icon" href="../assets/favicons/favicon.ico" sizes="any" />
   <link rel="icon" href="../assets/favicons/icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="../assets/favicons/site.webmanifest" />
-  <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2" />
+  <link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2">
   <meta name="theme-color" content="#0a66c2" />
-
-  <!-- Styles -->
+  
+  <!-- Premium Styles -->
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    .filter-bar { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-4) 0; }
+    .chip { padding: 8px 16px; border-radius: var(--radius-2); border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; transition: all 0.2s; font-weight: 500;}
+    .chip:hover { background: var(--chip-hover); transform: translateY(-1px); box-shadow: var(--shadow); }
+    .chip.active { background: var(--brand); color: var(--btn-text); border-color: var(--brand); }
+    #projectGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-4); }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; list-style: none; padding: 0; margin: 16px 0 0; }
+    .tags li { padding: 4px 10px; border: 1px solid var(--border); background: var(--focus-bg); border-radius: 999px; font-size: 0.85rem; transition: background 0.2s, color 0.2s;}
+    .tags li.clickable:hover { background: var(--brand); color: var(--btn-text); cursor: pointer; }
+    .repo-link { float: right; color: var(--muted); font-size: 1.25rem; transition: color 0.2s; }
+    .repo-link:hover { color: var(--brand); }
+  </style>
 
-  <!-- Font Awesome -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Scripts -->
   <script src="../assets/js/main.js" defer></script>
 
   <!-- JSON-LD -->
@@ -238,16 +236,6 @@
     ]
   }
   </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4VM6347X4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y4VM6347X4');
-  </script>
 </head>
 
 <body>
@@ -263,37 +251,23 @@
         <a href="../experience/">Experience</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          <span id="themeIcon"></span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><span id="themeIcon"></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- MAIN -->
-  <main class="container section">
-    <h1 class="page-title">Projects</h1>
-    <p class="muted">
+  <main class="section">
+    <div class="container">
+      <h1 style="font-size: 2.5rem; margin-bottom: 24px;">Engineering Portfolio</h1>
+    <p class="muted" style="max-width: 950px; font-size: 1.15rem; line-height: 1.7;">
       This page showcases a selection of my work where theory meets practice.
       As an educator and engineer, I focus on building secure, data-driven
       systems that solve real-world problems. The projects below span
       cybersecurity, applied computing, and educational technology, reflecting
       a commitment to ethical innovation and human-centered design.
     </p>
-
-    <!-- Search (hidden for now) -->
-    <!--
-    <section class="section-block">
-      <div class="search-wrap">
-        <input id="projectSearch" class="search" type="text" placeholder="Search by name, tag, or stack…"
-          aria-label="Search projects" />
-        <button id="clearSearch" class="clear-btn" aria-label="Clear search">×</button>
-      </div>
-    </section>
-    -->
 
     <!-- Filter chips -->
     <div class="filter-bar chips">
@@ -311,313 +285,194 @@
     </div>
 
     <!-- Projects -->
-    <section class="section-block">
+    <section>
       <div id="projectGrid">
-        <!-- BlitzTips (Graduate Research Assistant) -->
-
-        <article class="card" id="blitztips"
-          data-tags="security dotnet c# api mapping realtime signalr azure hangfire googlemaps rbac audit data">
-          <h3>BlitzTips — Real-Time Trafficking Tip Platform
-            <a class="repo-link" href="#" title="Open project on GitHub" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </h3>
+        <!-- BlitzTips -->
+        <article class="card" id="blitztips" data-tags="security dotnet c# api mapping realtime signalr azure hangfire googlemaps rbac audit data">
+          <h3>BlitzTips <i class="fa-brands fa-react" style="float: right;"></i></h3>
           <p class="muted">
-            <strong>Multi-Agency Intelligence Dashboard.</strong> A secure investigation platform built at John Jay
-            College to triage human-trafficking tips in real-time. The system pairs a .NET Core API with a React-style
-            UI to deliver live geospatial intelligence, investigator dashboards, and secure data feeds—purpose-built for
-            handling sensitive PII (Personally Identifiable Information).
+            <strong>Multi-Agency Intelligence Dashboard.</strong> A secure investigation platform built at John Jay College to triage human-trafficking tips in real-time. Built with .NET Core and React to deliver live geospatial intelligence. Integrates Google Maps API, SignalR for push updates, and Hangfire for background jobs. 
           </p>
-          <p class="muted">
-            Integrates Google Maps API, SignalR for push updates, and Hangfire for background jobs. Security is enforced
-            via Azure AD OAuth2, field-level encryption, and anomaly detection, ensuring strict compliance for
-            operational data.
-          </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="security">Security</li>
-              <li class="clickable" data-tag="dotnet">.NET</li>
-              <li class="clickable" data-tag="c#">C#</li>
-              <li class="clickable" data-tag="api">API</li>
-              <li class="clickable" data-tag="realtime">Real-time</li>
-              <li class="clickable" data-tag="azure">Azure</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="dotnet">.NET</li>
+            <li class="clickable" data-tag="api">API</li>
+            <li class="clickable" data-tag="realtime">Real-time</li>
+            <li class="clickable" data-tag="azure">Azure</li>
+          </ul>
         </article>
 
         <!-- Django Secure Single-Session Auth -->
         <article class="card" id="django-secure" data-tags="security django authentication python opensource">
-          <h3>Django Secure Single-Session Auth System
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth"
-              title="Open project on GitHub" target="_blank" rel="noopener" aria-label="Open project on GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>Django Auth System 
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Enterprise-Grade Session Enforcement System</strong> Designed to uphold academic and enterprise
-            integrity by preventing concurrent user access. This Django-based authentication system enforces a strict
-            single-session policy, utilizing GeoIP logging to flag suspicious login attempts in real-time. Ideal for
-            secure testing environments, certification platforms, and paid content portals where account sharing is a
-            liability.
+            <strong>Enterprise-Grade Session Enforcement.</strong> Django-based authentication system enforcing strict single-session policies, using GeoIP logging to flag suspicious login attempts in real-time. Ideal for secure testing environments.
           </p>
-          <p class="muted">
-            Built with Django 5+ and Python 3.10+, it integrates GeoIP-based logging, device tracking, self-service
-            session unlocks, and administrative controls — all out of the box.
-          </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="security">Security</li>
-              <li class="clickable" data-tag="authentication">Authentication</li>
-              <li class="clickable" data-tag="django">Django</li>
-              <li class="clickable" data-tag="python">Python</li>
-              <li class="clickable" data-tag="opensource">Open Source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="authentication">Authentication</li>
+            <li class="clickable" data-tag="python">Python</li>
+            <li class="clickable" data-tag="opensource">Open Source</li>
+          </ul>
         </article>
 
         <!-- PersonalDebtTracker -->
         <article class="card" id="personal-debt-tracker" data-tags="pwa finance flutter firebase firestore mobile">
-          <h3>
-            PersonalDebtTracker
-            <a class="repo-link" href="https://github.com/heyavijitroy/PersonalDebtTracker" target="_blank"
-              rel="noopener" aria-label="Open project on GitHub" title="PersonalDebtTracker GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>PersonalDebtTracker
+            <a class="repo-link" href="https://github.com/heyavijitroy/PersonalDebtTracker" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Privacy-Centric Financial Planning PWA.</strong> A mobile-first Progressive Web App (PWA) designed
-            for debt visualization and zero-knowledge budgeting. Unlike commercial apps that aggregate data for sale,
-            this tool uses Firebase/Firestore to provide secure, real-time payoff projections and utilization tracking
-            without compromising user privacy.
+            <strong>Privacy-Centric Planner PWA.</strong> A progressive web app designed for debt visualization. Uses Firebase/Firestore to provide secure projections and zero-knowledge budgeting without harvesting user data.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="pwa">PWA</li>
-              <li class="clickable" data-tag="finance">Finance</li>
-              <li class="clickable" data-tag="flutter">Flutter</li>
-              <li class="clickable" data-tag="firebase">Firebase</li>
-              <li class="clickable" data-tag="mobile">Mobile</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="pwa">PWA</li>
+            <li class="clickable" data-tag="finance">Finance</li>
+            <li class="clickable" data-tag="flutter">Flutter</li>
+            <li class="clickable" data-tag="firebase">Firebase</li>
+            <li class="clickable" data-tag="mobile">Mobile</li>
+          </ul>
         </article>
 
         <!-- Exam Timer -->
         <article class="card" id="exam-timer" data-tags="education tools timer javascript productivity opensource">
-          <h3>
-            Exam Timer
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="Exam Timer GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>Exam Timer
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Cognitive-Load Focused Proctoring Tool</strong> A high-visibility exam time management interface
-            designed for lecture halls and proctored environments. Built with a dark-mode UI to reduce eye strain and
-            customizable warning thresholds to keep students on track, this tool standardizes timekeeping across
-            classrooms, reducing anxiety and administrative overhead during assessments.
+            <strong>Cognitive-Load Focused Proctoring Tool.</strong> A high-visibility exam time management interface designed for lecture halls. Built with a dark-mode UI to reduce eye strain and customizable warning thresholds.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="tools">Tools</li>
-              <li class="clickable" data-tag="timer">Timer</li>
-              <li class="clickable" data-tag="education">Education</li>
-              <li class="clickable" data-tag="javascript">JavaScript</li>
-              <li class="clickable" data-tag="productivity">Productivity</li>
-              <li class="clickable" data-tag="opensource">Open Source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="tools">Tools</li>
+            <li class="clickable" data-tag="education">Education</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="productivity">Productivity</li>
+          </ul>
         </article>
 
-        <!-- dotnet-dailytips (#DotNetWithRoy) -->
-        <article class="card" id="dotnet-dailytips"
-          data-tags="dotnet csharp aspnet-core entity-framework tips patterns opensource">
-          <h3>
-            dotnet-dailytips (#DotNetWithRoy)
-            <a class="repo-link" href="https://github.com/heyavijitroy/dotnet-dailytips" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="dotnet-dailytips GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+        <!-- dotnet-dailytips -->
+        <article class="card" id="dotnet-dailytips" data-tags="dotnet csharp aspnet-core entity-framework tips patterns opensource">
+          <h3>dotnet-dailytips
+            <a class="repo-link" href="https://github.com/heyavijitroy/dotnet-dailytips" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Production-Ready .NET Reference Architecture.</strong> A curated knowledge base of enterprise
-            patterns for building robust systems. This repository moves beyond "Hello World" tutorials to demonstrate
-            high-performance techniques in asynchronous workflows, Entity Framework query optimization, and scalable API
-            design.
+            <strong>Production-Ready .NET Reference.</strong> A curated knowledge base of enterprise patterns for building robust systems, including asynchronous workflows, EF query optimization, and scalable API design.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="dotnet">.NET</li>
-              <li class="clickable" data-tag="csharp">C#</li>
-              <li class="clickable" data-tag="aspnet-core">ASP.NET Core</li>
-              <li class="clickable" data-tag="patterns">Patterns</li>
-              <li class="clickable" data-tag="opensource">Open-source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="dotnet">.NET</li>
+            <li class="clickable" data-tag="csharp">C#</li>
+            <li class="clickable" data-tag="patterns">Patterns</li>
+            <li class="clickable" data-tag="opensource">Open-source</li>
+          </ul>
         </article>
 
         <!-- ArticleExtractor -->
         <article class="card" id="article-extractor" data-tags="python newspaper3k beautifulsoup requests nlp research">
-          <h3>
-            ArticleExtractor
-            <a class="repo-link" href="https://github.com/heyavijitroy/ArticleExtractor" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="ArticleExtractor GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>ArticleExtractor
+            <a class="repo-link" href="https://github.com/heyavijitroy/ArticleExtractor" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>NLP-Ready Data Pipeline for Web Content</strong> A specialized extraction engine that isolates core
-            journalistic content from noisy HTML structures. Unlike standard scrapers, this tool
-            intelligently strips ads, boilerplate, and navigation elements to produce clean, normalized
-            text datasets specifically optimized for Natural Language Processing (NLP) research and sentiment analysis.
+            <strong>NLP Data Cleanse Protocol.</strong> A specialized Python extraction engine that isolates journalistic content from noisy HTML to yield normalized datasets optimized for NLP research and sentiment analysis.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="python">Python</li>
-              <li class="clickable" data-tag="newspaper3k">newspaper3k</li>
-              <li class="clickable" data-tag="beautifulsoup">
-                BeautifulSoup
-              </li>
-              <li class="clickable" data-tag="requests">Requests</li>
-              <li class="clickable" data-tag="nlp">NLP</li>
-              <li class="clickable" data-tag="research">Research</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="python">Python</li>
+            <li class="clickable" data-tag="nlp">NLP</li>
+            <li class="clickable" data-tag="research">Research</li>
+            <li class="clickable" data-tag="data">Data</li>
+          </ul>
         </article>
 
         <!-- HashNow -->
         <article class="card" id="hashnow" data-tags="tools security javascript client-side privacy opensource">
-          <h3>
-            HashNow
-            <a class="repo-link" href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="HashNow GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>HashNow
+            <a class="repo-link" href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Zero-Trust File Integrity Verifier</strong> A privacy-first security tool that calculates SHA-256,
-            SHA-1, and MD5 hashes entirely within the browser. By eliminating server-side uploads, HashNow allows users
-            to verify sensitive documents and massive files without ever exposing data to the network, ensuring 100%
-            confidentiality and compliance with strict data handling policies.
+            <strong>Zero-Trust File Verifier.</strong> Privacy-first security tool that calculates hashes (MD5, SHA-256) within the browser. Eliminates server-side upload risk entirely for 100% confidentiality.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="tools">Tools</li>
-              <li class="clickable" data-tag="security">Security</li>
-              <li class="clickable" data-tag="javascript">JavaScript</li>
-              <li class="clickable" data-tag="client-side">Client-side</li>
-              <li class="clickable" data-tag="privacy">Privacy</li>
-              <li class="clickable" data-tag="opensource">Open-source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="privacy">Privacy</li>
+            <li class="clickable" data-tag="tools">Tools</li>
+          </ul>
         </article>
 
         <!-- ChatifyNode -->
-
         <article class="card" id="chatifynode" data-tags="realtime chat nodejs express socketio messaging opensource">
-          <h3>
-            ChatifyNode
-            <a class="repo-link" href="https://github.com/heyavijitroy/ChatifyNode" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="ChatifyNode GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>ChatifyNode
+            <a class="repo-link" href="https://github.com/heyavijitroy/ChatifyNode" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Scalable Real-Time Communication Engine.</strong> A clean-architecture messaging backend built with
-            Node.js and Socket.IO. Engineered for extensibility, it handles instant event delivery, typing indicators,
-            and message acknowledgments with low latency, serving as a reliable foundation for adding chat functionality
-            to larger applications.
+            <strong>Scalable Real-Time Engine.</strong> A clean-architecture messaging backend built with Node.js and Socket.IO. Engineered for extensibility to handle instant event delivery and low-latency communication.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="realtime">Realtime</li>
-              <li class="clickable" data-tag="nodejs">Node.js</li>
-              <li class="clickable" data-tag="socketio">Socket.IO</li>
-              <li class="clickable" data-tag="messaging">Messaging</li>
-              <li class="clickable" data-tag="opensource">Open-source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="realtime">Realtime</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="messaging">Messaging</li>
+            <li class="clickable" data-tag="opensource">Open-source</li>
+          </ul>
         </article>
 
         <!-- JomiMapo -->
         <article class="card" id="jomimapo" data-tags="pwa mapping offline javascript bangladesh converter opensource">
-          <h3>
-            JomiMapo
-            <a class="repo-link" href="https://github.com/heyavijitroy/JomiMapo" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="JomiMapo GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+          <h3>JomiMapo
+            <a class="repo-link" href="https://github.com/heyavijitroy/JomiMapo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Regional Unit Conversion Engine</strong> A localized Progressive Web App (PWA) addressing the
-            fragmentation of land measurement units in South Asia. JomiMapo standardizes conversions between 20+
-            traditional units (Bigha, Katha) and international standards, bridging the gap between legacy property
-            records and modern digital surveying.
+            <strong>Regional Unit Conversion PWA.</strong> A progressive web app addressing the fragmentation of regional land measurement units in South Asia. Standardizes legacy units to modern digital surveying equivalents.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="pwa">PWA</li>
-              <li class="clickable" data-tag="mapping">Mapping</li>
-              <li class="clickable" data-tag="offline">Offline</li>
-              <li class="clickable" data-tag="javascript">JavaScript</li>
-              <li class="clickable" data-tag="bangladesh">Bangladesh</li>
-              <li class="clickable" data-tag="converter">Converter</li>
-              <li class="clickable" data-tag="opensource">Open-source</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="pwa">PWA</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="mapping">Mapping</li>
+            <li class="clickable" data-tag="opensource">Open-source</li>
+          </ul>
         </article>
 
         <!-- Excelsior -->
-        <article class="card" id="excelsior" data-tags="dotnet csharp winforms entity-framework sql data-quality">
-          <h3>
-            Excelsior
-            <a class="repo-link" href="https://github.com/heyavijitroy/Excelsior" target="_blank" rel="noopener"
-              aria-label="Open project on GitHub" title="Excelsior GitHub repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+        <article class="card" id="excelsior" data-tags="dotnet csharp winforms entity-framework sql data data-quality tools">
+          <h3>Excelsior
+            <a class="repo-link" href="https://github.com/heyavijitroy/Excelsior" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Automated ETL & Data Reconciliation Tool.</strong> A desktop solution for high-volume student record
-            matching and discrepancy resolution. Built with .NET WinForms, it streamlines the Extract-Transform-Load
-            (ETL)
-            workflow, allowing administrators to identify data quality issues and resolve duplicate records
-            significantly
-            faster than manual review.
+            <strong>Automated ETL Data Tool.</strong> A desktop (.NET WinForms) solution for high-volume student record matching and discrepancy resolution, vastly streamlining the ETL pipeline over manual reviews.
           </p>
-          <div class="cta">
-            <ul class="tags">
-              <li class="clickable" data-tag="dotnet">.NET</li>
-              <li class="clickable" data-tag="csharp">C#</li>
-              <li class="clickable" data-tag="winforms">WinForms</li>
-              <li class="clickable" data-tag="sql">SQL</li>
-              <li class="clickable" data-tag="data-quality">Data Quality</li>
-            </ul>
-          </div>
+          <ul class="tags">
+            <li class="clickable" data-tag="dotnet">.NET</li>
+            <li class="clickable" data-tag="csharp">C#</li>
+            <li class="clickable" data-tag="sql">SQL</li>
+            <li class="clickable" data-tag="data">Data</li>
+            <li class="clickable" data-tag="tools">Tools</li>
+          </ul>
         </article>
+
       </div>
     </section>
+    <p class="muted" style="text-align:center; margin-top:2rem;">
+      Last updated: <span id="lastUpdated"></span>
+    </p>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot-flex">
-      <p>© <span id="currentYear"></span> Avijit Roy</p>
+      <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
       <div class="socials">
-        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener" aria-label="LinkedIn"
-          title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener" aria-label="ORCiD"
-          title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
-        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener" aria-label="Medium" title="Medium"><i
-            class="fa-brands fa-medium"></i></a>
-        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener" aria-label="Instagram"
-          title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener" aria-label="Flickr"
-          title="Flickr"><i class="fa-brands fa-flickr"></i></a>
+        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD" title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><i class="fa-brands fa-medium"></i></a>
+        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr" title="Flickr"><i class="fa-brands fa-flickr"></i></a>
       </div>
     </div>
   </footer>
+  <script>
+    const lastUpdated = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("lastUpdated").textContent = lastUpdated.toLocaleDateString(undefined, options);
+  </script>
 </body>
-
 </html>

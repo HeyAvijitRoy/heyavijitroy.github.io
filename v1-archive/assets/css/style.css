@@ -1,0 +1,1138 @@
+/* =====================================================
+   Avijit Roy — Site Styles (Light/Dark + Consistent Rhythm)
+   ===================================================== */
+
+/* ---------- Theme Vars ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #5b6472;
+  --border: #e5eaf3;
+  --card: #ffffff;
+  --brand: #0a66c2;
+  --brand-700: #0956a3;
+  --chip: #fff;
+  --chip-hover: #f8fbff;
+  --nav-bg: rgba(255, 255, 255, .9);
+  --shadow: 0 6px 16px rgba(2, 12, 27, .06);
+  --accent-color: var(--brand);
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 42px;
+
+  --radius-1: 6px;
+  --radius-2: 8px;
+  --radius-3: 12px;
+}
+
+html[data-theme="dark"] {
+  --bg: #0b1220;
+  --text: #e6edf3;
+  --muted: #97a3b6;
+  --border: #1f2a44;
+  --card: #0f172a;
+  --brand: #69b1ff;
+  --brand-700: #5aa1ec;
+  --chip: #0f172a;
+  --chip-hover: #162036;
+  --nav-bg: rgba(11, 18, 32, .9);
+  --shadow: 0 8px 18px rgba(0, 0, 0, .4);
+  --accent-color: var(--brand);
+}
+
+/* Visually hidden (for screen reader announcements) */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: var(--bg);
+  color: var(--text);
+  transition: background .2s ease, color .2s ease;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none
+}
+
+.container {
+  max-width: 1080px;
+  /* width: 92%; */
+  margin: var(--space-6) auto;
+  padding: 0 var(--space-5);
+}
+
+.section {
+  padding: var(--space-6) 0 var(--space-7);
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--space-5) 0 var(--space-6);
+  }
+}
+
+.section-block {
+  margin-top: var(--space-6);
+}
+
+.section-block ul li {
+  margin-bottom: 6px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--space-3);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+}
+
+/* Muted Colors */
+.muted {
+  color: var(--muted);
+  font-size: 0.95em;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+html[data-theme="dark"] .muted {
+  color: #c4c9d2;
+  opacity: 0.9;
+}
+
+
+/* Muted Links */
+.muted a {
+  color: var(--accent-color);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.muted a:hover,
+.muted a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: var(--space-2) 0;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--text);
+}
+
+.brand span {
+  color: var(--brand);
+}
+
+/* small github icon next to brand */
+.brand-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px;
+  border: 1px solid transparent;
+}
+
+.brand-github i {
+  font-size: 14px
+}
+
+.brand-github:hover {
+  background: var(--chip-hover);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.nav-links a {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-2);
+  color: var(--text);
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: var(--chip-hover);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: var(--radius-2);
+  padding: var(--space-2);
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 14px;
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 600;
+  transition: transform .06s ease, box-shadow .12s ease, background .12s;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  background: var(--chip-hover);
+}
+
+.button.primary {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.button.primary:hover {
+  background: var(--brand-700);
+}
+
+.button.small {
+  padding: 7px 10px;
+  border-radius: var(--radius-1);
+  /* border: #0a66c2; */
+  font-size: .92rem;
+}
+
+.button.icon {
+  padding: 8px 10px;
+}
+
+.button.icon i {
+  font-size: 16px;
+  line-height: 1;
+  display: block;
+}
+
+.button:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--brand) 60%, transparent);
+  outline-offset: 3px;
+}
+
+.socials a:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--brand) 60%, transparent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.cta {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-2);
+}
+
+.hero p.lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  overflow: hidden;
+  justify-self: end;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------- Cards / Blocks ---------- */
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3);
+  padding: var(--space-4);
+}
+
+/* Keep standalone cards separated without relying on manual <br> tags */
+.section-block > .card + .card {
+  margin-top: var(--space-3);
+}
+
+.block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* ---------- Projects ---------- */
+.page-head {
+  margin-bottom: var(--space-3);
+}
+
+.page-head h1 {
+  margin: 0 0 var(--space-2);
+}
+
+.search-wrap {
+  position: relative;
+  margin: 0 0 var(--space-3);
+}
+
+.search {
+  width: 100%;
+  padding: 10px 36px 10px 12px;
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+
+.clear-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-1);
+  line-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: var(--chip-hover);
+}
+
+.filter-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-4);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: var(--chip);
+  color: var(--text);
+  cursor: pointer;
+  transition: background .12s ease, box-shadow .12s ease;
+}
+
+.chip:hover {
+  background: var(--chip-hover);
+  box-shadow: var(--shadow);
+}
+
+.chip.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+#projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+/* Inline tag chips under each project */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  background: var(--chip);
+  border-radius: 999px;
+  font-size: .9rem;
+  cursor: default;
+}
+
+/* Contact note links: improve hover & accessibility */
+.contact-note a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-note a:hover,
+.contact-note a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Make inline tags look clickable and consistent */
+.tags li.clickable {
+  cursor: pointer;
+}
+
+.tags li.clickable:hover {
+  box-shadow: var(--shadow);
+  background: var(--chip-hover);
+}
+
+/* project title + repo link */
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.repo-link {
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: var(--radius-2);
+  border: 1px solid transparent;
+}
+
+.repo-link i {
+  font-size: 16px
+}
+
+.repo-link:hover {
+  background: var(--chip-hover);
+}
+
+/* ---------- Teaching ---------- */
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3);
+  background: var(--card);
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  overflow: hidden;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+details>summary {
+  cursor: pointer;
+  font-weight: 700;
+  margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-3)) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-3);
+  /* rounded corners when closed */
+  transition: background .12s ease;
+  /* smoother hover */
+}
+
+details[open]>summary {
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-3) var(--radius-3) 0 0;
+  /* top corners rounded when open */
+}
+
+.inst {
+  display: block;
+  color: var(--muted);
+  margin-top: var(--space-2);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: var(--space-6);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 85%, transparent);
+}
+
+.foot-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Social icons in footer */
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--text);
+  padding: 6px;
+  border-radius: 6px;
+  display: inline-flex
+}
+
+.socials a i {
+  font-size: 20px;
+}
+
+.socials a:hover {
+  color: var(--brand);
+  background: var(--chip-hover);
+}
+
+/* Mobile: center footer content and put copyright and socials in two rows */
+@media (max-width:480px) {
+  .foot-flex {
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .foot-flex>p {
+    width: 100%;
+    order: 1
+  }
+
+  .socials {
+    width: 100%;
+    justify-content: center;
+    order: 2
+  }
+}
+
+/* ---------- Mobile Nav ---------- */
+@media (max-width:900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 8px;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 160px;
+    z-index: 50;
+    /* keep menu above header */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    /* full clickable width */
+    min-height: 44px;
+    /* comfortable touch target */
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: center;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible,
+  .nav-links a[aria-current="page"],
+  .nav-links a.active {
+    background: var(--chip-hover);
+    color: var(--brand);
+  }
+
+  .nav-links a+a {
+    margin-top: 4px;
+  }
+}
+
+/* ---------- Responsive Hero ---------- */
+@media (max-width:800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-4);
+  }
+
+  .avatar {
+    justify-self: center;
+    margin-top: var(--space-3);
+  }
+
+  .hero .cta {
+    justify-content: center;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width:768px) and (max-width:1024px) {
+  .avatar {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Small-screen container padding so site doesn't feel edge-to-edge on phones */
+@media (max-width:480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  /* reduce footer height on phones */
+  .site-footer {
+    padding: 12px 0;
+  }
+
+  .foot-flex {
+    gap: 8px;
+  }
+}
+
+/* Make the recent highlights / card-list responsive to two columns on larger screens */
+@media (min-width:700px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+/* improve focus for mobile nav links */
+.nav-links a:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--brand) 60%, transparent);
+  outline-offset: 3px;
+}
+
+/* details/summary improvements for Teaching page */
+details>summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+details>summary:hover,
+details>summary:focus-visible {
+  background: color-mix(in oklab, var(--chip-hover) 90%, #fff);
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Avatar flexibility  */
+/* Desktop (>=1025px) */
+@media (min-width: 1025px) {
+  .hero {
+    grid-template-columns: 1fr 250px;
+    /* match avatar width */
+  }
+
+  .avatar {
+    width: 250px;
+    height: 250px;
+  }
+
+}
+
+/* Tablet (768–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr 200px;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
+  }
+
+  body {
+    margin: 0px 10px 0px 10px;
+  }
+}
+
+/* Mobile (<768px) — already stacks vertically */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .avatar {
+    justify-self: center;
+    margin-top: var(--space-3);
+    width: 200px;
+    height: 200px;
+  }
+
+  body {
+    margin: 0px 10px 0px 10px;
+  }
+}
+
+/* =====================================================
+   Course Page
+   ===================================================== */
+
+/* .csci-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+} */
+
+
+#assessments,
+#policies,
+#weekly-plan,
+#tools,
+#github,
+#books {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.timeline .card h3 {
+  margin-bottom: var(--space-1);
+}
+
+/* CSCI-272 page refinements */
+.section-block .card ul {
+  margin-top: .25rem;
+}
+
+.section-block .card ul li+li {
+  margin-top: .25rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-4) 0;
+}
+
+.sem {
+  font-style: italic;
+  font-size: 0.75em;
+  font-weight: normal;
+  margin-left: 0.5em;
+  color: var(--muted);
+}
+
+.instructor-info {
+  margin-top: 1rem; 
+  margin-bottom: 0;
+}
+
+.syllabus {
+  margin-top: 0.75rem;
+}
+/* ========================================
+  College Logo
+   ========================================*/
+.overview-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.overview-logo{
+  flex-shrink: 0;
+}
+
+.overview-logo img {
+  height: 60px;
+  width: auto;
+  content: url("../../assets/img/JJC_Logo_WHT.png");
+  /* Default to white logo (dark mode) */
+}
+
+/* Change logo for light mode */
+[data-theme="light"] .overview-logo img {
+  content: url("../../assets/img/JJC_Logo.png");
+  /* Use dark logo for light mode */
+}
+
+.overview-logo img {
+  height: 60px;
+  /* Default height for desktop */
+  width: auto;
+}
+
+/* On screens smaller than 768px, stack the items */
+@media (max-width: 768px) {
+  .overview-container {
+    flex-direction: column;
+  }
+
+  .overview-logo {
+    /* margin-top: 1rem; */
+    /* Center the logo when stacked on mobile */
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  .overview-logo img {
+    height: 50px;
+    /* Smaller height for mobile */
+  }
+}
+
+/* Beautiful table styling */
+/* Base table */
+.nice-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 70%, var(--card) 30%),
+      color-mix(in oklab, var(--brand-700) 70%, var(--card) 30%));
+  --table-border: color-mix(in oklab, var(--border) 94%, transparent);
+  --table-stripe: color-mix(in oklab, var(--card) 94%, var(--text) 6%);
+  --table-hover: color-mix(in oklab, var(--card) 88%, var(--brand) 12%);
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  border: 1px solid var(--table-border);
+  overflow: hidden;
+}
+
+/* Header */
+.nice-table thead {
+  background: var(--table-header-bg);
+  color: #ffffff;
+}
+
+.nice-table thead tr th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-bottom: 1px solid color-mix(in oklab, #000 35%, var(--brand) 65%);
+}
+
+/* Body cells */
+.nice-table tbody tr td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--table-border);
+  vertical-align: middle;
+}
+
+/* Zebra striping */
+.nice-table tbody tr:nth-child(even) {
+  background-color: var(--table-stripe);
+}
+
+/* Hover effect */
+.nice-table tbody tr:hover {
+  background-color: var(--table-hover);
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Dark theme tweaks so header isn't too bright */
+html[data-theme="dark"] .nice-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 42%, var(--card) 58%),
+      color-mix(in oklab, var(--brand-700) 42%, var(--card) 58%));
+  --table-stripe: color-mix(in oklab, var(--card) 86%, var(--text) 14%);
+  --table-hover: color-mix(in oklab, var(--card) 80%, var(--brand) 20%);
+}
+
+/* First & last column tweaks (optional) */
+.nice-table tbody tr td:first-child,
+.nice-table thead tr th:first-child {
+  padding-left: 1.25rem;
+}
+
+.nice-table tbody tr td:last-child,
+.nice-table thead tr th:last-child {
+  padding-right: 1.25rem;
+}
+
+/* Compact style on very small screens */
+@media (max-width: 640px) {
+  .nice-table {
+    font-size: 0.85rem;
+  }
+
+  .nice-table thead tr th,
+  .nice-table tbody tr td {
+    padding: 0.6rem 0.75rem;
+  }
+}
+
+/* Week Plan */
+.weekly-nested {
+  padding-left: 0;
+  list-style: none;
+}
+
+.weekly-nested > li {
+  margin-bottom: 1rem;
+}
+
+.weekly-nested > li > ul {
+  margin-top: 0.35rem;
+  margin-left: 1rem;
+}
+
+.weekly-nested li p,
+.weekly-nested li strong {
+  margin: 0.15rem 0;
+}
+
+/* Responsive Table */
+.responsive-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 70%, var(--card) 30%),
+      color-mix(in oklab, var(--brand-700) 70%, var(--card) 30%));
+  --table-stripe: color-mix(in oklab, var(--card) 94%, var(--text) 6%);
+  --table-hover: color-mix(in oklab, var(--card) 88%, var(--brand) 12%);
+  
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  /*width: 25%; /* Force equal widths for 4 columns */
+}
+
+.responsive-table thead th {
+  background: var(--table-header-bg);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-bottom: 1px solid color-mix(in oklab, #000 35%, var(--brand) 65%);
+}
+
+.responsive-table tbody tr:nth-child(even) {
+  background-color: var(--table-stripe);
+}
+
+.responsive-table tbody tr:hover {
+  background-color: var(--table-hover);
+  transition: background-color 0.15s ease-in-out;
+}
+
+html[data-theme="dark"] .responsive-table {
+  --table-header-bg: linear-gradient(135deg,
+      color-mix(in oklab, var(--brand) 42%, var(--card) 58%),
+      color-mix(in oklab, var(--brand-700) 42%, var(--card) 58%));
+  --table-stripe: color-mix(in oklab, var(--card) 86%, var(--text) 14%);
+  --table-hover: color-mix(in oklab, var(--card) 80%, var(--brand) 20%);
+}
+
+html[data-theme="dark"] .responsive-table thead th {
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow);
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-right: var(--space-4);
+  }
+}

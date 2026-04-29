@@ -99,9 +99,10 @@
       {
         "@type": "ItemList",
         "@id": "https://avijitroy.com/projects/#project-list",
-        "name": "Projects by Avijit Roy",
+        "name": "Software Projects by Avijit Roy",
+        "description": "A collection of software engineering, cybersecurity, and research-driven tools developed by Avijit Roy.",
+        "numberOfItems": 11,
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 10,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -110,19 +111,27 @@
               "@type": "SoftwareApplication",
               "name": "BlitzTips",
               "applicationCategory": "SecurityApplication",
-              "description": "Real-time trafficking intelligence platform built with .NET, Google Maps, SignalR, and Hangfire.",
-              "operatingSystem": "Web"
+              "description": "Multi-agency intelligence dashboard built with .NET Core and React for real-time human trafficking investigation workflows.",
+              "operatingSystem": "Web",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "Django Secure Single-Session Auth System",
-              "description": "Django-based authentication system with single-session enforcement, GeoIP logging, and administrative controls.",
-              "programmingLanguage": "Python",
-              "codeRepository": "https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth"
+              "@type": "SoftwareApplication",
+              "name": "OneClickQR",
+              "applicationCategory": "UtilitiesApplication",
+              "description": "Privacy-first client-side QR code generator supporting URLs, Wi-Fi, vCards, campaign tracking, and high-resolution PNG/SVG output.",
+              "operatingSystem": "Web",
+              "url": "https://www.oneclickqr.com/",
+              "codeRepository": "https://github.com/HeyAvijitRoy/OneClickQR",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
@@ -130,65 +139,89 @@
             "position": 3,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "PersonalDebtTracker",
-              "applicationCategory": "FinanceApplication",
-              "description": "Privacy-centric financial planning progressive web app built for debt visualization and secure budgeting workflows.",
-              "operatingSystem": "Web, Android, iOS"
+              "name": "HashNow",
+              "applicationCategory": "SecurityApplication",
+              "description": "Browser-based hashing utility supporting MD5 and SHA-256 for secure, client-side file verification.",
+              "operatingSystem": "Web",
+              "codeRepository": "https://github.com/heyavijitroy/HashNow",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 4,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "Exam Timer",
-              "description": "High-visibility classroom exam timer for lecture halls and proctored environments.",
-              "programmingLanguage": "JavaScript",
-              "codeRepository": "https://github.com/HeyAvijitRoy/exam-timer"
+              "@type": "SoftwareApplication",
+              "name": "Django Auth System",
+              "applicationCategory": "SecurityApplication",
+              "description": "Enterprise authentication framework enforcing strict single-session login policies with GeoIP monitoring.",
+              "operatingSystem": "Web",
+              "codeRepository": "https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 5,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "dotnet-dailytips",
-              "description": "Curated .NET project and reference repository focused on scalable patterns, APIs, and production-ready development practices.",
-              "programmingLanguage": "C#",
-              "codeRepository": "https://github.com/heyavijitroy/dotnet-dailytips"
+              "@type": "SoftwareApplication",
+              "name": "ArticleExtractor",
+              "applicationCategory": "DataApplication",
+              "description": "Python-based article extraction engine designed for structured NLP dataset preparation and research workflows.",
+              "operatingSystem": "Cross-platform",
+              "codeRepository": "https://github.com/heyavijitroy/ArticleExtractor",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 6,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "ArticleExtractor",
-              "description": "Python-based article extraction tool for clean NLP-ready text datasets from noisy web content.",
-              "programmingLanguage": "Python",
-              "codeRepository": "https://github.com/heyavijitroy/ArticleExtractor"
+              "@type": "SoftwareApplication",
+              "name": "dotnet-dailytips",
+              "applicationCategory": "DeveloperApplication",
+              "description": "Collection of production-ready .NET engineering patterns, architecture examples, and backend development practices.",
+              "operatingSystem": "Cross-platform",
+              "codeRepository": "https://github.com/heyavijitroy/dotnet-dailytips",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 7,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "HashNow",
-              "description": "Privacy-first in-browser hash verification tool for local file integrity checking.",
-              "programmingLanguage": "JavaScript",
-              "codeRepository": "https://github.com/heyavijitroy/HashNow"
+              "@type": "SoftwareApplication",
+              "name": "Excelsior",
+              "applicationCategory": "BusinessApplication",
+              "description": "Automated ETL desktop tool for student record matching and large-scale data reconciliation workflows.",
+              "operatingSystem": "Windows",
+              "codeRepository": "https://github.com/heyavijitroy/Excelsior",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 8,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "ChatifyNode",
-              "description": "Node.js and Socket.IO messaging backend for scalable real-time communication features.",
-              "programmingLanguage": "JavaScript",
-              "codeRepository": "https://github.com/heyavijitroy/ChatifyNode"
+              "@type": "SoftwareApplication",
+              "name": "JomiMapo",
+              "applicationCategory": "UtilitiesApplication",
+              "description": "Progressive web application for converting regional land measurement units into standardized equivalents.",
+              "operatingSystem": "Web",
+              "codeRepository": "https://github.com/heyavijitroy/JomiMapo",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
@@ -196,21 +229,44 @@
             "position": 9,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "JomiMapo",
-              "applicationCategory": "UtilitiesApplication",
-              "description": "Progressive web app for regional land unit conversion and property measurement standardization.",
-              "operatingSystem": "Web"
+              "name": "Exam Timer",
+              "applicationCategory": "EducationApplication",
+              "description": "Lecture hall timer interface designed to support exam pacing and visual time management.",
+              "operatingSystem": "Web",
+              "codeRepository": "https://github.com/HeyAvijitRoy/exam-timer",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 10,
             "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "Excelsior",
-              "description": "Automated ETL and data reconciliation desktop tool for student record matching and discrepancy resolution.",
-              "programmingLanguage": "C#",
-              "codeRepository": "https://github.com/heyavijitroy/Excelsior"
+              "@type": "SoftwareApplication",
+              "name": "ChatifyNode",
+              "applicationCategory": "CommunicationApplication",
+              "description": "Node.js-based real-time messaging backend built with Socket.IO and Express.",
+              "operatingSystem": "Cross-platform",
+              "codeRepository": "https://github.com/heyavijitroy/ChatifyNode",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "PersonalDebtTracker",
+              "applicationCategory": "FinanceApplication",
+              "description": "Progressive web app for secure debt visualization and financial planning using Firebase.",
+              "operatingSystem": "Web",
+              "codeRepository": "https://github.com/heyavijitroy/PersonalDebtTracker",
+              "creator": {
+                "@id": "https://avijitroy.com/#person"
+              }
             }
           }
         ]
@@ -287,11 +343,12 @@
     <!-- Projects -->
     <section>
       <div id="projectGrid">
+
         <!-- BlitzTips -->
         <article class="card" id="blitztips" data-tags="security dotnet c# api mapping realtime signalr azure hangfire googlemaps rbac audit data">
           <h3>BlitzTips <i class="fa-brands fa-react" style="float: right;"></i></h3>
           <p class="muted">
-            <strong>Multi-Agency Intelligence Dashboard.</strong> A secure investigation platform built at John Jay College to triage human-trafficking tips in real-time. Built with .NET Core and React to deliver live geospatial intelligence. Integrates Google Maps API, SignalR for push updates, and Hangfire for background jobs. 
+            <strong>Multi-Agency Intelligence Dashboard.</strong> A secure investigation platform built at John Jay College to triage human-trafficking tips in real-time. Built with .NET Core and React to deliver live geospatial intelligence. Integrates Google Maps API, SignalR for push updates, and Hangfire for background jobs.
           </p>
           <ul class="tags">
             <li class="clickable" data-tag="security">Security</li>
@@ -302,9 +359,47 @@
           </ul>
         </article>
 
+        <!-- OneClickQR -->
+        <article class="card" id="oneclickqr" data-tags="tools javascript privacy pwa opensource productivity">
+          <h3>OneClickQR
+            <a class="repo-link" href="https://github.com/heyavijitroy/OneClickQR" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="repo-link" href="https://www.oneclickqr.com/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-up-right-from-square"></i>
+            </a>
+          </h3>
+          <p class="muted">
+            <strong>Privacy-First QR Generator.</strong> A fully client-side QR generation platform supporting URLs, Wi-Fi, vCards, and campaign tracking. Designed for high-resolution PNG and SVG output with customizable styling, logo overlays, and UTM parameter generation — all without transmitting user data to external servers.
+          </p>
+          <ul class="tags">
+            <li class="clickable" data-tag="tools">Tools</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="privacy">Privacy</li>
+            <li class="clickable" data-tag="pwa">PWA</li>
+            <li class="clickable" data-tag="opensource">Open-source</li>
+          </ul>
+        </article>
+
+        <!-- HashNow -->
+        <article class="card" id="hashnow" data-tags="tools security javascript privacy opensource">
+          <h3>HashNow
+            <a class="repo-link" href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          </h3>
+          <p class="muted">
+            <strong>Zero-Trust File Verifier.</strong> Privacy-first security tool that calculates hashes (MD5, SHA-256) within the browser. Eliminates server-side upload risk entirely for 100% confidentiality.
+          </p>
+          <ul class="tags">
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="security">Security</li>
+            <li class="clickable" data-tag="privacy">Privacy</li>
+            <li class="clickable" data-tag="tools">Tools</li>
+          </ul>
+        </article>
+
         <!-- Django Secure Single-Session Auth -->
         <article class="card" id="django-secure" data-tags="security django authentication python opensource">
-          <h3>Django Auth System 
+          <h3>Django Auth System
             <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
@@ -318,36 +413,19 @@
           </ul>
         </article>
 
-        <!-- PersonalDebtTracker -->
-        <article class="card" id="personal-debt-tracker" data-tags="pwa finance flutter firebase firestore mobile">
-          <h3>PersonalDebtTracker
-            <a class="repo-link" href="https://github.com/heyavijitroy/PersonalDebtTracker" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <!-- ArticleExtractor -->
+        <article class="card" id="article-extractor" data-tags="python newspaper3k beautifulsoup requests nlp research data">
+          <h3>ArticleExtractor
+            <a class="repo-link" href="https://github.com/heyavijitroy/ArticleExtractor" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Privacy-Centric Planner PWA.</strong> A progressive web app designed for debt visualization. Uses Firebase/Firestore to provide secure projections and zero-knowledge budgeting without harvesting user data.
+            <strong>NLP Data Cleanse Protocol.</strong> A specialized Python extraction engine that isolates journalistic content from noisy HTML to yield normalized datasets optimized for NLP research and sentiment analysis.
           </p>
           <ul class="tags">
-            <li class="clickable" data-tag="pwa">PWA</li>
-            <li class="clickable" data-tag="finance">Finance</li>
-            <li class="clickable" data-tag="flutter">Flutter</li>
-            <li class="clickable" data-tag="firebase">Firebase</li>
-            <li class="clickable" data-tag="mobile">Mobile</li>
-          </ul>
-        </article>
-
-        <!-- Exam Timer -->
-        <article class="card" id="exam-timer" data-tags="education tools timer javascript productivity opensource">
-          <h3>Exam Timer
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-          </h3>
-          <p class="muted">
-            <strong>Cognitive-Load Focused Proctoring Tool.</strong> A high-visibility exam time management interface designed for lecture halls. Built with a dark-mode UI to reduce eye strain and customizable warning thresholds.
-          </p>
-          <ul class="tags">
-            <li class="clickable" data-tag="tools">Tools</li>
-            <li class="clickable" data-tag="education">Education</li>
-            <li class="clickable" data-tag="javascript">JavaScript</li>
-            <li class="clickable" data-tag="productivity">Productivity</li>
+            <li class="clickable" data-tag="python">Python</li>
+            <li class="clickable" data-tag="nlp">NLP</li>
+            <li class="clickable" data-tag="research">Research</li>
+            <li class="clickable" data-tag="data">Data</li>
           </ul>
         </article>
 
@@ -367,51 +445,20 @@
           </ul>
         </article>
 
-        <!-- ArticleExtractor -->
-        <article class="card" id="article-extractor" data-tags="python newspaper3k beautifulsoup requests nlp research">
-          <h3>ArticleExtractor
-            <a class="repo-link" href="https://github.com/heyavijitroy/ArticleExtractor" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <!-- Excelsior -->
+        <article class="card" id="excelsior" data-tags="dotnet csharp winforms entity-framework sql data data-quality tools">
+          <h3>Excelsior
+            <a class="repo-link" href="https://github.com/heyavijitroy/Excelsior" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>NLP Data Cleanse Protocol.</strong> A specialized Python extraction engine that isolates journalistic content from noisy HTML to yield normalized datasets optimized for NLP research and sentiment analysis.
+            <strong>Automated ETL Data Tool.</strong> A desktop (.NET WinForms) solution for high-volume student record matching and discrepancy resolution, vastly streamlining the ETL pipeline over manual reviews.
           </p>
           <ul class="tags">
-            <li class="clickable" data-tag="python">Python</li>
-            <li class="clickable" data-tag="nlp">NLP</li>
-            <li class="clickable" data-tag="research">Research</li>
+            <li class="clickable" data-tag="dotnet">.NET</li>
+            <li class="clickable" data-tag="csharp">C#</li>
+            <li class="clickable" data-tag="sql">SQL</li>
             <li class="clickable" data-tag="data">Data</li>
-          </ul>
-        </article>
-
-        <!-- HashNow -->
-        <article class="card" id="hashnow" data-tags="tools security javascript client-side privacy opensource">
-          <h3>HashNow
-            <a class="repo-link" href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-          </h3>
-          <p class="muted">
-            <strong>Zero-Trust File Verifier.</strong> Privacy-first security tool that calculates hashes (MD5, SHA-256) within the browser. Eliminates server-side upload risk entirely for 100% confidentiality.
-          </p>
-          <ul class="tags">
-            <li class="clickable" data-tag="javascript">JavaScript</li>
-            <li class="clickable" data-tag="security">Security</li>
-            <li class="clickable" data-tag="privacy">Privacy</li>
             <li class="clickable" data-tag="tools">Tools</li>
-          </ul>
-        </article>
-
-        <!-- ChatifyNode -->
-        <article class="card" id="chatifynode" data-tags="realtime chat nodejs express socketio messaging opensource">
-          <h3>ChatifyNode
-            <a class="repo-link" href="https://github.com/heyavijitroy/ChatifyNode" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-          </h3>
-          <p class="muted">
-            <strong>Scalable Real-Time Engine.</strong> A clean-architecture messaging backend built with Node.js and Socket.IO. Engineered for extensibility to handle instant event delivery and low-latency communication.
-          </p>
-          <ul class="tags">
-            <li class="clickable" data-tag="realtime">Realtime</li>
-            <li class="clickable" data-tag="javascript">JavaScript</li>
-            <li class="clickable" data-tag="messaging">Messaging</li>
-            <li class="clickable" data-tag="opensource">Open-source</li>
           </ul>
         </article>
 
@@ -431,20 +478,52 @@
           </ul>
         </article>
 
-        <!-- Excelsior -->
-        <article class="card" id="excelsior" data-tags="dotnet csharp winforms entity-framework sql data data-quality tools">
-          <h3>Excelsior
-            <a class="repo-link" href="https://github.com/heyavijitroy/Excelsior" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <!-- Exam Timer -->
+        <article class="card" id="exam-timer" data-tags="education tools timer javascript productivity opensource">
+          <h3>Exam Timer
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/exam-timer" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
           </h3>
           <p class="muted">
-            <strong>Automated ETL Data Tool.</strong> A desktop (.NET WinForms) solution for high-volume student record matching and discrepancy resolution, vastly streamlining the ETL pipeline over manual reviews.
+            <strong>Cognitive-Load Focused Proctoring Tool.</strong> A high-visibility exam time management interface designed for lecture halls. Built with a dark-mode UI to reduce eye strain and customizable warning thresholds.
           </p>
           <ul class="tags">
-            <li class="clickable" data-tag="dotnet">.NET</li>
-            <li class="clickable" data-tag="csharp">C#</li>
-            <li class="clickable" data-tag="sql">SQL</li>
-            <li class="clickable" data-tag="data">Data</li>
             <li class="clickable" data-tag="tools">Tools</li>
+            <li class="clickable" data-tag="education">Education</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="productivity">Productivity</li>
+          </ul>
+        </article>
+
+        <!-- ChatifyNode -->
+        <article class="card" id="chatifynode" data-tags="realtime chat nodejs express socketio messaging opensource">
+          <h3>ChatifyNode
+            <a class="repo-link" href="https://github.com/heyavijitroy/ChatifyNode" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          </h3>
+          <p class="muted">
+            <strong>Scalable Real-Time Engine.</strong> A clean-architecture messaging backend built with Node.js and Socket.IO. Engineered for extensibility to handle instant event delivery and low-latency communication.
+          </p>
+          <ul class="tags">
+            <li class="clickable" data-tag="realtime">Realtime</li>
+            <li class="clickable" data-tag="javascript">JavaScript</li>
+            <li class="clickable" data-tag="messaging">Messaging</li>
+            <li class="clickable" data-tag="opensource">Open-source</li>
+          </ul>
+        </article>
+
+        <!-- PersonalDebtTracker -->
+        <article class="card" id="personal-debt-tracker" data-tags="pwa finance flutter firebase firestore mobile">
+          <h3>PersonalDebtTracker
+            <a class="repo-link" href="https://github.com/heyavijitroy/PersonalDebtTracker" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          </h3>
+          <p class="muted">
+            <strong>Privacy-Centric Planner PWA.</strong> A progressive web app designed for debt visualization. Uses Firebase/Firestore to provide secure projections and zero-knowledge budgeting without harvesting user data.
+          </p>
+          <ul class="tags">
+            <li class="clickable" data-tag="pwa">PWA</li>
+            <li class="clickable" data-tag="finance">Finance</li>
+            <li class="clickable" data-tag="flutter">Flutter</li>
+            <li class="clickable" data-tag="firebase">Firebase</li>
+            <li class="clickable" data-tag="mobile">Mobile</li>
           </ul>
         </article>
 

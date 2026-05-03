@@ -31,6 +31,7 @@
   <meta name="citation_reference"
     content="Roy, A., & Roy, P. (2026). Structural Silence: When AI Infrastructure Fails Speakers of Underrepresented Languages. SSRN. https://doi.org/10.2139/ssrn.6522858">
   <meta name="citation_language" content="en">
+  <meta name="citation_doi" content="10.5281/zenodo.19991979">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -105,7 +106,10 @@
           </div>
           <div class="hero-actions">
             <div class="button-row">
-              <a class="btn" href="http://dx.doi.org/10.2139/ssrn.6522858" target="_blank" rel="noopener noreferrer">View Preprint</a>
+              <!-- SSRN Preprint -->
+              <a class="btn" href="https://doi.org/10.2139/ssrn.6522858" target="_blank" rel="noopener noreferrer">View Preprint</a>
+              <!-- Zenodo Poster DOI -->
+              <a class="btn" href="https://doi.org/10.5281/zenodo.19991979" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.19991979</a>
               <a class="btn secondary" href="#references">Jump to References</a>
             </div>
           </div>
@@ -436,7 +440,7 @@
           <p class="muted">
             If you use this work, please cite:
           </p>
-
+          <h4 style="margin-top:24px;">Paper Citation</h4>
           <pre class="bibtex" id="bibtexBlock">
             @article{roy2026structural_silence,
               title   = {Structural Silence: When AI Infrastructure Fails Speakers of Underrepresented Languages},
@@ -451,10 +455,36 @@
           <div style="margin-top:12px; display:flex; align-items:center; gap:12px;">
             <button class="btn secondary copy-btn" onclick="copyBibtex()">
               <i class="fa-solid fa-copy"></i>
-              Copy BibTeX
+              Copy Paper BibTeX
             </button>
-
             <span id="copyStatus" class="copy-status">
+              <!-- feedback text appears here -->
+            </span>
+          </div>
+
+          <h4 style="margin-top:24px;">Poster Citation</h4>
+
+          <pre class="bibtex" id="bibtexZenodo">
+          @misc{roy_2026_structural_silence_poster,
+            author       = {Roy, Avijit and
+                            Roy, Proma},
+            title        = {Structural Silence: When AI Infrastructure Fails
+                            the World's Underrepresented Languages —
+                            Poster Presented at ILA 2026},
+            month        = may,
+            year         = 2026,
+            publisher    = {International Linguistic Association (ILA)},
+            doi          = {10.5281/zenodo.19991979},
+            url          = {https://doi.org/10.5281/zenodo.19991979}
+          }
+          </pre>
+          <div style="margin-top:12px; display:flex; align-items:center; gap:12px;">
+            <button class="btn secondary copy-btn"
+                    onclick="copyBibtexZenodo()">
+                <i class="fa-solid fa-copy"></i>
+                Copy Poster BibTeX
+            </button>
+            <span id="copyStatusZenodo" class="copy-status">
               <!-- feedback text appears here -->
             </span>
           </div>

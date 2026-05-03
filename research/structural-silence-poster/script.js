@@ -90,10 +90,45 @@ function copyBibtex() {
 
   navigator.clipboard.writeText(text)
     .then(() => {
-      showStatus("BibTeX copied ✓");
+      showStatus("Paper BibTeX copied ✓");
     })
     .catch((err) => {
       console.error("Clipboard write failed:", err);
       showStatus("Copy failed", false);
     });
+}
+
+function copyBibtexZenodo() {
+
+  const block = document.getElementById("bibtexZenodo");
+  const status = document.getElementById("copyStatusZenodo");
+
+  if (!block) return;
+
+  const text = block.innerText.trim();
+
+  navigator.clipboard.writeText(text)
+    .then(() => {
+
+      if (status) {
+        status.textContent = "Poster BibTeX copied ✓";
+        status.classList.add("show");
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 2000);
+      }
+
+    })
+    .catch(() => {
+      if (status) {
+        status.textContent = "Copy failed";
+        status.classList.add("show");
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 2000);
+      }
+    });
+
 }

@@ -1,0 +1,526 @@
+<!-- Page: Responsible AI Prompting Guide | Path: v2/docs/responsible-ai-prompting-guide.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Responsible AI Prompting Guide for CSCI 271/272</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Canonical & robots -->
+  <link rel="canonical" href="https://avijitroy.com/docs/responsible-ai-prompting-guide.html" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+  <!-- Primary SEO -->
+  <meta name="description"
+    content="A classroom guide to responsible AI use in CSCI 271/272, covering academic integrity, better prompting, self-testing, and study workflows for learning C++ concepts." />
+  <meta name="keywords"
+    content="Responsible AI Prompting Guide, CSCI 271, CSCI 272, academic integrity, AI prompting, AI in education, C++ learning, John Jay College, Avijit Roy" />
+  <meta name="author" content="Avijit Roy" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Responsible AI Prompting Guide for CSCI 271/272" />
+  <meta property="og:description"
+    content="An academic integrity and prompting guide for students using AI to learn C++ concepts through explanation, practice, and self-testing." />
+  <meta property="og:url" content="https://avijitroy.com/docs/responsible-ai-prompting-guide.html" />
+  <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+  <meta property="og:site_name" content="Avijit Roy" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@HeyAvijitRoy" />
+  <meta name="twitter:creator" content="@HeyAvijitRoy" />
+  <meta name="twitter:title" content="Responsible AI Prompting Guide for CSCI 271/272" />
+  <meta name="twitter:description"
+    content="A practical guide for using AI responsibly in CSCI 271/272 without violating academic integrity or outsourcing your learning." />
+  <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" href="../assets/favicons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2" />
+  <meta name="theme-color" content="#0a66c2" />
+
+  <!-- JSON-LD: TechArticle schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html#techarticle",
+    "url": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html",
+    "headline": "Responsible AI Prompting Guide for CSCI 271/272",
+    "description": "A guide for students on using AI responsibly for learning C++ concepts through explanation, guided practice, self-testing, and academic integrity safeguards.",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://avijitroy.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Avijit Roy",
+      "url": "https://avijitroy.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://avijitroy.com/#website",
+      "name": "Avijit Roy",
+      "url": "https://avijitroy.com/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-color: #004c97;
+      --background-color: #ffffff;
+      --text-main: #1f2328;
+      --text-muted: #636c76;
+      --border-color: #d0d7de;
+      --surface-color: #f6f8fa;
+      --max-width: 850px;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: var(--text-main);
+      background-color: var(--background-color);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ol,
+    ul,
+    pre {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      line-height: 1.25;
+      scroll-margin-top: 20px;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: 2em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      margin: 24px 0 16px;
+      font-size: 1.5em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h3 {
+      margin: 24px 0 16px;
+      font-size: 1.25em;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0.7em;
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid var(--border-color);
+      margin: 1.5rem 0;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    code {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    pre {
+      margin-bottom: 16px;
+      padding: 16px;
+      overflow: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--surface-color);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    pre code {
+      background: none;
+    }
+
+    .header-banner {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .author-info {
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .license-footer {
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      z-index: 100;
+      padding: 8px;
+      background: var(--primary-color);
+      color: #ffffff;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .copy-container {
+      position: relative;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 10;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: #ffffff;
+      color: #24292f;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .copy-button:hover {
+      background: #f3f4f6;
+      border-color: #1b1f2426;
+      transform: translateY(-1px);
+    }
+
+    .copy-button:active {
+      transform: translateY(0);
+    }
+
+    .copy-button:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    .copy-button.copied {
+      background: #2da44e;
+      color: #ffffff;
+      border-color: #2da44e;
+    }
+
+    pre.prompt-block {
+      margin: 0;
+      padding: 1.5rem;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #24292f;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background-color: #ffffff;
+      }
+
+      .copy-button,
+      .skip-link {
+        display: none !important;
+      }
+
+      .copy-container {
+        border: 1px solid #eee;
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      .header-banner {
+        margin-bottom: 20px;
+      }
+
+      .license-footer {
+        margin-top: 40px;
+      }
+    }
+  </style>
+  <script>
+    function copyPrompt(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>✅ Copied!</span>';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        btn.innerText = 'Error';
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="header-banner">
+    <h1 id="responsible-ai-prompting-guide">Responsible AI Prompting Guide</h1>
+    <div class="author-info">
+      <strong>Avijit Roy</strong>, Adjunct Lecturer<br>
+      Dept of Math & Computer Science<br>
+      John Jay College of Criminal Justice
+    </div>
+  </header>
+
+  <main id="main-content">
+  <p><strong>CSCI 271/272 — Academic Integrity and Deep Learning Guide</strong></p>
+  <hr>
+  <h2 id="why-this-matters">Rationale and Learning Objectives</h2>
+  <p>Artificial Intelligence tools can be utilized in two primary ways:</p>
+  <ul>
+    <li><strong>Passive Consumption:</strong> Relying on AI to generate solutions (leading to failure in independent assessments).</li>
+    <li><strong>Active Learning:</strong> Utilizing AI to deepen conceptual understanding (leading to independent success).</li>
+  </ul>
+  <p><strong>Objective:</strong> Utilize AI as a personalized tutor to facilitate understanding, rather than a shortcut for completion.</p>
+  <hr>
+  <h2 id="ground-rule-non-negotiable">Core Academic Integrity Policy</h2>
+  <p><strong>Directly requesting solutions from AI is strictly prohibited.</strong></p>
+  <p><strong>Incorrect Usage:</strong></p>
+  <pre><code>&quot;Give me the code for binary search&quot;
+&quot;Solve this problem&quot;
+</code></pre>
+  <p><strong>Recommended Usage:</strong></p>
+  <pre><code>&quot;Explain the logic behind binary search step-by-step.&quot;
+&quot;Guide me through the conceptual framework without providing the final solution.&quot;
+</code></pre>
+  <p><em>Note: Reliance on generated solutions will result in significant difficulty during independent exams where AI tools are not permitted.</em></p>
+  <hr>
+  <h2 id="master-ai-prompt-template">Recommended AI Prompting Framework</h2>
+  <div class="copy-container">
+    <button class="copy-button" aria-label="Copy prompt to clipboard" onclick="copyPrompt('master-prompt', this)">
+      <span>📋 Copy Prompt</span>
+    </button>
+    <pre id="master-prompt" class="prompt-block">I am a beginner learning C++.
+
+Teach me the topic: [INSERT TOPIC]
+
+I want to understand how to solve problems, not just get answers.
+
+Follow this structure strictly:
+
+1. Simple Explanation (2–4 lines)
+   - Explain like I’m new to programming.
+
+2. Real-Life Analogy
+   - Connect the idea to something practical.
+
+3. Step-by-Step Logic
+   - Explain how to think through the problem.
+
+4. Code Example (C++)
+   - Provide a clean example with comments.
+
+5. Code Walkthrough
+   - Show how values change step by step.
+
+6. Common Mistakes
+   - List at least 3 mistakes and explain why.
+
+7. Debugging Practice
+   - Give me a buggy example.
+   - Let me try first BEFORE showing the fix.
+
+8. Practice Problems
+   - Give:
+     - 1 easy problem
+     - 1 moderate problem
+   - DO NOT give full solutions immediately.
+
+9. Concept Check (Test Me)
+   - Ask me 3 conceptual questions.
+   - Wait for my answers before explaining.
+
+10. Real-World Usage
+    - Where is this used in real programs?
+
+IMPORTANT RULES:
+- Do NOT give full solutions immediately
+- Guide me step-by-step instead
+- Ask me to think before answering</pre>
+  </div>
+  <hr>
+  <h2 id="required-self-testing-add-on">Self-Assessment Extension</h2>
+  <div class="copy-container">
+    <button class="copy-button" aria-label="Copy add-on prompt to clipboard" onclick="copyPrompt('addon-prompt', this)">
+      <span>📋 Copy Add-on</span>
+    </button>
+    <pre id="addon-prompt" class="prompt-block">Now test my understanding:
+1. Give me 2 MCQ questions (with tricky options)
+2. Give me 1 code output question
+3. Give me 1 debugging question
+
+Do NOT give answers immediately.
+Wait for my attempt, then evaluate me.</pre>
+  </div>
+  <hr>
+  <h2 id="how-to-use-ai-properly-workflow">Structured Learning Workflow</h2>
+  <h3 id="-step-1--learn">Step 1: Conceptual Learning</h3>
+  <p>Implement the framework provided above.</p>
+  <h3 id="-step-2--attempt-yourself">Step 2: Independent Application</h3>
+  <ul>
+    <li>Attempt practice problems <strong>independently before consulting AI.</strong></li>
+  </ul>
+  <h3 id="-step-3--ask-for-guidance-not-answers">Step 3: Seek Guidance, Not Solutions</h3>
+  <pre><code>&quot;I have implemented this approach. What conceptual gaps are present?&quot;
+&quot;Could you provide guidance on this logic without revealing the full implementation?&quot;
+</code></pre>
+  <h3 id="-step-4--debug-with-ai">Step 4: Collaborative Debugging</h3>
+  <pre><code>&quot;I am encountering an error in my logic. Help me identify the mistake within my existing code structure.&quot;
+</code></pre>
+  <hr>
+  <h2 id="common-ai-misuse-avoid">Common Pitfalls in AI Usage</h2>
+  <h3 id="-copy-paste-learning">Superficial Learning</h3>
+  <ul>
+    <li>Reading generated code is not equivalent to understanding the underlying logic.</li>
+  </ul>
+  <h3 id="-skipping-thinking">Passive Reliance</h3>
+  <ul>
+    <li>Relying on AI for explanations bypasses the critical thinking necessary for long-term retention.</li>
+  </ul>
+  <h3 id="-over-reliance">Exam Unpreparedness</h3>
+  <ul>
+    <li>Assessments are conducted without AI assistance; independent critical thinking is essential.</li>
+  </ul>
+  <hr>
+  <h2 id="better-prompting-examples">Exemplary Prompting Strategies</h2>
+  <h3 id="instead-of">Instead of:</h3>
+  <pre><code>Write a program to reverse an array
+</code></pre>
+  <h3 id="ask">Ask:</h3>
+  <pre><code>Teach me how to reverse an array using step-by-step logic.
+Let me try before showing the final code.
+</code></pre>
+  <hr>
+  <h2 id="advanced-prompting-deeper-learning">Advanced Techniques for In-Depth Analysis</h2>
+  <p>Use this when you're comfortable:</p>
+  <p>Challenge me on this topic:</p>
+  <ul>
+    <li>Give harder edge cases</li>
+    <li>Show tricky bugs</li>
+    <li>Ask &quot;what if&quot; scenarios</li>
+    <li>Compare multiple approaches</li>
+  </ul>
+  <hr>
+  <h2 id="exam-focused-strategy">Strategic Preparation for Independent Assessment</h2>
+  <p>When studying topics like:</p>
+  <ul>
+    <li>Arrays / Sorting / Searching</li>
+    <li>Strings</li>
+    <li>File I/O</li>
+    <li>Pointers</li>
+  </ul>
+  <p>Incorporate the following analytical questions during your study of core topics (e.g., Arrays, Sorting, Pointers):</p>
+  <ul>
+    <li>“Why does this work?”</li>
+    <li>“What happens step-by-step?”</li>
+    <li>“What would break this code?”</li>
+  </ul>
+  <hr>
+  <h2 id="final-takeaway">Conclusion and Core Principles</h2>
+  <p><strong>Effective AI usage should:</strong></p>
+  <ul>
+    <li>Help you <strong>think</strong></li>
+    <li>Help you <strong>debug</strong></li>
+    <li>Help you <strong>understand</strong></li>
+  </ul>
+  <p><strong>Ineffective AI usage should be avoided:</strong></p>
+  <ul>
+    <li>Replace your thinking</li>
+    <li>Give direct answers without effort</li>
+    <li>Become your shortcut</li>
+  </ul>
+  <hr>
+  <h2 id="one-line-rule-to-remember">Summary Rule</h2>
+  <p><strong>“Ask AI how to think, not what to write.”</strong></p>
+  </main>
+
+  <footer class="license-footer">
+    <p>&copy; 2026 <a href="https://avijitroy.com/">Avijit Roy</a>. This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+    <p><em>Designed for educational purposes at John Jay College of Criminal Justice.</em></p>
+  </footer>
+</body>
+
+</html>

@@ -196,6 +196,54 @@
       margin: 0;
     }
 
+    .affiliation-strip {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-2);
+      background: var(--card);
+    }
+
+    .affiliation-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 0.6rem;
+    }
+
+    .affiliation-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      line-height: 1.7;
+      color: var(--muted-text);
+    }
+
+    .affiliation-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in oklab, var(--brand) 35%, transparent);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .affiliation-link:hover {
+      color: var(--brand);
+      border-bottom-color: var(--brand);
+    }
+
+    .affiliation-items span:not(:last-child)::after {
+      content: "•";
+      margin-left: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .affiliation-items span {
+      white-space: nowrap;
+    }
+
     @media (max-width: 768px) {
       .identity-snapshot {
         margin: 2rem 0;
@@ -207,6 +255,20 @@
 
       .identity-card {
         min-height: auto;
+      }
+
+      .affiliation-items {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .affiliation-items span:not(:last-child)::after {
+        content: "";
+        margin-left: 0;
+      }
+
+      .affiliation-items span {
+        white-space: normal;
       }
     }
   </style>
@@ -371,6 +433,15 @@
             </div>
             <p class="muted">Threat Intelligence &middot; Language Computing &middot; Public-Interest Technology</p>
           </article>
+        </div>
+
+        <div class="affiliation-strip">
+          <span class="affiliation-label">Institutional Affiliations</span>
+          <div class="affiliation-items">
+            <span><a class="affiliation-link" href="https://www.jjay.cuny.edu/" target="_blank" rel="noopener noreferrer">John Jay College of Criminal Justice, CUNY</a></span>
+            <span><a class="affiliation-link" href="https://www.cuny.edu/" target="_blank" rel="noopener noreferrer">The City University of New York</a></span>
+            <span><a class="affiliation-link" href="https://www.rfcuny.org/" target="_blank" rel="noopener noreferrer">Research Foundation of CUNY</a></span>
+          </div>
         </div>
       </section>
 

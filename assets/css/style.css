@@ -647,9 +647,9 @@ details[open] summary {
 /* ---------- Editorial Text ---------- */
 .lead-editorial {
   font-size: 1.15rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--muted);
-  max-width: 800px;
+  max-width: 950px;
   margin-bottom: var(--space-5);
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -1310,13 +1310,17 @@ html[data-theme="dark"] .overview-logo img {
 /* Premium Gradient Timeline Line */
 @media (min-width: 768px) {
   .experience-list {
-    padding-left: 3rem;
+    padding-left: 6.5rem; /* Expanded for year labels */
+  }
+  
+  .experience-list .card {
+    position: relative;
   }
   
   .experience-list::before {
     content: '';
     position: absolute;
-    left: 1rem;
+    left: 5rem;
     top: 2rem;
     bottom: 2rem;
     width: 2px;
@@ -1326,7 +1330,7 @@ html[data-theme="dark"] .overview-logo img {
   .experience-list .card::before {
     content: '';
     position: absolute;
-    left: -2rem;
+    left: -1.5rem;
     top: 2.1rem;
     width: 14px;
     height: 14px;
@@ -1346,6 +1350,27 @@ html[data-theme="dark"] .overview-logo img {
     box-shadow: 0 0 0 4px var(--focus-bg);
     opacity: 1;
     transform: scale(1);
+  }
+
+  /* Year Label injection */
+  .experience-list .card::after {
+    content: attr(data-year);
+    position: absolute;
+    left: -6.5rem;
+    top: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--muted);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .experience-list .card:hover::after {
+    color: var(--brand);
+    opacity: 1;
+    transform: translateX(4px);
   }
 }
 

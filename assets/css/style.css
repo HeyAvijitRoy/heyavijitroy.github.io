@@ -1302,13 +1302,98 @@ html[data-theme="dark"] .overview-logo img {
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+  position: relative;
 }
 
+/* Premium Gradient Timeline Line */
+@media (min-width: 768px) {
+  .experience-list {
+    padding-left: 3rem;
+  }
+  
+  .experience-list::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 2rem;
+    bottom: 2rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand) 0%, var(--border) 15%, var(--border) 85%, transparent 100%);
+  }
+
+  .experience-list .card::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 2.1rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    margin-left: -6px; /* Center the 14px dot over the 2px line */
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .experience-list .card:hover::before {
+    border-color: var(--brand);
+    background: var(--brand);
+    box-shadow: 0 0 0 4px var(--focus-bg);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header Flexbox */
+.experience-list h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+/* Date Pills */
 .sem {
   font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--focus-bg);
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Organization Highlighting */
+.experience-list > .card > p.muted:first-of-type {
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Injecting a subtle icon for the organization without changing HTML */
+.experience-list > .card > p.muted:first-of-type::before {
+  content: '\f19c'; /* FontAwesome building-columns icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--brand);
   font-size: 0.9rem;
-  font-weight: normal;
-  color: var(--muted);
+  opacity: 0.8;
+}
+
+.experience-list .muted {
+  line-height: 1.6;
 }

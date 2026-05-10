@@ -1297,3 +1297,18 @@ html[data-theme="dark"] .overview-logo img {
   color: var(--btn-text);
   cursor: pointer;
 }
+
+/* ---------- Experience Page Styles ---------- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.sem {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--muted);
+}

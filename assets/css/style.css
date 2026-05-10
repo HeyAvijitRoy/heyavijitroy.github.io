@@ -154,6 +154,7 @@ hr {
   margin-bottom: var(--space-4);
   font-size: 0.9rem;
 }
+
 .breadcrumb ol {
   display: flex;
   list-style: none;
@@ -162,12 +163,14 @@ hr {
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .breadcrumb li {
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--muted);
 }
+
 .breadcrumb li:not(:last-child)::after {
   content: '\f054';
   font-family: "Font Awesome 6 Free";
@@ -175,10 +178,12 @@ hr {
   font-size: 0.7rem;
   opacity: 0.5;
 }
+
 .breadcrumb a {
   color: var(--muted);
   transition: color 0.2s;
 }
+
 .breadcrumb a:hover {
   color: var(--brand);
 }
@@ -389,7 +394,8 @@ hr {
 
 .button.primary:hover {
   background: var(--brand-700);
-  color: #ffffff; /* Always white on dark variant */
+  color: #ffffff;
+  /* Always white on dark variant */
 }
 
 .button.small {
@@ -776,7 +782,9 @@ html[data-theme="dark"] .overview-logo img {
 }
 
 @media (max-width: 768px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -804,12 +812,12 @@ html[data-theme="dark"] .overview-logo img {
     gap: 16px;
     text-align: center;
   }
-  
-  .foot-flex > p {
+
+  .foot-flex>p {
     order: 1;
     margin: 0;
   }
-  
+
   .socials {
     order: 2;
     justify-content: center;
@@ -1245,4 +1253,47 @@ html[data-theme="dark"] .overview-logo img {
 
 .repo-link:hover {
   color: var(--brand);
+}
+
+/* ---------- Projects Page Styles ---------- */
+.filter-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin: var(--space-4) 0;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.chip:hover {
+  background: var(--chip-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.chip.active {
+  background: var(--brand);
+  color: var(--btn-text);
+  border-color: var(--brand);
+}
+
+#projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.tags li.clickable:hover {
+  background: var(--brand);
+  color: var(--btn-text);
+  cursor: pointer;
 }

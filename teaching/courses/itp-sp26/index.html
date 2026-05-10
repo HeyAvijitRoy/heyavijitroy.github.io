@@ -127,224 +127,7 @@
 
     gtag('config', 'G-Y4VM6347X4');
   </script>
-  <style>
-    /* Premium Course Layout Specifics */
-    .section-block {
-      margin-bottom: var(--space-6);
-    }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-      gap: var(--space-4);
-    }
-
-    .editorial-block {
-      border-left: 3px solid var(--brand);
-      padding-left: var(--space-4);
-      background: var(--card);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 4px 8px;
-      background: rgba(37, 99, 235, 0.1);
-      color: var(--brand);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .badge-accent {
-      background: rgba(220, 38, 38, 0.1);
-      color: #dc2626 !important;
-    }
-
-    /* Learning Outcomes */
-    .outcomes-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-      margin-top: 1rem;
-    }
-
-    .outcomes-grid li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 0;
-    }
-
-    .outcomes-grid li i {
-      color: var(--brand);
-      margin-top: 4px;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 768px) {
-      .outcomes-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .course-hero h1 {
-        font-size: 2rem !important;
-      }
-
-      .instructor-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .timeline {
-        padding-left: 16px;
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-
-      .timeline-item::before {
-        left: -23px;
-      }
-    }
-
-    /* Timeline Plan */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-      border-left: 2px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
-
-    .timeline-item {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -31px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2px solid var(--brand);
-    }
-
-    .timeline-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-
-    .course-hero {
-      padding: var(--space-5) 0 var(--space-4) 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: var(--space-5);
-    }
-
-    .course-hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-      line-height: 1.2;
-      margin-top: 16px;
-    }
-
-    .instructor-meta {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted-text);
-      font-size: 0.95rem;
-    }
-
-    /* Assessments Cards */
-    .assessment-card {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .assessment-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin-bottom: 0;
-      margin-top: 8px;
-    }
-
-    .assessment-card i {
-      font-size: 1.5rem;
-      color: var(--brand);
-    }
-
-    /* FAQs Accordion styled Details */
-    details {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      padding: 0;
-    }
-
-    summary {
-      margin: 0;
-      padding: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: '\f078';
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      color: var(--muted-text);
-      font-size: 0.9em;
-      transition: transform 0.2s;
-    }
-
-    details[open] summary::after {
-      transform: rotate(180deg);
-    }
-
-    details[open] summary {
-      background: rgba(0, 0, 0, 0.02);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .details-body {
-      padding: 16px;
-      overflow-wrap: break-word;
-    }
-  </style>
 </head>
 
 <body>
@@ -435,118 +218,117 @@
           will be announced in class and on Brightspace.
         </p>
 
-        <div class="timeline card" style="background: transparent; border: none; padding-top:10px;">
+        <div class="timeline">
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 1 | Lesson 1</span> <span class="badge badge-accent">Assignment 1 -
-                GitHub</span></div>
-            <h3 class="timeline-title">Introduction to Programming</h3>
-            <p class="muted" style="margin-bottom:0;">Chapters 1, 2: How C++ programs run, compiler vs execution, basic
-              input/output.</p>
+            <div class="timeline-title">Week 1 | Lesson 1</div>
+            <p class="muted"><strong>Chapters 1, 2:</strong> How C++ programs run, compiler vs execution, basic input/output.</p>
+            <p>Introduction to Programming</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Assignment 1 - GitHub</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 2 | Lesson 2</span></div>
-            <h3 class="timeline-title">Variables & Data Types</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 2: Variables, data types, arithmetic operators,
-              input/output.</p>
+            <div class="timeline-title">Week 2 | Lesson 2</div>
+            <p class="muted"><strong>Chapter 2:</strong> Variables, data types, arithmetic operators, input/output.</p>
+            <p>Variables & Data Types</p>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 3 | Lesson 3</span> <span class="badge badge-accent">Assignment 2</span></div>
-            <h3 class="timeline-title">Decision Making & Logic</h3>
-            <p class="muted" style="margin-bottom:0;">Chapters 2, 4: Decision making (if, if–else), relational &amp;
-              logical operators, pseudocode.</p>
+            <div class="timeline-title">Week 3 | Lesson 3</div>
+            <p class="muted"><strong>Chapters 2, 4:</strong> Decision making (if, if–else), relational &amp; logical operators, pseudocode.</p>
+            <p>Decision Making & Logic</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Assignment 2</span></div>
           </div>
 
           <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
-            <div><span class="badge badge-accent">Quiz 1</span></div>
-            <h3 class="timeline-title">Control Flow Checkpoint</h3>
-            <p class="muted" style="margin-bottom:0;">Quiz 1 covering logic, tracing, and decision structures.</p>
+            <div class="timeline-title">Week 4 | Checkpoint</div>
+            <p class="muted">Quiz 1 covering logic, tracing, and decision structures.</p>
+            <p>Control Flow Checkpoint</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Quiz 1</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 5 | Lesson 4</span> <span class="badge badge-accent">Assignment 3</span></div>
-            <h3 class="timeline-title">Iteration & Loops</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 4: Iteration (while, for), counters, sentinel values, and
-              loop patterns.</p>
+            <div class="timeline-title">Week 5 | Lesson 4</div>
+            <p class="muted"><strong>Chapter 4:</strong> Iteration (while, for), counters, sentinel values, and loop patterns.</p>
+            <p>Iteration & Loops</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Assignment 3</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 6 | Lesson 5</span></div>
-            <h3 class="timeline-title">Arrays (Part 1)</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 7: One-dimensional arrays, indexing, array processing.</p>
+            <div class="timeline-title">Week 6 | Lesson 5</div>
+            <p class="muted"><strong>Chapter 7:</strong> One-dimensional arrays, indexing, array processing.</p>
+            <p>Arrays (Part 1)</p>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 7 | Midterm Review</span></div>
-            <h3 class="timeline-title">Midterm Review</h3>
-            <p class="muted" style="margin-bottom:0;">Review of Lessons 1 to 5. Integrated problem solving practice.</p>
+            <div class="timeline-title">Week 7 | Midterm Review</div>
+            <p class="muted">Review of Lessons 1 to 5. Integrated problem solving practice.</p>
+            <p>Midterm Review</p>
           </div>
 
           <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
-            <div><span class="badge badge-accent">Midterm Exam</span></div>
-            <h3 class="timeline-title">Midterm Exam (Mar 16)</h3>
-            <p class="muted" style="margin-bottom:0;">In-class written exam followed by post-exam discussion.</p>
+            <div class="timeline-title">Week 8 | Midterm Exam (Mar 16)</div>
+            <p class="muted">In-class written exam followed by post-exam discussion.</p>
+            <p>Midterm Exam</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Midterm Exam</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 9 | Lesson 6</span> <span class="badge badge-accent">Assignment 4</span></div>
-            <h3 class="timeline-title">Algorithms & Vectors</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 7: Array algorithms and introduction to vectors.</p>
+            <div class="timeline-title">Week 9 | Lesson 6</div>
+            <p class="muted"><strong>Chapter 7:</strong> Array algorithms and introduction to vectors.</p>
+            <p>Algorithms & Vectors</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Assignment 4</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 10 | Final Project Assigned</span></div>
-            <h3 class="timeline-title">Algorithms with Data</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 7: Searching, sorting, problem framing. Final Project
-              assigned (incremental).</p>
+            <div class="timeline-title">Week 10 | Final Project Assigned</div>
+            <p class="muted"><strong>Chapter 7:</strong> Searching, sorting, problem framing. Final Project assigned (incremental).</p>
+            <p>Algorithms with Data</p>
           </div>
 
-          <div class="timeline-item card" style="background: rgba(0,0,0,0.02); opacity: 0.8;">
-            <div><span class="badge" style="background: var(--border); color: var(--text);">Week 11</span></div>
-            <h3 class="timeline-title">Spring Recess</h3>
-            <p class="muted" style="margin-bottom:0;">No classes.</p>
-          </div>
-
-          <div class="timeline-item card">
-            <div><span class="badge">Week 12 | Lesson 7</span> <span class="badge badge-accent">Quiz 2 (Apr 15)</span>
-            </div>
-            <h3 class="timeline-title">Strings & Text Processing</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 3: String manipulation and text parsing. Quiz 2.</p>
+          <div class="timeline-item card" style="opacity: 0.7;">
+            <div class="timeline-title">Week 11 | Spring Recess</div>
+            <p class="muted">No classes.</p>
+            <p>Spring Recess</p>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 13 | Lesson 8</span></div>
-            <h3 class="timeline-title">File Input/Output</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 6: Reading data and writing results to external files.</p>
+            <div class="timeline-title">Week 12 | Lesson 7</div>
+            <p class="muted"><strong>Chapter 3:</strong> String manipulation and text parsing. Quiz 2.</p>
+            <p>Strings & Text Processing</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Quiz 2 (Apr 15)</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 14 | Lesson 9</span> <span class="badge badge-accent">Assignment 5</span>
-            </div>
-            <h3 class="timeline-title">Pointers (Intro)</h3>
-            <p class="muted" style="margin-bottom:0;">Chapter 8: Introduction to pointers, memory concepts, debugging.
-            </p>
+            <div class="timeline-title">Week 13 | Lesson 8</div>
+            <p class="muted"><strong>Chapter 6:</strong> Reading data and writing results to external files.</p>
+            <p>File Input/Output</p>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 15 | Project Progress</span></div>
-            <h3 class="timeline-title">Project Progress</h3>
-            <p class="muted" style="margin-bottom:0;">Project development, cumulative practice, and code refinement
-              (Chapters 1-8).</p>
+            <div class="timeline-title">Week 14 | Lesson 9</div>
+            <p class="muted"><strong>Chapter 8:</strong> Introduction to pointers, memory concepts, debugging.</p>
+            <p>Pointers (Intro)</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Assignment 5</span></div>
           </div>
 
           <div class="timeline-item card">
-            <div><span class="badge">Week 16</span></div>
-            <h3 class="timeline-title">Final Review & Practice Coding</h3>
-            <p class="muted" style="margin-bottom:0;">Final review and exam preparation (Chapters 1-8).</p>
+            <div class="timeline-title">Week 15 | Project Progress</div>
+            <p class="muted">Project development, cumulative practice, and code refinement (Chapters 1-8).</p>
+            <p>Project Progress</p>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="timeline-title">Week 16</div>
+            <p class="muted">Final review and exam preparation (Chapters 1-8).</p>
+            <p>Final Review & Practice Coding</p>
           </div>
 
           <div class="timeline-item card editorial-block" style="border-left-color: #dc2626;">
-            <div><span class="badge badge-accent">Final Exams</span></div>
-            <h3 class="timeline-title">Finals Week</h3>
-            <p class="muted" style="margin-bottom:0;">Project presentations (May 18) and Final Exam (May 20).</p>
+            <div class="timeline-title">Week 17 | Finals Week</div>
+            <p class="muted">Project presentations (May 18) and Final Exam (May 20).</p>
+            <p>Final Exams</p>
+            <div style="margin-top: 8px;"><span class="badge badge-accent">Final Exams</span></div>
           </div>
         </div>
 

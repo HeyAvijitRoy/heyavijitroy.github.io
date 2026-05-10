@@ -1031,3 +1031,218 @@ html[data-theme="dark"] .overview-logo img {
     gap: 0.5rem;
   }
 }
+
+/* ---------- Course Page Styles ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-4);
+}
+
+.badge-accent {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626 !important;
+}
+
+/* Learning Outcomes */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: 1rem;
+}
+
+.outcomes-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.outcomes-grid li i {
+  color: var(--brand);
+  margin-top: 4px;
+  font-size: 1.1rem;
+}
+
+/* Timeline Plan */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--brand);
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.course-hero {
+  padding: var(--space-5) 0 var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-5);
+}
+
+.course-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+
+.instructor-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-text, var(--muted));
+  font-size: 0.95rem;
+}
+
+.meta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Assessments Cards */
+.assessment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assessment-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.assessment-card i {
+  font-size: 1.5rem;
+  color: var(--brand);
+}
+
+@media (max-width: 768px) {
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-hero h1 {
+    font-size: 2rem !important;
+  }
+
+  .instructor-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .timeline {
+    padding-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-item::before {
+    left: -23px;
+  }
+}
+
+/* ---------- Teaching / Mentoring Styles ---------- */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  margin-bottom: var(--space-3);
+  transition: all 0.2s;
+}
+
+.course-card:hover {
+  border-color: var(--brand);
+  transform: translateX(4px);
+  box-shadow: var(--shadow);
+}
+
+.course-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.course-sem {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--brand);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.tags li {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: var(--focus-bg);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.repo-link {
+  float: right;
+  color: var(--muted);
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.repo-link:hover {
+  color: var(--brand);
+}

@@ -127,168 +127,7 @@
     gtag('config', 'G-Y4VM6347X4');
   </script>
   <!-- Course Specific Styles -->
-  <style>
-    .editorial-block {
-      border-left: 3px solid var(--brand);
-      padding-left: var(--space-4);
-      background: var(--card);
-    }
 
-    .badge {
-      display: inline-block;
-      padding: 4px 8px;
-      background: rgba(37, 99, 235, 0.1);
-      color: var(--brand);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .badge-accent {
-      background: rgba(220, 38, 38, 0.1);
-      color: #dc2626 !important;
-    }
-
-    /* Learning Outcomes */
-    .outcomes-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-      margin-top: 1rem;
-    }
-
-    .outcomes-grid li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 0;
-    }
-
-    .outcomes-grid li i {
-      color: var(--brand);
-      margin-top: 4px;
-      font-size: 1.1rem;
-    }
-
-    /* Timeline Plan */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-      border-left: 2px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
-
-    .timeline-item {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -31px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2px solid var(--brand);
-    }
-
-    .timeline-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-
-    .course-hero {
-      padding: var(--space-5) 0 var(--space-4) 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: var(--space-5);
-    }
-
-    .course-hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-      line-height: 1.2;
-      margin-top: 16px;
-    }
-
-    .instructor-meta {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted-text);
-      font-size: 0.95rem;
-    }
-
-    .meta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    /* Assessments Cards */
-    .assessment-card {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .assessment-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin-bottom: 0;
-      margin-top: 8px;
-    }
-
-    .assessment-card i {
-      font-size: 1.5rem;
-      color: var(--brand);
-    }
-
-    @media (max-width: 768px) {
-      .outcomes-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .course-hero h1 {
-        font-size: 2rem !important;
-      }
-
-      .instructor-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .timeline {
-        padding-left: 16px;
-      }
-
-      .timeline-item::before {
-        left: -23px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -325,8 +164,9 @@
           style="background: rgba(16,185,129,0.1); color: #10b981;">John Jay College</span>
         <h1>CSCI 272: Object-Oriented Programming (C++)</h1>
         <p class="lead" style="max-width: none; font-size: 1.15rem; line-height: 1.8;">
-          This course builds practical C++ skills through object-oriented design: classes, composition, operator overloading, 
-          inheritance, and polymorphism — plus robust I/O with streams, stringstreams, and files. 
+          This course builds practical C++ skills through object-oriented design: classes, composition, operator
+          overloading,
+          inheritance, and polymorphism — plus robust I/O with streams, stringstreams, and files.
           You’ll write clean, modular code and be able to explain your decisions.
         </p>
         <p class="muted">
@@ -366,18 +206,37 @@
         <h2>Learning Outcomes</h2>
         <article class="card">
           <ul class="outcomes-grid" style="list-style: none; padding: 0;">
-            <li><i class="fa-solid fa-layer-group"></i> <span>Work confidently with <strong>functions, arrays, pointers, and vectors</strong> - including declaration, initialization, indexing, and memory-focused reasoning.</span></li>
-            <li><i class="fa-solid fa-vial"></i> <span>Use <strong>function templates</strong> and generic techniques to write code that adapts to multiple data types.</span></li>
-            <li><i class="fa-solid fa-quote-left"></i> <span>Create and manipulate <strong>strings</strong> (build, compare, concatenate, measure length, and convert between strings and other types).</span></li>
-            <li><i class="fa-solid fa-cube"></i> <span>Design, implement, and use <strong>classes and objects</strong> with proper public/private access, member functions, data members, constructors, and destructors.</span></li>
-            <li><i class="fa-solid fa-puzzle-piece"></i> <span>Separate <strong>class interface and implementation</strong> across header and source files, and apply composition, the dot/arrow operators, the <code>this</code> pointer, <em>friend</em> functions, and <em>static</em> members where appropriate.</span></li>
-            <li><i class="fa-solid fa-arrows-left-right"></i> <span>Use <strong>streams</strong> for formatted and unformatted input/output, recover from bad input states, and employ <strong>stringstreams</strong> for parsing and building text.</span></li>
-            <li><i class="fa-solid fa-file-export"></i> <span>Read from and write to <strong>sequential text files and CSV files</strong> using robust, error-aware file I/O patterns.</span></li>
-            <li><i class="fa-solid fa-calculator"></i> <span>Overload <strong>unary and binary operators</strong> for custom class behavior, including cases that involve dynamic memory management.</span></li>
-            <li><i class="fa-solid fa-hierarchy"></i> <span>Implement <strong>inheritance</strong> with base and derived classes, including use of the <code>protected</code> access specifier.</span></li>
-            <li><i class="fa-solid fa-wand-sparkles"></i> <span>Apply <strong>polymorphism</strong> using virtual functions, pure virtual functions, and abstract classes to enable runtime method selection.</span></li>
-            <li><i class="fa-solid fa-magnifying-glass"></i> <span>Compare and reason about <strong>linear vs. binary search</strong> and different <strong>sorting algorithms</strong> for efficient data retrieval and ordering.</span></li>
-            <li><i class="fa-solid fa-shield-halved"></i> <span>Handle errors using <strong>exception handling</strong> (try/catch/throw), and design <strong>custom exception types</strong> for specific error scenarios.</span></li>
+            <li><i class="fa-solid fa-layer-group"></i> <span>Work confidently with <strong>functions, arrays, pointers,
+                  and vectors</strong> - including declaration, initialization, indexing, and memory-focused
+                reasoning.</span></li>
+            <li><i class="fa-solid fa-vial"></i> <span>Use <strong>function templates</strong> and generic techniques to
+                write code that adapts to multiple data types.</span></li>
+            <li><i class="fa-solid fa-quote-left"></i> <span>Create and manipulate <strong>strings</strong> (build,
+                compare, concatenate, measure length, and convert between strings and other types).</span></li>
+            <li><i class="fa-solid fa-cube"></i> <span>Design, implement, and use <strong>classes and objects</strong>
+                with proper public/private access, member functions, data members, constructors, and destructors.</span>
+            </li>
+            <li><i class="fa-solid fa-puzzle-piece"></i> <span>Separate <strong>class interface and
+                  implementation</strong> across header and source files, and apply composition, the dot/arrow
+                operators, the <code>this</code> pointer, <em>friend</em> functions, and <em>static</em> members where
+                appropriate.</span></li>
+            <li><i class="fa-solid fa-arrows-left-right"></i> <span>Use <strong>streams</strong> for formatted and
+                unformatted input/output, recover from bad input states, and employ <strong>stringstreams</strong> for
+                parsing and building text.</span></li>
+            <li><i class="fa-solid fa-file-export"></i> <span>Read from and write to <strong>sequential text files and
+                  CSV files</strong> using robust, error-aware file I/O patterns.</span></li>
+            <li><i class="fa-solid fa-calculator"></i> <span>Overload <strong>unary and binary operators</strong> for
+                custom class behavior, including cases that involve dynamic memory management.</span></li>
+            <li><i class="fa-solid fa-hierarchy"></i> <span>Implement <strong>inheritance</strong> with base and derived
+                classes, including use of the <code>protected</code> access specifier.</span></li>
+            <li><i class="fa-solid fa-wand-sparkles"></i> <span>Apply <strong>polymorphism</strong> using virtual
+                functions, pure virtual functions, and abstract classes to enable runtime method selection.</span></li>
+            <li><i class="fa-solid fa-magnifying-glass"></i> <span>Compare and reason about <strong>linear vs. binary
+                  search</strong> and different <strong>sorting algorithms</strong> for efficient data retrieval and
+                ordering.</span></li>
+            <li><i class="fa-solid fa-shield-halved"></i> <span>Handle errors using <strong>exception handling</strong>
+                (try/catch/throw), and design <strong>custom exception types</strong> for specific error
+                scenarios.</span></li>
           </ul>
         </article>
       </section>
@@ -769,7 +628,8 @@
           <h3>Primary IDE</h3>
           <ul class="muted">
             <li>
-              <a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener noreferrer">Embarcadero
+              <a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank"
+                rel="noopener noreferrer">Embarcadero
                 Dev-C++ (Windows)</a>
               - this is the primary IDE used in class. All demos, screenshots, and walkthroughs will use Dev-C++.
             </li>
@@ -796,7 +656,8 @@
             <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference.com</a>
               (language/library lookups)</li>
             <li><a href="https://isocpp.org/faq" target="_blank" rel="noopener noreferrer">ISO C++ FAQ</a></li>
-            <li><a href="https://cplusplus.com/doc/" target="_blank" rel="noopener noreferrer">cplusplus.com Documentation</a></li>
+            <li><a href="https://cplusplus.com/doc/" target="_blank" rel="noopener noreferrer">cplusplus.com
+                Documentation</a></li>
           </ul>
         </article>
       </section>
@@ -822,7 +683,8 @@
 
           <h3>Get Started</h3>
           <ul class="muted">
-            <li>Create an account on <a href="https://github.com/" target="_blank" rel="noopener noreferrer">github.com</a>.</li>
+            <li>Create an account on <a href="https://github.com/" target="_blank"
+                rel="noopener noreferrer">github.com</a>.</li>
             <li>Follow: <a
                 href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository"
                 target="_blank" rel="noopener noreferrer">Create your first repository (GitHub Docs)</a></li>
@@ -887,15 +749,20 @@
         <h2>Important Websites</h2>
         <article class="card">
           <ul>
-            <li><a href="https://brightspace.cuny.edu/" target="_blank" rel="noopener noreferrer">Brightspace</a> - course
+            <li><a href="https://brightspace.cuny.edu/" target="_blank" rel="noopener noreferrer">Brightspace</a> -
+              course
               announcements, assignments, submissions, and grades.</li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> - repositories for practice work
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> - repositories for
+              practice work
               and, when instructed, assignment submissions.</li>
-            <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank" rel="noopener noreferrer">Dev-C++</a> -
+            <li><a href="https://www.embarcadero.com/free-tools/dev-cpp" target="_blank"
+                rel="noopener noreferrer">Dev-C++</a> -
               primary IDE used in class (Windows).</li>
-            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> -
+            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio
+                Code</a> -
               optional editor if you already have a working C++ setup.</li>
-            <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference.com</a> - technical
+            <li><a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference.com</a>
+              - technical
               reference for C++ language and library features.</li>
           </ul>
         </article>
@@ -921,25 +788,30 @@
           <h3>Practice Problems &amp; Exercises</h3>
           <ul>
             <li>
-              <a href="https://www.geeksforgeeks.org/cpp/cpp-exercises/" target="_blank" rel="noopener noreferrer">GeeksforGeeks -
+              <a href="https://www.geeksforgeeks.org/cpp/cpp-exercises/" target="_blank"
+                rel="noopener noreferrer">GeeksforGeeks -
                 C++ Exercises</a>
               - structured exercises across beginner to intermediate C++ topics.
             </li>
             <li>
-              <a href="https://www.hackerrank.com/domains/cpp" target="_blank" rel="noopener noreferrer">HackerRank - C++</a>
+              <a href="https://www.hackerrank.com/domains/cpp" target="_blank" rel="noopener noreferrer">HackerRank -
+                C++</a>
               - coding challenges with an online compiler and test-based feedback.
             </li>
             <li>
-              <a href="https://www.codechef.com/practice/cpp" target="_blank" rel="noopener noreferrer">CodeChef - C++ Practice</a>
+              <a href="https://www.codechef.com/practice/cpp" target="_blank" rel="noopener noreferrer">CodeChef - C++
+                Practice</a>
               - additional programming practice for logic building and problem solving.
             </li>
             <li>
-              <a href="https://www.w3schools.com/cpp/cpp_exercises.asp" target="_blank" rel="noopener noreferrer">W3Schools - C++
+              <a href="https://www.w3schools.com/cpp/cpp_exercises.asp" target="_blank"
+                rel="noopener noreferrer">W3Schools - C++
                 Exercises</a>
               - simple beginner-friendly practice and review.
             </li>
             <li>
-              <a href="https://www.mygreatlearning.com/blog/cpp-exercises/" target="_blank" rel="noopener noreferrer">Great
+              <a href="https://www.mygreatlearning.com/blog/cpp-exercises/" target="_blank"
+                rel="noopener noreferrer">Great
                 Learning - C++ Exercises</a>
               - extra practice prompts and examples for independent study.
             </li>
@@ -950,11 +822,13 @@
           <h3>Reference &amp; Mini Projects</h3>
           <ul>
             <li>
-              <a href="https://cplusplus.com/doc/" target="_blank" rel="noopener noreferrer">cplusplus.com Documentation</a>
+              <a href="https://cplusplus.com/doc/" target="_blank" rel="noopener noreferrer">cplusplus.com
+                Documentation</a>
               - beginner-friendly documentation and tutorials for core C++ concepts.
             </li>
             <li>
-              <a href="https://www.mygreatlearning.com/blog/cpp-projects/" target="_blank" rel="noopener noreferrer">Great Learning
+              <a href="https://www.mygreatlearning.com/blog/cpp-projects/" target="_blank"
+                rel="noopener noreferrer">Great Learning
                 - C++ Project Ideas</a>
               - useful if you want extra coding practice beyond small exercises.
             </li>
@@ -987,21 +861,24 @@
           <details>
             <summary><span>How do I submit assignments?</span></summary>
             <div class="details-body">
-              <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private and share access for grading.</p>
+              <p>Follow instructions on Brightspace for each assignment. When asked to use GitHub, keep the repo private
+                and share access for grading.</p>
             </div>
           </details>
 
           <details>
             <summary><span>What happens if my code compiles but fails some tests?</span></summary>
             <div class="details-body">
-              <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic is incorrect or unexplained.</p>
+              <p>We focus on correctness, clarity, and adherence to requirements. Partial credit may be limited if logic
+                is incorrect or unexplained.</p>
             </div>
           </details>
 
           <details>
             <summary><span>Can I use AI tools?</span></summary>
             <div class="details-body">
-              <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to explain your code.</p>
+              <p>Use AI to learn concepts, not to replace your work. Cite any use in your README. You must be able to
+                explain your code.</p>
             </div>
           </details>
         </article>
@@ -1040,14 +917,14 @@
     <div class="container foot-flex">
       <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
       <div class="socials">
-        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-          title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+          title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD"
           title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
-        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><i
-            class="fa-brands fa-medium"></i></a>
+        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium"
+          title="Medium"><i class="fa-brands fa-medium"></i></a>
         <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
           title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr"

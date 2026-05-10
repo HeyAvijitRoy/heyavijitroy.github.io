@@ -271,6 +271,57 @@
         white-space: normal;
       }
     }
+
+    /* Overview Card Styles */
+    .overview-card {
+      padding: 1.5rem;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .overview-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .overview-item:hover {
+      background: color-mix(in oklab, var(--brand) 8%, transparent);
+      transform: translateX(4px);
+    }
+
+    .overview-icon {
+      color: var(--brand);
+      font-size: 1.15rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+    }
+
+    .overview-text {
+      color: var(--muted-text);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      .overview-card {
+        padding: 1.25rem;
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
   </style>
 
   <script src="../assets/js/main.js" defer></script>
@@ -473,13 +524,31 @@
       <!-- Overview -->
       <section id="overview" class="section-block" style="margin-top: 32px;">
         <h2>Research Overview</h2>
-        <ul class="muted" style="margin-left: 20px; line-height: 1.6;">
-          <li>AI-driven cybersecurity and trustworthy machine learning systems</li>
-          <li>Privacy-preserving and secure-by-design computing architectures</li>
-          <li>Digital forensics, threat intelligence, and applied security tooling</li>
-          <li>Language-related AI evaluation, assessment, and equitable computing</li>
-          <li>Public-interest intelligence systems for social harm detection and analysis</li>
-        </ul>
+        <div class="card overview-card">
+          <div class="overview-grid">
+            <div class="overview-item">
+              <span class="overview-icon"><i class="fa-solid fa-microchip"></i></span>
+              <span class="overview-text">AI-driven cybersecurity and trustworthy machine learning systems</span>
+            </div>
+            <div class="overview-item">
+              <span class="overview-icon"><i class="fa-solid fa-lock"></i></span>
+              <span class="overview-text">Privacy-preserving and secure-by-design computing architectures</span>
+            </div>
+            <div class="overview-item">
+              <span class="overview-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+              <span class="overview-text">Digital forensics, threat intelligence, and applied security tooling</span>
+            </div>
+            <div class="overview-item">
+              <span class="overview-icon"><i class="fa-solid fa-language"></i></span>
+              <span class="overview-text">Language-related AI evaluation, assessment, and equitable computing</span>
+            </div>
+            <div class="overview-item">
+              <span class="overview-icon"><i class="fa-solid fa-users-viewfinder"></i></span>
+              <span class="overview-text">Public-interest intelligence systems for social harm detection and
+                analysis</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Publications -->
@@ -637,10 +706,10 @@
               sentence-level propaganda analysis.
             </p>
 
-            <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px;">
+            <p class="muted">
               <a href="https://doi.org/10.5281/zenodo.19991615" target="_blank" rel="noopener noreferrer">View
                 presentation slides - DOI: 10.5281/zenodo.19991615</a>
-            </div>
+            </p>
           </article>
 
           <!-- ILA 2026 Poster Presentation -->
@@ -652,16 +721,13 @@
               infrastructure, focused on structural inequities in language technology, data availability, and the hidden
               costs of
               English-centric design.</p>
-            <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px;">
-
+            <p class="muted">
               <a href="structural-silence-poster/" target="_blank" rel="noopener noreferrer">Interactive Poster</a> |
-
               <a href="https://doi.org/10.2139/ssrn.6522858" target="_blank" rel="noopener noreferrer">Preprint DOI
                 (SSRN)</a> |
-
               <a href="https://doi.org/10.5281/zenodo.19991979" target="_blank" rel="noopener noreferrer">Poster DOI
                 (Zenodo)</a>
-            </div>
+            </p>
           </article>
         </div>
       </section>

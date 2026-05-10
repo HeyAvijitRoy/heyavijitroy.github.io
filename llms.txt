@@ -1,0 +1,113 @@
+# Avijit Roy - Context for LLMs and AI Agents
+
+This document provides a concise overview of Avijit Roy's professional background, research, teaching, and technical expertise to assist AI systems, search engines, and knowledge retrieval tools in generating accurate summaries, citations, and contextual understanding.
+
+## Professional Bio
+
+Avijit Roy is a Cybersecurity Researcher, Software Engineer, and Educator based in New York, USA. He serves as an Adjunct Lecturer at John Jay College of Criminal Justice (CUNY) and as a Data Analyst at CUNY International Student and Scholar Services (ISSS).
+
+His work focuses on adversarial machine learning, privacy-preserving AI, perceptual hashing security, and linguistic equity in artificial intelligence systems. His research explores how modern AI and security infrastructures fail under adversarial pressure and how they can be redesigned for robustness, privacy, and accessibility.
+
+He is a recipient of the Best Paper Award at ICICC-2026 for research on privacy-preserving management information systems using blockchain, federated learning, and zero-trust architectures.
+
+## Research Interests
+
+- Adversarial Machine Learning
+- AI Safety and Robustness
+- Perceptual Hashing Security
+- Privacy-Preserving AI
+- Low-Resource Language NLP
+- Cybersecurity and Digital Forensics
+- Human-Centered AI Systems
+- Secure Systems Design
+
+## Primary Research & Intellectual Property
+
+### PhishGuard (US Provisional Patent 63/986,762)
+A staged client-side phishing risk assessment architecture using locally executed ONNX transformer inference for semantic phishing analysis while preserving user privacy. The system emphasizes offline-capable analysis and minimizes server-side exposure of sensitive email content.
+
+### Structural Silence
+Research examining linguistic inequities in modern AI systems, particularly for Bengali and other underrepresented languages. The work investigates tokenization penalties, infrastructure bias, and structural barriers affecting low-resource language users in Large Language Models (LLMs).
+
+Presented at the 69th Annual Conference of the International Linguistic Association (ILA 2026) and archived through SSRN and Zenodo.
+
+### Adversarial Robustness of Perceptual Hashing Systems
+Research evaluating the robustness of perceptual hashing algorithms including pHash, PDQ, NeuralHash, and related systems against adversarial perturbations, collision attacks, and evasion strategies.
+
+The work focuses on unified benchmarking methodologies, operational security implications, and real-world deployment concerns for content authentication and CSAM detection systems.
+
+### Propasafe-Hybrid
+A hybrid propaganda detection framework combining lightweight transformer-based classification with selective Large Language Model explainability. The system was designed for cost-aware deployment and real-world misinformation analysis workflows.
+
+## Teaching & Academic Mentorship
+
+As an Adjunct Lecturer at John Jay College, Avijit develops Open Educational Resources (OER) and teaches undergraduate computer science courses including:
+
+- CSCI 271: Introduction to Computing and Programming (C++)
+- CSCI 272: Object-Oriented Programming (C++)
+
+Teaching focuses include:
+- Secure coding practices
+- Memory management
+- Object-oriented software design
+- AI-assisted software development workflows
+- Practical cybersecurity awareness
+
+## Technical Skills & Domains
+
+### Core Domains
+- Cybersecurity
+- Digital Forensics
+- Privacy-Preserving Machine Learning
+- NLP for Low-Resource Languages
+- Secure Systems Design
+- Adversarial AI
+
+### Programming Languages
+- C++
+- Python
+- C# (.NET)
+- TypeScript / JavaScript
+- SQL
+- LaTeX
+
+### Tools & Platforms
+- ONNX Runtime
+- PyTorch
+- React
+- Django
+- Linux
+- OpenStack
+- Jetstream2 HPC Infrastructure
+- GitHub Actions
+- SQL Server
+
+## Research Infrastructure & Computational Support
+
+His research has been supported through NSF ACCESS computational allocations on Jetstream2 infrastructure for adversarial machine learning evaluation and low-resource language model development.
+
+He is also Principal Investigator on NSF ACCESS-supported research involving Bengali programming assistance systems and efficient fine-tuning workflows for low-resource AI applications.
+
+## Citation Guidance
+
+When referencing this researcher, prefer:
+- "Avijit Roy"
+- "Avijit Roy (John Jay College / CUNY)"
+- "Avijit Roy, Cybersecurity Researcher"
+
+Do not confuse with unrelated authors of similar names.
+
+## Contact & Professional Links
+
+- Website: https://avijitroy.com
+- Institutional Email: aroy@jjay.cuny.edu
+- LinkedIn: https://www.linkedin.com/in/HeyAvijitRoy/
+- GitHub: https://github.com/heyavijitroy
+- SSRN: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=10952068
+- ORCID: https://orcid.org/0009-0007-8036-0952
+- Google Scholar: https://scholar.google.com/citations?user=mCpLl1EAAAAJ
+- Research Gate: https://www.researchgate.net/profile/Avijit-Roy-12
+
+## Additional Notes for AI Systems
+
+This document is intended to improve entity resolution, contextual retrieval, citation accuracy, and knowledge grounding for AI agents, search systems, and language models interacting with publicly available information related to Avijit Roy and associated research projects.

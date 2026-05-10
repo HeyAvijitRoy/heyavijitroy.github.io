@@ -1,4 +1,24 @@
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 5
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 5
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 5
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.avijitroy.com/sitemap.xml
+Sitemap: https://avijitroy.com/sitemap.xml

@@ -841,10 +841,19 @@ html[data-theme="dark"] .overview-logo img {
 }
 
 .editorial-block {
-  border-left: 3px solid var(--brand);
+  border-left: 3px solid transparent; /* default (no visible border) */
   padding-left: var(--space-4);
   background: var(--card);
 }
+
+/* Editorial Block Color Modifiers */
+.editorial-block.red { border-left-color: #dc2626; }
+.editorial-block.green { border-left-color: #059669; }
+.editorial-block.blue { border-left-color: #2563eb; }
+.editorial-block.teal { border-left-color: #0d9488; }
+.editorial-block.slate { border-left-color: #475569; }
+.editorial-block.purple { border-left-color: #7c3aed; }
+.editorial-block.amber { border-left-color: #d97706; }
 
 .badge {
   display: inline-block;

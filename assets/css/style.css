@@ -72,12 +72,21 @@ html[data-theme="dark"] {
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 110px;
+}
+
+/* Ensure anchor links jump below the sticky header */
+[id] {
+  scroll-margin-top: 110px;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -785,7 +794,7 @@ html[data-theme="dark"] .overview-logo img {
 
   html,
   body {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
 

@@ -1038,6 +1038,16 @@ html[data-theme="dark"] .overview-logo img {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+
+  .inst-affiliations {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem !important;
+  }
+
+  .inst-affil-sep {
+    display: none;
+  }
 }
 
 /* ---------- Course Page Styles ---------- */
@@ -1405,7 +1415,8 @@ html[data-theme="dark"] .overview-logo img {
   color: var(--text);
   margin-bottom: 16px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -1417,6 +1428,20 @@ html[data-theme="dark"] .overview-logo img {
   color: var(--brand);
   font-size: 0.9rem;
   opacity: 0.8;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .experience-list > .card > p.muted:first-of-type {
+    gap: 4px 8px;
+  }
+  .exp-sep {
+    display: none;
+  }
+  .experience-list > .card > p.muted:first-of-type > span[itemprop="location"] {
+    flex-basis: 100%;
+    margin-left: 22px;
+  }
 }
 
 .experience-list .muted {

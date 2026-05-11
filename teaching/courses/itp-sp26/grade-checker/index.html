@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSCI 271 Grade Summary Checker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>CSCI 271 Final Coding Checker</h1>
+        <p class="subtitle">Paste your C++ code below and check whether it includes the required parts.</p>
+
+        <section class="prompt">
+            <h2>Coding Task</h2>
+            <p>
+                Write a C++ program that stores student scores in a <strong>vector&lt;int&gt;</strong>,
+                displays all scores, calculates the highest score, lowest score, average score,
+                and prints a performance message.
+            </p>
+        </section>
+
+        <textarea id="codeInput" placeholder="Paste your C++ code here..."></textarea>
+
+        <button onclick="checkCode()">Check My Code</button>
+
+        <section id="results" class="results hidden">
+            <h2>Checklist Result</h2>
+            <ul id="checklist"></ul>
+            <p id="scoreText"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

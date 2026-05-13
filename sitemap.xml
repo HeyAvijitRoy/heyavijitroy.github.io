@@ -4,19 +4,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://avijitroy.com/</loc>
-		<lastmod>2026-04-26</lastmod>
+		<lastmod>2026-05-12</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/</loc>
-		<lastmod>2026-05-05</lastmod>
+		<lastmod>2026-05-12</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/structural-silence-poster/</loc>
-		<lastmod>2026-05-02</lastmod>
+		<lastmod>2026-05-12</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
@@ -38,7 +38,6 @@
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
-    
 	<url>
 		<loc>https://avijitroy.com/teaching/student-tools/</loc>
 		<lastmod>2026-04-26</lastmod>
@@ -62,7 +61,19 @@
 		<lastmod>2026-04-26</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
-	</url> 
+	</url>
+	<url>
+		<loc>https://avijitroy.com/docs/</loc>
+		<lastmod>2026-05-04</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.70</priority>
+	</url>
+	<url>
+		<loc>https://avijitroy.com/docs/responsible-ai-prompting-guide.html</loc>
+		<lastmod>2026-05-04</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
 	<url>
 		<loc>https://avijitroy.com/docs/cpp-vscode-win.html</loc>
 		<lastmod>2026-04-26</lastmod>

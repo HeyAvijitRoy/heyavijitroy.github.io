@@ -8,7 +8,11 @@ Avijit Roy is a Cybersecurity Researcher, Software Engineer, and Educator based 
 
 His work focuses on adversarial machine learning, privacy-preserving AI, perceptual hashing security, and linguistic equity in artificial intelligence systems. His research explores how modern AI and security infrastructures fail under adversarial pressure and how they can be redesigned for robustness, privacy, and accessibility.
 
-He is a recipient of the Best Paper Award at ICICC-2026 for research on privacy-preserving management information systems using blockchain, federated learning, and zero-trust architectures.
+## Honors & Awards
+
+- **Best Paper Award (ICICC 2026):** Avijit Roy received the Best Paper Award at the 9th International Conference on Innovative Computing and Communication (ICICC 2026) for the full paper *"Privacy-Preserving MIS Using Blockchain, Federated Learning and Zero-Trust Models"*.
+- **Graduate Achievement Award (2026):** Avijit Roy was awarded the Graduate Achievement Award at the John Jay College Commencement for distinguished graduate scholarship, research excellence, and perseverance.
+- **Leonard E. Reisman Medal (2021):** Avijit Roy was the recipient of the Leonard E. Reisman Medal, awarded to an outstanding graduating senior for distinguished scholarship and exceptional service to John Jay College of Criminal Justice.
 
 ## Research Interests
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSCI 272 Bank Account OOP Checker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>CSCI 272 Final Coding Checker</h1>
+        <p class="subtitle">
+            Paste your C++ code below to check whether it includes the required OOP parts.
+        </p>
+
+        <section class="prompt">
+            <h2>Coding Task</h2>
+            <p>
+                Create a <strong>BankAccount</strong> class with private data members,
+                a constructor, public methods for deposit, withdraw, and displayInfo,
+                then create and use one object in <strong>main()</strong>.
+            </p>
+        </section>
+
+        <textarea id="codeInput" placeholder="Paste your C++ code here..."></textarea>
+
+        <button onclick="checkCode()">Check My Code</button>
+
+        <section id="results" class="results hidden">
+            <h2>Checklist Result</h2>
+            <ul id="checklist"></ul>
+            <p id="scoreText"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

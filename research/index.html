@@ -113,6 +113,42 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Person",
+        "@id": "https://avijitroy.com/#person",
+        "name": "Avijit Roy",
+        "url": "https://avijitroy.com/",
+        "sameAs": [
+          "https://scholar.google.com/citations?user=mCpLl1EAAAAJ",
+          "https://orcid.org/0009-0007-8036-0952",
+          "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=10952068",
+          "https://github.com/HeyAvijitRoy",
+          "https://www.linkedin.com/in/HeyAvijitRoy/"
+        ],
+        "affiliation": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "John Jay College of Criminal Justice",
+            "url": "https://www.jjay.cuny.edu/"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "The City University of New York",
+            "url": "https://www.cuny.edu/"
+          },
+          {
+            "@type": "Organization",
+            "name": "Research Foundation of CUNY",
+            "url": "https://www.rfcuny.org/"
+          }
+        ],
+        "award": [
+          "Claude Hawley Medal — John Jay College of Criminal Justice, 2026",
+          "Graduate Achievement Award — John Jay College of Criminal Justice, 2026",
+          "Best Paper Award — ICICC 2026",
+          "Leonard E. Reisman Medal — John Jay College of Criminal Justice, 2021"
+        ]
+      },
+      {
         "@type": "WebPage",
         "@id": "https://avijitroy.com/research/#webpage",
         "url": "https://avijitroy.com/research/",
@@ -130,14 +166,14 @@
         "@id": "https://avijitroy.com/research/#icicc2026",
         "headline": "Privacy-Preserving MIS Using Blockchain, Federated Learning and Zero-Trust Models",
         "author": [
-          { "@type": "Person", "name": "Avijit Roy", "identifier": "https://orcid.org/0009-0007-8036-0952"},
+          { "@id": "https://avijitroy.com/#person" },
           { "@type": "Person", "name": "Emran Hossain" },
           { "@type": "Person", "name": "Hemayet Uddin Himel" },
           { "@type": "Person", "name": "Hasan Imam" },
           { "@type": "Person", "name": "Ruhul Amin Md Rashed" },
           { "@type": "Person", "name": "Harleen Kaur" }
         ],
-        "award": "Best Paper Award — ICICC 2026",
+        "award": "ICICC 2026 Best Paper Award",
         "datePublished": "2026",
         "publisher": {
           "@type": "Organization",
@@ -151,7 +187,7 @@
         "headline": "Propasafe-Hybrid: A Text-Based Hybrid Propaganda Detection Tool",
         "author": [
           { "@type": "Person", "name": "Thomas Kimmeth" },
-          { "@type": "Person", "name": "Avijit Roy", "identifier": "https://orcid.org/0009-0007-8036-0952"},
+          { "@id": "https://avijitroy.com/#person" },
           { "@type": "Person", "name": "Vivek Sharma" }
         ],
         "datePublished": "2026",
@@ -166,6 +202,55 @@
           "name": "Proceedings of the 39th Florida Artificial Intelligence Research Society Conference (FLAIRS-39)"
         },
         "mainEntityOfPage": "https://avijitroy.com/research/"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://avijitroy.com/research/#claude-hawley-medal-2026",
+        "name": "Claude Hawley Medal",
+        "description": "Awarded for the best master's thesis and/or scholastic distinction in the graduate program at John Jay College of Criminal Justice.",
+        "recipient": {
+          "@id": "https://avijitroy.com/#person"
+        },
+        "datePublished": "2026",
+        "provider": {
+          "@type": "CollegeOrUniversity",
+          "name": "John Jay College of Criminal Justice",
+          "url": "https://www.jjay.cuny.edu/"
+        },
+        "about": {
+          "@type": "CreativeWork",
+          "name": "Adversarial Robustness of Perceptual Hashing Systems: A Unified Security Evaluation Framework"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://avijitroy.com/research/#graduate-achievement-award-2026",
+        "name": "Graduate Achievement Award",
+        "description": "Commencement award recognizing academic achievement, research contributions, leadership, and impact within the graduate community.",
+        "recipient": {
+          "@id": "https://avijitroy.com/#person"
+        },
+        "datePublished": "2026",
+        "provider": {
+          "@type": "CollegeOrUniversity",
+          "name": "John Jay College of Criminal Justice",
+          "url": "https://www.jjay.cuny.edu/"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://avijitroy.com/research/#leonard-reisman-medal-2021",
+        "name": "Leonard E. Reisman Medal",
+        "description": "Awarded to an outstanding member of the senior class for distinguished scholarship and exceptional service to the College.",
+        "recipient": {
+          "@id": "https://avijitroy.com/#person"
+        },
+        "datePublished": "2021",
+        "provider": {
+          "@type": "CollegeOrUniversity",
+          "name": "John Jay College of Criminal Justice",
+          "url": "https://www.jjay.cuny.edu/"
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -703,30 +788,82 @@
       <!-- Honors & Awards -->
       <section id="honors" class="section-block">
         <h2>Honors &amp; Awards</h2>
+
         <div class="card-list">
-          <article class="card editorial-block slate">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">Best Paper Award — ICICC 2026</h3>
+
+          <!-- Claude Hawley Medal -->
+          <article class="card editorial-block amber">
+            <span class="badge">COMMENCEMENT ACADEMIC AWARD | GRADUATE THESIS DISTINCTION</span>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">
+              Claude Hawley Medal — John Jay College of Criminal Justice (2026)
+            </h3>
+
             <p class="muted">
-              Awarded for the paper <em>Privacy-Preserving MIS Using Blockchain, Federated Learning and Zero-Trust
-                Models</em>.
+              Awarded for the best master’s thesis at John Jay College of Criminal Justice (CUNY), titled
+              <em>“Adversarial Robustness of Perceptual Hashing Systems: A Unified Security Evaluation Framework.”</em>
+            </p>
+
+            <p class="muted" style="margin-top: 10px;">
+              Established in memory of Claude Hawley, the first Vice President of John Jay College of Criminal Justice. The award is presented for the best master’s thesis and/or scholastic distinction in the graduate program.
             </p>
           </article>
 
           <!-- Graduate Achievement Award -->
-          <article class="card editorial-block slate">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">Graduate Achievement Award — 2026 Commencement Awards</h3>
+          <article class="card editorial-block amber">
+            <span class="badge">COMMENCEMENT SERVICE AWARD</span>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">
+              Graduate Achievement Award — John Jay College of Criminal Justice (2026)
+            </h3>
+
             <p class="muted">
-              Awarded to distinguished graduate students who have demonstrated exceptional perseverance and resilience
-              in the pursuit of their education, overcoming significant challenges while maintaining academic and
-              research excellence.
+              Recognized during the 2026 Commencement Awards Ceremony for academic achievement,
+              research contributions, leadership, and impact within the graduate community.
+            </p>
+
+            <p class="muted" style="margin-top: 10px;">
+              Presented by the Office of the Dean of Students and college leadership at
+              <strong>John Jay College of Criminal Justice, The City University of New York (CUNY)</strong>.
+            </p>
+          </article>
+
+          <!-- Best Paper Award -->
+          <article class="card editorial-block blue">
+            <span class="badge">INTERNATIONAL BEST PAPER AWARD</span>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">
+              ICICC 2026 — Best Paper Award
+            </h3>
+
+            <p class="muted">
+              Awarded at the 9th International Conference on Innovative Computing and Communication (ICICC 2026)
+              for the paper:
+              <em>“Privacy-Preserving MIS Using Blockchain, Federated Learning and Zero-Trust Models.”</em>
+            </p>
+
+            <p class="muted" style="margin-top: 10px;">
+              Authors: Avijit Roy, Emran Hossain, Hemayet Uddin Himel, Hasan Imam,
+              Ruhul Amin Md Rashed, and Harleen Kaur.
             </p>
           </article>
 
           <!-- Leonard E. Reisman Medal -->
           <article class="card editorial-block slate">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">Leonard E. Reisman Medal — 2021</h3>
+            <span class="badge">ACADEMIC &amp; SERVICE DISTINCTION</span>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">
+              Leonard E. Reisman Medal — John Jay College of Criminal Justice (2021)
+            </h3>
+
             <p class="muted">
-              Awarded to an outstanding member of the senior class for distinguished scholarship and exceptional service to the College. Established in honor of the first president of the John Jay College of Criminal Justice.
+              Awarded to an outstanding member of the senior class for distinguished scholarship
+              and exceptional service to the College.
+            </p>
+
+            <p class="muted" style="margin-top: 10px;">
+              Established in honor of Leonard E. Reisman, the founding president of
+              John Jay College of Criminal Justice.
             </p>
           </article>
 

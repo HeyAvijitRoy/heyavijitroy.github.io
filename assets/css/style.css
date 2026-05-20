@@ -1465,3 +1465,27 @@ html[data-theme="dark"] .overview-logo img {
 .experience-list .muted {
   line-height: 1.6;
 }
+
+/* ---------- Education Section Awards ---------- */
+.education-award {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Subsequent award items have slightly smaller top spacing */
+.education-award + .education-award {
+  margin-top: 4px;
+}
+
+.education-award .award-icon {
+  color: var(--brand);
+  margin-top: 0.22em; /* Perfectly aligns the icon center-line with the first line of text */
+  flex-shrink: 0;     /* Ensures icon never shrinks when text wraps on mobile */
+  font-size: 0.95rem; /* Matches the text scale elegantly */
+}
+
+.education-award .award-text {
+  line-height: 1.5;
+}

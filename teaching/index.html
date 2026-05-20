@@ -1,6 +1,7 @@
 <!-- Page: Teaching | Path: v2/teaching/index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +14,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Teaching • Avijit Roy" />
+  <meta property="og:title" content="Teaching - Avijit Roy" />
   <meta property="og:description" content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
   <meta property="og:url" content="https://avijitroy.com/teaching/" />
   <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
@@ -23,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@HeyAvijitRoy" />
   <meta name="twitter:creator" content="@HeyAvijitRoy" />
-  <meta name="twitter:title" content="Teaching • Avijit Roy" />
+  <meta name="twitter:title" content="Teaching - Avijit Roy" />
   <meta name="twitter:description" content="Explore Avijit Roy's teaching portfolio, featuring courses in C++, cybersecurity, and computer science, alongside a philosophy grounded in practical, human-centered mentoring." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
 
@@ -34,12 +35,10 @@
   <link rel="manifest" href="../assets/favicons/site.webmanifest">
   <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2">
   <meta name="theme-color" content="#0a66c2" />
-  
+
   <!-- Premium Styles -->
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-
 
   <script src="../assets/js/main.js" defer></script>
 
@@ -136,10 +135,12 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#mainContent" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='8px';this.style.width='auto';this.style.height='auto';">Skip to main content</a>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../">Avijit <span>Roy</span></a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
         <a href="../">Home</a>
         <a href="../research/">Research</a>
         <a href="../teaching/" class="active" aria-current="page">Teaching</a>
@@ -148,96 +149,304 @@
       </nav>
       <div class="nav-actions">
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><span id="themeIcon"></span></button>
-        <button class="hamburger" id="hamburger" aria-label="Open Menu"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-controls="navLinks"
+          aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <main class="section">
+  <!-- MAIN -->
+  <main id="mainContent" class="section" role="main" aria-labelledby="pageTitle">
     <div class="container">
-      <h1 style="font-size: 2.5rem; margin-bottom: 24px;">Teaching & Mentorship</h1>
-    <p class="lead-editorial">
-      I teach applied computer science with a focus on clear thinking, secure systems, and building useful software. Here you’ll find current courses, mentoring initiatives, and handpicked resources that help students ship real projects — from C++ fundamentals to developer workflows, cloud, and AI/ML tooling.
-    </p>
+      <h1 id="pageTitle" style="font-size: 2.5rem; margin-bottom: 24px;">Teaching & Mentorship</h1>
 
-    <!-- COURSES -->
-    <section class="section-block">
-      <h2>Courses I Teach</h2>
-      <p class="muted" style="margin-bottom: 24px;">Lectures conducted at John Jay College of Criminal Justice (CUNY).</p>
-      
-      <details>
-        <summary>
-          <div>
-            CSCI 271 - Introduction to Programming 
-            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Spring 2026</span>
-          </div>
-        </summary>
-        <div class="details-body">
-          <p class="muted">Fundamental problem-solving, control structures, functions, arrays using C++.</p>
-          <a href="courses/itp-sp26/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div>
-            CSCI 272 - Object-Oriented Programming in C++
-            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Spring 2026</span>
-          </div>
-        </summary>
-        <div class="details-body">
-          <p class="muted">Builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism.</p>
-          <a href="courses/oop-sp26/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div>
-            CSCI 272 - Object-Oriented Programming in C++
-            <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Fall 2025</span>
-          </div>
-        </summary>
-        <div class="details-body">
-          <p class="muted">Builds practical C++ skills through object-oriented design: classes, composition, operator overloading, inheritance, and polymorphism.</p>
-          <a href="courses/oop-fa25/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
-        </div>
-      </details>
-    </section>
-
-    <!-- MENTORING -->
-    <section class="section-block" style="margin-top: 48px;">
-      <h2>Mentoring</h2>
-      <p class="muted" style="margin-bottom: 24px;">
-        I mentor pragmatic projects with clear outcomes and real users in mind. I enjoy collaborating with motivated students and teams — whether it’s a prototype, capstone, or research question. Together, we’ll define a clear plan, build iteratively, and document results you’ll be proud to share. My interests span AI, cybersecurity, data, and education technology.
+      <p class="lead-editorial">
+        I teach computer science as a practical discipline: students should understand the logic, write working code,
+        debug with confidence, and connect classroom concepts to real systems. My teaching sits at the intersection of
+        programming, data, cybersecurity, and applied AI, with an emphasis on clear thinking, ethical computing, and
+        project-based learning.
       </p>
 
-      <h3 style="margin-bottom: 16px;">Recent mentoring projects</h3>
-      <article class="card">
-        <h3>Django Secure Single-Session Auth System
-          <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-        </h3>
-        <p class="muted" style="margin-top: 8px;">
-          A production-ready authentication system built with Django, enforcing one active session per user, tracking login activity, and issuing alerts on suspicious access. Designed for academic, enterprise, or secure exam environments.
-        </p>
-        <ul class="tags">
-          <li>Security</li>
-          <li>Authentication</li>
-          <li>Django</li>
-          <li>Python</li>
-        </ul>
-      </article>
-    </section>
+      <!-- TEACHING SNAPSHOT -->
+      <section class="identity-snapshot" aria-label="Teaching Snapshot">
+        <div class="identity-snapshot-grid">
+          <!-- SNAPSHOT CARD: Programming -->
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+              <h3>Programming</h3>
+            </div>
+            <p class="muted">C++, Java, Python, object-oriented programming, debugging, and software design fundamentals.</p>
+          </article>
 
-    <!-- RESOURCES -->
-    <section class="section-block" style="margin-top: 48px;">
-      <h2>Free Tools for Students</h2>
-      <div class="course-card">
-        <h3>Developer &amp; AI Essentials</h3>
-        <p class="muted" style="margin-top: 10px;">Explore a curated list of free and discounted tools across development, AI, and design. Highlights: GitHub Education, JetBrains, Azure for Students.</p>
-        <a class="button small" href="student-tools/" style="align-self: flex-start; margin-top: 10px;">Open Student Tools <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </section>
+          <!-- SNAPSHOT CARD: Data and Analytics -->
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span>
+              <h3>Data & Analytics</h3>
+            </div>
+            <p class="muted">Database systems, SQL, data mining, data analysis, dashboards, and reproducible workflows.</p>
+          </article>
+
+          <!-- SNAPSHOT CARD: AI and Security -->
+          <article class="identity-card">
+            <div class="identity-card-head">
+              <span class="identity-icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></span>
+              <h3>AI & Security</h3>
+            </div>
+            <p class="muted">Applied AI, NLP, cybersecurity, digital forensics, secure software development, and responsible computing.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TEACHING PHILOSOPHY -->
+      <section class="section-block">
+        <h2>Teaching Philosophy</h2>
+
+        <!-- PHILOSOPHY CARD -->
+        <article class="card editorial-block blue">
+          <p class="muted">
+            My classroom approach is built around applied understanding. I want students to learn not only what a
+            programming concept means, but also why it exists, where it appears in real software, and how to reason
+            through mistakes when the code does not behave as expected.
+          </p>
+
+          <p class="muted">
+            I use step-by-step examples, visual explanations, debugging walkthroughs, and project-based assignments to
+            help students move from syntax memorization toward software reasoning. I also emphasize responsible use of
+            AI tools: students may use AI to support learning, but they must understand, explain, test, and defend their
+            own work.
+          </p>
+        </article>
+      </section>
+
+      <!-- COURSES -->
+      <section class="section-block">
+        <h2>Courses I Teach</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          Courses taught or scheduled at John Jay College of Criminal Justice (CUNY).
+        </p>
+
+        <!-- COURSE BLOCK: CSCI 271 -->
+        <details>
+          <summary>
+            <div>
+              CSCI 271 - Introduction to Computing and Programming
+              <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Spring 2026</span>
+            </div>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              Introductory programming course focused on computational thinking, algorithmic problem solving, control
+              structures, functions, arrays, and core programming foundations using C++.
+            </p>
+            <ul class="tags">
+              <li>C++</li>
+              <li>Programming Fundamentals</li>
+              <li>Algorithms</li>
+              <li>Problem Solving</li>
+            </ul>
+            <a href="courses/itp-sp26/" class="button small" style="margin-top: 10px;">View Full Syllabus</a>
+          </div>
+        </details>
+
+        <!-- COURSE BLOCK: CSCI 272 -->
+        <details>
+          <summary>
+            <div>
+              CSCI 272 - Object-Oriented Programming in C++
+              <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Fall 2025, Spring 2026, Fall 2026</span>
+            </div>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              Object-oriented programming course covering class design, encapsulation, constructors, composition,
+              operator overloading, inheritance, polymorphism, file handling, debugging, and multi-file program structure.
+            </p>
+            <ul class="tags">
+              <li>C++</li>
+              <li>OOP</li>
+              <li>Debugging</li>
+              <li>Software Design</li>
+              <li>Git/GitHub</li>
+            </ul>
+            <div class="cta" style="margin-top: 10px;">
+              <a href="courses/oop-sp26/" class="button small">Spring 2026 Syllabus</a>
+              <a href="courses/oop-fa25/" class="button small">Fall 2025 Syllabus</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- COURSE BLOCK: CSCI 362 -->
+        <details>
+          <summary>
+            <div>
+              CSCI 362 - Database & Data Mining
+              <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Fall 2026</span>
+            </div>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              Scheduled course covering relational database concepts, SQL, data preparation, data analysis, and
+              introductory data mining workflows. The course connects database fundamentals with practical analytical
+              thinking and responsible data use.
+            </p>
+            <ul class="tags">
+              <li>SQL</li>
+              <li>Databases</li>
+              <li>Data Mining</li>
+              <li>Data Analysis</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- CURRICULUM DEVELOPMENT -->
+      <section class="section-block" style="margin-top: 48px;">
+        <h2>Curriculum Development</h2>
+        <div class="card-list">
+          <!-- CURRICULUM CARD: CSCI 380 Agentic AI Systems -->
+          <article class="card editorial-block purple">
+            <span class="badge">Selected Topics in Computer Science</span>
+            <h3>CSCI 380 - Agentic AI Systems</h3>
+            <p class="muted">
+              Developed curriculum concepts and instructional materials for an Agentic AI Systems offering under the
+              selected-topics computer science format. The course concept introduces students to AI agents, LLM workflows,
+              tool use, prompt engineering, retrieval-augmented systems, evaluation, and responsible AI deployment.
+            </p>
+            <ul class="tags">
+              <li>Agentic AI</li>
+              <li>LLM Workflows</li>
+              <li>Applied AI</li>
+              <li>Responsible AI</li>
+            </ul>
+          </article>
+
+          <!-- CURRICULUM CARD: CSCI 271 Instructional Materials -->
+          <article class="card editorial-block slate">
+            <span class="badge">Open Educational Resources</span>
+            <h3>CSCI 271 Instructional Materials</h3>
+            <p class="muted">
+              Created instructional materials for introductory programming with an emphasis on accessibility, practical
+              examples, modern C++ foundations, Git/GitHub workflows, and student-centered explanations that reduce the
+              gap between lecture concepts and working code.
+            </p>
+            <ul class="tags">
+              <li>OER</li>
+              <li>C++</li>
+              <li>Git</li>
+              <li>Student Support</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- TEACHING INTERESTS -->
+      <section class="section-block" style="margin-top: 48px;">
+        <h2>Teaching Interests</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          Areas I am prepared to teach or develop at the undergraduate or graduate level, depending on departmental need.
+        </p>
+
+        <div class="grid-2x2">
+          <!-- INTEREST CARD: Programming and Software Design -->
+          <article class="card">
+            <h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Programming & Software Design</h3>
+            <p class="muted">
+              Java programming, C++, Python, object-oriented programming, data structures, debugging, software
+              engineering, Git/GitHub workflows, and secure coding practices.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Data Systems and Analytics -->
+          <article class="card">
+            <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Data Systems & Analytics</h3>
+            <p class="muted">
+              Database systems, SQL, data mining, data analysis, dashboard development, data quality, and practical
+              analytics workflows using tools such as Tableau, Power BI, Python, and SQL.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Artificial Intelligence -->
+          <article class="card">
+            <h3><i class="fa-solid fa-robot" aria-hidden="true"></i> Artificial Intelligence</h3>
+            <p class="muted">
+              Graduate-level Python, applied AI, machine learning foundations, NLP, transformer-based systems,
+              LLM-assisted workflows, AI evaluation, and responsible AI deployment.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Cybersecurity and Digital Forensics -->
+          <article class="card">
+            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Cybersecurity & Digital Forensics</h3>
+            <p class="muted">
+              Cybersecurity fundamentals, digital forensics, secure software design, authentication, access control,
+              evidence handling, privacy-aware systems, and applied security tooling.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MENTORING -->
+      <section class="section-block" style="margin-top: 48px;">
+        <h2>Mentoring & Student Development</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          I mentor students through practical computing projects with clear technical goals, reproducible workflows, and
+          outcomes they can explain, demonstrate, and continue improving after the course or research period ends.
+        </p>
+
+        <!-- MENTORING CARD: Django Secure Single-Session Auth System -->
+        <article class="card">
+          <h3>Django Secure Single-Session Auth System
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          </h3>
+          <p class="muted" style="margin-top: 8px;">
+            A production-oriented authentication system built with Django, enforcing one active session per user,
+            tracking login activity, and supporting suspicious-access awareness. The project emphasizes secure session
+            handling, schema design, reproducible development, and deployment-ready documentation.
+          </p>
+          <ul class="tags">
+            <li>Security</li>
+            <li>Authentication</li>
+            <li>Django</li>
+            <li>Python</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </article>
+
+        <!-- MENTORING CARD: Object-Oriented Programming Hackathon and CTF -->
+        <article class="card" style="margin-top: 24px;">
+          <h3>Object-Oriented Programming Hackathon & CTF</h3>
+          <p class="muted" style="margin-top: 8px;">
+            Organized and led a student-centered programming event focused on object-oriented reasoning, debugging,
+            problem solving, and applied computing challenges. The event encouraged students to work collaboratively
+            while translating course concepts into timed, hands-on technical tasks.
+          </p>
+          <ul class="tags">
+            <li>OOP</li>
+            <li>CTF</li>
+            <li>Debugging</li>
+            <li>Student Engagement</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RESOURCES -->
+      <section class="section-block" style="margin-top: 48px;">
+        <h2>Free Tools for Students</h2>
+        <!-- RESOURCE CARD: Developer and AI Essentials -->
+        <div class="course-card">
+          <h3>Developer &amp; AI Essentials</h3>
+          <p class="muted" style="margin-top: 10px;">
+            A curated list of free and discounted tools for students across development, AI, cloud, productivity, and
+            design. Highlights include GitHub Education, JetBrains, Azure for Students, and other resources useful for
+            building real technical projects.
+          </p>
+          <a class="button small" href="student-tools/" style="align-self: flex-start; margin-top: 10px;">
+            Open Student Tools <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -245,14 +454,21 @@
     <div class="container foot-flex">
       <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
       <div class="socials">
-        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD" title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
-        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><i class="fa-brands fa-medium"></i></a>
-        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr" title="Flickr"><i class="fa-brands fa-flickr"></i></a>
+        <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+          title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/HeyAvijitRoy/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://orcid.org/0009-0007-8036-0952" target="_blank" rel="noopener noreferrer" aria-label="ORCiD"
+          title="ORCiD"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://heyavijitroy.medium.com/" target="_blank" rel="noopener noreferrer" aria-label="Medium"
+          title="Medium"><i class="fa-brands fa-medium"></i></a>
+        <a href="https://www.instagram.com/pirsquarek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+          title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.flickr.com/photos/kabyo/" target="_blank" rel="noopener noreferrer" aria-label="Flickr"
+          title="Flickr"><i class="fa-brands fa-flickr"></i></a>
       </div>
     </div>
   </footer>
 </body>
+
 </html>

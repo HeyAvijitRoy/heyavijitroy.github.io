@@ -168,4 +168,35 @@
   // initial wire
   wireInlineTags();
 
+  // Dynamic "Back to Top" Button
+  function initBackToTop() {
+    const btn = document.createElement("button");
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.setAttribute("title", "Back to top");
+    btn.innerHTML = '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
+    document.body.appendChild(btn);
+
+    // Toggle visibility based on scroll depth
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.classList.add("visible");
+      } else {
+        btn.classList.remove("visible");
+      }
+    });
+
+    // Smooth scroll to top on click
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      btn.blur();
+    });
+  }
+
+  // Initialize
+  initBackToTop();
+
 })();

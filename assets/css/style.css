@@ -372,6 +372,7 @@ hr {
   gap: var(--space-2);
   margin-top: var(--space-4);
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .button {
@@ -795,6 +796,10 @@ html[data-theme="dark"] .overview-logo img {
   html,
   body {
     overflow-x: clip;
+  }
+
+  .cta {
+    justify-content: center;
   }
 
 
@@ -1488,4 +1493,70 @@ html[data-theme="dark"] .overview-logo img {
 
 .education-award .award-text {
   line-height: 1.5;
+}
+
+/* ---------- Back to Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-5, 32px);
+  right: var(--space-5, 32px);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--btn-text, #ffffff);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 0.3s, 
+              background-color 0.2s, 
+              box-shadow 0.2s;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--brand-700);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.back-to-top:active {
+  transform: translateY(-2px);
+}
+
+/* Premium glassmorphic backdrop overlay for modern browsers */
+@supports (backdrop-filter: blur(8px)) {
+  .back-to-top {
+    background: color-mix(in oklab, var(--brand) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .back-to-top:hover {
+    background: var(--brand);
+  }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: var(--space-4, 24px);
+    right: var(--space-4, 24px);
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
 }

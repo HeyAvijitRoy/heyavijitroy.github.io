@@ -571,7 +571,7 @@
   <main class="section">
     <div class="container">
       <h1 style="font-size: 2.5rem; margin-bottom: 24px;">Research</h1>
-      <div class="hero" style="padding: var(--space-2) 0 var(--space-5) 0;">
+      <div class="hero" style="padding: var(--space-2) 0 var(--space-3) 0; margin-bottom: 0.5rem;">
         <div class="hero-content">
           <p class="lead" style="max-width: none; font-size: 1.15rem; line-height: 1.8;">
             My research sits at the intersection of cybersecurity, artificial intelligence, and privacy-preserving
@@ -598,24 +598,26 @@
             <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer"><i
                 class="fa-brands fa-github"></i> GitHub</a>
           </div>
-
-          <div class="cta" style="margin-top: 1.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a class="button small" href="#overview">Overview</a>
-            <a class="button small" href="#publications">Publications</a>
-            <a class="button small" href="#presentations">Presentations</a>
-            <a class="button small" href="#archival">Archival</a>
-            <a class="button small" href="#projects">Projects</a>
-            <a class="button small" href="#support">Research Support</a>
-            <a class="button small" href="#honors">Honors &amp; Awards</a>
-          </div>
         </div>
 
-        <div class="avatar-wrapper" style="transform: scale(0.85); justify-self: center;">
+        <div class="avatar-wrapper" style="transform: scale(0.85); justify-self: center; align-self: start; margin-top: 0.5rem;">
           <div class="avatar-backdrop"></div>
           <div class="avatar">
             <img src="../assets/img/avatar.jpg" alt="Avijit Roy in an academic environment">
           </div>
         </div>
+      </div>
+
+      <!-- Navigation CTA Strip -->
+      <div class="cta" style="margin-top: 0; margin-bottom: 2rem; width: 100%;">
+        <a class="button small" href="#overview">Overview</a>
+        <a class="button small" href="#publications">Publications</a>
+        <a class="button small" href="#presentations">Presentations</a>
+        <a class="button small" href="#patents">Patents</a>
+        <a class="button small" href="#support">Research Support</a>
+        <a class="button small" href="#projects">Projects</a>
+        <a class="button small" href="#archival">Archival</a>
+        <a class="button small" href="#honors">Honors &amp; Awards</a>
       </div>
 
       <!-- Identity Snapshot -->
@@ -975,6 +977,141 @@
         </div>
       </section>
 
+      <!-- Patents -->
+      <section id="patents" class="section-block">
+        <h2>Patents</h2>
+
+        <article class="card editorial-block amber">
+          <span class="badge">PATENT PENDING</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; margin-top: 12px;">
+            Staged Client-Side Phishing Risk Assessment Architecture Using Locally Executed ONNX Transformer Inference
+            Within an Email Client Runtime</h3>
+          <p class="muted">
+            <strong>USPTO Provisional Patent Application — Patent Pending</strong><br />
+            Application No.: 63/986,762<br />
+            Status: Filed & Recorded (Priority Date Secured)<br />
+            Filed: February 2026
+          </p>
+          <p class="muted">
+            This invention introduces a privacy-preserving phishing detection architecture that performs semantic
+            analysis
+            directly inside an email client runtime.
+          </p>
+          <p class="muted">The system implements a staged machine learning pipeline where:</p>
+          <ol class="muted">
+            <li>A lightweight binary classifier evaluates phishing likelihood.</li>
+            <li>A conditional execution controller determines whether deeper semantic analysis is required.</li>
+            <li>
+              A multi-label intent model identifies phishing behaviors such as credential harvesting, impersonation,
+              payment fraud, and urgency-based manipulation.
+            </li>
+          </ol>
+          <p class="muted">
+            All inference is executed locally using ONNX transformer models, ensuring that email content never leaves
+            the
+            client device.
+          </p>
+          <p class="muted">
+            The architecture is designed for privacy-preserving phishing detection in constrained email client
+            environments, reducing reliance on server-side inspection while improving explainability and local control.
+          </p>
+        </article>
+      </section>
+
+      <!-- Research Support -->
+      <section id="support" class="section-block">
+        <h2>Research Support</h2>
+        <div class="card-list">
+          <!-- NSF ACCESS -->
+          <article class="card editorial-block slate">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">NSF ACCESS Computational Allocation
+              (CIS260616)</h3>
+            <p class="muted"><strong>Principal Investigator · April 2026–April 2027</strong></p>
+            <p class="muted" style="margin-top: 12px;">
+              Competitive allocation awarded through the NSF ACCESS program (Advanced Cyberinfrastructure Coordination
+              Ecosystem), supporting GPU-enabled infrastructure for reproducible machine learning research in
+              low-resource Bengali NLP.
+            </p>
+            <p class="muted">
+              <strong>Infrastructure: </strong>
+              120,000 SUs on Indiana Jetstream2 GPU · 50,000 SUs on Jetstream2 Large Memory (est. value: $31,305) and
+              30,000 Access Credits
+            </p>
+            <p class="muted">
+              <strong>Project: </strong>
+              <em>Dataset Development and Fine-Tuning of Language Models for Low-Resource Bengali Programming
+                Assistance</em> <br />
+              Research involves iterative dataset refinement, parameter-efficient fine-tuning (LoRA/QLoRA), and
+              structured multi-stage evaluation targeting beginner-friendly Bengali programming education in
+              low-connectivity environments.
+            </p>
+            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-server" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>ACCESS Allocation:</strong> <a href="https://www.xras.org/public/requests/268808-ACCESS-CIS260616" target="_blank" rel="noopener noreferrer">View Allocation Request (CIS260616)</a></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-list" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>Project Listing:</strong> <a href="https://allocations.access-ci.org/current-projects?_requestNumber=CIS260616" target="_blank" rel="noopener noreferrer">View ACCESS Current Projects</a></span>
+              </div>
+            </div>
+          </article>
+          <!-- RF CUNY -->
+          <article class="card editorial-block" style="border-left-color: #0f172a;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">RF CUNY Graduate Research Support
+            </h3>
+            <p class="muted"><strong>June 2025–August 2025</strong></p>
+            <p class="muted" style="margin-top: 12px;">
+              Graduate research support for applied work spanning intelligence systems, language-related AI evaluation,
+              and public-interest technology development.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Research Projects -->
+      <section id="projects" class="section-block">
+        <h2>Research Projects</h2>
+        <div class="card-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+          <article class="card">
+            <h3>Natural Language Processing for Language Proficiency Assessment</h3>
+            <p class="muted">Developed an applied NLP research system for evaluating student writing using machine
+              learning models aligned with ACTFL proficiency guidelines. The project focuses on automated writing
+              assessment, explainable scoring workflows, and practical support for language-learning evaluation in
+              educational settings.</p>
+          </article>
+          <article class="card">
+            <h3>AI Infrastructure and Underrepresented-Language Computing</h3>
+            <p class="muted">Ongoing research examining how data scarcity, benchmarking gaps, and infrastructure
+              asymmetries affect AI development for underrepresented languages. This work focuses on equitable
+              evaluation,
+              dataset realities, and the broader technical consequences of English-centric language technology
+              ecosystems.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Human Trafficking Intelligence Platform</h3>
+            <p class="muted">Designed a secure intelligence platform for collecting and analyzing human trafficking
+              reports. The system integrates geospatial visualization, secure data storage, and investigative dashboards
+              to support law enforcement and research efforts.</p>
+          </article>
+          <article class="card">
+            <h3>Client-Side Cryptographic Hash Verification Tool (HashNow)</h3>
+            <p class="muted">Developed a browser-based cryptographic hashing utility implementing MD5, SHA-1, and
+              SHA-256
+              for local file integrity verification. The tool supports digital forensics and evidence validation
+              workflows
+              by enabling client-side hash computation without file upload.</p>
+            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-brands fa-github" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>GitHub:</strong> <a href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener noreferrer">github.com/heyavijitroy/HashNow</a></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- Archival Undergraduate Report -->
       <section id="archival" class="section-block">
         <h2>Archival Undergraduate Reports</h2>
@@ -1020,136 +1157,6 @@
             </div>
           </div>
         </article>
-      </section>
-
-      <!-- Patents -->
-
-      <section id="patents" class="section-block">
-        <h2>Patents</h2>
-
-        <article class="card editorial-block amber">
-          <span class="badge">PATENT PENDING</span>
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; margin-top: 12px;">
-            Staged Client-Side Phishing Risk Assessment Architecture Using Locally Executed ONNX Transformer Inference
-            Within an Email Client Runtime</h3>
-          <p class="muted">
-            <strong>USPTO Provisional Patent Application — Patent Pending</strong><br />
-            Application No.: 63/986,762<br />
-            Status: Filed & Recorded (Priority Date Secured)<br />
-            Filed: February 2026
-          </p>
-          <p class="muted">
-            This invention introduces a privacy-preserving phishing detection architecture that performs semantic
-            analysis
-            directly inside an email client runtime.
-          </p>
-          <p class="muted">The system implements a staged machine learning pipeline where:</p>
-          <ol class="muted">
-            <li>A lightweight binary classifier evaluates phishing likelihood.</li>
-            <li>A conditional execution controller determines whether deeper semantic analysis is required.</li>
-            <li>
-              A multi-label intent model identifies phishing behaviors such as credential harvesting, impersonation,
-              payment fraud, and urgency-based manipulation.
-            </li>
-          </ol>
-          <p class="muted">
-            All inference is executed locally using ONNX transformer models, ensuring that email content never leaves
-            the
-            client device.
-          </p>
-          <p class="muted">
-            The architecture is designed for privacy-preserving phishing detection in constrained email client
-            environments, reducing reliance on server-side inspection while improving explainability and local control.
-          </p>
-        </article>
-      </section>
-
-      <!-- Research Projects -->
-      <section id="projects" class="section-block">
-        <h2>Research Projects</h2>
-        <div class="card-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-          <article class="card">
-            <h3>Natural Language Processing for Language Proficiency Assessment</h3>
-            <p class="muted">Developed an applied NLP research system for evaluating student writing using machine
-              learning models aligned with ACTFL proficiency guidelines. The project focuses on automated writing
-              assessment, explainable scoring workflows, and practical support for language-learning evaluation in
-              educational settings.</p>
-          </article>
-          <article class="card">
-            <h3>AI Infrastructure and Underrepresented-Language Computing</h3>
-            <p class="muted">Ongoing research examining how data scarcity, benchmarking gaps, and infrastructure
-              asymmetries affect AI development for underrepresented languages. This work focuses on equitable
-              evaluation,
-              dataset realities, and the broader technical consequences of English-centric language technology
-              ecosystems.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Human Trafficking Intelligence Platform</h3>
-            <p class="muted">Designed a secure intelligence platform for collecting and analyzing human trafficking
-              reports. The system integrates geospatial visualization, secure data storage, and investigative dashboards
-              to support law enforcement and research efforts.</p>
-          </article>
-          <article class="card">
-            <h3>Client-Side Cryptographic Hash Verification Tool (HashNow)</h3>
-            <p class="muted">Developed a browser-based cryptographic hashing utility implementing MD5, SHA-1, and
-              SHA-256
-              for local file integrity verification. The tool supports digital forensics and evidence validation
-              workflows
-              by enabling client-side hash computation without file upload.</p>
-            <p class="muted" style="margin-top: 12px;">
-              <a href="https://github.com/heyavijitroy/HashNow" target="_blank" rel="noopener noreferrer"><i
-                  class="fa-brands fa-github"></i> View Repository</a>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Research Support -->
-      <section id="support" class="section-block">
-        <h2>Research Support</h2>
-        <div class="card-list">
-          <!-- NSF ACCESS -->
-          <article class="card editorial-block slate">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">NSF ACCESS Computational Allocation
-              (CIS260616)</h3>
-            <p class="muted"><strong>Principal Investigator · April 2026–April 2027</strong></p>
-            <p class="muted" style="margin-top: 12px;">
-              Competitive allocation awarded through the NSF ACCESS program (Advanced Cyberinfrastructure Coordination
-              Ecosystem), supporting GPU-enabled infrastructure for reproducible machine learning research in
-              low-resource Bengali NLP.
-            </p>
-            <p class="muted">
-              <strong>Infrastructure: </strong>
-              120,000 SUs on Indiana Jetstream2 GPU · 50,000 SUs on Jetstream2 Large Memory (est. value: $31,305) and
-              30,000 Access Credits
-            </p>
-            <p class="muted">
-              <strong>Project: </strong>
-              <em>Dataset Development and Fine-Tuning of Language Models for Low-Resource Bengali Programming
-                Assistance</em> <br />
-              Research involves iterative dataset refinement, parameter-efficient fine-tuning (LoRA/QLoRA), and
-              structured multi-stage evaluation targeting beginner-friendly Bengali programming education in
-              low-connectivity environments.
-            </p>
-            <p class="muted">
-              <a href="https://www.xras.org/public/requests/268808-ACCESS-CIS260616" target="_blank"
-                rel="noopener noreferrer">View ACCESS Allocation (CIS260616)</a> |
-              <a href="https://allocations.access-ci.org/current-projects?_requestNumber=CIS260616" target="_blank"
-                rel="noopener noreferrer">View ACCESS Project Listing</a>
-            </p>
-          </article>
-          <!-- RF CUNY -->
-          <article class="card editorial-block" style="border-left-color: #0f172a;">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">RF CUNY Graduate Research Support
-            </h3>
-            <p class="muted"><strong>June 2025–August 2025</strong></p>
-            <p class="muted" style="margin-top: 12px;">
-              Graduate research support for applied work spanning intelligence systems, language-related AI evaluation,
-              and public-interest technology development.
-            </p>
-          </article>
-        </div>
       </section>
 
       <!-- Honors & Awards -->

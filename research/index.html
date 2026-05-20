@@ -1233,9 +1233,7 @@
 
         </div>
       </section>
-      <p class="muted" style="text-align:center; margin-top:2rem;">
-        Last updated: <span id="lastUpdated"></span>
-      </p>
+      
     </div>
   </main>
 
@@ -1258,11 +1256,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    const lastUpdated = new Date(document.lastModified);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById("lastUpdated").textContent = lastUpdated.toLocaleDateString(undefined, options);
-  </script>
+  
 </body>
 
 </html>

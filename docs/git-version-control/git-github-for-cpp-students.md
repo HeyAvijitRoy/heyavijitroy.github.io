@@ -3,7 +3,7 @@ layout: default
 title: "Saving Your Work Like a Pro: Git & GitHub for C++ Students"
 description: "A complete, analogy-driven guide to version control for first-semester computer science students learning C++."
 author: "Avijit Roy"
-date: 2026-05-24
+date: 2026-05-22
 version: "1.0.0"
 permalink: /
 nav_order: 1

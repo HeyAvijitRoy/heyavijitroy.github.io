@@ -848,13 +848,15 @@ def build_html(toc_html: str, content_html: str, theme: str) -> str:
 {schema_json()}
   </script>
   <style>{CSS}</style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id={ANALYTICS_ID}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {{ dataLayer.push(arguments); }}
-    gtag("js", new Date());
-    gtag("config", "{ANALYTICS_ID}");
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={ANALYTICS_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', '{ANALYTICS_ID}');
+</script>
 </head>
 <body>
   <a class="skip-link" href="#book-content">Skip to book content</a>

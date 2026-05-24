@@ -4,91 +4,91 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://avijitroy.com/</loc>
-		<lastmod>2026-05-20</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/</loc>
-		<lastmod>2026-05-20</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/structural-silence-poster/</loc>
-		<lastmod>2026-05-12</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/projects/</loc>
-		<lastmod>2026-05-20</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/experience/</loc>
-		<lastmod>2026-05-20</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/</loc>
-		<lastmod>2026-05-20</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/student-tools/</loc>
-		<lastmod>2026-04-26</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/oop-sp26/</loc>
-		<lastmod>2026-04-26</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/oop-fa25/</loc>
-		<lastmod>2026-03-12</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/itp-sp26/</loc>
-		<lastmod>2026-04-26</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.70</priority>
-	</url>
-	<url>
-		<loc>https://avijitroy.com/docs/</loc>
-		<lastmod>2026-05-04</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/docs/responsible-ai-prompting-guide.html</loc>
-		<lastmod>2026-05-04</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/docs/cpp-vscode-win.html</loc>
-		<lastmod>2026-04-26</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.60</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/docs/cpp-vscode-mac.html</loc>
-		<lastmod>2026-04-26</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.60</priority>
 	</url>
 	<url>
+		<loc>https://avijitroy.com/docs/git/</loc>
+		<lastmod>2026-05-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://avijitroy.com/exam-timer/</loc>
-		<lastmod>2025-12-08</lastmod>
+		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>

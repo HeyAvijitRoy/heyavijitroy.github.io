@@ -8,7 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Step-by-step guide to compile and debug C++ in Visual Studio Code on macOS using Clang, LLDB, and VS Code tasks and launch configurations." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="keywords"
+    content="C++ VS Code macOS, Clang, LLDB, Visual Studio Code, C++ compiler setup, C++ debugging, Apple Silicon, beginner programming, Avijit Roy" />
   <meta name="author" content="Avijit Roy" />
+  <meta name="color-scheme" content="light dark" />
 
   <!-- Canonical URL  -->
   <link rel="canonical" href="https://avijitroy.com/docs/cpp-vscode-mac.html" />
@@ -19,35 +23,81 @@
   <meta property="og:description"
     content="A clean, step-by-step setup guide for enabling C++ development and debugging in Visual Studio Code on macOS using Clang and LLDB." />
   <meta property="og:url" content="https://avijitroy.com/docs/cpp-vscode-mac.html" />
+  <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
   <meta property="og:site_name" content="Avijit Roy" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Enable C++ Development in VS Code on macOS (Clang + LLDB)" />
   <meta name="twitter:description"
     content="Step-by-step instructions to configure C++ compiling and debugging in VS Code on macOS using Clang and LLDB." />
+  <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" href="../assets/favicons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0a66c2" />
+  <meta name="theme-color" content="#0a66c2" />
 
   <!-- JSON-LD: TechArticle schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Enable C++ Development in VS Code on macOS (Clang + LLDB)",
-    "description": "A detailed guide to setting up C++ compilation and debugging in Visual Studio Code on macOS using Clang, LLDB, and VS Code configuration files.",
-    "author": {
-      "@type": "Person",
-      "name": "Avijit Roy",
-      "url": "https://avijitroy.com"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Avijit Roy",
-      "url": "https://avijitroy.com"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html"
-    }
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html#techarticle",
+        "url": "https://avijitroy.com/docs/cpp-vscode-mac.html",
+        "headline": "Enable C++ Development in VS Code on macOS (Clang + LLDB)",
+        "description": "A detailed guide to setting up C++ compilation and debugging in Visual Studio Code on macOS using Clang, LLDB, and VS Code configuration files.",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://avijitroy.com/#website",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Teaching",
+            "item": "https://avijitroy.com/teaching/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "C++ in VS Code on macOS"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -69,6 +119,32 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 2rem 1.25rem 3rem;
+    }
+
+    .breadcrumb {
+      margin: 0 0 1.5rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: "/";
+      color: #64748b;
+      margin-left: 0.5rem;
+    }
+
+    .breadcrumb a {
+      color: #38bdf8;
     }
 
     h1,
@@ -186,6 +262,13 @@
 
 <body>
   <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li><a href="../teaching/">Teaching</a></li>
+        <li aria-current="page">C++ in VS Code on macOS</li>
+      </ol>
+    </nav>
     <header>
       <h1>Enable C++ Development in VS Code on macOS (Clang + LLDB)</h1>
       <p class="muted">

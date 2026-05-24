@@ -30,8 +30,6 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@HeyAvijitRoy" />
-  <meta name="twitter:creator" content="@HeyAvijitRoy" />
   <meta name="twitter:title" content="Responsible AI Prompting Guide for CSCI 271/272" />
   <meta name="twitter:description"
     content="A practical guide for using AI responsibly in CSCI 271/272 without violating academic integrity or outsourcing your learning." />
@@ -49,32 +47,59 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html#techarticle",
-    "url": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html",
-    "headline": "Responsible AI Prompting Guide for CSCI 271/272",
-    "description": "A guide for students on using AI responsibly for learning C++ concepts through explanation, guided practice, self-testing, and academic integrity safeguards.",
-    "inLanguage": "en",
-    "author": {
-      "@type": "Person",
-      "name": "Avijit Roy",
-      "url": "https://avijitroy.com"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Avijit Roy",
-      "url": "https://avijitroy.com"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html"
-    },
-    "isPartOf": {
-      "@type": "WebSite",
-      "@id": "https://avijitroy.com/#website",
-      "name": "Avijit Roy",
-      "url": "https://avijitroy.com/"
-    }
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html#techarticle",
+        "url": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html",
+        "headline": "Responsible AI Prompting Guide for CSCI 271/272",
+        "description": "A guide for students on using AI responsibly for learning C++ concepts through explanation, guided practice, self-testing, and academic integrity safeguards.",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://avijitroy.com/#website",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Teaching",
+            "item": "https://avijitroy.com/teaching/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Responsible AI Prompting Guide"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -167,6 +192,33 @@
     }
 
     a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: "/";
+      color: var(--text-muted);
+      margin-left: 0.5rem;
+    }
+
+    .breadcrumb a:hover,
+    .breadcrumb a:focus-visible {
       text-decoration: underline;
     }
 
@@ -345,6 +397,14 @@
 
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="../teaching/">Teaching</a></li>
+      <li aria-current="page">Responsible AI Prompting Guide</li>
+    </ol>
+  </nav>
   
   <header class="header-banner">
     <h1 id="responsible-ai-prompting-guide">Responsible AI Prompting Guide</h1>

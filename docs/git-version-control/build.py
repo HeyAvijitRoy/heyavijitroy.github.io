@@ -694,6 +694,7 @@ def schema_json() -> str:
             {
                 "@type": "BreadcrumbList",
                 "@id": f"{CANONICAL_URL}#breadcrumb",
+                "name": f"Breadcrumbs for {BOOK_TITLE}",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL},
                     {

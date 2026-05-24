@@ -87,6 +87,12 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
+		<loc>https://avijitroy.com/docs/git-version-control/</loc>
+		<lastmod>2026-05-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://avijitroy.com/exam-timer/</loc>
 		<lastmod>2026-05-24</lastmod>
 		<changefreq>monthly</changefreq>

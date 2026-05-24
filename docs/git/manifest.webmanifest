@@ -2,7 +2,8 @@
   "id": "/docs/git/",
   "name": "Git, GitHub and VS Code Beginner Guide",
   "short_name": "Git Guide",
-  "description": "An interactive beginner guide to Git, GitHub and VS Code Source Control.",
+  "description": "An interactive beginner guide to Git, GitHub, VS Code Source Control, .gitignore privacy and safe AI-assisted coding.",
+  "lang": "en",
   "categories": [
     "education",
     "developer-tools"

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" />
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; worker-src 'self'; img-src 'self' data:; connect-src 'none';" />
   <meta name="description"
-    content="A beginner-friendly interactive guide to Git, GitHub, and VS Code Source Control. Learn version control, publish your first project, fix common errors, and practice from scratch." />
+    content="A beginner-friendly interactive guide to Git, GitHub, VS Code Source Control, .gitignore privacy, secret protection, and safe AI-assisted coding workflows." />
   <meta name="author" content="Avijit Roy" />
   <meta name="color-scheme" content="dark light" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="keywords" content="Git tutorial, GitHub tutorial, VS Code Source Control, version control for beginners, coding for students, Git commands, first repository" />
+  <meta name="keywords" content="Git tutorial, GitHub tutorial, VS Code Source Control, .gitignore, API key safety, AI coding workflow, version control for beginners, Git commands, first repository" />
   <link rel="canonical" href="https://avijitroy.com/docs/git/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Learn Git, GitHub &amp; VS Code Source Control from Scratch" />
@@ -23,6 +23,9 @@
   <meta name="twitter:description" content="An interactive first-time coder guide to version control, GitHub, and the VS Code Source Control workflow." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
   <meta name="theme-color" content="#0d0f14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Git Guide" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Learn Git, GitHub &amp; VS Code Source Control | Beginner Guide</title>
   <link rel="icon" href="../../assets/favicons/favicon.ico" sizes="any" />
   <link rel="icon" href="../../assets/favicons/icon.svg" type="image/svg+xml" />
@@ -41,7 +44,7 @@
         "@id": "https://avijitroy.com/docs/git/#article",
         "url": "https://avijitroy.com/docs/git/",
         "headline": "Learn Git, GitHub and VS Code Source Control from Scratch",
-        "description": "A beginner-friendly interactive guide to version control, Git, GitHub and VS Code Source Control.",
+        "description": "A beginner-friendly interactive guide to version control, Git, GitHub, VS Code Source Control, .gitignore privacy, secret protection and safe AI-assisted coding workflows.",
         "inLanguage": "en",
         "author": {
           "@type": "Person",
@@ -1187,24 +1190,36 @@
         <span class="nav-check" aria-hidden="true">✓</span>
       </a>
 
+      <div class="nav-section-label">Privacy &amp; AI</div>
+      <a class="nav-item" href="#sec-gitignore" data-target="sec-gitignore">
+        <span class="nav-num">09</span>
+        Protect with .gitignore
+        <span class="nav-check" aria-hidden="true">&#10003;</span>
+      </a>
+      <a class="nav-item" href="#sec-ai-workflow" data-target="sec-ai-workflow">
+        <span class="nav-num">10</span>
+        AI Coding Workflow
+        <span class="nav-check" aria-hidden="true">&#10003;</span>
+      </a>
+
       <div class="nav-section-label">Practice &amp; Help</div>
       <a class="nav-item" href="#sec-troubleshooting" data-target="sec-troubleshooting">
-        <span class="nav-num">09</span>
+        <span class="nav-num">11</span>
         Fix Common Problems
         <span class="nav-check" aria-hidden="true">✓</span>
       </a>
       <a class="nav-item" href="#sec-lab" data-target="sec-lab">
-        <span class="nav-num">10</span>
+        <span class="nav-num">12</span>
         First Repository Lab
         <span class="nav-check" aria-hidden="true">✓</span>
       </a>
       <a class="nav-item" href="#sec-quiz" data-target="sec-quiz">
-        <span class="nav-num">11</span>
+        <span class="nav-num">13</span>
         Knowledge Check
         <span class="nav-check" aria-hidden="true">✓</span>
       </a>
       <a class="nav-item" href="#sec-resources" data-target="sec-resources">
-        <span class="nav-num">12</span>
+        <span class="nav-num">14</span>
         Official Resources
         <span class="nav-check" aria-hidden="true">✓</span>
       </a>
@@ -1237,11 +1252,11 @@
       <p>A visual, hands-on guide for any student or first-time coder: track changes, save meaningful checkpoints, publish projects to GitHub, and work confidently in VS Code.</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="val" aria-label="12 sections">12</span>
+          <span class="val" aria-label="14 sections">14</span>
           <span class="lbl">Sections</span>
         </div>
         <div class="hero-stat">
-          <span class="val" aria-label="45 minutes">~45</span>
+          <span class="val" aria-label="60 minutes">~60</span>
           <span class="lbl">Minutes</span>
         </div>
         <div class="hero-stat">
@@ -1249,7 +1264,7 @@
           <span class="lbl">Commands</span>
         </div>
         <div class="hero-stat">
-          <span class="val" aria-label="12 quiz questions">12</span>
+          <span class="val" aria-label="14 quiz questions">14</span>
           <span class="lbl">Quiz Questions</span>
         </div>
       </div>
@@ -2097,11 +2112,166 @@
     </section>
 
     <!-- ───────────────────────────────────────────── -->
-    <!--  Section 9 · Troubleshooting                 -->
+    <!--  Section 9 - Privacy with .gitignore         -->
     <!-- ───────────────────────────────────────────── -->
-    <section class="section" id="sec-troubleshooting" aria-labelledby="h-troubleshooting">
+    <section class="section" id="sec-gitignore" aria-labelledby="h-gitignore">
       <div class="section-header">
         <span class="section-num">09</span>
+        <h2 id="h-gitignore">Protect Your Project with <code>.gitignore</code></h2>
+      </div>
+
+      <p>
+        A <code>.gitignore</code> file lists files and folders that Git should leave out of ordinary staging. Create it near the beginning of a project and commit the <code>.gitignore</code> file itself so everyone working on the repository follows the same safety rules.
+      </p>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Privacy Rule: Secrets Do Not Belong in GitHub</div>
+        Never commit API keys, passwords, tokens, private certificates, cloud credentials, database connection strings, or a real <code>.env</code> file. A public repository can be copied quickly, and deleting a secret later does not make an exposed credential safe again.
+      </div>
+
+      <h3>What <code>.gitignore</code> Does and Does Not Do</h3>
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable table describing gitignore protections and limits">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="What gitignore protects and what it does not protect">
+            <thead>
+              <tr>
+                <th scope="col">It Helps With</th>
+                <th scope="col">It Does Not Do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Preventing new matching files from being staged accidentally.</td>
+                <td>Removing a file already committed or pushed to GitHub.</td>
+              </tr>
+              <tr>
+                <td>Keeping dependencies, generated builds, and local settings out of history.</td>
+                <td>Encrypting files or making the folder private on your computer.</td>
+              </tr>
+              <tr>
+                <td>Sharing a repository rule with teammates through a committed <code>.gitignore</code>.</td>
+                <td>Guaranteeing that editors, extensions, or AI tools cannot read ignored files.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>A Beginner-Friendly Starter File</h3>
+      <p>Use patterns appropriate to your project. Keep a safe example configuration file, such as <code>.env.example</code>, with placeholder values so other people know what settings they need.</p>
+      <div class="terminal" role="region" aria-label="Example gitignore file for a beginner project">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">.gitignore - commit this safety file</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Secrets and local configuration</span>
+          <span class="t-out">.env</span>
+          <span class="t-out">.env.*</span>
+          <span class="t-out">!.env.example</span>
+          <span class="t-out">*.pem</span>
+          <span class="t-out">*.key</span>
+          <span class="t-out">credentials.json</span>
+          <br>
+          <span class="t-comment"># Dependencies, virtual environments, and generated output</span>
+          <span class="t-out">node_modules/</span>
+          <span class="t-out">.venv/</span>
+          <span class="t-out">__pycache__/</span>
+          <span class="t-out">dist/</span>
+          <span class="t-out">build/</span>
+          <br>
+          <span class="t-comment"># Local operating system clutter</span>
+          <span class="t-out">.DS_Store</span>
+          <span class="t-out">Thumbs.db</span>
+          <span class="t-out">*.ini</span>
+        </div>
+      </div>
+
+      <h3>Check Before Every First Push</h3>
+      <div class="terminal" role="region" aria-label="Commands for checking ignored and staged files">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">terminal - privacy check</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-cmd">git status --short --ignored</span>
+          <span class="t-comment"># Explain why a file is ignored</span>
+          <span class="t-cmd">git check-ignore -v .env</span>
+          <span class="t-comment"># Inspect the exact contents about to become history</span>
+          <span class="t-cmd">git diff --staged</span>
+          <span class="t-comment"># If a secret file was already tracked, stop tracking it first</span>
+          <span class="t-cmd">git rm --cached .env</span>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">If a Key Was Committed</div>
+        Treat it as exposed: revoke or rotate the key immediately, remove it from future commits, and follow your platform's guidance for cleaning repository history. Adding it to <code>.gitignore</code> alone is not a fix.
+      </div>
+      <p>
+        For the official procedures, read GitHub's <a href="https://docs.github.com/ignore-files" target="_blank" rel="noopener noreferrer" style="color:var(--green)">Ignoring files</a> guide and <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener noreferrer" style="color:var(--green)">Removing sensitive data from a repository</a> guide.
+      </p>
+    </section>
+
+    <!--  Section 10 - AI-assisted coding safety      -->
+    <section class="section" id="sec-ai-workflow" aria-labelledby="h-ai-workflow">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2 id="h-ai-workflow">Safe AI-Assisted Coding Workflow</h2>
+      </div>
+
+      <p>
+        AI tools can explain code, suggest tests, and help debug, but they also process the files or text you allow them to see. Use AI as a coding partner only after you have decided which information is safe to share.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Important Distinction</div>
+        <code>.gitignore</code> tells <strong>Git</strong> what not to commit. It is not a universal privacy wall for AI tools. Some assistants use ignored files as an exclusion signal, while others can read them when asked or when broader workspace access is enabled. Check the settings and documentation for the AI tool you use.
+      </div>
+
+      <h3>Make AI Honor Your Safety Rules</h3>
+      <ol>
+        <li>Create <code>.gitignore</code> before asking an assistant to build or publish a project.</li>
+        <li>Keep real keys in ignored local files or a secret manager; give the assistant a placeholder-only <code>.env.example</code>.</li>
+        <li>Use your AI tool's exclude, ignore, or privacy controls to block secrets and private data from context or indexing.</li>
+        <li>State the rule directly in your request: do not open, quote, edit, stage, or commit secret-bearing files.</li>
+        <li>Before committing AI-generated changes, review the diff yourself and run the Git privacy checks from the previous section.</li>
+      </ol>
+
+      <div class="terminal" role="region" aria-label="Example safe instructions for an AI coding assistant">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">prompt - safety instructions for an AI assistant</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-out">Work only with source files needed for this task.</span>
+          <span class="t-out">Honor .gitignore and do not read or edit .env, keys, tokens, credentials, or private data.</span>
+          <span class="t-out">Use .env.example with placeholders when configuration is needed.</span>
+          <span class="t-out">Before proposing a commit, show which files changed and flag anything sensitive.</span>
+        </div>
+      </div>
+
+      <h3>When You Intentionally Need an Ignored File</h3>
+      <p>
+        An ignored file is not automatically unsafe. Generated logs, test output, or large local data may be ignored simply because they do not belong in Git history. If an AI tool needs information from one of these files, provide a small sanitized excerpt or explicitly allow only the non-sensitive path. Do not tell an assistant to ignore every <code>.gitignore</code> rule across the workspace, and never override ignore rules for a secret just to make an AI workflow easier.
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Responsible Workflow</div>
+        AI may generate code; you remain responsible for reviewing what leaves your machine, what enters Git history, and what is published to GitHub.
+      </div>
+    </section>
+
+    <!--  Section 11 - Troubleshooting                -->
+    <section class="section" id="sec-troubleshooting" aria-labelledby="h-troubleshooting">
+      <div class="section-header">
+        <span class="section-num">11</span>
         <h2 id="h-troubleshooting">Fix Common Beginner Problems</h2>
       </div>
 
@@ -2177,16 +2347,16 @@
     </section>
 
     <!-- ───────────────────────────────────────────── -->
-    <!--  Section 10 · Practice Lab                   -->
+    <!--  Section 12 - Practice Lab                   -->
     <!-- ───────────────────────────────────────────── -->
     <section class="section" id="sec-lab" aria-labelledby="h-lab">
       <div class="section-header">
-        <span class="section-num">10</span>
+        <span class="section-num">12</span>
         <h2 id="h-lab">Practice Lab: Publish Your First Repository</h2>
       </div>
 
       <p>
-        Build a small repository with three meaningful commits. Complete it with the terminal, with VS Code Source Control, or by switching between both views so you see that they describe the same Git history.
+        Build a small repository with four meaningful commits, starting with an ignore rule that protects local secrets. Complete it with the terminal, with VS Code Source Control, or by switching between both views so you see that they describe the same Git history.
       </p>
 
       <div class="workflow" role="list" aria-label="First repository practice tasks">
@@ -2194,13 +2364,13 @@
           <div class="wf-num" aria-hidden="true">1</div>
           <div class="wf-content">
             <div class="wf-title">Create and initialize</div>
-            <div class="wf-desc">Create a folder named <code>git-practice-lab</code>, open it in VS Code, and initialize Git.</div>
+            <div class="wf-desc">Create a folder named <code>git-practice-lab</code>, initialize Git, and add a <code>.gitignore</code> before making project files.</div>
           </div>
         </div>
         <div class="wf-step done" role="listitem">
           <div class="wf-num" aria-hidden="true">2</div>
           <div class="wf-content">
-            <div class="wf-title">Make three checkpoints</div>
+            <div class="wf-title">Make four checkpoints</div>
             <div class="wf-desc">Commit a <code>README.md</code>, add learning notes, then update the README with what you practiced.</div>
           </div>
         </div>
@@ -2208,7 +2378,7 @@
           <div class="wf-num" aria-hidden="true">3</div>
           <div class="wf-content">
             <div class="wf-title">Publish and verify</div>
-            <div class="wf-desc">Publish to GitHub, choose visibility deliberately, and confirm online that the three commits appear in history.</div>
+            <div class="wf-desc">Publish to GitHub, choose visibility deliberately, and confirm online that the four commits appear in history.</div>
           </div>
         </div>
       </div>
@@ -2224,6 +2394,9 @@
           <span class="t-cmd">mkdir git-practice-lab</span>
           <span class="t-cmd">cd git-practice-lab</span>
           <span class="t-cmd">git init</span>
+          <span class="t-cmd">echo ".env" &gt; .gitignore</span>
+          <span class="t-cmd">git add .gitignore</span>
+          <span class="t-cmd">git commit -m "Add ignore rule for local secrets"</span>
           <span class="t-cmd">echo "# Git Practice Lab" &gt; README.md</span>
           <span class="t-cmd">git add README.md</span>
           <span class="t-cmd">git commit -m "Add README"</span>
@@ -2240,37 +2413,37 @@
 
       <div class="callout callout-tip">
         <div class="callout-title">You Have Finished When</div>
-        You can explain the difference between local commits and GitHub, identify your three commits in history, review a change in VS Code, and publish or push without exposing secrets.
+        You can explain the difference between local commits and GitHub, identify your four commits in history, review a change in VS Code, and publish or push without exposing secrets.
       </div>
     </section>
 
     <!-- ───────────────────────────────────────────── -->
-    <!--  Section 11 · Quiz                           -->
+    <!--  Section 13 - Quiz                           -->
     <!-- ───────────────────────────────────────────── -->
     <section class="section" id="sec-quiz" aria-labelledby="h-quiz">
       <div class="section-header">
-        <span class="section-num">11</span>
+        <span class="section-num">13</span>
         <h2 id="h-quiz">Knowledge Check</h2>
       </div>
 
-      <p>Answer these 12 questions to test your understanding. Click any option to see whether you got it right and why.</p>
+      <p>Answer these 14 questions to test your understanding. Click any option to see whether you got it right and why.</p>
 
       <div id="quizContainer" aria-label="Knowledge check quiz">
         <!-- Questions injected by JS -->
       </div>
 
       <div class="quiz-score-bar" id="quizScoreBar" style="display:none" role="region" aria-live="polite" aria-label="Quiz score">
-        <span class="score-num" id="scoreNum">0/12</span>
+        <span class="score-num" id="scoreNum">0/14</span>
         <div class="score-lbl" id="scoreLbl">Keep practicing — review the sections above and try again.</div>
       </div>
     </section>
 
     <!-- ───────────────────────────────────────────── -->
-    <!--  Section 12 · Resources                      -->
+    <!--  Section 14 - Resources                      -->
     <!-- ───────────────────────────────────────────── -->
     <section class="section" id="sec-resources" aria-labelledby="h-resources">
       <div class="section-header">
-        <span class="section-num">12</span>
+        <span class="section-num">14</span>
         <h2 id="h-resources">Official Resources</h2>
       </div>
 
@@ -2282,13 +2455,13 @@
       <div class="save-guide" aria-labelledby="save-guide-title">
         <div>
           <h3 id="save-guide-title">Save or Install the Tutorial</h3>
-          <p>Keep this one-page guide easy to reopen while you practice. Installation opens it like an app on supported devices; a bookmark works in every browser. Internet access is still required when the page is not already cached by your browser.</p>
+          <p>Keep this one-page guide easy to reopen while you practice. Installation opens it like an app on supported devices; a bookmark works in every browser. After one connected visit, supported browsers can reopen the installed guide offline.</p>
           <div class="save-actions">
-            <button type="button" class="install-btn" id="installGuideBtn" hidden>
-              Install this guide
+            <button type="button" class="install-btn" id="installGuideBtn">
+              Install / Save this guide
             </button>
           </div>
-          <p class="install-status" id="installStatus" aria-live="polite">Use your browser bookmark or add-to-home-screen option to save this guide.</p>
+          <p class="install-status" id="installStatus" aria-live="polite">Select the button for the installation steps supported by your browser.</p>
         </div>
         <div>
           <p><strong>Save it on your device:</strong></p>
@@ -2391,6 +2564,16 @@
 <script>
   /* ── Strict mode for all script logic ────────────── */
   'use strict';
+
+  /* Offline app shell for installed or saved guide */
+  (function initOfflineGuide() {
+    if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function(error) {
+        console.warn('Offline guide setup was unavailable:', error);
+      });
+    });
+  }());
 
   /* ── Sidebar / mobile toggle ─────────────────────── */
   (function initSidebar() {
@@ -2522,23 +2705,38 @@
     if (!installBtn || !installStatus) return;
 
     let deferredPrompt = null;
+    const isIOS = /iphone|ipad|ipod/i.test(window.navigator.userAgent) ||
+      (window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
     const standalone = window.matchMedia('(display-mode: standalone)').matches ||
       window.navigator.standalone === true;
 
     if (standalone) {
+      installBtn.hidden = true;
       installStatus.textContent = 'This guide is already open as an installed app.';
       return;
+    }
+
+    if (isIOS) {
+      installBtn.textContent = 'How to add this app';
+      installStatus.textContent = 'On iPhone or iPad, use Share, then Add to Home Screen.';
     }
 
     window.addEventListener('beforeinstallprompt', function(event) {
       event.preventDefault();
       deferredPrompt = event;
-      installBtn.hidden = false;
+      installBtn.textContent = 'Install this guide';
       installStatus.textContent = 'Your browser supports app installation for this guide.';
     });
 
     installBtn.addEventListener('click', function() {
-      if (!deferredPrompt) return;
+      if (!deferredPrompt) {
+        if (isIOS) {
+          installStatus.textContent = 'Tap the Share button in Safari, choose Add to Home Screen, then tap Add.';
+        } else {
+          installStatus.textContent = 'Open your browser menu and choose Install app or Add to Home screen. You can also bookmark this page.';
+        }
+        return;
+      }
       installBtn.disabled = true;
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then(function(choice) {
@@ -2784,6 +2982,28 @@
         options: ['README.md with project instructions', '.env containing an API key', 'A source file you wrote', '.gitignore'],
         answer: 1,
         explanation: 'Secrets such as API keys must not be committed. Add secret-containing files such as <code>.env</code> to <code>.gitignore</code> before staging.'
+      },
+      {
+        q: 'What does a .gitignore rule do for a matching file that has never been tracked?',
+        options: [
+          'Encrypts the file on your computer',
+          'Prevents normal Git staging from including it',
+          'Deletes it when you push',
+          'Makes every tool unable to read it'
+        ],
+        answer: 1,
+        explanation: '<code>.gitignore</code> helps keep matching untracked files out of Git history. It does not encrypt the file or protect a secret that was already committed.'
+      },
+      {
+        q: 'Does adding .env to .gitignore guarantee an AI coding assistant cannot access it?',
+        options: [
+          'Yes, .gitignore is an access-control system',
+          'Yes, but only after the first commit',
+          'No; configure the AI tool and explicitly protect sensitive files',
+          'No; therefore .gitignore is not useful'
+        ],
+        answer: 2,
+        explanation: '<code>.gitignore</code> controls Git staging, not every AI tool. Use ignore or privacy controls in the tool, provide placeholders, and clearly state that secrets must not be opened or shared.'
       }
     ];
 

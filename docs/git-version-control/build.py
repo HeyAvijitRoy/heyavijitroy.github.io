@@ -30,7 +30,9 @@ INSTITUTION = "John Jay College of Criminal Justice, CUNY"
 INSTITUTION_URL = "https://www.jjay.cuny.edu/"
 PUBLISHED_PATH = "docs/git-version-control/"
 CANONICAL_URL = f"{SITE_URL}{PUBLISHED_PATH}"
-SOCIAL_IMAGE = "https://avijitroy.com/assets/img/og-image.jpg"
+COVER_IMAGE_PATH = "assets/ebook-cover-letter.jpg"
+SOCIAL_IMAGE_PATH = "docs/git-version-control/assets/ebook-og-image.jpg"
+SOCIAL_IMAGE = f"{SITE_URL}{SOCIAL_IMAGE_PATH}"
 ANALYTICS_ID = "G-Y4VM6347X4"
 YEAR = datetime.now().year
 
@@ -228,6 +230,17 @@ a:hover { color: var(--accent-deep); }
   font: .71rem/1.55 var(--ui);
 }
 .overlay { display: none; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
 .reader {
   width: min(calc(100% - var(--sidebar-w)), calc(var(--page-w) + 5rem));
   margin-left: var(--sidebar-w);
@@ -252,6 +265,14 @@ a:hover { color: var(--accent-deep); }
   text-transform: uppercase;
 }
 .edition::before { content: ""; width: 3rem; height: 1px; background: var(--accent); }
+.cover-art {
+  display: none;
+  width: min(100%, 31.5rem);
+  height: auto;
+  margin: 0 0 2.4rem;
+  border-radius: .25rem;
+  box-shadow: 0 1.2rem 2.8rem rgba(0, 0, 0, .38);
+}
 .cover h1 {
   max-width: 47rem;
   margin: 0 0 1rem;
@@ -488,13 +509,22 @@ tr:last-child td { border-bottom: 0; }
   .reader { width: auto; margin: 0; padding: 0; }
   .cover {
     min-height: 8.45in;
-    padding: 1.2in 0 .4in;
+    padding: 0;
     border: 0;
     page-break-after: always;
     break-after: page;
   }
-  .cover h1 { font-size: 42pt; }
-  .cover-description { font-size: 14pt; max-width: 5.9in; }
+  .cover .edition, .cover .book-facts { display: none !important; }
+  .cover-art {
+    display: block;
+    width: 100%;
+    max-width: 7.05in;
+    max-height: 9.42in;
+    margin: 0 auto;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+  }
   .book-content { padding: 0; font-size: 10.7pt; }
   .book-content h2 { page-break-after: avoid; break-after: avoid; }
   .book-content #table-of-contents {
@@ -793,19 +823,24 @@ def build_html(toc_html: str, content_html: str, theme: str) -> str:
   <meta property="og:description" content="A formal, print-ready ebook for students learning Git and GitHub through C++ coursework." />
   <meta property="og:url" content="{CANONICAL_URL}" />
   <meta property="og:image" content="{SOCIAL_IMAGE}" />
+  <meta property="og:image:secure_url" content="{SOCIAL_IMAGE}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cover art for {title}, by {AUTHOR}" />
   <meta property="og:site_name" content="{AUTHOR}" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@HeyAvijitRoy" />
-  <meta name="twitter:creator" content="@HeyAvijitRoy" />
   <meta name="twitter:title" content="{title}" />
   <meta name="twitter:description" content="A print-ready guide to Git and GitHub for C++ students." />
   <meta name="twitter:image" content="{SOCIAL_IMAGE}" />
+  <meta name="twitter:image:alt" content="Cover art for {title}, by {AUTHOR}" />
   <link rel="icon" href="../../assets/favicons/favicon.ico" sizes="any" />
   <link rel="icon" href="../../assets/favicons/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="manifest" href="../../assets/favicons/site.webmanifest" />
   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#37c87b" />
+  <link rel="preload" as="image" href="{COVER_IMAGE_PATH}" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Sora:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet" />
@@ -848,6 +883,7 @@ def build_html(toc_html: str, content_html: str, theme: str) -> str:
     <main class="reader" id="book-content">
       <header class="cover" id="cover">
         <div class="edition">Digital Edition &middot; Version 1.0</div>
+        <img class="cover-art" src="{COVER_IMAGE_PATH}" width="1100" height="1422" alt="Cover of {title}, by {AUTHOR}." fetchpriority="high" />
         <h1 id="saving-your-work-like-a-pro">Saving Your Work <span>Like a Pro</span></h1>
         <p class="cover-description" id="git-github-for-c-students">Git &amp; GitHub for C++ Students: a complete, analogy-driven guide to version control, collaboration, and recovery.</p>
         <p class="cover-byline">Written by <strong>{AUTHOR}</strong><br />Adjunct Lecturer, Computer Science<br />{INSTITUTION}</p>

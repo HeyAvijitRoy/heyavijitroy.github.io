@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" />
+  <meta name="description"
+    content="A beginner-friendly interactive guide to Git, GitHub, and VS Code Source Control. Learn version control, publish your first project, fix common errors, and practice from scratch." />
+  <meta name="author" content="Avijit Roy" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="keywords" content="Git tutorial, GitHub tutorial, VS Code Source Control, version control for beginners, coding for students, Git commands, first repository" />
+  <link rel="canonical" href="https://avijitroy.com/docs/git/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Learn Git, GitHub &amp; VS Code Source Control from Scratch" />
+  <meta property="og:description" content="A visual, hands-on beginner guide to commits, GitHub publishing, VS Code Source Control, branches, conflict fixes, and practice." />
+  <meta property="og:url" content="https://avijitroy.com/docs/git/" />
+  <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+  <meta property="og:site_name" content="Avijit Roy" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learn Git, GitHub &amp; VS Code Source Control from Scratch" />
+  <meta name="twitter:description" content="An interactive first-time coder guide to version control, GitHub, and the VS Code Source Control workflow." />
+  <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+  <meta name="theme-color" content="#0d0f14" />
+  <title>Learn Git, GitHub &amp; VS Code Source Control | Beginner Guide</title>
+  <link rel="icon" href="../../assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" href="../../assets/favicons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#3ddc84" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://avijitroy.com/docs/git/#article",
+        "url": "https://avijitroy.com/docs/git/",
+        "headline": "Learn Git, GitHub and VS Code Source Control from Scratch",
+        "description": "A beginner-friendly interactive guide to version control, Git, GitHub and VS Code Source Control.",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://avijitroy.com/docs/git/"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://avijitroy.com/#website",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avijitroy.com/docs/git/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avijitroy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Teaching",
+            "item": "https://avijitroy.com/teaching/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Git, GitHub and VS Code Source Control"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Design tokens ──────────────────────────────── */
+    :root {
+      --bg:          #0d0f14;
+      --surface:     #13161e;
+      --surface2:    #1b1f2b;
+      --border:      #252a38;
+      --border2:     #2e3548;
+      --green:       #3ddc84;
+      --green-dim:   #2ab36a;
+      --green-glow:  rgba(61,220,132,.15);
+      --amber:       #f5a623;
+      --amber-dim:   rgba(245,166,35,.12);
+      --blue:        #5ab4ff;
+      --blue-dim:    rgba(90,180,255,.12);
+      --red:         #ff6b6b;
+      --red-dim:     rgba(255,107,107,.12);
+      --text:        #d4dbe8;
+      --text-muted:  #98a7bd;
+      --text-strong: #eef2f9;
+      --mono:        'JetBrains Mono', monospace;
+      --sans:        'Sora', sans-serif;
+      --sidebar-w:   270px;
+      --radius:      8px;
+      --radius-lg:   14px;
+      --transition:  0.2s ease;
+    }
+
+    /* ── Reset ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ── Skip link (accessibility) ──────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--green);
+      color: #000;
+      padding: .4rem 1rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      z-index: 9999;
+      font-size: .875rem;
+      transition: top var(--transition);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ── Layout ─────────────────────────────────────── */
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ────────────────────────────────────── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform var(--transition);
+    }
+    .sidebar-logo {
+      padding: 1.5rem 1.25rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-logo .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: var(--green);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 18px; height: 18px; }
+    .logo-text {
+      font-size: .8rem;
+      font-family: var(--mono);
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    .logo-text strong {
+      display: block;
+      color: var(--text-strong);
+      font-size: .95rem;
+    }
+
+    .sidebar-progress {
+      padding: .85rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .progress-label {
+      font-size: .72rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+    }
+    .progress-bar-track {
+      background: var(--surface2);
+      border-radius: 999px;
+      height: 5px;
+    }
+    .progress-bar-fill {
+      background: var(--green);
+      height: 5px;
+      border-radius: 999px;
+      width: 0%;
+      transition: width .4s ease;
+    }
+    .progress-pct {
+      font-size: .72rem;
+      color: var(--green);
+      font-family: var(--mono);
+      margin-top: .3rem;
+    }
+
+    .sidebar-nav { flex: 1; padding: .75rem 0; }
+    .nav-section-label {
+      font-size: .65rem;
+      font-family: var(--mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding: .6rem 1.25rem .3rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .5rem 1.25rem;
+      font-size: .83rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
+      width: 100%;
+      text-align: left;
+      font-family: var(--sans);
+    }
+    .nav-item:hover {
+      color: var(--text);
+      background: var(--surface2);
+    }
+    .nav-item.active {
+      color: var(--green);
+      border-left-color: var(--green);
+      background: var(--green-glow);
+    }
+    .nav-item .nav-num {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--border2);
+      min-width: 20px;
+    }
+    .nav-item.active .nav-num { color: var(--green-dim); }
+    .nav-item .nav-check {
+      margin-left: auto;
+      color: var(--green);
+      opacity: 0;
+      font-size: .75rem;
+    }
+    .nav-item.done .nav-check { opacity: 1; }
+
+    .sidebar-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: .72rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .sidebar-footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    .sidebar-footer a:hover { text-decoration: underline; }
+
+    /* ── Mobile toggle ──────────────────────────────── */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+      padding: 0 1rem;
+      gap: 1rem;
+      z-index: 200;
+    }
+    .hamburger {
+      background: none;
+      border: 1px solid var(--border2);
+      color: var(--text);
+      padding: .35rem .6rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .mobile-title {
+      font-family: var(--mono);
+      font-size: .82rem;
+      color: var(--text-strong);
+    }
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 99;
+    }
+
+    /* ── Main content ───────────────────────────────── */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      width: calc(100% - var(--sidebar-w));
+      min-width: 0;
+      padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 4rem) 6rem;
+      max-width: none;
+    }
+
+    .site-breadcrumb {
+      margin: 0 0 2rem;
+      color: var(--text-muted);
+      font-size: .86rem;
+    }
+    .site-breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-breadcrumb li:not(:last-child)::after {
+      content: "/";
+      color: var(--border2);
+      margin-left: .5rem;
+    }
+    .site-breadcrumb a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    .site-breadcrumb a:hover,
+    .site-breadcrumb a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* ── Section ────────────────────────────────────── */
+    .section {
+      margin-bottom: 5rem;
+      scroll-margin-top: 2rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--green);
+      background: var(--green-glow);
+      border: 1px solid rgba(61,220,132,.25);
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      margin-top: .2rem;
+    }
+    .section h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-strong);
+      line-height: 1.3;
+    }
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      margin: 2rem 0 .75rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-size: .95rem;
+      max-width: 92ch;
+    }
+    .section ul, .section ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .section li {
+      margin-bottom: .4rem;
+      font-size: .95rem;
+    }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem 4rem;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 10%, rgba(61,220,132,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--green);
+      border: 1px solid rgba(61,220,132,.3);
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      letter-spacing: .05em;
+      background: var(--green-glow);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--text-strong);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat .val {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+    }
+    .hero-stat .lbl {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Callout cards ──────────────────────────────── */
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 3px solid;
+      font-size: .92rem;
+    }
+    .callout-info {
+      background: var(--blue-dim);
+      border-color: var(--blue);
+    }
+    .callout-info .callout-title { color: var(--blue); }
+    .callout-tip {
+      background: var(--green-glow);
+      border-color: var(--green);
+    }
+    .callout-tip .callout-title { color: var(--green); }
+    .callout-warn {
+      background: var(--amber-dim);
+      border-color: var(--amber);
+    }
+    .callout-warn .callout-title { color: var(--amber); }
+    .callout-title {
+      font-family: var(--mono);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    /* ── Terminal block ─────────────────────────────── */
+    .terminal {
+      background: #080a0d;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,.4);
+    }
+    .terminal-bar {
+      background: #111419;
+      padding: .6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .t-dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+    }
+    .t-dot-r { background: #ff5f57; }
+    .t-dot-y { background: #ffbd2e; }
+    .t-dot-g { background: #28c940; }
+    .t-label {
+      margin-left: .5rem;
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--text-muted);
+    }
+    .terminal-body {
+      padding: 1.25rem 1.5rem;
+      font-family: var(--mono);
+      font-size: .85rem;
+      line-height: 1.9;
+      overflow-x: auto;
+    }
+    .t-cmd::before { content: '$ '; color: var(--green); }
+    .t-cmd { color: #e2e8f0; display: block; }
+    .t-out { color: var(--text-muted); display: block; }
+    .t-comment { color: var(--text-muted); display: block; }
+    .t-highlight { color: var(--amber); }
+    .t-success { color: var(--green); }
+
+    /* ── Animated terminal ──────────────────────────── */
+    .terminal-animated .terminal-body {
+      min-height: 140px;
+    }
+    .typed-cursor {
+      display: inline-block;
+      width: 8px; height: 1em;
+      background: var(--green);
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+      margin-left: 1px;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .terminal-run-btn {
+      margin: 0 1rem 1rem;
+      background: var(--green-glow);
+      border: 1px solid rgba(61,220,132,.3);
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: .78rem;
+      padding: .45rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .terminal-run-btn:hover {
+      background: rgba(61,220,132,.22);
+      border-color: var(--green);
+    }
+    .terminal-run-btn:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+    .demo-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .65rem;
+      margin: 1.25rem 0 .75rem;
+    }
+    .demo-phase {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+      font-family: var(--mono);
+      font-size: .72rem;
+      padding: .65rem .55rem;
+      text-align: center;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .demo-phase.active {
+      background: var(--green-glow);
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .demo-phase.done {
+      border-color: rgba(61,220,132,.35);
+      color: var(--text);
+    }
+    .demo-status {
+      color: var(--text-muted);
+      font-size: .82rem;
+      min-height: 1.4rem;
+      margin-bottom: .35rem;
+    }
+
+    /* ── Comparison table ───────────────────────────── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .compare-card-head {
+      padding: .9rem 1.25rem;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: .9rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .compare-card.git .compare-card-head {
+      background: rgba(245,166,35,.07);
+      color: var(--amber);
+    }
+    .compare-card.github .compare-card-head {
+      background: var(--blue-dim);
+      color: var(--blue);
+    }
+    .compare-card ul {
+      list-style: none;
+      padding: 1rem 1.25rem;
+    }
+    .compare-card li {
+      font-size: .88rem;
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      color: var(--text);
+    }
+    .compare-card li:last-child { border-bottom: none; }
+    .compare-card li::before {
+      content: '▸';
+      font-size: .7rem;
+      margin-top: .3rem;
+      flex-shrink: 0;
+    }
+    .compare-card.git li::before { color: var(--amber); }
+    .compare-card.github li::before { color: var(--blue); }
+
+    /* ── Data table ─────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: .875rem;
+    }
+    .data-table th {
+      background: var(--surface2);
+      color: var(--text-strong);
+      font-family: var(--mono);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: .75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: .7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--surface); }
+    .data-table code {
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--green);
+      background: rgba(61,220,132,.07);
+      padding: .1rem .4rem;
+      border-radius: 4px;
+    }
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .table-wrap .data-table { margin: 0; }
+    .overflow-x-auto {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .overflow-x-auto .table-wrap { min-width: 560px; }
+    .overflow-x-auto .data-table { min-width: 0; }
+
+    /* ── Workflow steps ─────────────────────────────── */
+    .workflow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .workflow::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .wf-step {
+      display: flex;
+      gap: 1.25rem;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+    .wf-step:last-child { padding-bottom: 0; }
+    .wf-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono);
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      z-index: 1;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .wf-step.done .wf-num {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-glow);
+    }
+    .wf-content {
+      flex: 1;
+      padding-top: .5rem;
+    }
+    .wf-title {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--text-strong);
+      margin-bottom: .3rem;
+    }
+    .wf-desc {
+      font-size: .87rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Quiz ───────────────────────────────────────── */
+    .quiz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .quiz-question {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .75rem 1rem;
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      font-size: .88rem;
+      text-align: left;
+      width: 100%;
+      color: var(--text);
+      font-family: var(--sans);
+    }
+    .quiz-option:hover:not(:disabled) {
+      border-color: var(--green);
+      background: var(--green-glow);
+    }
+    .quiz-option:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+    .quiz-option.correct {
+      border-color: var(--green);
+      background: var(--green-glow);
+      color: var(--green);
+    }
+    .quiz-option.wrong {
+      border-color: var(--red);
+      background: var(--red-dim);
+      color: var(--red);
+    }
+    .quiz-option .opt-marker {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border2);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      font-family: var(--mono);
+      font-weight: 700;
+    }
+    .quiz-option.correct .opt-marker { border-color: var(--green); background: var(--green); color: #000; }
+    .quiz-option.wrong .opt-marker { border-color: var(--red); background: var(--red); color: #fff; }
+    .quiz-feedback {
+      margin-top: .85rem;
+      font-size: .85rem;
+      padding: .7rem 1rem;
+      border-radius: var(--radius);
+      display: none;
+    }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.ok { background: var(--green-glow); color: var(--green); border: 1px solid rgba(61,220,132,.25); }
+    .quiz-feedback.ko { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,107,107,.25); }
+
+    .quiz-score-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .score-num {
+      font-family: var(--mono);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+    }
+    .score-lbl {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-top: .25rem;
+    }
+
+    /* ── Resources ──────────────────────────────────── */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .res-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .res-card:hover {
+      border-color: var(--green);
+      background: var(--green-glow);
+      transform: translateY(-2px);
+    }
+    .res-card:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+    .res-card-icon {
+      font-size: 1.4rem;
+    }
+    .res-card-title {
+      font-weight: 600;
+      font-size: .88rem;
+      color: var(--text-strong);
+    }
+    .res-card-desc {
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .res-card-url {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--green);
+      margin-top: auto;
+    }
+    .save-guide {
+      display: grid;
+      grid-template-columns: minmax(240px, 1.1fr) minmax(280px, 1fr);
+      gap: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.1rem, 3vw, 1.6rem);
+      margin: 1.5rem 0 2rem;
+    }
+    .save-guide h3 { margin: 0 0 .65rem; }
+    .save-guide p { margin-bottom: .75rem; }
+    .save-guide ol { margin-bottom: 0; }
+    .save-actions {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 1rem 0 .65rem;
+    }
+    .install-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green);
+      color: #07120d;
+      border: 0;
+      border-radius: var(--radius);
+      font: 600 .9rem var(--sans);
+      padding: .65rem 1rem;
+      cursor: pointer;
+    }
+    .install-btn:hover { background: #56e396; }
+    .install-btn:disabled { cursor: default; opacity: .72; }
+    .install-status {
+      font-size: .85rem;
+      color: var(--text-muted);
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── Inline code ────────────────────────────────── */
+    code {
+      font-family: var(--mono);
+      font-size: .84em;
+      color: var(--green);
+      background: rgba(61,220,132,.08);
+      padding: .1rem .4rem;
+      border-radius: 4px;
+    }
+
+    /* ── Concept pill ───────────────────────────────── */
+    .concept-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1rem 0;
+    }
+    .pill {
+      font-family: var(--mono);
+      font-size: .75rem;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+    .pill-green { color: var(--green); border-color: rgba(61,220,132,.35); background: var(--green-glow); }
+    .pill-blue  { color: var(--blue);  border-color: rgba(90,180,255,.35); background: var(--blue-dim); }
+    .pill-amber { color: var(--amber); border-color: rgba(245,166,35,.35); background: var(--amber-dim); }
+
+    /* ── Diagram / visual ───────────────────────────── */
+    .diagram-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    .diagram-box svg {
+      display: block;
+      max-width: 100%;
+    }
+    .core-concepts-diagram {
+      padding: clamp(1.25rem, 3vw, 2.25rem);
+    }
+    .core-concepts-diagram svg {
+      width: min(100%, 1120px);
+      max-width: 1120px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* ── Divider ────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .sidebar-overlay.open { display: block; }
+      .mobile-bar { display: flex; }
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 4.5rem 1.5rem 4rem;
+      }
+      .compare-grid { grid-template-columns: 1fr; }
+      .resources-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .hero h1 { font-size: 1.7rem; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .save-guide { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .main { padding: 4.5rem 1rem 4rem; }
+      .demo-flow { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Print ──────────────────────────────────────── */
+    @media print {
+      .sidebar, .mobile-bar, .skip-link { display: none !important; }
+      .main { margin-left: 0; padding: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    /* ── Focus ring ─────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    /* ── Smooth fade-in ─────────────────────────────── */
+    .section {
+      animation: fadeUp .4s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip to main content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- Mobile top bar -->
+<header class="mobile-bar">
+  <button class="hamburger" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+    ☰
+  </button>
+  <span class="mobile-title">Git &amp; GitHub Tutorial</span>
+</header>
+
+<!-- Sidebar overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" role="presentation"></div>
+
+<div class="layout">
+
+  <!-- ── Sidebar ──────────────────────────────────── -->
+  <nav class="sidebar" id="sidebar" aria-label="Tutorial sections" tabindex="-1">
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="6"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>Git &amp; GitHub</strong>
+          Beginner + VS Code Guide
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-progress" role="region" aria-label="Tutorial progress">
+      <div class="progress-label">Progress</div>
+      <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Tutorial progress">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-pct" id="progressPct">0% complete</div>
+    </div>
+
+    <div class="sidebar-nav">
+      <div class="nav-section-label">Foundations</div>
+      <a class="nav-item active" href="#sec-intro" data-target="sec-intro" aria-current="location">
+        <span class="nav-num">01</span>
+        What Is Version Control?
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-git" data-target="sec-git">
+        <span class="nav-num">02</span>
+        Understanding Git
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-github" data-target="sec-github">
+        <span class="nav-num">03</span>
+        Understanding GitHub
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-diff" data-target="sec-diff">
+        <span class="nav-num">04</span>
+        Git vs GitHub
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+
+      <div class="nav-section-label">Hands-On</div>
+      <a class="nav-item" href="#sec-commands" data-target="sec-commands">
+        <span class="nav-num">05</span>
+        Essential Commands
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-vscode" data-target="sec-vscode">
+        <span class="nav-num">06</span>
+        VS Code Source Control
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-workflow" data-target="sec-workflow">
+        <span class="nav-num">07</span>
+        Real-World Workflow
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-branches" data-target="sec-branches">
+        <span class="nav-num">08</span>
+        Branching &amp; Merging
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+
+      <div class="nav-section-label">Practice &amp; Help</div>
+      <a class="nav-item" href="#sec-troubleshooting" data-target="sec-troubleshooting">
+        <span class="nav-num">09</span>
+        Fix Common Problems
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-lab" data-target="sec-lab">
+        <span class="nav-num">10</span>
+        First Repository Lab
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-quiz" data-target="sec-quiz">
+        <span class="nav-num">11</span>
+        Knowledge Check
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+      <a class="nav-item" href="#sec-resources" data-target="sec-resources">
+        <span class="nav-num">12</span>
+        Official Resources
+        <span class="nav-check" aria-hidden="true">✓</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      Tutorial by <a href="https://avijitroy.com" target="_blank" rel="noopener noreferrer">Avijit Roy</a><br>
+      For anyone learning to code
+    </div>
+  </nav>
+
+  <!-- ── Main ─────────────────────────────────────── -->
+  <main class="main" id="main-content" tabindex="-1">
+
+    <nav class="site-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../../teaching/">Teaching</a></li>
+        <li aria-current="page">Git, GitHub &amp; VS Code Source Control</li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Beginner Friendly · No Experience Required
+      </div>
+      <h1>Learn <span>Git</span>, GitHub &amp;<br>VS Code Source Control</h1>
+      <p>A visual, hands-on guide for any student or first-time coder: track changes, save meaningful checkpoints, publish projects to GitHub, and work confidently in VS Code.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="val" aria-label="12 sections">12</span>
+          <span class="lbl">Sections</span>
+        </div>
+        <div class="hero-stat">
+          <span class="val" aria-label="45 minutes">~45</span>
+          <span class="lbl">Minutes</span>
+        </div>
+        <div class="hero-stat">
+          <span class="val" aria-label="20 commands">20+</span>
+          <span class="lbl">Commands</span>
+        </div>
+        <div class="hero-stat">
+          <span class="val" aria-label="12 quiz questions">12</span>
+          <span class="lbl">Quiz Questions</span>
+        </div>
+      </div>
+    </header>
+
+    <hr class="divider" />
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 1 · Version Control                 -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-intro" aria-labelledby="h-intro">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 id="h-intro">What Is Version Control?</h2>
+      </div>
+
+      <p>
+        Picture this: you have been building your first program or website for hours. You finally get it working, try one more improvement, and suddenly nothing works. This is the problem that <strong>version control</strong> was built to solve.
+      </p>
+      <p>
+        Version control is a system that tracks changes to your files over time. Think of it like a very detailed "undo history" for your entire project — not just the last few keystrokes, but every meaningful change you've ever saved, with notes about what changed and why.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          What Exactly Gets Tracked?
+        </div>
+        Every version control system records <strong>what</strong> changed, <strong>when</strong> it changed, and <strong>who</strong> made the change. This information is stored in a structure called a <em>commit</em>.
+      </div>
+
+      <h3>The Problem Without Version Control</h3>
+      <p>Without version control, beginners commonly fall into patterns like these:</p>
+      <ul>
+        <li>Saving files as <code>project_final.py</code>, <code>project_final2.py</code>, <code>project_FINAL_v3_actually.py</code></li>
+        <li>Accidentally overwriting working code with broken experiments</li>
+        <li>Having no way to tell what changed between two versions</li>
+        <li>Sharing code through email or USB drives — a collaboration nightmare</li>
+      </ul>
+
+      <h3>Why It Matters for Every New Coder</h3>
+      <p>
+        Whether you are completing a class project, making a portfolio website, analyzing data, or contributing to an open-source project, your work will grow and change. Version control lets you experiment safely, restore known-working versions, share your progress, and build the workflow expected in software teams.
+      </p>
+
+      <div class="concept-pills" aria-label="Key concepts in this section">
+        <span class="pill pill-green">commit</span>
+        <span class="pill pill-green">repository</span>
+        <span class="pill pill-green">version history</span>
+        <span class="pill pill-amber">tracking changes</span>
+        <span class="pill pill-amber">rollback</span>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 2 · Git                             -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-git" aria-labelledby="h-git">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 id="h-git">Understanding Git</h2>
+      </div>
+
+      <p>
+        <strong>Git</strong> is a free, open-source version control system created by Linus Torvalds in 2005 — the same person who created the Linux operating system. It runs entirely on your own computer and does not require an internet connection to function.
+      </p>
+      <p>
+        When you use Git, it creates a hidden folder called <code>.git</code> inside your project directory. That folder is the "database" — it stores every snapshot of your project you've ever saved. The directory it tracks is called a <strong>repository</strong> (or "repo" for short).
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Key Mental Model
+        </div>
+        Git is a tool — a program installed on your machine, like a text editor. It works offline, stores everything locally, and has nothing to do with the internet. It does one job extremely well: track every change to every file in your project.
+      </div>
+
+      <h3>Core Concepts</h3>
+
+      <div class="diagram-box core-concepts-diagram" role="img" aria-label="Git core concepts diagram showing repository, staging area, and commits">
+        <svg viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg" style="font-family:'JetBrains Mono',monospace;">
+          <!-- Working directory -->
+          <rect x="10" y="20" width="160" height="140" rx="10" fill="#1b1f2b" stroke="#252a38" stroke-width="1.5"/>
+          <text x="90" y="48" text-anchor="middle" fill="#f5a623" font-size="11" font-weight="700">Working Directory</text>
+          <text x="90" y="66" text-anchor="middle" fill="#98a7bd" font-size="9.5">Your project files</text>
+          <rect x="30" y="78" width="120" height="22" rx="5" fill="#252a38"/>
+          <text x="90" y="93" text-anchor="middle" fill="#d4dbe8" font-size="9">main.py</text>
+          <rect x="30" y="106" width="120" height="22" rx="5" fill="#252a38"/>
+          <text x="90" y="121" text-anchor="middle" fill="#d4dbe8" font-size="9">README.md</text>
+          <rect x="30" y="134" width="120" height="22" rx="5" fill="#252a38"/>
+          <text x="90" y="149" text-anchor="middle" fill="#d4dbe8" font-size="9">utils.py</text>
+
+          <!-- Arrow 1 -->
+          <line x1="172" y1="90" x2="216" y2="90" stroke="#3ddc84" stroke-width="1.5" marker-end="url(#arrowG)"/>
+          <text x="194" y="82" text-anchor="middle" fill="#3ddc84" font-size="9">git add</text>
+
+          <!-- Staging area -->
+          <rect x="218" y="40" width="150" height="100" rx="10" fill="#1b1f2b" stroke="#252a38" stroke-width="1.5"/>
+          <text x="293" y="66" text-anchor="middle" fill="#5ab4ff" font-size="11" font-weight="700">Staging Area</text>
+          <text x="293" y="83" text-anchor="middle" fill="#98a7bd" font-size="9.5">("Index")</text>
+          <rect x="236" y="92" width="116" height="22" rx="5" fill="#252a38"/>
+          <text x="294" y="107" text-anchor="middle" fill="#d4dbe8" font-size="9">Files ready to commit</text>
+          <rect x="236" y="120" width="116" height="16" rx="5" fill="#2ab36a" opacity=".3"/>
+          <text x="294" y="132" text-anchor="middle" fill="#3ddc84" font-size="8.5">main.py ✓</text>
+
+          <!-- Arrow 2 -->
+          <line x1="370" y1="90" x2="490" y2="90" stroke="#3ddc84" stroke-width="1.5" marker-end="url(#arrowG)"/>
+          <text x="430" y="78" text-anchor="middle" fill="#3ddc84" font-size="9">git commit</text>
+
+          <!-- Repository -->
+          <rect x="492" y="20" width="250" height="140" rx="10" fill="#1b1f2b" stroke="#252a38" stroke-width="1.5"/>
+          <text x="617" y="48" text-anchor="middle" fill="#3ddc84" font-size="11" font-weight="700">Local Repository</text>
+          <text x="617" y="65" text-anchor="middle" fill="#98a7bd" font-size="9.5">(.git folder)</text>
+
+          <!-- Commits -->
+          <circle cx="532" cy="105" r="14" fill="#252a38" stroke="#3ddc84" stroke-width="1.5"/>
+          <text x="532" y="110" text-anchor="middle" fill="#3ddc84" font-size="9">c1</text>
+          <line x1="547" y1="105" x2="570" y2="105" stroke="#3e4a5e" stroke-width="1.5" marker-end="url(#arrowD)"/>
+          <circle cx="586" cy="105" r="14" fill="#252a38" stroke="#3ddc84" stroke-width="1.5"/>
+          <text x="586" y="110" text-anchor="middle" fill="#3ddc84" font-size="9">c2</text>
+          <line x1="601" y1="105" x2="624" y2="105" stroke="#3e4a5e" stroke-width="1.5" marker-end="url(#arrowD)"/>
+          <circle cx="640" cy="105" r="14" fill="#3ddc84" stroke="#3ddc84" stroke-width="1.5"/>
+          <text x="640" y="110" text-anchor="middle" fill="#000" font-size="9" font-weight="700">c3</text>
+          <text x="640" y="130" text-anchor="middle" fill="#f5a623" font-size="8">HEAD</text>
+
+          <!-- Arrow defs -->
+          <defs>
+            <marker id="arrowG" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3ddc84"/>
+            </marker>
+            <marker id="arrowD" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3e4a5e"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <h3>Three Zones You Must Know</h3>
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable table of Git working zones">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Git's three main zones">
+            <thead>
+              <tr>
+                <th scope="col">Zone</th>
+                <th scope="col">Description</th>
+                <th scope="col">Command to move files here</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Working Directory</strong></td>
+                <td>Where you edit your actual files. Changes here are "untracked" until you tell Git about them.</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Staging Area (Index)</strong></td>
+                <td>A preview zone. Files you've selected as "ready to save" sit here before they become a commit.</td>
+                <td><code>git add filename</code></td>
+              </tr>
+              <tr>
+                <td><strong>Repository</strong></td>
+                <td>The permanent record. A commit moves staged changes into the repo and creates a snapshot with a unique ID.</td>
+                <td><code>git commit -m "message"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠ Common Beginner Mistake</div>
+        Many beginners edit a file, then type <code>git commit</code> and wonder why the commit is empty. The reason: the change was not staged with <code>git add</code>. Git deliberately lets you pick <em>exactly</em> which changes belong in each commit.
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 3 · GitHub                          -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-github" aria-labelledby="h-github">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 id="h-github">Understanding GitHub</h2>
+      </div>
+
+      <p>
+        <strong>GitHub</strong> is an online hosting and collaboration platform for Git repositories. When you push a local Git repository to GitHub, you create an online copy you can access from another computer and share with teammates, teachers, reviewers, or future employers when appropriate.
+      </p>
+      <p>
+        GitHub adds a social and collaborative layer on top of Git. You can browse code, open issues (like bug reports), review changes before they're merged, and contribute to projects happening anywhere in the world — including the open-source software that powers most of what you use daily.
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Key Mental Model
+        </div>
+        If Git is the engine of a car, GitHub is the road network and GPS. Git stores and manages your history. GitHub gives that history a place to live online and makes it shareable, browsable, and collaborative.
+      </div>
+
+      <h3>What GitHub Adds</h3>
+      <ul>
+        <li><strong>Remote hosting</strong> — your code is backed up in the cloud, not just your laptop.</li>
+        <li><strong>Pull Requests (PRs)</strong> — a formal way to propose code changes and request review before merging.</li>
+        <li><strong>Issues &amp; Project Boards</strong> — built-in task tracking. You can file bug reports, feature requests, and track what's in progress.</li>
+        <li><strong>GitHub Actions</strong> — automated workflows that run tests, build your code, or deploy your app every time you push.</li>
+        <li><strong>GitHub Pages</strong> — free static website hosting directly from a repository (useful for portfolio sites).</li>
+        <li><strong>GitHub Codespaces</strong> — a full development environment in your browser, no local install needed.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          GitHub Is Not the Only Option
+        </div>
+        Git repositories can also be hosted on services such as <strong>GitLab</strong>, <strong>Bitbucket</strong>, or a self-hosted platform. The fundamental workflow — commits, branches, remotes, pushes, and pulls — remains Git.
+      </div>
+
+      <div class="concept-pills" aria-label="Key GitHub concepts">
+        <span class="pill pill-blue">remote repository</span>
+        <span class="pill pill-blue">pull request</span>
+        <span class="pill pill-blue">fork</span>
+        <span class="pill pill-blue">clone</span>
+        <span class="pill pill-blue">GitHub Actions</span>
+        <span class="pill pill-blue">GitHub Pages</span>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 4 · Git vs GitHub                   -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-diff" aria-labelledby="h-diff">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 id="h-diff">Git vs GitHub — The Clear Distinction</h2>
+      </div>
+
+      <p>
+        This is probably the most common source of confusion for beginners, and it's worth making the distinction crystal clear before going further.
+      </p>
+
+      <div class="compare-grid" role="region" aria-label="Git vs GitHub comparison">
+        <div class="compare-card git">
+          <div class="compare-card-head">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Git
+          </div>
+          <ul aria-label="Git characteristics">
+            <li>Software installed on your computer</li>
+            <li>Works 100% offline — no internet needed</li>
+            <li>Free and open-source (MIT-licensed)</li>
+            <li>Manages version history locally</li>
+            <li>No account or login required</li>
+            <li>Command-line tool (no website)</li>
+            <li>Created by Linus Torvalds, 2005</li>
+          </ul>
+        </div>
+        <div class="compare-card github">
+          <div class="compare-card-head">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            GitHub
+          </div>
+          <ul aria-label="GitHub characteristics">
+            <li>A website and cloud service</li>
+            <li>Requires internet access</li>
+            <li>Free for public repos (paid plans available)</li>
+            <li>Hosts Git repositories online</li>
+            <li>Requires a free account to use</li>
+            <li>Has a full web interface + features</li>
+            <li>Founded 2008; acquired by Microsoft 2018</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable comparison of Git and GitHub">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Detailed Git vs GitHub comparison table">
+            <thead>
+              <tr>
+                <th scope="col">Aspect</th>
+                <th scope="col">Git</th>
+                <th scope="col">GitHub</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Type</td>
+                <td>Software (CLI tool)</td>
+                <td>Web platform / service</td>
+              </tr>
+              <tr>
+                <td>Internet required?</td>
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Main purpose</td>
+                <td>Track changes locally</td>
+                <td>Share, collaborate, backup</td>
+              </tr>
+              <tr>
+                <td>Collaboration</td>
+                <td>Not built-in</td>
+                <td>Core feature (PRs, Issues, Forks)</td>
+              </tr>
+              <tr>
+                <td>Storage location</td>
+                <td>Your machine</td>
+                <td>The cloud</td>
+              </tr>
+              <tr>
+                <td>Learning curve</td>
+                <td>Steeper (command-line)</td>
+                <td>Gentler (visual UI + CLI)</td>
+              </tr>
+              <tr>
+                <td>Can exist without the other?</td>
+                <td>Yes — Git works standalone</td>
+                <td>No — GitHub requires Git repos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">The One-Sentence Summary</div>
+        <strong>Git</strong> saves your history locally. <strong>GitHub</strong> puts that history online. You need Git to use GitHub, but you can use Git perfectly well without GitHub.
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 5 · Essential Commands              -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-commands" aria-labelledby="h-commands">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 id="h-commands">Essential Commands</h2>
+      </div>
+
+      <p>
+        You can control Git from a terminal (PowerShell, Terminal, Git Bash, or another shell) or through VS Code. Learning the small command-line vocabulary below makes every visual tool easier to understand.
+      </p>
+
+      <h3>Install and Set Up Git Once</h3>
+      <p>Install Git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer" style="color:var(--green)">git-scm.com</a>, then open a terminal and tell Git who you are. This identity is attached to each commit.</p>
+
+      <div class="terminal" role="region" aria-label="Git setup commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Setup</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Verify that Git is installed</span>
+          <span class="t-cmd">git --version</span>
+          <span class="t-comment"># Tell Git your name and email</span>
+          <span class="t-cmd">git config --global user.name "Your Name"</span>
+          <span class="t-cmd">git config --global user.email "you@example.com"</span>
+          <span class="t-comment"># Use main as the first branch name in new repositories</span>
+          <span class="t-cmd">git config --global init.defaultBranch main</span>
+          <span class="t-comment"># Confirm your settings</span>
+          <span class="t-cmd">git config --global --list</span>
+          <span class="t-out">user.name=Your Name</span>
+          <span class="t-out">user.email=you@example.com</span>
+          <span class="t-out">init.defaultbranch=main</span>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Privacy Before Your First Commit</div>
+        Commits can expose the email address configured in Git when a repository is public. If you do not want to publish a personal email, enable GitHub's email privacy setting and configure the GitHub-provided <code>noreply</code> address before committing.
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Terminal Note</div>
+        The examples use a common terminal style. If file-creation commands differ on your operating system, create or edit the files in VS Code, then run the Git commands exactly as shown.
+      </div>
+
+      <h3>Starting a Repository</h3>
+      <div class="terminal" role="region" aria-label="Git initialization commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Initialize</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Create a new project folder and initialize Git</span>
+          <span class="t-cmd">mkdir my-project</span>
+          <span class="t-cmd">cd my-project</span>
+          <span class="t-cmd">git init</span>
+          <span class="t-out t-success">Initialized empty Git repository in ~/my-project/.git/</span>
+          <br>
+          <span class="t-comment"># OR clone an existing repo from GitHub</span>
+          <span class="t-cmd">git clone https://github.com/username/repo-name.git</span>
+        </div>
+      </div>
+
+      <h3>The Daily Loop — Add, Commit, Push</h3>
+      <p>After you edit files, this three-step cycle is how you save your work and share it. Memorize this loop; you'll use it thousands of times.</p>
+
+      <div class="terminal" role="region" aria-label="Git daily workflow commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Daily Loop</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Step 0: See what's changed</span>
+          <span class="t-cmd">git status</span>
+          <span class="t-out">On branch main</span>
+          <span class="t-out">Changes not staged for commit:</span>
+          <span class="t-out">  <span class="t-highlight">modified:   main.py</span></span>
+          <br>
+          <span class="t-comment"># Step 1: Stage the files you want to commit</span>
+          <span class="t-cmd">git add main.py</span>
+          <span class="t-comment"># Or stage everything at once:</span>
+          <span class="t-cmd">git add .</span>
+          <br>
+          <span class="t-comment"># Step 2: Commit with a clear, descriptive message</span>
+          <span class="t-cmd">git commit -m "Add user input validation to main.py"</span>
+          <span class="t-out t-success">[main 3f4a1c2] Add user input validation to main.py</span>
+          <span class="t-out"> 1 file changed, 12 insertions(+), 2 deletions(-)</span>
+          <br>
+          <span class="t-comment"># Step 3: Push to GitHub (sync to remote)</span>
+          <span class="t-cmd">git push origin main</span>
+          <span class="t-out t-success">Enumerating objects: 5, done.</span>
+          <span class="t-out t-success">To https://github.com/username/my-project.git</span>
+        </div>
+      </div>
+
+      <h3>Viewing History &amp; Differences</h3>
+      <div class="terminal" role="region" aria-label="Git history and diff commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — History</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># See the full commit history</span>
+          <span class="t-cmd">git log</span>
+          <span class="t-comment"># Compact one-line version (much easier to read)</span>
+          <span class="t-cmd">git log --oneline</span>
+          <span class="t-out t-success">3f4a1c2</span><span class="t-out"> Add user input validation</span>
+          <span class="t-out t-success">7a2b3d1</span><span class="t-out"> Initial commit</span>
+          <br>
+          <span class="t-comment"># See what changed in your files (not yet staged)</span>
+          <span class="t-cmd">git diff</span>
+          <span class="t-comment"># See what's staged but not yet committed</span>
+          <span class="t-cmd">git diff --staged</span>
+        </div>
+      </div>
+
+      <h3>Pulling Changes From GitHub</h3>
+      <div class="terminal" role="region" aria-label="Git pull commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Pull</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Download and apply changes from GitHub (team updates)</span>
+          <span class="t-cmd">git pull origin main</span>
+          <span class="t-out t-success">Already up to date.</span>
+          <span class="t-comment"># Or if teammates pushed new code:</span>
+          <span class="t-out">Updating 7a2b3d1..9f1e5b3</span>
+          <span class="t-out">Fast-forward</span>
+          <span class="t-out t-success"> README.md | 4 ++++</span>
+        </div>
+      </div>
+
+      <!-- Interactive terminal demo -->
+      <h3>Try It: Animated Demo</h3>
+      <p>Click <strong>Run Demo</strong> to watch a first project move through the four stages. The highlighted label tells you where the current command fits in both the terminal and VS Code.</p>
+
+      <div class="demo-flow" id="demoFlow" aria-label="Animated workflow phases">
+        <div class="demo-phase" data-phase="edit">1. Edit</div>
+        <div class="demo-phase" data-phase="stage">2. Stage</div>
+        <div class="demo-phase" data-phase="commit">3. Commit</div>
+        <div class="demo-phase" data-phase="push">4. Push</div>
+      </div>
+      <p class="demo-status" id="demoStatus" aria-live="polite">Ready: create a file, stage it, commit it, then push it to GitHub.</p>
+
+      <div class="terminal terminal-animated" role="region" aria-label="Interactive Git demo terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Interactive Demo</span>
+        </div>
+        <div class="terminal-body" id="demoOutput" aria-live="off">
+          <span class="t-out" style="color:var(--text-muted)">Click "Run Demo" below to start →</span>
+        </div>
+      </div>
+      <button class="terminal-run-btn" id="runDemoBtn" aria-label="Run interactive Git demo">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Run Demo
+      </button>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Same Actions in VS Code</div>
+        Creating or editing a file happens in the editor. In the <strong>Source Control</strong> view, the <strong>+</strong> button performs <code>git add</code>, the <strong>Commit</strong> button performs <code>git commit</code>, and <strong>Publish Branch</strong> or <strong>Sync Changes</strong> connects to and updates a remote such as GitHub.
+      </div>
+
+      <h3>Command Reference</h3>
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable Git command reference">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Quick reference for essential Git commands">
+            <thead>
+              <tr>
+                <th scope="col">Command</th>
+                <th scope="col">What It Does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>git init</code></td><td>Initialize a new Git repository in the current folder</td></tr>
+              <tr><td><code>git clone &lt;url&gt;</code></td><td>Download a repository from GitHub to your computer</td></tr>
+              <tr><td><code>git status</code></td><td>See which files have changed and what's staged</td></tr>
+              <tr><td><code>git add &lt;file&gt;</code></td><td>Stage a file (or <code>git add .</code> for all changes)</td></tr>
+              <tr><td><code>git commit -m "msg"</code></td><td>Save staged changes as a commit with a message</td></tr>
+              <tr><td><code>git push origin main</code></td><td>Upload your commits to GitHub</td></tr>
+              <tr><td><code>git pull origin main</code></td><td>Download and merge remote changes into your branch</td></tr>
+              <tr><td><code>git log --oneline</code></td><td>View the compact commit history</td></tr>
+              <tr><td><code>git diff</code></td><td>Show line-by-line changes in modified files</td></tr>
+              <tr><td><code>git restore &lt;file&gt;</code></td><td>Discard local changes (undo edits to a file)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 6 · VS Code Source Control          -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-vscode" aria-labelledby="h-vscode">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 id="h-vscode">VS Code Source Control: A Visual Way to Use Git</h2>
+      </div>
+
+      <p>
+        VS Code includes Git tools in its <strong>Source Control</strong> view. You are still using Git: VS Code turns the same commands into buttons, change lists, branch controls, and side-by-side differences. Open this view with <code>Ctrl+Shift+G</code>.
+      </p>
+
+      <h3>Your First Commit in VS Code</h3>
+      <div class="workflow" role="list" aria-label="First commit workflow in VS Code">
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">1</div>
+          <div class="wf-content">
+            <div class="wf-title">Open a project folder</div>
+            <div class="wf-desc">Use <strong>File &gt; Open Folder</strong>. Source control works on the entire folder, not just a single open file.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">2</div>
+          <div class="wf-content">
+            <div class="wf-title">Initialize the repository</div>
+            <div class="wf-desc">Open <strong>Source Control</strong> and choose <strong>Initialize Repository</strong> if the folder is not already tracked.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">3</div>
+          <div class="wf-content">
+            <div class="wf-title">Edit and review</div>
+            <div class="wf-desc">Changed files appear under <strong>Changes</strong>. Select a file to inspect additions and deletions in the diff editor before saving a checkpoint.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">4</div>
+          <div class="wf-content">
+            <div class="wf-title">Stage and commit</div>
+            <div class="wf-desc">Select <strong>+</strong> beside the files for this checkpoint, write a clear message, and select <strong>Commit</strong>.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">5</div>
+          <div class="wf-content">
+            <div class="wf-title">Publish or sync</div>
+            <div class="wf-desc">Use <strong>Publish Branch</strong> for a new GitHub remote, or <strong>Sync Changes</strong> after the repository is connected online.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Good Beginner Habit</div>
+        Always review the changed lines before committing. A commit should contain one understandable improvement, not every unsaved experiment from the day.
+      </div>
+
+      <h3>VS Code Buttons and Their Git Meaning</h3>
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable VS Code and Git action comparison">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="VS Code Source Control actions and equivalent Git commands">
+            <thead>
+              <tr>
+                <th scope="col">VS Code Action</th>
+                <th scope="col">Git Equivalent</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Initialize Repository</td><td><code>git init</code></td><td>Begin tracking this folder.</td></tr>
+              <tr><td><strong>+</strong> beside a changed file</td><td><code>git add filename</code></td><td>Select that change for the next checkpoint.</td></tr>
+              <tr><td>Commit</td><td><code>git commit -m "message"</code></td><td>Save staged changes locally.</td></tr>
+              <tr><td>Publish Branch / Push</td><td><code>git push</code></td><td>Upload local commits to the remote repository.</td></tr>
+              <tr><td>Pull / Sync Changes</td><td><code>git pull</code> and <code>git push</code></td><td>Bring in remote work and share yours.</td></tr>
+              <tr><td>Branch indicator</td><td><code>git branch</code> / <code>git switch</code></td><td>See or change your current line of work.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Publish a New Folder to GitHub</h3>
+      <ol>
+        <li>Make one local commit first so the repository has something meaningful to publish.</li>
+        <li>Select <strong>Publish Branch</strong> or <strong>Publish to GitHub</strong> in VS Code and sign in when asked.</li>
+        <li>Choose visibility deliberately: keep private work private unless you intend to share it publicly.</li>
+        <li>Open the new repository on GitHub and check that your files and commit history are present.</li>
+      </ol>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 7 · Workflow                        -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-workflow" aria-labelledby="h-workflow">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 id="h-workflow">Real-World Workflow</h2>
+      </div>
+
+      <p>
+        Knowing individual commands is one thing. Understanding how they fit into a coherent workflow is what separates someone who "knows Git" from someone who can actually use it productively on a team.
+      </p>
+
+      <h3>Your Personal Project Workflow</h3>
+      <p>For an assignment, portfolio project, experiment, or learning exercise, this sequence covers the daily essentials:</p>
+
+      <div class="workflow" role="list" aria-label="Solo developer workflow steps">
+        <div class="wf-step" role="listitem">
+          <div class="wf-num" aria-hidden="true">1</div>
+          <div class="wf-content">
+            <div class="wf-title">Create or publish a repository on GitHub</div>
+            <div class="wf-desc">Go to github.com, click "New", name your repo, choose Public or Private, add a README. This gives you a remote home for your project before you even write code.</div>
+          </div>
+        </div>
+        <div class="wf-step" role="listitem">
+          <div class="wf-num" aria-hidden="true">2</div>
+          <div class="wf-content">
+            <div class="wf-title">Clone it to your machine</div>
+            <div class="wf-desc"><code>git clone https://github.com/you/repo.git</code> — this downloads the repo and automatically sets up the remote connection ("origin").</div>
+          </div>
+        </div>
+        <div class="wf-step" role="listitem">
+          <div class="wf-num" aria-hidden="true">3</div>
+          <div class="wf-content">
+            <div class="wf-title">Write code, then commit frequently</div>
+            <div class="wf-desc">Do not wait until the entire project is complete. Commit after meaningful progress: "Add contact form layout" or "Fix off-by-one error in loop." Small commits make history readable.</div>
+          </div>
+        </div>
+        <div class="wf-step" role="listitem">
+          <div class="wf-num" aria-hidden="true">4</div>
+          <div class="wf-content">
+            <div class="wf-title">Push to GitHub regularly</div>
+            <div class="wf-desc"><code>git push origin main</code> after each commit session. This is your backup. If your laptop dies, your work is still on GitHub.</div>
+          </div>
+        </div>
+        <div class="wf-step" role="listitem">
+          <div class="wf-num" aria-hidden="true">5</div>
+          <div class="wf-content">
+            <div class="wf-title">Share only when ready</div>
+            <div class="wf-desc">A repository link can show a teacher, teammate, or reviewer your files and progress. Check visibility and remove secrets before sharing a public link.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>When Other People Contribute</h3>
+      <p>For team projects, work in a branch, push that branch, and use a GitHub pull request to discuss and review the change before it joins <code>main</code>. Pull current changes before beginning new work or before pushing an updated branch.</p>
+
+      <h3>Writing Good Commit Messages</h3>
+      <p>Your commit message is a note to your future self (and your teammates). Here's how to write ones that actually help:</p>
+
+      <div class="terminal" role="region" aria-label="Good vs bad commit messages">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">Commit message examples</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment">❌ Bad commit messages — useless history</span>
+          <span class="t-cmd">git commit -m "stuff"</span>
+          <span class="t-cmd">git commit -m "fix"</span>
+          <span class="t-cmd">git commit -m "asdfghj"</span>
+          <br>
+          <span class="t-comment">✅ Good commit messages — tells a story</span>
+          <span class="t-cmd">git commit -m "Add input validation for user age field"</span>
+          <span class="t-cmd">git commit -m "Fix index out of bounds in search function"</span>
+          <span class="t-cmd">git commit -m "Refactor printReceipt to reduce code duplication"</span>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Commit Message Convention</div>
+        Use the imperative mood: "Add feature" not "Added feature" or "Adding feature." Think of it like completing the sentence "This commit will… <em>your message here</em>."
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 8 · Branching                       -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-branches" aria-labelledby="h-branches">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2 id="h-branches">Branching &amp; Merging</h2>
+      </div>
+
+      <p>
+        Branches are one of Git's most powerful features. A branch is an independent line of development — a parallel copy of your code where you can experiment, fix bugs, or build features without touching the working version of your project.
+      </p>
+      <p>
+        Every repository starts with a default branch called <code>main</code> (older projects may call it <code>master</code>). As a beginner, think of <code>main</code> as your "official, working" version. You create new branches to work on something, then <em>merge</em> that branch back into <code>main</code> when it's ready.
+      </p>
+
+      <div class="diagram-box" role="img" aria-label="Branch diagram showing main branch and feature branch">
+        <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="max-width:680px;width:100%;font-family:'JetBrains Mono',monospace;">
+          <!-- Main branch line -->
+          <line x1="30" y1="70" x2="650" y2="70" stroke="#252a38" stroke-width="2" stroke-dasharray="0"/>
+
+          <!-- Commits on main -->
+          <circle cx="60"  cy="70" r="14" fill="#1b1f2b" stroke="#3ddc84" stroke-width="2"/>
+          <text x="60"  y="75" text-anchor="middle" fill="#3ddc84" font-size="9">A</text>
+
+          <circle cx="150" cy="70" r="14" fill="#1b1f2b" stroke="#3ddc84" stroke-width="2"/>
+          <text x="150" y="75" text-anchor="middle" fill="#3ddc84" font-size="9">B</text>
+
+          <circle cx="240" cy="70" r="14" fill="#1b1f2b" stroke="#3ddc84" stroke-width="2"/>
+          <text x="240" y="75" text-anchor="middle" fill="#3ddc84" font-size="9">C</text>
+
+          <!-- Branch point label -->
+          <text x="240" y="50" text-anchor="middle" fill="#98a7bd" font-size="9">branch point</text>
+
+          <!-- Feature branch line -->
+          <path d="M254,65 Q280,40 310,130" fill="none" stroke="#5ab4ff" stroke-width="2"/>
+          <line x1="310" y1="130" x2="560" y2="130" stroke="#5ab4ff" stroke-width="2"/>
+
+          <!-- Commits on feature -->
+          <circle cx="360" cy="130" r="14" fill="#1b1f2b" stroke="#5ab4ff" stroke-width="2"/>
+          <text x="360" y="135" text-anchor="middle" fill="#5ab4ff" font-size="9">D</text>
+
+          <circle cx="470" cy="130" r="14" fill="#1b1f2b" stroke="#5ab4ff" stroke-width="2"/>
+          <text x="470" y="135" text-anchor="middle" fill="#5ab4ff" font-size="9">E</text>
+
+          <!-- Labels -->
+          <text x="420" y="157" text-anchor="middle" fill="#5ab4ff" font-size="9.5">feature/add-login</text>
+
+          <!-- Merge arrow back to main -->
+          <path d="M560,130 Q590,100 614,76" fill="none" stroke="#f5a623" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowM)"/>
+
+          <!-- Merge commit -->
+          <circle cx="630" cy="70" r="14" fill="#f5a623" stroke="#f5a623" stroke-width="2"/>
+          <text x="630" y="75" text-anchor="middle" fill="#000" font-size="9" font-weight="700">M</text>
+          <text x="630" y="50" text-anchor="middle" fill="#f5a623" font-size="9">merge</text>
+
+          <!-- Main label -->
+          <text x="100" y="45" text-anchor="middle" fill="#3ddc84" font-size="9.5">main</text>
+          <line x1="100" y1="48" x2="100" y2="56" stroke="#3ddc84" stroke-width="1.5"/>
+
+          <defs>
+            <marker id="arrowM" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#f5a623"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <h3>Branch Commands</h3>
+      <div class="terminal" role="region" aria-label="Git branching commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Branching</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># See all branches (* marks the current one)</span>
+          <span class="t-cmd">git branch</span>
+          <span class="t-out t-success">* main</span>
+          <br>
+          <span class="t-comment"># Create and immediately switch to a new branch</span>
+          <span class="t-cmd">git switch -c feature/add-login</span>
+          <span class="t-out">Switched to a new branch 'feature/add-login'</span>
+          <br>
+          <span class="t-comment"># Make commits on this branch...</span>
+          <span class="t-cmd">git add login.py</span>
+          <span class="t-cmd">git commit -m "Implement basic login function"</span>
+          <br>
+          <span class="t-comment"># Switch back to main</span>
+          <span class="t-cmd">git switch main</span>
+          <br>
+          <span class="t-comment"># Merge the feature branch into main</span>
+          <span class="t-cmd">git merge feature/add-login</span>
+          <span class="t-out t-success">Merge made by the 'recursive' strategy.</span>
+          <br>
+          <span class="t-comment"># Clean up — delete the branch after merging</span>
+          <span class="t-cmd">git branch -d feature/add-login</span>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          What Is HEAD?
+        </div>
+        <code>HEAD</code> is a pointer that tells Git "this is where you are right now." When you switch branches, HEAD moves with you. When you make a commit, HEAD advances to point at the new commit. You'll see it in <code>git log</code> output — it shows your current position in history.
+      </div>
+
+      <h3>When a Merge Conflict Happens</h3>
+      <p>
+        If two branches change the same lines differently, Git pauses instead of guessing which work to keep. VS Code marks the conflicting file and offers actions to accept either side or combine both. Read the intended result, remove all conflict markers, then commit the resolved version.
+      </p>
+      <div class="terminal" role="region" aria-label="Example conflict markers and resolution commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">Merge conflict — inspect, edit, commit</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Git places these markers in a conflicting file</span>
+          <span class="t-out">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+          <span class="t-out">Welcome to my portfolio</span>
+          <span class="t-out">=======</span>
+          <span class="t-out">Welcome to our project</span>
+          <span class="t-out">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/update-heading</span>
+          <br>
+          <span class="t-comment"># After editing the file to the correct final text:</span>
+          <span class="t-cmd">git add index.html</span>
+          <span class="t-cmd">git commit -m "Resolve homepage heading conflict"</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 9 · Troubleshooting                 -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-troubleshooting" aria-labelledby="h-troubleshooting">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2 id="h-troubleshooting">Fix Common Beginner Problems</h2>
+      </div>
+
+      <p>
+        When Git reports a problem, do not delete the repository and start over. Read <code>git status</code> first: it usually names the state you need to fix.
+      </p>
+
+      <div class="overflow-x-auto" tabindex="0" aria-label="Scrollable table of Git problems and fixes">
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Common Git problems and fixes">
+            <thead>
+              <tr>
+                <th scope="col">What You See</th>
+                <th scope="col">What It Means</th>
+                <th scope="col">First Safe Step</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>fatal: not a git repository</code></td>
+                <td>The terminal is in the wrong folder, or Git was never initialized there.</td>
+                <td>Open the correct project folder; use <code>git init</code> only for a new repository.</td>
+              </tr>
+              <tr>
+                <td><code>nothing to commit</code></td>
+                <td>No saved changes are staged for a new commit.</td>
+                <td>Save the file, run <code>git status</code>, then stage the intended file.</td>
+              </tr>
+              <tr>
+                <td>Push is rejected</td>
+                <td>The remote repository contains commits your branch does not yet have.</td>
+                <td>Run <code>git pull</code>, resolve any conflict, then push again.</td>
+              </tr>
+              <tr>
+                <td>Wrong file is staged</td>
+                <td>The file is selected for the next commit, but no work is lost.</td>
+                <td>Run <code>git restore --staged filename</code> or unstage it in VS Code.</td>
+              </tr>
+              <tr>
+                <td>Secret or generated file appears in Changes</td>
+                <td>The file should probably not be recorded in history.</td>
+                <td>Add its pattern to <code>.gitignore</code> before committing it.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Never Commit Secrets</div>
+        Do not commit passwords, API keys, access tokens, private keys, or environment files containing secrets. A <code>.gitignore</code> file prevents untracked files such as <code>.env</code> and build output from being added accidentally; it cannot erase a secret already committed and shared.
+      </div>
+
+      <div class="terminal" role="region" aria-label="Basic gitignore example and safe inspection commands">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">.gitignore — before your first push</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-comment"># Example .gitignore entries; use only patterns relevant to your project</span>
+          <span class="t-out">.env</span>
+          <span class="t-out">node_modules/</span>
+          <span class="t-out">__pycache__/</span>
+          <span class="t-out">build/</span>
+          <br>
+          <span class="t-comment"># Review what Git will include before committing</span>
+          <span class="t-cmd">git status</span>
+          <span class="t-cmd">git diff --staged</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 10 · Practice Lab                   -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-lab" aria-labelledby="h-lab">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2 id="h-lab">Practice Lab: Publish Your First Repository</h2>
+      </div>
+
+      <p>
+        Build a small repository with three meaningful commits. Complete it with the terminal, with VS Code Source Control, or by switching between both views so you see that they describe the same Git history.
+      </p>
+
+      <div class="workflow" role="list" aria-label="First repository practice tasks">
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">1</div>
+          <div class="wf-content">
+            <div class="wf-title">Create and initialize</div>
+            <div class="wf-desc">Create a folder named <code>git-practice-lab</code>, open it in VS Code, and initialize Git.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">2</div>
+          <div class="wf-content">
+            <div class="wf-title">Make three checkpoints</div>
+            <div class="wf-desc">Commit a <code>README.md</code>, add learning notes, then update the README with what you practiced.</div>
+          </div>
+        </div>
+        <div class="wf-step done" role="listitem">
+          <div class="wf-num" aria-hidden="true">3</div>
+          <div class="wf-content">
+            <div class="wf-title">Publish and verify</div>
+            <div class="wf-desc">Publish to GitHub, choose visibility deliberately, and confirm online that the three commits appear in history.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="terminal" role="region" aria-label="Practice lab command line sequence">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — Practice lab checkpoints</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-cmd">mkdir git-practice-lab</span>
+          <span class="t-cmd">cd git-practice-lab</span>
+          <span class="t-cmd">git init</span>
+          <span class="t-cmd">echo "# Git Practice Lab" &gt; README.md</span>
+          <span class="t-cmd">git add README.md</span>
+          <span class="t-cmd">git commit -m "Add README"</span>
+          <br>
+          <span class="t-cmd">echo "Things I learned about Git" &gt; notes.txt</span>
+          <span class="t-cmd">git add notes.txt</span>
+          <span class="t-cmd">git commit -m "Add learning notes"</span>
+          <span class="t-cmd">echo "## What I Practiced" &gt;&gt; README.md</span>
+          <span class="t-cmd">git add README.md</span>
+          <span class="t-cmd">git commit -m "Document practice steps"</span>
+          <span class="t-cmd">git log --oneline</span>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">You Have Finished When</div>
+        You can explain the difference between local commits and GitHub, identify your three commits in history, review a change in VS Code, and publish or push without exposing secrets.
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 11 · Quiz                           -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-quiz" aria-labelledby="h-quiz">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <h2 id="h-quiz">Knowledge Check</h2>
+      </div>
+
+      <p>Answer these 12 questions to test your understanding. Click any option to see whether you got it right and why.</p>
+
+      <div id="quizContainer" aria-label="Knowledge check quiz">
+        <!-- Questions injected by JS -->
+      </div>
+
+      <div class="quiz-score-bar" id="quizScoreBar" style="display:none" role="region" aria-live="polite" aria-label="Quiz score">
+        <span class="score-num" id="scoreNum">0/12</span>
+        <div class="score-lbl" id="scoreLbl">Keep practicing — review the sections above and try again.</div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────── -->
+    <!--  Section 12 · Resources                      -->
+    <!-- ───────────────────────────────────────────── -->
+    <section class="section" id="sec-resources" aria-labelledby="h-resources">
+      <div class="section-header">
+        <span class="section-num">12</span>
+        <h2 id="h-resources">Official Resources</h2>
+      </div>
+
+      <p>
+        This tutorial covers the essentials, but mastery takes practice and deeper reading. The resources below are authoritative, actively maintained, and completely free.
+      </p>
+
+      <h3>Keep This Guide Handy</h3>
+      <div class="save-guide" aria-labelledby="save-guide-title">
+        <div>
+          <h3 id="save-guide-title">Save or Install the Tutorial</h3>
+          <p>Keep this one-page guide easy to reopen while you practice. Installation opens it like an app on supported devices; a bookmark works in every browser. Internet access is still required when the page is not already cached by your browser.</p>
+          <div class="save-actions">
+            <button type="button" class="install-btn" id="installGuideBtn" hidden>
+              Install this guide
+            </button>
+          </div>
+          <p class="install-status" id="installStatus" aria-live="polite">Use your browser bookmark or add-to-home-screen option to save this guide.</p>
+        </div>
+        <div>
+          <p><strong>Save it on your device:</strong></p>
+          <ol>
+            <li><strong>Windows / Linux:</strong> press <code>Ctrl+D</code> to bookmark it.</li>
+            <li><strong>Mac:</strong> press <code>Command+D</code> to bookmark it.</li>
+            <li><strong>iPhone / iPad Safari:</strong> select <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</li>
+            <li><strong>Android or desktop browsers:</strong> use <strong>Install</strong> or <strong>Add to Home screen</strong> from the browser menu when available.</li>
+          </ol>
+        </div>
+      </div>
+
+      <h3>Core Documentation</h3>
+      <div class="resources-grid">
+        <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Official Git documentation (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">📖</div>
+          <div class="res-card-title">Official Git Documentation</div>
+          <div class="res-card-desc">The reference manual for every Git command, with the Pro Git book available free online.</div>
+          <div class="res-card-url">git-scm.com/doc</div>
+        </a>
+        <a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="GitHub Getting Started Guide (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🐙</div>
+          <div class="res-card-title">GitHub Docs – Get Started</div>
+          <div class="res-card-desc">GitHub's official guide to setting up your account, connecting repos, and key workflows.</div>
+          <div class="res-card-url">docs.github.com</div>
+        </a>
+        <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Pro Git book online (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">📗</div>
+          <div class="res-card-title">Pro Git (Free Book)</div>
+          <div class="res-card-desc">The definitive Git book by Scott Chacon and Ben Straub — free to read online, covers beginner to advanced.</div>
+          <div class="res-card-url">git-scm.com/book</div>
+        </a>
+        <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Setting up SSH with GitHub (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🔑</div>
+          <div class="res-card-title">GitHub SSH Setup</div>
+          <div class="res-card-desc">How to connect GitHub without typing your password every time — a must for productivity.</div>
+          <div class="res-card-url">docs.github.com/ssh</div>
+        </a>
+      </div>
+
+      <h3>Interactive Learning</h3>
+      <div class="resources-grid">
+        <a href="https://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Learn Git Branching interactive tutorial (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🌳</div>
+          <div class="res-card-title">Learn Git Branching</div>
+          <div class="res-card-desc">The best interactive visual tutorial for learning branches, rebase, and history. Highly recommended for beginners.</div>
+          <div class="res-card-url">learngitbranching.js.org</div>
+        </a>
+        <a href="https://github.com/skills/introduction-to-github" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="GitHub Skills course (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🎓</div>
+          <div class="res-card-title">GitHub Skills</div>
+          <div class="res-card-desc">Free, hands-on courses by GitHub that teach you directly inside repositories — including pull requests and Actions.</div>
+          <div class="res-card-url">github.com/skills</div>
+        </a>
+        <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Atlassian Git Tutorials (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🛠</div>
+          <div class="res-card-title">Atlassian Git Tutorials</div>
+          <div class="res-card-desc">Well-written, comprehensive tutorials from Atlassian covering everything from beginner setup to advanced workflows.</div>
+          <div class="res-card-url">atlassian.com/git</div>
+        </a>
+        <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="GitHub Education Git cheat sheet PDF (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">📋</div>
+          <div class="res-card-title">Git Cheat Sheet (PDF)</div>
+          <div class="res-card-desc">GitHub Education's printable reference card with the most-used Git commands organized by category.</div>
+          <div class="res-card-url">education.github.com</div>
+        </a>
+      </div>
+
+      <h3>Tools</h3>
+      <div class="resources-grid">
+        <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Download Git (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">⬇️</div>
+          <div class="res-card-title">Download Git</div>
+          <div class="res-card-desc">Install Git on Windows, macOS, or Linux. Includes the Git Bash terminal for Windows users.</div>
+          <div class="res-card-url">git-scm.com/downloads</div>
+        </a>
+        <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="GitHub Desktop app (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">🖥️</div>
+          <div class="res-card-title">GitHub Desktop</div>
+          <div class="res-card-desc">A visual GUI for Git if you want to see commits, branches, and diffs without the command line (good companion to the CLI).</div>
+          <div class="res-card-url">desktop.github.com</div>
+        </a>
+        <a href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="VS Code Source Control documentation (opens in new tab)">
+          <div class="res-card-icon" aria-hidden="true">💻</div>
+          <div class="res-card-title">VS Code Git Integration</div>
+          <div class="res-card-desc">VS Code has built-in Git support — stage files, commit, and push without leaving your editor.</div>
+          <div class="res-card-url">code.visualstudio.com</div>
+        </a>
+      </div>
+
+      <div class="callout callout-tip" style="margin-top:2rem">
+        <div class="callout-title">Before You Leave</div>
+        Create a GitHub account if you do not have one yet at <a href="https://github.com" target="_blank" rel="noopener noreferrer" style="color:var(--green)">github.com</a>. Eligible students can also review the current <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" style="color:var(--green)">GitHub Student Developer Pack</a> offering. Check the official page for current eligibility and included tools.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  /* ── Strict mode for all script logic ────────────── */
+  'use strict';
+
+  /* ── Sidebar / mobile toggle ─────────────────────── */
+  (function initSidebar() {
+    const toggle  = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const mobileView = window.matchMedia('(max-width: 1024px)');
+
+    function openSidebar() {
+      sidebar.removeAttribute('aria-hidden');
+      sidebar.inert = false;
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close navigation menu');
+      sidebar.focus();
+    }
+    function closeSidebar(returnFocus) {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+      if (mobileView.matches) {
+        sidebar.setAttribute('aria-hidden', 'true');
+        sidebar.inert = true;
+      }
+      if (returnFocus) toggle.focus();
+    }
+    function syncSidebarMode() {
+      if (mobileView.matches) {
+        closeSidebar(false);
+      } else {
+        sidebar.removeAttribute('aria-hidden');
+        sidebar.inert = false;
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) closeSidebar(true);
+        else openSidebar();
+      });
+    }
+    if (overlay) overlay.addEventListener('click', function() { closeSidebar(true); });
+    if (typeof mobileView.addEventListener === 'function') {
+      mobileView.addEventListener('change', syncSidebarMode);
+    } else {
+      mobileView.addListener(syncSidebarMode);
+    }
+    syncSidebarMode();
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar(true);
+      }
+    });
+  }());
+
+  /* ── Smooth nav scroll + active state ───────────── */
+  (function initNav() {
+    const navItems = document.querySelectorAll('.nav-item[data-target]');
+    const progressFill = document.getElementById('progressFill');
+    const progressPct  = document.getElementById('progressPct');
+    const progressTrack = document.querySelector('.progress-bar-track');
+
+    function setActive(targetId) {
+      navItems.forEach(function(item) {
+        const isActive = item.dataset.target === targetId;
+        item.classList.toggle('active', isActive);
+        if (isActive) item.setAttribute('aria-current', 'location');
+        else item.removeAttribute('aria-current');
+      });
+    }
+
+    function updateProgress() {
+      const sections = document.querySelectorAll('.section[id]');
+      let visible = 0;
+      sections.forEach(function(sec) {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.6) visible++;
+      });
+      const pct = Math.min(100, Math.round((visible / sections.length) * 100));
+      if (progressFill) progressFill.style.width = pct + '%';
+      if (progressPct)  progressPct.textContent   = pct + '% complete';
+      if (progressTrack) progressTrack.setAttribute('aria-valuenow', pct);
+
+      // Mark nav items done
+      navItems.forEach(function(item, i) {
+        item.classList.toggle('done', i < visible);
+      });
+    }
+
+    navItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        setActive(item.dataset.target);
+        // Close sidebar on mobile after click
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('open')) {
+          document.getElementById('sidebarOverlay').click();
+        }
+      });
+    });
+
+    // Intersection observer for active section
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+          updateProgress();
+        }
+      });
+    }, { rootMargin: '-10% 0px -50% 0px' });
+
+    document.querySelectorAll('.section[id]').forEach(function(sec) {
+      observer.observe(sec);
+    });
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }());
+
+  /* ── Install / save guide ─────────────────────────── */
+  (function initInstallPrompt() {
+    const installBtn = document.getElementById('installGuideBtn');
+    const installStatus = document.getElementById('installStatus');
+    if (!installBtn || !installStatus) return;
+
+    let deferredPrompt = null;
+    const standalone = window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true;
+
+    if (standalone) {
+      installStatus.textContent = 'This guide is already open as an installed app.';
+      return;
+    }
+
+    window.addEventListener('beforeinstallprompt', function(event) {
+      event.preventDefault();
+      deferredPrompt = event;
+      installBtn.hidden = false;
+      installStatus.textContent = 'Your browser supports app installation for this guide.';
+    });
+
+    installBtn.addEventListener('click', function() {
+      if (!deferredPrompt) return;
+      installBtn.disabled = true;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function(choice) {
+        if (choice.outcome === 'accepted') {
+          installStatus.textContent = 'Installing the guide on this device.';
+          installBtn.hidden = true;
+        } else {
+          installStatus.textContent = 'Installation canceled. You can still bookmark this guide.';
+          installBtn.disabled = false;
+        }
+        deferredPrompt = null;
+      });
+    });
+
+    window.addEventListener('appinstalled', function() {
+      installBtn.hidden = true;
+      installStatus.textContent = 'This guide has been installed on your device.';
+    });
+  }());
+
+  /* ── Animated terminal demo ──────────────────────── */
+  (function initDemo() {
+    const btn    = document.getElementById('runDemoBtn');
+    const output = document.getElementById('demoOutput');
+    const status = document.getElementById('demoStatus');
+    const phaseEls = document.querySelectorAll('.demo-phase[data-phase]');
+    if (!btn || !output) return;
+
+    const steps = [
+      { delay: 0,    phase: 'edit',   type: 'comment', text: '# Start a new practice project' },
+      { delay: 350,  phase: 'edit',   type: 'cmd',     text: 'mkdir my-first-project && cd my-first-project' },
+      { delay: 800,  phase: 'edit',   type: 'cmd',     text: 'git init' },
+      { delay: 1050, phase: 'edit',   type: 'out',     text: 'Initialized empty Git repository in ~/my-first-project/.git/' },
+      { delay: 1400, phase: 'edit',   type: 'cmd',     text: 'echo "# My First Project" > README.md' },
+      { delay: 1750, phase: 'stage',  type: 'cmd',     text: 'git status' },
+      { delay: 1950, phase: 'stage',  type: 'highlight', text: 'Untracked files: README.md' },
+      { delay: 2250, phase: 'stage',  type: 'cmd',     text: 'git add README.md' },
+      { delay: 2700, phase: 'commit', type: 'cmd',     text: 'git commit -m "Add project README"' },
+      { delay: 3100, phase: 'commit', type: 'success', text: '[main (root-commit) a1b2c3d] Add project README' },
+      { delay: 3500, phase: 'push',   type: 'comment', text: '# Create an online copy after checking visibility and files' },
+      { delay: 3950, phase: 'push',   type: 'cmd',     text: 'git remote add origin https://github.com/you/my-first-project.git' },
+      { delay: 4450, phase: 'push',   type: 'cmd',     text: 'git push -u origin main' },
+      { delay: 4850, phase: 'push',   type: 'success', text: 'Branch main now tracks origin/main.' },
+      { delay: 5250, phase: 'push',   type: 'comment', text: 'Done: your committed project is available on GitHub.' },
+    ];
+
+    let running = false;
+    let currentPhase = '';
+    const phaseOrder = ['edit', 'stage', 'commit', 'push'];
+    const phaseText = {
+      edit: 'Edit: create or change project files in your working folder.',
+      stage: 'Stage: select exactly what belongs in the next checkpoint.',
+      commit: 'Commit: save the staged snapshot in local Git history.',
+      push: 'Push: upload local commits to a remote repository such as GitHub.'
+    };
+
+    function setPhase(activePhase, complete) {
+      const activeIndex = phaseOrder.indexOf(activePhase);
+      phaseEls.forEach(function(el) {
+        const index = phaseOrder.indexOf(el.dataset.phase);
+        el.classList.toggle('active', !complete && el.dataset.phase === activePhase);
+        el.classList.toggle('done', complete || (activeIndex > -1 && index < activeIndex));
+      });
+      if (status && (complete || currentPhase !== activePhase)) {
+        status.textContent = complete ? 'Complete: edit, stage, commit, and push form the repeatable Git workflow.' : phaseText[activePhase];
+      }
+      currentPhase = complete ? 'complete' : activePhase;
+    }
+
+    function typeChar(el, text, charIdx, resolve) {
+      if (charIdx >= text.length) { resolve(); return; }
+      el.textContent += text[charIdx];
+      window.setTimeout(function() {
+        typeChar(el, text, charIdx + 1, resolve);
+      }, 18);
+    }
+
+    function createLine(step) {
+      const el = document.createElement('span');
+      if (step.type === 'cmd')            el.className = 't-cmd';
+      else if (step.type === 'out')       el.className = 't-out';
+      else if (step.type === 'comment')   el.className = 't-comment';
+      else if (step.type === 'highlight') el.className = 't-out t-highlight';
+      else if (step.type === 'success')   el.className = 't-out t-success';
+      output.appendChild(el);
+      return el;
+    }
+
+    function renderCompleted() {
+      output.innerHTML = '';
+      currentPhase = '';
+      steps.forEach(function(step) {
+        const el = createLine(step);
+        el.textContent = step.text;
+      });
+      setPhase('push', true);
+      btn.textContent = 'Run Again';
+      btn.setAttribute('aria-label', 'Run interactive Git demo again');
+      running = false;
+    }
+
+    function runSteps(i) {
+      if (i >= steps.length) {
+        setPhase('push', true);
+        running = false;
+        btn.textContent = 'Run Again';
+        btn.setAttribute('aria-label', 'Run interactive Git demo again');
+        return;
+      }
+      const step = steps[i];
+      window.setTimeout(function() {
+        setPhase(step.phase, false);
+        const el = createLine(step);
+
+        // Scroll output into view
+        output.scrollTop = output.scrollHeight;
+
+        new Promise(function(res) {
+          typeChar(el, step.text, 0, res);
+        }).then(function() {
+          runSteps(i + 1);
+        });
+      }, i === 0 ? 0 : (steps[i].delay - steps[i - 1].delay));
+    }
+
+    btn.addEventListener('click', function() {
+      if (running) return;
+      running = true;
+      output.innerHTML = '';
+      phaseEls.forEach(function(el) { el.classList.remove('active', 'done'); });
+      btn.textContent = 'Running...';
+      btn.setAttribute('aria-label', 'Git demo is running');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        renderCompleted();
+      } else {
+        runSteps(0);
+      }
+    });
+  }());
+
+  /* ── Quiz ────────────────────────────────────────── */
+  (function initQuiz() {
+    const container = document.getElementById('quizContainer');
+    const scoreBar  = document.getElementById('quizScoreBar');
+    const scoreNum  = document.getElementById('scoreNum');
+    const scoreLbl  = document.getElementById('scoreLbl');
+    if (!container) return;
+
+    const questions = [
+      {
+        q: 'Which command initializes a new Git repository in the current folder?',
+        options: ['git start', 'git init', 'git new', 'git create'],
+        answer: 1,
+        explanation: 'Correct! <code>git init</code> creates the hidden <code>.git</code> folder that turns any directory into a Git repository.'
+      },
+      {
+        q: 'What is GitHub, at its core?',
+        options: [
+          'A version control tool installed on your computer',
+          'A programming language for web development',
+          'A cloud-based hosting platform for Git repositories',
+          'A text editor with Git built in'
+        ],
+        answer: 2,
+        explanation: 'GitHub is a web platform — a cloud service that hosts Git repositories online, enabling sharing and collaboration.'
+      },
+      {
+        q: 'Can Git work without internet access?',
+        options: ['No — Git requires GitHub to function', 'Yes — Git is a local tool that works fully offline', 'Only for reading; commits require internet', 'Only on Linux systems'],
+        answer: 1,
+        explanation: 'Git is entirely local. All commits, branches, and history are stored on your machine. Internet is only needed when you push/pull to a remote like GitHub.'
+      },
+      {
+        q: 'What does the staging area (Index) do?',
+        options: [
+          'It stores the final, permanent commit history',
+          'It holds files that have been pushed to GitHub',
+          'It lets you preview exactly which changes will go into your next commit',
+          'It deletes files from the repository'
+        ],
+        answer: 2,
+        explanation: 'The staging area is a preparation zone. Running <code>git add</code> moves changes here so you can review and control precisely what goes into the next commit.'
+      },
+      {
+        q: 'What does `git push origin main` do?',
+        options: [
+          'Downloads changes from GitHub to your computer',
+          'Creates a new branch called origin',
+          'Uploads your local commits to the GitHub remote repository',
+          'Reverts your last commit'
+        ],
+        answer: 2,
+        explanation: '<code>git push</code> uploads your local commits to the remote ("origin" is GitHub, "main" is the branch name).'
+      },
+      {
+        q: 'Which command quickly reports changed, staged, and untracked files?',
+        options: ['git show', 'git status', 'git log', 'git check'],
+        answer: 1,
+        explanation: '<code>git status</code> shows which files are modified, which are staged, and which are untracked. It\'s the command you\'ll run most often.'
+      },
+      {
+        q: 'You edited main.py and ran `git commit -m "Fix loop"`. Your commit is empty. What went wrong?',
+        options: [
+          'The commit message was too short',
+          'You forgot to run `git add main.py` first',
+          'You need to be on the main branch to commit',
+          'Git cannot commit Python files'
+        ],
+        answer: 1,
+        explanation: 'You must stage files with <code>git add</code> before committing. Git does not automatically include modified files — staging is intentional.'
+      },
+      {
+        q: 'What is a branch in Git?',
+        options: [
+          'A copy of your commit on GitHub',
+          'An independent line of development where you can work without affecting main',
+          'A remote connection to another repository',
+          'A label for the most recent commit'
+        ],
+        answer: 1,
+        explanation: 'A branch is a separate pointer to a line of commits. You can experiment, build features, or fix bugs in a branch and merge it back to main when ready.'
+      },
+      {
+        q: 'Which of the following is a feature that GitHub adds on top of Git (Git itself does not have it)?',
+        options: ['Commit history', 'Branching', 'Pull Requests', 'Staging area'],
+        answer: 2,
+        explanation: 'Pull Requests are a GitHub feature — a formal interface to review code before merging. Commit history, branching, and staging are all core Git features.'
+      },
+      {
+        q: 'What command downloads a repository from GitHub and automatically sets up the remote connection?',
+        options: ['git fetch', 'git pull', 'git clone', 'git download'],
+        answer: 2,
+        explanation: '<code>git clone &lt;url&gt;</code> copies the full repository to your machine and sets "origin" to point back to the GitHub URL automatically.'
+      },
+      {
+        q: 'In VS Code Source Control, what does selecting the + beside a changed file do?',
+        options: ['Publishes the repository', 'Stages the file for the next commit', 'Deletes the old version', 'Creates a pull request'],
+        answer: 1,
+        explanation: 'The <strong>+</strong> action stages the file. It corresponds to running <code>git add filename</code> in a terminal.'
+      },
+      {
+        q: 'Before pushing a public project, which file should never be committed?',
+        options: ['README.md with project instructions', '.env containing an API key', 'A source file you wrote', '.gitignore'],
+        answer: 1,
+        explanation: 'Secrets such as API keys must not be committed. Add secret-containing files such as <code>.env</code> to <code>.gitignore</code> before staging.'
+      }
+    ];
+
+    let answered = 0;
+    let correct  = 0;
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    questions.forEach(function(q, qi) {
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.setAttribute('role', 'group');
+      card.setAttribute('aria-labelledby', 'qq-' + qi);
+
+      const qText = document.createElement('div');
+      qText.className = 'quiz-question';
+      qText.id = 'qq-' + qi;
+      qText.innerHTML = (qi + 1) + '. ' + escapeHTML(q.q).replace(/`([^`]+)`/g, '<code>$1</code>');
+      card.appendChild(qText);
+
+      const opts = document.createElement('div');
+      opts.className = 'quiz-options';
+
+      q.options.forEach(function(opt, oi) {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.setAttribute('aria-label', 'Option ' + String.fromCharCode(65 + oi) + ': ' + opt);
+        btn.dataset.qi = qi;
+        btn.dataset.oi = oi;
+
+        const marker = document.createElement('span');
+        marker.className = 'opt-marker';
+        marker.setAttribute('aria-hidden', 'true');
+        marker.textContent = String.fromCharCode(65 + oi);
+        btn.appendChild(marker);
+
+        const label = document.createElement('span');
+        // Allow inline code rendering safely
+        label.innerHTML = escapeHTML(opt).replace(/`([^`]+)`/g, '<code>$1</code>');
+        btn.appendChild(label);
+
+        btn.addEventListener('click', function() {
+          handleAnswer(qi, oi, q.answer, card, q.explanation);
+        });
+
+        opts.appendChild(btn);
+      });
+
+      card.appendChild(opts);
+
+      const feedback = document.createElement('div');
+      feedback.className = 'quiz-feedback';
+      feedback.setAttribute('aria-live', 'polite');
+      card.appendChild(feedback);
+
+      container.appendChild(card);
+    });
+
+    function handleAnswer(qi, chosen, correct_idx, card, explanation) {
+      const buttons = card.querySelectorAll('.quiz-option');
+      const feedback = card.querySelector('.quiz-feedback');
+      let alreadyAnswered = false;
+
+      buttons.forEach(function(b) {
+        if (b.disabled) alreadyAnswered = true;
+      });
+      if (alreadyAnswered) return;
+
+      answered++;
+      const isCorrect = (chosen === correct_idx);
+      if (isCorrect) correct++;
+
+      buttons.forEach(function(b, i) {
+        b.disabled = true;
+        if (i === correct_idx) b.classList.add('correct');
+        else if (parseInt(b.dataset.oi, 10) === chosen) b.classList.add('wrong');
+      });
+
+      feedback.classList.add('show', isCorrect ? 'ok' : 'ko');
+      feedback.innerHTML = (isCorrect ? '✓ Correct! ' : '✗ Not quite. ') + explanation;
+
+      if (answered === questions.length) showScore();
+    }
+
+    function showScore() {
+      if (!scoreBar || !scoreNum || !scoreLbl) return;
+      scoreBar.style.display = 'block';
+      scoreNum.textContent = correct + '/' + questions.length;
+      const pct = Math.round((correct / questions.length) * 100);
+      if (pct >= 90) {
+        scoreLbl.textContent = '🎉 Excellent! You\'ve got a solid grasp of Git and GitHub.';
+      } else if (pct >= 70) {
+        scoreLbl.textContent = '👍 Good work! Review the sections for anything you missed.';
+      } else {
+        scoreLbl.textContent = 'Keep going — review the sections above and try again next time.';
+      }
+      scoreBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }());
+</script>
+
+</body>
+</html>

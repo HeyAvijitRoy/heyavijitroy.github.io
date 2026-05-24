@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saving Your Work Like a Pro: Git & GitHub for C++ Students | Avijit Roy</title>
+  <meta name="description" content="A complete, analogy-driven guide to Git and GitHub for first-semester C++ students, with practical workflows and command references." />
+  <meta name="keywords" content="Git ebook, GitHub tutorial, C++ students, version control, Git commands, Git workflow, computer science education" />
+  <meta name="author" content="Avijit Roy" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#0b1118" />
+  <link rel="canonical" href="https://avijitroy.com/docs/git-version-control/" />
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="Saving Your Work Like a Pro: Git & GitHub for C++ Students" />
+  <meta property="og:description" content="A formal, print-ready ebook for students learning Git and GitHub through C++ coursework." />
+  <meta property="og:url" content="https://avijitroy.com/docs/git-version-control/" />
+  <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+  <meta property="og:site_name" content="Avijit Roy" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@HeyAvijitRoy" />
+  <meta name="twitter:creator" content="@HeyAvijitRoy" />
+  <meta name="twitter:title" content="Saving Your Work Like a Pro: Git & GitHub for C++ Students" />
+  <meta name="twitter:description" content="A print-ready guide to Git and GitHub for C++ students." />
+  <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
+  <link rel="icon" href="../../assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" href="../../assets/favicons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="../../assets/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#37c87b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Sora:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Book",
+        "LearningResource"
+      ],
+      "@id": "https://avijitroy.com/docs/git-version-control/#book",
+      "url": "https://avijitroy.com/docs/git-version-control/",
+      "name": "Saving Your Work Like a Pro: Git & GitHub for C++ Students",
+      "description": "A complete, analogy-driven guide to version control for first-semester computer science students learning C++.",
+      "author": {
+        "@id": "https://avijitroy.com/#person"
+      },
+      "publisher": {
+        "@id": "https://avijitroy.com/#person"
+      },
+      "datePublished": "2026-05-22",
+      "bookEdition": "Digital Edition, Version 1.0",
+      "inLanguage": "en",
+      "educationalLevel": "Beginner",
+      "learningResourceType": "Textbook",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Git"
+        },
+        {
+          "@type": "Thing",
+          "name": "GitHub"
+        },
+        {
+          "@type": "Thing",
+          "name": "C++ programming"
+        }
+      ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "image": "https://avijitroy.com/assets/img/og-image.jpg",
+      "mainEntityOfPage": {
+        "@id": "https://avijitroy.com/docs/git-version-control/"
+      },
+      "isPartOf": {
+        "@id": "https://avijitroy.com/#website"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://avijitroy.com/docs/git-version-control/",
+      "url": "https://avijitroy.com/docs/git-version-control/",
+      "name": "Saving Your Work Like a Pro: Git & GitHub for C++ Students",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://avijitroy.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://avijitroy.com/docs/git-version-control/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://avijitroy.com/docs/git-version-control/#book"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://avijitroy.com/#person",
+      "name": "Avijit Roy",
+      "url": "https://avijitroy.com/",
+      "affiliation": {
+        "@id": "https://www.jjay.cuny.edu/#organization"
+      }
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://www.jjay.cuny.edu/#organization",
+      "name": "John Jay College of Criminal Justice, CUNY",
+      "url": "https://www.jjay.cuny.edu/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://avijitroy.com/#website",
+      "name": "Avijit Roy",
+      "url": "https://avijitroy.com/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://avijitroy.com/docs/git-version-control/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://avijitroy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Teaching",
+          "item": "https://avijitroy.com/teaching/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Saving Your Work Like a Pro",
+          "item": "https://avijitroy.com/docs/git-version-control/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #0b1118;
+  --paper: #111a24;
+  --paper-raised: #172332;
+  --sidebar: #0e1620;
+  --line: #263648;
+  --line-strong: #385067;
+  --ink: #dce5ee;
+  --ink-strong: #f3f6f9;
+  --muted: #99aabd;
+  --accent: #37c87b;
+  --accent-deep: #23a965;
+  --accent-soft: rgba(55, 200, 123, .13);
+  --gold: #e6b45e;
+  --code-bg: #081019;
+  --shadow: rgba(0, 0, 0, .27);
+  --sidebar-w: 20rem;
+  --page-w: 51rem;
+  --ui: "Sora", "Segoe UI", Arial, sans-serif;
+  --reading: "Source Serif 4", Georgia, serif;
+  --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+}
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #eeeae2;
+  --paper: #fffdfa;
+  --paper-raised: #f7f3ec;
+  --sidebar: #f9f6ef;
+  --line: #e3dbce;
+  --line-strong: #c8bba7;
+  --ink: #302c29;
+  --ink-strong: #171513;
+  --muted: #625c55;
+  --accent: #146943;
+  --accent-deep: #0e5435;
+  --accent-soft: rgba(20, 105, 67, .09);
+  --gold: #8a5c17;
+  --code-bg: #242a32;
+  --shadow: rgba(53, 43, 31, .1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--reading);
+  line-height: 1.72;
+}
+a { color: var(--accent); text-underline-offset: .17em; }
+a:hover { color: var(--accent-deep); }
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: .18rem;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: .65rem;
+  left: .8rem;
+  transform: translateY(-150%);
+  padding: .55rem .9rem;
+  background: var(--accent);
+  color: #07140d;
+  font: 600 .9rem var(--ui);
+  text-decoration: none;
+}
+.skip-link:focus { transform: none; }
+.reading-progress {
+  position: fixed;
+  z-index: 40;
+  inset: 0 0 auto 0;
+  height: .22rem;
+  background: transparent;
+}
+.reading-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+}
+.toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 31;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .8rem 1.05rem;
+}
+.tool-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .48rem;
+  min-height: 2.65rem;
+  padding: .55rem .9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-strong);
+  cursor: pointer;
+  font: 600 .78rem var(--ui);
+  letter-spacing: .02em;
+}
+.tool-button:hover { background: var(--paper-raised); border-color: var(--accent); }
+.menu-button { display: none; }
+.layout { min-height: 100vh; }
+.sidebar {
+  position: fixed;
+  z-index: 30;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-w);
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+}
+.sidebar-header {
+  padding: 2rem 1.45rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+.sidebar-kicker {
+  display: block;
+  margin-bottom: .55rem;
+  color: var(--accent);
+  font: 700 .66rem var(--ui);
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.sidebar-title {
+  display: block;
+  color: var(--ink-strong);
+  font: 700 1.05rem/1.35 var(--ui);
+  text-decoration: none;
+}
+.sidebar-subtitle {
+  display: block;
+  margin-top: .4rem;
+  color: var(--muted);
+  font: 400 .76rem/1.45 var(--ui);
+}
+.sidebar-subtitle a {
+  color: var(--ink);
+  font-weight: 600;
+}
+.sidebar-subtitle a:hover { color: var(--accent); }
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem .72rem 1.2rem;
+  scrollbar-width: thin;
+}
+.sidebar-nav::before {
+  content: "Chapters";
+  display: block;
+  padding: 0 .7rem .55rem;
+  color: var(--muted);
+  font: 700 .65rem var(--ui);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.sidebar-nav ul { margin: 0; padding: 0; list-style: none; }
+.sidebar-nav li { margin: .13rem 0; }
+.sidebar-nav a {
+  display: block;
+  padding: .43rem .66rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 .42rem .42rem 0;
+  color: var(--muted);
+  font: 500 .74rem/1.42 var(--ui);
+  text-decoration: none;
+}
+.sidebar-nav a:hover {
+  color: var(--ink-strong);
+  background: var(--paper-raised);
+}
+.sidebar-nav a[aria-current="location"] {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+}
+.sidebar-footer {
+  padding: .9rem 1.45rem 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: .71rem/1.55 var(--ui);
+}
+.overlay { display: none; }
+.reader {
+  width: min(calc(100% - var(--sidebar-w)), calc(var(--page-w) + 5rem));
+  margin-left: var(--sidebar-w);
+  padding: 0 2.5rem 4rem;
+}
+.cover {
+  min-height: min(95vh, 53rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0 4.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.edition {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 2.35rem;
+  color: var(--accent);
+  font: 700 .72rem var(--ui);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.edition::before { content: ""; width: 3rem; height: 1px; background: var(--accent); }
+.cover h1 {
+  max-width: 47rem;
+  margin: 0 0 1rem;
+  color: var(--ink-strong);
+  font: 700 clamp(3rem, 6.4vw, 4.85rem)/1.06 var(--reading);
+  letter-spacing: -.045em;
+}
+.cover h1 span { display: block; color: var(--accent); }
+.cover-description {
+  max-width: 39rem;
+  margin: 0 0 2.6rem;
+  color: var(--muted);
+  font: 400 clamp(1.08rem, 2vw, 1.2rem)/1.7 var(--reading);
+}
+.cover-byline {
+  margin-bottom: 2.7rem;
+  color: var(--ink);
+  font: .92rem/1.8 var(--ui);
+}
+.cover-byline strong { color: var(--ink-strong); font-size: 1.05rem; }
+.book-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.45rem 2rem;
+  margin: 0 0 2.7rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+.book-facts strong {
+  display: block;
+  color: var(--ink-strong);
+  font: 700 1.15rem var(--ui);
+}
+.book-facts span {
+  color: var(--muted);
+  font: 500 .7rem var(--ui);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.cover-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.cover-actions a {
+  display: inline-flex;
+  align-items: center;
+  padding: .72rem 1.18rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font: 600 .84rem var(--ui);
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease, border-color .16s ease;
+}
+.cover-actions .primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 .12rem .4rem rgba(0, 0, 0, .13);
+}
+.cover-actions .primary:hover {
+  border-color: var(--accent-deep);
+  background: var(--accent-deep);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 .25rem .6rem rgba(0, 0, 0, .18);
+}
+.cover-actions .primary:active {
+  transform: translateY(0);
+  box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .13);
+}
+.book-content {
+  padding: 3.5rem 0 1rem;
+  font-size: 1.075rem;
+}
+.book-content h2,
+.book-content h3,
+.book-content h4 {
+  color: var(--ink-strong);
+  font-family: var(--reading);
+  line-height: 1.25;
+  scroll-margin-top: 2rem;
+}
+.book-content h2 {
+  margin: 4.5rem 0 1.3rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.75rem, 3.2vw, 2.18rem);
+  letter-spacing: -.028em;
+}
+.book-content h2:first-child { margin-top: 0; }
+.book-content h2[id^="chapter-"] {
+  margin-top: 5.4rem;
+  padding-top: 2rem;
+}
+.book-content h3 {
+  margin: 2.6rem 0 .85rem;
+  font-size: 1.42rem;
+  letter-spacing: -.018em;
+}
+.book-content h4 {
+  margin: 2.1rem 0 .65rem;
+  font-size: 1.15rem;
+}
+.header-anchor {
+  opacity: 0;
+  margin-left: .45rem;
+  color: var(--muted);
+  font: 400 .7em var(--ui);
+  text-decoration: none;
+}
+h2:hover .header-anchor, h3:hover .header-anchor, .header-anchor:focus { opacity: 1; }
+p { margin: 0 0 1.18rem; }
+strong { color: var(--ink-strong); }
+em { color: var(--gold); }
+.book-content ul, .book-content ol { margin: .35rem 0 1.45rem; padding-left: 1.7rem; }
+.book-content li { margin: .35rem 0; padding-left: .2rem; }
+hr { margin: 2.8rem 0; border: 0; border-top: 1px solid var(--line); }
+blockquote {
+  margin: 2rem 0;
+  padding: 1.15rem 1.45rem;
+  border-left: .22rem solid var(--accent);
+  border-radius: 0 .4rem .4rem 0;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+code {
+  padding: .13em .36em;
+  border: 1px solid var(--line);
+  border-radius: .27rem;
+  background: var(--paper-raised);
+  color: var(--accent);
+  font: .84em var(--mono);
+}
+pre {
+  overflow-x: auto;
+  margin: 1.7rem 0;
+  padding: 1.35rem 1.45rem;
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  background: var(--code-bg);
+  box-shadow: 0 .4rem 1.1rem var(--shadow);
+  color: #e4ecf4;
+}
+pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: .83rem;
+  line-height: 1.7;
+}
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kr { color: #c792ea; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb { color: #c3e88d; }
+.highlight .c, .highlight .c1, .highlight .cm { color: #8797a7; font-style: italic; }
+.highlight .n, .highlight .nx, .highlight .nf { color: #82b9ff; }
+.highlight .mi, .highlight .mf { color: #f59c76; }
+.highlight .o { color: #44d692; }
+table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin: 1.6rem 0;
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  border-spacing: 0;
+  border-collapse: separate;
+  font: .88rem/1.55 var(--ui);
+}
+thead { background: var(--paper-raised); }
+th {
+  color: var(--ink-strong);
+  font-weight: 700;
+  text-align: left;
+}
+th, td { padding: .72rem .85rem; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+.publication-footer {
+  margin-top: 4.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: .78rem/1.7 var(--ui);
+  text-align: center;
+}
+@media (max-width: 72rem) {
+  .toolbar {
+    left: 0;
+    justify-content: space-between;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .menu-button { display: inline-flex; }
+  .sidebar { transform: translateX(-100%); transition: transform .2s ease; }
+  .sidebar.open { transform: translateX(0); }
+  .overlay.open {
+    position: fixed;
+    z-index: 29;
+    inset: 0;
+    display: block;
+    background: rgba(0, 0, 0, .46);
+  }
+  .reader {
+    width: min(100%, calc(var(--page-w) + 5rem));
+    margin: 0 auto;
+    padding-top: 2.8rem;
+  }
+}
+@media (max-width: 40rem) {
+  .reader { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .cover { padding-top: 4.5rem; min-height: auto; }
+  .cover h1 { font-size: 2.55rem; }
+  .book-content { font-size: 1rem; }
+  .tool-button .button-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .001ms !important; }
+}
+@page { size: letter; margin: .75in .72in .7in; }
+@media print {
+  :root, [data-theme="light"] {
+    --ink: #171513;
+    --ink-strong: #111;
+    --muted: #48433d;
+    --accent: #111;
+    --line: #cfc7ba;
+    --paper-raised: #fff;
+    --code-bg: #f2f2f2;
+  }
+  html, body { background: #fff !important; color: #111; font-size: 10.5pt; }
+  .skip-link, .reading-progress, .toolbar, .sidebar, .overlay,
+  .cover-actions, .header-anchor { display: none !important; }
+  .reader { width: auto; margin: 0; padding: 0; }
+  .cover {
+    min-height: 8.45in;
+    padding: 1.2in 0 .4in;
+    border: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+  .cover h1 { font-size: 42pt; }
+  .cover-description { font-size: 14pt; max-width: 5.9in; }
+  .book-content { padding: 0; font-size: 10.7pt; }
+  .book-content h2 { page-break-after: avoid; break-after: avoid; }
+  .book-content #table-of-contents {
+    page-break-before: always;
+    break-before: page;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .book-content #table-of-contents + ol {
+    page-break-after: always;
+    break-after: page;
+  }
+  .book-content h2[id^="chapter-"],
+  .book-content h2[id^="appendix-"] {
+    page-break-before: always;
+    break-before: page;
+    margin-top: 0;
+    padding-top: 0;
+    border: 0;
+  }
+  .book-content h3, table, blockquote { page-break-after: avoid; break-after: avoid; }
+  pre, table, blockquote { page-break-inside: avoid; break-inside: avoid; }
+  pre {
+    box-shadow: none;
+    color: #111;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  pre code, code { color: #111; }
+  .highlight span { color: #111 !important; }
+  a { color: #111; text-decoration: none; }
+  .book-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    color: #555;
+    font-size: 8.5pt;
+    overflow-wrap: anywhere;
+  }
+  .publication-footer { margin-top: .45in; }
+}
+</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4VM6347X4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y4VM6347X4");
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#book-content">Skip to book content</a>
+  <div class="reading-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+  <header class="toolbar" aria-label="Reading tools">
+    <button class="tool-button menu-button" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+      <span aria-hidden="true">&#9776;</span><span class="button-label">Contents</span>
+    </button>
+    <button class="tool-button" id="theme-toggle" type="button" aria-label="Switch color mode" aria-pressed="false">
+      <span aria-hidden="true">&#9680;</span><span class="button-label">Light mode</span>
+    </button>
+  </header>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Ebook navigation" tabindex="-1">
+      <div class="sidebar-header">
+        <span class="sidebar-kicker">Digital Edition</span>
+        <a class="sidebar-title" href="#cover">Saving Your Work Like a Pro</a>
+        <span class="sidebar-subtitle">Git & GitHub for C++ Students<br />By <a href="https://avijitroy.com/">Avijit Roy</a></span>
+      </div>
+      <nav class="sidebar-nav" aria-label="Chapters and book sections">
+        <div class="toc">
+<ul>
+<li><a href="#saving-your-work-like-a-pro">Saving Your Work Like a Pro</a><ul>
+<li><a href="#git-github-for-c-students">Git &amp; GitHub for C++ Students</a></li>
+<li><a href="#about-this-book">About This Book</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#chapter-1-why-version-control-the-problem-it-solves">Chapter 1: Why Version Control? The Problem It Solves</a></li>
+<li><a href="#chapter-2-the-time-machine-analogy-what-git-actually-does">Chapter 2: The Time Machine Analogy — What Git Actually Does</a></li>
+<li><a href="#chapter-3-git-vs-github-two-different-things">Chapter 3: Git vs. GitHub — Two Different Things</a></li>
+<li><a href="#chapter-4-installing-and-configuring-git">Chapter 4: Installing and Configuring Git</a></li>
+<li><a href="#chapter-5-your-first-repository">Chapter 5: Your First Repository</a></li>
+<li><a href="#chapter-6-the-three-zones-working-staging-history">Chapter 6: The Three Zones — Working, Staging, History</a></li>
+<li><a href="#chapter-7-making-commits-saving-snapshots">Chapter 7: Making Commits — Saving Snapshots</a></li>
+<li><a href="#chapter-8-reading-your-history">Chapter 8: Reading Your History</a></li>
+<li><a href="#chapter-9-going-back-in-time-undo-and-restore">Chapter 9: Going Back in Time — Undo and Restore</a></li>
+<li><a href="#chapter-10-branches-parallel-universes-for-your-code">Chapter 10: Branches — Parallel Universes for Your Code</a></li>
+<li><a href="#chapter-11-github-taking-git-online">Chapter 11: GitHub — Taking Git Online</a></li>
+<li><a href="#chapter-12-cloning-pushing-and-pulling">Chapter 12: Cloning, Pushing, and Pulling</a></li>
+<li><a href="#chapter-13-collaborating-on-group-projects">Chapter 13: Collaborating on Group Projects</a></li>
+<li><a href="#chapter-14-c-specific-patterns-what-to-track-and-what-to-ignore">Chapter 14: C++-Specific Patterns — What to Track and What to Ignore</a></li>
+<li><a href="#chapter-15-when-things-go-wrong-common-mistakes-and-fixes">Chapter 15: When Things Go Wrong — Common Mistakes and Fixes</a></li>
+<li><a href="#chapter-16-the-professional-workflow">Chapter 16: The Professional Workflow</a></li>
+<li><a href="#chapter-17-quick-reference-every-command-you-need">Chapter 17: Quick Reference — Every Command You Need</a></li>
+<li><a href="#closing-thoughts">Closing Thoughts</a></li>
+<li><a href="#appendix-a-glossary">Appendix A: Glossary</a></li>
+<li><a href="#appendix-b-recommended-next-steps">Appendix B: Recommended Next Steps</a></li>
+<li><a href="#appendix-c-external-resources">Appendix C: External Resources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+      </nav>
+      <div class="sidebar-footer">17 chapters &middot; Approx. 90 minutes<br />CC BY 4.0 &middot; CSCI 271 / CSCI 272</div>
+    </aside>
+    <main class="reader" id="book-content">
+      <header class="cover" id="cover">
+        <div class="edition">Digital Edition &middot; Version 1.0</div>
+        <h1 id="saving-your-work-like-a-pro">Saving Your Work <span>Like a Pro</span></h1>
+        <p class="cover-description" id="git-github-for-c-students">Git &amp; GitHub for C++ Students: a complete, analogy-driven guide to version control, collaboration, and recovery.</p>
+        <p class="cover-byline">Written by <strong>Avijit Roy</strong><br />Adjunct Lecturer, Computer Science<br />John Jay College of Criminal Justice, CUNY</p>
+        <ul class="book-facts" aria-label="Publication details">
+          <li><strong>17</strong><span>Chapters</span></li>
+          <li><strong>3</strong><span>Appendices</span></li>
+          <li><strong>~90 min</strong><span>Reading time</span></li>
+          <li><strong>CC BY 4.0</strong><span>License</span></li>
+        </ul>
+        <div class="cover-actions">
+          <a class="primary" href="#about-this-book">Begin reading</a>
+          <a href="#table-of-contents">View contents</a>
+        </div>
+      </header>
+      <article class="book-content">
+        <h2 id="about-this-book">About This Book<a class="header-anchor" href="#about-this-book" title="Permanent link">&para;</a></h2>
+<p>This guide is written for you — the student sitting in your first or second semester of CS, staring at a C++ file that used to work and now doesn't, with no idea what you changed or how to get back to where things were okay.</p>
+<p>Every concept here is explained through analogy before it's explained through commands. You'll see real C++ code, real terminal sessions, and real workflows — not abstract diagrams that make sense only after you already know the material.</p>
+<p>By the end, you will understand:</p>
+<ul>
+<li>What version control actually <em>is</em> and why professionals cannot work without it</li>
+<li>The difference between Git (the tool) and GitHub (the platform) — a distinction most beginners confuse</li>
+<li>Every command you'll need for a full semester of coursework</li>
+<li>How to collaborate on group projects without overwriting each other's code</li>
+<li>How to recover from mistakes — because mistakes are inevitable</li>
+</ul>
+<p><strong>Prerequisites:</strong> You know how to open a terminal, navigate directories with <code>cd</code> and <code>ls</code> (or <code>dir</code> on Windows), and you've written at least one C++ program.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="header-anchor" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#chapter-1-why-version-control-the-problem-it-solves">Why Version Control? The Problem It Solves</a></li>
+<li><a href="#chapter-2-the-time-machine-analogy-what-git-actually-does">The Time Machine Analogy — What Git Actually Does</a></li>
+<li><a href="#chapter-3-git-vs-github-two-different-things">Git vs. GitHub — Two Different Things</a></li>
+<li><a href="#chapter-4-installing-and-configuring-git">Installing and Configuring Git</a></li>
+<li><a href="#chapter-5-your-first-repository">Your First Repository</a></li>
+<li><a href="#chapter-6-the-three-zones-working-staging-history">The Three Zones — Working, Staging, History</a></li>
+<li><a href="#chapter-7-making-commits-saving-snapshots">Making Commits — Saving Snapshots</a></li>
+<li><a href="#chapter-8-reading-your-history">Reading Your History</a></li>
+<li><a href="#chapter-9-going-back-in-time-undo-and-restore">Going Back in Time — Undo and Restore</a></li>
+<li><a href="#chapter-10-branches-parallel-universes-for-your-code">Branches — Parallel Universes for Your Code</a></li>
+<li><a href="#chapter-11-github-taking-git-online">GitHub — Taking Git Online</a></li>
+<li><a href="#chapter-12-cloning-pushing-and-pulling">Cloning, Pushing, and Pulling</a></li>
+<li><a href="#chapter-13-collaborating-on-group-projects">Collaborating on Group Projects</a></li>
+<li><a href="#chapter-14-c-specific-patterns-what-to-track-and-what-to-ignore">C++-Specific Patterns — What to Track and What to Ignore</a></li>
+<li><a href="#chapter-15-when-things-go-wrong-common-mistakes-and-fixes">When Things Go Wrong — Common Mistakes and Fixes</a></li>
+<li><a href="#chapter-16-the-professional-workflow">The Professional Workflow</a></li>
+<li><a href="#chapter-17-quick-reference-every-command-you-need">Quick Reference — Every Command You Need</a></li>
+</ol>
+<hr />
+<h2 id="chapter-1-why-version-control-the-problem-it-solves">Chapter 1: Why Version Control? The Problem It Solves<a class="header-anchor" href="#chapter-1-why-version-control-the-problem-it-solves" title="Permanent link">&para;</a></h2>
+<h3 id="the-midnight-disaster">The Midnight Disaster<a class="header-anchor" href="#the-midnight-disaster" title="Permanent link">&para;</a></h3>
+<p>It's 11:45 PM. Your C++ assignment is due at midnight. You've been working for four hours, and an hour ago, your program compiled perfectly and produced the right output for every test case.</p>
+<p>Then you decided to make it "just a little cleaner." You reorganized a few functions, changed some variable names, maybe restructured a loop. Now <code>g++ main.cpp -o main</code> throws eleven errors, none of which make sense, and you have no idea what you actually changed in the last hour.</p>
+<p>You hit Ctrl+Z. Again. Again. Your editor's undo history runs out. The code is still broken. You sit there wondering whether starting over is actually faster.</p>
+<p>This scenario plays out for almost every programmer at least once. The ones who've learned from it don't let it happen again — because they use version control.</p>
+<hr />
+<h3 id="what-version-control-actually-is">What Version Control Actually Is<a class="header-anchor" href="#what-version-control-actually-is" title="Permanent link">&para;</a></h3>
+<p>Version control is a system that records changes to files over time so that you can recall specific versions later. Think of it this way: your operating system's file system only knows about your files <em>right now</em>. Version control keeps a detailed journal of every meaningful state your files have ever been in.</p>
+<p>More precisely, it tracks:
+- <strong>What</strong> changed (which lines in which files)
+- <strong>When</strong> it changed (exact timestamp)
+- <strong>Who</strong> changed it (name and email)
+- <strong>Why</strong> it changed (a message you write, called a <em>commit message</em>)</p>
+<p>That last point matters more than people expect. Months from now, you might look at a change and genuinely not remember why you made it. The commit message is a note to your future self.</p>
+<hr />
+<h3 id="the-filing-cabinet-analogy">The Filing Cabinet Analogy<a class="header-anchor" href="#the-filing-cabinet-analogy" title="Permanent link">&para;</a></h3>
+<p>Imagine you're working on a term paper and you're worried about losing your progress. A non-programmer's instinct is to do this:</p>
+<div class="highlight"><pre><span></span><code>term_paper.docx
+term_paper_v2.docx
+term_paper_FINAL.docx
+term_paper_FINAL_actually.docx
+term_paper_FINAL_v2_submitted.docx
+</code></pre></div>
+
+<p>Sound familiar? You've been doing version control manually — it's just <em>terrible</em> version control. You don't know what changed between versions without opening each one. You can't easily compare two versions. The filenames become increasingly desperate.</p>
+<p>Version control automates this process and does it properly. Instead of saving five copies of your file with confusing names, you maintain one file and save <em>checkpoints</em> at meaningful moments. Each checkpoint has a clear label, a timestamp, and notes about what you did. You can return to any checkpoint instantly.</p>
+<p>In the context of your C++ work, this looks like:</p>
+<div class="highlight"><pre><span></span><code>main.cpp    ← just one file, always
+</code></pre></div>
+
+<p>But inside your version control system, there's a hidden journal that reads:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Checkpoint</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>—<span class="w"> </span><span class="s2">&quot;Initial skeleton, main() prints hello world&quot;</span>
+<span class="nv">Checkpoint</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>—<span class="w"> </span><span class="s2">&quot;Add calculateGPA() function&quot;</span>
+<span class="nv">Checkpoint</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>—<span class="w"> </span><span class="s2">&quot;Fix off-by-one error in GPA loop&quot;</span>
+<span class="nv">Checkpoint</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span>—<span class="w"> </span><span class="s2">&quot;Add input validation, handle negative credits&quot;</span>
+</code></pre></div>
+
+<p>At any moment, you can go back to Checkpoint 2 and see exactly what <code>main.cpp</code> looked like then.</p>
+<hr />
+<h3 id="why-c-students-specifically-need-this">Why C++ Students Specifically Need This<a class="header-anchor" href="#why-c-students-specifically-need-this" title="Permanent link">&para;</a></h3>
+<p>C++ is unforgiving in ways that Python or JavaScript aren't. A missing semicolon, a pointer left dangling, a header file included in the wrong order — any of these can cascade into dozens of incomprehensible compiler errors. When you're debugging C++, you often need to <em>isolate</em> what changed and test whether that change introduced the bug.</p>
+<p>Version control makes this trivial. You can:</p>
+<ul>
+<li>Compare the current (broken) file against the last (working) checkpoint line by line</li>
+<li>Revert to the working checkpoint in one command</li>
+<li>Create a separate copy to experiment with, without touching your working version</li>
+<li>Show your instructor exactly what your code looked like at every stage of development</li>
+</ul>
+<p>Beyond debugging, version control is how <em>every</em> professional C++ codebase is managed — game engines, operating systems, compilers, embedded firmware. Learning it in your first semester means you're picking up a skill that will be immediately relevant in any technical role you pursue.</p>
+<hr />
+<h2 id="chapter-2-the-time-machine-analogy-what-git-actually-does">Chapter 2: The Time Machine Analogy — What Git Actually Does<a class="header-anchor" href="#chapter-2-the-time-machine-analogy-what-git-actually-does" title="Permanent link">&para;</a></h2>
+<h3 id="meet-git">Meet Git<a class="header-anchor" href="#meet-git" title="Permanent link">&para;</a></h3>
+<p><strong>Git</strong> is a free, open-source version control system. It was created in 2005 by Linus Torvalds — the same person who created Linux. He built it in about two weeks to manage the development of the Linux kernel, which is one of the largest and most complex software projects in the world. The fact that it's survived and become the universal standard says something about how well it was designed.</p>
+<p>Git runs entirely on your computer. It's a command-line program — you interact with it by typing commands in your terminal, just like you use <code>g++</code> to compile your C++ code. It requires no internet connection. It costs nothing. It stores everything in a hidden folder called <code>.git</code> inside your project.</p>
+<hr />
+<h3 id="the-time-machine">The Time Machine<a class="header-anchor" href="#the-time-machine" title="Permanent link">&para;</a></h3>
+<p>Here's the mental model that makes everything else click.</p>
+<p>Git is a time machine for your code.</p>
+<p>When you reach a meaningful point in your work — your function compiles, your tests pass, you've finished a logical chunk — you take a <em>snapshot</em>. Git saves a complete picture of every file in your project at that exact moment. This snapshot is called a <strong>commit</strong>.</p>
+<p>Every commit has:</p>
+<ol>
+<li>A unique fingerprint (a long hexadecimal ID like <code>3f4a1c2e8b...</code>) that identifies it forever</li>
+<li>A pointer to the previous commit (so commits form a chain)</li>
+<li>A timestamp</li>
+<li>Your name and email</li>
+<li>A message describing what this snapshot represents</li>
+</ol>
+<p>The collection of all your commits — the full chain of snapshots — is your <strong>repository</strong> (or "repo"). The repository is stored inside the <code>.git</code> folder in your project directory.</p>
+<hr />
+<h3 id="snapshots-not-differences">Snapshots, Not Differences<a class="header-anchor" href="#snapshots-not-differences" title="Permanent link">&para;</a></h3>
+<p>This is a subtlety worth understanding even though it won't affect how you use Git day to day.</p>
+<p>Some older version control systems stored the <em>differences</em> between each version — "in version 3, line 12 changed from X to Y." Git does something different: it stores complete snapshots of your entire project at each commit. If a file didn't change between two commits, Git is smart enough to just reference the previous snapshot rather than duplicate it, so storage stays efficient.</p>
+<p>What this means in practice: retrieving any historical version is fast, because Git doesn't have to reconstruct the file by replaying all the changes — it just loads the snapshot directly.</p>
+<hr />
+<h3 id="the-photographer-analogy">The Photographer Analogy<a class="header-anchor" href="#the-photographer-analogy" title="Permanent link">&para;</a></h3>
+<p>Think of a photographer covering a sporting event. They don't film a continuous video — they take individual photographs at key moments. Each photo captures the complete scene at that instant: who's where, what the scoreboard says, how everyone is positioned.</p>
+<p>When the game is over, the photographer has a collection of photographs that together tell the story of the game. They can go back to any moment, examine it in detail, compare two moments side by side, and understand exactly how things changed.</p>
+<p>Your Git commits are those photographs. Each one is a complete, self-contained snapshot of your project. Your commit history is the photo album that tells the story of how your code evolved.</p>
+<hr />
+<h3 id="what-git-tracks-and-what-it-doesnt">What Git Tracks (and What It Doesn't)<a class="header-anchor" href="#what-git-tracks-and-what-it-doesnt" title="Permanent link">&para;</a></h3>
+<p>Git tracks <strong>text files</strong> very well — source code, configuration files, documentation, anything written in plain text. It can detect changes down to individual characters.</p>
+<p>Git also stores <strong>binary files</strong> (images, compiled executables, audio files), but it can't show you <em>what</em> changed between two binary versions — just that they're different. For this reason, there are conventions around which files to include in a Git repository and which to exclude. We'll cover this in detail in Chapter 14, specifically for C++ projects.</p>
+<hr />
+<h2 id="chapter-3-git-vs-github-two-different-things">Chapter 3: Git vs. GitHub — Two Different Things<a class="header-anchor" href="#chapter-3-git-vs-github-two-different-things" title="Permanent link">&para;</a></h2>
+<p>This distinction trips up nearly every beginner, and the confusion is understandable — you'll often hear "push your code to GitHub" or "use Git" in the same breath, as if they're the same thing. They're not, and understanding the difference will save you from a lot of confusion.</p>
+<hr />
+<h3 id="git-is-a-tool-github-is-a-service">Git Is a Tool. GitHub Is a Service.<a class="header-anchor" href="#git-is-a-tool-github-is-a-service" title="Permanent link">&para;</a></h3>
+<p><strong>Git</strong> is a program installed on your computer. It lives in your terminal. It works without internet. It has nothing to do with any website.</p>
+<p><strong>GitHub</strong> is a website — <code>github.com</code>. It's a hosting platform that stores Git repositories in the cloud. When you "push" your code to GitHub, you're uploading a copy of your local Git repository to GitHub's servers.</p>
+<p>The relationship is like this: Git is the filing system; GitHub is the filing cabinet stored in a cloud warehouse that other people can access.</p>
+<hr />
+<h3 id="the-library-analogy">The Library Analogy<a class="header-anchor" href="#the-library-analogy" title="Permanent link">&para;</a></h3>
+<p>Imagine you're writing a book (your C++ project). </p>
+<p><strong>Git</strong> is your personal notebook system — the way you organize your drafts, track your revisions, and maintain a history of everything you've written. It's physical, local, yours.</p>
+<p><strong>GitHub</strong> is the public library where you can submit a copy of your book so others can read it, where your study group can access it, and where a backup exists even if your notebook burns down.</p>
+<p>You can write your book perfectly well without ever submitting it to the library. But submitting to the library makes your work accessible, shareable, and backed up. In a class with group projects, your teammates need the library.</p>
+<hr />
+<h3 id="a-direct-comparison">A Direct Comparison<a class="header-anchor" href="#a-direct-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Git</th>
+<th>GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it is</strong></td>
+<td>Software on your machine</td>
+<td>Website / cloud service</td>
+</tr>
+<tr>
+<td><strong>Created by</strong></td>
+<td>Linus Torvalds, 2005</td>
+<td>Tom Preston-Werner et al., 2008</td>
+</tr>
+<tr>
+<td><strong>Owned by</strong></td>
+<td>Open source community</td>
+<td>Microsoft (acquired 2018)</td>
+</tr>
+<tr>
+<td><strong>Requires internet?</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Requires an account?</strong></td>
+<td>No</td>
+<td>Yes (free)</td>
+</tr>
+<tr>
+<td><strong>Main purpose</strong></td>
+<td>Track changes locally</td>
+<td>Host, share, collaborate</td>
+</tr>
+<tr>
+<td><strong>Where data lives</strong></td>
+<td><code>.git</code> folder on your computer</td>
+<td>GitHub's servers</td>
+</tr>
+<tr>
+<td><strong>Can you use it alone?</strong></td>
+<td>Yes, perfectly</td>
+<td>No — GitHub hosts Git repos, so Git is required</td>
+</tr>
+<tr>
+<td><strong>Alternatives</strong></td>
+<td>(No real alternatives — Git dominates)</td>
+<td>GitLab, Bitbucket, Gitea, Azure Repos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="why-github-specifically">Why GitHub Specifically?<a class="header-anchor" href="#why-github-specifically" title="Permanent link">&para;</a></h3>
+<p>GitHub is the dominant platform because it has the largest community of developers. When you search for an open-source C++ library, the code almost certainly lives on GitHub. When you apply for a technical internship, you'll often be asked for your GitHub profile URL. When your instructor gives feedback on your assignments, they'll likely use GitHub's interface.</p>
+<p>GitHub adds several features that go beyond simply hosting code:</p>
+<p><strong>Pull Requests</strong> are a formal way to propose changes and request review before merging them. In a group project, you wouldn't merge your teammates' code without checking it first. Pull requests are how you check it.</p>
+<p><strong>Issues</strong> are a built-in task tracker. You can file bug reports, feature requests, and discussion threads attached directly to the code.</p>
+<p><strong>GitHub Actions</strong> is an automation system. Every time you push code, it can automatically compile it, run your tests, check your formatting, and notify you if something breaks. This is how professional teams ensure code quality.</p>
+<p><strong>GitHub Pages</strong> hosts static websites directly from a repository. This book, in fact, can be served as a website using GitHub Pages.</p>
+<hr />
+<h3 id="other-platforms-worth-knowing">Other Platforms Worth Knowing<a class="header-anchor" href="#other-platforms-worth-knowing" title="Permanent link">&para;</a></h3>
+<p>While GitHub is where you should start, you'll encounter others in your career:</p>
+<p><strong>GitLab</strong> is popular in enterprise environments and has stronger built-in CI/CD (automated testing and deployment) pipelines. Many companies self-host GitLab on their own servers.</p>
+<p><strong>Bitbucket</strong> integrates tightly with Jira (a project management tool made by Atlassian) and is common in companies that use that ecosystem.</p>
+<p><strong>Gitea</strong> is a lightweight, self-hosted option that teams run on their own infrastructure when they need full control over their data.</p>
+<p>All of them use Git. The underlying version control is identical — only the web interface and collaboration features differ.</p>
+<hr />
+<h2 id="chapter-4-installing-and-configuring-git">Chapter 4: Installing and Configuring Git<a class="header-anchor" href="#chapter-4-installing-and-configuring-git" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="header-anchor" href="#installation" title="Permanent link">&para;</a></h3>
+<p><strong>macOS:</strong> Git is often already installed. Open Terminal and type <code>git --version</code>. If it's not there, install the Xcode Command Line Tools:</p>
+<div class="highlight"><pre><span></span><code>xcode-select<span class="w"> </span>--install
+</code></pre></div>
+
+<p>Or install Git directly via Homebrew if you have it:</p>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+
+<p><strong>Windows:</strong> Download the installer from <a href="https://git-scm.com/downloads">git-scm.com/downloads</a>. During installation, the defaults are fine for most students. This also installs <strong>Git Bash</strong>, a Unix-style terminal — use this instead of Command Prompt when running Git commands.</p>
+<p><strong>Linux (Ubuntu/Debian):</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+
+<p><strong>Verify your installation:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>--version
+<span class="c1"># git version 2.44.0</span>
+</code></pre></div>
+
+<p>Any version from 2.23 onward is fine for everything in this book.</p>
+<hr />
+<h3 id="configuration-the-first-thing-you-do">Configuration — The First Thing You Do<a class="header-anchor" href="#configuration-the-first-thing-you-do" title="Permanent link">&para;</a></h3>
+<p>Before Git will let you make commits, it needs to know who you are. This information gets permanently attached to every commit you make, so it's traceable and accountable. Run these two commands once:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Full Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@example.com&quot;</span>
+</code></pre></div>
+
+<p>Use your real name and your CUNY email address. The <code>--global</code> flag means this setting applies to every repository on your machine — you set it once and never again.</p>
+<p><strong>Verify your configuration:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--list
+<span class="c1"># user.name=Your Full Name</span>
+<span class="c1"># user.email=your.email@example.com</span>
+</code></pre></div>
+
+<hr />
+<h3 id="setting-your-default-editor">Setting Your Default Editor<a class="header-anchor" href="#setting-your-default-editor" title="Permanent link">&para;</a></h3>
+<p>When Git needs you to write something (like a detailed commit message), it opens a text editor. By default this is Vim, which has a notoriously steep learning curve — new users have gotten stuck in it. Set it to something more comfortable:</p>
+<p><strong>VS Code:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;code --wait&quot;</span>
+</code></pre></div>
+
+<p><strong>Nano (simple terminal editor):</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;nano&quot;</span>
+</code></pre></div>
+
+<hr />
+<h3 id="setting-the-default-branch-name">Setting the Default Branch Name<a class="header-anchor" href="#setting-the-default-branch-name" title="Permanent link">&para;</a></h3>
+<p>Modern Git uses <code>main</code> as the default branch name. Older installations default to <code>master</code>. Align yours:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+</code></pre></div>
+
+<p>This matters for consistency when you create new repositories and push them to GitHub, which also defaults to <code>main</code>.</p>
+<hr />
+<h3 id="a-note-on-the-terminal">A Note on the Terminal<a class="header-anchor" href="#a-note-on-the-terminal" title="Permanent link">&para;</a></h3>
+<p>All Git commands are typed in your terminal. On macOS/Linux, this is Terminal or any shell (bash, zsh). On Windows, use <strong>Git Bash</strong> (installed with Git), not Command Prompt or PowerShell — Git Bash gives you a Unix-style environment that matches the examples in this book.</p>
+<p>When you see lines starting with <code>$</code>, that's the terminal prompt. You type everything after it:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>status
+</code></pre></div>
+
+<p>Means: at your terminal prompt, type <code>git status</code> and press Enter. Don't type the <code>$</code>.</p>
+<hr />
+<h2 id="chapter-5-your-first-repository">Chapter 5: Your First Repository<a class="header-anchor" href="#chapter-5-your-first-repository" title="Permanent link">&para;</a></h2>
+<h3 id="creating-a-project-from-scratch">Creating a Project from Scratch<a class="header-anchor" href="#creating-a-project-from-scratch" title="Permanent link">&para;</a></h3>
+<p>Let's create a real C++ project and track it with Git from the beginning.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a project folder</span>
+mkdir<span class="w"> </span>csci271-project1
+<span class="nb">cd</span><span class="w"> </span>csci271-project1
+
+<span class="c1"># Initialize Git — this is what creates the .git folder</span>
+git<span class="w"> </span>init
+</code></pre></div>
+
+<p>You'll see something like:</p>
+<div class="highlight"><pre><span></span><code>Initialized empty Git repository in /Users/you/csci271-project1/.git/
+</code></pre></div>
+
+<p>That's it. Your project is now a Git repository. The <code>.git</code> folder contains the entire database of your project's history. You'll never need to touch it directly — Git manages it — but it's good to know it's there.</p>
+<p><strong>Verify:</strong></p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-a
+<span class="c1"># .  ..  .git</span>
+</code></pre></div>
+
+<p>The <code>-a</code> flag shows hidden files (ones starting with <code>.</code>). The <code>.git</code> folder is the only thing in your project right now.</p>
+<hr />
+<h3 id="your-first-c-file">Your First C++ File<a class="header-anchor" href="#your-first-c-file" title="Permanent link">&para;</a></h3>
+<p>Create <code>main.cpp</code> in your project folder using VS Code or any editor:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.cpp</span>
+<span class="c1">// CSCI 271 — Project 1</span>
+<span class="c1">// Author: Your Name</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, CSCI 271!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Now check what Git sees:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">main</span>
+
+<span class="nv">No</span><span class="w"> </span><span class="nv">commits</span><span class="w"> </span><span class="nv">yet</span>
+
+<span class="nv">Untracked</span><span class="w"> </span><span class="nv">files</span>:
+<span class="w">  </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="k">include</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">committed</span><span class="ss">)</span>
+<span class="w">        </span><span class="nv">main</span>.<span class="nv">cpp</span>
+
+<span class="nv">nothing</span><span class="w"> </span><span class="nv">added</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">commit</span><span class="w"> </span><span class="nv">but</span><span class="w"> </span><span class="nv">untracked</span><span class="w"> </span><span class="nv">files</span><span class="w"> </span><span class="nv">present</span>
+</code></pre></div>
+
+<p>Git is telling you: "I see a file called <code>main.cpp</code>, but I'm not tracking it yet. You haven't told me to include it." This is the <em>working directory</em> — your file exists, but Git doesn't have a record of it.</p>
+<hr />
+<h3 id="the-gitignore-file-what-to-keep-out">The .gitignore File — What to Keep Out<a class="header-anchor" href="#the-gitignore-file-what-to-keep-out" title="Permanent link">&para;</a></h3>
+<p>Before making your first commit, create a <code>.gitignore</code> file. This tells Git which files to <em>never</em> track. For a C++ project, you never want to commit compiled binaries — they're generated files, they're large, and they vary by platform.</p>
+<p>Create a file called <code>.gitignore</code> in your project root with these contents:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Compiled output</span>
+<span class="err">*</span><span class="na">.o</span>
+<span class="err">*</span><span class="na">.out</span>
+<span class="err">*</span><span class="na">.exe</span>
+<span class="nf">a.out</span>
+<span class="nf">main</span>
+
+<span class="c1"># IDE and editor files</span>
+<span class="na">.vscode</span><span class="err">/</span>
+<span class="na">.idea</span><span class="err">/</span>
+<span class="err">*</span><span class="na">.swp</span>
+<span class="err">*</span><span class="na">.swo</span>
+<span class="err">*~</span>
+
+<span class="c1"># macOS junk</span>
+<span class="na">.DS_Store</span>
+
+<span class="c1"># Windows junk</span>
+<span class="nf">Thumbs.db</span>
+<span class="nf">desktop.ini</span>
+
+<span class="c1"># Build directories</span>
+<span class="nf">build</span><span class="err">/</span>
+<span class="nf">cmake-build-</span><span class="p">*</span><span class="err">/</span>
+</code></pre></div>
+
+<p>Why does this matter? If you commit your compiled binary (e.g., the <code>main</code> executable), two things happen: the repository gets large unnecessarily, and Git can't meaningfully track what changed between two binary versions. Since the binary is always generated by compiling your <code>.cpp</code> files, there's no reason to store it — anyone with your source code can compile it themselves.</p>
+<hr />
+<h3 id="making-your-first-commit">Making Your First Commit<a class="header-anchor" href="#making-your-first-commit" title="Permanent link">&para;</a></h3>
+<p>With <code>main.cpp</code> and <code>.gitignore</code> created, you're ready to make your first commit. This is a two-step process:</p>
+<p><strong>Step 1: Stage the files</strong> (tell Git which files to include in this commit)</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>add<span class="w"> </span>.gitignore
+</code></pre></div>
+
+<p>Or, to add everything at once:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+</code></pre></div>
+
+<p><strong>Step 2: Commit</strong> (create the snapshot with a description)</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit: hello world C++ program with .gitignore&quot;</span>
+</code></pre></div>
+
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>[main (root-commit) a1b2c3d] Initial commit: hello world C++ program with .gitignore
+ 2 files changed, 20 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 main.cpp
+</code></pre></div>
+
+<p>Congratulations. You've just made your first Git commit. That <code>a1b2c3d</code> is the beginning of your commit's unique ID (the full ID is 40 characters; Git shows you the shortened version by default).</p>
+<hr />
+<h2 id="chapter-6-the-three-zones-working-staging-history">Chapter 6: The Three Zones — Working, Staging, History<a class="header-anchor" href="#chapter-6-the-three-zones-working-staging-history" title="Permanent link">&para;</a></h2>
+<p>Understanding Git's three zones is the single most important thing in this book. Almost every beginner confusion — "why isn't my commit including my changes?", "why can't I switch branches?", "where did my file go?" — comes from not having a clear picture of these three zones.</p>
+<hr />
+<h3 id="the-restaurant-kitchen-analogy">The Restaurant Kitchen Analogy<a class="header-anchor" href="#the-restaurant-kitchen-analogy" title="Permanent link">&para;</a></h3>
+<p>Imagine a restaurant kitchen.</p>
+<p>The <strong>dining room</strong> is where guests place orders — this is your <strong>working directory</strong>. Things happen here. Changes are made. It's the live, messy environment where active work occurs.</p>
+<p>The <strong>pass</strong> (the window between kitchen and dining room) is where dishes are placed before they go out — this is the <strong>staging area</strong>. Food doesn't go straight from the stove to the table. It gets inspected, plated, verified. The staging area is your inspection point.</p>
+<p>The <strong>ticket rail</strong> (the record of every order that went out) is your <strong>commit history</strong>. Once an order goes out, it's recorded. You can always look at the record and see what was sent, when, and to whom.</p>
+<hr />
+<h3 id="zone-1-the-working-directory">Zone 1: The Working Directory<a class="header-anchor" href="#zone-1-the-working-directory" title="Permanent link">&para;</a></h3>
+<p>This is simply the files you see when you open your project folder. It's where you edit code in your text editor or IDE. Changes here are <strong>not tracked by Git yet</strong> — they're just changes on your hard drive.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># You edit main.cpp, adding a new function</span>
+<span class="c1"># Git sees this immediately</span>
+git<span class="w"> </span>status
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">main</span>
+<span class="nv">Changes</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">commit</span>:
+<span class="w">  </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">update</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">committed</span><span class="ss">)</span>
+<span class="w">        </span><span class="nv">modified</span>:<span class="w">   </span><span class="nv">main</span>.<span class="nv">cpp</span>
+</code></pre></div>
+
+<p>Git says the file is "modified" — it knows the file exists and is being tracked, and it can see that the content has changed since the last commit. But it hasn't saved anything yet.</p>
+<hr />
+<h3 id="zone-2-the-staging-area-index">Zone 2: The Staging Area (Index)<a class="header-anchor" href="#zone-2-the-staging-area-index" title="Permanent link">&para;</a></h3>
+<p>The staging area is a preparation zone — a buffer between your edits and your permanent history. You move files from the working directory to the staging area using <code>git add</code>.</p>
+<p>Why does this zone exist? Because you often make multiple related changes to several files but want to organize them into separate, logical commits. You might fix a bug in one file and add a new feature in another — two different commits, each telling a clear story.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage main.cpp (move it to the staging area)</span>
+git<span class="w"> </span>add<span class="w"> </span>main.cpp
+
+git<span class="w"> </span>status
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>On branch main
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        modified:   main.cpp
+</code></pre></div>
+
+<p>The file is now "to be committed" — it's in the staging area, waiting for you to create the snapshot.</p>
+<hr />
+<h3 id="zone-3-the-commit-history-repository">Zone 3: The Commit History (Repository)<a class="header-anchor" href="#zone-3-the-commit-history-repository" title="Permanent link">&para;</a></h3>
+<p>When you run <code>git commit</code>, Git takes everything in the staging area and permanently saves it as a new snapshot in the repository's history. This is the permanent record.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add calculateGPA() function&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[main 7f3a2b1] Add calculateGPA() function
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+</code></pre></div>
+
+<p>Once committed, this snapshot is immutable. The commit with ID <code>7f3a2b1</code> will always represent exactly what your files looked like at this moment. You can always return to it.</p>
+<hr />
+<h3 id="visualizing-the-three-zones">Visualizing the Three Zones<a class="header-anchor" href="#visualizing-the-three-zones" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">┌─────────────────────┐</span><span class="w">   </span><span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w">    </span><span class="err">┌──────────────────┐</span><span class="w">   </span><span class="n">git</span><span class="w"> </span><span class="k">commit</span><span class="w">  </span><span class="err">┌──────────────────────┐</span>
+<span class="err">│</span><span class="w">   </span><span class="n">Working</span><span class="w"> </span><span class="n">Directory</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">───────────▶</span><span class="w"> </span><span class="err">│</span><span class="w">   </span><span class="n">Staging</span><span class="w"> </span><span class="n">Area</span><span class="w">   </span><span class="err">│</span><span class="w"> </span><span class="err">────────────▶</span><span class="w"> </span><span class="err">│</span><span class="w">   </span><span class="k">Commit</span><span class="w"> </span><span class="n">History</span><span class="w">     </span><span class="err">│</span>
+<span class="err">│</span><span class="w">                     </span><span class="err">│</span><span class="w">              </span><span class="err">│</span><span class="w">   </span><span class="p">(</span><span class="k">Index</span><span class="p">)</span><span class="w">        </span><span class="err">│</span><span class="w">               </span><span class="err">│</span><span class="w">   </span><span class="p">(</span><span class="n">Repository</span><span class="p">)</span><span class="w">       </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">main</span><span class="p">.</span><span class="n">cpp</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="n">edit</span><span class="w">   </span><span class="err">│</span><span class="w">              </span><span class="err">│</span><span class="w">  </span><span class="n">main</span><span class="p">.</span><span class="n">cpp</span><span class="w"> </span><span class="err">✓</span><span class="w">      </span><span class="err">│</span><span class="w">               </span><span class="err">│</span><span class="w">  </span><span class="o">[</span><span class="n">a1c3d</span><span class="o">]</span><span class="w"> </span><span class="n">Initial</span><span class="w">   </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">utils</span><span class="p">.</span><span class="n">cpp</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">edit</span><span class="w">   </span><span class="err">│</span><span class="w">              </span><span class="err">│</span><span class="w">                  </span><span class="err">│</span><span class="w">               </span><span class="err">│</span><span class="w">  </span><span class="o">[</span><span class="n">7f2b1</span><span class="o">]</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="n">GPA</span><span class="w">   </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="w">          </span><span class="err">│</span><span class="w">              </span><span class="err">│</span><span class="w">                  </span><span class="err">│</span><span class="w">               </span><span class="err">│</span><span class="w">  </span><span class="o">[</span><span class="n">9d4c2</span><span class="o">]</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">bug</span><span class="w">   </span><span class="err">│</span>
+<span class="err">└─────────────────────┘</span><span class="w">              </span><span class="err">└──────────────────┘</span><span class="w">                </span><span class="err">└──────────────────────┘</span>
+
+<span class="w">      </span><span class="n">git</span><span class="w"> </span><span class="k">restore</span><span class="w"> </span><span class="o">&lt;</span><span class="k">file</span><span class="o">&gt;</span><span class="w">                </span><span class="n">git</span><span class="w"> </span><span class="k">restore</span><span class="w">                      </span><span class="n">git</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span>
+<span class="w">     </span><span class="err">◀────────────────────</span><span class="w">              </span><span class="c1">--staged &lt;file&gt;                    ◀──────────────────</span>
+<span class="w">                                       </span><span class="err">◀──────────────────────</span>
+</code></pre></div>
+
+<p>You can move files backward too:</p>
+<ul>
+<li><code>git restore &lt;file&gt;</code> — discard changes in the working directory (dangerous: you lose your edits)</li>
+<li><code>git restore --staged &lt;file&gt;</code> — move a file from staging back to working directory (safe: edits are kept)</li>
+</ul>
+<hr />
+<h3 id="a-common-beginner-trap">A Common Beginner Trap<a class="header-anchor" href="#a-common-beginner-trap" title="Permanent link">&para;</a></h3>
+<p>Here is a scenario that confuses almost every new Git user at least once:</p>
+<ol>
+<li>You edit <code>main.cpp</code>.</li>
+<li>You run <code>git commit -m "My message"</code>.</li>
+<li>Git says: <code>nothing to commit, working tree clean</code>.</li>
+</ol>
+<p>What happened? You forgot <code>git add</code>. Your edited file is in the working directory. You didn't move it to the staging area. Git committed nothing because the staging area was empty.</p>
+<p>The fix:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My message&quot;</span>
+</code></pre></div>
+
+<p><strong>Always check <code>git status</code> before committing.</strong> It will tell you exactly what's staged, what's modified but not staged, and what's untracked.</p>
+<hr />
+<h2 id="chapter-7-making-commits-saving-snapshots">Chapter 7: Making Commits — Saving Snapshots<a class="header-anchor" href="#chapter-7-making-commits-saving-snapshots" title="Permanent link">&para;</a></h2>
+<h3 id="the-commit-message-a-letter-to-your-future-self">The Commit Message — A Letter to Your Future Self<a class="header-anchor" href="#the-commit-message-a-letter-to-your-future-self" title="Permanent link">&para;</a></h3>
+<p>When you write <code>git commit -m "..."</code>, the message inside the quotes is permanent. It will appear in your history forever. It's the only way — six months from now — that you'll know why you made a particular change.</p>
+<p>Bad commit messages are not just annoying; they're a liability. Consider these:</p>
+<div class="highlight"><pre><span></span><code>fix
+asdf
+stuff
+work
+finally
+aaaaaa
+</code></pre></div>
+
+<p>These tell you absolutely nothing. Compare:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Fix</span><span class="w"> </span><span class="nv">off</span><span class="o">-</span><span class="nv">by</span><span class="o">-</span><span class="nv">one</span><span class="w"> </span><span class="nv">error</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">calculateGPA</span><span class="ss">()</span><span class="w"> </span><span class="nv">when</span><span class="w"> </span><span class="nv">credit</span><span class="w"> </span><span class="nv">hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">Add</span><span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="nv">validation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">negative</span><span class="w"> </span><span class="nv">grade</span><span class="w"> </span><span class="nv">values</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">main</span><span class="ss">()</span>
+<span class="nv">Refactor</span><span class="w"> </span><span class="nv">parseInput</span><span class="ss">()</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">use</span><span class="w"> </span><span class="nv">stringstream</span><span class="w"> </span><span class="nv">instead</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">scanf</span>
+</code></pre></div>
+
+<p>These are commit messages that do actual work. They tell you what changed, where, and implicitly why.</p>
+<hr />
+<h3 id="the-commit-message-convention">The Commit Message Convention<a class="header-anchor" href="#the-commit-message-convention" title="Permanent link">&para;</a></h3>
+<p>Professional developers follow a widely used convention:</p>
+<p><strong>Use the imperative mood.</strong> Write as if completing the sentence "If applied, this commit will..." So: "Add feature" not "Added feature." "Fix bug" not "Fixed bug."</p>
+<p><strong>Keep the subject line under 72 characters.</strong> This is a formatting convention from the days of email patches and is still respected because it keeps <code>git log</code> readable.</p>
+<p><strong>For more detail, leave a blank line after the subject and add a body.</strong> For a CS assignment, a one-line message is usually fine. For larger projects, a body adds context.</p>
+<p>A detailed commit (using <code>git commit</code> without <code>-m</code>, which opens your editor):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Add</span><span class="w"> </span><span class="nv">GPA</span><span class="w"> </span><span class="nv">calculation</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">credit</span><span class="o">-</span><span class="nv">hour</span><span class="w"> </span><span class="nv">weighting</span>
+
+<span class="nv">The</span><span class="w"> </span><span class="nv">calculateGPA</span><span class="ss">()</span><span class="w"> </span><span class="nv">function</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="nv">accounts</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">courses</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">different</span>
+<span class="nv">credit</span><span class="w"> </span><span class="nv">hours</span>.<span class="w"> </span><span class="nv">Previously</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">treated</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">courses</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">equal</span><span class="w"> </span><span class="nv">weight</span>,
+<span class="nv">which</span><span class="w"> </span><span class="nv">produced</span><span class="w"> </span><span class="nv">incorrect</span><span class="w"> </span><span class="nv">results</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">lab</span><span class="w"> </span><span class="nv">sections</span><span class="w"> </span><span class="ss">(</span><span class="mi">1</span><span class="w"> </span><span class="nv">credit</span><span class="ss">)</span><span class="w"> </span><span class="nv">vs</span>
+<span class="nv">lecture</span><span class="w"> </span><span class="nv">sections</span><span class="w"> </span><span class="ss">(</span><span class="mi">3</span><span class="w"> </span><span class="nv">credits</span><span class="ss">)</span>.
+
+<span class="nv">Closes</span>:<span class="w"> </span><span class="sc">#12</span>
+</code></pre></div>
+
+<p>For homework, this level of detail is overkill. But understanding why it exists helps.</p>
+<hr />
+<h3 id="how-often-to-commit">How Often to Commit?<a class="header-anchor" href="#how-often-to-commit" title="Permanent link">&para;</a></h3>
+<p><strong>Commit early, commit often.</strong> This is not a phrase to take lightly.</p>
+<p>A commit should represent one logical unit of work. Not a whole assignment — one meaningful step toward completing it. Here's what a realistic commit history for a CSCI 271 assignment might look like:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a1b2c3d</span><span class="w">  </span><span class="nv">Initial</span><span class="w"> </span><span class="nv">project</span><span class="w"> </span><span class="nv">skeleton</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">main</span><span class="ss">()</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">includes</span>
+<span class="mi">7</span><span class="nv">f3a2b1</span><span class="w">  </span><span class="nv">Add</span><span class="w"> </span><span class="nv">struct</span><span class="w"> </span><span class="nv">definition</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">Student</span>
+<span class="mi">9</span><span class="nv">e5d4c2</span><span class="w">  </span><span class="nv">Implement</span><span class="w"> </span><span class="nv">readStudentData</span><span class="ss">()</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">parse</span><span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="nv">file</span>
+<span class="mi">2</span><span class="nv">c8a1f4</span><span class="w">  </span><span class="nv">Add</span><span class="w"> </span><span class="nv">displayStudent</span><span class="ss">()</span><span class="w"> </span><span class="nv">output</span><span class="w"> </span><span class="nv">function</span>
+<span class="nv">b3f7e9d</span><span class="w">  </span><span class="nv">Add</span><span class="w"> </span><span class="nv">calculateGPA</span><span class="ss">()</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">credit</span><span class="o">-</span><span class="nv">hour</span><span class="w"> </span><span class="nv">weighting</span>
+<span class="mi">4</span><span class="nv">d1a8c3</span><span class="w">  </span><span class="nv">Fix</span>:<span class="w"> </span><span class="nv">handle</span><span class="w"> </span><span class="nv">empty</span><span class="w"> </span><span class="nv">student</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="nv">validation</span>
+<span class="nv">e5b9f2a</span><span class="w">  </span><span class="nv">Add</span><span class="w"> </span><span class="nv">error</span><span class="w"> </span><span class="nv">handling</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">missing</span><span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="nv">file</span>
+<span class="mi">3</span><span class="nv">c7d1a2</span><span class="w">  </span><span class="nv">Final</span><span class="w"> </span><span class="nv">cleanup</span>:<span class="w"> </span><span class="nv">remove</span><span class="w"> </span><span class="nv">debug</span><span class="w"> </span><span class="nv">cout</span><span class="w"> </span><span class="nv">statements</span>
+</code></pre></div>
+
+<p>This is eight commits over the course of writing one assignment. Each commit is small enough to be easily understood, and together they tell the story of how the assignment was built.</p>
+<p><strong>Why does this matter for you, specifically?</strong></p>
+<ol>
+<li>If something breaks, you can pinpoint exactly which commit introduced the bug.</li>
+<li>If you run out of time, you have a partially-complete, consistently-working version to submit rather than a broken mess.</li>
+<li>Your instructor can see that you worked on it over several sessions, not in a panic the hour before the deadline.</li>
+</ol>
+<hr />
+<h3 id="building-a-c-program-commit-by-commit">Building a C++ Program — Commit by Commit<a class="header-anchor" href="#building-a-c-program-commit-by-commit" title="Permanent link">&para;</a></h3>
+<p>Let's walk through a realistic example. You're building a student grade calculator in C++.</p>
+<p><strong>Commit 1:</strong> The skeleton</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.cpp</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TODO: implement grade calculator</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Grade Calculator&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add project skeleton with includes and empty main()&quot;</span>
+</code></pre></div>
+
+<p><strong>Commit 2:</strong> Add the data structure</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.cpp</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Course</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="p">;</span><span class="w">   </span><span class="c1">// 0.0 to 4.0</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">credits</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Grade Calculator&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add Course struct with name, grade, and credits fields&quot;</span>
+</code></pre></div>
+
+<p><strong>Commit 3:</strong> Implement the first function</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">calculateGPA</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Course</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">courses</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">totalPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">totalCredits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">courses</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">totalPoints</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">credits</span><span class="p">;</span>
+<span class="w">        </span><span class="n">totalCredits</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">credits</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">totalCredits</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">totalPoints</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">totalCredits</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implement calculateGPA() with credit-hour weighting&quot;</span>
+</code></pre></div>
+
+<p>Notice: each commit is small, focused, and the program compiles correctly after each one (or at least doesn't get worse). This is the discipline that makes version control useful.</p>
+<hr />
+<h2 id="chapter-8-reading-your-history">Chapter 8: Reading Your History<a class="header-anchor" href="#chapter-8-reading-your-history" title="Permanent link">&para;</a></h2>
+<h3 id="git-log-the-history-browser">git log — The History Browser<a class="header-anchor" href="#git-log-the-history-browser" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log
+</code></pre></div>
+
+<p>This shows every commit in your repository, most recent first:</p>
+<div class="highlight"><pre><span></span><code><span class="k">commit</span><span class="w"> </span><span class="mf">9e5</span><span class="n">d4c2f1a8b3d7e6f2c4a1b9e8d3c7a2f4b1e9</span><span class="w">  </span><span class="p">(</span><span class="n">HEAD</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">main</span><span class="p">)</span>
+<span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">&lt;</span><span class="n">you</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="nc">Date</span><span class="err">:</span><span class="w">   </span><span class="n">Thu</span><span class="w"> </span><span class="n">May</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="mi">14</span><span class="err">:</span><span class="mi">32</span><span class="err">:</span><span class="mi">11</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="o">-</span><span class="mi">0400</span>
+
+<span class="w">    </span><span class="n">Implement</span><span class="w"> </span><span class="n">calculateGPA</span><span class="p">()</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">credit</span><span class="o">-</span><span class="k">hour</span><span class="w"> </span><span class="n">weighting</span>
+
+<span class="k">commit</span><span class="w"> </span><span class="mi">7</span><span class="n">f3a2b1c8e9d4a5f2b6c3d1e7f4a8b2c9d3e4a5f</span>
+<span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">&lt;</span><span class="n">you</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="nc">Date</span><span class="err">:</span><span class="w">   </span><span class="n">Thu</span><span class="w"> </span><span class="n">May</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="mi">13</span><span class="err">:</span><span class="mi">45</span><span class="err">:</span><span class="mi">02</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="o">-</span><span class="mi">0400</span>
+
+<span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="n">struct</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="n">fields</span>
+
+<span class="k">commit</span><span class="w"> </span><span class="n">a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0</span>
+<span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">&lt;</span><span class="n">you</span><span class="nv">@example</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="nc">Date</span><span class="err">:</span><span class="w">   </span><span class="n">Thu</span><span class="w"> </span><span class="n">May</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="mi">12</span><span class="err">:</span><span class="mi">15</span><span class="err">:</span><span class="mi">44</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="o">-</span><span class="mi">0400</span>
+
+<span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">skeleton</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The full commit ID is that 40-character hexadecimal string. You rarely need the full thing — the first 7 characters usually uniquely identify a commit.</p>
+<hr />
+<h3 id="the-compact-view">The Compact View<a class="header-anchor" href="#the-compact-view" title="Permanent link">&para;</a></h3>
+<p>For a project with many commits, the full log gets long. The one-line format is much more readable:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">9</span><span class="n">e5d4c2</span><span class="w"> </span><span class="p">(</span><span class="n">HEAD</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">main</span><span class="p">)</span><span class="w"> </span><span class="n">Implement</span><span class="w"> </span><span class="n">calculateGPA</span><span class="p">()</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">credit</span><span class="o">-</span><span class="n">hour</span><span class="w"> </span><span class="n">weighting</span>
+<span class="mf">7</span><span class="n">f3a2b1</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="n">struct</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="n">fields</span>
+<span class="n">a1b2c3d</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">skeleton</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>This is usually the first thing you read when you return to a project after a few days away.</p>
+<hr />
+<h3 id="head-where-you-are-right-now">HEAD — Where You Are Right Now<a class="header-anchor" href="#head-where-you-are-right-now" title="Permanent link">&para;</a></h3>
+<p>You'll see <code>HEAD</code> appear throughout Git's output. <code>HEAD</code> is simply a pointer to your current position in history. Normally, it points to the latest commit on your current branch. When you make a new commit, HEAD advances to point at it.</p>
+<p>Think of <code>HEAD</code> like a bookmark. It says: "This is the page I'm currently reading." When you create new commits, the bookmark moves forward automatically.</p>
+<hr />
+<h3 id="viewing-what-changed-in-a-commit">Viewing What Changed in a Commit<a class="header-anchor" href="#viewing-what-changed-in-a-commit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># See the changes introduced by the most recent commit</span>
+git<span class="w"> </span>show
+
+<span class="c1"># See the changes introduced by a specific commit</span>
+git<span class="w"> </span>show<span class="w"> </span>7f3a2b1
+
+<span class="c1"># Compare your current files against the last commit (what you&#39;ve changed but not yet staged)</span>
+git<span class="w"> </span>diff
+
+<span class="c1"># Compare the staging area against the last commit (what you&#39;ve staged but not yet committed)</span>
+git<span class="w"> </span>diff<span class="w"> </span>--staged
+</code></pre></div>
+
+<p>The output of <code>git diff</code> uses a standard format: lines prefixed with <code>-</code> are removed, lines prefixed with <code>+</code> are added, and unchanged context lines have no prefix.</p>
+<div class="highlight"><pre><span></span><code><span class="gd">--- a/main.cpp</span>
+<span class="gi">+++ b/main.cpp</span>
+<span class="gu">@@ -8,6 +8,16 @@ struct Course {</span>
+<span class="w"> </span>    int credits;
+<span class="w"> </span>};
+
+<span class="gi">+double calculateGPA(const std::vector&lt;Course&gt;&amp; courses) {</span>
+<span class="gi">+    double totalPoints = 0.0;</span>
+<span class="gi">+    int totalCredits = 0;</span>
+<span class="gi">+</span>
+<span class="gi">+    for (const auto&amp; course : courses) {</span>
+<span class="gi">+        totalPoints += course.grade * course.credits;</span>
+<span class="gi">+        totalCredits += course.credits;</span>
+<span class="gi">+    }</span>
+<span class="gi">+</span>
+<span class="gi">+    if (totalCredits == 0) return 0.0;</span>
+<span class="gi">+    return totalPoints / totalCredits;</span>
+<span class="gi">+}</span>
+<span class="gi">+</span>
+<span class="w"> </span>int main() {
+</code></pre></div>
+
+<p>Reading diffs is a skill. Practice it — being able to quickly read "what changed" is fundamental to debugging and code review.</p>
+<hr />
+<h2 id="chapter-9-going-back-in-time-undo-and-restore">Chapter 9: Going Back in Time — Undo and Restore<a class="header-anchor" href="#chapter-9-going-back-in-time-undo-and-restore" title="Permanent link">&para;</a></h2>
+<p>One of Git's most valuable features is the ability to undo mistakes. There are several levels of "undo," and understanding which to use in which situation prevents data loss.</p>
+<h3 id="level-1-discard-unsaved-changes-most-dangerous">Level 1: Discard Unsaved Changes (Most Dangerous)<a class="header-anchor" href="#level-1-discard-unsaved-changes-most-dangerous" title="Permanent link">&para;</a></h3>
+<p>You edited a file and realized the changes are wrong. You want the file to go back to exactly what it was at the last commit.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>restore<span class="w"> </span>main.cpp
+</code></pre></div>
+
+<p><strong>Warning:</strong> This is permanent. Your unsaved edits are gone. Git doesn't keep a trash can for working directory changes — if you restore, the edits vanish. Only do this when you're certain you want to throw the changes away.</p>
+<hr />
+<h3 id="level-2-unstage-a-file-safe">Level 2: Unstage a File (Safe)<a class="header-anchor" href="#level-2-unstage-a-file-safe" title="Permanent link">&para;</a></h3>
+<p>You ran <code>git add main.cpp</code> by mistake — maybe you wanted to commit two other files but not this one. Move it back to the working directory without losing your edits:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>main.cpp
+</code></pre></div>
+
+<p>Your changes to <code>main.cpp</code> are still there in the working directory — you just took it out of the staging area.</p>
+<hr />
+<h3 id="level-3-undo-the-last-commit-keeps-your-changes">Level 3: Undo the Last Commit (Keeps Your Changes)<a class="header-anchor" href="#level-3-undo-the-last-commit-keeps-your-changes" title="Permanent link">&para;</a></h3>
+<p>You made a commit and immediately realized the message was wrong, or you forgot to include a file. Undo the commit but keep all the changes in the staging area:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1
+</code></pre></div>
+
+<p><code>HEAD~1</code> means "one commit before HEAD." Your commit disappears from history, but your files are still staged and your code is intact. You can now fix whatever was wrong and commit again.</p>
+<hr />
+<h3 id="level-4-undo-the-last-commit-moves-changes-to-working-directory">Level 4: Undo the Last Commit (Moves Changes to Working Directory)<a class="header-anchor" href="#level-4-undo-the-last-commit-moves-changes-to-working-directory" title="Permanent link">&para;</a></h3>
+<p>Same as above, but the files go back to the working directory instead of staying staged:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>HEAD~1
+</code></pre></div>
+
+<p>(Same as <code>git reset --mixed HEAD~1</code>, which is the default.)</p>
+<hr />
+<h3 id="level-5-view-an-old-version-without-changing-anything">Level 5: View an Old Version Without Changing Anything<a class="header-anchor" href="#level-5-view-an-old-version-without-changing-anything" title="Permanent link">&para;</a></h3>
+<p>You want to see what your code looked like two commits ago — just to read it, not to change anything:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>a1b2c3d
+</code></pre></div>
+
+<p>This puts you in a "detached HEAD" state — you're looking at a historical snapshot but not making any changes. To go back to your current state:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>main
+</code></pre></div>
+
+<hr />
+<h3 id="the-broken-code-emergency">The Broken Code Emergency<a class="header-anchor" href="#the-broken-code-emergency" title="Permanent link">&para;</a></h3>
+<p>This is the scenario that version control was made for. You've been editing for an hour, everything is broken, and you want to go back to the last working state:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># First, see what commit you want to go back to</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline
+
+<span class="c1"># Discard all changes since the last commit</span>
+git<span class="w"> </span>restore<span class="w"> </span>.
+</code></pre></div>
+
+<p>Or if you want to go back further — say, two commits:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
+</code></pre></div>
+
+<p><code>--hard</code> is destructive: it discards both the commits and all file changes. Use it when you genuinely want to erase everything since that point. For anything important, make sure you have a backup first — or use <code>--soft</code> if you're uncertain.</p>
+<hr />
+<h2 id="chapter-10-branches-parallel-universes-for-your-code">Chapter 10: Branches — Parallel Universes for Your Code<a class="header-anchor" href="#chapter-10-branches-parallel-universes-for-your-code" title="Permanent link">&para;</a></h2>
+<h3 id="the-parallel-universe-analogy">The Parallel Universe Analogy<a class="header-anchor" href="#the-parallel-universe-analogy" title="Permanent link">&para;</a></h3>
+<p>Imagine your C++ project is a universe. Right now, in the main timeline, you have a working grade calculator. Your professor announces extra credit for adding a graphical output.</p>
+<p>You have two options:</p>
+<ol>
+<li>Start editing your working program, hoping the graphical code doesn't break anything.</li>
+<li>Create a <strong>parallel universe</strong> where you experiment with the graphical code. If it works, you merge it back into the main timeline. If it doesn't, you delete the parallel universe and the main timeline is completely unaffected.</li>
+</ol>
+<p>Option 2 is branching.</p>
+<p>A <strong>branch</strong> in Git is an independent line of development. You can create as many branches as you need, work on them independently, and merge them back together when you're ready. The <code>main</code> branch (your default) is just the first branch Git creates. It has no special properties beyond being the default.</p>
+<hr />
+<h3 id="why-branching-matters-for-students">Why Branching Matters for Students<a class="header-anchor" href="#why-branching-matters-for-students" title="Permanent link">&para;</a></h3>
+<p>You might think: "I'm working alone on an assignment, why do I need branches?" Fair question. Here are situations where they save you:</p>
+<p><strong>The experiment:</strong> You want to try a completely different algorithm for a function — say, replacing bubble sort with quicksort. Make a branch, implement it, test it. If it's better, merge it. If it's worse, delete the branch. Your original code was never touched.</p>
+<p><strong>The bug fix:</strong> You're in the middle of adding a new feature when you notice a different bug. Create a branch from <code>main</code>, fix the bug, merge it back. Then return to your feature branch. The bug fix and the feature never interfere.</p>
+<p><strong>Group projects:</strong> Each teammate works on a separate branch. Code is merged together only after review. This prevents the most common group project disaster: two people editing the same file and overwriting each other's work.</p>
+<hr />
+<h3 id="creating-and-switching-branches">Creating and Switching Branches<a class="header-anchor" href="#creating-and-switching-branches" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># See all branches (the * marks the current one)</span>
+git<span class="w"> </span>branch
+<span class="c1"># * main</span>
+
+<span class="c1"># Create a new branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>feature/quicksort
+
+<span class="c1"># Switch to it</span>
+git<span class="w"> </span>switch<span class="w"> </span>feature/quicksort
+
+<span class="c1"># Or, do both in one command:</span>
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature/experimental-sort
+</code></pre></div>
+
+<p>After switching, any commits you make go onto this branch. Your <code>main</code> branch is untouched.</p>
+<hr />
+<h3 id="a-real-example-two-sorting-algorithms">A Real Example: Two Sorting Algorithms<a class="header-anchor" href="#a-real-example-two-sorting-algorithms" title="Permanent link">&para;</a></h3>
+<p>Let's say your assignment requires sorting a list of students by GPA. You've implemented bubble sort. You want to try insertion sort and compare.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># You&#39;re on main, bubble sort is committed</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline
+<span class="c1"># a1b2c3d Implement bubble sort for student list</span>
+<span class="c1"># 9e5d4c2 Add Student data structure</span>
+
+<span class="c1"># Create a branch for insertion sort</span>
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature/insertion-sort
+
+<span class="c1"># Implement insertion sort in main.cpp</span>
+<span class="c1"># ...</span>
+
+git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Replace bubble sort with insertion sort implementation&quot;</span>
+
+<span class="c1"># Now test both:</span>
+<span class="c1"># On this branch: insertion sort</span>
+<span class="c1"># Switch back to main for bubble sort</span>
+git<span class="w"> </span>switch<span class="w"> </span>main
+<span class="c1"># main.cpp still has bubble sort — the other branch is unaffected</span>
+</code></pre></div>
+
+<hr />
+<h3 id="merging">Merging<a class="header-anchor" href="#merging" title="Permanent link">&para;</a></h3>
+<p>When your feature is ready and tested, you merge it back:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Switch to the branch you want to merge INTO</span>
+git<span class="w"> </span>switch<span class="w"> </span>main
+
+<span class="c1"># Merge the feature branch</span>
+git<span class="w"> </span>merge<span class="w"> </span>feature/insertion-sort
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Updating a1b2c3d..3b5f7e9
+Fast-forward
+ main.cpp | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+</code></pre></div>
+
+<p><strong>Fast-forward</strong> means the merge was simple — <code>main</code> hadn't changed since you branched, so Git just moves the pointer forward. No merge commit needed.</p>
+<hr />
+<h3 id="merge-conflicts-when-two-timelines-collide">Merge Conflicts — When Two Timelines Collide<a class="header-anchor" href="#merge-conflicts-when-two-timelines-collide" title="Permanent link">&para;</a></h3>
+<p>A <strong>merge conflict</strong> happens when two branches both changed the same lines of the same file in different ways. Git can't decide automatically which version to keep — it needs you to decide.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>feature/new-parser
+<span class="c1"># Auto-merging main.cpp</span>
+<span class="c1"># CONFLICT (content): Merge conflict in main.cpp</span>
+<span class="c1"># Automatic merge failed; fix conflicts and then commit the result.</span>
+</code></pre></div>
+
+<p>Open <code>main.cpp</code>. Git has marked the conflict:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span><span class="w"> </span><span class="n">HEAD</span>
+<span class="c1">// This is the version from your main branch</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">parseInput</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// original implementation using fstream</span>
+<span class="o">=======</span>
+<span class="c1">// This is the version from feature/new-parser</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">parseInput</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// new implementation using stringstream</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span><span class="w"> </span><span class="n">feature</span><span class="o">/</span><span class="k">new</span><span class="o">-</span><span class="n">parser</span>
+</code></pre></div>
+
+<p>You manually edit the file to keep what you want (could be one version, the other, or a combination), then:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove the conflict markers, save the file, then:</span>
+git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge feature/new-parser: use stringstream for input parsing&quot;</span>
+</code></pre></div>
+
+<p>Merge conflicts look scary the first time. They're actually straightforward once you understand what the markers mean — Git is just showing you the two competing versions and asking you to pick.</p>
+<hr />
+<h3 id="cleaning-up-branches">Cleaning Up Branches<a class="header-anchor" href="#cleaning-up-branches" title="Permanent link">&para;</a></h3>
+<p>After merging, delete the branch to keep your repo tidy:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature/insertion-sort
+<span class="c1"># Deleted branch feature/insertion-sort (was 3b5f7e9).</span>
+</code></pre></div>
+
+<p><code>-d</code> (lowercase) is the safe delete — it refuses to delete a branch if it hasn't been merged. Use <code>-D</code> (uppercase) to force-delete an unmerged branch.</p>
+<hr />
+<h2 id="chapter-11-github-taking-git-online">Chapter 11: GitHub — Taking Git Online<a class="header-anchor" href="#chapter-11-github-taking-git-online" title="Permanent link">&para;</a></h2>
+<h3 id="creating-a-github-account">Creating a GitHub Account<a class="header-anchor" href="#creating-a-github-account" title="Permanent link">&para;</a></h3>
+<p>Go to <a href="https://github.com">github.com</a> and create a free account. Use your real name — this profile will be visible to future employers. If you're a student, go to <a href="https://education.github.com">education.github.com</a> and verify your status to get the <strong>GitHub Student Developer Pack</strong>, which includes:</p>
+<ul>
+<li>GitHub Copilot (AI coding assistant) — free for students</li>
+<li>Private repositories (unlimited)</li>
+<li>Dozens of professional tools and services at no cost</li>
+</ul>
+<hr />
+<h3 id="creating-a-repository-on-github">Creating a Repository on GitHub<a class="header-anchor" href="#creating-a-repository-on-github" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click the <code>+</code> icon in the top right → <strong>New repository</strong></li>
+<li>Name it (use the same name as your local folder, e.g., <code>csci271-project1</code>)</li>
+<li>Leave it <strong>Public</strong> for class assignments (unless you have private repo access and prefer privacy)</li>
+<li><strong>Do not</strong> check "Add a README" — you already have files locally and this avoids a conflict</li>
+<li>Click <strong>Create repository</strong></li>
+</ol>
+<p>GitHub will show you setup instructions. Since you already have a local repository, use the "push an existing repository" section.</p>
+<hr />
+<h3 id="connecting-your-local-repo-to-github">Connecting Your Local Repo to GitHub<a class="header-anchor" href="#connecting-your-local-repo-to-github" title="Permanent link">&para;</a></h3>
+<p>After creating the GitHub repo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add GitHub as the &quot;remote&quot; called &quot;origin&quot;</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/yourusername/csci271-project1.git
+
+<span class="c1"># Verify the remote was added</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v
+<span class="c1"># origin  https://github.com/yourusername/csci271-project1.git (fetch)</span>
+<span class="c1"># origin  https://github.com/yourusername/csci271-project1.git (push)</span>
+
+<span class="c1"># Push your commits to GitHub</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<p>The <code>-u</code> flag sets the "upstream" — it tells Git that <code>origin/main</code> is the remote branch your local <code>main</code> should track. You only need <code>-u</code> the first time. After that, just <code>git push</code> is enough.</p>
+<hr />
+<h3 id="understanding-origin">Understanding "origin"<a class="header-anchor" href="#understanding-origin" title="Permanent link">&para;</a></h3>
+<p>"origin" is just a name — a shorthand that refers to your GitHub remote URL. It's the default name Git uses, and you should stick with it. When you <code>git push origin main</code>, you're saying: "Push my local <code>main</code> branch to the remote named <code>origin</code>."</p>
+<p>You can have multiple remotes with different names, but for most student work, you'll have exactly one remote called <code>origin</code>.</p>
+<hr />
+<h3 id="authentication-https-vs-ssh">Authentication — HTTPS vs. SSH<a class="header-anchor" href="#authentication-https-vs-ssh" title="Permanent link">&para;</a></h3>
+<p>When you push for the first time, GitHub needs to verify that you're authorized to write to that repository. There are two methods:</p>
+<p><strong>HTTPS with a Personal Access Token (PAT):</strong> GitHub no longer accepts your account password over HTTPS. Instead, you create a token (Settings → Developer settings → Personal access tokens) and use it as your password when Git prompts you. GitHub's credential manager can cache this so you don't type it every push.</p>
+<p><strong>SSH Keys (Recommended after initial setup):</strong> You generate a cryptographic key pair — a private key that stays on your machine and a public key that you upload to GitHub. Once configured, you never type a password to push or pull. This is the setup professionals use.</p>
+<p>Instructions for both: <a href="https://docs.github.com/en/authentication">docs.github.com/en/authentication</a></p>
+<hr />
+<h2 id="chapter-12-cloning-pushing-and-pulling">Chapter 12: Cloning, Pushing, and Pulling<a class="header-anchor" href="#chapter-12-cloning-pushing-and-pulling" title="Permanent link">&para;</a></h2>
+<h3 id="cloning-getting-a-repo-onto-your-machine">Cloning — Getting a Repo onto Your Machine<a class="header-anchor" href="#cloning-getting-a-repo-onto-your-machine" title="Permanent link">&para;</a></h3>
+<p>If a repository already exists on GitHub (your own from another computer, a professor's starter code, or a teammate's fork), use <code>clone</code> to download it:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repo-name.git
+</code></pre></div>
+
+<p>This does three things automatically:
+1. Creates a folder named <code>repo-name</code> in your current directory
+2. Downloads the entire repository history into it
+3. Sets up <code>origin</code> to point back at the GitHub URL</p>
+<p>After cloning, you have a complete, local copy of the repository. You can commit, create branches, and view history without any internet connection.</p>
+<hr />
+<h3 id="push-and-pull-staying-synchronized">Push and Pull — Staying Synchronized<a class="header-anchor" href="#push-and-pull-staying-synchronized" title="Permanent link">&para;</a></h3>
+<p><strong><code>git push</code></strong> uploads your local commits to GitHub:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<p>After your first push with <code>-u</code>, you can shorten this to just <code>git push</code>.</p>
+<p><strong><code>git pull</code></strong> downloads commits from GitHub and applies them to your local branch:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<p>Think of push and pull like syncing a document with cloud storage, except Git tracks every change and can merge different versions intelligently.</p>
+<p><strong>When do you pull?</strong></p>
+<ul>
+<li>When you work on multiple computers and need to sync</li>
+<li>When a teammate has pushed changes you need</li>
+<li>At the start of every work session on a shared project</li>
+</ul>
+<p><strong>A safe habit:</strong> Always pull before you push. This ensures you have the latest changes before adding yours. If you push when you're behind, GitHub will reject it:</p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="w"> </span><span class="o">[</span><span class="n">rejected</span><span class="o">]</span><span class="w">        </span><span class="n">main</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">(</span><span class="k">fetch</span><span class="w"> </span><span class="k">first</span><span class="p">)</span>
+<span class="nl">error</span><span class="p">:</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="ow">some</span><span class="w"> </span><span class="n">refs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;https://github.com/...&#39;</span>
+<span class="nl">hint</span><span class="p">:</span><span class="w"> </span><span class="n">Updates</span><span class="w"> </span><span class="n">were</span><span class="w"> </span><span class="n">rejected</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="k">work</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">locally</span><span class="p">.</span>
+</code></pre></div>
+
+<p>The fix: <code>git pull</code> first, resolve any conflicts, then push.</p>
+<hr />
+<h3 id="fetch-vs-pull-the-subtle-difference">fetch vs. pull — The Subtle Difference<a class="header-anchor" href="#fetch-vs-pull-the-subtle-difference" title="Permanent link">&para;</a></h3>
+<p><code>git fetch</code> downloads changes from GitHub but doesn't apply them to your local branch. It updates your knowledge of what's on the remote without changing your files.</p>
+<p><code>git pull</code> is equivalent to <code>git fetch</code> + <code>git merge</code> — it downloads and immediately applies.</p>
+<p>For most student workflows, <code>git pull</code> is what you want. <code>git fetch</code> is useful in team environments where you want to review changes before merging them.</p>
+<hr />
+<h2 id="chapter-13-collaborating-on-group-projects">Chapter 13: Collaborating on Group Projects<a class="header-anchor" href="#chapter-13-collaborating-on-group-projects" title="Permanent link">&para;</a></h2>
+<h3 id="the-core-problem">The Core Problem<a class="header-anchor" href="#the-core-problem" title="Permanent link">&para;</a></h3>
+<p>Two people, working on the same codebase, simultaneously. This is simultaneously the most powerful and the most dangerous aspect of Git. Without discipline, two teammates can overwrite each other's work in minutes.</p>
+<p>The solution is a workflow — a set of conventions that everyone on the team follows.</p>
+<hr />
+<h3 id="the-feature-branch-workflow">The Feature Branch Workflow<a class="header-anchor" href="#the-feature-branch-workflow" title="Permanent link">&para;</a></h3>
+<p>This is the most widely used workflow for small teams and is what you'll use in a group programming assignment:</p>
+<div class="highlight"><pre><span></span><code>main branch  ─────────────────────────────────────────────────▶
+                  ╲               ╱
+                   ╲             ╱
+                    ▶──────────▶           feature/teammate-a
+                         ╲              ╱
+                          ╲            ╱
+                           ▶──────────▶  feature/teammate-b
+</code></pre></div>
+
+<p><strong>The rules:</strong>
+1. The <code>main</code> branch always contains working, tested code.
+2. Nobody commits directly to <code>main</code>.
+3. Every new feature or fix gets its own branch.
+4. Branches are merged back to <code>main</code> through a <strong>Pull Request</strong> on GitHub.</p>
+<hr />
+<h3 id="step-by-step-a-group-project-session">Step-by-Step: A Group Project Session<a class="header-anchor" href="#step-by-step-a-group-project-session" title="Permanent link">&para;</a></h3>
+<p><strong>Setup (everyone does this once):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># One person creates the repo on GitHub and pushes initial code</span>
+<span class="c1"># Everyone else clones it</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/team/csci272-project.git
+<span class="nb">cd</span><span class="w"> </span>csci272-project
+</code></pre></div>
+
+<p><strong>Starting work:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Always pull first to get the latest changes</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Create your branch (name it descriptively)</span>
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature/ali-input-parser
+</code></pre></div>
+
+<p><strong>Working:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Edit files, compile, test...</span>
+<span class="c1"># Then commit your progress</span>
+git<span class="w"> </span>add<span class="w"> </span>parser.cpp<span class="w"> </span>parser.h
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implement CSV input parser for student records&quot;</span>
+</code></pre></div>
+
+<p><strong>Pushing your branch:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/ali-input-parser
+</code></pre></div>
+
+<p><strong>Opening a Pull Request:</strong></p>
+<p>Go to GitHub. You'll see a banner: "feature/ali-input-parser had recent pushes — compare and pull request." Click it. Write a description of what you did. Request a review from your teammate. They look at the changes, leave comments, and when everyone's satisfied, someone clicks <strong>Merge pull request</strong>.</p>
+<p><strong>After the merge:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Everyone pulls the merged code</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Delete the old branch locally</span>
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature/ali-input-parser
+</code></pre></div>
+
+<hr />
+<h3 id="the-golden-rules-of-group-git">The Golden Rules of Group Git<a class="header-anchor" href="#the-golden-rules-of-group-git" title="Permanent link">&para;</a></h3>
+<p><strong>Never force-push to main.</strong> <code>git push --force</code> rewrites history on the remote. If your teammates have already pulled that history, their repositories are now out of sync in a way that's difficult to untangle. Force-push is sometimes necessary on feature branches you own alone — never on shared branches.</p>
+<p><strong>Commit and push before going offline.</strong> If you're working on a shared feature, your in-progress work on a pushed branch means your teammates can see your progress and won't duplicate it.</p>
+<p><strong>Write useful commit messages.</strong> Your teammates need to understand your changes. "fix" tells them nothing. "Fix null pointer in readStudent() when input file is empty" tells them exactly what you did and why.</p>
+<p><strong>Pull before starting work, every time.</strong> Every session starts with <code>git pull origin main</code>. This is not negotiable. You don't know what changed since you last worked.</p>
+<hr />
+<h3 id="handling-the-conflict-your-teammate-caused">Handling the Conflict Your Teammate Caused<a class="header-anchor" href="#handling-the-conflict-your-teammate-caused" title="Permanent link">&para;</a></h3>
+<p>Suppose you and your teammate both edited the same section of <code>main.cpp</code>. You pull their changes, and:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+<span class="c1"># CONFLICT (content): Merge conflict in main.cpp</span>
+</code></pre></div>
+
+<p>Open the file. Find the conflict markers. Understand what each version does. The choices are:
+1. Keep your version and delete theirs
+2. Keep their version and delete yours
+3. Combine both (often the right answer — each person's change might address a different concern)</p>
+<p>After resolving:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>main.cpp
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge: resolve conflict in main(), keep both input validation approaches&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div>
+
+<p>Then tell your teammate what happened. Communication matters as much as the technical resolution.</p>
+<hr />
+<h2 id="chapter-14-c-specific-patterns-what-to-track-and-what-to-ignore">Chapter 14: C++-Specific Patterns — What to Track and What to Ignore<a class="header-anchor" href="#chapter-14-c-specific-patterns-what-to-track-and-what-to-ignore" title="Permanent link">&para;</a></h2>
+<h3 id="the-compiled-binary-problem">The Compiled Binary Problem<a class="header-anchor" href="#the-compiled-binary-problem" title="Permanent link">&para;</a></h3>
+<p>C++ compilation produces files that should never be committed:</p>
+<table>
+<thead>
+<tr>
+<th>File type</th>
+<th>Extension(s)</th>
+<th>Why exclude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compiled binary</td>
+<td><code>a.out</code>, <code>main</code>, <code>*.exe</code></td>
+<td>Platform-specific, regenerated from source</td>
+</tr>
+<tr>
+<td>Object files</td>
+<td><code>*.o</code>, <code>*.obj</code></td>
+<td>Intermediate build artifacts, large, binary</td>
+</tr>
+<tr>
+<td>CMake cache</td>
+<td><code>CMakeCache.txt</code>, <code>cmake_build_*/</code></td>
+<td>Local configuration, regenerated on each machine</td>
+</tr>
+<tr>
+<td>Makefile (generated)</td>
+<td><code>Makefile</code> (if auto-generated)</td>
+<td>If using CMake — regenerated; if hand-written, commit it</td>
+</tr>
+<tr>
+<td>Dependency files</td>
+<td><code>*.d</code></td>
+<td>Auto-generated by compiler, not source</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="the-complete-c-gitignore">The Complete C++ .gitignore<a class="header-anchor" href="#the-complete-c-gitignore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ── Compiled output ───────────────────────────────</span>
+<span class="c1"># Generic</span>
+<span class="o">*.</span><span class="n">o</span>
+<span class="o">*.</span><span class="n">a</span>
+<span class="o">*.</span><span class="n">so</span>
+<span class="o">*.</span><span class="n">so</span><span class="o">.*</span>
+<span class="o">*.</span><span class="n">dylib</span>
+<span class="o">*.</span><span class="n">dll</span>
+<span class="o">*.</span><span class="n">exe</span>
+<span class="o">*.</span><span class="n">out</span>
+<span class="n">a</span><span class="o">.</span><span class="n">out</span>
+
+<span class="c1"># Named binaries (add your project names here)</span>
+<span class="n">main</span>
+<span class="n">grade_calculator</span>
+<span class="n">student_sorter</span>
+
+<span class="c1"># ── Build systems ─────────────────────────────────</span>
+<span class="c1"># CMake</span>
+<span class="n">CMakeCache</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">CMakeFiles</span><span class="o">/</span>
+<span class="n">cmake_install</span><span class="o">.</span><span class="n">cmake</span>
+<span class="n">cmake_build_</span><span class="o">*/</span>
+<span class="n">build</span><span class="o">/</span>
+<span class="n">_build</span><span class="o">/</span>
+<span class="n">out</span><span class="o">/</span>
+<span class="n">install_manifest</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="c1"># Make</span>
+<span class="o">*.</span><span class="n">d</span>
+
+<span class="c1"># Ninja</span>
+<span class="o">.</span><span class="n">ninja_deps</span>
+<span class="o">.</span><span class="n">ninja_log</span>
+
+<span class="c1"># Autotools</span>
+<span class="n">Makefile</span><span class="o">.</span><span class="ow">in</span>
+<span class="n">aclocal</span><span class="o">.</span><span class="n">m4</span>
+<span class="n">autom4te</span><span class="o">.</span><span class="n">cache</span><span class="o">/</span>
+<span class="n">configure</span>
+<span class="n">config</span><span class="o">.</span><span class="n">h</span><span class="o">.</span><span class="ow">in</span>
+
+<span class="c1"># ── IDE files ─────────────────────────────────────</span>
+<span class="c1"># VS Code</span>
+<span class="o">.</span><span class="n">vscode</span><span class="o">/</span>
+
+<span class="c1"># CLion / JetBrains</span>
+<span class="o">.</span><span class="n">idea</span><span class="o">/</span>
+<span class="o">*.</span><span class="n">iml</span>
+<span class="n">cmake</span><span class="o">-</span><span class="n">build</span><span class="o">-*/</span>
+
+<span class="c1"># Visual Studio</span>
+<span class="o">*.</span><span class="n">vcxproj</span>
+<span class="o">*.</span><span class="n">vcxproj</span><span class="o">.</span><span class="n">filters</span>
+<span class="o">*.</span><span class="n">sln</span>
+<span class="n">x64</span><span class="o">/</span>
+<span class="n">Debug</span><span class="o">/</span>
+<span class="n">Release</span><span class="o">/</span>
+
+<span class="c1"># Xcode</span>
+<span class="o">*.</span><span class="n">xcodeproj</span><span class="o">/</span>
+<span class="o">*.</span><span class="n">xcworkspace</span><span class="o">/</span>
+<span class="n">xcuserdata</span><span class="o">/</span>
+
+<span class="c1"># ── Editor artifacts ──────────────────────────────</span>
+<span class="o">*.</span><span class="n">swp</span>
+<span class="o">*.</span><span class="n">swo</span>
+<span class="o">*~</span>
+\<span class="c1">#*\#</span>
+<span class="o">.</span><span class="c1">#*</span>
+
+<span class="c1"># ── OS junk ───────────────────────────────────────</span>
+<span class="o">.</span><span class="n">DS_Store</span>
+<span class="o">.</span><span class="n">AppleDouble</span>
+<span class="o">.</span><span class="n">LSOverride</span>
+<span class="n">Thumbs</span><span class="o">.</span><span class="n">db</span>
+<span class="n">ehthumbs</span><span class="o">.</span><span class="n">db</span>
+<span class="n">desktop</span><span class="o">.</span><span class="n">ini</span>
+
+<span class="c1"># ── Sanitizer / profiler output ───────────────────</span>
+<span class="o">*.</span><span class="n">profdata</span>
+<span class="o">*.</span><span class="n">profraw</span>
+<span class="o">*.</span><span class="n">gcda</span>
+<span class="o">*.</span><span class="n">gcno</span>
+<span class="n">gmon</span><span class="o">.</span><span class="n">out</span>
+<span class="n">callgrind</span><span class="o">.</span><span class="n">out</span><span class="o">.*</span>
+<span class="n">massif</span><span class="o">.</span><span class="n">out</span><span class="o">.*</span>
+
+<span class="c1"># ── Testing ───────────────────────────────────────</span>
+<span class="n">Testing</span><span class="o">/</span>
+<span class="n">CTestTestfile</span><span class="o">.</span><span class="n">cmake</span>
+<span class="n">test_output</span><span class="o">/</span>
+</code></pre></div>
+
+<p>Save this as <code>.gitignore</code> in your project root and commit it in your first commit. Once it's there, Git will silently ignore every matching file.</p>
+<hr />
+<h3 id="what-to-definitely-commit">What to Definitely Commit<a class="header-anchor" href="#what-to-definitely-commit" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All <code>.cpp</code> and <code>.h</code> files you write by hand</li>
+<li><code>CMakeLists.txt</code> or <code>Makefile</code> (if you wrote it, not auto-generated)</li>
+<li><code>.gitignore</code></li>
+<li><code>README.md</code> — always write one</li>
+<li>Test files (<code>.cpp</code> test cases)</li>
+<li>Any data files your program needs as input (if they're small text files)</li>
+</ul>
+<hr />
+<h3 id="writing-a-readme">Writing a README<a class="header-anchor" href="#writing-a-readme" title="Permanent link">&para;</a></h3>
+<p>Every repository deserves a README. It's the first thing anyone (your instructor, a future employer, you returning after three months) will read.</p>
+<p>A minimal <code>README.md</code> for a student project:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># CSCI 271 — Project 1: Grade Calculator</span>
+
+<span class="gs">**Author:**</span> Your Name  
+<span class="gs">**Course:**</span> CSCI 271, Fall 2026  
+<span class="gs">**Instructor:**</span> Prof. Roy
+
+<span class="gu">## Description</span>
+
+A C++ program that calculates a student&#39;s GPA given a list of courses,
+grades, and credit hours. Accounts for credit-hour weighting.
+
+<span class="gu">## Compilation</span>
+
+<span class="sb">```bash</span>
+g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span>-Wall<span class="w"> </span>main.cpp<span class="w"> </span>-o<span class="w"> </span>grade_calculator
+<span class="sb">```</span>
+
+<span class="gu">## Usage</span>
+
+<span class="sb">```bash</span>
+./grade_calculator<span class="w"> </span>input.txt
+<span class="sb">```</span>
+
+Input format: one course per line — <span class="sb">`Course Name,Grade,Credits`</span>
+
+<span class="sb">```</span>
+<span class="sb">Mathematics,3.7,3</span>
+<span class="sb">English Composition,4.0,3</span>
+<span class="sb">Physics Lab,3.3,1</span>
+<span class="sb">```</span>
+
+<span class="gu">## Files</span>
+
+<span class="k">-</span><span class="w"> </span><span class="sb">`main.cpp`</span> — main program and entry point
+<span class="k">-</span><span class="w"> </span><span class="sb">`student.h`</span> — Student struct definition
+<span class="k">-</span><span class="w"> </span><span class="sb">`parser.cpp`</span> / <span class="sb">`parser.h`</span> — CSV input parser
+<span class="k">-</span><span class="w"> </span><span class="sb">`input.txt`</span> — sample input file
+</code></pre></div>
+
+<p>A README like this takes ten minutes to write and communicates professionalism immediately.</p>
+<hr />
+<h2 id="chapter-15-when-things-go-wrong-common-mistakes-and-fixes">Chapter 15: When Things Go Wrong — Common Mistakes and Fixes<a class="header-anchor" href="#chapter-15-when-things-go-wrong-common-mistakes-and-fixes" title="Permanent link">&para;</a></h2>
+<p>This chapter is a reference. Bookmark it. You will return here.</p>
+<hr />
+<h3 id="i-committed-to-main-when-i-should-have-committed-to-a-branch">"I committed to main when I should have committed to a branch"<a class="header-anchor" href="#i-committed-to-main-when-i-should-have-committed-to-a-branch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Move the last commit to a new branch</span>
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature/oops-branch
+
+<span class="c1"># Reset main to before the commit</span>
+git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1
+
+<span class="c1"># Your commit now lives on feature/oops-branch</span>
+<span class="c1"># main is back where it was</span>
+</code></pre></div>
+
+<hr />
+<h3 id="i-committed-the-compiled-binary-by-accident">"I committed the compiled binary by accident"<a class="header-anchor" href="#i-committed-the-compiled-binary-by-accident" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove it from Git&#39;s tracking but keep the file on disk</span>
+git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>main
+git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span><span class="s2">&quot;*.o&quot;</span>
+
+<span class="c1"># Commit the removal</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Remove accidentally committed binary files&quot;</span>
+
+<span class="c1"># Add entries to .gitignore so it doesn&#39;t happen again</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
+git<span class="w"> </span>add<span class="w"> </span>.gitignore
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add main binary to .gitignore&quot;</span>
+</code></pre></div>
+
+<hr />
+<h3 id="i-pushed-a-file-with-a-password-or-api-key-in-it">"I pushed a file with a password or API key in it"<a class="header-anchor" href="#i-pushed-a-file-with-a-password-or-api-key-in-it" title="Permanent link">&para;</a></h3>
+<p>This is a serious situation. Once you push to a public repository, the credentials are compromised — GitHub's search indexes quickly, and bots scan new public commits constantly.</p>
+<p><strong>Immediate actions:</strong>
+1. Revoke the credential immediately (change the password, rotate the API key) — even before you fix the Git history.
+2. Remove the sensitive file from Git history using <code>git filter-repo</code> (preferred over older <code>git filter-branch</code>).
+3. Force-push the cleaned history.
+4. Notify anyone who cloned the repo.</p>
+<p>For future prevention: use environment variables or a <code>.env</code> file listed in <code>.gitignore</code>. Never hardcode credentials in source files.</p>
+<hr />
+<h3 id="my-push-was-rejected-because-im-behind">"My push was rejected because I'm behind"<a class="header-anchor" href="#my-push-was-rejected-because-im-behind" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># error: failed to push some refs</span>
+<span class="c1"># hint: Updates were rejected because the remote contains work that you do not have locally.</span>
+
+<span class="c1"># Solution: pull first</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Resolve any merge conflicts, then push</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<hr />
+<h3 id="i-accidentally-deleted-a-file-and-committed-the-deletion">"I accidentally deleted a file and committed the deletion"<a class="header-anchor" href="#i-accidentally-deleted-a-file-and-committed-the-deletion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># See the commit that had the file</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--all<span class="w"> </span>--<span class="w"> </span>deleted_file.cpp
+
+<span class="c1"># Restore it from that commit</span>
+git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit-id&gt;~1<span class="w"> </span>--<span class="w"> </span>deleted_file.cpp
+
+<span class="c1"># The file is back in your working directory and staging area</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Restore accidentally deleted deleted_file.cpp&quot;</span>
+</code></pre></div>
+
+<hr />
+<h3 id="git-merge-failed-and-i-just-want-to-cancel">"git merge failed and I just want to cancel"<a class="header-anchor" href="#git-merge-failed-and-i-just-want-to-cancel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Abort the merge entirely, return to pre-merge state</span>
+git<span class="w"> </span>merge<span class="w"> </span>--abort
+</code></pre></div>
+
+<hr />
+<h3 id="i-have-uncommitted-changes-but-need-to-switch-branches">"I have uncommitted changes but need to switch branches"<a class="header-anchor" href="#i-have-uncommitted-changes-but-need-to-switch-branches" title="Permanent link">&para;</a></h3>
+<p>Git won't let you switch branches if you have uncommitted changes that would be overwritten. Two options:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Option 1: Stash the changes (temporarily shelve them)</span>
+git<span class="w"> </span>stash
+git<span class="w"> </span>switch<span class="w"> </span>other-branch
+<span class="c1"># ... do your work ...</span>
+git<span class="w"> </span>switch<span class="w"> </span>back-to-original-branch
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">   </span><span class="c1"># restore your shelved changes</span>
+
+<span class="c1"># Option 2: Commit them (make a WIP commit)</span>
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;WIP: in-progress changes, will amend later&quot;</span>
+git<span class="w"> </span>switch<span class="w"> </span>other-branch
+</code></pre></div>
+
+<p><strong>Stash</strong> is like putting your work in a drawer temporarily — it's there when you come back, but it's out of the way.</p>
+<hr />
+<h3 id="i-want-to-completely-reset-my-repo-to-match-github">"I want to completely reset my repo to match GitHub"<a class="header-anchor" href="#i-want-to-completely-reset-my-repo-to-match-github" title="Permanent link">&para;</a></h3>
+<p>Use this when your local repo is in a confused state and you trust GitHub has the correct version:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>origin
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/main
+</code></pre></div>
+
+<p><strong>This discards all local commits and file changes not on GitHub.</strong> Only do this if you're certain you want to abandon your local changes.</p>
+<hr />
+<h2 id="chapter-16-the-professional-workflow">Chapter 16: The Professional Workflow<a class="header-anchor" href="#chapter-16-the-professional-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="what-industry-actually-looks-like">What Industry Actually Looks Like<a class="header-anchor" href="#what-industry-actually-looks-like" title="Permanent link">&para;</a></h3>
+<p>When you graduate and start working in a technical role, the Git workflow you'll encounter is more structured than what you need for coursework — but it's built from the same fundamentals. Understanding it now means you won't feel lost when you encounter it.</p>
+<hr />
+<h3 id="the-github-flow">The GitHub Flow<a class="header-anchor" href="#the-github-flow" title="Permanent link">&para;</a></h3>
+<p>GitHub Flow is the workflow used by most modern software teams. It's simple and effective:</p>
+<ol>
+<li>
+<p><strong><code>main</code> always deploys.</strong> Whatever is on <code>main</code> is assumed to be production-ready. You never push broken code to <code>main</code>.</p>
+</li>
+<li>
+<p><strong>Create a branch for any change.</strong> Feature, bug fix, documentation improvement — everything gets a branch.</p>
+</li>
+<li>
+<p><strong>Open a Pull Request early.</strong> Even before the feature is done. This signals to teammates what you're working on and invites early feedback.</p>
+</li>
+<li>
+<p><strong>Review and discuss in the Pull Request.</strong> Teammates comment on specific lines, suggest changes, ask questions. This is how knowledge spreads in a team.</p>
+</li>
+<li>
+<p><strong>Merge only when the PR is approved and tests pass.</strong> Most professional teams have automated tests that run every time you push — if any test fails, you can't merge.</p>
+</li>
+<li>
+<p><strong>Delete the branch after merging.</strong> Keep the repository clean.</p>
+</li>
+</ol>
+<hr />
+<h3 id="semantic-versioning-and-tags">Semantic Versioning and Tags<a class="header-anchor" href="#semantic-versioning-and-tags" title="Permanent link">&para;</a></h3>
+<p>When you release a version of software, you tag a commit to mark it:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Version 1.0.0 - initial release&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0.0
+</code></pre></div>
+
+<p>Version numbers follow <strong>Semantic Versioning</strong> (semver): <code>MAJOR.MINOR.PATCH</code>.
+- Increment PATCH for bug fixes: <code>1.0.1</code>
+- Increment MINOR for new features that don't break anything: <code>1.1.0</code>
+- Increment MAJOR for changes that break backward compatibility: <code>2.0.0</code></p>
+<p>You won't use tags in coursework, but you'll use them professionally and you'll see them in every open-source project's release history.</p>
+<hr />
+<h3 id="writing-good-commit-history-the-resume-argument">Writing Good Commit History — The Resume Argument<a class="header-anchor" href="#writing-good-commit-history-the-resume-argument" title="Permanent link">&para;</a></h3>
+<p>Your GitHub profile is increasingly part of your resume. When a recruiter or hiring manager looks at your profile, the first thing they see is your repository list and your commit history. A repository with commits like:</p>
+<div class="highlight"><pre><span></span><code>stuff
+fix
+more stuff
+aaa
+done
+ok
+</code></pre></div>
+
+<p>...tells them something about how you work. A repository with commits like:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Implement</span><span class="w"> </span><span class="nv">Red</span><span class="o">-</span><span class="nv">Black</span><span class="w"> </span><span class="nv">tree</span><span class="w"> </span><span class="nv">insertion</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">rotations</span>
+<span class="nv">Add</span><span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="nv">tests</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">boundary</span><span class="w"> </span><span class="nv">conditions</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">RB</span><span class="w"> </span><span class="nv">tree</span>
+<span class="nv">Fix</span>:<span class="w"> </span><span class="nv">handle</span><span class="w"> </span><span class="nv">parent</span><span class="w"> </span><span class="nv">NULL</span><span class="w"> </span><span class="nv">case</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">right</span><span class="o">-</span><span class="nv">rotate</span><span class="w"> </span><span class="nv">operation</span><span class="w">  </span>
+<span class="nv">Optimize</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span><span class="nv">allocation</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">NodePool</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="nv">slab</span><span class="w"> </span><span class="nv">allocator</span>
+<span class="nv">Add</span><span class="w"> </span><span class="nv">README</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">complexity</span><span class="w"> </span><span class="nv">analysis</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">usage</span><span class="w"> </span><span class="nv">examples</span>
+</code></pre></div>
+
+<p>...tells a very different story. The commits don't need to be impressive — they need to be clear, honest, and consistent.</p>
+<hr />
+<h3 id="the-github-folder">The .github Folder<a class="header-anchor" href="#the-github-folder" title="Permanent link">&para;</a></h3>
+<p>Many repositories have a <code>.github</code> folder with files that configure GitHub-specific features:</p>
+<div class="highlight"><pre><span></span><code><span class="na">.github</span><span class="err">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="nf">PULL_REQUEST_TEMPLATE.md</span><span class="w">   </span><span class="err">←</span><span class="w"> </span><span class="no">Template</span><span class="w"> </span><span class="no">that</span><span class="w"> </span><span class="no">pre-fills</span><span class="w"> </span><span class="no">every</span><span class="w"> </span><span class="no">new</span><span class="w"> </span><span class="no">PR</span><span class="w"> </span><span class="no">description</span>
+<span class="err">├──</span><span class="w"> </span><span class="nf">ISSUE_TEMPLATE</span><span class="err">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nf">bug_report.md</span><span class="w">          </span><span class="err">←</span><span class="w"> </span><span class="no">Template</span><span class="w"> </span><span class="no">for</span><span class="w"> </span><span class="no">bug</span><span class="w"> </span><span class="no">reports</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nf">feature_request.md</span><span class="w">     </span><span class="err">←</span><span class="w"> </span><span class="no">Template</span><span class="w"> </span><span class="no">for</span><span class="w"> </span><span class="no">feature</span><span class="w"> </span><span class="no">requests</span>
+<span class="err">└──</span><span class="w"> </span><span class="nf">workflows</span><span class="err">/</span>
+<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="nf">build.yml</span><span class="w">              </span><span class="err">←</span><span class="w"> </span><span class="no">GitHub</span><span class="w"> </span><span class="no">Actions</span><span class="w"> </span><span class="no">workflow</span><span class="w"> </span><span class="p">(</span><span class="no">auto-compile</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="no">push</span><span class="p">)</span>
+</code></pre></div>
+
+<p>A simple GitHub Actions workflow that compiles your C++ code every time you push:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># .github/workflows/build.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build C++</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Compile</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g++ -std=c++17 -Wall -Wextra main.cpp -o main</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run basic test</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Hello&quot; | ./main</span>
+</code></pre></div>
+
+<p>This is your first taste of CI/CD (Continuous Integration/Continuous Deployment) — automated validation that runs on every push. Once you set this up, you'll immediately know if your code compiles on a clean machine (not just yours).</p>
+<hr />
+<h2 id="chapter-17-quick-reference-every-command-you-need">Chapter 17: Quick Reference — Every Command You Need<a class="header-anchor" href="#chapter-17-quick-reference-every-command-you-need" title="Permanent link">&para;</a></h2>
+<h3 id="setup">Setup<a class="header-anchor" href="#setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;code --wait&quot;</span>
+</code></pre></div>
+
+<h3 id="starting-a-repository">Starting a Repository<a class="header-anchor" href="#starting-a-repository" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init<span class="w">                                    </span><span class="c1"># Initialize new repo in current folder</span>
+git<span class="w"> </span>clone<span class="w"> </span>&lt;url&gt;<span class="w">                             </span><span class="c1"># Download repo from GitHub</span>
+git<span class="w"> </span>clone<span class="w"> </span>&lt;url&gt;<span class="w"> </span>my-folder-name<span class="w">             </span><span class="c1"># Clone into a specific folder name</span>
+</code></pre></div>
+
+<h3 id="daily-workflow">Daily Workflow<a class="header-anchor" href="#daily-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w">                                  </span><span class="c1"># Always start here</span>
+git<span class="w"> </span>diff<span class="w">                                    </span><span class="c1"># What changed (not staged)</span>
+git<span class="w"> </span>diff<span class="w"> </span>--staged<span class="w">                           </span><span class="c1"># What changed (staged)</span>
+git<span class="w"> </span>add<span class="w"> </span>&lt;file&gt;<span class="w">                              </span><span class="c1"># Stage a specific file</span>
+git<span class="w"> </span>add<span class="w"> </span>.<span class="w">                                   </span><span class="c1"># Stage all changed files</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Your message&quot;</span><span class="w">               </span><span class="c1"># Commit staged changes</span>
+git<span class="w"> </span>push<span class="w">                                    </span><span class="c1"># Push to GitHub (after first setup)</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">                        </span><span class="c1"># Explicit push</span>
+git<span class="w"> </span>pull<span class="w">                                    </span><span class="c1"># Pull from GitHub</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w">                        </span><span class="c1"># Explicit pull</span>
+</code></pre></div>
+
+<h3 id="history">History<a class="header-anchor" href="#history" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w">                                     </span><span class="c1"># Full history</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w">                           </span><span class="c1"># Compact history</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w">                   </span><span class="c1"># History with branch visualization</span>
+git<span class="w"> </span>show<span class="w"> </span>&lt;commit-id&gt;<span class="w">                        </span><span class="c1"># Details of a specific commit</span>
+git<span class="w"> </span>diff<span class="w"> </span>&lt;commit-id&gt;<span class="w">                        </span><span class="c1"># Changes since a commit</span>
+git<span class="w"> </span>diff<span class="w"> </span>&lt;id1&gt;<span class="w"> </span>&lt;id2&gt;<span class="w">                        </span><span class="c1"># Changes between two commits</span>
+</code></pre></div>
+
+<h3 id="undoing-things">Undoing Things<a class="header-anchor" href="#undoing-things" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>restore<span class="w"> </span>&lt;file&gt;<span class="w">                          </span><span class="c1"># Discard working directory changes (irreversible)</span>
+git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>&lt;file&gt;<span class="w">                 </span><span class="c1"># Unstage a file (keeps changes)</span>
+git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1<span class="w">                     </span><span class="c1"># Undo last commit, keep changes staged</span>
+git<span class="w"> </span>reset<span class="w"> </span>HEAD~1<span class="w">                            </span><span class="c1"># Undo last commit, move changes to working dir</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1<span class="w">                     </span><span class="c1"># Undo last commit, discard changes (irreversible)</span>
+git<span class="w"> </span>revert<span class="w"> </span>&lt;commit-id&gt;<span class="w">                      </span><span class="c1"># Create a new commit that undoes a past commit (safe)</span>
+</code></pre></div>
+
+<h3 id="branches">Branches<a class="header-anchor" href="#branches" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w">                                  </span><span class="c1"># List local branches</span>
+git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w">                               </span><span class="c1"># List all branches (including remote)</span>
+git<span class="w"> </span>branch<span class="w"> </span>feature/my-feature<span class="w">              </span><span class="c1"># Create branch (don&#39;t switch)</span>
+git<span class="w"> </span>switch<span class="w"> </span>feature/my-feature<span class="w">              </span><span class="c1"># Switch to branch</span>
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature/my-feature<span class="w">           </span><span class="c1"># Create and switch in one step</span>
+git<span class="w"> </span>merge<span class="w"> </span>feature/my-feature<span class="w">               </span><span class="c1"># Merge into current branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature/my-feature<span class="w">           </span><span class="c1"># Delete merged branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>feature/my-feature<span class="w">           </span><span class="c1"># Force-delete unmerged branch</span>
+git<span class="w"> </span>merge<span class="w"> </span>--abort<span class="w">                           </span><span class="c1"># Cancel an in-progress merge</span>
+</code></pre></div>
+
+<h3 id="remote-and-github">Remote and GitHub<a class="header-anchor" href="#remote-and-github" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w">                               </span><span class="c1"># List configured remotes</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;url&gt;<span class="w">                 </span><span class="c1"># Add GitHub remote</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main<span class="w">                     </span><span class="c1"># First push, sets upstream</span>
+git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w">                            </span><span class="c1"># Download changes without applying</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w">                        </span><span class="c1"># Fetch and merge</span>
+</code></pre></div>
+
+<h3 id="useful-utilities">Useful Utilities<a class="header-anchor" href="#useful-utilities" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w">                                   </span><span class="c1"># Temporarily shelve changes</span>
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">                               </span><span class="c1"># Restore shelved changes</span>
+git<span class="w"> </span>stash<span class="w"> </span>list<span class="w">                              </span><span class="c1"># See all stashes</span>
+git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>&lt;file&gt;<span class="w">                      </span><span class="c1"># Stop tracking a file (keep on disk)</span>
+git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="w">             </span><span class="c1"># Create an annotated tag</span>
+git<span class="w"> </span>blame<span class="w"> </span>&lt;file&gt;<span class="w">                            </span><span class="c1"># See who wrote each line</span>
+git<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;search term&quot;</span><span class="w">                      </span><span class="c1"># Search through tracked files</span>
+</code></pre></div>
+
+<hr />
+<h2 id="closing-thoughts">Closing Thoughts<a class="header-anchor" href="#closing-thoughts" title="Permanent link">&para;</a></h2>
+<p>Version control is not a feature you add to your workflow — it becomes the workflow. The commands in this book will feel mechanical at first. You'll check notes, look things up, occasionally get confused about whether you staged something or what HEAD means right now. That's expected. After a few weeks of consistent use, these commands become reflexes.</p>
+<p>The habit that matters most, early on, is simply <strong>committing frequently with meaningful messages</strong>. Everything else — branches, pull requests, rebasing, tags — can wait until you have that habit locked in.</p>
+<p>A repository with a clean, honest commit history is something to be proud of. It's a log of how you learned to think, how you approached a problem, where you got stuck, and how you got unstuck. That history is worth preserving.</p>
+<hr />
+<h2 id="appendix-a-glossary">Appendix A: Glossary<a class="header-anchor" href="#appendix-a-glossary" title="Permanent link">&para;</a></h2>
+<p><strong>Branch</strong> — An independent line of development; a movable pointer to a sequence of commits.</p>
+<p><strong>Clone</strong> — Download a complete copy of a remote repository to your local machine.</p>
+<p><strong>Commit</strong> — A permanent snapshot of your project at a point in time, stored in the repository.</p>
+<p><strong>Conflict</strong> — Occurs when two branches have changed the same lines in the same file and Git cannot automatically merge them.</p>
+<p><strong>Fetch</strong> — Download objects and references from a remote without merging.</p>
+<p><strong>Fork</strong> — A personal copy of someone else's repository on GitHub.</p>
+<p><strong>HEAD</strong> — A special pointer indicating your current position in the commit history.</p>
+<p><strong>Index</strong> — Another name for the staging area.</p>
+<p><strong>Merge</strong> — Combine the history of two branches into one.</p>
+<p><strong>Origin</strong> — The conventional name for your primary remote (usually GitHub).</p>
+<p><strong>Pull</strong> — Fetch from a remote and merge into the current branch.</p>
+<p><strong>Pull Request (PR)</strong> — A GitHub feature for proposing and reviewing changes before merging.</p>
+<p><strong>Push</strong> — Upload local commits to a remote repository.</p>
+<p><strong>Rebase</strong> — Move or combine commits onto a different base commit (advanced; avoid until comfortable with merge).</p>
+<p><strong>Remote</strong> — A version of your repository hosted somewhere other than your machine.</p>
+<p><strong>Repository (Repo)</strong> — The complete collection of files and the history of all changes to those files.</p>
+<p><strong>Staging Area</strong> — A zone between your working directory and the commit history where you prepare changes for committing.</p>
+<p><strong>Stash</strong> — Temporarily shelve uncommitted changes to work on something else.</p>
+<p><strong>Tag</strong> — A named pointer to a specific commit, typically used to mark release versions.</p>
+<p><strong>Working Directory</strong> — The files you actively edit; the non-<code>.git</code> contents of your project folder.</p>
+<hr />
+<h2 id="appendix-b-recommended-next-steps">Appendix B: Recommended Next Steps<a class="header-anchor" href="#appendix-b-recommended-next-steps" title="Permanent link">&para;</a></h2>
+<p>After finishing this book and completing a semester of practice, these are the natural next steps:</p>
+<p><strong>Learn interactive rebasing.</strong> <code>git rebase -i</code> lets you rewrite your commit history — squash several commits into one, reorder them, or fix messages. Essential for keeping a clean PR history.</p>
+<p><strong>Learn <code>git bisect</code>.</strong> Binary search through your commit history to find exactly which commit introduced a bug. Invaluable for large projects.</p>
+<p><strong>Set up SSH authentication.</strong> Generate an SSH key pair and add the public key to GitHub. After this, you never type a password to push or pull.</p>
+<p><strong>Explore GitHub Actions.</strong> Write a workflow that automatically compiles and tests your C++ code on every push. This is the foundation of CI/CD and a skill employers look for.</p>
+<p><strong>Read Pro Git.</strong> Available free at <a href="https://git-scm.com/book">git-scm.com/book</a>. Chapters 1–3 cover everything in this book in more depth. Chapters 6–7 cover internals and advanced workflows.</p>
+<hr />
+<h2 id="appendix-c-external-resources">Appendix C: External Resources<a class="header-anchor" href="#appendix-c-external-resources" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>URL</th>
+<th>What It Is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Official Git Documentation</td>
+<td><a href="https://git-scm.com/doc">git-scm.com/doc</a></td>
+<td>Reference manual for every command</td>
+</tr>
+<tr>
+<td>Pro Git Book (Free)</td>
+<td><a href="https://git-scm.com/book/en/v2">git-scm.com/book</a></td>
+<td>The definitive Git textbook</td>
+</tr>
+<tr>
+<td>GitHub Docs</td>
+<td><a href="https://docs.github.com">docs.github.com</a></td>
+<td>GitHub-specific features and workflows</td>
+</tr>
+<tr>
+<td>Learn Git Branching</td>
+<td><a href="https://learngitbranching.js.org">learngitbranching.js.org</a></td>
+<td>Best interactive visual tutorial</td>
+</tr>
+<tr>
+<td>GitHub Skills</td>
+<td><a href="https://skills.github.com">skills.github.com</a></td>
+<td>Hands-on courses inside real repositories</td>
+</tr>
+<tr>
+<td>Atlassian Git Tutorials</td>
+<td><a href="https://www.atlassian.com/git/tutorials">atlassian.com/git/tutorials</a></td>
+<td>Excellent written tutorials</td>
+</tr>
+<tr>
+<td>Git Cheat Sheet (PDF)</td>
+<td><a href="https://education.github.com/git-cheat-sheet-education.pdf">education.github.com/git-cheat-sheet-education.pdf</a></td>
+<td>Printable quick reference</td>
+</tr>
+<tr>
+<td>GitHub Student Pack</td>
+<td><a href="https://education.github.com/pack">education.github.com/pack</a></td>
+<td>Free tools for verified students</td>
+</tr>
+<tr>
+<td>Semantic Versioning</td>
+<td><a href="https://semver.org">semver.org</a></td>
+<td>Version numbering convention</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>This book is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share and adapt it with attribution.</em></p>
+<p><em>Version 1.0.0 — May 2026</em><br />
+<em>Avijit Roy — John Jay College of Criminal Justice, CUNY</em></p>
+      </article>
+      <footer class="publication-footer">
+        <p>&copy; 2026 <a href="https://avijitroy.com/">Avijit Roy</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.<br />Prepared for CSCI 271 / CSCI 272 at <a href="https://www.jjay.cuny.edu/">John Jay College of Criminal Justice, CUNY</a>.</p>
+      </footer>
+    </main>
+  </div>
+  <script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var toggle = document.getElementById("theme-toggle");
+  var menu = document.getElementById("menu-toggle");
+  var sidebar = document.getElementById("sidebar");
+  var overlay = document.getElementById("overlay");
+  var progress = document.getElementById("progress-fill");
+  var key = "git-ebook-theme";
+
+  function applyTheme(theme, remember) {
+    root.dataset.theme = theme;
+    if (remember) {
+      try { localStorage.setItem(key, theme); } catch (error) {}
+    }
+    var next = theme === "dark" ? "light" : "dark";
+    toggle.setAttribute("aria-label", "Switch to " + next + " mode");
+    toggle.setAttribute("aria-pressed", String(theme === "light"));
+    toggle.querySelector(".button-label").textContent =
+      next.charAt(0).toUpperCase() + next.slice(1) + " mode";
+  }
+
+  try {
+    var stored = localStorage.getItem(key);
+    if (stored === "light" || stored === "dark") {
+      applyTheme(stored, false);
+    } else {
+      applyTheme(root.dataset.theme, false);
+    }
+  } catch (error) {
+    applyTheme(root.dataset.theme, false);
+  }
+  toggle.addEventListener("click", function () {
+    applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+  });
+
+  function setMenu(open) {
+    sidebar.classList.toggle("open", open);
+    overlay.classList.toggle("open", open);
+    menu.setAttribute("aria-expanded", String(open));
+    if (open) sidebar.focus();
+  }
+  menu.addEventListener("click", function () {
+    setMenu(!sidebar.classList.contains("open"));
+  });
+  overlay.addEventListener("click", function () { setMenu(false); });
+  sidebar.addEventListener("click", function (event) {
+    if (event.target.closest("a") && window.innerWidth <= 1152) setMenu(false);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setMenu(false);
+  });
+
+  var links = Array.from(document.querySelectorAll(".sidebar-nav a[href^='#']"));
+  var headings = links.map(function (link) {
+    return document.querySelector(link.getAttribute("href"));
+  }).filter(Boolean);
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      links.forEach(function (link) { link.removeAttribute("aria-current"); });
+      var active = links.find(function (link) {
+        return link.getAttribute("href") === "#" + entry.target.id;
+      });
+      if (active) {
+        active.setAttribute("aria-current", "location");
+        active.scrollIntoView({ block: "nearest" });
+      }
+    });
+  }, { rootMargin: "-12% 0px -76% 0px" });
+  headings.forEach(function (heading) { observer.observe(heading); });
+
+  function updateProgress() {
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progress.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+  }
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+}());
+</script>
+</body>
+</html>

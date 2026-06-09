@@ -171,6 +171,36 @@
               "name": "Springer"
             }
           },
+          "publication": {
+            "@type": "PublicationEvent",
+            "name": "9th International Conference on Innovative Computing and Communication (ICICC 2026)",
+            "url": "https://icicc-conf.com/icicc26",
+            "startDate": "2026-02-06",
+            "endDate": "2026-02-07",
+            "location": {
+              "@type": "Place",
+              "name": "Shaheed Sukhdev College of Business Studies, New Delhi, India",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "New Delhi",
+                "addressCountry": "IN"
+              }
+            },
+            "organizer": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Shaheed Sukhdev College of Business Studies"
+              },
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "National Institute of Technology Patna"
+              },
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Valladolid"
+              }
+            ]
+          },
           "about": [
             { "@type": "Thing", "name": "Privacy-preserving computing" },
             { "@type": "Thing", "name": "Federated learning" },
@@ -239,6 +269,45 @@
         },
         {
           "@type": "ScholarlyArticle",
+          "@id": "https://avijitroy.com/research/#tea-lm4uc-ijcai2026",
+          "headline": "Measuring the Tokenization Premium: A Cost Audit for Underserved Language Communities",
+          "author": [
+            { "@id": "https://avijitroy.com/#person" },
+            { "@type": "Person", "name": "Proma Roy" },
+            { "@type": "Person", "name": "Hrishitva Patel" }
+          ],
+          "datePublished": "2026",
+          "inLanguage": "en",
+          "genre": "Workshop paper",
+          "description": "This paper introduces the Tokenization Equity Audit (TEA), a reproducible benchmark for measuring tokenization premiums in multilingual technical tutoring content. The study evaluates GPT-4o, Qwen2.5-7B, and Mistral-7B tokenizers across Bengali, Hindi, Arabic, Tamil, and Yoruba using a 120-item Python debugging corpus, showing that semantically equivalent content can impose unequal API cost, effective context-window capacity, and deployment overhead for underserved-language communities.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Language Models for Underserved Communities Workshop at IJCAI 2026",
+            "url": "https://lm4uc.github.io/"
+          },
+          "isPartOf": {
+            "@type": "Event",
+            "name": "Language Models for Underserved Communities (LM4UC), IJCAI 2026 Workshop",
+            "url": "https://lm4uc.github.io/",
+            "startDate": "2026-08-16",
+            "location": {
+              "@type": "Place",
+              "name": "Bremen, Germany"
+            }
+          },
+          "about": [
+            { "@type": "Thing", "name": "Tokenization fairness" },
+            { "@type": "Thing", "name": "Multilingual NLP" },
+            { "@type": "Thing", "name": "Low-resource languages" },
+            { "@type": "Thing", "name": "Educational AI" },
+            { "@type": "Thing", "name": "Bengali NLP" },
+            { "@type": "Thing", "name": "Tokenizer efficiency" },
+            { "@type": "Thing", "name": "Underserved language communities" }
+          ],
+          "mainEntityOfPage": "https://avijitroy.com/research/"
+        },
+        {
+          "@type": "ScholarlyArticle",
           "@id": "https://avijitroy.com/research/#cti-archival-report",
           "headline": "Exploring Machine Learning Techniques for Cyber Threat Intelligence Analysis",
           "author": { "@id": "https://avijitroy.com/#person" },
@@ -287,7 +356,7 @@
             "endDate": "2026-05-20",
             "location": {
               "@type": "Place",
-              "name": "Marco Island, Florida, USA",
+              "name": "Hilton Marco Island Beach Resort and Spa, Marco Island, Florida, USA",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Marco Island",
@@ -330,7 +399,7 @@
             "endDate": "2026-05-02",
             "location": {
               "@type": "Place",
-              "name": "New York City, New York, USA",
+              "name": "John Jay College, City University of New York, New York City, USA",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "New York City",
@@ -372,7 +441,7 @@
             "endDate": "2026-05-02",
             "location": {
               "@type": "Place",
-              "name": "New York City, New York, USA",
+              "name": "John Jay College, City University of New York, New York City, USA",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "New York City",
@@ -667,38 +736,58 @@
       <h2>Publications & Accepted Papers</h2>
 
         <div class="card-list">
-          <!-- ICICC -->
-          <article class="card editorial-block amber">
-            <span class="badge">BEST PAPER AWARD &middot; ICICC 2026</span>
+          <!-- TEA Benchmark / LM4UC IJCAI 2026 -->
+          <article class="card editorial-block blue">
+            <span class="badge">ACCEPTED POSTER &middot; PEER-REVIEWED WORKSHOP PAPER  &middot; IJCAI 2026 WORKSHOP</span>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
-              Privacy-Preserving
-              MIS Using Blockchain, Federated Learning and Zero-Trust Models</h3>
-            <p class="muted">Avijit Roy, Emran Hossain, Hemayet Uddin Himel, Hasan Imam, Ruhul Amin Md Rashed, Harleen
-              Kaur</p>
-            <p class="muted" style="margin-top: 12px;">
-              <strong>ICICC 2026 &middot; Best Paper Award &middot; Full Paper</strong>
-            </p>
-            <p class="muted">
-              This research proposes a privacy-preserving Management Information System architecture that integrates
-              blockchain infrastructure, federated learning, and zero-trust security models. The framework enables
-              secure
-              data collaboration across distributed systems while maintaining strict privacy boundaries and minimizing
-              centralized data exposure. Experimental evaluation showed improvements in decision accuracy, privacy
-              protection, and operational efficiency over conventional and partially distributed MIS architectures.
-            </p>
-            <p class="muted">
-              <em>To appear in Springer Lecture Notes in Networks and Systems (LNNS), ICICC 2026 proceedings.</em>
-            </p>
-          </article>
+              Measuring the Tokenization Premium: A Cost Audit for Underserved Language Communities
+            </h3>
 
+            <p class="muted">Avijit Roy, Proma Roy, Hrishitva Patel</p>
+
+            <p class="muted" style="margin-top: 12px;">
+              <strong>Accepted Poster &middot; Language Models for Underserved Communities (LM4UC) Workshop &middot; IJCAI 2026</strong><br />
+              Bremen, Germany &middot; August 16, 2026
+            </p>
+
+            <p class="muted">
+              This work introduces the <strong>Tokenization Equity Audit (TEA)</strong>, a reproducible benchmark for measuring
+              tokenization premiums in multilingual technical tutoring content. TEA evaluates GPT-4o, Qwen2.5-7B, and Mistral-7B
+              tokenizers across Bengali, Hindi, Arabic, Tamil, and Yoruba using a 120-item Python debugging corpus. The study shows
+              that semantically equivalent content can require substantially different token counts across languages, creating unequal
+              API cost, effective context-window capacity, and local deployment overhead for underserved-language communities.
+            </p>
+
+            <p class="muted">
+              <strong>Key finding:</strong> Bengali requires 1.56&times; as many GPT-4o tokens as English, while Yoruba reaches
+              2.37&times; despite using Latin script, showing that tokenization inequity is not reducible to script family alone.
+            </p>
+
+            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-globe" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>Workshop:</strong>
+                  <a href="https://lm4uc.github.io/" target="_blank" rel="noopener noreferrer">Language Models for Underserved Communities (LM4UC)</a>
+                </span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-database" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>Artifact:</strong>
+                  <a href="https://anonymous.4open.science/r/tea-benchmark" target="_blank" rel="noopener noreferrer">TEA Benchmark Repository</a>
+                </span>
+              </div>
+            </div>
+          </article>
+          
           <!-- FLAIRS -->
           <article class="card editorial-block blue">
-            <span class="badge">JOURNAL ARTICLE &middot; CONFERENCE PROCEEDINGS &middot; 2026</span>
+            <span class="badge">FULL PAPER &middot; PEER-REVIEWED &middot; FLAIRS-39</span>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">Propasafe-Hybrid:
               A Text-Based Hybrid Propaganda Detection Tool</h3>
             <p class="muted">Thomas Kimmeth, Avijit Roy, Vivek Sharma</p>
             <p class="muted" style="margin-top: 12px;">
-              <strong>Full Paper &middot; FLAIRS-39 Special Track: Applied Natural Language Processing &middot; Florida Artificial Intelligence Research Society Conference &middot; 2026</strong>
+              <strong>Full Paper &middot; FLAIRS-39 Special Track: Applied Natural Language Processing &middot; Florida Artificial Intelligence Research Society Conference &middot; 2026</strong><br />
+              Hilton Marco Island Beach Resort and Spa &middot; Marco Island, Florida, USA &middot; May 17&ndash;20, 2026
             </p>
             <p class="muted">
               This research introduces <strong>Propasafe-Hybrid</strong>, a hybrid propaganda detection framework for
@@ -740,7 +829,7 @@
 
           <!-- Structural Silence -->
           <article class="card editorial-block slate">
-            <span class="badge">PREPRINT &middot; POSTER PRESENTED &middot; ILA 2026</span>
+            <span class="badge">PREPRINT &middot; CONFERENCE POSTER &middot; ILA 2026</span>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
               Structural Silence: When AI Infrastructure Fails Speakers of Underrepresented Languages —
               A Case Study in Bengali, the Digital Divide, and the Hidden Cost of English-Centric Design
@@ -749,7 +838,8 @@
             <p class="muted" style="margin-top: 12px;">
               <strong>SSRN Preprint &middot; 2026</strong><br />
               Poster presented at the 69th Annual ILA Conference (International Linguistic Association), New
-              York City.
+              York City.<br />
+              John Jay College, City University of New York &middot; New York City, USA &middot; April 30&ndash;May 2, 2026
             </p>
             <p class="muted">
               This research examines structural barriers affecting AI performance in underrepresented languages,
@@ -778,6 +868,38 @@
               <div style="display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-globe" style="color: var(--brand); width: 16px; text-align: center;"></i>
                 <span class="muted"><strong>Conference Website:</strong> <a href="https://ilaword.org/conference/2026" target="_blank" rel="noopener noreferrer">ilaword.org/conference/2026</a></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ICICC -->
+          <article class="card editorial-block amber">
+            <span class="badge">FULL PAPER &middot; BEST PAPER AWARD &middot; SPRINGER LNNS &middot; ICICC 2026</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
+              Privacy-Preserving
+              MIS Using Blockchain, Federated Learning and Zero-Trust Models</h3>
+            <p class="muted">Avijit Roy, Emran Hossain, Hemayet Uddin Himel, Hasan Imam, Ruhul Amin Md Rashed, Harleen
+              Kaur</p>
+            <p class="muted" style="margin-top: 12px;">
+              <strong>ICICC 2026 &middot; Best Paper Award &middot; Full Paper</strong><br />
+              Shaheed Sukhdev College of Business Studies &middot; New Delhi, India &middot; February 6&ndash;7, 2026<br />
+              Organized in association with National Institute of Technology Patna and University of Valladolid
+            </p>
+            <p class="muted">
+              This research proposes a privacy-preserving Management Information System architecture that integrates
+              blockchain infrastructure, federated learning, and zero-trust security models. The framework enables
+              secure
+              data collaboration across distributed systems while maintaining strict privacy boundaries and minimizing
+              centralized data exposure. Experimental evaluation showed improvements in decision accuracy, privacy
+              protection, and operational efficiency over conventional and partially distributed MIS architectures.
+            </p>
+            <p class="muted">
+              <em>To appear in Springer Lecture Notes in Networks and Systems (LNNS), ICICC 2026 proceedings.</em>
+            </p>
+            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-globe" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>Conference Website:</strong> <a href="https://icicc-conf.com/icicc26" target="_blank" rel="noopener noreferrer">icicc-conf.com/icicc26</a></span>
               </div>
             </div>
           </article>

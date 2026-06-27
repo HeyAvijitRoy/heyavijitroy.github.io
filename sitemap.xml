@@ -98,4 +98,28 @@
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
+	<url>
+		<loc>https://avijitroy.com/limo/</loc>
+		<lastmod>2026-06-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://avijitroy.com/HashNow/</loc>
+		<lastmod>2026-06-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://avijitroy.com/JomiMapo/</loc>
+		<lastmod>2026-06-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://avijitroy.com/ny-dmv-bengali-guide/</loc>
+		<lastmod>2026-06-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.80</priority>
+	</url>
 </urlset>

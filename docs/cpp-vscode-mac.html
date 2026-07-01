@@ -53,6 +53,10 @@
         "headline": "Enable C++ Development in VS Code on macOS (Clang + LLDB)",
         "description": "A detailed guide to setting up C++ compilation and debugging in Visual Studio Code on macOS using Clang, LLDB, and VS Code configuration files.",
         "inLanguage": "en",
+        "datePublished": "2025-11-23",
+        "dateModified": "2026-05-24",
+        "proficiencyLevel": "Beginner",
+        "dependencies": "Visual Studio Code, Xcode Command Line Tools (Clang + LLDB)",
         "author": {
           "@type": "Person",
           "name": "Avijit Roy",
@@ -73,6 +77,60 @@
           "name": "Avijit Roy",
           "url": "https://avijitroy.com/"
         }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html#howto",
+        "name": "How to Enable C++ Development in VS Code on macOS with Clang and LLDB",
+        "description": "Set up C++ compilation and debugging in Visual Studio Code on macOS using Clang, LLDB, and VS Code tasks and launch configurations.",
+        "totalTime": "PT20M",
+        "supply": [
+          { "@type": "HowToSupply", "name": "macOS (Apple Silicon or Intel)" }
+        ],
+        "tool": [
+          { "@type": "HowToTool", "name": "Visual Studio Code" },
+          { "@type": "HowToTool", "name": "Xcode Command Line Tools (Clang + LLDB)" }
+        ],
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Install the C/C++ extension", "text": "Open VS Code, press Shift+Cmd+X, find C/C++ by Microsoft, and install it.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-1" },
+          { "@type": "HowToStep", "position": 2, "name": "Install Clang via Xcode Command Line Tools", "text": "Run xcode-select --install in Terminal, accept the prompts, then verify with clang++ --version.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-2" },
+          { "@type": "HowToStep", "position": 3, "name": "Create a test C++ project", "text": "Create a project folder, open it in VS Code, and add a main.cpp file with a Hello World program.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-3" },
+          { "@type": "HowToStep", "position": 4, "name": "Configure build tasks", "text": "Create .vscode/tasks.json defining a build task that runs clang++ with C++17 and debug symbols.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-4" },
+          { "@type": "HowToStep", "position": 5, "name": "Configure debugging", "text": "Create .vscode/launch.json using the lldb debug type pointing at the compiled binary.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-5" },
+          { "@type": "HowToStep", "position": 6, "name": "Configure IntelliSense", "text": "Create .vscode/c_cpp_properties.json with the clang++ compiler path and the correct intelliSenseMode for Apple Silicon or Intel.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-6" },
+          { "@type": "HowToStep", "position": 7, "name": "Build and run", "text": "Press Cmd+Shift+B to build, run the binary in the integrated terminal, and use Run and Debug (Cmd+Shift+D) to step through code.", "url": "https://avijitroy.com/docs/cpp-vscode-mac.html#step-7" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://avijitroy.com/docs/cpp-vscode-mac.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does VS Code say Clang is not found on macOS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Run xcode-select --install to install the Xcode Command Line Tools, then confirm with which clang++." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do I get permission denied when running my compiled C++ program on macOS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ensure the executable bit is set on the binary; if not, run chmod +x build/main." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does IntelliSense show errors that don't match the Clang compiler?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ensure compilerPath in c_cpp_properties.json points to /usr/bin/clang++ and that cppStandard matches your build flags." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why doesn't the debugger stop at breakpoints on macOS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Confirm the -g flag is included in your build task and that the program path in launch.json matches the actual output binary." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I avoid Apple Silicon vs Intel architecture mismatches in VS Code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Keep intelliSenseMode set to macos-clang-arm64 on Apple Silicon and avoid mixing Homebrew Intel toolchains with Apple Silicon builds." }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -308,7 +366,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="step-1">
       <h2>Step 1: Install the C/C++ extension</h2>
       <ol>
         <li><strong>Open VS Code.</strong></li>
@@ -319,7 +377,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="step-2">
       <h2>Step 2: Install the C++ compiler and tools (Clang/LLVM via Xcode CLT)</h2>
       <ol>
         <li><strong>Open Terminal</strong> (Applications → Utilities → Terminal).</li>
@@ -335,7 +393,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="step-3">
       <h2>Step 3: Create a test C++ project</h2>
       <ol>
         <li><strong>Create a project folder:</strong></li>
@@ -371,7 +429,7 @@ int main() {
       <hr>
     </section>
 
-    <section>
+    <section id="step-4">
       <h2>Step 4: Configure build tasks (<code>tasks.json</code>)</h2>
       <ol>
         <li><strong>Create a .vscode folder:</strong> In your project, create <code>.vscode/</code>.</li>
@@ -417,7 +475,7 @@ int main() {
       <hr>
     </section>
 
-    <section>
+    <section id="step-5">
       <h2>Step 5: Configure debugging (<code>launch.json</code>)</h2>
       <ol>
         <li><strong>Add <code>launch.json</code>:</strong> Create <code>.vscode/launch.json</code> with:</li>
@@ -442,7 +500,7 @@ int main() {
       <hr>
     </section>
 
-    <section>
+    <section id="step-6">
       <h2>Step 6: Configure IntelliSense (optional but recommended)</h2>
       <ol>
         <li><strong>Add <code>c_cpp_properties.json</code>:</strong> Create <code>.vscode/c_cpp_properties.json</code>:
@@ -470,7 +528,7 @@ int main() {
       <hr>
     </section>
 
-    <section>
+    <section id="step-7">
       <h2>Step 7: Build and run</h2>
       <ol>
         <li><strong>Build:</strong> Press <code>Cmd+Shift+B</code> (or Terminal → Run Build Task). You should see

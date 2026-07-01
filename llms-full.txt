@@ -221,12 +221,13 @@ BlitzTips is a secure, multi-agency intelligence platform for collecting and ana
 
 ## Teaching and Academic Mentorship
 
-Avijit Roy teaches undergraduate computer science at John Jay College of Criminal Justice, CUNY, as an Adjunct Lecturer.
+Avijit Roy teaches undergraduate computer science at John Jay College of Criminal Justice, CUNY, as an Adjunct Lecturer. Full teaching portfolio: https://avijitroy.com/teaching/
 
 Courses include:
 
-- CSCI 271: Introduction to Computing and Programming
-- CSCI 272: Object-Oriented Programming in C++
+- CSCI 271: Introduction to Computing and Programming (Spring 2026)
+- CSCI 272: Object-Oriented Programming in C++ (Fall 2025, Spring 2026, Fall 2026)
+- CSCI 362: Database & Data Mining (scheduled, Fall 2026)
 
 Teaching areas include:
 
@@ -239,7 +240,27 @@ Teaching areas include:
 - AI-assisted software development workflows
 - Practical cybersecurity awareness
 
+### Curriculum Development
+
+- **CSCI 380: Agentic AI Systems** — Developed curriculum concepts and instructional materials for a selected-topics course introducing AI agents, LLM workflows, tool use, prompt engineering, retrieval-augmented systems, evaluation, and responsible AI deployment.
+- **CSCI 271 Instructional Materials** — Created open educational resources for introductory programming emphasizing accessibility, modern C++ foundations, and Git/GitHub workflows.
+
+### Mentoring and Student Development
+
+- **Django Secure Single-Session Auth System** (GitHub: https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth) — A production-oriented Django authentication system enforcing one active session per user, with login activity tracking and suspicious-access awareness.
+- **Object-Oriented Programming Hackathon & CTF** — Organized and led a student-centered event focused on OOP reasoning, debugging, and applied computing challenges.
+
 He also mentors students in computer science, cybersecurity, programming, research preparation, and academic project development.
+
+### Open Learning Resources for Students
+
+Free, step-by-step educational materials, all authored by Avijit Roy for CUNY/John Jay computer science students and openly accessible:
+
+- **Git, GitHub & VS Code Source Control** (https://avijitroy.com/docs/git/) — Interactive beginner guide to version control, commits, GitHub publishing, branching, and the VS Code Source Control workflow.
+- **Saving Your Work Like a Pro: Git and GitHub for C++ Students** (https://avijitroy.com/docs/git-version-control/) — A 17-chapter ebook on Git and GitHub for C++ students, with practical workflows, recovery guidance, and a print-ready PDF layout.
+- **Enable C++ Development in VS Code on Windows** (https://avijitroy.com/docs/cpp-vscode-win.html) — Step-by-step setup for compiling and debugging C++ using MinGW-w64, GCC, and GDB in VS Code on Windows. Published November 2025.
+- **Enable C++ Development in VS Code on macOS** (https://avijitroy.com/docs/cpp-vscode-mac.html) — Step-by-step setup for compiling and debugging C++ using Clang and LLDB in VS Code on macOS (Apple Silicon and Intel). Published November 2025.
+- **Responsible AI Prompting Guide for CSCI 271/272** (https://avijitroy.com/docs/responsible-ai-prompting-guide.html) — Classroom guidance for using AI tools to support C++ learning while preserving academic integrity: students must understand, explain, test, and defend their own work.
 
 ## Technical Skills and Domains
 

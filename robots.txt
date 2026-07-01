@@ -22,3 +22,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://avijitroy.com/sitemap.xml
+
+# LLM / AI agent context files
+# https://avijitroy.com/llms.txt
+# https://avijitroy.com/llms-full.txt

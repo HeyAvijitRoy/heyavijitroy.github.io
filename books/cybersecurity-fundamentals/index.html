@@ -57,6 +57,22 @@
       border-color: #E88A00;
       color: #0F1111;
     }
+    .book-hero {
+      grid-template-columns: 1fr 240px;
+    }
+    .book-hero-cover {
+      justify-self: end;
+    }
+    @media (max-width: 768px) {
+      .book-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .book-hero-cover {
+        justify-self: center;
+        margin-top: var(--space-4);
+      }
+    }
   </style>
 
   <script src="../../assets/js/main.js" defer></script>
@@ -239,7 +255,7 @@
       </nav>
 
       <!-- HERO -->
-      <section class="hero" style="grid-template-columns: 1fr 240px;">
+      <section class="hero book-hero">
         <div class="hero-content">
           <span class="badge">Kindle Edition</span>
           <span class="badge" style="background: rgba(16,185,129,0.1); color: #10b981;">Amazon</span>
@@ -262,7 +278,7 @@
             <a class="button small" href="#faq">FAQ</a>
           </div>
         </div>
-        <div style="justify-self: end;">
+        <div class="book-hero-cover">
           <img src="assets/cover.jpg"
             alt="Cover of Cybersecurity Fundamentals: A Practical Guide for Everyone, by Avijit Roy"
             style="width: 220px; max-width: 100%; border-radius: var(--radius-1); box-shadow: var(--shadow);"

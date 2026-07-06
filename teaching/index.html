@@ -81,7 +81,7 @@
         "@id": "https://avijitroy.com/teaching/#courses",
         "name": "Courses Taught",
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 5,
+        "numberOfItems": 6,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -150,6 +150,19 @@
                 "name": "John Jay College of Criminal Justice"
               }
             }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Course",
+              "name": "Cyber Forensics & Malware Analysis (DFR711) - Fall 2026",
+              "description": "Graduate course covering advanced digital forensics, malware analysis, incident response, reverse engineering, mobile device forensics, and threat hunting across Windows, OSX, and Linux platforms.",
+              "provider": {
+                "@type": "CollegeOrUniversity",
+                "name": "St. John's University"
+              }
+            }
           }
         ]
       },
@@ -157,7 +170,7 @@
         "@type": "ItemList",
         "@id": "https://avijitroy.com/teaching/#learning-resources",
         "name": "Open Learning Resources",
-        "numberOfItems": 5,
+        "numberOfItems": 4,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -168,28 +181,67 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "url": "https://avijitroy.com/docs/git-version-control/",
-            "name": "Saving Your Work Like a Pro: Git and GitHub for C++ Students"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
             "url": "https://avijitroy.com/docs/cpp-vscode-win.html",
             "name": "Enable C++ Development in VS Code on Windows"
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 3,
             "url": "https://avijitroy.com/docs/cpp-vscode-mac.html",
             "name": "Enable C++ Development in VS Code on macOS"
           },
           {
             "@type": "ListItem",
-            "position": 5,
+            "position": 4,
             "url": "https://avijitroy.com/docs/responsible-ai-prompting-guide.html",
             "name": "Responsible AI Prompting Guide for CSCI 271/272"
           }
         ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://avijitroy.com/books/cybersecurity-fundamentals/#book",
+        "name": "Cybersecurity Fundamentals: A Practical Guide for Everyone",
+        "url": "https://avijitroy.com/books/cybersecurity-fundamentals/",
+        "sameAs": ["https://www.amazon.com/dp/B0H461R83M"],
+        "author": {
+          "@type": "Person",
+          "@id": "https://avijitroy.com/#person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com/"
+        },
+        "description": "A jargon-free guide to passwords, phishing, scams, identity theft, data backup, and consumer data-privacy rights, written for everyday internet users with no technical background required.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "AP R&R"
+        },
+        "datePublished": "2026-07-06",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "en",
+        "isAccessibleForFree": false,
+        "image": "https://avijitroy.com/books/cybersecurity-fundamentals/assets/cover.jpg"
+      },
+      {
+        "@type": ["Book", "LearningResource"],
+        "@id": "https://avijitroy.com/docs/git-version-control/#book",
+        "name": "Saving Your Work Like a Pro: Git & GitHub for C++ Students",
+        "url": "https://avijitroy.com/docs/git-version-control/",
+        "author": {
+          "@type": "Person",
+          "@id": "https://avijitroy.com/#person",
+          "name": "Avijit Roy",
+          "url": "https://avijitroy.com/"
+        },
+        "description": "A complete, analogy-driven guide to version control for first-semester computer science students learning C++.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "educationalLevel": "Beginner"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://avijitroy.com/#person",
+        "name": "Avijit Roy",
+        "url": "https://avijitroy.com/"
       }
     ]
   }
@@ -238,8 +290,19 @@
         project-based learning.
       </p>
 
+      <!-- Navigation CTA Strip -->
+      <div class="cta" style="margin-top: 0; margin-bottom: 2rem; width: 100%;">
+        <a class="button small" href="#courses">Courses</a>
+        <a class="button small" href="#open-learning-resources">Open Learning Resources</a>
+        <a class="button small" href="#student-tools">Student Tools</a>
+        <a class="button small" href="#books">Books</a>
+        <a class="button small" href="#curriculum-development">Curriculum Development</a>
+        <a class="button small" href="#teaching-interests">Teaching Interests</a>
+        <a class="button small" href="#mentoring">Mentoring</a>
+      </div>
+
       <!-- TEACHING SNAPSHOT -->
-      <section class="identity-snapshot" aria-label="Teaching Snapshot">
+      <section id="teaching-snapshot" class="identity-snapshot" aria-label="Teaching Snapshot">
         <div class="identity-snapshot-grid">
           <!-- SNAPSHOT CARD: Programming -->
           <article class="identity-card">
@@ -271,7 +334,7 @@
       </section>
 
       <!-- TEACHING PHILOSOPHY -->
-      <section class="section-block">
+      <section id="teaching-philosophy" class="section-block">
         <h2>Teaching Philosophy</h2>
 
         <!-- PHILOSOPHY CARD -->
@@ -292,8 +355,11 @@
       </section>
 
       <!-- COURSES -->
-      <section class="section-block">
+      <section id="courses" class="section-block">
         <h2>Courses I Teach</h2>
+
+        <!-- SUBSECTION: John Jay College - Undergraduate -->
+        <h3 id="john-jay-courses" style="margin-bottom: 8px;">John Jay College of Criminal Justice (CUNY) &mdash; Undergraduate</h3>
         <p class="muted" style="margin-bottom: 24px;">
           Courses taught or scheduled at John Jay College of Criminal Justice (CUNY).
         </p>
@@ -394,136 +460,46 @@
             </ul>
           </div>
         </details>
-      </section>
 
-      <!-- CURRICULUM DEVELOPMENT -->
-      <section class="section-block" style="margin-top: 48px;">
-        <h2>Curriculum Development</h2>
-        <div class="card-list">
-          <!-- CURRICULUM CARD: CSCI 380 Agentic AI Systems -->
-          <article class="card editorial-block purple">
-            <span class="badge">Selected Topics in Computer Science</span>
-            <h3>CSCI 380 - Agentic AI Systems</h3>
+        <!-- SUBSECTION: St. John's University - Graduate -->
+        <!-- <h3 id="sju-courses" style="margin-top: 40px; margin-bottom: 8px;">St. John's University &mdash; Graduate</h3>
+        <p class="muted" style="margin-bottom: 24px;">
+          Courses taught or scheduled at St. John's University, Collins College of Professional Studies, Division of
+          Computer Science, Mathematics, and Science.
+        </p> -->
+
+        <!-- COURSE BLOCK: DFR 711 -->
+        <!-- <details>
+          <summary>
+            <div>
+              DFR711 - Cyber Forensics & Malware Analysis
+              <span style="display: block; font-size: 0.85rem; color: var(--brand); font-family: 'Inter', system-ui, sans-serif; font-weight: 600; text-transform: uppercase;">Fall 2026</span>
+            </div>
+          </summary>
+          <div class="details-body">
             <p class="muted">
-              Developed curriculum concepts and instructional materials for an Agentic AI Systems offering under the
-              selected-topics computer science format. The course concept introduces students to AI agents, LLM workflows,
-              tool use, prompt engineering, retrieval-augmented systems, evaluation, and responsible AI deployment.
+              Graduate course introducing advanced digital forensics topics, including malicious software (malware)
+              and its analysis, with hands-on experience using open source and commercial tools in a digital
+              laboratory environment. Covers the forensic characteristics of Windows, OSX, and Linux platforms, and
+              the reverse engineering techniques used to conduct static and dynamic malware analysis, along with the
+              principles, legal considerations, controls, and documentation practices governing forensic procedures.
+            </p>
+            <p class="muted">
+              Topics include incident response and cyber incident management, fundamentals of digital forensics,
+              network and host-based evidence collection, forensic imaging, memory and storage analysis, log file
+              analysis, mobile device forensics, malware analysis for incident response, threat intelligence and
+              threat hunting, and forensic report writing.
             </p>
             <ul class="tags">
-              <li>Agentic AI</li>
-              <li>LLM Workflows</li>
-              <li>Applied AI</li>
-              <li>Responsible AI</li>
+              <li>Digital Forensics</li>
+              <li>Malware Analysis</li>
+              <li>Incident Response</li>
+              <li>Reverse Engineering</li>
+              <li>Mobile Forensics</li>
+              <li>Threat Hunting</li>
             </ul>
-          </article>
-
-          <!-- CURRICULUM CARD: CSCI 271 Instructional Materials -->
-          <article class="card editorial-block slate">
-            <span class="badge">Open Educational Resources</span>
-            <h3>CSCI 271 Instructional Materials</h3>
-            <p class="muted">
-              Created instructional materials for introductory programming with an emphasis on accessibility, practical
-              examples, modern C++ foundations, Git/GitHub workflows, and student-centered explanations that reduce the
-              gap between lecture concepts and working code.
-            </p>
-            <ul class="tags">
-              <li>OER</li>
-              <li>C++</li>
-              <li>Git</li>
-              <li>Student Support</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- TEACHING INTERESTS -->
-      <section class="section-block" style="margin-top: 48px;">
-        <h2>Teaching Interests</h2>
-        <p class="muted" style="margin-bottom: 24px;">
-          Areas I am prepared to teach or develop at the undergraduate or graduate level, depending on departmental need.
-        </p>
-
-        <div class="grid-2x2">
-          <!-- INTEREST CARD: Programming and Software Design -->
-          <article class="card">
-            <h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Programming & Software Design</h3>
-            <p class="muted">
-              C++, Python, Java,object-oriented programming, data structures, debugging, software
-              engineering, Git/GitHub workflows, and secure coding practices.
-            </p>
-          </article>
-
-          <!-- INTEREST CARD: Data Systems and Analytics -->
-          <article class="card">
-            <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Data Systems & Analytics</h3>
-            <p class="muted">
-              Database systems, SQL, data mining, data analysis, dashboard development, data quality, and practical
-              analytics workflows using tools such as Tableau, Power BI, Python, and SQL.
-            </p>
-          </article>
-
-          <!-- INTEREST CARD: Artificial Intelligence -->
-          <article class="card">
-            <h3><i class="fa-solid fa-robot" aria-hidden="true"></i> Artificial Intelligence</h3>
-            <p class="muted">
-              Graduate-level Python, applied AI, machine learning foundations, NLP, transformer-based systems,
-              LLM-assisted workflows, AI evaluation, and responsible AI deployment.
-            </p>
-          </article>
-
-          <!-- INTEREST CARD: Cybersecurity and Digital Forensics -->
-          <article class="card">
-            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Cybersecurity & Digital Forensics</h3>
-            <p class="muted">
-              Cybersecurity fundamentals, digital forensics, secure software design, authentication, access control,
-              evidence handling, privacy-aware systems, and applied security tooling.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- MENTORING -->
-      <section class="section-block" style="margin-top: 48px;">
-        <h2>Mentoring & Student Development</h2>
-        <p class="muted" style="margin-bottom: 24px;">
-          I mentor students through practical computing projects with clear technical goals, reproducible workflows, and
-          outcomes they can explain, demonstrate, and continue improving after the course or research period ends.
-        </p>
-
-        <!-- MENTORING CARD: Django Secure Single-Session Auth System -->
-        <article class="card">
-          <h3>Django Secure Single-Session Auth System
-            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-          </h3>
-          <p class="muted" style="margin-top: 8px;">
-            A production-oriented authentication system built with Django, enforcing one active session per user,
-            tracking login activity, and supporting suspicious-access awareness. The project emphasizes secure session
-            handling, schema design, reproducible development, and deployment-ready documentation.
-          </p>
-          <ul class="tags">
-            <li>Security</li>
-            <li>Authentication</li>
-            <li>Django</li>
-            <li>Python</li>
-            <li>PostgreSQL</li>
-          </ul>
-        </article>
-
-        <!-- MENTORING CARD: Object-Oriented Programming Hackathon and CTF -->
-        <article class="card" style="margin-top: 24px;">
-          <h3>Object-Oriented Programming Hackathon & CTF</h3>
-          <p class="muted" style="margin-top: 8px;">
-            Organized and led a student-centered programming event focused on object-oriented reasoning, debugging,
-            problem solving, and applied computing challenges. The event encouraged students to work collaboratively
-            while translating course concepts into timed, hands-on technical tasks.
-          </p>
-          <ul class="tags">
-            <li>OOP</li>
-            <li>CTF</li>
-            <li>Debugging</li>
-            <li>Student Engagement</li>
-          </ul>
-        </article>
+          </div>
+        </details> -->
       </section>
 
       <!-- OPEN LEARNING RESOURCES -->
@@ -531,8 +507,9 @@
         <h2>Open Learning Resources</h2>
         <p class="muted" style="margin-bottom: 24px;">
           Free, step-by-step materials students can use before class, during practice, or when setting up a first
-          development environment. Begin with the interactive source control guide, continue into the full printable
-          ebook, choose the setup guide for your operating system, and use the responsible AI guide to support learning.
+          development environment. Begin with the interactive source control guide, choose the setup guide for your
+          operating system, and use the responsible AI guide to support learning. The full printable ebook lives in
+          the <a href="#books">Books</a> section below.
         </p>
 
         <div class="grid-2x2">
@@ -551,23 +528,6 @@
               <li>Beginner</li>
             </ul>
             <a class="button small" href="../docs/git/">Open Interactive Guide</a>
-          </article>
-
-          <!-- RESOURCE CARD: Git and GitHub Ebook -->
-          <article class="card editorial-block green">
-            <span class="badge">Extended Ebook</span>
-            <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Saving Your Work Like a Pro</h3>
-            <p class="muted">
-              A formal, 17-chapter ebook on Git and GitHub for C++ students, with practical workflows, recovery guidance,
-              command reference material, and a print-ready PDF layout.
-            </p>
-            <ul class="tags">
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>C++</li>
-              <li>Printable Ebook</li>
-            </ul>
-            <a class="button small" href="../docs/git-version-control/">Read the Ebook</a>
           </article>
 
           <!-- RESOURCE CARD: Windows C++ Setup -->
@@ -624,7 +584,7 @@
       </section>
 
       <!-- STUDENT TOOLS -->
-      <section class="section-block" style="margin-top: 48px;">
+      <section id="student-tools" class="section-block" style="margin-top: 48px;">
         <h2>Free Tools for Students</h2>
         <!-- RESOURCE CARD: Developer and AI Essentials -->
         <div class="course-card">
@@ -638,6 +598,185 @@
             Open Student Tools <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
+      </section>
+
+      <!-- BOOKS -->
+      <section id="books" class="section-block" style="margin-top: 48px;">
+        <h2>Books</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          Long-form guides for general readers and students alike.
+        </p>
+
+        <article class="card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px;">
+          <div style="flex: 1; min-width: 220px;">
+            <span class="badge">Kindle Edition</span>
+            <h3 style="margin-top: 8px;">Cybersecurity Fundamentals: A Practical Guide for Everyone</h3>
+            <p class="muted" style="margin-top: 8px;">
+              A jargon-free guide to passwords, phishing, scams, identity theft, data backup, and consumer privacy
+              rights &mdash; written for everyday internet users, not tech experts.
+            </p>
+            <ul class="tags">
+              <li>Cybersecurity Awareness</li>
+              <li>Online Safety</li>
+              <li>Consumer Protection</li>
+            </ul>
+            <a class="button small" href="../books/cybersecurity-fundamentals/" style="margin-top: 16px;">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <img src="../books/cybersecurity-fundamentals/assets/cover.jpg"
+            alt="Cover of Cybersecurity Fundamentals: A Practical Guide for Everyone, by Avijit Roy"
+            style="width: 100px; border-radius: var(--radius-1); box-shadow: var(--shadow); flex-shrink: 0;">
+        </article>
+
+        <article class="card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 220px;">
+            <span class="badge" style="background: rgba(16,185,129,0.1); color: #10b981;">Free Ebook</span>
+            <h3 style="margin-top: 8px;">Saving Your Work Like a Pro: Git &amp; GitHub for C++ Students</h3>
+            <p class="muted" style="margin-top: 8px;">
+              A formal, 17-chapter ebook on Git and GitHub for C++ students, with practical workflows, recovery
+              guidance, command reference material, and a print-ready PDF layout.
+            </p>
+            <ul class="tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>C++</li>
+              <li>Printable Ebook</li>
+            </ul>
+            <a class="button small" href="../docs/git-version-control/" style="margin-top: 16px;">Read the Ebook <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <img src="../docs/git-version-control/assets/ebook-cover-letter.jpg"
+            alt="Cover of Saving Your Work Like a Pro: Git & GitHub for C++ Students, by Avijit Roy"
+            style="width: 100px; border-radius: var(--radius-1); box-shadow: var(--shadow); flex-shrink: 0;">
+        </article>
+      </section>
+
+      <!-- CURRICULUM DEVELOPMENT -->
+      <section id="curriculum-development" class="section-block" style="margin-top: 48px;">
+        <h2>Curriculum Development</h2>
+        <div class="card-list">
+          <!-- CURRICULUM CARD: CSCI 380 Agentic AI Systems -->
+          <article class="card editorial-block purple">
+            <span class="badge">Selected Topics in Computer Science</span>
+            <h3>CSCI 380 - Agentic AI Systems</h3>
+            <p class="muted">
+              Developed curriculum concepts and instructional materials for an Agentic AI Systems offering under the
+              selected-topics computer science format. The course concept introduces students to AI agents, LLM workflows,
+              tool use, prompt engineering, retrieval-augmented systems, evaluation, and responsible AI deployment.
+            </p>
+            <ul class="tags">
+              <li>Agentic AI</li>
+              <li>LLM Workflows</li>
+              <li>Applied AI</li>
+              <li>Responsible AI</li>
+            </ul>
+          </article>
+
+          <!-- CURRICULUM CARD: CSCI 271 Instructional Materials -->
+          <article class="card editorial-block slate">
+            <span class="badge">Open Educational Resources</span>
+            <h3>CSCI 271 Instructional Materials</h3>
+            <p class="muted">
+              Created instructional materials for introductory programming with an emphasis on accessibility, practical
+              examples, modern C++ foundations, Git/GitHub workflows, and student-centered explanations that reduce the
+              gap between lecture concepts and working code.
+            </p>
+            <ul class="tags">
+              <li>OER</li>
+              <li>C++</li>
+              <li>Git</li>
+              <li>Student Support</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- TEACHING INTERESTS -->
+      <section id="teaching-interests" class="section-block" style="margin-top: 48px;">
+        <h2>Teaching Interests</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          Areas I am prepared to teach or develop at the undergraduate or graduate level, depending on departmental need.
+        </p>
+
+        <div class="grid-2x2">
+          <!-- INTEREST CARD: Programming and Software Design -->
+          <article class="card">
+            <h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Programming & Software Design</h3>
+            <p class="muted">
+              C++, Python, Java,object-oriented programming, data structures, debugging, software
+              engineering, Git/GitHub workflows, and secure coding practices.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Data Systems and Analytics -->
+          <article class="card">
+            <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Data Systems & Analytics</h3>
+            <p class="muted">
+              Database systems, SQL, data mining, data analysis, dashboard development, data quality, and practical
+              analytics workflows using tools such as Tableau, Power BI, Python, and SQL.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Artificial Intelligence -->
+          <article class="card">
+            <h3><i class="fa-solid fa-robot" aria-hidden="true"></i> Artificial Intelligence</h3>
+            <p class="muted">
+              Graduate-level Python, applied AI, machine learning foundations, NLP, transformer-based systems,
+              LLM-assisted workflows, AI evaluation, and responsible AI deployment.
+            </p>
+          </article>
+
+          <!-- INTEREST CARD: Cybersecurity and Digital Forensics -->
+          <article class="card">
+            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Cybersecurity & Digital Forensics</h3>
+            <p class="muted">
+              Cybersecurity fundamentals, digital forensics, secure software design, authentication, access control,
+              evidence handling, privacy-aware systems, and applied security tooling.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MENTORING -->
+      <section id="mentoring" class="section-block" style="margin-top: 48px;">
+        <h2>Mentoring & Student Development</h2>
+        <p class="muted" style="margin-bottom: 24px;">
+          I mentor students through practical computing projects with clear technical goals, reproducible workflows, and
+          outcomes they can explain, demonstrate, and continue improving after the course or research period ends.
+        </p>
+
+        <!-- MENTORING CARD: Django Secure Single-Session Auth System -->
+        <article class="card">
+          <h3>Django Secure Single-Session Auth System
+            <a class="repo-link" href="https://github.com/HeyAvijitRoy/DjangoSecureSingleSessionAuth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          </h3>
+          <p class="muted" style="margin-top: 8px;">
+            A production-oriented authentication system built with Django, enforcing one active session per user,
+            tracking login activity, and supporting suspicious-access awareness. The project emphasizes secure session
+            handling, schema design, reproducible development, and deployment-ready documentation.
+          </p>
+          <ul class="tags">
+            <li>Security</li>
+            <li>Authentication</li>
+            <li>Django</li>
+            <li>Python</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </article>
+
+        <!-- MENTORING CARD: Object-Oriented Programming Hackathon and CTF -->
+        <article class="card" style="margin-top: 24px;">
+          <h3>Object-Oriented Programming Hackathon & CTF</h3>
+          <p class="muted" style="margin-top: 8px;">
+            Organized and led a student-centered programming event focused on object-oriented reasoning, debugging,
+            problem solving, and applied computing challenges. The event encouraged students to work collaboratively
+            while translating course concepts into timed, hands-on technical tasks.
+          </p>
+          <ul class="tags">
+            <li>OOP</li>
+            <li>CTF</li>
+            <li>Debugging</li>
+            <li>Student Engagement</li>
+          </ul>
+        </article>
       </section>
     </div>
   </main>

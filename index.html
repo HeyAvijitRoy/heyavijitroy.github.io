@@ -71,6 +71,8 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@graph": [
+    {
     "@type": "ProfilePage",
     "@id": "https://avijitroy.com/#profilepage",
     "url": "https://avijitroy.com/",
@@ -154,6 +156,41 @@
         }
       ]
     }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://avijitroy.com/books/cybersecurity-fundamentals/#book",
+      "name": "Cybersecurity Fundamentals: A Practical Guide for Everyone",
+      "url": "https://avijitroy.com/books/cybersecurity-fundamentals/",
+      "sameAs": ["https://www.amazon.com/dp/B0H461R83M"],
+      "author": {
+        "@id": "https://avijitroy.com/#person"
+      },
+      "description": "A jargon-free guide to passwords, phishing, scams, identity theft, data backup, and consumer data-privacy rights, written for everyday internet users with no technical background required.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "AP R&R"
+      },
+      "datePublished": "2026-07-06",
+      "bookFormat": "https://schema.org/EBook",
+      "inLanguage": "en",
+      "isAccessibleForFree": false,
+      "image": "https://avijitroy.com/books/cybersecurity-fundamentals/assets/cover.jpg"
+    },
+    {
+      "@type": ["Book", "LearningResource"],
+      "@id": "https://avijitroy.com/docs/git-version-control/#book",
+      "name": "Saving Your Work Like a Pro: Git & GitHub for C++ Students",
+      "url": "https://avijitroy.com/docs/git-version-control/",
+      "author": {
+        "@id": "https://avijitroy.com/#person"
+      },
+      "description": "A complete, analogy-driven guide to version control for first-semester computer science students learning C++.",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Beginner"
+    }
+    ]
   }
   </script>
 
@@ -352,6 +389,40 @@
             <a class="button primary small" href="teaching">Explore Teaching Portfolio &rarr;</a>
             <a class="button small" href="teaching/student-tools/">Free Student Tools</a>
           </div>
+        </div>
+      </section>
+
+      <!-- BOOKS -->
+      <section class="section-block">
+        <h2>Books</h2>
+        <p class="muted" style="margin-bottom: 24px;">Long-form guides for general readers and students alike.</p>
+
+        <div class="editorial-card" style="display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; margin-bottom: var(--space-4);">
+          <div style="flex: 1; min-width: 220px;">
+            <span class="badge">Kindle Edition</span>
+            <h3 style="font-size: 1.3rem; margin: 8px 0;"><i class="fa-solid fa-book"></i> Cybersecurity
+              Fundamentals: A Practical Guide for Everyone</h3>
+            <p class="muted">A jargon-free guide to online safety, scams, and identity protection for everyday
+              readers &mdash; available now on Amazon Kindle.</p>
+            <a class="button small" href="books/cybersecurity-fundamentals/" style="margin-top: 16px;">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <img src="books/cybersecurity-fundamentals/assets/cover.jpg"
+            alt="Cover of Cybersecurity Fundamentals: A Practical Guide for Everyone, by Avijit Roy"
+            style="width: 72px; border-radius: var(--radius-1); box-shadow: var(--shadow); flex-shrink: 0;">
+        </div>
+
+        <div class="editorial-card" style="display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 220px;">
+            <span class="badge" style="background: rgba(16,185,129,0.1); color: #10b981;">Free Ebook</span>
+            <h3 style="font-size: 1.3rem; margin: 8px 0;"><i class="fa-solid fa-book"></i> Saving Your Work Like a
+              Pro: Git &amp; GitHub for C++ Students</h3>
+            <p class="muted">A print-ready, 17-chapter guide to version control for first-semester C++
+              students.</p>
+            <a class="button small" href="docs/git-version-control/" style="margin-top: 16px;">Read the Ebook <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <img src="docs/git-version-control/assets/ebook-cover-letter.jpg"
+            alt="Cover of Saving Your Work Like a Pro: Git & GitHub for C++ Students, by Avijit Roy"
+            style="width: 72px; border-radius: var(--radius-1); box-shadow: var(--shadow); flex-shrink: 0;">
         </div>
       </section>
 

@@ -262,6 +262,18 @@ Free, step-by-step educational materials, all authored by Avijit Roy for CUNY/Jo
 - **Enable C++ Development in VS Code on macOS** (https://avijitroy.com/docs/cpp-vscode-mac.html) — Step-by-step setup for compiling and debugging C++ using Clang and LLDB in VS Code on macOS (Apple Silicon and Intel). Published November 2025.
 - **Responsible AI Prompting Guide for CSCI 271/272** (https://avijitroy.com/docs/responsible-ai-prompting-guide.html) — Classroom guidance for using AI tools to support C++ learning while preserving academic integrity: students must understand, explain, test, and defend their own work.
 
+## Books
+
+### Cybersecurity Fundamentals: A Practical Guide for Everyone
+
+A general-audience nonfiction book by Avijit Roy, published as a Kindle edition on Amazon: https://www.amazon.com/dp/B0H461R83M. Dedicated page: https://avijitroy.com/books/cybersecurity-fundamentals/
+
+The book is a jargon-free, plain-English guide for everyday internet users with no technical background, including older adults who are disproportionately targeted by scammers. It covers creating passwords that actually protect users, recognizing phishing emails, romance scams, and tech support fraud, protecting bank accounts and identity online, a calm step-by-step incident-response plan for when something goes wrong, backing up irreplaceable photos and documents, how artificial intelligence is being used against ordinary people and how defenders are fighting back, and consumer legal rights around data protection. It is positioned as public-interest cybersecurity education translated for a non-technical, general audience, distinct from Avijit Roy's peer-reviewed academic research.
+
+### Saving Your Work Like a Pro: Git and GitHub for C++ Students
+
+A free, 17-chapter ebook by Avijit Roy on Git and GitHub for C++ students, available at https://avijitroy.com/docs/git-version-control/. See Open Learning Resources for Students above.
+
 ## Technical Skills and Domains
 
 ### Core Domains

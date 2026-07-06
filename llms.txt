@@ -120,6 +120,11 @@ Teaching areas include C++, object-oriented programming, introduction to computi
 
 He publishes free, open learning resources for students, including a Git/GitHub/VS Code interactive guide, a 17-chapter Git ebook, C++ VS Code setup guides for Windows and macOS, and a Responsible AI Prompting Guide for course use. Full list: https://avijitroy.com/teaching/#open-learning-resources
 
+## Books
+
+- **Cybersecurity Fundamentals: A Practical Guide for Everyone** (https://avijitroy.com/books/cybersecurity-fundamentals/) — A general-audience Kindle book by Avijit Roy, available on Amazon (https://www.amazon.com/dp/B0H461R83M). It is a jargon-free guide for everyday internet users covering password security, phishing and scam recognition, identity theft protection, data backup, AI-driven threats, and consumer data-privacy rights. Written for readers with no technical background, including older adults who are frequently targeted by scammers.
+- **Saving Your Work Like a Pro: Git and GitHub for C++ Students** (https://avijitroy.com/docs/git-version-control/) — A free, 17-chapter ebook on Git and GitHub for C++ students. See Open Learning Resources above.
+
 ## Technical Domains
 
 - Cybersecurity

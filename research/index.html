@@ -204,16 +204,23 @@
             { "@id": "https://avijitroy.com/#person" },
             { "@type": "Person", "name": "Deepak Gupta" }
           ],
-          "datePublished": "2026",
+          "datePublished": "2026-07-10",
           "creditText": "Deepak Gupta is the corresponding and submitting author.",
+          "identifier": "https://doi.org/10.1002/appl.70128",
+          "sameAs": "https://doi.org/10.1002/appl.70128",
           "publisher": {
             "@type": "Organization",
             "name": "Wiley"
           },
           "isPartOf": {
-            "@type": "Periodical",
-            "name": "Applied Research",
-            "url": "https://onlinelibrary.wiley.com/journal/27024288"
+            "@type": "PublicationIssue",
+            "issueNumber": "4",
+            "volumeNumber": "5",
+            "isPartOf": {
+              "@type": "Periodical",
+              "name": "Applied Research",
+              "url": "https://onlinelibrary.wiley.com/journal/27024288"
+            }
           },
           "about": [
             { "@type": "Thing", "name": "Electric vehicles" },
@@ -819,46 +826,6 @@
       <h2>Publications &amp; Accepted Papers</h2>
 
         <div class="card-list">
-          <!-- Wiley Applied Research / EV Inverter Control -->
-          <article class="card editorial-block amber">
-            <span class="badge">ACCEPTED &middot; PEER-REVIEWED JOURNAL ARTICLE &middot; WILEY APPLIED RESEARCH</span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
-              AI-Driven and Cyber-Secure Embedded Inverter Control for Energy Optimization in Electric Vehicles
-            </h3>
-
-            <p class="muted">Sonal Sagar Boda, Siddhesh Pimpale, Mohammad Somon Sikder, Hemayet Uddin Himel, Zeeshan Akbar, Avijit Roy, Deepak Gupta</p>
-
-            <p class="muted" style="margin-top: 12px;">
-              <strong>Accepted &middot; Applied Research &middot; Wiley &middot; 2026</strong><br />
-              Status: Accepted, awaiting publication &middot; Scopus-indexed, Q2 journal
-            </p>
-
-            <p class="muted">
-              This work proposes a unified <strong>AI-driven and cyber-secure inverter-control framework</strong> for
-              permanent magnet synchronous motor (PMSM)-based electric vehicle systems. The methodology integrates a
-              Deep Q-Network (DQN)-based deep reinforcement learning adaptive switching controller with encrypted
-              command validation and an embedded intrusion detection system (IDS), implemented on an ARM Cortex-M7
-              (STM32H7) platform and validated against WLTP and UDDS driving-cycle datasets in MATLAB/Simulink and
-              hardware-in-the-loop environments.
-            </p>
-
-            <p class="muted">
-              <strong>Key finding:</strong> The framework achieves an average peak efficiency of 95.4% (a 4.2% improvement
-              over conventional field-oriented control), a 34.5% reduction in switching losses, 67% reduction in torque
-              ripple, and THD reduced to 3.2%, while the embedded IDS reaches 98.6% attack-detection accuracy at 3.2 ms
-              average detection latency with only 1.6% computational overhead.
-            </p>
-
-            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-globe" style="color: var(--brand); width: 16px; text-align: center;"></i>
-                <span class="muted"><strong>Journal:</strong>
-                  <a href="https://onlinelibrary.wiley.com/journal/27024288" target="_blank" rel="noopener noreferrer">Applied Research (Wiley)</a>
-                </span>
-              </div>
-            </div>
-          </article>
-
           <!-- TEA Benchmark / LM4UC IJCAI 2026 -->
           <article class="card editorial-block blue">
             <span class="badge">ACCEPTED POSTER &middot; PEER-REVIEWED WORKSHOP PAPER &middot; IJCAI 2026 WORKSHOP</span>
@@ -897,6 +864,52 @@
                 <i class="fa-solid fa-database" style="color: var(--brand); width: 16px; text-align: center;"></i>
                 <span class="muted"><strong>Artifact:</strong>
                   <a href="https://github.com/HeyAvijitRoy/tea-benchmark" target="_blank" rel="noopener noreferrer">TEA Benchmark Repository</a>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wiley Applied Research / EV Inverter Control -->
+          <article class="card editorial-block amber">
+            <span class="badge">PUBLISHED &middot; PEER-REVIEWED JOURNAL ARTICLE &middot; WILEY APPLIED RESEARCH</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
+              AI-Driven and Cyber-Secure Embedded Inverter Control for Energy Optimization in Electric Vehicles
+            </h3>
+
+            <p class="muted">Sonal Sagar Boda, Siddhesh Pimpale, Mohammad Somon Sikder, Hemayet Uddin Himel, Zeeshan Akbar, Avijit Roy, Deepak Gupta</p>
+
+            <p class="muted" style="margin-top: 12px;">
+              <strong>Published &middot; Applied Research &middot; Wiley &middot; Volume 5, Issue 4 &middot; July 10, 2026</strong><br />
+              Status: Published &middot; Scopus-indexed, Q2 journal
+            </p>
+
+            <p class="muted">
+              This work proposes a unified <strong>AI-driven and cyber-secure inverter-control framework</strong> for
+              permanent magnet synchronous motor (PMSM)-based electric vehicle systems. The methodology integrates a
+              Deep Q-Network (DQN)-based deep reinforcement learning adaptive switching controller with encrypted
+              command validation and an embedded intrusion detection system (IDS), implemented on an ARM Cortex-M7
+              (STM32H7) platform and validated against WLTP and UDDS driving-cycle datasets in MATLAB/Simulink and
+              hardware-in-the-loop environments.
+            </p>
+
+            <p class="muted">
+              <strong>Key finding:</strong> The framework achieves an average peak efficiency of 95.4% (a 4.2% improvement
+              over conventional field-oriented control), a 34.5% reduction in switching losses, 67% reduction in torque
+              ripple, and THD reduced to 3.2%, while the embedded IDS reaches 98.6% attack-detection accuracy at 3.2 ms
+              average detection latency with only 1.6% computational overhead.
+            </p>
+
+            <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-globe" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>Journal:</strong>
+                  <a href="https://onlinelibrary.wiley.com/journal/27024288" target="_blank" rel="noopener noreferrer">Applied Research (Wiley)</a>
+                </span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-link" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                <span class="muted"><strong>DOI:</strong>
+                  <a href="https://doi.org/10.1002/appl.70128" target="_blank" rel="noopener noreferrer">10.1002/appl.70128</a>
                 </span>
               </div>
             </div>

@@ -154,14 +154,14 @@ The paper received the Best Paper Award at the 9th International Conference on I
 
 ### AI-Driven and Cyber-Secure Embedded Inverter Control for Energy Optimization in Electric Vehicles
 
-Avijit Roy is a co-author of the accepted Wiley Applied Research article:
+Avijit Roy is a co-author of the published Wiley Applied Research article:
 
 "AI-Driven and Cyber-Secure Embedded Inverter Control for Energy Optimization in Electric Vehicles"
 
 - Authors: Sonal Sagar Boda, Siddhesh Pimpale, Mohammad Somon Sikder, Hemayet Uddin Himel, Zeeshan Akbar, Avijit Roy, Deepak Gupta
 - Manuscript ID: 5275313
 - DOI: https://doi.org/10.1002/appl.70128
-- Publication: Applied Research, Wiley (Scopus-indexed, Q2 journal)
+- Publication: Applied Research, Wiley, Volume 5, Issue 4 (Scopus-indexed, Q2 journal), published July 10, 2026
 
 The work proposes a unified AI-driven and cyber-secure inverter-control framework for permanent magnet synchronous motor (PMSM)-based electric vehicle systems, integrating a Deep Q-Network (DQN) reinforcement-learning adaptive switching controller with encrypted command validation and an embedded intrusion detection system (IDS), implemented on an ARM Cortex-M7 (STM32H7) platform and validated against WLTP and UDDS driving-cycle datasets in MATLAB/Simulink and hardware-in-the-loop environments.
 

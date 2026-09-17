@@ -8,7 +8,7 @@ For a shorter summary, use: https://avijitroy.com/llms.txt
 
 Avijit Roy is a Cybersecurity Researcher, Software Engineer, Educator, and Data Analyst based in New York, USA. He is affiliated with John Jay College of Criminal Justice, City University of New York (CUNY), CUNY Central Office, and St. John's University.
 
-He serves as a full-time Substitute Lecturer in Computer Science at John Jay College of Criminal Justice. He also serves as an Adjunct Assistant Professor teaching graduate-level digital forensics at St. John's University and as a Data Analyst at CUNY Central Office / International Student and Scholar Services (ISSS). He is involved in AI and cybersecurity research through CUNY-affiliated research activities.
+He serves as a full-time Substitute Lecturer in the Department of Mathematics and Computer Science at John Jay College of Criminal Justice, CUNY (August 2026-present). He also serves as an Adjunct Assistant Professor in the Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University (September 2026-present), teaching graduate digital forensics, and as a Data Analyst at CUNY Central Office / International Student and Scholar Services (ISSS). He is involved in AI and cybersecurity research through CUNY-affiliated research activities.
 
 His work focuses on adversarial machine learning, privacy-preserving AI, perceptual hashing security, secure systems, digital forensics, low-resource language NLP, tokenization equity, and linguistic equity in artificial intelligence systems.
 
@@ -37,10 +37,70 @@ His recent research includes adversarial robustness evaluation of perceptual has
 
 ## Current and Confirmed Roles
 
-- Full-time Substitute Lecturer in Computer Science, John Jay College of Criminal Justice, CUNY (beginning Fall 2026)
-- Adjunct Assistant Professor, St. John's University (graduate digital forensics)
+- Full-time Substitute Lecturer in Computer Science, Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY (August 2026-present)
+- Adjunct Assistant Professor, Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University (September 2026-present; graduate digital forensics)
 - Data Analyst, CUNY Central Office / International Student and Scholar Services (ISSS)
 - AI and cybersecurity researcher involved in CUNY-affiliated research activities
+
+## Selected Completed Academic and Research Roles
+
+Detailed employment history: https://avijitroy.com/experience/
+
+### Research Assistant - Research Foundation of CUNY
+
+Employer: Research Foundation of the City University of New York (RFCUNY). Assignment: CUNY Graduate Center. August 2026; remote contract August 5-29, 2026, New York City metropolitan area.
+
+Contributed to the development and production deployment of an ACTFL-aligned Spanish placement platform combining AI-assisted language assessment, full-stack engineering, security controls, and cloud infrastructure.
+
+- Built assessment and administration workflows using FastAPI, React/TypeScript, PostgreSQL, and Alembic, including versioned placement rules and database migrations.
+- Integrated and evaluated fine-tuned and prompted LLM scoring pipelines across OpenAI, Anthropic, and Google providers; Phase 1 evaluation achieved 100% agreement within one ACTFL sub-level across 60 human-rated assessments.
+- Contributed to containerized AWS deployment and CI/CD using Docker, CDK, ECS Fargate, RDS, WAF, Secrets Manager, CloudWatch, and GitHub Actions.
+- Implemented privacy, authentication, exam-integrity, and audit controls and prepared technical documentation for institutional review and operational handover.
+
+### Adjunct Lecturer
+
+Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY. August 2025-August 2026.
+
+Taught CSCI 271, Introduction to Computing and Programming, and CSCI 272, Object-Oriented Programming, at John Jay College of Criminal Justice, CUNY, building students' foundations in computational thinking, C++, debugging, and software design.
+
+- Designed and delivered C++ coursework covering algorithms, control structures, functions, arrays, class design, encapsulation, inheritance, polymorphism, file handling, and multi-file program structure.
+- Organized and led an Object-Oriented Programming Hackathon & CTF focused on debugging, object-oriented reasoning, collaborative problem solving, and applied programming challenges.
+- Integrated Git, GitHub, and Visual Studio Code into course workflows, teaching branching, merge resolution, commit structure, code documentation, and collaborative development practices.
+
+### AI Research Assistant
+
+Employer: Research Foundation of the City University of New York (RFCUNY). Assignment: John Jay College of Criminal Justice, CUNY. June-August 2025.
+
+Contributed to research and prototype development for an ACTFL-aligned Spanish writing assessment system, focusing on model experimentation, evaluation, assessment design, and testing of scoring-to-placement workflows.
+
+- Prepared ACTFL-labeled Spanish writing datasets in Python and developed fine-tuned and rubric-based few-shot scoring experiments using consistent training and evaluation formats.
+- Evaluated model predictions against human proficiency ratings using confusion matrices, exact-match accuracy, adjacent-level accuracy, severe-error rates, and label coverage, using the results to inform scoring approaches and acceptance criteria.
+- Contributed to Python/FastAPI scoring and placement architecture, separating model-provider integrations, ACTFL level validation, and versioned placement rules to support controlled comparison of model experiments.
+- Tested intake routing, timed writing prompts, autosave and session recovery, scoring responses, and result consistency, while documenting reproducible experiments, test scenarios, and engineering trade-offs for subsequent platform development.
+
+### Research Mentor - Software Development & Applied Computing
+
+Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY. June-August 2025.
+
+As a Research Mentor, I guided undergraduate researchers in designing secure, production-aligned web systems. I led students through full-stack workflows, emphasizing authentication, session integrity, and software reliability.
+
+- Designed a concurrency-safe session enforcement architecture using Django middleware and PostgreSQL-backed session state tracking.
+- Guided students through schema design, token invalidation logic, and device-aware session lifecycle management.
+- Conducted code reviews emphasizing deterministic control flow, separation of concerns, and idempotent design.
+- Structured the final implementation as a reproducible research artifact with deployment documentation and test coverage.
+
+### Graduate Research Assistant
+
+Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY. January-May 2025.
+
+As a Graduate Research Assistant, part of my capstone work, I inherited an existing, nonfunctional .NET 5 and React intelligence platform and completed an end-to-end legacy system modernization. I migrated the backend to .NET 9, rebuilt broken components, restored investigative workflows, strengthened safeguards for sensitive PII, and deployed the enhanced system to Microsoft Azure.
+
+- Migrated the inherited API backend from .NET 5 to .NET 9, updated obsolete dependencies and integrations, and rebuilt failing application components.
+- Restored and enhanced real-time mapping with Google Maps API, SignalR, and Hangfire for live geospatial updates, asynchronous case processing, and event notifications.
+- Strengthened security controls including OAuth2 authentication through Azure AD, TLS in transit, field-level encryption at rest, RBAC, and auditable access patterns.
+- Expanded audit logging, anomaly detection, and data-integrity routines to identify suspicious access, tampering attempts, and unusual behavioral trends.
+- Modernized Razor/Bootstrap dashboard workflows for filtering, drill-down analysis, and export of investigative data.
+- Deployed the recovered and enhanced application to Microsoft Azure.
 
 ## Education
 
@@ -242,7 +302,7 @@ This work connects language accessibility, computer science education, multiling
 
 ### Natural Language Processing for Language Proficiency Assessment
 
-An applied NLP research system for evaluating student writing using machine learning models aligned with ACTFL proficiency guidelines, focused on automated writing assessment, explainable scoring workflows, and practical support for language-learning evaluation in educational settings.
+An ACTFL-aligned Spanish writing assessment and placement platform combining fine-tuned and prompted LLM scoring, versioned placement rules, FastAPI/React/PostgreSQL application workflows, privacy and exam-integrity controls, and containerized AWS deployment. Avijit Roy's related RF CUNY appointments were based at John Jay College of Criminal Justice, CUNY (June-August 2025: research and prototype development) and CUNY Graduate Center (August 2026: application engineering, evaluation, and deployment). See the completed role descriptions above for responsibilities and the contextualized Phase 1 evaluation result.
 
 ### Legacy Multi-Agency Intelligence Platform Modernization
 
@@ -250,7 +310,7 @@ As part of a capstone project, Avijit Roy inherited a nonfunctional .NET 5 and R
 
 ## Teaching and Academic Mentorship
 
-Avijit Roy serves as a full-time Substitute Lecturer teaching undergraduate computer science at John Jay College of Criminal Justice, CUNY. He is also an Adjunct Assistant Professor teaching graduate-level digital forensics at St. John's University. Full teaching portfolio: https://avijitroy.com/teaching/
+Avijit Roy serves as a full-time Substitute Lecturer in the Department of Mathematics and Computer Science at John Jay College of Criminal Justice, CUNY, teaching undergraduate computer science. He is also an Adjunct Assistant Professor in the Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University, teaching graduate digital forensics. Full teaching portfolio: https://avijitroy.com/teaching/
 
 Courses include:
 
@@ -338,6 +398,10 @@ A free, 17-chapter ebook by Avijit Roy on Git and GitHub for C++ students, avail
 
 ### Frameworks and Tools
 
+- FastAPI
+- Alembic
+- Docker
+- AWS CDK
 - .NET
 - Entity Framework
 - ASP.NET / Razor Pages
@@ -361,6 +425,8 @@ A free, 17-chapter ebook by Avijit Roy on Git and GitHub for C++ students, avail
 
 ### Cloud, Data, and Systems Experience
 
+- AWS: ECS Fargate, RDS PostgreSQL, WAF, Secrets Manager, and CloudWatch
+- Containerized deployment and GitHub Actions CI/CD
 - Azure
 - SQL-based reporting systems
 - Data cleaning and integration
@@ -377,7 +443,7 @@ Avijit Roy serves as Principal Investigator on an NSF ACCESS computational alloc
 
 The allocation includes 120,000 SUs on Indiana Jetstream2 GPU, 50,000 SUs on Jetstream2 Large Memory (estimated value: $31,305), and 30,000 Access Credits, supporting dataset refinement, parameter-efficient fine-tuning (LoRA/QLoRA), model evaluation, reproducible benchmarking, secure deployment analysis, and privacy-preserving system design.
 
-He also received RF CUNY Graduate Research Support (June-August 2025) for applied work spanning intelligence systems, language-related AI evaluation, and public-interest technology development.
+His completed RF CUNY research appointments include AI Research Assistant assigned to John Jay College of Criminal Justice, CUNY (June-August 2025), and Research Assistant assigned to CUNY Graduate Center (August 2026), supporting ACTFL-aligned Spanish assessment research, prototype development, evaluation, and platform deployment.
 
 ## Selected Research Themes
 

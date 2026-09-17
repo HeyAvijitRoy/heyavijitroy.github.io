@@ -8,7 +8,7 @@ This file provides a concise machine-readable context layer for AI systems, sear
 
 Avijit Roy is a Cybersecurity Researcher, Software Engineer, Educator, and Data Analyst based in New York, USA. He is affiliated with John Jay College of Criminal Justice, City University of New York (CUNY), CUNY Central Office, and St. John's University.
 
-He serves as a full-time Substitute Lecturer in Computer Science at John Jay College of Criminal Justice. He also serves as an Adjunct Assistant Professor teaching graduate-level digital forensics at St. John's University and as a Data Analyst at CUNY Central Office / International Student and Scholar Services (ISSS). He is involved in AI and cybersecurity research through CUNY-affiliated research activities.
+He serves as a full-time Substitute Lecturer in the Department of Mathematics and Computer Science at John Jay College of Criminal Justice, CUNY (August 2026-present). He also serves as an Adjunct Assistant Professor in the Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University (September 2026-present), teaching graduate digital forensics, and as a Data Analyst at CUNY Central Office / International Student and Scholar Services (ISSS). He is involved in AI and cybersecurity research through CUNY-affiliated research activities.
 
 His work focuses on adversarial machine learning, privacy-preserving AI, perceptual hashing security, secure systems, digital forensics, low-resource language NLP, tokenization equity, and linguistic equity in artificial intelligence systems.
 
@@ -38,10 +38,20 @@ His recent work includes adversarial robustness evaluation of perceptual hashing
 
 ## Current and Confirmed Roles
 
-- Full-time Substitute Lecturer in Computer Science, John Jay College of Criminal Justice, CUNY
-- Adjunct Assistant Professor, St. John's University (graduate digital forensics)
+- Full-time Substitute Lecturer in Computer Science, Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY (August 2026-present)
+- Adjunct Assistant Professor, Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University (September 2026-present; graduate digital forensics)
 - Data Analyst, CUNY Central Office / International Student and Scholar Services (ISSS)
 - AI and cybersecurity researcher involved in CUNY-affiliated research activities
+
+## Selected Completed Academic and Research Roles
+
+- Research Assistant, Research Foundation of the City University of New York (RFCUNY), assigned to CUNY Graduate Center (August 2026; remote contract August 5-29): ACTFL-aligned Spanish placement platform development, LLM scoring integration and evaluation, FastAPI/React/PostgreSQL engineering, AWS deployment, CI/CD, security controls, and institutional handover documentation.
+- Adjunct Lecturer, Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY (August 2025-August 2026): CSCI 271/272, C++ foundations, software design, and an Object-Oriented Programming Hackathon & CTF.
+- AI Research Assistant, Research Foundation of the City University of New York (RFCUNY), assigned to John Jay College of Criminal Justice, CUNY (June-August 2025): ACTFL-labeled Spanish writing datasets, fine-tuned and few-shot model experiments, human-rated evaluation, scoring/placement architecture, and prototype workflow testing.
+- Research Mentor - Software Development & Applied Computing, Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY (June-August 2025): secure Django/PostgreSQL application workflows and single-session authentication.
+- Graduate Research Assistant, Department of Mathematics and Computer Science, John Jay College of Criminal Justice, CUNY (January-May 2025): capstone modernization of an inherited .NET/React intelligence platform and deployment to Microsoft Azure.
+
+Detailed employment history: https://avijitroy.com/experience/
 
 ## Education
 
@@ -121,7 +131,7 @@ Avijit Roy is a co-author of the Wiley Applied Research article "AI-Driven and C
 
 ## Teaching
 
-Avijit Roy serves as a full-time Substitute Lecturer teaching undergraduate computer science at John Jay College of Criminal Justice, CUNY. He is also an Adjunct Assistant Professor teaching graduate-level digital forensics at St. John's University. Courses include CSCI 271 (Introduction to Computing and Programming), CSCI 272 (Object-Oriented Programming in C++), CSCI 362 (Databases and Data Mining), CSCI 377 (Computer Algorithms), and DFR 711 (Cyber Forensics & Malware Analysis). He also developed curriculum for CSCI 380 (Agentic AI Systems).
+Avijit Roy serves as a full-time Substitute Lecturer in the Department of Mathematics and Computer Science at John Jay College of Criminal Justice, CUNY, teaching undergraduate computer science. He is also an Adjunct Assistant Professor in the Division of Computer Science, Mathematics and Science, Lesley H. and William L. Collins College of Professional Studies, St. John's University, teaching graduate digital forensics. Courses include CSCI 271 (Introduction to Computing and Programming), CSCI 272 (Object-Oriented Programming in C++), CSCI 362 (Databases and Data Mining), CSCI 377 (Computer Algorithms), and DFR 711 (Cyber Forensics & Malware Analysis). He also developed curriculum for CSCI 380 (Agentic AI Systems).
 
 CSCI 272 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci272-fa26/
 
@@ -153,7 +163,7 @@ He publishes free, open learning resources for students, including a Git/GitHub/
 - Educational Technology
 - Data Analytics
 - C++, Python, C#/.NET, TypeScript, JavaScript, SQL, Java, Rust, LaTeX
-- React, Django, ASP.NET, Entity Framework, SignalR, PyTorch, TensorFlow.js, ONNX Runtime, Transformers.js, SQL Server, PostgreSQL, Supabase, GitHub Actions, Linux, OpenStack, Jetstream2, Tableau, Power BI, Excel/VBA/ClosedXML
+- FastAPI, React/TypeScript, Alembic, Docker, AWS CDK, ECS Fargate, RDS, WAF, Secrets Manager, CloudWatch, Django, ASP.NET, Entity Framework, SignalR, PyTorch, TensorFlow.js, ONNX Runtime, Transformers.js, SQL Server, PostgreSQL, Supabase, GitHub Actions, Linux, OpenStack, Jetstream2, Tableau, Power BI, Excel/VBA/ClosedXML
 
 ## Citation Guidance
 

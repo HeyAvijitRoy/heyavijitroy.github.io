@@ -3049,6 +3049,26 @@ body.main-site.page-experience {
   font-weight: 600;
 }
 
+.main-site.page-experience a.institution-link {
+  color: inherit;
+  text-decoration-line: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.main-site.page-experience a.institution-link .fa-arrow-up-right-from-square {
+  display: inline-block;
+  font-size: 0.75em;
+  opacity: 0.7;
+}
+
+.main-site.page-experience a.institution-link:hover,
+.main-site.page-experience a.institution-link:focus-visible {
+  color: var(--brand);
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+}
+
 .main-site.page-experience .experience-appointment .repo-link {
   display: inline-block;
   margin-top: 2px;

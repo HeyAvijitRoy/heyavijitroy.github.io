@@ -861,7 +861,7 @@ html[data-theme="dark"] .overview-logo img {
   background: rgba(37, 99, 235, 0.1);
   color: var(--brand);
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -1612,7 +1612,7 @@ html[data-theme="dark"] body.main-site {
   margin: 0 0 14px;
   color: var(--brand);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.73rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: 0.13em;
@@ -2305,6 +2305,11 @@ html[data-theme="dark"] .main-site.page-research .research-section-menu-links {
   transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
+.main-site .affiliation-links a .fa-arrow-up-right-from-square {
+  font-size: 0.75em;
+  opacity: 0.7;
+}
+
 .main-site .affiliation-links a:hover,
 .main-site .affiliation-links a:focus-visible {
   color: var(--brand);
@@ -2380,7 +2385,7 @@ html[data-theme="dark"] .main-site.page-research .research-section-menu-links {
   background: transparent;
   color: var(--brand);
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.45;
   letter-spacing: 0.01em;
@@ -2391,7 +2396,6 @@ html[data-theme="dark"] .main-site.page-research .research-section-menu-links {
   display: block;
   margin-bottom: 12px;
   color: var(--brand);
-  font-size: 0.82rem;
   line-height: 1.55;
 }
 
@@ -2540,7 +2544,6 @@ html[data-theme="dark"] .main-site.page-research .research-section-menu-links {
 }
 
 .main-site.page-teaching .badge {
-  font-size: 0.78rem;
   line-height: 1.5;
 }
 
@@ -3074,6 +3077,83 @@ body.main-site.page-experience {
   margin-top: 2px;
 }
 
+/* Professional engagement records reuse the site's editorial card language. */
+body.main-site.page-engagement {
+  font-size: 17px;
+}
+
+.main-site.page-engagement .index-hero {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 850px;
+}
+
+.main-site.page-engagement .engagement-entry h3 {
+  margin: 12px 0 8px;
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+}
+
+.main-site.page-engagement .engagement-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.main-site.page-engagement .engagement-labels .badge {
+  margin-bottom: 0;
+}
+
+.main-site.page-engagement .engagement-session {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.main-site.page-engagement .engagement-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 9px;
+  align-items: baseline;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.main-site.page-engagement .engagement-meta-stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.main-site.page-engagement .engagement-roster-heading {
+  margin: 22px 0 10px;
+  color: var(--text);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.main-site.page-engagement .engagement-panelists {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.main-site.page-engagement .engagement-panelists li + li {
+  margin-top: 7px;
+}
+
+.main-site.page-engagement .engagement-panelists strong {
+  color: var(--text);
+}
+
+.main-site.page-engagement .engagement-entry .cta {
+  margin-top: 18px;
+}
+
 /* Book landing page: editorial retail presentation with the cover as evidence. */
 body.main-site.page-book {
   font-size: 17px;
@@ -3112,7 +3192,6 @@ body.main-site.page-book {
 
 .main-site.page-book .book-labels .badge {
   margin: 0;
-  font-size: 0.76rem;
 }
 
 .main-site.page-book .book-labels .badge + .badge::before {
@@ -4794,7 +4873,7 @@ html[data-theme="dark"] .course-site .timeline-item.editorial-block {
   border-radius: 999px;
   background: transparent;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.76rem;
+  font-size: 0.875rem;
   line-height: 1.35;
   text-transform: none;
 }

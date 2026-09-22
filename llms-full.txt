@@ -19,6 +19,7 @@ His work focuses on adversarial machine learning, privacy-preserving AI, percept
 - Teaching: https://avijitroy.com/teaching/
 - Projects: https://avijitroy.com/projects/
 - Experience: https://avijitroy.com/experience/
+- Professional Engagement: https://avijitroy.com/professional-engagement/
 - John Jay College Feature: https://www.jjay.cuny.edu/news-events/news/avijit-roy-21-25-26-computer-scientist-protecting-people-age-ai
 - ORCID: https://orcid.org/0009-0007-8036-0952
 - Google Scholar: https://scholar.google.com/citations?user=mCpLl1EAAAAJ
@@ -356,6 +357,24 @@ Free, step-by-step educational materials, all authored by Avijit Roy for CUNY/Jo
 - **Enable C++ Development in VS Code on Windows** (https://avijitroy.com/docs/cpp-vscode-win.html) — Step-by-step setup for compiling and debugging C++ using MinGW-w64, GCC, and GDB in VS Code on Windows. Published November 2025.
 - **Enable C++ Development in VS Code on macOS** (https://avijitroy.com/docs/cpp-vscode-mac.html) — Step-by-step setup for compiling and debugging C++ using Clang and LLDB in VS Code on macOS (Apple Silicon and Intel). Published November 2025.
 - **Responsible AI Prompting Guide for CSCI 271/272** (https://avijitroy.com/docs/responsible-ai-prompting-guide.html) — Classroom guidance for using AI tools to support C++ learning while preserving academic integrity: students must understand, explain, test, and defend their own work.
+
+## Professional Engagement
+
+The Professional Engagement page (https://avijitroy.com/professional-engagement/) documents confirmed conference facilitation and hackathon judging. These are event and service activities, distinct from employment roles, research presentations, and teaching assignments. Research presentations and scholarly peer-review information belong with the Research page.
+
+### CUNY International Student Success Conference
+
+- **Date and venue:** September 25, 2026, John Jay College of Criminal Justice, New York, NY.
+- **Organization:** The City University of New York.
+- **Role and session:** Facilitator and moderator of the "Alumni Panel: Real Stories, Real Success" session. The panel brings together CUNY alumni and higher-education professionals to discuss international student experiences, academic and professional pathways, career development, challenges, and lessons learned.
+- **Panelists:** Gavin Ireland (Director of International Student Affairs, Kingsborough Community College); Ian James (Assistant Vice Chancellor for Student Affairs, CUNY); Laura A. Rodríguez O’Dwyer (Freelance Translator; Secretary, Board of the New York Circle of Translators); Salimatou Doumbouya (Former CUNY Student Trustee and Former Chairperson, University Student Senate).
+- **Official program (PDF):** https://cuny.edu/main/wp-content/uploads/sites/4/media-assets/International-Student-Success-Conference-2026.pdf
+
+### HackKnight 2026
+
+- **Date:** October 11, 2026.
+- **Role and context:** Invited judge for HackKnight 2026, a student hackathon at John Jay College of Criminal Justice, reviewing project submissions and contributing to the final judging process.
+- **Event website:** https://hackknight.org/#judges
 
 ## Books
 

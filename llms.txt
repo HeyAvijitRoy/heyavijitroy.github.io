@@ -19,6 +19,7 @@ His work focuses on adversarial machine learning, privacy-preserving AI, percept
 - Teaching: https://avijitroy.com/teaching/
 - Projects: https://avijitroy.com/projects/
 - Experience: https://avijitroy.com/experience/
+- Professional Engagement: https://avijitroy.com/professional-engagement/
 - Extended LLM Context: https://avijitroy.com/llms-full.txt
 - John Jay College Feature: https://www.jjay.cuny.edu/news-events/news/avijit-roy-21-25-26-computer-scientist-protecting-people-age-ai
 - ORCID: https://orcid.org/0009-0007-8036-0952
@@ -144,6 +145,13 @@ DFR 711 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/dfr7
 Teaching areas include C++, object-oriented programming, introduction to computing, secure coding practices, memory management, software design, debugging, code documentation, digital forensics, incident response, malware analysis, reverse engineering, threat hunting, AI-assisted software development workflows, and practical cybersecurity awareness.
 
 He publishes free, open learning resources for students, including a Git/GitHub/VS Code interactive guide, a 17-chapter Git ebook, C++ VS Code setup guides for Windows and macOS, and a Responsible AI Prompting Guide for course use. Full list: https://avijitroy.com/teaching/#open-learning-resources
+
+## Professional Engagement
+
+This page records professional activities outside employment appointments, research presentations and publications, and teaching assignments: https://avijitroy.com/professional-engagement/. Scholarly peer review belongs with Research.
+
+- CUNY International Student Success Conference (September 25, 2026): Facilitator and moderator of the "Alumni Panel: Real Stories, Real Success" at John Jay College of Criminal Justice, New York, NY. Official program: https://cuny.edu/main/wp-content/uploads/sites/4/media-assets/International-Student-Success-Conference-2026.pdf
+- HackKnight 2026 (October 11, 2026): Invited judge for a student hackathon at John Jay College of Criminal Justice, reviewing projects and contributing to final judging. Event website: https://hackknight.org/#judges
 
 ## Books
 

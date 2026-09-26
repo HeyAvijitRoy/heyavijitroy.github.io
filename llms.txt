@@ -144,7 +144,7 @@ DFR 711 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/dfr7
 
 Teaching areas include C++, object-oriented programming, introduction to computing, secure coding practices, memory management, software design, debugging, code documentation, digital forensics, incident response, malware analysis, reverse engineering, threat hunting, AI-assisted software development workflows, and practical cybersecurity awareness.
 
-He publishes free, open learning resources for students, including a Git/GitHub/VS Code interactive guide, a 17-chapter Git ebook, C++ VS Code setup guides for Windows and macOS, and a Responsible AI Prompting Guide for course use. Full list: https://avijitroy.com/teaching/#open-learning-resources
+He publishes free, open learning resources for students, including a Git/GitHub/VS Code interactive guide, a 17-chapter Git ebook, C++ VS Code setup guides for Windows and macOS, a Responsible AI Prompting Guide, and a MITRE ATT&CK Interactive Field Guide (https://avijitroy.com/docs/mitre-attack/). Full list: https://avijitroy.com/teaching/#open-learning-resources
 
 ## Professional Engagement
 

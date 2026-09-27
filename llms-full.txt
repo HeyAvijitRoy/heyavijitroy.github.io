@@ -357,6 +357,7 @@ Free, step-by-step educational materials, all authored by Avijit Roy for CUNY/Jo
 - **Enable C++ Development in VS Code on Windows** (https://avijitroy.com/docs/cpp-vscode-win.html) — Step-by-step setup for compiling and debugging C++ using MinGW-w64, GCC, and GDB in VS Code on Windows. Published November 2025.
 - **Enable C++ Development in VS Code on macOS** (https://avijitroy.com/docs/cpp-vscode-mac.html) — Step-by-step setup for compiling and debugging C++ using Clang and LLDB in VS Code on macOS (Apple Silicon and Intel). Published November 2025.
 - **Responsible AI Prompting Guide for CSCI 271/272** (https://avijitroy.com/docs/responsible-ai-prompting-guide.html) — Classroom guidance for using AI tools to support C++ learning while preserving academic integrity: students must understand, explain, test, and defend their own work.
+- **MITRE ATT&CK Interactive Field Guide** (https://avijitroy.com/docs/mitre-attack/) — A beginner guide to navigating Enterprise ATT&CK, reading tactics and techniques, checking evidence, looking up IDs, and practicing on the official MITRE site.
 
 ## Professional Engagement
 

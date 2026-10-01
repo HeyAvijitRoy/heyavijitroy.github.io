@@ -1,0 +1,39 @@
+name: Website Visibility Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Mondays at 13:17 UTC; GitHub may delay scheduled runs.
+    - cron: '17 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visibility-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check discovery and citation metadata
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/audit_visibility.py 2>&1 | tee visibility-audit.txt
+      - name: Add audit result to workflow summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f visibility-audit.txt ]; then
+            echo '### Website visibility metadata audit' >> "$GITHUB_STEP_SUMMARY"
+            echo '```text' >> "$GITHUB_STEP_SUMMARY"
+            cat visibility-audit.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -144,7 +144,7 @@
           "isbn": "9798247950264",
           "url": "https://academicworks.cuny.edu/jj_etds/396",
           "sameAs": ["https://www.proquest.com/docview/3348071637", "https://academicworks.cuny.edu/jj_etds/396"],
-          "description": "This thesis evaluates the adversarial robustness of six perceptual hashing configurations used in image matching, content moderation, provenance, and digital forensics workflows. Using a matched experimental protocol across evasion and near-collision attacks, the work demonstrates that threshold-based perceptual hash systems can fail asymmetrically: adversarial changes may cause known content to evade detection, while unrelated images may be moved close enough to trigger false-positive matches. The findings frame pipeline structure, optimization behavior, quantization design, and threshold policy as the primary determinants of real-world risk.",
+          "description": "This thesis evaluates the adversarial robustness of six perceptual hashing configurations used in image matching, content moderation, provenance, and digital forensics workflows: pHash-64, pHash-256, PDQ, NeuralHash, and SmartHash in whole-image and overlapping-block variants. Under a matched experimental protocol on a 500-image ImageNette validation subset, the work evaluates evasion and near-collision attacks across all six configurations, plus exact-collision attacks for pHash-64 and NeuralHash, and demonstrates that threshold-based perceptual hash systems can fail asymmetrically: adversarial changes may cause known content to evade detection, while unrelated images may be moved close enough to trigger false-positive matches. The findings frame pipeline structure, optimization behavior, quantization design, and threshold policy as the primary determinants of real-world risk.",
           "publisher": {
             "@type": "CollegeOrUniversity",
             "name": "John Jay College of Criminal Justice, The City University of New York",
@@ -158,6 +158,7 @@
             { "@type": "Thing", "name": "Content moderation" },
             { "@type": "Thing", "name": "Image forensics" },
             { "@type": "Thing", "name": "Near-collision attack" },
+            { "@type": "Thing", "name": "Exact-collision attack" },
             { "@type": "Thing", "name": "Child sexual abuse material (CSAM) detection" }
           ],
           "mainEntityOfPage": "https://avijitroy.com/research/"
@@ -1403,10 +1404,17 @@
         </p>
         <p class="muted">
           This thesis evaluates the adversarial robustness of six perceptual hashing configurations used in image
-          matching, content moderation, provenance, and digital forensics workflows. Using a matched experimental
-          protocol across evasion and near-collision attacks, the work shows that threshold-based perceptual hash
-          systems can fail in asymmetric ways: adversarial changes may cause known content to evade detection, while
-          unrelated images may be moved close enough to trigger false-positive matches.
+          matching, content moderation, provenance, and digital forensics workflows: pHash-64, pHash-256, PDQ,
+          NeuralHash, and SmartHash in whole-image and overlapping-block variants. Under a matched experimental protocol
+          on a 500-image ImageNette validation subset, the work evaluates evasion and near-collision attacks across all
+          six configurations, plus exact-collision attacks for pHash-64 and NeuralHash, and shows that threshold-based
+          perceptual hash systems can fail in asymmetric ways: adversarial changes may cause known content to evade
+          detection, while unrelated images may be moved close enough to trigger false-positive matches.
+        </p>
+        <p class="muted">
+          At the tested thresholds, every tested image could be edited to evade matching while staying visually
+          similar. Exact-match testing also understates false-positive risk: for pHash-64, collision success rose from
+          42.2% under exact matching to 99.4% under a threshold-based criterion (T = 0.10).
         </p>
         <p class="muted">
           The findings frame perceptual hashing as an operationally valuable but incomplete security mechanism. Rather
@@ -2074,7 +2082,7 @@
 
   <footer class="site-footer">
     <div class="container foot-flex">
-      <p class="muted">© <span id="currentYear"></span> Avijit Roy. Built with rigor.</p>
+      <p class="muted">© <span id="currentYear"></span> Avijit Roy.</p>
       <div class="socials">
         <a href="https://github.com/HeyAvijitRoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
           title="GitHub"><i class="fa-brands fa-github"></i></a>

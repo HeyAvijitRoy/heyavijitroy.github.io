@@ -19,4 +19,4 @@ The site covers his research in privacy-preserving AI and digital forensics, eng
 
 ---
 
-Built with rigor. &copy; Avijit Roy
+&copy; Avijit Roy

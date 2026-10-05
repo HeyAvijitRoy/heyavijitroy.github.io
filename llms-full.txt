@@ -61,7 +61,7 @@ Leads a computational allocation supporting dataset development and parameter-ef
 
 ### Researcher and Allocation Manager - NSF ACCESS CIS260131
 
-Manages research computing resources and conducts adversarial machine-learning experiments for master's thesis research on perceptual image hashing, supervised by Principal Investigator Dr. Shweta Jain. Across more than 40 attack runs of 500 images each on Jetstream2 GPU and large-memory infrastructure, the work evaluated evasion and near-collision attacks against six perceptual-hashing configurations.
+Manages research computing resources and conducts adversarial machine-learning experiments for master's thesis research on perceptual image hashing, supervised by Principal Investigator Dr. Shweta Jain. Across more than 40 attack runs of 500 images each (an ImageNette validation subset) on Jetstream2 GPU and large-memory infrastructure, the work evaluated evasion and near-collision attacks across six perceptual-hashing configurations, plus exact-collision attacks for pHash-64 and NeuralHash. The thesis received John Jay's 2026 Claude Hawley Medal and was presented at the Graduate Student Research Symposium in May 2026.
 
 ## Selected Completed Academic and Research Roles
 
@@ -186,14 +186,16 @@ Avijit Roy's master's thesis, "Adversarial Robustness of Perceptual Hashing Syst
 
 The work evaluates algorithms including:
 
-- pHash
+- pHash-64
 - PDQ
 - pHash-256
 - NeuralHash
-- SmartHash-WI
-- SmartHash-OV
+- SmartHash-WI (whole-image)
+- SmartHash-OV (overlapping-block)
 
-The research studies evasion attacks, near-collision behavior, exact collision generation, and deployment risks in perceptual hashing systems. It introduces a unified security evaluation framework showing that threshold-based perceptual hash systems can fail asymmetrically: adversarial changes may cause known content to evade detection, while unrelated images may be moved close enough to trigger false-positive matches. The findings frame pipeline structure, optimization behavior, quantization design, and threshold policy as primary determinants of real-world risk.
+The research evaluates evasion and near-collision attacks across six perceptual-hashing configurations, plus exact-collision attacks for pHash-64 and NeuralHash, under a matched experimental protocol on a 500-image ImageNette validation subset, and examines deployment risks in perceptual hashing systems. It introduces a unified security evaluation framework showing that threshold-based perceptual hash systems can fail asymmetrically: adversarial changes may cause known content to evade detection, while unrelated images may be moved close enough to trigger false-positive matches. The findings frame pipeline structure, optimization behavior, quantization design, and threshold policy as primary determinants of real-world risk.
+
+Key findings: at the tested thresholds, every tested image could be edited to evade matching while staying visually similar, and unrelated images could be moved close enough to trigger false matches. Exact-match testing understates false-positive risk: for pHash-64, collision success rose from 42.2% under exact matching to 99.4% under a threshold-based criterion (T = 0.10).
 
 The work is relevant to digital forensics, CSAM detection systems, content moderation infrastructure, adversarial machine learning, and secure multimedia authentication.
 

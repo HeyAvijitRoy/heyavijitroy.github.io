@@ -4,13 +4,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://avijitroy.com/</loc>
-		<lastmod>2026-10-01</lastmod>
+		<lastmod>2026-10-04</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/</loc>
-		<lastmod>2026-10-01</lastmod>
+		<lastmod>2026-10-04</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
@@ -22,19 +22,19 @@
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/tea-benchmark/</loc>
-		<lastmod>2026-08-17</lastmod>
+		<lastmod>2026-10-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/projects/</loc>
-		<lastmod>2026-10-01</lastmod>
+		<lastmod>2026-10-04</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/experience/</loc>
-		<lastmod>2026-10-01</lastmod>
+		<lastmod>2026-10-04</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
@@ -171,3 +171,4 @@
 		<priority>0.80</priority>
 	</url>
 </urlset>
+

@@ -138,6 +138,7 @@ As part of capstone work, inherited a nonfunctional multi-agency human-trafficki
 ## Professional Certifications and Training
 
 - **Certified Peer Reviewer Course**, Researcher Academy, Elsevier, completed August 19, 2026. Completed every module in the 3-hour, 15-minute course on scholarly peer review. Certificate of completion: https://avijitroy.com/assets/certified-peer-reviewer-course-certificate.pdf
+- **Reviewer, Information Systems Frontiers (Springer)**, 2026. Web of Science ResearcherID: PYV-9049-2026.
 
 ## Honors and Awards
 
@@ -505,6 +506,8 @@ Avijit Roy serves as Principal Investigator on an NSF ACCESS computational alloc
 The allocation includes 120,000 SUs on Indiana Jetstream2 GPU, 50,000 SUs on Jetstream2 Large Memory, and 30,000 ACCESS Credits (ACCESS estimates the computing resources at $31,305), supporting dataset refinement, parameter-efficient fine-tuning (LoRA/QLoRA), model evaluation, reproducible benchmarking, secure deployment analysis, and privacy-preserving system design.
 
 His completed RF CUNY research appointments include AI Research Assistant assigned to John Jay College of Criminal Justice, CUNY (June-August 2025), and Research Assistant assigned to The Graduate Center, CUNY (August 2026), supporting ACTFL-aligned Spanish assessment research, prototype development, evaluation, and platform deployment.
+
+Pending: CUNY AI Innovation Fund proposal (LaPEL AI strand), submitted September 29, 2026; role: Developer; PI: Cristina Lozano-Argüelles; total request $25,000; under review.
 
 ## Selected Research Themes
 

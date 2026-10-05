@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://avijitroy.com/</loc>
-		<lastmod>2026-10-04</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.00</priority>
 	</url>
@@ -28,25 +28,25 @@
 	</url>
 	<url>
 		<loc>https://avijitroy.com/projects/</loc>
-		<lastmod>2026-10-04</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/experience/</loc>
-		<lastmod>2026-10-04</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.90</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/professional-engagement/</loc>
-		<lastmod>2026-09-22</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/</loc>
-		<lastmod>2026-09-27</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
 	</url>
@@ -58,49 +58,49 @@
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/csci272-fa26/</loc>
-		<lastmod>2026-09-06</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/csci362-fa26/</loc>
-		<lastmod>2026-09-08</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/csci377-fa26/</loc>
-		<lastmod>2026-09-10</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/dfr711-fa26/</loc>
-		<lastmod>2026-09-07</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/oop-sp26/</loc>
-		<lastmod>2026-08-22</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/oop-fa25/</loc>
-		<lastmod>2026-08-11</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/teaching/courses/itp-sp26/</loc>
-		<lastmod>2026-08-22</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.70</priority>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/books/cybersecurity-fundamentals/</loc>
-		<lastmod>2026-08-11</lastmod>
+		<lastmod>2026-10-05</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.80</priority>
 	</url>

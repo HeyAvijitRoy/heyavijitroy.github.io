@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1c2e">
+<meta name="color-scheme" content="light">
+<title>SQL JOIN &amp; Analytical Query Explorer | Avijit Roy</title>
+<meta name="description" content="Explore SQL joins, GROUP BY, HAVING, and subqueries with interactive row matching, aggregate summaries, and fictional clubs and events data.">
+<meta name="author" content="Avijit Roy">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<link rel="canonical" href="https://avijitroy.com/docs/sql-join-explorer.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Avijit Roy">
+<meta property="og:title" content="SQL JOIN &amp; Analytical Query Explorer">
+<meta property="og:description" content="Explore SQL joins, GROUP BY, HAVING, and subqueries with interactive row matching, aggregate summaries, and fictional clubs and events data.">
+<meta property="og:url" content="https://avijitroy.com/docs/sql-join-explorer.html">
+<meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg">
+<meta property="og:image:alt" content="Avijit Roy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SQL JOIN &amp; Analytical Query Explorer">
+<meta name="twitter:description" content="Explore SQL joins, GROUP BY, HAVING, and subqueries with interactive row matching, aggregate summaries, and fictional clubs and events data.">
+<meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg">
+<meta name="twitter:image:alt" content="Avijit Roy">
+<link rel="icon" href="../assets/favicons/favicon.ico?v=20260905" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#0b1c2e">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://avijitroy.com/docs/sql-join-explorer.html#article",
+      "url": "https://avijitroy.com/docs/sql-join-explorer.html",
+      "headline": "SQL JOIN & Analytical Query Explorer",
+      "description": "Explore SQL joins, GROUP BY, HAVING, and subqueries with interactive row matching, aggregate summaries, and fictional clubs and events data.",
+      "inLanguage": "en",
+      "dateModified": "2026-10-05",
+      "proficiencyLevel": "Beginner",
+      "educationalUse": "Interactive learning",
+      "learningResourceType": "Interactive explorer",
+      "about": [
+        "SQL joins",
+        "GROUP BY",
+        "HAVING",
+        "SQL subqueries"
+      ],
+      "author": {
+        "@id": "https://avijitroy.com/#person",
+        "name": "Avijit Roy",
+        "url": "https://avijitroy.com/"
+      },
+      "publisher": {
+        "@id": "https://avijitroy.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://avijitroy.com/docs/sql-join-explorer.html#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://avijitroy.com/#website"
+      },
+      "relatedLink": "https://github.com/HeyAvijitRoy/csci-362-databses-data-mining"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://avijitroy.com/docs/sql-join-explorer.html#webpage",
+      "url": "https://avijitroy.com/docs/sql-join-explorer.html",
+      "name": "SQL JOIN & Analytical Query Explorer | Avijit Roy",
+      "description": "Explore SQL joins, GROUP BY, HAVING, and subqueries with interactive row matching, aggregate summaries, and fictional clubs and events data.",
+      "inLanguage": "en",
+      "dateModified": "2026-10-05",
+      "breadcrumb": {
+        "@id": "https://avijitroy.com/docs/sql-join-explorer.html#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://avijitroy.com/docs/sql-join-explorer.html#article"
+      },
+      "isPartOf": {
+        "@id": "https://avijitroy.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://avijitroy.com/docs/sql-join-explorer.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://avijitroy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Teaching",
+          "item": "https://avijitroy.com/teaching/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SQL JOIN & Analytical Query Explorer",
+          "item": "https://avijitroy.com/docs/sql-join-explorer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{color-scheme:light;--ink:#102c40;--muted:#4d6170;--line:#cddbdc;--soft:#f4f7f7;--card:#fff;--accent:#087f82;--accent2:#0f8a72;--warn:#a45c00;--null:#8a93a6}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft)}
+header{background:#fff;border-bottom:1px solid var(--line);padding:28px clamp(18px,4vw,54px)}
+header h1{margin:0 0 6px;font-size:clamp(26px,4vw,42px);letter-spacing:-.02em}header p{margin:0;color:var(--muted);max-width:980px}
+main{max-width:1200px;margin:auto;padding:22px}.tabs,.controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+button{border:1px solid #cbd2e2;background:white;color:var(--ink);border-radius:9px;padding:9px 13px;font-weight:650;cursor:pointer}button:hover{border-color:#8997bc}button.active{background:var(--accent);border-color:var(--accent);color:white}
+.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 16px rgba(24,34,60,.05)}
+.card h2,.card h3{margin-top:0}.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:12px;font-weight:800;color:var(--accent)}
+.note{background:#eef4ff;border-left:4px solid var(--accent);padding:12px 14px;border-radius:8px}.warning{background:#fff6e8;border-left-color:#d8891c}
+.sql{background:#101522;color:#e9edf7;padding:14px;border-radius:10px;overflow:auto;white-space:pre;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e5e8ef;text-align:left;padding:8px 9px;vertical-align:top}th{background:#f7f8fb;position:sticky;top:0}.table-wrap{max-height:360px;overflow:auto;border:1px solid #e5e8ef;border-radius:10px}
+tr.hl td{background:#fff1bf}.null{color:var(--null);font-style:italic}.count{font-size:28px;font-weight:800}.subtle{color:var(--muted)}
+/* Keep the diagram, caption, and explanatory note in separate layout rows. */
+.venn{margin:0 0 22px}.venn-stage{position:relative;height:226px;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.circle{position:absolute;width:170px;height:170px;border-radius:50%;border:3px solid #9ba8b1;display:flex;align-items:center;justify-content:center;font-weight:800;transition:background-color .2s,border-color .2s}
+.circle.left{transform:translateX(-52px)}.circle.right{transform:translateX(52px)}.circle.dim{background:rgba(120,130,150,.05)}
+.circle.left.keep{background:rgba(115,204,148,.32);border-color:#258557}.circle.right.keep{background:rgba(245,177,94,.32);border-color:#b86b17}
+/* CROSS JOIN is a product grid rather than an overlap diagram. */
+.venn-stage.cross-mode .circle,.venn-stage.cross-mode .intersection{display:none}
+.cross-pairs{display:none;width:100%;max-width:420px}.cross-mode .cross-pairs{display:block}
+.pair-axis{text-align:center;font-size:12px;font-weight:750;margin-bottom:12px}.pair-grid{display:grid;grid-template-columns:32px repeat(24,minmax(0,1fr));gap:3px;align-items:center}
+.pair-row-label{font-size:11px;font-weight:750}.pair-cell{height:19px;border:1px solid #9fcbb0;background:#e3f3e9;border-radius:2px}.pair-cell.current{background:#258557;border-color:#164d33;outline:2px solid #164d33;outline-offset:1px}.pair-key{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+.diagram-key{font-size:13px;color:var(--muted);line-height:1.6;margin:12px 0 0;text-align:center}.join-analogy{padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#f6faf8;margin-bottom:18px}.join-analogy h3{font-size:15px;margin:0 0 6px}.join-analogy p{font-size:14px;margin:0;line-height:1.65}.join-analogy p+p{margin-top:8px}
+.circle span{position:relative;z-index:4}.circle.left span{transform:translateX(-12px)}.circle.right span{transform:translateX(12px)}
+.intersection{position:absolute;width:170px;height:170px;transform:translateX(52px);border-radius:50%;clip-path:circle(85px at -19px 85px);background:rgba(69,175,116,.48);display:none;z-index:3}.intersection.show{display:block}
+.venn-label{position:static;margin:12px 0 0;padding:0 8px;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
+@media(prefers-reduced-motion:reduce){.circle{transition:none}}
+.badge{display:inline-block;border-radius:999px;padding:4px 9px;background:#edf0f6;font-size:12px;font-weight:700;margin:2px}.badge.good{background:#e1f5ef;color:#08634f}.badge.warn{background:#fff0d6;color:#7c4900}
+.rowflex{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.bigidea{font-size:19px;font-weight:750}.metric{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;margin:8px 0}.bar{height:11px;background:#e7eaf1;border-radius:99px;overflow:hidden}.bar>span{display:block;height:100%;background:var(--accent);border-radius:99px}
+input[type=range]{width:220px}.footer{padding:22px;color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:820px){.grid,.grid.three{grid-template-columns:1fr}.venn-stage{height:206px}.circle{width:150px;height:150px}.intersection{width:150px;height:150px;clip-path:circle(75px at -29px 75px)}}
+
+/* Site branding follows the independent learning-guide shell. */
+body{min-height:100svh;display:flex;flex-direction:column}main{width:100%;flex:1;min-width:0}
+header{background:#0b1c2e;color:#fff;padding:0}header p{color:#d3e2e8}header .eyebrow{color:#8cddd5}
+.topbar,.breadcrumbs,.hero{max-width:1200px;margin:auto;padding:18px 22px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.topbar a{color:#d9f4f2;text-decoration:none}.topbar a:hover{text-decoration:underline}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.brand-mark{display:grid;place-items:center;width:33px;height:33px;border:2px solid #68d7ce;color:#68d7ce;border-radius:8px}.top-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:9px;padding-top:0;font-size:13px;color:#bbd0d8}.breadcrumbs a{color:#d9f4f2}.hero{padding-top:22px;padding-bottom:36px}.hero h1{line-height:1.15;margin:9px 0 14px}.hero p+p{margin-top:14px}.hero a{color:#8cddd5}
+a{color:#076d78}a:hover{text-decoration-thickness:2px}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #db9b29;outline-offset:3px}.grid>div{min-width:0}.tabs button{flex:1}.note{background:#e8f5f2}.note.warning{background:#fff6e8}
+.footer{background:#0b1c2e;color:#bbd0d8}.footer a{color:#a3e1dc}.footer p{margin:0}.footer p+p{margin-top:7px}
+@media(max-width:560px){.topbar,.breadcrumbs,.hero{padding-left:18px;padding-right:18px}main{padding:16px 12px}.card{padding:16px}.tabs button{flex-basis:100%}input[type=range]{max-width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">AR</span> Avijit Roy</a><nav class="top-links" aria-label="Site and SQL resources"><a href="../teaching/#open-learning-resources">Teaching resources</a><a href="https://github.com/HeyAvijitRoy/csci-362-databses-data-mining" target="_blank" rel="noopener noreferrer">SQL materials on GitHub &#8599;</a></nav></div>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span aria-hidden="true">&#8250;</span><a href="../teaching/">Teaching</a><span aria-hidden="true">&#8250;</span><span aria-current="page">SQL JOIN &amp; Analytical Query Explorer</span></nav>
+  <div class="hero">
+    <div class="eyebrow">Interactive SQL learning resource</div>
+    <h1>SQL JOIN &amp; Analytical Query Explorer</h1>
+    <p>See how joins match rows, how GROUP BY and HAVING summarize data, and how subqueries answer smaller questions. Start with JOIN Explorer, then try grouping and subqueries.</p>
+    <p>Examples use six fictional clubs and 24 events in <code>public.clubs</code> and <code>public.events</code>. This page simulates results in your browser. For setup instructions, SQL scripts, and further reading, visit the <a href="https://github.com/HeyAvijitRoy/csci-362-databses-data-mining" target="_blank" rel="noopener noreferrer">Databases and Data Mining learning repository &#8599;</a> and run the SQL in PostgreSQL or Supabase.</p>
+  </div>
+</header>
+<main>
+  <div class="tabs">
+    <button class="tab active" data-tab="join">JOIN Explorer</button>
+    <button class="tab" data-tab="group">GROUP BY Explorer</button>
+    <button class="tab" data-tab="subq">Subquery Explorer</button>
+  </div>
+
+  <section id="join" class="panel active">
+    <div class="card">
+      <div class="rowflex">
+        <div>
+          <div class="eyebrow">First mental model</div>
+          <h2>Which rows must survive?</h2>
+        </div>
+        <div class="controls" id="joinButtons">
+          <button data-j="inner" class="active">INNER</button>
+          <button data-j="left">LEFT</button>
+          <button data-j="right">RIGHT</button>
+          <button data-j="full">FULL</button>
+          <button data-j="cross">CROSS</button>
+        </div>
+      </div>
+      <div class="grid">
+        <div>
+          <figure class="venn" aria-labelledby="vennLabel">
+            <div class="venn-stage" aria-hidden="true">
+              <div id="vLeft" class="circle left dim"><span>CLUBS</span></div>
+              <div id="vRight" class="circle right dim"><span>EVENTS</span></div>
+              <div id="vIntersection" class="intersection show"></div>
+              <div id="crossPairs" class="cross-pairs"></div>
+            </div>
+            <figcaption id="vennLabel" class="venn-label" aria-live="polite">Keep matched row combinations only</figcaption>
+            <p id="diagramKey" class="diagram-key"></p>
+          </figure>
+          <div class="join-analogy"><h3 id="analogyTitle"></h3><p id="joinAnalogy"></p><p id="joinDataNote" class="subtle"></p></div>
+          <div class="note warning"><strong>Read the picture as a guide to the rule.</strong> Venn regions describe matched and unmatched rows, not counts or one-to-many multiplication. The CROSS grid shows pairs. Check the source and result rows for the actual data.</div>
+        </div>
+        <div>
+          <div class="eyebrow">Actual database consequence</div>
+          <div id="joinSummary" class="bigidea"></div>
+          <p id="joinExplain" class="subtle"></p>
+          <div id="joinSql" class="sql"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:16px">
+      <div class="card">
+        <div class="eyebrow">Source rows</div>
+        <h3>CLUBS</h3>
+        <div class="table-wrap"><table><thead><tr><th>club_id</th><th>club_name</th></tr></thead><tbody id="clubsBody"></tbody></table></div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Source rows</div>
+        <h3>EVENTS</h3>
+        <div class="table-wrap"><table><thead><tr><th>event_id</th><th>club_id</th><th>title</th><th>category</th></tr></thead><tbody id="eventsBody"></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="rowflex"><div><div class="eyebrow">Row matching</div><h3>Step through result rows</h3></div><div><button id="prevRow">← Previous</button> <button id="nextRow">Next →</button></div></div>
+      <p id="stepExplain" class="subtle"></p>
+      <div class="table-wrap"><table><thead id="resultHead"></thead><tbody id="resultBody"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="group" class="panel">
+    <div class="card">
+      <div class="rowflex">
+        <div><div class="eyebrow">Second mental model</div><h2>Rows → groups → summaries</h2></div>
+        <div class="controls"><button class="gmode active" data-g="category">By category</button><button class="gmode" data-g="club">By club</button></div>
+      </div>
+      <p class="subtle">Think of 24 event cards being sorted into labeled envelopes. The aggregate is calculated inside each envelope.</p>
+      <div class="rowflex">
+        <label><strong>HAVING COUNT(*) ≥ <span id="havingValue">1</span></strong><br><input id="having" type="range" min="1" max="8" value="1"></label>
+        <label><input id="openOnly" type="checkbox"> Apply <code>WHERE is_open = true</code> before grouping</label>
+      </div>
+      <div id="groupSql" class="sql" style="margin-top:14px"></div>
+    </div>
+    <div class="grid" style="margin-top:16px">
+      <div class="card"><div class="eyebrow">Before grouping</div><h3>Rows entering GROUP BY</h3><div class="count" id="inputCount"></div><p class="subtle" id="inputExplain"></p></div>
+      <div class="card"><div class="eyebrow">After HAVING</div><h3>Groups returned</h3><div class="count" id="groupCount"></div><p class="subtle">HAVING removes complete groups, not individual source rows.</p></div>
+    </div>
+    <div class="card" style="margin-top:16px"><div class="table-wrap"><table><thead><tr><th>Group</th><th>COUNT</th><th>AVG(capacity)</th><th>Visual count</th></tr></thead><tbody id="groupBody"></tbody></table></div></div>
+  </section>
+
+  <section id="subq" class="panel">
+    <div class="card">
+      <div class="rowflex"><div><div class="eyebrow">Third mental model</div><h2>A smaller question feeds a larger one</h2></div><div class="controls" id="subButtons"><button class="active" data-s="avg">Above-average capacity</button><button data-s="paid">Clubs with paid events</button><button data-s="none">Clubs with no Workshop</button></div></div>
+      <div id="subSql" class="sql"></div>
+    </div>
+    <div class="grid" style="margin-top:16px">
+      <div class="card"><div class="eyebrow">Step 1</div><h3>Run the inner question mentally</h3><p id="innerExplain"></p><div id="innerResult"></div></div>
+      <div class="card"><div class="eyebrow">Step 2</div><h3>Use that answer in the outer question</h3><p id="outerExplain"></p><div class="table-wrap"><table><thead id="subHead"></thead><tbody id="subBody"></tbody></table></div></div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><p>Developed by <a href="../">Avijit Roy</a> &middot; <a href="../teaching/#open-learning-resources">Browse learning resources</a></p><p>Independent visualization aid using fictional classroom data. <a href="https://github.com/HeyAvijitRoy/csci-362-databses-data-mining" target="_blank" rel="noopener noreferrer">SQL scripts and further reading &#8599;</a></p></footer>
+<script>
+const clubs=[
+{id:1,name:'Data Club',year:2020},{id:2,name:'Robotics Club',year:2018},{id:3,name:'Arts Collective',year:null},{id:4,name:'Cybersecurity Club',year:2021},{id:5,name:'Debate Society',year:2017},{id:6,name:'Photography Club',year:2019}
+];
+const events=[
+[1,1,'SQL Starter Lab','Workshop',30,0,true],[2,2,'Robot Demo','Demo',40,0,true],[3,1,'Data Poster Night','Showcase',60,5,true],[4,3,'Open Studio','Workshop',20,2.5,false],[5,2,'Build a Sensor','Workshop',25,4,true],[6,1,'Python for Data','Workshop',35,0,true],[7,4,'Cyber Defense Workshop','Workshop',45,5,true],[8,4,'Capture the Flag','Competition',50,0,true],[9,6,'Portrait Walk','Social',18,0,true],[10,5,'Campus Debate','Competition',80,0,true],[11,5,'AI Ethics Panel','Seminar',70,0,true],[12,1,'Database Design Clinic','Workshop',28,0,true],[13,2,'Robotics Competition','Competition',100,10,true],[14,6,'Photography Basics','Workshop',22,3,false],[15,1,'Data Visualization Night','Showcase',55,5,true],[16,4,'Security Careers Talk','Seminar',90,0,true],[17,3,'Open Mic Showcase','Showcase',75,2,false],[18,1,'SQL Practice Session','Workshop',32,0,true],[19,5,'Research Poster Review','Seminar',40,0,true],[20,3,'End-of-Semester Social','Social',120,8,true],[21,6,'Night Photography Walk','Social',16,0,true],[22,1,'Temporary SQL Test Event','Temporary',10,0,true],[23,2,'Temporary Demo Row','Temporary',10,0,true],[24,3,'Temporary Practice Row','Temporary',10,0,true]
+].map(x=>({id:x[0],clubId:x[1],title:x[2],category:x[3],capacity:x[4],fee:x[5],open:x[6]}));
+let joinMode='inner', step=0, groupMode='category', subMode='avg';
+function clubName(id){return (clubs.find(c=>c.id===id)||{}).name||null}
+function esc(s){return String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
+function td(v){return `<td class="${v==null?'null':''}">${v==null?'NULL':esc(v)}</td>`}
+function renderSources(){
+ document.getElementById('clubsBody').innerHTML=clubs.map(c=>`<tr data-club="${c.id}">${td(c.id)}${td(c.name)}</tr>`).join('');
+ document.getElementById('eventsBody').innerHTML=events.map(e=>`<tr data-event="${e.id}" data-club="${e.clubId}">${td(e.id)}${td(e.clubId)}${td(e.title)}${td(e.category)}</tr>`).join('');
+}
+function joinRows(){
+ if(joinMode==='inner') return events.map(e=>({clubId:e.clubId,club:clubName(e.clubId),eventId:e.id,title:e.title,category:e.category}));
+ if(joinMode==='left'){
+   const out=[];clubs.forEach(c=>{const ms=events.filter(e=>e.clubId===c.id&&e.category==='Workshop'); if(ms.length)ms.forEach(e=>out.push({clubId:c.id,club:c.name,eventId:e.id,title:e.title,category:e.category}));else out.push({clubId:c.id,club:c.name,eventId:null,title:null,category:null})});return out;
+ }
+ if(joinMode==='right') return events.map(e=>({clubId:e.clubId,club:clubName(e.clubId),eventId:e.id,title:e.title,category:e.category}));
+ if(joinMode==='full') return events.map(e=>({clubId:e.clubId,club:clubName(e.clubId),eventId:e.id,title:e.title,category:e.category}));
+ const out=[]; for(const c of clubs)for(const e of events)out.push({clubId:c.id,club:c.name,eventId:e.id,title:e.title,category:e.category}); return out;
+}
+const joinMeta={
+ inner:{summary:'INNER JOIN keeps matched club/event combinations.',explain:'Every seeded event references an existing club, so the normal PK/FK join returns 24 rows.',label:'Keep matched row combinations only',sql:`SELECT e.event_id, e.title, c.club_name\nFROM public.clubs AS c\nINNER JOIN public.events AS e\n  ON e.club_id = c.club_id;`},
+ left:{summary:'LEFT JOIN preserves every club while matching Workshop events.',explain:'Debate Society has no Workshop, so it remains once with NULL event columns. Result: 9 rows = 8 Workshops + 1 preserved club.',label:'Keep all CLUBS + matching Workshop EVENTS',sql:`SELECT c.club_name, e.title AS workshop_title\nFROM public.clubs AS c\nLEFT JOIN public.events AS e\n  ON e.club_id = c.club_id\n AND e.category = 'Workshop';`},
+ right:{summary:'RIGHT JOIN preserves the table written on the right.',explain:'Here EVENTS is on the right, so every event is preserved. The foreign key already guarantees each event has a matching club, so all 24 rows are matched.',label:'Keep all right-side EVENTS + matches',sql:`SELECT c.club_name, e.title\nFROM public.clubs AS c\nRIGHT JOIN public.events AS e\n  ON e.club_id = c.club_id;`},
+ full:{summary:'FULL OUTER JOIN preserves unmatched rows from both sides.',explain:'On the normal PK/FK relationship, this sample data has no unmatched club and no orphan event, so the result still contains the 24 matched combinations.',label:'Keep both sides, matched or unmatched',sql:`SELECT c.club_name, e.title\nFROM public.clubs AS c\nFULL OUTER JOIN public.events AS e\n  ON e.club_id = c.club_id;`},
+ cross:{summary:'CROSS JOIN creates every possible club/event pair.',explain:'6 clubs × 24 events = 144 combinations. Most are not real ownership relationships. Only the first 20 are previewed below.',label:'Every CLUBS row × every EVENTS row: 6 × 24 = 144 pairs',sql:`SELECT c.club_name, e.title\nFROM public.clubs AS c\nCROSS JOIN public.events AS e;`}
+};
+const joinVisuals={
+ inner:{title:'Analogy: connect matching cards',text:'Imagine a board with club cards on the left and event cards on the right. Draw a connection only when their club_id values match. Keep the connections; leave out any card without a match.',key:'Darker green overlap: matching pairs. Pale outer regions: rows excluded by INNER JOIN.',note:'Here all 24 events match a club. One club can connect to several events, so the overlap is not a row count.'},
+ left:{title:'Analogy: every club gets a place',text:'Keep every club card on the board. Attach only its Workshop event cards. If a club has no Workshop, keep the club with an empty event slot (NULL).',key:'Light green: clubs preserved without a Workshop. Darker overlap: clubs paired with Workshop events. Pale orange side: events not preserved.',note:'Here eight Workshops match, and Debate Society has an empty event slot: nine result rows. This example adds a Workshop filter to the matching condition.'},
+ right:{title:'Analogy: every event gets a place',text:'Keep every event card. Attach its club card when club_id matches. An event without a matching club would keep its place with an empty club slot (NULL).',key:'Light orange: events preserved without a club. Darker overlap: matching club/event pairs. Pale left side: clubs not preserved.',note:'Here every event has a matching club, so no empty club slots appear: 24 result rows.'},
+ full:{title:'Analogy: keep the entire matching board',text:'Connect club and event cards only when club_id matches. Keep each connection, and also keep any club or event card with no connection. Each unconnected card gets NULL values for the missing side.',key:'Darker overlap: matching pairs. Light green outer region: unmatched clubs kept. Light orange outer region: unmatched events kept. Shading shows the rule, not how many rows occupy each region.',note:'In this sample, every club has events and every event has a club. Both unmatched regions are empty, even though the diagram shows that FULL JOIN would preserve them. Result: 24 matched pairs.'},
+ cross:{title:'Analogy: try every possible assignment',text:'Make a planning board with one row for each club and one column for each event. Put a tile at every intersection: it represents trying that event with that club, whether or not the club actually owns it. No club_id matching condition is applied.',key:'Every light green tile is included. The darker tile is the result row currently being inspected; it is not an ownership match.',note:'Six club rows by 24 event columns create 144 possible pairs. The result table previews the first 20; use Previous and Next to follow the highlighted tile.'}
+};
+function renderJoin(){
+ const meta=joinMeta[joinMode], rows=joinRows(); step=Math.min(step,Math.max(0,Math.min(rows.length,joinMode==='cross'?20:rows.length)-1));
+ document.querySelectorAll('#joinButtons button').forEach(b=>b.classList.toggle('active',b.dataset.j===joinMode));
+ document.getElementById('joinSummary').textContent=meta.summary; document.getElementById('joinExplain').textContent=meta.explain; document.getElementById('joinSql').textContent=meta.sql; document.getElementById('vennLabel').textContent=meta.label;
+ document.querySelector('.venn-stage').classList.toggle('cross-mode',joinMode==='cross');
+ const visual=joinVisuals[joinMode];document.getElementById('analogyTitle').textContent=visual.title;document.getElementById('joinAnalogy').textContent=visual.text;document.getElementById('diagramKey').textContent=visual.key;document.getElementById('joinDataNote').textContent=visual.note;
+ if(joinMode==='cross')document.getElementById('crossPairs').innerHTML='<div class="pair-axis">24 EVENTS (one column per event)</div><div class="pair-grid">'+clubs.map((c,ci)=>'<span class="pair-row-label">C'+c.id+'</span>'+events.map((e,ei)=>`<span class="pair-cell ${ci*events.length+ei===step?'current':''}" title="${esc(c.name)} + ${esc(e.title)}"></span>`).join('')).join('')+'</div><div class="pair-key">6 CLUBS (C1-C6): one row per club</div>';
+
+ const l=document.getElementById('vLeft'),r=document.getElementById('vRight'),i=document.getElementById('vIntersection'); l.className='circle left dim';r.className='circle right dim';i.className='intersection';
+ if(joinMode!=='cross')i.classList.add('show'); if(joinMode==='left')l.classList.add('keep'); if(joinMode==='right')r.classList.add('keep'); if(joinMode==='full'){l.classList.add('keep');r.classList.add('keep')} if(joinMode==='cross'){l.classList.add('keep');r.classList.add('keep')}
+ const shown=joinMode==='cross'?rows.slice(0,20):rows;
+ document.getElementById('resultHead').innerHTML='<tr><th>#</th><th>club_id</th><th>club_name</th><th>event_id</th><th>title</th><th>category</th></tr>';
+ document.getElementById('resultBody').innerHTML=shown.map((x,n)=>`<tr class="${n===step?'hl':''}"><td>${n+1}</td>${td(x.clubId)}${td(x.club)}${td(x.eventId)}${td(x.title)}${td(x.category)}</tr>`).join('');
+ document.querySelectorAll('[data-club],[data-event]').forEach(el=>el.classList.remove('hl'));
+ const cur=shown[step]; if(cur){document.querySelector(`#clubsBody tr[data-club="${cur.clubId}"]`)?.classList.add('hl'); if(cur.eventId)document.querySelector(`#eventsBody tr[data-event="${cur.eventId}"]`)?.classList.add('hl'); document.getElementById('stepExplain').textContent=joinMode==='cross'?`Result row ${step+1}: pair club ${cur.clubId}, “${cur.club}”, with event ${cur.eventId}, “${cur.title}”. This pair is included without checking whether the club owns the event.`:cur.eventId?`Result row ${step+1}: club_id ${cur.clubId} connects “${cur.club}” with event ${cur.eventId}, “${cur.title}”.`:`Result row ${step+1}: “${cur.club}” was preserved even though no Workshop event matched, so the event columns are NULL.`}
+}
+function groupData(){
+ const input=events.filter(e=>!document.getElementById('openOnly').checked||e.open); const m=new Map();
+ for(const e of input){const key=groupMode==='category'?e.category:clubName(e.clubId); if(!m.has(key))m.set(key,[]);m.get(key).push(e)}
+ const threshold=+document.getElementById('having').value; return {input,rows:[...m].map(([k,a])=>({k,count:a.length,avg:a.reduce((s,e)=>s+e.capacity,0)/a.length})).filter(x=>x.count>=threshold).sort((a,b)=>b.count-a.count||a.k.localeCompare(b.k)),threshold};
+}
+function renderGroup(){
+ document.querySelectorAll('.gmode').forEach(b=>b.classList.toggle('active',b.dataset.g===groupMode)); const {input,rows,threshold}=groupData(); document.getElementById('havingValue').textContent=threshold;document.getElementById('inputCount').textContent=input.length;document.getElementById('groupCount').textContent=rows.length;document.getElementById('inputExplain').textContent=document.getElementById('openOnly').checked?'WHERE removed closed event rows before grouping.':'All 24 sample event rows enter grouping.';
+ const gb=groupMode==='category'?'category':'c.club_id, c.club_name', sel=groupMode==='category'?'category':'c.club_name';
+ document.getElementById('groupSql').textContent=groupMode==='category'?`SELECT category, COUNT(*) AS event_count, ROUND(AVG(capacity),2) AS avg_capacity\nFROM public.events\n${document.getElementById('openOnly').checked?'WHERE is_open = true\n':''}GROUP BY category\nHAVING COUNT(*) >= ${threshold};`:`SELECT c.club_name, COUNT(e.event_id) AS event_count, ROUND(AVG(e.capacity),2) AS avg_capacity\nFROM public.clubs AS c\nJOIN public.events AS e ON e.club_id = c.club_id\n${document.getElementById('openOnly').checked?'WHERE e.is_open = true\n':''}GROUP BY c.club_id, c.club_name\nHAVING COUNT(e.event_id) >= ${threshold};`;
+ const max=Math.max(1,...rows.map(x=>x.count));document.getElementById('groupBody').innerHTML=rows.map(x=>`<tr>${td(x.k)}${td(x.count)}${td(x.avg.toFixed(2))}<td><div class="bar"><span style="width:${100*x.count/max}%"></span></div></td></tr>`).join('');
+}
+const subMeta={
+ avg:{sql:`SELECT title, capacity\nFROM public.events\nWHERE capacity > (\n  SELECT AVG(capacity)\n  FROM public.events\n);`,inner:'The inner query returns one scalar value: the average capacity of all 24 events.',outer:'The outer query keeps each event whose capacity is greater than that calculated value.'},
+ paid:{sql:`SELECT club_id, club_name\nFROM public.clubs\nWHERE club_id IN (\n  SELECT DISTINCT club_id\n  FROM public.events\n  WHERE fee > 0\n);`,inner:'The inner query returns a set of club IDs that appear on paid events.',outer:'The outer query keeps clubs whose ID belongs to that returned set.'},
+ none:{sql:`SELECT c.club_name\nFROM public.clubs AS c\nWHERE NOT EXISTS (\n  SELECT 1\n  FROM public.events AS e\n  WHERE e.club_id = c.club_id\n    AND e.category = 'Workshop'\n);`,inner:'For each current club, the correlated inner query asks whether a Workshop row exists for that club.',outer:'NOT EXISTS keeps only clubs for which the inner search finds no qualifying row.'}
+};
+function renderSub(){
+ document.querySelectorAll('#subButtons button').forEach(b=>b.classList.toggle('active',b.dataset.s===subMode));const m=subMeta[subMode];document.getElementById('subSql').textContent=m.sql;document.getElementById('innerExplain').textContent=m.inner;document.getElementById('outerExplain').textContent=m.outer;
+ let inner='',head='',body='';
+ if(subMode==='avg'){const avg=events.reduce((s,e)=>s+e.capacity,0)/events.length;inner=`<div class="count">${avg.toFixed(2)}</div><div class="subtle">AVG(capacity)</div>`;const rows=events.filter(e=>e.capacity>avg).sort((a,b)=>b.capacity-a.capacity);head='<tr><th>title</th><th>capacity</th></tr>';body=rows.map(e=>`<tr>${td(e.title)}${td(e.capacity)}</tr>`).join('')}
+ if(subMode==='paid'){const ids=[...new Set(events.filter(e=>e.fee>0).map(e=>e.clubId))].sort((a,b)=>a-b);inner=ids.map(x=>`<span class="badge good">${x}</span>`).join('');const rows=clubs.filter(c=>ids.includes(c.id));head='<tr><th>club_id</th><th>club_name</th></tr>';body=rows.map(c=>`<tr>${td(c.id)}${td(c.name)}</tr>`).join('')}
+ if(subMode==='none'){inner='<span class="badge warn">Does a Workshop exist for this club?</span>';const rows=clubs.filter(c=>!events.some(e=>e.clubId===c.id&&e.category==='Workshop'));head='<tr><th>club_name</th></tr>';body=rows.map(c=>`<tr>${td(c.name)}</tr>`).join('')}
+ document.getElementById('innerResult').innerHTML=inner;document.getElementById('subHead').innerHTML=head;document.getElementById('subBody').innerHTML=body;
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));document.getElementById(b.dataset.tab).classList.add('active')});
+document.querySelectorAll('#joinButtons button').forEach(b=>b.onclick=()=>{joinMode=b.dataset.j;step=0;renderJoin()});document.getElementById('nextRow').onclick=()=>{const lim=Math.min(joinRows().length,joinMode==='cross'?20:joinRows().length);step=(step+1)%lim;renderJoin()};document.getElementById('prevRow').onclick=()=>{const lim=Math.min(joinRows().length,joinMode==='cross'?20:joinRows().length);step=(step-1+lim)%lim;renderJoin()};
+document.querySelectorAll('.gmode').forEach(b=>b.onclick=()=>{groupMode=b.dataset.g;renderGroup()});document.getElementById('having').oninput=renderGroup;document.getElementById('openOnly').onchange=renderGroup;document.querySelectorAll('#subButtons button').forEach(b=>b.onclick=()=>{subMode=b.dataset.s;renderSub()});
+renderSources();renderJoin();renderGroup();renderSub();
+</script>
+</body>
+</html>

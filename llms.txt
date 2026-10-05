@@ -19,6 +19,7 @@ His work focuses on adversarial machine learning, privacy-preserving AI, percept
 - Official Website: https://avijitroy.com
 - Research: https://avijitroy.com/research/
 - Teaching: https://avijitroy.com/teaching/
+- SQL JOIN & Analytical Query Explorer: https://avijitroy.com/docs/sql-join-explorer.html
 - Projects: https://avijitroy.com/projects/
 - Experience: https://avijitroy.com/experience/
 - Professional Engagement: https://avijitroy.com/professional-engagement/

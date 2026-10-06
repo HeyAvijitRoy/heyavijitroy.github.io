@@ -122,7 +122,9 @@ def audit():
                     if obj.get("@id") != PERSON:
                         errors.append(f"{relative}: author must reference {PERSON}")
         if "citation_title" in page.meta:
-            for field in ("citation_title", "citation_author", "citation_publication_date", "citation_doi", "citation_pdf_url"):
+            # Scholar requires title, author, and publication date. A book may
+            # legitimately have neither a DOI nor a freely hosted full-text PDF.
+            for field in ("citation_title", "citation_author", "citation_publication_date"):
                 if not any(v.strip() for v in page.meta.get(field, [])):
                     errors.append(f"{relative}: missing {field}")
             if page.meta.get("citation_abstract_html_url") != [expected]:

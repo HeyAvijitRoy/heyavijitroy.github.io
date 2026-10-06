@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; worker-src 'self'; img-src 'self' data:; connect-src 'none';" />
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; worker-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com;" />
   <meta name="description"
     content="A beginner-friendly interactive guide to Git, GitHub, VS Code Source Control, .gitignore privacy, secret protection, and safe AI-assisted coding workflows." />
   <meta name="author" content="Avijit Roy" />
@@ -46,7 +46,7 @@
         "description": "A beginner-friendly interactive guide to version control, Git, GitHub, VS Code Source Control, .gitignore privacy, secret protection and safe AI-assisted coding workflows.",
         "inLanguage": "en",
         "datePublished": "2026-05-23",
-        "dateModified": "2026-05-24",
+        "dateModified": "2026-10-06",
         "proficiencyLevel": "Beginner",
         "author": {
           "@type": "Person",
@@ -1260,6 +1260,7 @@
       </div>
       <h1>Learn <span>Git</span>, GitHub &amp;<br>VS Code Source Control</h1>
       <p>A visual, hands-on guide for any student or first-time coder: track changes, save meaningful checkpoints, publish projects to GitHub, and work confidently in VS Code.</p>
+      <p style="font-size:.8rem">By <a href="../../" style="color:var(--green)">Avijit Roy</a> &middot; Updated <time datetime="2026-10-06">October 6, 2026</time></p>
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="val" aria-label="14 sections">14</span>
@@ -1295,7 +1296,7 @@
         Picture this: you have been building your first program or website for hours. You finally get it working, try one more improvement, and suddenly nothing works. This is the problem that <strong>version control</strong> was built to solve.
       </p>
       <p>
-        Version control is a system that tracks changes to your files over time. Think of it like a very detailed "undo history" for your entire project — not just the last few keystrokes, but every meaningful change you've ever saved, with notes about what changed and why.
+        Think of <strong>version control</strong> as an undo history for your whole project, with checkpoints you choose to save. If a new change breaks your program, you can look back at an earlier checkpoint and recover the version that worked. In Git, saving one of these checkpoints is called making a <strong>commit</strong>. Saving a file in your editor updates the file; making a commit records a checkpoint in Git. Git cannot recover an edit it never recorded just because you pressed Save.
       </p>
 
       <div class="callout callout-info">
@@ -1303,7 +1304,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           What Exactly Gets Tracked?
         </div>
-        Every version control system records <strong>what</strong> changed, <strong>when</strong> it changed, and <strong>who</strong> made the change. This information is stored in a structure called a <em>commit</em>.
+        A <em>commit</em> is a saved project checkpoint: a snapshot of the files Git is tracking, with a message, names, email addresses, and dates. Git links these checkpoints into a history you can revisit. The recorded names and emails come from settings; they are labels, not proof of who wrote the code.
       </div>
 
       <h3>The Problem Without Version Control</h3>
@@ -1339,10 +1340,10 @@
       </div>
 
       <p>
-        <strong>Git</strong> is a free, open-source version control system created by Linus Torvalds in 2005 — the same person who created the Linux operating system. It runs entirely on your own computer and does not require an internet connection to function.
+        <strong>Git</strong> is a free, open-source version control system created by Linus Torvalds in 2005, who also created the Linux kernel. Git can keep project history on each person's computer and exchange checkpoints between copies; this is what <strong>distributed</strong> means. Local tasks such as committing, branching, and viewing downloaded history work without internet access. A <strong>remote</strong> is another repository Git can exchange history with, such as a copy on GitHub. Reaching GitHub requires a network connection.
       </p>
       <p>
-        When you use Git, it creates a hidden folder called <code>.git</code> inside your project directory. That folder is the "database" — it stores every snapshot of your project you've ever saved. The directory it tracks is called a <strong>repository</strong> (or "repo" for short).
+        Think of a <strong>repository</strong>, or "repo," as your project plus its Git history. In a typical local project, <code>git init</code> creates a hidden folder named <code>.git</code> to keep that history and Git's settings. The files you open and edit are called the <strong>working tree</strong>. Git records the checkpoints you commit, rather than automatically recording every file save.
       </p>
 
       <div class="callout callout-tip">
@@ -1350,7 +1351,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           Key Mental Model
         </div>
-        Git is a tool — a program installed on your machine, like a text editor. It works offline, stores everything locally, and has nothing to do with the internet. It does one job extremely well: track every change to every file in your project.
+        Git keeps local history and can exchange commits with other repositories. You can work offline and upload your saved checkpoints later; that upload is called a <strong>push</strong>. New files enter normal Git tracking when you stage them, and changes enter commit history when you commit them.
       </div>
 
       <h3>Core Concepts</h3>
@@ -1421,23 +1422,23 @@
               <tr>
                 <th scope="col">Zone</th>
                 <th scope="col">Description</th>
-                <th scope="col">Command to move files here</th>
+                <th scope="col">Relevant Command</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Working Directory</strong></td>
-                <td>Where you edit your actual files. Changes here are "untracked" until you tell Git about them.</td>
+                <td>Where you edit files. New files are untracked until staged; edits to tracked files are modifications.</td>
                 <td>—</td>
               </tr>
               <tr>
                 <td><strong>Staging Area (Index)</strong></td>
-                <td>A preview zone. Files you've selected as "ready to save" sit here before they become a commit.</td>
+                <td>The selection for your next checkpoint. Like choosing photos for an album, you choose the versions to include. Later edits need staging again.</td>
                 <td><code>git add filename</code></td>
               </tr>
               <tr>
                 <td><strong>Repository</strong></td>
-                <td>The permanent record. A commit moves staged changes into the repo and creates a snapshot with a unique ID.</td>
+                <td>Your saved checkpoints and Git's settings. Each commit records the staged version and has an ID you can use to find it.</td>
                 <td><code>git commit -m "message"</code></td>
               </tr>
             </tbody>
@@ -1447,7 +1448,7 @@
 
       <div class="callout callout-warn">
         <div class="callout-title">⚠ Common Beginner Mistake</div>
-        Many beginners edit a file, then type <code>git commit</code> and wonder why the commit is empty. The reason: the change was not staged with <code>git add</code>. Git deliberately lets you pick <em>exactly</em> which changes belong in each commit.
+        With a plain <code>git commit</code>, unstaged edits are left out. If there are no staged changes, Git normally refuses to create a commit. Save your file, stage the intended version with <code>git add</code>, and review it with <code>git diff --staged</code>. If you edit it again after staging, stage it again to include those newer edits.
       </div>
     </section>
 
@@ -1477,12 +1478,12 @@
 
       <h3>What GitHub Adds</h3>
       <ul>
-        <li><strong>Remote hosting</strong> — your code is backed up in the cloud, not just your laptop.</li>
+        <li><strong>Remote hosting</strong> — pushed commits are stored online. Uncommitted files and local commits you have not pushed remain on your machine.</li>
         <li><strong>Pull Requests (PRs)</strong> — a formal way to propose code changes and request review before merging.</li>
         <li><strong>Issues &amp; Project Boards</strong> — built-in task tracking. You can file bug reports, feature requests, and track what's in progress.</li>
-        <li><strong>GitHub Actions</strong> — automated workflows that run tests, build your code, or deploy your app every time you push.</li>
-        <li><strong>GitHub Pages</strong> — free static website hosting directly from a repository (useful for portfolio sites).</li>
-        <li><strong>GitHub Codespaces</strong> — a full development environment in your browser, no local install needed.</li>
+        <li><strong>GitHub Actions</strong> — workflows you configure to run tests, build code, or deploy an app on events such as pushes or pull requests.</li>
+        <li><strong>GitHub Pages</strong> — static website hosting from a repository; availability depends on your plan and repository visibility.</li>
+        <li><strong>GitHub Codespaces</strong> — a hosted development environment accessible through your browser or VS Code, subject to usage limits and billing.</li>
       </ul>
 
       <div class="callout callout-info">
@@ -1524,11 +1525,11 @@
           </div>
           <ul aria-label="Git characteristics">
             <li>Software installed on your computer</li>
-            <li>Works 100% offline — no internet needed</li>
-            <li>Free and open-source (MIT-licensed)</li>
+            <li>Local commits and history work offline</li>
+            <li>Free and open-source (<a href="https://git-scm.com/about" target="_blank" rel="noopener noreferrer" style="color:var(--green)">GPLv2-licensed</a>)</li>
             <li>Manages version history locally</li>
             <li>No account or login required</li>
-            <li>Command-line tool (no website)</li>
+            <li>Command-line tool with many graphical clients</li>
             <li>Created by Linus Torvalds, 2005</li>
           </ul>
         </div>
@@ -1540,9 +1541,10 @@
           <ul aria-label="GitHub characteristics">
             <li>A website and cloud service</li>
             <li>Requires internet access</li>
-            <li>Free for public repos (paid plans available)</li>
+            <li>Free public and private repos; features vary by plan</li>
             <li>Hosts Git repositories online</li>
-            <li>Requires a free account to use</li>
+            <li>Public repositories can be read without an account</li>
+            <li>An account is needed to publish or contribute</li>
             <li>Has a full web interface + features</li>
             <li>Founded 2008; acquired by Microsoft 2018</li>
           </ul>
@@ -1567,7 +1569,7 @@
               </tr>
               <tr>
                 <td>Internet required?</td>
-                <td>No</td>
+                <td>No for local tasks; yes to contact an online remote</td>
                 <td>Yes</td>
               </tr>
               <tr>
@@ -1577,7 +1579,7 @@
               </tr>
               <tr>
                 <td>Collaboration</td>
-                <td>Not built-in</td>
+                <td>Built-in branches, merges, and exchange of commits</td>
                 <td>Core feature (PRs, Issues, Forks)</td>
               </tr>
               <tr>
@@ -1593,7 +1595,7 @@
               <tr>
                 <td>Can exist without the other?</td>
                 <td>Yes — Git works standalone</td>
-                <td>No — GitHub requires Git repos</td>
+                <td>You can use GitHub's browser tools without a local Git installation</td>
               </tr>
             </tbody>
           </table>
@@ -1602,7 +1604,7 @@
 
       <div class="callout callout-tip">
         <div class="callout-title">The One-Sentence Summary</div>
-        <strong>Git</strong> saves your history locally. <strong>GitHub</strong> puts that history online. You need Git to use GitHub, but you can use Git perfectly well without GitHub.
+        <strong>Git</strong> records project history and exchanges commits. <strong>GitHub</strong> hosts repositories and adds collaboration tools. Git works without GitHub, and GitHub's browser tools work without installing Git locally.
       </div>
     </section>
 
@@ -1620,7 +1622,7 @@
       </p>
 
       <h3>Install and Set Up Git Once</h3>
-      <p>Install Git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer" style="color:var(--green)">git-scm.com</a>, then open a terminal and tell Git who you are. This identity is attached to each commit.</p>
+      <p>Install a current Git version from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer" style="color:var(--green)">git-scm.com</a>, then configure the name and email recorded in your commits. These are author details, not GitHub sign-in credentials. The <code>git init -b</code> examples require Git 2.28 or later.</p>
 
       <div class="terminal" role="region" aria-label="Git setup commands">
         <div class="terminal-bar" aria-hidden="true">
@@ -1647,12 +1649,12 @@
 
       <div class="callout callout-warn">
         <div class="callout-title">Privacy Before Your First Commit</div>
-        Commits can expose the email address configured in Git when a repository is public. If you do not want to publish a personal email, enable GitHub's email privacy setting and configure the GitHub-provided <code>noreply</code> address before committing.
+        Commits can expose your configured email when a repository is public. If you prefer privacy, copy your exact <code>noreply</code> address from <a href="https://github.com/settings/emails" target="_blank" rel="noopener noreferrer" style="color:var(--green)">GitHub's email settings</a> and use it in <code>git config --global user.email</code> before committing. Changing this setting does not rewrite earlier commits.
       </div>
 
       <div class="callout callout-info">
         <div class="callout-title">Terminal Note</div>
-        The examples use a common terminal style. If file-creation commands differ on your operating system, create or edit the files in VS Code, then run the Git commands exactly as shown.
+        The terminal examples use Git Bash on Windows or a Bash-compatible shell on macOS or Linux. Copy commands only, without the displayed <code>$</code> prompt or sample output. PowerShell has different shell syntax and file encodings; you can create and save the files in VS Code and run the Git commands separately. Replace example usernames, repository names, and filenames with your own. Your commit IDs and output may differ from the examples.
       </div>
 
       <h3>Starting a Repository</h3>
@@ -1667,7 +1669,7 @@
           <span class="t-comment"># Create a new project folder and initialize Git</span>
           <span class="t-cmd">mkdir my-project</span>
           <span class="t-cmd">cd my-project</span>
-          <span class="t-cmd">git init</span>
+          <span class="t-cmd">git init -b main</span>
           <span class="t-out t-success">Initialized empty Git repository in ~/my-project/.git/</span>
           <br>
           <span class="t-comment"># OR clone an existing repo from GitHub</span>
@@ -1676,7 +1678,7 @@
       </div>
 
       <h3>The Daily Loop — Add, Commit, Push</h3>
-      <p>After you edit files, this three-step cycle is how you save your work and share it. Memorize this loop; you'll use it thousands of times.</p>
+      <p>After editing and saving files, stage the intended changes, commit locally, and push when ready to share them. This example assumes a tracked <code>main.py</code>, a current branch named <code>main</code>, and a writable remote named <code>origin</code>. The first-push setup follows below.</p>
 
       <div class="terminal" role="region" aria-label="Git daily workflow commands">
         <div class="terminal-bar" aria-hidden="true">
@@ -1694,7 +1696,7 @@
           <br>
           <span class="t-comment"># Step 1: Stage the files you want to commit</span>
           <span class="t-cmd">git add main.py</span>
-          <span class="t-comment"># Or stage everything at once:</span>
+          <span class="t-comment"># Alternative: stage additions, edits, and deletions under this directory</span>
           <span class="t-cmd">git add .</span>
           <br>
           <span class="t-comment"># Step 2: Commit with a clear, descriptive message</span>
@@ -1709,6 +1711,31 @@
         </div>
       </div>
 
+      <p><strong>Stage</strong> means "select for the next checkpoint." Staging does not move your original files. <code>git add .</code> selects eligible new files, edits, and deletions in the current folder and its subfolders; it skips ignored new files. Review that selection before committing. <code>git push origin main</code> uploads the saved history of the branch named <code>main</code>, even if you are currently working on another branch.</p>
+
+      <h3>First Push from a New Local Repository</h3>
+      <p>After making a local commit, create an <strong>empty</strong> repository on GitHub and choose its visibility. For this path, leave the README, license, and <code>.gitignore</code> initialization options off, because your local repository already has its own history. If you started by cloning a GitHub repository, <code>origin</code> is already configured; skip <code>git remote add</code>.</p>
+      <div class="terminal" role="region" aria-label="Connect a local repository and make its first push">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot t-dot-r"></span>
+          <span class="t-dot t-dot-y"></span>
+          <span class="t-dot t-dot-g"></span>
+          <span class="t-label">bash — First push (local branch is main)</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-cmd">git branch --show-current</span>
+          <span class="t-out">main</span>
+          <span class="t-cmd">git remote add origin https://github.com/you/my-project.git</span>
+          <span class="t-cmd">git remote -v</span>
+          <span class="t-cmd">git push -u origin main</span>
+        </div>
+      </div>
+      <p>A <strong>remote</strong> is another repository whose address Git remembers, often your copy on GitHub. Think of <code>origin</code> as a contact name for that address; it can point to GitHub or another host. <code>-u</code> sets an <strong>upstream</strong>: the remote branch paired with your local branch for later pushes and pulls. If your branch has a different name, use that name consistently. See <a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github" target="_blank" rel="noopener noreferrer" style="color:var(--green)">GitHub's first-push instructions</a>.</p>
+      <div class="callout callout-info">
+        <div class="callout-title">Signing In to Push</div>
+        For HTTPS, use an approved credential helper, GitHub CLI's browser sign-in, or a personal access token with the necessary access. Your GitHub account password is not accepted for Git operations over HTTPS. SSH is another option after configuring a key. Never put credentials in the remote URL. See <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank" rel="noopener noreferrer" style="color:var(--green)">GitHub's authentication guide</a>.
+      </div>
+
       <h3>Viewing History &amp; Differences</h3>
       <div class="terminal" role="region" aria-label="Git history and diff commands">
         <div class="terminal-bar" aria-hidden="true">
@@ -1718,12 +1745,12 @@
           <span class="t-label">bash — History</span>
         </div>
         <div class="terminal-body">
-          <span class="t-comment"># See the full commit history</span>
+          <span class="t-comment"># See history reachable from the current branch</span>
           <span class="t-cmd">git log</span>
           <span class="t-comment"># Compact one-line version (much easier to read)</span>
           <span class="t-cmd">git log --oneline</span>
-          <span class="t-out t-success">3f4a1c2</span><span class="t-out"> Add user input validation</span>
-          <span class="t-out t-success">7a2b3d1</span><span class="t-out"> Initial commit</span>
+          <span class="t-out"><span class="t-success">3f4a1c2</span> Add user input validation</span>
+          <span class="t-out"><span class="t-success">7a2b3d1</span> Initial commit</span>
           <br>
           <span class="t-comment"># See what changed in your files (not yet staged)</span>
           <span class="t-cmd">git diff</span>
@@ -1733,6 +1760,7 @@
       </div>
 
       <h3>Pulling Changes From GitHub</h3>
+      <p>Commit your intended work before pulling, and use <code>git status</code> to check that your working tree is clean: there are no pending changes to commit. Ignored files can still be present.</p>
       <div class="terminal" role="region" aria-label="Git pull commands">
         <div class="terminal-bar" aria-hidden="true">
           <span class="t-dot t-dot-r"></span>
@@ -1741,8 +1769,9 @@
           <span class="t-label">bash — Pull</span>
         </div>
         <div class="terminal-body">
-          <span class="t-comment"># Download and apply changes from GitHub (team updates)</span>
-          <span class="t-cmd">git pull origin main</span>
+          <span class="t-comment"># Start with a clean working tree, then update local main</span>
+          <span class="t-cmd">git switch main</span>
+          <span class="t-cmd">git pull --ff-only origin main</span>
           <span class="t-out t-success">Already up to date.</span>
           <span class="t-comment"># Or if teammates pushed new code:</span>
           <span class="t-out">Updating 7a2b3d1..9f1e5b3</span>
@@ -1751,9 +1780,12 @@
         </div>
       </div>
 
+      <p>Think of <code>git fetch</code> as bringing new checkpoints home so you can inspect them: it downloads remote history and updates Git's record of the remote branches, without changing your working files. <code>git pull</code> fetches and then brings a remote branch's changes into the branch you are <strong>currently working on</strong>. A <strong>fast-forward</strong> simply moves your branch to a newer checkpoint on the same path. If you and a teammate both added separate checkpoints, <code>--ff-only</code> stops so you can decide how to combine the two paths.</p>
+      <p>A <strong>merge</strong> brings changes from two paths together. Another method, <strong>rebase</strong>, replays your committed changes on a different starting checkpoint, usually creating replacement commits. Follow your team's chosen method; plain <code>git pull</code> behavior depends on settings, options, and Git version. The <a href="#sec-branches" style="color:var(--green)">branching section below</a> walks through a merge; Git's <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing" target="_blank" rel="noopener noreferrer" style="color:var(--green)">rebasing guide</a> explains the alternative and its precautions.</p>
+
       <!-- Interactive terminal demo -->
       <h3>Try It: Animated Demo</h3>
-      <p>Click <strong>Run Demo</strong> to watch a first project move through the four stages. The highlighted label tells you where the current command fits in both the terminal and VS Code.</p>
+      <p>Click <strong>Run Demo</strong> to watch a simulated first project move through the four stages. The demo displays example commands and output; it does not run Git or create a repository. The highlighted label shows where each command fits in the workflow.</p>
 
       <div class="demo-flow" id="demoFlow" aria-label="Animated workflow phases">
         <div class="demo-phase" data-phase="edit">1. Edit</div>
@@ -1781,7 +1813,7 @@
 
       <div class="callout callout-info">
         <div class="callout-title">Same Actions in VS Code</div>
-        Creating or editing a file happens in the editor. In the <strong>Source Control</strong> view, the <strong>+</strong> button performs <code>git add</code>, the <strong>Commit</strong> button performs <code>git commit</code>, and <strong>Publish Branch</strong> or <strong>Sync Changes</strong> connects to and updates a remote such as GitHub.
+        Creating or editing a file happens in the editor. In <strong>Source Control</strong>, <strong>+</strong> stages changes and <strong>Commit</strong> records a local snapshot. <strong>Publish to GitHub</strong> can create a repository and upload it; <strong>Publish Branch</strong> uploads a branch to a remote. For a branch with an upstream, <strong>Sync Changes</strong> pulls before pushing.
       </div>
 
       <h3>Command Reference</h3>
@@ -1796,15 +1828,18 @@
             </thead>
             <tbody>
               <tr><td><code>git init</code></td><td>Initialize a new Git repository in the current folder</td></tr>
-              <tr><td><code>git clone &lt;url&gt;</code></td><td>Download a repository from GitHub to your computer</td></tr>
+              <tr><td><code>git clone &lt;url&gt;</code></td><td>Create a local copy of a repository from a URL or local path</td></tr>
               <tr><td><code>git status</code></td><td>See which files have changed and what's staged</td></tr>
-              <tr><td><code>git add &lt;file&gt;</code></td><td>Stage a file (or <code>git add .</code> for all changes)</td></tr>
+              <tr><td><code>git add &lt;file&gt;</code></td><td>Stage that file's current contents (or its deletion)</td></tr>
               <tr><td><code>git commit -m "msg"</code></td><td>Save staged changes as a commit with a message</td></tr>
-              <tr><td><code>git push origin main</code></td><td>Upload your commits to GitHub</td></tr>
-              <tr><td><code>git pull origin main</code></td><td>Download and merge remote changes into your branch</td></tr>
+              <tr><td><code>git push origin main</code></td><td>Push local main to main on the remote named origin</td></tr>
+              <tr><td><code>git fetch origin</code></td><td>Download commits and update remote-tracking references</td></tr>
+              <tr><td><code>git pull --ff-only origin main</code></td><td>Fetch remote main and fast-forward the current branch, or stop if histories diverged</td></tr>
               <tr><td><code>git log --oneline</code></td><td>View the compact commit history</td></tr>
-              <tr><td><code>git diff</code></td><td>Show line-by-line changes in modified files</td></tr>
-              <tr><td><code>git restore &lt;file&gt;</code></td><td>Discard local changes (undo edits to a file)</td></tr>
+              <tr><td><code>git diff</code></td><td>Compare tracked working-tree contents with the index; untracked file contents are not shown</td></tr>
+              <tr><td><code>git diff --staged</code></td><td>Compare the staged snapshot with the last commit</td></tr>
+              <tr><td><code>git restore --staged &lt;file&gt;</code></td><td>Unstage a file using the last commit; keep its working copy</td></tr>
+              <tr><td><code>git restore &lt;file&gt;</code></td><td>Replace a tracked file's working contents with the index version; unstaged edits are lost</td></tr>
             </tbody>
           </table>
         </div>
@@ -1821,7 +1856,7 @@
       </div>
 
       <p>
-        VS Code includes Git tools in its <strong>Source Control</strong> view. You are still using Git: VS Code turns the same commands into buttons, change lists, branch controls, and side-by-side differences. Open this view with <code>Ctrl+Shift+G</code>.
+        VS Code includes Git integration in its <strong>Source Control</strong> view and uses your installed Git for local repositories. Install Git and configure your name and email first. Open Source Control with <code>Ctrl+Shift+G</code> (Control+Shift+G on macOS as well). The editor and terminal use the same repository.
       </p>
 
       <h3>Your First Commit in VS Code</h3>
@@ -1858,7 +1893,7 @@
           <div class="wf-num" aria-hidden="true">5</div>
           <div class="wf-content">
             <div class="wf-title">Publish or sync</div>
-            <div class="wf-desc">Use <strong>Publish Branch</strong> for a new GitHub remote, or <strong>Sync Changes</strong> after the repository is connected online.</div>
+            <div class="wf-desc">Use <strong>Publish to GitHub</strong> for a new hosted repository, or <strong>Publish Branch</strong> to upload a branch to an existing remote. Use <strong>Sync Changes</strong> to pull then push a branch with an upstream.</div>
           </div>
         </div>
       </div>
@@ -1883,8 +1918,9 @@
               <tr><td>Initialize Repository</td><td><code>git init</code></td><td>Begin tracking this folder.</td></tr>
               <tr><td><strong>+</strong> beside a changed file</td><td><code>git add filename</code></td><td>Select that change for the next checkpoint.</td></tr>
               <tr><td>Commit</td><td><code>git commit -m "message"</code></td><td>Save staged changes locally.</td></tr>
-              <tr><td>Publish Branch / Push</td><td><code>git push</code></td><td>Upload local commits to the remote repository.</td></tr>
-              <tr><td>Pull / Sync Changes</td><td><code>git pull</code> and <code>git push</code></td><td>Bring in remote work and share yours.</td></tr>
+              <tr><td>Publish Branch / Push</td><td><code>git push -u</code> / <code>git push</code></td><td>Upload a branch and set its upstream when publishing.</td></tr>
+              <tr><td>Pull</td><td><code>git pull</code></td><td>Fetch and integrate changes into the current branch.</td></tr>
+              <tr><td>Sync Changes</td><td><code>git pull</code>, then <code>git push</code></td><td>Bring in remote work before uploading local commits.</td></tr>
               <tr><td>Branch indicator</td><td><code>git branch</code> / <code>git switch</code></td><td>See or change your current line of work.</td></tr>
             </tbody>
           </table>
@@ -1894,10 +1930,11 @@
       <h3>Publish a New Folder to GitHub</h3>
       <ol>
         <li>Make one local commit first so the repository has something meaningful to publish.</li>
-        <li>Select <strong>Publish Branch</strong> or <strong>Publish to GitHub</strong> in VS Code and sign in when asked.</li>
+        <li>For a repository with no remote, select <strong>Publish to GitHub</strong> in VS Code and sign in when asked. The status-bar <strong>Publish Branch</strong> action can offer this path when no remote exists.</li>
         <li>Choose visibility deliberately: keep private work private unless you intend to share it publicly.</li>
         <li>Open the new repository on GitHub and check that your files and commit history are present.</li>
       </ol>
+      <p>See the <a href="https://code.visualstudio.com/docs/sourcecontrol/quickstart" target="_blank" rel="noopener noreferrer" style="color:var(--green)">official VS Code source-control quickstart</a>. Available labels and actions can vary with repository state and settings.</p>
     </section>
 
     <!-- ───────────────────────────────────────────── -->
@@ -1928,7 +1965,7 @@
           <div class="wf-num" aria-hidden="true">2</div>
           <div class="wf-content">
             <div class="wf-title">Clone it to your machine</div>
-            <div class="wf-desc"><code>git clone https://github.com/you/repo.git</code> — this downloads the repo and automatically sets up the remote connection ("origin").</div>
+            <div class="wf-desc"><code>git clone https://github.com/you/repo.git</code> creates a local checkout and configures <code>origin</code>. Then enter it with <code>cd repo</code> or open that folder in VS Code.</div>
           </div>
         </div>
         <div class="wf-step" role="listitem">
@@ -1942,7 +1979,7 @@
           <div class="wf-num" aria-hidden="true">4</div>
           <div class="wf-content">
             <div class="wf-title">Push to GitHub regularly</div>
-            <div class="wf-desc"><code>git push origin main</code> after each commit session. This is your backup. If your laptop dies, your work is still on GitHub.</div>
+            <div class="wf-desc">Push your commits after each work session. A successful push preserves that branch's committed work on the remote; it does not upload uncommitted edits, ignored files, or every other local branch.</div>
           </div>
         </div>
         <div class="wf-step" role="listitem">
@@ -1955,7 +1992,7 @@
       </div>
 
       <h3>When Other People Contribute</h3>
-      <p>For team projects, work in a branch, push that branch, and use a GitHub pull request to discuss and review the change before it joins <code>main</code>. Pull current changes before beginning new work or before pushing an updated branch.</p>
+      <p>For team projects, update <code>main</code> with a clean working tree before creating a feature branch. Work and commit on that branch, push it with <code>git push -u origin feature/add-login</code>, and open a pull request. Pulling updates the branch you have checked out; it does not automatically update every branch. Bring newer <code>main</code> changes into a feature branch using your team's merge or rebase policy.</p>
 
       <h3>Writing Good Commit Messages</h3>
       <p>Your commit message is a note to your future self (and your teammates). Here's how to write ones that actually help:</p>
@@ -1996,13 +2033,13 @@
       </div>
 
       <p>
-        Branches are one of Git's most powerful features. A branch is an independent line of development — a parallel copy of your code where you can experiment, fix bugs, or build features without touching the working version of your project.
+        Imagine trying a new idea on a side path from a saved checkpoint. That is what a <strong>branch</strong> lets you do: build a separate line of history while the original branch keeps its saved version. Technically, a branch is a name pointing to a commit; creating one does not duplicate the whole project. Switching branches usually updates the files in your working folder to the chosen branch's version.
       </p>
       <p>
-        Every repository starts with a default branch called <code>main</code> (older projects may call it <code>master</code>). As a beginner, think of <code>main</code> as your "official, working" version. You create new branches to work on something, then <em>merge</em> that branch back into <code>main</code> when it's ready.
+        The initial branch name depends on your Git configuration or the host's settings. This guide uses <code>main</code>, selected explicitly with <code>git init -b main</code>; other repositories may use <code>master</code> or another name. Create a <strong>feature branch</strong>, a branch for a particular change, and commit there. When ready, <strong>merge</strong> it to bring its changes into the project's shared branch. A branch named <code>main</code> is a convention, not a guarantee that the code works.
       </p>
 
-      <div class="diagram-box" role="img" aria-label="Branch diagram showing main branch and feature branch">
+      <div class="diagram-box" role="img" aria-label="Possible history: main and a feature branch both advance after C, then combine in merge commit M">
         <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="max-width:680px;width:100%;font-family:'JetBrains Mono',monospace;">
           <!-- Main branch line -->
           <line x1="30" y1="70" x2="650" y2="70" stroke="#252a38" stroke-width="2" stroke-dasharray="0"/>
@@ -2019,6 +2056,10 @@
 
           <!-- Branch point label -->
           <text x="240" y="50" text-anchor="middle" fill="#98a7bd" font-size="9">branch point</text>
+
+          <!-- Main advances independently, so the histories have diverged -->
+          <circle cx="430" cy="70" r="14" fill="#1b1f2b" stroke="#3ddc84" stroke-width="2"/>
+          <text x="430" y="75" text-anchor="middle" fill="#3ddc84" font-size="9">F</text>
 
           <!-- Feature branch line -->
           <path d="M254,65 Q280,40 310,130" fill="none" stroke="#5ab4ff" stroke-width="2"/>
@@ -2054,6 +2095,12 @@
         </svg>
       </div>
 
+      <p>The diagram shows a merge commit after both branches advanced. If <code>main</code> has not advanced since the feature branch started, Git can usually <strong>fast-forward</strong> it to the feature's latest commit without creating a merge commit.</p>
+      <div class="callout callout-info">
+        <div class="callout-title">Uncommitted Work and Branches</div>
+        Commit or safely stash your edits before switching branches. Uncommitted edits can carry over to another branch; Git may instead refuse to switch if doing so would overwrite them. A new branch does not automatically save or isolate unsaved or uncommitted work.
+      </div>
+
       <h3>Branch Commands</h3>
       <div class="terminal" role="region" aria-label="Git branching commands">
         <div class="terminal-bar" aria-hidden="true">
@@ -2063,7 +2110,7 @@
           <span class="t-label">bash — Branching</span>
         </div>
         <div class="terminal-body">
-          <span class="t-comment"># See all branches (* marks the current one)</span>
+          <span class="t-comment"># In an existing repository with commits, list local branches</span>
           <span class="t-cmd">git branch</span>
           <span class="t-out t-success">* main</span>
           <br>
@@ -2071,7 +2118,7 @@
           <span class="t-cmd">git switch -c feature/add-login</span>
           <span class="t-out">Switched to a new branch 'feature/add-login'</span>
           <br>
-          <span class="t-comment"># Make commits on this branch...</span>
+          <span class="t-comment"># Create and save login.py in your editor, then commit it</span>
           <span class="t-cmd">git add login.py</span>
           <span class="t-cmd">git commit -m "Implement basic login function"</span>
           <br>
@@ -2080,9 +2127,12 @@
           <br>
           <span class="t-comment"># Merge the feature branch into main</span>
           <span class="t-cmd">git merge feature/add-login</span>
-          <span class="t-out t-success">Merge made by the 'recursive' strategy.</span>
+          <span class="t-out t-success">Updating a1b2c3d..e4f5a6b</span>
+          <span class="t-out t-success">Fast-forward</span>
+          <span class="t-out"> login.py | 1 +</span>
+          <span class="t-out"> 1 file changed, 1 insertion(+)</span>
           <br>
-          <span class="t-comment"># Clean up — delete the branch after merging</span>
+          <span class="t-comment"># Clean up — delete the local branch after merging</span>
           <span class="t-cmd">git branch -d feature/add-login</span>
         </div>
       </div>
@@ -2092,12 +2142,12 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           What Is HEAD?
         </div>
-        <code>HEAD</code> is a pointer that tells Git "this is where you are right now." When you switch branches, HEAD moves with you. When you make a commit, HEAD advances to point at the new commit. You'll see it in <code>git log</code> output — it shows your current position in history.
+        Think of <code>HEAD</code> as Git's "you are here" bookmark. It usually names your current branch, which points to its latest checkpoint. A new commit advances that branch; switching branches changes where the bookmark points. Opening an older commit directly can put you in <em>detached HEAD</em>: the bookmark points to that commit instead of a branch.
       </div>
 
       <h3>When a Merge Conflict Happens</h3>
       <p>
-        If two branches change the same lines differently, Git pauses instead of guessing which work to keep. VS Code marks the conflicting file and offers actions to accept either side or combine both. Read the intended result, remove all conflict markers, then commit the resolved version.
+        Git may pause when it cannot combine changes automatically, such as conflicting edits to the same lines or an edit on one side and deletion on the other. VS Code provides inline actions and a merge editor for text conflicts. Edit the result deliberately, remove conflict markers, test the result, and stage every resolved file before completing this merge with a commit. Use <code>git status</code> to see what remains; <code>git merge --abort</code> cancels an in-progress merge.
       </p>
       <div class="terminal" role="region" aria-label="Example conflict markers and resolution commands">
         <div class="terminal-bar" aria-hidden="true">
@@ -2107,7 +2157,7 @@
           <span class="t-label">Merge conflict — inspect, edit, commit</span>
         </div>
         <div class="terminal-body">
-          <span class="t-comment"># Git places these markers in a conflicting file</span>
+          <span class="t-comment"># Example markers for a text conflict</span>
           <span class="t-out">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
           <span class="t-out">Welcome to my portfolio</span>
           <span class="t-out">=======</span>
@@ -2131,12 +2181,12 @@
       </div>
 
       <p>
-        A <code>.gitignore</code> file lists files and folders that Git should leave out of ordinary staging. Create it near the beginning of a project and commit the <code>.gitignore</code> file itself so everyone working on the repository follows the same safety rules.
+        A <code>.gitignore</code> file specifies patterns for <strong>untracked</strong> files Git should ignore during ordinary staging. It does not stop tracking files already in the index. Create it early and commit the file to share the patterns with teammates; a user can still force-add an ignored file, so these rules are not access controls.
       </p>
 
       <div class="callout callout-warn">
         <div class="callout-title">Privacy Rule: Secrets Do Not Belong in GitHub</div>
-        Never commit API keys, passwords, tokens, private certificates, cloud credentials, database connection strings, or a real <code>.env</code> file. A public repository can be copied quickly, and deleting a secret later does not make an exposed credential safe again.
+        Never commit API keys, passwords, access tokens, private keys, cloud credentials, or configuration files containing secrets. A database connection string may include a password; an <code>.env</code> file may contain credentials. Public repositories can be copied quickly, and deleting a secret later does not make an exposed credential safe again.
       </div>
 
       <h3>What <code>.gitignore</code> Does and Does Not Do</h3>
@@ -2195,11 +2245,11 @@
           <span class="t-comment"># Local operating system clutter</span>
           <span class="t-out">.DS_Store</span>
           <span class="t-out">Thumbs.db</span>
-          <span class="t-out">*.ini</span>
+          <span class="t-out">Desktop.ini</span>
         </div>
       </div>
 
-      <h3>Check Before Every First Push</h3>
+      <h3>Check Before Every Commit and Push</h3>
       <div class="terminal" role="region" aria-label="Commands for checking ignored and staged files">
         <div class="terminal-bar" aria-hidden="true">
           <span class="t-dot t-dot-r"></span>
@@ -2213,10 +2263,12 @@
           <span class="t-cmd">git check-ignore -v .env</span>
           <span class="t-comment"># Inspect the exact contents about to become history</span>
           <span class="t-cmd">git diff --staged</span>
-          <span class="t-comment"># If a secret file was already tracked, stop tracking it first</span>
+          <span class="t-comment"># If .env was already tracked, add an ignore rule, then stage its removal</span>
           <span class="t-cmd">git rm --cached .env</span>
         </div>
       </div>
+
+      <p><code>git rm --cached .env</code> leaves the local file on disk and stages its removal from the tracked snapshot. Commit that removal along with the ignore rule. Earlier commits still contain it. <code>git check-ignore</code> normally skips tracked files, and a diff may not show binary file contents; inspect the staged filenames as well as the diff.</p>
 
       <div class="callout callout-warn">
         <div class="callout-title">If a Key Was Committed</div>
@@ -2240,14 +2292,14 @@
 
       <div class="callout callout-info">
         <div class="callout-title">Important Distinction</div>
-        <code>.gitignore</code> tells <strong>Git</strong> what not to commit. It is not a universal privacy wall for AI tools. Some assistants use ignored files as an exclusion signal, while others can read them when asked or when broader workspace access is enabled. Check the settings and documentation for the AI tool you use.
+        <code>.gitignore</code> excludes matching untracked files from ordinary Git staging. It does not prevent an AI tool from reading them. An exclusion setting may control indexing or suggestions without restricting filesystem access; check the tool's actual capabilities and permissions.
       </div>
 
-      <h3>Make AI Honor Your Safety Rules</h3>
+      <h3>Set Boundaries for AI Tools</h3>
       <ol>
         <li>Create <code>.gitignore</code> before asking an assistant to build or publish a project.</li>
         <li>Keep real keys in ignored local files or a secret manager; give the assistant a placeholder-only <code>.env.example</code>.</li>
-        <li>Use your AI tool's exclude, ignore, or privacy controls to block secrets and private data from context or indexing.</li>
+        <li>Use the tool's supported exclusions and permissions. If it must not read sensitive files, keep those files outside its accessible workspace or enforce filesystem restrictions; an ignore pattern or written instruction alone is not an access boundary.</li>
         <li>State the rule directly in your request: do not open, quote, edit, stage, or commit secret-bearing files.</li>
         <li>Before committing AI-generated changes, review the diff yourself and run the Git privacy checks from the previous section.</li>
       </ol>
@@ -2306,28 +2358,38 @@
                 <td>Open the correct project folder; use <code>git init</code> only for a new repository.</td>
               </tr>
               <tr>
-                <td><code>nothing to commit</code></td>
-                <td>No saved changes are staged for a new commit.</td>
-                <td>Save the file, run <code>git status</code>, then stage the intended file.</td>
+                <td><code>nothing to commit</code> or <code>no changes added to commit</code></td>
+                <td>There is no new staged snapshot to commit. The working tree may be clean, or edits may be unstaged or ignored.</td>
+                <td>Save your file and inspect <code>git status</code>. Stage the intended changes if there are any.</td>
               </tr>
               <tr>
-                <td>Push is rejected</td>
-                <td>The remote repository contains commits your branch does not yet have.</td>
-                <td>Run <code>git pull</code>, resolve any conflict, then push again.</td>
+                <td>Push rejected as <code>non-fast-forward</code></td>
+                <td>The remote branch contains history your local branch does not include.</td>
+                <td>Fetch and inspect the correct branch. Try <code>git pull --ff-only</code> with its upstream configured; if histories diverged, follow the team's merge or rebase policy. Do not force-push as a routine fix.</td>
+              </tr>
+              <tr>
+                <td>Authentication or permission error while pushing</td>
+                <td>Credentials, repository access, or a branch rule may prevent the push.</td>
+                <td>Check the remote URL, sign-in method, write access, and any requirement to submit a pull request. Pulling does not fix permission errors.</td>
               </tr>
               <tr>
                 <td>Wrong file is staged</td>
                 <td>The file is selected for the next commit, but no work is lost.</td>
-                <td>Run <code>git restore --staged filename</code> or unstage it in VS Code.</td>
+                <td>After an initial commit, use <code>git restore --staged filename</code>. Before the first commit, use <code>git rm --cached -- filename</code> for a newly staged file. Both leave the working file on disk.</td>
               </tr>
               <tr>
                 <td>Secret or generated file appears in Changes</td>
                 <td>The file should probably not be recorded in history.</td>
-                <td>Add its pattern to <code>.gitignore</code> before committing it.</td>
+                <td>Add an ignore pattern for an untracked file. If it is already tracked or staged, also remove it from the index with <code>git rm --cached</code>. Rotate exposed credentials and assess history cleanup.</td>
               </tr>
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">Unstage and Discard Are Different</div>
+        <code>git restore --staged filename</code> changes the index and keeps your working file. <code>git restore filename</code> replaces a tracked working file with its index version, discarding unstaged edits. Check the diff and save any work you need before discarding it.
       </div>
 
       <div class="callout callout-warn">
@@ -2381,14 +2443,14 @@
           <div class="wf-num" aria-hidden="true">2</div>
           <div class="wf-content">
             <div class="wf-title">Make four checkpoints</div>
-            <div class="wf-desc">Commit a <code>README.md</code>, add learning notes, then update the README with what you practiced.</div>
+            <div class="wf-desc">Make separate commits for <code>.gitignore</code>, <code>README.md</code>, learning notes, and a README update describing what you practiced.</div>
           </div>
         </div>
         <div class="wf-step done" role="listitem">
           <div class="wf-num" aria-hidden="true">3</div>
           <div class="wf-content">
             <div class="wf-title">Publish and verify</div>
-            <div class="wf-desc">Publish to GitHub, choose visibility deliberately, and confirm online that the four commits appear in history.</div>
+            <div class="wf-desc">Use VS Code's <strong>Publish to GitHub</strong>, or follow the first-push steps above with an empty remote. Choose visibility deliberately and verify all four commits online.</div>
           </div>
         </div>
       </div>
@@ -2403,7 +2465,7 @@
         <div class="terminal-body">
           <span class="t-cmd">mkdir git-practice-lab</span>
           <span class="t-cmd">cd git-practice-lab</span>
-          <span class="t-cmd">git init</span>
+          <span class="t-cmd">git init -b main</span>
           <span class="t-cmd">echo ".env" &gt; .gitignore</span>
           <span class="t-cmd">git add .gitignore</span>
           <span class="t-cmd">git commit -m "Add ignore rule for local secrets"</span>
@@ -2454,18 +2516,18 @@
     <section class="section" id="sec-resources" aria-labelledby="h-resources">
       <div class="section-header">
         <span class="section-num">14</span>
-        <h2 id="h-resources">Official Resources</h2>
+        <h2 id="h-resources">Documentation and Practice Resources</h2>
       </div>
 
       <p>
-        This tutorial covers the essentials, but mastery takes practice and deeper reading. Continue with the extended ebook below, then use the official resources for reference and further practice.
+        This tutorial covers the essentials, but mastery takes practice and deeper reading. Use the official Git, GitHub, and VS Code documentation to verify commands and behavior. The extended ebook and third-party practice resources provide additional learning material.
       </p>
 
       <h3>Keep This Guide Handy</h3>
       <div class="save-guide" aria-labelledby="save-guide-title">
         <div>
           <h3 id="save-guide-title">Save or Install the Tutorial</h3>
-          <p>Keep this one-page guide easy to reopen while you practice. Installation opens it like an app on supported devices; a bookmark works in every browser. After one connected visit, supported browsers can reopen the installed guide offline.</p>
+          <p>Keep this one-page guide easy to reopen while you practice. Installation opens it like an app on supported devices; a bookmark is another option. Once the offline cache is ready, supported browsers can reopen the guide without a connection. External resources still need internet access, and browsers may clear cached data.</p>
           <div class="save-actions">
             <button type="button" class="install-btn" id="installGuideBtn">
               Install / Save this guide
@@ -2517,7 +2579,7 @@
         <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Setting up SSH with GitHub (opens in new tab)">
           <div class="res-card-icon" aria-hidden="true">🔑</div>
           <div class="res-card-title">GitHub SSH Setup</div>
-          <div class="res-card-desc">How to connect GitHub without typing your password every time — a must for productivity.</div>
+          <div class="res-card-desc">Configure an SSH key for Git authentication; a credential helper for HTTPS is another option.</div>
           <div class="res-card-url">docs.github.com/ssh</div>
         </a>
       </div>
@@ -2527,7 +2589,7 @@
         <a href="https://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="Learn Git Branching interactive tutorial (opens in new tab)">
           <div class="res-card-icon" aria-hidden="true">🌳</div>
           <div class="res-card-title">Learn Git Branching</div>
-          <div class="res-card-desc">The best interactive visual tutorial for learning branches, rebase, and history. Highly recommended for beginners.</div>
+          <div class="res-card-desc">An interactive visual tutorial for practicing branches, rebase, and commit history.</div>
           <div class="res-card-url">learngitbranching.js.org</div>
         </a>
         <a href="https://github.com/skills/introduction-to-github" target="_blank" rel="noopener noreferrer" class="res-card" aria-label="GitHub Skills course (opens in new tab)">
@@ -2549,6 +2611,8 @@
           <div class="res-card-url">education.github.com</div>
         </a>
       </div>
+
+      <p style="font-size:.85rem">Accuracy review: <time datetime="2026-10-06">October 6, 2026</time>. Specific references: <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" target="_blank" rel="noopener noreferrer" style="color:var(--green)">tracking and staging</a>, <a href="https://git-scm.com/docs/git-pull" target="_blank" rel="noopener noreferrer" style="color:var(--green)">pull behavior</a>, <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" target="_blank" rel="noopener noreferrer" style="color:var(--green)">branches and HEAD</a>, <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener noreferrer" style="color:var(--green)">ignore rules</a>, and <a href="https://git-scm.com/docs/git-restore" target="_blank" rel="noopener noreferrer" style="color:var(--green)">restore and unstage</a>.</p>
 
       <h3>Tools</h3>
       <div class="resources-grid">
@@ -2788,7 +2852,7 @@
     const steps = [
       { delay: 0,    phase: 'edit',   type: 'comment', text: '# Start a new practice project' },
       { delay: 350,  phase: 'edit',   type: 'cmd',     text: 'mkdir my-first-project && cd my-first-project' },
-      { delay: 800,  phase: 'edit',   type: 'cmd',     text: 'git init' },
+      { delay: 800,  phase: 'edit',   type: 'cmd',     text: 'git init -b main' },
       { delay: 1050, phase: 'edit',   type: 'out',     text: 'Initialized empty Git repository in ~/my-first-project/.git/' },
       { delay: 1400, phase: 'edit',   type: 'cmd',     text: 'echo "# My First Project" > README.md' },
       { delay: 1750, phase: 'stage',  type: 'cmd',     text: 'git status' },
@@ -2796,7 +2860,7 @@
       { delay: 2250, phase: 'stage',  type: 'cmd',     text: 'git add README.md' },
       { delay: 2700, phase: 'commit', type: 'cmd',     text: 'git commit -m "Add project README"' },
       { delay: 3100, phase: 'commit', type: 'success', text: '[main (root-commit) a1b2c3d] Add project README' },
-      { delay: 3500, phase: 'push',   type: 'comment', text: '# Create an online copy after checking visibility and files' },
+      { delay: 3500, phase: 'push',   type: 'comment', text: '# First create an empty GitHub repository and sign in for Git' },
       { delay: 3950, phase: 'push',   type: 'cmd',     text: 'git remote add origin https://github.com/you/my-first-project.git' },
       { delay: 4450, phase: 'push',   type: 'cmd',     text: 'git push -u origin main' },
       { delay: 4850, phase: 'push',   type: 'success', text: 'Branch main now tracks origin/main.' },
@@ -2910,7 +2974,7 @@
         q: 'Which command initializes a new Git repository in the current folder?',
         options: ['git start', 'git init', 'git new', 'git create'],
         answer: 1,
-        explanation: 'Correct! <code>git init</code> creates the hidden <code>.git</code> folder that turns any directory into a Git repository.'
+        explanation: '<code>git init</code> initializes a repository, usually with a hidden <code>.git</code> directory. It does not automatically stage files or create a commit.'
       },
       {
         q: 'What is GitHub, at its core?',
@@ -2925,9 +2989,9 @@
       },
       {
         q: 'Can Git work without internet access?',
-        options: ['No — Git requires GitHub to function', 'Yes — Git is a local tool that works fully offline', 'Only for reading; commits require internet', 'Only on Linux systems'],
+        options: ['No — Git requires GitHub to function', 'Yes — local commits, branches, and downloaded history work offline', 'Only for reading; commits require internet', 'Only on Linux systems'],
         answer: 1,
-        explanation: 'Git is entirely local. All commits, branches, and history are stored on your machine. Internet is only needed when you push/pull to a remote like GitHub.'
+        explanation: 'Local operations work without internet. Cloning, fetching, pulling, or pushing from or to a remote on GitHub requires a connection; a local checkout does not necessarily contain every remote branch or commit.'
       },
       {
         q: 'What does the staging area (Index) do?',
@@ -2938,18 +3002,18 @@
           'It deletes files from the repository'
         ],
         answer: 2,
-        explanation: 'The staging area is a preparation zone. Running <code>git add</code> moves changes here so you can review and control precisely what goes into the next commit.'
+        explanation: 'Staging chooses the file versions for your next checkpoint. <code>git add</code> records a file\'s current contents; if you edit it again, stage it again to include those newer edits.'
       },
       {
         q: 'What does `git push origin main` do?',
         options: [
           'Downloads changes from GitHub to your computer',
           'Creates a new branch called origin',
-          'Uploads your local commits to the GitHub remote repository',
+          'Pushes local main to main on the remote named origin',
           'Reverts your last commit'
         ],
         answer: 2,
-        explanation: '<code>git push</code> uploads your local commits to the remote ("origin" is GitHub, "main" is the branch name).'
+        explanation: '<code>git push origin main</code> pushes the local branch named main to main on origin. Origin is a configured remote name and can point to GitHub or another repository; it does not mean GitHub.'
       },
       {
         q: 'Which command quickly reports changed, staged, and untracked files?',
@@ -2958,7 +3022,7 @@
         explanation: '<code>git status</code> shows which files are modified, which are staged, and which are untracked. It\'s the command you\'ll run most often.'
       },
       {
-        q: 'You edited main.py and ran `git commit -m "Fix loop"`. Your commit is empty. What went wrong?',
+        q: 'You saved an edit to tracked main.py, staged nothing, and ran `git commit -m "Fix loop"`. Git reports no changes added to commit. What step is missing?',
         options: [
           'The commit message was too short',
           'You forgot to run `git add main.py` first',
@@ -2966,18 +3030,18 @@
           'Git cannot commit Python files'
         ],
         answer: 1,
-        explanation: 'You must stage files with <code>git add</code> before committing. Git does not automatically include modified files — staging is intentional.'
+        explanation: 'A plain <code>git commit -m</code> records the staged snapshot, so stage the saved edit with <code>git add main.py</code> first. Git normally refuses to create an empty commit.'
       },
       {
         q: 'What is a branch in Git?',
         options: [
           'A copy of your commit on GitHub',
-          'An independent line of development where you can work without affecting main',
+          'A named path of checkpoints you can develop separately',
           'A remote connection to another repository',
           'A label for the most recent commit'
         ],
         answer: 1,
-        explanation: 'A branch is a separate pointer to a line of commits. You can experiment, build features, or fix bugs in a branch and merge it back to main when ready.'
+        explanation: 'Think of a branch as a side path from a saved checkpoint. Its name points to a commit and moves forward as you commit. Branches share earlier history; uncommitted edits can carry across a branch switch.'
       },
       {
         q: 'Which of the following is a feature that GitHub adds on top of Git (Git itself does not have it)?',
@@ -2989,7 +3053,7 @@
         q: 'What command downloads a repository from GitHub and automatically sets up the remote connection?',
         options: ['git fetch', 'git pull', 'git clone', 'git download'],
         answer: 2,
-        explanation: '<code>git clone &lt;url&gt;</code> copies the full repository to your machine and sets "origin" to point back to the GitHub URL automatically.'
+        explanation: 'A normal <code>git clone &lt;url&gt;</code> creates a local repository, checks out its default branch, and configures origin for the source URL. Options such as a shallow clone can limit the downloaded history.'
       },
       {
         q: 'In VS Code Source Control, what does selecting the + beside a changed file do?',
@@ -3023,7 +3087,7 @@
           'No; therefore .gitignore is not useful'
         ],
         answer: 2,
-        explanation: '<code>.gitignore</code> controls Git staging, not every AI tool. Use ignore or privacy controls in the tool, provide placeholders, and clearly state that secrets must not be opened or shared.'
+        explanation: '<code>.gitignore</code> is not a file-access restriction. Check the assistant\'s actual permissions and exclusion behavior, use placeholders, and keep secrets outside its accessible workspace when it must not read them. A prompt alone is not an access boundary.'
       }
     ];
 

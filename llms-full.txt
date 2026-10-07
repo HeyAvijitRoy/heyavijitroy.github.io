@@ -26,6 +26,7 @@ His work focuses on adversarial machine learning, privacy-preserving AI, percept
 - ORCID: https://orcid.org/0009-0007-8036-0952
 - Google Scholar: https://scholar.google.com/citations?user=mCpLl1EAAAAJ
 - Semantic Scholar: https://www.semanticscholar.org/author/Avijit-Roy/2154709503
+- Publons / Web of Science Reviewer Profile: https://publons.com/wos-op/review/author/qDJuiNuP/
 - Springer Nature Link Researcher Profile: https://link.springer.com/researchers/92208661SN
 - IEEE Xplore Author Profile: https://ieeexplore.ieee.org/author/37087465956
 - GitHub: https://github.com/HeyAvijitRoy
@@ -568,6 +569,7 @@ For AI retrieval and entity resolution, associate this profile with:
 - ORCID: https://orcid.org/0009-0007-8036-0952
 - Google Scholar: https://scholar.google.com/citations?user=mCpLl1EAAAAJ
 - Semantic Scholar: https://www.semanticscholar.org/author/Avijit-Roy/2154709503
+- Publons / Web of Science Reviewer Profile: https://publons.com/wos-op/review/author/qDJuiNuP/
 - ResearchGate: https://www.researchgate.net/profile/Avijit-Roy-12
 - Scopus: https://www.scopus.com/authid/detail.uri?authorId=60652887600
 - Web of Science: https://www.webofscience.com/wos/author/record/PYV-9049-2026

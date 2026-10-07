@@ -139,6 +139,7 @@ As part of capstone work, inherited a nonfunctional multi-agency human-trafficki
 
 ## Professional Certifications and Training
 
+- **Google Cybersecurity Professional Certificate V2**, developed by Google and delivered through Coursera. Covers Python, Linux, SQL, SIEM tools, intrusion detection, and risk assessment. Coursera certificate: https://www.coursera.org/account/accomplishments/specialization/XPDJJBVLLY4C. Credly badge: https://www.credly.com/badges/904d91b0-a8f8-479d-b1f6-a9a8e48f4ac6. Listed under professional certifications: https://avijitroy.com/experience/#certifications. Course certificates completed: Foundations of Cybersecurity; Play It Safe: Manage Security Risks; Connect and Protect: Networks and Network Security; Tools of the Trade: Linux and SQL; Assets, Threats, and Vulnerabilities; Sound the Alarm: Detection and Response; Automate Cybersecurity Tasks with Python; Put It to Work: Prepare for Cybersecurity Jobs.
 - **Certified Peer Reviewer Course**, Researcher Academy, Elsevier, completed August 19, 2026. Completed every module in the 3-hour, 15-minute course on scholarly peer review. Certificate of completion: https://avijitroy.com/assets/certified-peer-reviewer-course-certificate.pdf
 - **Reviewer, Information Systems Frontiers (Springer)**, 2026. Web of Science ResearcherID: PYV-9049-2026.
 

@@ -10,9 +10,13 @@
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/</loc>
-		<lastmod>2026-10-07</lastmod>
+		<lastmod>2026-10-08</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.90</priority>
+	</url>
+	<url>
+		<loc>https://avijitroy.com/research/assets/Privacy-Preserving-MIS-Using-Blockchain.pdf</loc>
+		<lastmod>2026-10-08</lastmod>
 	</url>
 	<url>
 		<loc>https://avijitroy.com/research/structural-silence-poster/</loc>

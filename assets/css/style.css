@@ -2353,6 +2353,11 @@ html[data-theme="dark"] .main-site.page-research .research-section-menu-links {
   font-size: 1.28rem;
 }
 
+/* Linked editorial titles must wrap as a single text heading. */
+.main-site.page-research .editorial-block h3 {
+  display: block;
+}
+
 .main-site .card h3 i {
   color: var(--brand);
   font-size: 0.88em;
@@ -3512,6 +3517,31 @@ html[data-theme="dark"] .main-site.page-book .book-labels .amazon-market {
 }
 
 @media (max-width: 680px) {
+  .main-site.page-home .hero-actions,
+  .main-site.page-research .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-site.page-home .hero-actions .button,
+  .main-site.page-research .hero-actions .button {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-site.page-research #credentials .button.small {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 17px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
   .main-site .container {
     width: min(100% - 32px, 1200px);
   }

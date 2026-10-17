@@ -3087,12 +3087,49 @@ body.main-site.page-engagement {
   font-size: 17px;
 }
 
-.main-site.page-engagement .index-hero {
-  grid-template-columns: minmax(0, 1fr);
+.main-site.page-engagement .engagement-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.main-site.page-engagement .engagement-page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.main-site.page-engagement .engagement-scope {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.main-site.page-engagement .engagement-section-intro {
   max-width: 850px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.main-site.page-engagement .engagement-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.main-site.page-engagement .engagement-entry {
+  min-width: 0;
 }
 
 .main-site.page-engagement .engagement-entry h3 {
+  display: block;
   margin: 12px 0 8px;
   font-size: clamp(1.3rem, 2.2vw, 1.55rem);
 }
@@ -3132,17 +3169,36 @@ body.main-site.page-engagement {
   gap: 2px;
 }
 
-.main-site.page-engagement .engagement-roster-heading {
-  margin: 22px 0 10px;
-  color: var(--text);
+.main-site.page-engagement .engagement-details {
+  margin: 20px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  overflow: visible;
+}
+
+.main-site.page-engagement .engagement-details summary {
+  min-height: 44px;
+  padding: 10px 0;
+  gap: 16px;
   font-family: "IBM Plex Sans", system-ui, sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
+}
+
+.main-site.page-engagement .engagement-details summary::after {
+  content: "+";
+  font-family: "IBM Plex Mono", monospace;
+  transform: none;
+}
+
+.main-site.page-engagement .engagement-details[open] summary::after {
+  content: "\2212";
 }
 
 .main-site.page-engagement .engagement-panelists {
   margin: 0;
-  padding-left: 1.25rem;
+  padding: 14px 0 16px 1.25rem;
   color: var(--muted);
   font-size: 0.94rem;
 }
@@ -3157,6 +3213,200 @@ body.main-site.page-engagement {
 
 .main-site.page-engagement .engagement-entry .cta {
   margin-top: 18px;
+}
+
+.main-site.page-engagement .engagement-contributions {
+  margin: 0 0 18px;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.main-site.page-engagement .engagement-contributions li + li {
+  margin-top: 10px;
+}
+
+.main-site.page-engagement .engagement-contributions strong {
+  color: var(--text);
+}
+
+.main-site.page-engagement .engagement-connection {
+  padding-left: 16px;
+  border-left: 2px solid var(--border-strong);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.main-site.page-engagement .engagement-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.main-site.page-engagement .engagement-sources a {
+  padding-block: 3px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+}
+
+.main-site.page-engagement .engagement-sources a:hover,
+.main-site.page-engagement .engagement-sources a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 900px) {
+  .main-site.page-engagement .engagement-highlights {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Year-grouped engagement chronology. */
+
+/* Short intro paragraph under the section heading */
+.main-site.page-engagement .engagement-timeline-intro {
+  max-width: 850px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.main-site.page-engagement .engagement-timeline-intro strong {
+  color: var(--text);
+}
+
+/* Outer record: strong top rule, matching other index records */
+.main-site.page-engagement .engagement-timeline {
+  border-top: 1px solid var(--text);
+}
+
+/* One block per year: year label on the left, entries on the right */
+.main-site.page-engagement .engagement-year {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Year label; !important needed to beat ".main-site h3" font-family !important */
+.main-site.page-engagement .engagement-year-label {
+  margin: 0;
+  padding-top: 3px;
+  color: var(--brand);
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.main-site.page-engagement .engagement-timeline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Entry row: date | text, with optional sources inline after the location. */
+.main-site.page-engagement .engagement-timeline-item {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 2px 18px;
+  align-items: baseline;
+  padding: 9px 0;
+}
+
+.main-site.page-engagement .engagement-timeline-item + .engagement-timeline-item {
+  border-top: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.main-site.page-engagement .engagement-timeline-date {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.main-site.page-engagement .engagement-timeline-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.main-site.page-engagement .engagement-timeline-text strong {
+  font-weight: 600;
+}
+
+/* Role sits on its own line in muted text; long titles wrap naturally. */
+.main-site.page-engagement .engagement-timeline-role {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.main-site.page-engagement .engagement-timeline-resource {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.main-site.page-engagement .engagement-timeline-link {
+  display: inline-block;
+  padding-block: 3px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+}
+
+.main-site.page-engagement .engagement-timeline-link:hover,
+.main-site.page-engagement .engagement-timeline-link:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.main-site.page-engagement .engagement-timeline-link[target="_blank"]::after {
+  content: " \2197"; /* north-east arrow */
+}
+
+.main-site.page-engagement .engagement-timeline-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Subtle row highlight on pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .main-site.page-engagement .engagement-timeline-item {
+    transition: background-color 160ms ease;
+  }
+
+  .main-site.page-engagement .engagement-timeline-item:hover {
+    background: linear-gradient(90deg, var(--focus-bg), transparent 72%);
+  }
+}
+
+/* Mobile: stack year above entries, and date above text and inline sources. */
+@media (max-width: 640px) {
+  .main-site.page-engagement .engagement-year {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .main-site.page-engagement .engagement-timeline-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 10px 0;
+  }
 }
 
 /* Book landing page: editorial retail presentation with the cover as evidence. */

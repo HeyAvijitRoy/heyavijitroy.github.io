@@ -163,10 +163,16 @@ He publishes free, open learning resources for students, including a Git/GitHub/
 
 ## Professional Engagement
 
-This page records professional activities outside employment appointments, research presentations and publications, and teaching assignments: https://avijitroy.com/professional-engagement/. Scholarly peer review belongs with Research.
+The Professional Engagement page records community leadership, invited speaking and facilitation, hackathon judging, selected delegations, and professional participation: https://avijitroy.com/professional-engagement/. Research presentations and scholarly peer review are documented on Research; teaching assignments and open learning resources are documented on Teaching.
 
 - CUNY International Student Success Conference (September 25, 2026): Facilitator and moderator of the "Alumni Panel: Real Stories, Real Success" at John Jay College of Criminal Justice, New York, NY. Official program: https://cuny.edu/main/wp-content/uploads/sites/4/media-assets/International-Student-Success-Conference-2026.pdf
 - HackKnight 2026 (October 11, 2026): Invited judge for a student hackathon at John Jay College of Criminal Justice, reviewing projects and contributing to final judging. Event website: https://hackknight.org/#judges
+- Mapping Bangladesh (2012-2015): Google Map Maker Regional Expert Reviewer and Mapping Bangladesh executive member, credited in contemporary records as Avijit Roy Kabyo. Organized and hosted MapUps, served as a mapping instructor (including as an invited speaker and mapping instructor at the first Bangladesh Google MapUp in Rangpur on November 23, 2012), delivered invited talks, and participated in television outreach. Google sponsored the NSU MapUp event. NSU host record: https://sites.google.com/site/dhakamapup/
+- SCUSA 71 (October 30-November 2, 2019): Selected delegate through One To World to the Climate Change roundtable at the U.S. Military Academy, West Point; contributed to drafting and presenting the roundtable policy recommendations. This was a conference delegation, not an employment or military appointment.
+
+- Google community programs: Selected Map Maker delegate at the Google SEARCH Summit in Yogyakarta (June 20-22, 2013), with participation fully funded by Google, including visa processing, round-trip travel, and accommodation. Invited participant at the Google Top Contributor Meetup in Mountain View (September 28-30, 2016), with travel and accommodation supported by Google.
+
+The page retains a year-grouped timeline that distinguishes active contributions from attendance. Historical community activities provide context for Avijit Roy's interest in representation and underserved communities in digital systems.
 
 ## Books
 

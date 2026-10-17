@@ -409,7 +409,7 @@ Free, step-by-step educational materials, all authored by Avijit Roy for CUNY/Jo
 
 ## Professional Engagement
 
-The Professional Engagement page (https://avijitroy.com/professional-engagement/) documents confirmed conference facilitation and hackathon judging. These are event and service activities, distinct from employment roles, research presentations, and teaching assignments. Research presentations and scholarly peer-review information belong with the Research page.
+The Professional Engagement page (https://avijitroy.com/professional-engagement/) documents community leadership, invited speaking and facilitation, hackathon judging, selected delegations, and professional participation. Four selected records are supported by a complete year-grouped timeline, with roles distinguishing active contributions from attendance. Research presentations and scholarly peer review remain on Research; teaching assignments and open learning resources remain on Teaching.
 
 ### CUNY International Student Success Conference
 
@@ -424,6 +424,32 @@ The Professional Engagement page (https://avijitroy.com/professional-engagement/
 - **Date:** October 11, 2026.
 - **Role and context:** Invited judge for HackKnight 2026, a student hackathon at John Jay College of Criminal Justice, reviewing project submissions and contributing to the final judging process.
 - **Event website:** https://hackknight.org/#judges
+
+### Mapping Bangladesh
+
+- **Context:** Regional Expert Reviewer and Mapping Bangladesh executive member in Bangladesh, 2012-2015, confirmed by Avijit Roy. Contemporary records credit Avijit Roy as Avijit Roy Kabyo.
+- **Roles:** Google Map Maker Regional Expert Reviewer and Mapping Bangladesh executive member; community organizer, mapping instructor, invited speaker, and public outreach contributor.
+- **Hosting:** Regional MapUp Dhaka at North South University (February 9, 2013); Experts' MapUp Dhaka (May 10, 2013); MapUp at BRAC University (June 27, 2013).
+- **Event support:** Google sponsored the NSU MapUp event; this describes support for the event, separate from travel support for invited participation.
+- **Invited speaking:** "Making Maps for your Project, Quickly & Easily," GBG Dhaka 11th Meetup, May 21, 2013.
+- **Teaching:** Invited speaker and mapping instructor at the first Bangladesh Google MapUp, Rangpur, November 23, 2012; mapping instructor at United International University, Dhaka, March 8, 2013; invited speaker and mapping instructor at the Institute of Information Technology (IIT), University of Dhaka, April 13, 2013. The event identification and dates were confirmed by Avijit Roy. The IIT event should not be conflated with the October 2013 MIS event mentioned in secondary reporting.
+- **Public outreach:** ATN News Young Nite live television interview on Bangladesh on Google Maps and the Mapping Bangladesh community, July 15, 2013; a second live television appearance is recorded for April 13, 2015.
+- **Primary event records:** https://sites.google.com/site/dhakamapup/ ; https://sites.google.com/site/dhakamapup3/ ; https://sites.google.com/site/mapupbracu/home
+- **Interview recording:** https://www.youtube.com/watch?v=-KCQLdzE6EM
+- **Research connection:** The community work's emphasis on local knowledge provides context for current research on representation and underserved language communities. These activities are community service, not peer-reviewed research outputs or Google employment.
+
+### Student Conference on U.S. Affairs (SCUSA 71)
+
+- **Dates and venue:** October 30-November 2, 2019, U.S. Military Academy, West Point, New York.
+- **Role:** Selected delegate through One To World; contributed to drafting and presenting the Climate Change roundtable policy recommendations, as confirmed by Avijit Roy. This does not imply sole authorship.
+- **Conference context:** SCUSA brought civilian student delegates and West Point cadets together to discuss domestic and foreign policy challenges. This delegation was not an employment or military appointment. The conference background paper is not Avijit Roy's authored research.
+- **Organizer's conference report:** https://www.army.mil/article/229636/71st_annual_scusa_conference_focuses_on_national_and_foreign_policy_challenges
+
+### Chronological record
+
+Google fully funded Avijit Roy's participation as a selected Map Maker community delegate at the SEARCH Summit in Yogyakarta (June 20-22, 2013), including visa processing, round-trip travel, and accommodation. Google supported travel and accommodation for his invited participation in the Top Contributor Meetup in Mountain View (September 28-30, 2016). These support details are owner-supplied.
+
+The timeline also includes Google community programs, university mapping training, the Mapping Bangladesh booth at the Bangladesh Smartphone Expo, Google I/O Extended Bronx, CUNY IT Conferences, BSidesNYC, Microsoft AI Tour, and an invited Microsoft Windows & Surface experience in Brooklyn. Attendance and invited participation should not be described as organizing, speaking, sponsorship, or research authorship.
 
 ## Books
 

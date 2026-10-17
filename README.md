@@ -15,7 +15,7 @@ The site covers his research in privacy-preserving AI and digital forensics, eng
 | [Teaching](https://avijitroy.com/teaching/) | Course materials and educational resources |
 | [Projects](https://avijitroy.com/projects/) | Engineering portfolio across cybersecurity, AI, and developer tools |
 | [Experience](https://avijitroy.com/experience/) | Professional background and affiliations |
-| [Engagement](https://avijitroy.com/professional-engagement/) | Conference facilitation, invited judging, and professional service |
+| [Engagement](https://avijitroy.com/professional-engagement/) | Community leadership, invited speaking, facilitation, judging, and selected delegations |
 
 ---
 

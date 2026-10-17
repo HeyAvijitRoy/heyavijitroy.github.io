@@ -447,6 +447,10 @@ The Professional Engagement page (https://avijitroy.com/professional-engagement/
 
 ### Chronological record
 
+On June 12, 2015, Avijit Roy attended Google Cloud Platform Next in New York at Manhattan Center. The owner-supplied invitation uses the branding "Next: A Google Cloud Platform Experience" and lists New York on June 12 at Manhattan Center, alongside a separate San Francisco event on June 16. Attendance at the New York event and the year 2015 are owner-confirmed. Role: attendee.
+
+On January 12, 2017, Avijit Roy attended a Google Local Guides Meetup & Geo Walk as an invited guest at Google NYC, 111 Eighth Avenue, New York. The owner-supplied confirmation email described a Google NYC tour, meeting Google Maps engineers, sharing ideas and feedback with the Local Guides team, and contributing Chelsea discoveries to Google Maps during a geo walk. The invited role, attendance, and year are owner-confirmed; the email gives January 12, 3:00-9:00 PM, without a year. The event title here is descriptive.
+
 On October 17, 2026, Avijit Roy attended BSidesNYC 0x06 (2026; https://bsidesnyc.org/) as an attendee and participated in the Cloud Village CTF (https://ctf.cloud-village.org/challenges). He placed 4th individually under the handle piRsqure and 5th in the team standings as the sole member of Pi. Team results: https://ctf.cloud-village.org/teams/29. Attendance, CTF participation, placements, and handle attribution are owner-supplied. A saved results announcement (https://avijitroy.com/assets/img/bsides-2026-ctf.png) lists piRsqure among the top 10 individual players; it does not explicitly state the individual or team placements. The 2025 BSidesNYC 0x05 event archive is available at https://bsidesnyc.org/archive/.
 
 Google fully funded Avijit Roy's participation as a selected Map Maker community delegate at the SEARCH Summit in Yogyakarta (June 20-22, 2013), including visa processing, round-trip travel, and accommodation. Google supported travel and accommodation for his invited participation in the Top Contributor Meetup in Mountain View (September 28-30, 2016). These support details are owner-supplied.
@@ -466,6 +470,7 @@ The Professional Engagement page links the following owner-supplied photographs 
 - BSidesNYC 0x05 (2025): https://avijitroy.com/assets/img/avijit-roy-at-bsidesnyc-0x05-2025.jpg
 - SCUSA 71 Climate Change roundtable (2019): https://avijitroy.com/assets/img/avijit-roy-at-scusa-71-climate-change-team.jpg
 - Google Crowdsource Community Global Meet-up (2018): https://avijitroy.com/assets/img/avijit-roy-at-google-crowndsource-event-hyderabad.jpg
+- Google Local Guides Meetup & Geo Walk (2017): https://avijitroy.com/assets/img/avijit-roy-at-google-nyc-localguides-event.jpg
 - Google Top Contributor Meetup (2016): https://avijitroy.com/assets/img/avijit-roy-at-google-top-contributors-meetup-2016.jpg
 
 ## Books

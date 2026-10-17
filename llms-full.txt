@@ -447,11 +447,26 @@ The Professional Engagement page (https://avijitroy.com/professional-engagement/
 
 ### Chronological record
 
-On October 17, 2026, Avijit Roy attended BSidesNYC 2026 (https://bsidesnyc.org/) as an attendee and participated in the Cloud Village CTF (https://ctf.cloud-village.org/challenges). Attendance and CTF participation are owner-supplied. The 2025 BSidesNYC 0x05 event archive is available at https://bsidesnyc.org/archive/.
+On October 17, 2026, Avijit Roy attended BSidesNYC 0x06 (2026; https://bsidesnyc.org/) as an attendee and participated in the Cloud Village CTF (https://ctf.cloud-village.org/challenges). He placed 4th individually under the handle piRsqure and 5th in the team standings as the sole member of Pi. Team results: https://ctf.cloud-village.org/teams/29. Attendance, CTF participation, placements, and handle attribution are owner-supplied. A saved results announcement (https://avijitroy.com/assets/img/bsides-2026-ctf.png) lists piRsqure among the top 10 individual players; it does not explicitly state the individual or team placements. The 2025 BSidesNYC 0x05 event archive is available at https://bsidesnyc.org/archive/.
 
 Google fully funded Avijit Roy's participation as a selected Map Maker community delegate at the SEARCH Summit in Yogyakarta (June 20-22, 2013), including visa processing, round-trip travel, and accommodation. Google supported travel and accommodation for his invited participation in the Top Contributor Meetup in Mountain View (September 28-30, 2016). These support details are owner-supplied.
 
 The timeline also includes Google community programs, university mapping training, the Mapping Bangladesh booth at the Bangladesh Smartphone Expo, Google I/O Extended Bronx, CUNY IT Conferences, BSidesNYC, Microsoft AI Tour, and an invited Microsoft Windows & Surface experience in Brooklyn. At BSidesNYC 0x05 in 2025, Avijit Roy attended as a sponsor representative on behalf of John Jay College's Digital Forensics and Cybersecurity (D4CS) department, as confirmed by Avijit Roy. Other attendance and invited participation should not be described as organizing, speaking, sponsorship, or research authorship without supporting evidence.
+
+Microsoft AI Tour attendance on January 21, 2026 took place at the Jacob K. Javits Convention Center, New York City. The ATN Young Nite appearances on ATN News in 2013 and 2015 were live television appearances from a studio in Dhaka, Bangladesh; these locations are owner-confirmed.
+
+### Event photographs
+
+The Professional Engagement page links the following owner-supplied photographs in accessible image dialogs. Photographs document participation; role and placement claims are described separately in the event records.
+
+- CUNY International Student Success Conference (2026): https://avijitroy.com/assets/img/Avijit-Roy-at-CUNY-International-Student-Success-Conference.JPG
+- HackKnight judging (2026): https://avijitroy.com/assets/img/Avijit-Roy-at-HackKnight-2026-as-a-judge.JPG
+- Microsoft Windows & Surface invited experience (2026): https://avijitroy.com/assets/img/avijit-roy-at-ms-windows-surface-experience-event-nyc.JPG
+- Microsoft AI Tour (2026): https://avijitroy.com/assets/img/avijit-roy-at-microsoft-ai-tour.jpg
+- BSidesNYC 0x05 (2025): https://avijitroy.com/assets/img/avijit-roy-at-bsidesnyc-0x05-2025.jpg
+- SCUSA 71 Climate Change roundtable (2019): https://avijitroy.com/assets/img/avijit-roy-at-scusa-71-climate-change-team.jpg
+- Google Crowdsource Community Global Meet-up (2018): https://avijitroy.com/assets/img/avijit-roy-at-google-crowndsource-event-hyderabad.jpg
+- Google Top Contributor Meetup (2016): https://avijitroy.com/assets/img/avijit-roy-at-google-top-contributors-meetup-2016.jpg
 
 ## Books
 

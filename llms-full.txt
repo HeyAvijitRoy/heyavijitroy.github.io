@@ -447,9 +447,11 @@ The Professional Engagement page (https://avijitroy.com/professional-engagement/
 
 ### Chronological record
 
+On October 17, 2026, Avijit Roy attended BSidesNYC 2026 (https://bsidesnyc.org/) as an attendee and participated in the Cloud Village CTF (https://ctf.cloud-village.org/challenges). Attendance and CTF participation are owner-supplied. The 2025 BSidesNYC 0x05 event archive is available at https://bsidesnyc.org/archive/.
+
 Google fully funded Avijit Roy's participation as a selected Map Maker community delegate at the SEARCH Summit in Yogyakarta (June 20-22, 2013), including visa processing, round-trip travel, and accommodation. Google supported travel and accommodation for his invited participation in the Top Contributor Meetup in Mountain View (September 28-30, 2016). These support details are owner-supplied.
 
-The timeline also includes Google community programs, university mapping training, the Mapping Bangladesh booth at the Bangladesh Smartphone Expo, Google I/O Extended Bronx, CUNY IT Conferences, BSidesNYC, Microsoft AI Tour, and an invited Microsoft Windows & Surface experience in Brooklyn. Attendance and invited participation should not be described as organizing, speaking, sponsorship, or research authorship.
+The timeline also includes Google community programs, university mapping training, the Mapping Bangladesh booth at the Bangladesh Smartphone Expo, Google I/O Extended Bronx, CUNY IT Conferences, BSidesNYC, Microsoft AI Tour, and an invited Microsoft Windows & Surface experience in Brooklyn. At BSidesNYC 0x05 in 2025, Avijit Roy attended as a sponsor representative on behalf of John Jay College's Digital Forensics and Cybersecurity (D4CS) department, as confirmed by Avijit Roy. Other attendance and invited participation should not be described as organizing, speaking, sponsorship, or research authorship without supporting evidence.
 
 ## Books
 

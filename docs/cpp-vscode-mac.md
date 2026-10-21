@@ -2,11 +2,13 @@
 
 This guide walks you through a clean, step-by-step setup to compile and debug C++ in Visual Studio Code on macOS using Clang and LLDB.
 
-**This guide worns on:**
-- macOS Ventura
-- macOS Sonoma
-- macOS Monterey
-- Apple Silicon (M1/M2/M3)'
+**This guide works on:**
+- macOS Tahoe (26) and newer
+- macOS Sequoia (15)
+- macOS Sonoma (14)
+- macOS Ventura (13)
+- macOS Monterey (12)
+- Apple Silicon (M1 and later)
 - Intel Macs
 
 ---
@@ -42,6 +44,8 @@ VS Code does not include a compiler — Clang via Xcode CLT is what provides it.
    clang++ --version
    ```
    - You should see a version output including “Apple clang version”.
+
+If Terminal says the command line tools are already installed, you’re done with this step. Later updates to the tools arrive through System Settings → General → Software Update.
 
 ---
 
@@ -112,7 +116,7 @@ VS Code does not include a compiler — Clang via Xcode CLT is what provides it.
      ]
    }
    ```
-3. **Create build directory:** Optional but clean.
+3. **Create the build directory:** Required. `clang++` won’t create it for you, and the build fails with `unable to open output file 'build/main'` if it’s missing.
    ```bash
    mkdir -p build
    ```
@@ -132,19 +136,25 @@ Notes:
      "configurations": [
        {
          "name": "C++: Debug build/main (LLDB)",
-         "type": "lldb",
+         "type": "cppdbg",
          "request": "launch",
          "program": "${workspaceFolder}/build/main",
          "args": [],
          "cwd": "${workspaceFolder}",
          "preLaunchTask": "C++: Build with clang++",
-         "stopOnEntry": false,
+         "stopAtEntry": false,
          "environment": [],
-         "console": "integratedTerminal"
+         "externalConsole": false,
+         "MIMode": "lldb"
        }
      ]
    }
    ```
+
+Notes:
+- **"type": "cppdbg"** is the debugger provided by the C/C++ extension from Step 1; **"MIMode": "lldb"** tells it to use LLDB.
+- If your program reads keyboard input (`std::cin`), set `"externalConsole": true` so it runs in a Terminal window you can type into.
+- Configs using `"type": "lldb"` belong to the separate CodeLLDB extension and use different fields. Don’t mix the two formats.
 
 ---
 
@@ -212,6 +222,12 @@ If you add more `.cpp` files, either list them in `args` or use a wildcard with 
     ```bash
     which clang++
     ```
+- **`xcrun: error: invalid active developer path` after a macOS upgrade:**
+  - Major macOS updates can remove the Command Line Tools. Reinstall them with `xcode-select --install`.
+- **`unable to open output file 'build/main'`:**
+  - The `build` folder doesn’t exist yet. Run `mkdir -p build` in the project folder.
+- **`Configured debug type 'lldb' is not supported`:**
+  - Your `launch.json` uses the CodeLLDB format. Use the `cppdbg` configuration from Step 5.
 - **Permission denied running build/main:**
   - Ensure executable bit is set (usually automatic). If not:
     ```bash
@@ -224,14 +240,14 @@ If you add more `.cpp` files, either list them in `args` or use a wildcard with 
   - Confirm `-g` is in build flags.
   - Make sure `program` path in `launch.json` matches the output binary.
 - **Apple Silicon architecture mismatches:**
-  - Keep `intelliSenseMode` as `macos-clang-arm64`.
+  - Keep `intelliSenseMode` as `macos-clang-arm64` (use `macos-clang-x64` on Intel Macs).
   - Avoid mixing Homebrew Intel toolchains with Apple Silicon builds.
 
 ---
 
 ## Step 10: Optional enhancements
 
-- **Format code automatically:** Install “Clang-Format” and set `"C_Cpp.clang_format_style": "file"` with a `.clang-format`.
+- **Format code automatically:** The C/C++ extension already bundles clang-format. Add a `.clang-format` file to your project root and press Shift+Option+F (Format Document); the default `"C_Cpp.clang_format_style": "file"` setting picks it up.
 - **Use CMake Tools:** For larger projects, install “CMake Tools” and initialize a CMake project for robust multi-file builds.
 - **Unit testing:** Add frameworks like Catch2 or GoogleTest and include them in your build.
 
@@ -242,7 +258,7 @@ If you add more `.cpp` files, either list them in `args` or use a wildcard with 
 - **Build:** Cmd+Shift+B
 - **Run debug:** Cmd+Shift+D → Start
 - **Compiler:** `/usr/bin/clang++`
-- **Debugger:** LLDB (built into macOS)
+- **Debugger:** LLDB (installed with the Xcode Command Line Tools)
 
 ---
 

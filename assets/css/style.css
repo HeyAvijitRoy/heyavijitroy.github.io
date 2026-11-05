@@ -1948,6 +1948,106 @@ html[data-theme="dark"] body.main-site {
   height: 270px;
 }
 
+/* Research page profile links (grouped chips) */
+.main-site.page-research .research-profiles {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+
+.main-site.page-research .research-profiles-row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.main-site.page-research .research-profiles-label {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.main-site.page-research .research-profiles-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-site.page-research .research-profiles-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 550;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.main-site.page-research .research-profiles-links a i {
+  color: var(--muted);
+  transition: color 160ms ease;
+}
+
+.main-site.page-research .research-profiles-links a:hover,
+.main-site.page-research .research-profiles-links a:focus-visible {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--focus-bg);
+}
+
+.main-site.page-research .research-profiles-links a:hover i,
+.main-site.page-research .research-profiles-links a:focus-visible i {
+  color: var(--brand);
+}
+
+.main-site.page-research .research-profiles-links a.is-primary,
+.main-site.page-research .research-profiles-links a.is-primary i {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.main-site.page-research .research-profiles-links a.is-primary:hover,
+.main-site.page-research .research-profiles-links a.is-primary:focus-visible {
+  background: color-mix(in srgb, var(--brand) 86%, #000);
+  color: #fff;
+}
+
+.main-site.page-research .research-profiles-links a.is-primary:hover i,
+.main-site.page-research .research-profiles-links a.is-primary:focus-visible i {
+  color: #fff;
+}
+
+html[data-theme="dark"] .main-site.page-research .research-profiles-links a.is-primary,
+html[data-theme="dark"] .main-site.page-research .research-profiles-links a.is-primary i,
+html[data-theme="dark"] .main-site.page-research .research-profiles-links a.is-primary:hover,
+html[data-theme="dark"] .main-site.page-research .research-profiles-links a.is-primary:hover i {
+  color: #0b1220;
+}
+
+@media (max-width: 640px) {
+  .main-site.page-research .research-profiles-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
 /* Research page section navigator */
 .main-site.page-research .research-section-nav {
   position: sticky;

@@ -1988,7 +1988,7 @@ html[data-theme="dark"] body.main-site {
   min-height: 30px;
   padding: 4px 10px;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 2px;
   background: var(--card);
   color: var(--text);
   font-size: 0.82rem;
@@ -2740,6 +2740,59 @@ html[data-theme="dark"] .main-site.page-teaching .teaching-institution-logo-sju 
   letter-spacing: 0.055em;
   line-height: 1.45;
   text-transform: uppercase;
+}
+
+.main-site.page-teaching .teaching-load-list {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+}
+
+.main-site.page-teaching .teaching-load-when {
+  min-width: 2.6rem;
+  font-weight: 600;
+}
+
+.main-site.page-teaching .teaching-load.is-current .teaching-load-term {
+  background: var(--brand);
+  color: var(--bg);
+}
+
+.main-site.page-teaching .teaching-load {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 0;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.main-site.page-teaching .teaching-load-term {
+  padding: 2px 8px;
+  border: 1px solid var(--brand);
+  border-radius: 2px;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.main-site.page-teaching .teaching-load-total {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.main-site.page-teaching .teaching-load-total + .teaching-load-detail::before {
+  content: "·";
+  margin-right: 10px;
+}
+
+.main-site.page-teaching .term-sections {
+  color: var(--brand);
+  font-weight: 600;
 }
 
 .main-site.page-teaching .teaching-institution-description {

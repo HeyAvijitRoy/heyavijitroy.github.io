@@ -525,6 +525,60 @@
     });
   }
 
+  // Opt in on any page with data-figure-preview on an image link.
+  // Optional data-figure-title and data-figure-caption customize the preview.
+  function initFigurePreview() {
+    const links = document.querySelectorAll("[data-figure-preview]");
+    if (!links.length || typeof HTMLDialogElement === "undefined" ||
+        typeof HTMLDialogElement.prototype.showModal !== "function") return;
+
+    const dialog = document.createElement("dialog");
+    dialog.id = "figurePreviewDialog";
+    dialog.className = "figure-preview-dialog";
+    dialog.setAttribute("aria-labelledby", "figurePreviewTitle");
+    dialog.setAttribute("aria-describedby", "figurePreviewCaption");
+    dialog.innerHTML = `
+      <div class="figure-preview-header">
+        <h2 id="figurePreviewTitle">Figure preview</h2>
+        <button class="button small" type="button" data-figure-preview-close autofocus aria-label="Close figure preview">Close</button>
+      </div>
+      <p id="figurePreviewCaption" class="muted"></p>
+      <img alt="" />`;
+    document.body.appendChild(dialog);
+    const title = dialog.querySelector("h2");
+    const caption = dialog.querySelector("p");
+    const image = dialog.querySelector("img");
+    let opener = null;
+
+    links.forEach((link) => {
+      link.setAttribute("aria-haspopup", "dialog");
+      link.setAttribute("aria-controls", dialog.id);
+      link.addEventListener("click", (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        opener = link;
+        title.textContent = link.dataset.figureTitle || "Figure preview";
+        caption.textContent = link.dataset.figureCaption ||
+          link.closest("figure")?.querySelector("figcaption")?.textContent.trim() || "";
+        caption.hidden = !caption.textContent;
+        image.src = link.href;
+        image.alt = link.querySelector("img")?.alt || title.textContent;
+        dialog.showModal();
+      });
+    });
+
+    dialog.querySelector("[data-figure-preview-close]").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) {
+        dialog.close();
+      }
+    });
+    dialog.addEventListener("close", () => opener?.focus({ preventScroll: true }));
+  }
+
   function initBusinessCardDownload() {
     document.querySelectorAll("[data-vcard-download]").forEach((link) => {
       link.addEventListener("click", () => {
@@ -574,5 +628,6 @@
   initCourseSectionNav();
   initCourseTimelineTitles();
   initBusinessCardDownload();
+  initFigurePreview();
 
 })();

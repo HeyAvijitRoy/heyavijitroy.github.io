@@ -4420,6 +4420,13 @@ html.motion-enabled .main-site [data-reveal].is-visible {
   align-items: start;
 }
 
+/* Keep the Beyond Omission results figure compact and give its summary room. */
+@media (min-width: 901px) {
+  .main-site.page-research #beyond-omission-preprint .publication-layout {
+    grid-template-columns: minmax(0, 1.28fr) minmax(250px, 0.72fr);
+  }
+}
+
 .main-site .publication-feature--reverse .publication-preview {
   order: 2;
 }
@@ -4468,6 +4475,84 @@ html.motion-enabled .main-site [data-reveal].is-visible {
 
 .main-site .publication-preview--landscape .publication-preview-link {
   padding: 10px;
+}
+
+.main-site .figure-preview-dialog {
+  box-sizing: border-box;
+  width: min(1100px, calc(100% - 24px));
+  height: min(940px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: clamp(12px, 2vw, 24px);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: auto;
+}
+
+.main-site .figure-preview-dialog[open] {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.main-site:has(.figure-preview-dialog[open]) {
+  overflow: hidden;
+}
+
+.main-site .figure-preview-dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+
+.main-site .figure-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.main-site .figure-preview-header h2 {
+  margin: 0;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  line-height: 1.3;
+}
+
+.main-site .figure-preview-header button {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+.main-site .figure-preview-dialog > p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.main-site .figure-preview-dialog img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .main-site .figure-preview-dialog {
+    height: auto;
+  }
+
+  .main-site .figure-preview-dialog[open] {
+    display: block;
+  }
+
+  .main-site .figure-preview-dialog > p {
+    margin: 12px 0;
+  }
+
+  .main-site .figure-preview-dialog img {
+    height: auto;
+    max-height: 60dvh;
+  }
 }
 
 .main-site .publication-preview figcaption {

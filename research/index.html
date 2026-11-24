@@ -10,16 +10,16 @@
   <link rel="canonical" href="https://avijitroy.com/research/" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="description"
-    content="Research and publications by Avijit Roy, including the arXiv-published TEA Benchmark paper, the Springer-published, award-winning Privacy-Preserving MIS paper, and work across cybersecurity and AI." />
+    content="Research by Avijit Roy on multilingual LLM evaluation, including Beyond Omission, the TEA Benchmark, privacy-preserving AI, cybersecurity, and digital forensics." />
   <meta name="keywords"
-    content="Avijit Roy research, TEA Benchmark, Tokenization Equity Audit, arXiv 2608.09046, low-resource language NLP, cybersecurity research, privacy-preserving machine learning, digital forensics, threat intelligence, zero trust, federated learning, blockchain, malware image classification, IEEE TIC 2026" />
+    content="Avijit Roy research, Beyond Omission, arXiv 2611.29299, multilingual LLM evaluation, critical-information fulfillment, Bengali English code-switching, required information units, TEA Benchmark, Tokenization Equity Audit, arXiv 2608.09046, low-resource language NLP, cybersecurity research, privacy-preserving machine learning, digital forensics, threat intelligence, zero trust, federated learning, blockchain, malware image classification, IEEE TIC 2026" />
   <meta name="author" content="Avijit Roy" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Research &amp; Publications - Avijit Roy" />
   <meta property="og:description"
-    content="Explore Avijit Roy's research, including the arXiv-published TEA Benchmark paper on tokenization equity, cybersecurity, AI, digital forensics, and secure systems." />
+    content="Explore Avijit Roy's Beyond Omission preprint on Bengali-English LLM fulfillment, alongside the TEA Benchmark and research in cybersecurity and AI." />
   <meta property="og:url" content="https://avijitroy.com/research/" />
   <meta property="og:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
   <meta property="og:site_name" content="Avijit Roy" />
@@ -28,7 +28,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Research &amp; Publications - Avijit Roy" />
   <meta name="twitter:description"
-    content="Explore Avijit Roy's research, including the arXiv-published TEA Benchmark paper on tokenization equity, cybersecurity, AI, digital forensics, and secure systems." />
+    content="Explore Avijit Roy's Beyond Omission preprint on Bengali-English LLM fulfillment, alongside the TEA Benchmark and research in cybersecurity and AI." />
   <meta name="twitter:image" content="https://avijitroy.com/assets/img/og-image.jpg" />
 
   <!-- Favicons -->
@@ -101,8 +101,8 @@
           "@id": "https://avijitroy.com/research/#webpage",
           "url": "https://avijitroy.com/research/",
           "name": "Research & Publications - Avijit Roy",
-          "description": "Research projects, publications, presentations, and scholarly work by Avijit Roy, including the arXiv-published TEA Benchmark paper, the Springer-published Privacy-Preserving MIS conference paper, and work across AI, cybersecurity, digital forensics, and secure systems.",
-          "dateModified": "2026-10-17",
+          "description": "Research projects, publications, presentations, and scholarly work by Avijit Roy, including Beyond Omission on multilingual LLM fulfillment, the TEA Benchmark, the Springer-published Privacy-Preserving MIS paper, and work across AI, cybersecurity, digital forensics, and secure systems.",
+          "dateModified": "2026-11-24",
           "breadcrumb": { "@id": "https://avijitroy.com/research/#breadcrumb" },
           "about": { "@id": "https://avijitroy.com/#person" }
         },
@@ -422,6 +422,72 @@
             { "@type": "Thing", "name": "Transformer models" },
             { "@type": "Thing", "name": "LLM explainability" },
             { "@type": "Thing", "name": "Hybrid AI systems" }
+          ],
+          "mainEntityOfPage": "https://avijitroy.com/research/"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://avijitroy.com/research/#beyond-omission-preprint",
+          "headline": "Beyond Omission: Measuring Critical-Information Fulfillment of Large Language Models in Bengali and English",
+          "keywords": ["Computation and Language (cs.CL)", "Artificial Intelligence (cs.AI)", "Computers and Society (cs.CY)"],
+          "author": {
+            "@id": "https://avijitroy.com/#person"
+          },
+          "datePublished": "2026-11-22",
+          "inLanguage": "en",
+          "genre": [
+            "Preprint",
+            "arXiv paper"
+          ],
+          "description": "This sole-authored preprint evaluates 1,413 responses from GPT-6.1 Sol, Qwen3.5-9B, and Gemma 4 12B on 157 matched English, Bengali, and Bengali-English code-switched tasks using prespecified required information units (RIUs). Critical omission showed no detectable Bengali-English difference, but Bengali critical coverage was 0.050 lower and strict complete-task success 0.093 lower; both deficits came from the two open-weight models, while Sol showed none. Code-switching recovered 0.028 in RIU coverage. The study distinguishes missing content from incorrect, insufficient, or partially fulfilled requirements and releases data, rubrics, responses, scores, and code. Native-speaker QA met overall RIU and critical-unit agreement thresholds but fell short on Bengali RIU agreement and unsupported-content checks.",
+          "identifier": "https://doi.org/10.48550/arXiv.2611.29299",
+          "url": "https://arxiv.org/abs/2611.29299",
+          "sameAs": [
+            "https://arxiv.org/abs/2611.29299",
+            "https://doi.org/10.48550/arXiv.2611.29299"
+          ],
+          "isAccessibleForFree": true,
+          "publisher": {
+            "@type": "Organization",
+            "name": "arXiv"
+          },
+          "encoding": {
+            "@type": "MediaObject",
+            "name": "arXiv preprint PDF",
+            "contentUrl": "https://arxiv.org/pdf/2611.29299",
+            "encodingFormat": "application/pdf"
+          },
+          "subjectOf": {
+            "@type": "SoftwareSourceCode",
+            "name": "Multilingual Trustworthiness Study: Data, Rubrics, Responses, Scores and Code",
+            "codeRepository": "https://github.com/HeyAvijitRoy/multilingual-trustworthiness-study",
+            "url": "https://github.com/HeyAvijitRoy/multilingual-trustworthiness-study"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Multilingual LLM evaluation"
+            },
+            {
+              "@type": "Thing",
+              "name": "Critical-information fulfillment"
+            },
+            {
+              "@type": "Thing",
+              "name": "Required information units"
+            },
+            {
+              "@type": "Thing",
+              "name": "Bengali language technology"
+            },
+            {
+              "@type": "Thing",
+              "name": "Code-switching"
+            },
+            {
+              "@type": "Thing",
+              "name": "LLM judge validation"
+            }
           ],
           "mainEntityOfPage": "https://avijitroy.com/research/"
         },
@@ -1055,6 +1121,62 @@
       <h2>Publications &amp; Accepted Papers</h2>
 
         <div class="card-list">
+          <!-- Beyond Omission / arXiv preprint -->
+          <article id="beyond-omission-preprint" class="card editorial-block slate publication-feature publication-feature--reverse" aria-labelledby="beyond-omission-title">
+            <div class="publication-layout">
+              <figure class="publication-preview publication-preview--landscape">
+                <a class="publication-preview-link" href="https://arxiv.org/abs/2611.29299" target="_blank"
+                  rel="noopener noreferrer" aria-label="Open the Beyond Omission paper on arXiv">
+                  <img src="assets/publication-previews/beyond-omission-critical-coverage.png"
+                    alt="Critical coverage is lower in Bengali than English for Qwen and Gemma, while Sol remains near full coverage; code-switching partly recovers the gap"
+                    width="1020" height="780" loading="lazy" decoding="async" />
+                </a>
+                <figcaption><span>Figure 2 &middot; Critical coverage</span> English, Bengali, and code-switching by model, with 95% confidence intervals (137 tasks).</figcaption>
+              </figure>
+              <div class="publication-copy">
+                <span class="badge">Preprint &middot; arXiv &middot; Multilingual LLM evaluation</span>
+                <h3 id="beyond-omission-title" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px;">
+                  Beyond Omission: Measuring Critical-Information Fulfillment of Large Language Models in Bengali and English
+                </h3>
+                <p class="muted">Avijit Roy</p>
+                <p class="muted" style="margin-top: 12px;">
+                  <strong>arXiv Preprint &middot; November 22, 2026</strong>
+                </p>
+                <p class="muted">
+                  This study evaluates <strong>1,413 responses across 157 matched tasks</strong> in English, Bengali,
+                  and Bengali-English code-switching from GPT-6.1 Sol, Qwen3.5-9B, and Gemma 4 12B. Required information
+                  units (RIUs), fixed before model runs, distinguish outright omission from information that is present
+                  but incorrect, insufficient, or only partly fulfilled.
+                </p>
+                <p class="muted">
+                  <strong>Key finding:</strong> Critical omission showed no detectable Bengali-English difference
+                  (+0.003; 95% CI &minus;0.014 to +0.015). Bengali critical coverage was 5.0 percentage points lower
+                  and strict complete-task success 9.3 points lower, with both deficits coming from the two open-weight
+                  models; Sol showed none. Code-switching recovered 2.8 points in RIU coverage.
+                </p>
+                <p class="muted">
+                  <strong>Validation:</strong> Blind native-speaker ratings of 60 responses met overall RIU and
+                  critical-unit agreement thresholds, but fell short on Bengali RIU agreement and unsupported-content
+                  checks. Data, rubrics, responses, scores, and code are openly released.
+                </p>
+                <div class="card-resources" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-file-lines" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                    <span class="muted"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2611.29299" target="_blank" rel="noopener noreferrer">arXiv:2611.29299 [cs.CL, cs.AI, cs.CY]</a></span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-link" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                    <span class="muted"><strong>DOI:</strong> <a href="https://doi.org/10.48550/arXiv.2611.29299" target="_blank" rel="noopener noreferrer">10.48550/arXiv.2611.29299</a></span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-database" style="color: var(--brand); width: 16px; text-align: center;"></i>
+                    <span class="muted"><strong>Data &amp; Code:</strong> <a href="https://github.com/HeyAvijitRoy/multilingual-trustworthiness-study" target="_blank" rel="noopener noreferrer">Multilingual Trustworthiness Study (github.com)</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
           <!-- TEA Benchmark / LM4UC IJCAI 2026 -->
           <article id="tea-lm4uc-ijcai2026" class="card editorial-block blue publication-feature">
             <div class="publication-layout">

@@ -4427,6 +4427,16 @@ html.motion-enabled .main-site [data-reveal].is-visible {
   }
 }
 
+.main-site.page-research #flairs39 .publication-preview {
+  width: min(100%, 340px);
+}
+
+@media (min-width: 901px) {
+  .main-site.page-research #flairs39 .publication-layout {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+}
+
 .main-site .publication-feature--reverse .publication-preview {
   order: 2;
 }

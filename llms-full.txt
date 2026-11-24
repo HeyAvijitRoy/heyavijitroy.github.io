@@ -581,7 +581,7 @@ The allocation includes 120,000 SUs on Indiana Jetstream2 GPU, 50,000 SUs on Jet
 
 His completed RF CUNY research appointments include AI Research Assistant assigned to John Jay College of Criminal Justice, CUNY (June-August 2025), and Research Assistant assigned to The Graduate Center, CUNY (August 2026), supporting ACTFL-aligned Spanish assessment research, prototype development, evaluation, and platform deployment.
 
-Pending: CUNY AI Innovation Fund proposal (LaPEL AI strand), submitted September 29, 2026; role: Developer; PI: Cristina Lozano-Argüelles; total request $25,000; under review.
+Awarded November 2026: CUNY AI Innovation Fund - LaPEL AI Strand; proposal submitted September 29, 2026; role: Developer; PI: Cristina Lozano-Argüelles; award amount $25,000. The award supports validation and deployment of an AI-assisted Spanish placement platform at John Jay College.
 
 ## Selected Research Themes
 

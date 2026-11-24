@@ -144,6 +144,7 @@ Avijit Roy is a co-author of the Wiley Applied Research article "AI-Driven and C
 
 ## Current and Ongoing Projects
 
+- LaPEL AI Strand: $25,000 in CUNY AI Innovation Fund support awarded in November 2026 for validation and deployment of an AI-assisted Spanish placement platform at John Jay College. Avijit Roy serves as Developer; PI: Cristina Lozano-Argüelles. Research support: https://avijitroy.com/research/#lapel-ai-strand.
 - ZeroRoll: Privacy-preserving attendance and identity verification system using client-side face recognition and ciphertext-only server storage.
 - SecureBench: Browser-native benchmark for privacy-preserving client-side AI inference across ONNX Runtime Web, TensorFlow.js, Transformers.js, WebGPU, and WASM.
 - Bengali Programming Assistance: NSF ACCESS-supported research on dataset development and model fine-tuning for low-resource Bengali programming education.

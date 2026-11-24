@@ -153,7 +153,9 @@ CSCI 272 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csc
 
 CSCI 362 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci362-fa26/
 
-CSCI 377 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/. Supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
+CSCI 377: Computer Algorithms is taught in Fall 2026 and scheduled for Spring 2027 at John Jay College. Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/. Supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
+
+Scheduled Spring 2027 teaching at John Jay College totals five sections: CSCI 272 (three sections), CSCI 362 (one section), and CSCI 377 (one section).
 
 DFR 711 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/dfr711-fa26/
 

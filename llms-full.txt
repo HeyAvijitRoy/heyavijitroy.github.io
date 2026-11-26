@@ -209,6 +209,24 @@ The thesis was awarded the Claude Hawley Medal in 2026 and is archived via:
 
 It was also presented at the Graduate Student Research Symposium, John Jay Research & Creativity Expo, May 4, 2026 (slides DOI: https://doi.org/10.5281/zenodo.20513631).
 
+### Beyond Omission
+
+Title: Beyond Omission: Measuring Critical-Information Fulfillment of Large Language Models in Bengali and English
+Author: Avijit Roy (sole author), John Jay College of Criminal Justice, City University of New York.
+Status: arXiv preprint, submitted November 22, 2026; not a peer-reviewed publication. arXiv:2611.29299 [cs.CL], with secondary classifications cs.AI and cs.CY.
+
+The study scores 1,413 responses from GPT-6.1 Sol, Qwen3.5-9B, and Gemma 4 12B on 157 matched tasks in English (EN), natural Bengali (BN), and Bengali-matrix Bengali-English code-switching (BN-CS). Required information units (RIUs) were fixed before model runs. Scoring separates outright omission from content that is present but incorrect, insufficient, or only partly met.
+
+The prespecified primary estimand, the domain-equal paired difference in critical omission rate (BN - EN), showed no detectable difference: +0.003 (95% CI -0.014 to +0.015), with omission near zero in every condition. Bengali critical coverage was 0.050 lower (95% CI 0.022 to 0.079), and strict complete-task success was 0.093 lower (95% CI 0.055 to 0.131). Both fulfillment deficits came from the two open-weight models; Sol showed none. Code-switching recovered part of the RIU coverage loss: +0.028 (95% CI 0.012 to 0.045). Omission counts alone would have missed the observed language gap in fulfillment.
+
+The automated judge passed prespecified agreement gates after a documented failed first attempt. Blind native-speaker ratings of 60 study responses met overall RIU agreement (alpha 0.84) and critical-RIU agreement (98% exact), but fell short on Bengali RIU agreement (alpha 0.77) and the unsupported-content check (93% exact). A blind reason-code check agreed on whether a critical unit was omitted for 79 of 81 units. These validation limits should accompany summaries of the findings; the study does not establish that all models show the same Bengali deficit.
+
+Paper: https://arxiv.org/abs/2611.29299
+PDF hosted by arXiv: https://arxiv.org/pdf/2611.29299
+arXiv DOI: https://doi.org/10.48550/arXiv.2611.29299
+Data, rubrics, responses, scores, and code: https://github.com/HeyAvijitRoy/multilingual-trustworthiness-study
+Research entry: https://avijitroy.com/research/#beyond-omission-preprint
+
 ### Structural Silence
 
 Structural Silence is a research direction examining linguistic inequities in AI systems, especially for Bengali and other underrepresented languages.
@@ -365,8 +383,10 @@ Courses include:
 - CSCI 271: Introduction to Computing and Programming (Spring 2026)
 - CSCI 272: Object-Oriented Programming in C++ (Fall 2025, Spring 2026, Fall 2026) - Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci272-fa26/
 - CSCI 362: Databases and Data Mining (Fall 2026) - Official syllabus: https://avijitroy.com/teaching/courses/csci362-fa26/
-- CSCI 377: Computer Algorithms (Fall 2026) - Official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/; supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
+- CSCI 377: Computer Algorithms (Fall 2026; scheduled Spring 2027) - Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/; supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
 - DFR 711: Cyber Forensics & Malware Analysis, St. John's University (Adjunct Assistant Professor; Fall 2026) - Official syllabus: https://avijitroy.com/teaching/courses/dfr711-fa26/
+
+Scheduled Spring 2027 teaching at John Jay College totals five sections: CSCI 272 (three sections), CSCI 362 (one section), and CSCI 377 (one section).
 
 Teaching areas include:
 
@@ -561,7 +581,7 @@ The allocation includes 120,000 SUs on Indiana Jetstream2 GPU, 50,000 SUs on Jet
 
 His completed RF CUNY research appointments include AI Research Assistant assigned to John Jay College of Criminal Justice, CUNY (June-August 2025), and Research Assistant assigned to The Graduate Center, CUNY (August 2026), supporting ACTFL-aligned Spanish assessment research, prototype development, evaluation, and platform deployment.
 
-Pending: CUNY AI Innovation Fund proposal (LaPEL AI strand), submitted September 29, 2026; role: Developer; PI: Cristina Lozano-Argüelles; total request $25,000; under review.
+Awarded November 2026: CUNY AI Innovation Fund - LaPEL AI Strand; proposal submitted September 29, 2026; role: Developer; PI: Cristina Lozano-Argüelles; award amount $25,000. The award supports validation and deployment of an AI-assisted Spanish placement platform at John Jay College.
 
 ## Selected Research Themes
 

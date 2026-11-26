@@ -114,6 +114,10 @@ The thesis received the Claude Hawley Medal in 2026 and is archived through ProQ
 
 US Provisional Patent Application 63/986,762, filed February 2026. PhishGuard is a staged client-side phishing risk assessment architecture using local ONNX transformer inference for privacy-preserving semantic phishing analysis.
 
+### Beyond Omission
+
+"Beyond Omission: Measuring Critical-Information Fulfillment of Large Language Models in Bengali and English" is a sole-authored arXiv preprint by Avijit Roy, submitted November 22, 2026 (arXiv:2611.29299 [cs.CL]; secondary subjects cs.AI and cs.CY). It is a preprint, not a peer-reviewed publication. Across 157 matched English, Bengali, and Bengali-English code-switched tasks and 1,413 responses from GPT-6.1 Sol, Qwen3.5-9B, and Gemma 4 12B, critical omission showed no detectable language difference, but Bengali critical coverage was 0.050 lower and strict complete-task success 0.093 lower. Both deficits came from the two open-weight models; Sol showed none. Code-switching recovered 0.028 in RIU coverage. Native-speaker QA met overall RIU and critical-unit thresholds but fell short on Bengali RIU agreement and unsupported-content checks. Paper: https://arxiv.org/abs/2611.29299. PDF: https://arxiv.org/pdf/2611.29299. arXiv DOI: https://doi.org/10.48550/arXiv.2611.29299. Released data, rubrics, responses, scores, and code: https://github.com/HeyAvijitRoy/multilingual-trustworthiness-study. Research entry: https://avijitroy.com/research/#beyond-omission-preprint.
+
 ### Measuring the Tokenization Premium
 
 "Measuring the Tokenization Premium: A Cost Audit for Underserved Language Communities" is a peer-reviewed workshop paper presented orally and as a poster at the Language Models for Underserved Communities (LM4UC) Workshop at IJCAI 2026 in Bremen, Germany, on August 16, 2026. It was published on arXiv on August 10, 2026, as arXiv:2608.09046 [cs.CL], with a secondary classification of cs.CY. Paper DOI: https://doi.org/10.48550/arXiv.2608.09046. Presentation slides: https://doi.org/10.13140/RG.2.2.29980.65926. Poster DOI: https://doi.org/10.13140/RG.2.2.25750.31049. The project audits tokenization inefficiencies across English, Bengali, Hindi, Arabic, Tamil, and Yoruba using the Tokenization Equity Audit (TEA) benchmark. Interactive poster: https://avijitroy.com/research/tea-benchmark/. Benchmark code and corpus: https://github.com/HeyAvijitRoy/tea-benchmark.
@@ -140,6 +144,7 @@ Avijit Roy is a co-author of the Wiley Applied Research article "AI-Driven and C
 
 ## Current and Ongoing Projects
 
+- LaPEL AI Strand: $25,000 in CUNY AI Innovation Fund support awarded in November 2026 for validation and deployment of an AI-assisted Spanish placement platform at John Jay College. Avijit Roy serves as Developer; PI: Cristina Lozano-Argüelles. Research support: https://avijitroy.com/research/#lapel-ai-strand.
 - ZeroRoll: Privacy-preserving attendance and identity verification system using client-side face recognition and ciphertext-only server storage.
 - SecureBench: Browser-native benchmark for privacy-preserving client-side AI inference across ONNX Runtime Web, TensorFlow.js, Transformers.js, WebGPU, and WASM.
 - Bengali Programming Assistance: NSF ACCESS-supported research on dataset development and model fine-tuning for low-resource Bengali programming education.
@@ -153,7 +158,9 @@ CSCI 272 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csc
 
 CSCI 362 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci362-fa26/
 
-CSCI 377 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/. Supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
+CSCI 377: Computer Algorithms is taught in Fall 2026 and scheduled for Spring 2027 at John Jay College. Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/csci377-fa26/. Supplemental course repository: https://github.com/HeyAvijitRoy/csci-377-computer-algorithms
+
+Scheduled Spring 2027 teaching at John Jay College totals five sections: CSCI 272 (three sections), CSCI 362 (one section), and CSCI 377 (one section).
 
 DFR 711 Fall 2026 official syllabus: https://avijitroy.com/teaching/courses/dfr711-fa26/
 
